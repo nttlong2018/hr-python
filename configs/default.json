@@ -78,7 +78,13 @@
 	"DEBUG": true,
 	"ROOT_URLCONF_1": "app_main.urls",
 	"ROUTES_1": ["route.main"],
-	"APPS":["apps/app_main"],
+	"APPS":[ {
+		"HOST":"default",
+		"PATH":"apps/app_main"
+	},{
+		"HOST":"administrator",
+		"PATH":"apps/admin"
+	}],
 	"TEMPLATES_DIRS": ["apps/app_main/templates",
 		"apps/argo_admin/templates"
 	],

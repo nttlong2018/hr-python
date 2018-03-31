@@ -7,6 +7,8 @@ import importlib
 import  re
 from django.core.wsgi import get_wsgi_application
 from django.conf.urls.static import static
+import logging
+logger = logging.getLogger(__name__)
 app_info={}
 app_info_dir={}
 __cache_find_path={}
@@ -80,6 +82,8 @@ def get_static_url():
 def get_static_root():
     return _default_settings.get("STATIC_ROOT")
 def get_app_info(file_name):
+    """get application info by path of file
+    if path of file is in application package"""
     global __cache_find_path
     if __cache_find_path.has_key(file_name):
         return __cache_find_path[file_name]
@@ -101,39 +105,117 @@ def load_app_config(paths):
     Load all application info according to 'paths'
     'paths' is a list of application directory
     """
-    ret=[]
-    global  app_info
-    global  app_info_dir
-    global  __paths__
-    global __cache_find_name
-    for p in paths:
-        data=utilities.load_json_from_file(p+"/config")
-        app_info.update({data.get("NAME"): data})
+    try:
+        ret={
+            "APPS":[],
+            "DEFAULT":None
+        }
+        ret_apps=[]
+        global  app_info
+        global  app_info_dir
+        global  __paths__
+        global __cache_find_name
+        for p in paths:
 
-        _dir=(utilities.get_host_directory()+"/"+p).replace("\\","/").replace("//","/")
-        __paths__.append(_dir)
-        app_info_dir.update({_dir:data})
+            data=utilities.load_json_from_file(p["PATH"]+"/config")
+            app_info.update({data.get("NAME"): data})
 
-        sys.path.append(utilities.get_host_directory()+"/"+p)
-        module=importlib.import_module(data.get("VIEWS").get("name"))
-        __cache_find_name.update({module.__name__:data})
-        for route in data.get("ROUTES"):
-            ret+=[{
-                "url":route.get("url"),
-                "view":data.get("VIEWS").get("name")+"."+route.get("view"),
-                "name":route.get("name")
-            }]
-    return  ret
+
+            _dir=(utilities.get_host_directory()+"/"+p.get("PATH")).replace("\\","/").replace("//","/")
+            __paths__.append(_dir)
+            app_info_dir.update({_dir:data})
+            module_file=utilities.get_host_directory()+"/"+p["PATH"]
+            ret_config = {
+                "NAME": data.get("NAME"),
+                "URLS": [],
+                "DIR":_dir,
+                "MODULE":None,
+                "PACKAGE_NAME":None,
+                "HOST":None
+            }
+
+            sys.path.append(module_file)
+            module=None
+            # if not data.has_key("VIEWS") or not data.get("VIEWS").has_key("name"):
+            #     msg = "'VIEWS.name' was not found in '" + module_file + "/config.json'"
+            #     raise Exception(msg)
+            # if not data.has_key("VIEWS") or not data.get("VIEWS").has_key("path"):
+            #     msg = "'VIEWS.path' was not found in '" + module_file + "/config.json'"
+            #     raise Exception(msg)
+
+            try:
+                # module_name = data.get("VIEWS").get("name")
+                package_name=module_file.split('/')[module_file.split('/').__len__()-1]
+                module=importlib.import_module(package_name)
+                ret_config.update({"MODULE":module})
+                ret_config.update({"PACKAGE_NAME": package_name})
+
+            except Exception as ex:
+                logger.error(ex)
+                logger.error("'"+module_file+"' was not found")
+
+                raise Exception("'"+module_file+"' was not found")
+            __cache_find_name.update({module.__name__:data})
+
+            _urls=[]
+
+            for route in data.get("ROUTES"):
+                _url = route.get("url")
+                if (p.get("HOST") != "default"):
+                    # _url="^"+p.get("HOST")+"/"+route.get("url")
+                    ret_config.update({
+                        "HOST":p.get("HOST")
+                    })
+                _urls.append({
+                    "url": _url,
+                    "view": module.__name__ + "." + route.get("view"),
+                    "name": route.get("name")
+                })
+            ret_config.update({"URLS":_urls})
+            if(ret_config["NAME"]=="default"):
+                ret.update({
+                    "DEFAULT":ret_config
+                })
+            else:
+                ret_apps.append(ret_config)
+            ret.update({
+                "APPS":ret_apps
+            })
+
+        return  ret
+    except Exception as ex:
+        logger.error(ex)
+        raise ex
+
 def buil_urls(mdl,urls,static_url,static_root):
-
     urlpatterns=static(static_url, document_root=static_root)+[]
-    for route in urls:
+    for route in urls["DEFAULT"]["URLS"]:
         urlpatterns+=[
-            url(route.get("url"), route.get("view"), name=route.get("name"))
+            url(route.get("url"),  route.get("view"), name=route.get("name"))
+        ]
+    for app in urls["APPS"]:
+        url_module=build_sub_app_urls(app)
+        urlpatterns +=[
+            url("^"+app["HOST"]+"/", include(url_module.__name__, namespace=url_module.__name__))
 
         ]
 
     setattr(mdl,"urlpatterns",urlpatterns)
+def build_sub_app_urls(config):
+    urlpatterns=[]
+    for route in config["URLS"]:
+        urlpatterns+=[
+            url(route.get("url"), route.get("view"), name=route.get("name"))
+        ]
+
+    url_module=imp.new_module(config["NAME"]+"_urls_include")
+    setattr(url_module, "urlpatterns",urlpatterns )
+
+    sys.modules.update({
+        config["NAME"] + "_urls_include":url_module
+    })
+
+    return  url_module
 
 
 

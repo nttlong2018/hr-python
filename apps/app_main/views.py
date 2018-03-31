@@ -9,11 +9,10 @@ import utilities
 import configuration
 from  models import ui
 from argo import models
-app_name="default"
+
 # from django.urls import reverse
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-def res(txt):
-    return "hello "+txt
+
 
 def index(request):
     model=models.base()

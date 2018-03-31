@@ -1,7 +1,8 @@
 {
-  "NAME":"default",
+  "NAME":"admin",
   "VIEWS_1":{
-    "name":"app_main"
+    "name":"admin",
+    "path":"apps"
   },
   "ROUTES":[
     {
@@ -10,15 +11,15 @@
       "name":"index"
     },{
       "url":"^login$",
-      "view":"views.login",
+      "view":"views.index",
       "name":"login"
     },{
       "url":"^pages/(?P<path>.*)$",
-      "view":"views.load_page",
+      "view":"views.index",
       "name":"page"
     },{
       "url":"^(?P<path>.*)$",
-      "view":"views.load_page",
+      "view":"views.index",
       "name":"page"
     }
 
