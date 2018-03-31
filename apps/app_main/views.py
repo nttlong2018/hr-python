@@ -6,13 +6,17 @@ import membership
 from django.http import HttpResponse
 from django.shortcuts import redirect
 import utilities
+import configuration
+from  models import ui
+from argo import models
+app_name="default"
 # from django.urls import reverse
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 def res(txt):
     return "hello "+txt
 
 def index(request):
-
+    model=models.base()
     user=membership.get_user("sys")
     if user==None:
         membership.create_user("sys","sys",None)
@@ -20,17 +24,10 @@ def index(request):
     login_info=membership.validate_session(request.session._get_session_key())
     if login_info==None:
         return redirect("login")
+    from . import get_config
+    app=get_config()
 
-    # membership.validate_account("sys", "sys")
-    # membership.sign_in("sys",request.session.session_key,"vn")
-    # return render(request, 'index.html',{
-    #     "data":{
-    #         "username":login_info.user.username
-    #     },
-    #     res:res
-    #
-    # })
-    return utilities.render("index.html",{})
+    return utilities.render(request,__name__,"vi","index.html",model)
 
 def admin(request):
     return render(request, 'admin.html')

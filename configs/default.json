@@ -26,8 +26,6 @@
     "django.contrib.messages.context_processors.messages"
 ],
 	"TEMPLATES": [
-
-
 		{
           "NAME":"django",
 			"BACKEND": "django.template.backends.django.DjangoTemplates",
@@ -41,7 +39,6 @@
 			}
 		}
 	],
-
 	"DATABASES_1": {
 		"default": {
 			"ENGINE": "django.db.backends.sqlite3",
@@ -80,7 +77,8 @@
 	"ALLOWED_HOSTS": [],
 	"DEBUG": true,
 	"ROOT_URLCONF_1": "app_main.urls",
-	"ROUTES": ["route.main"],
+	"ROUTES_1": ["route.main"],
+	"APPS":["apps/app_main"],
 	"TEMPLATES_DIRS": ["apps/app_main/templates",
 		"apps/argo_admin/templates"
 	],

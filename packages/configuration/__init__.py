@@ -7,6 +7,11 @@ import importlib
 import  re
 from django.core.wsgi import get_wsgi_application
 from django.conf.urls.static import static
+app_info={}
+app_info_dir={}
+__cache_find_path={}
+__cache_find_name={}
+__paths__=[]
 def load_settings(name):
     "Load setting from json file"
     global _default_settings
@@ -61,8 +66,8 @@ def load_settings(name):
         membership.set_config(_dict.get("MEMBERSHIP_PROVIDER").get("config"))
 
     if not _dict.has_key("ROOT_URLCONF"):
-        paths = _dict.get("ROUTES")
-        _urls = get_routes_from_config(paths)
+        paths = _dict.get("APPS")
+        _urls = load_app_config(paths)
         buil_urls(url_module, _urls, _dict.get("STATIC_URL"), _dict.get("STATIC_ROOT"))
         sys.modules.update({
             name + "_urls": url_module
@@ -74,12 +79,44 @@ def get_static_url():
     return _default_settings.get("STATIC_URL")
 def get_static_root():
     return _default_settings.get("STATIC_ROOT")
-def get_routes_from_config(paths):
+def get_app_info(file_name):
+    global __cache_find_path
+    if __cache_find_path.has_key(file_name):
+        return __cache_find_path[file_name]
+
+    import  os
+    _path=os.path.dirname(file_name)
+    _dir=_path.replace("\\","/").replace("//","/")
+    matched_app=None
+    if app_info_dir.has_key(_dir):
+        matched_app=app_info_dir[_dir]
+    if matched_app==None:
+        for key in app_info_dir.keys():
+            if key in _dir:
+                matched_app=app_info_dir[key]
+    __cache_find_path.update({file_name:matched_app})
+    return __cache_find_path[file_name]
+def load_app_config(paths):
+    """
+    Load all application info according to 'paths'
+    'paths' is a list of application directory
+    """
     ret=[]
+    global  app_info
+    global  app_info_dir
+    global  __paths__
+    global __cache_find_name
     for p in paths:
-        data=utilities.load_json_config_file(p)
-        sys.path.append(utilities.get_host_directory()+data.get("VIEWS").get("path"))
-        importlib.import_module(data.get("VIEWS").get("name"))
+        data=utilities.load_json_from_file(p+"/config")
+        app_info.update({data.get("NAME"): data})
+
+        _dir=(utilities.get_host_directory()+"/"+p).replace("\\","/").replace("//","/")
+        __paths__.append(_dir)
+        app_info_dir.update({_dir:data})
+
+        sys.path.append(utilities.get_host_directory()+"/"+p)
+        module=importlib.import_module(data.get("VIEWS").get("name"))
+        __cache_find_name.update({module.__name__:data})
         for route in data.get("ROUTES"):
             ret+=[{
                 "url":route.get("url"),

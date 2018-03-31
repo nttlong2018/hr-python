@@ -1,4 +1,5 @@
 {
+  "NAME":"default",
   "VIEWS":{
     "path":"apps",
     "name":"app_main"
