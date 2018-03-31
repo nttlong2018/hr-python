@@ -1,0 +1,24 @@
+{% extends "base_generic.html" %}
+{% load static %}
+{% block content %}
+<div class="container" style="max-width:400px">
+    <form class="form" method="post" action="{% static '/login' %}" >
+        {% csrf_token %}
+        <h2 class="form-signin-heading">Please sign in</h2>
+        <label for="inputEmail" class="sr-only">Username</label>
+        <input type="text" class="form-control" name="username" placeholder="Email address" value="{{ data.username }}" />
+        <label for="inputPassword" class="sr-only">Password</label>
+        <input type="password" name="password" class="form-control" placeholder="Password" required>
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" value="remember-me"> Remember me
+          </label>
+        </div>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+      </form>
+     {% if isError %}
+        <span>Login fail</span>
+     {% endif %}
+</div>
+
+{% endblock %}

@@ -1,0 +1,103 @@
+{
+	"SECRET_KEY": "sziks3)mhp_*v%(^3d%zk#saewd1)v%-)gf4!z$j$(q%4l-((*",
+	"INSTALLED_APPS": [
+		"django.contrib.contenttypes",
+		"django.contrib.sessions",
+		"django.contrib.messages",
+		"django.contrib.staticfiles",
+		"django_mongoengine"
+	],
+	"MIDDLEWARE_CLASSES": [
+		"django.contrib.sessions.middleware.SessionMiddleware",
+		"django.middleware.common.CommonMiddleware",
+		"django.middleware.csrf.CsrfViewMiddleware",
+		"django.contrib.messages.middleware.MessageMiddleware",
+		"django.middleware.clickjacking.XFrameOptionsMiddleware",
+		"django.middleware.security.SecurityMiddleware"
+	],
+	"TEMPLATES_CONTEXT_PROCESSORS":[
+    "django.contrib.auth.context_processors.auth",
+    "django.template.context_processors.request",
+    "django.template.context_processors.debug",
+    "django.template.context_processors.i18n",
+    "django.template.context_processors.static",
+    "django.template.context_processors.media",
+    "django.template.context_processors.tz",
+    "django.contrib.messages.context_processors.messages"
+],
+	"TEMPLATES": [
+
+
+		{
+          "NAME":"django",
+			"BACKEND": "django.template.backends.django.DjangoTemplates",
+			"APP_DIRS": true,
+			"OPTIONS": {
+				"context_processors": [
+					"django.template.context_processors.debug",
+					"django.template.context_processors.request",
+					"django.contrib.messages.context_processors.messages"
+				]
+			}
+		}
+	],
+
+	"DATABASES_1": {
+		"default": {
+			"ENGINE": "django.db.backends.sqlite3",
+			"NAME": "db.sqlite3"
+		}
+	},
+	"SQLITE3": "db.sqlite3",
+	"MONGODB_DATABASES_1": {
+		"default": {
+
+			"name": "bitnami_edxapp",
+			"host": "locahost",
+			"password": "sa",
+			"username": "123456",
+			"tz_aware": true,
+			"port": 27017
+		}
+	},
+	"MONGODB_DATABASES": {
+		"default": {
+
+			"name": "bitnami_edxapp",
+			"host": "localhost",
+			"tz_aware": true,
+			"port": 27017
+		}
+	},
+	"SESSION_ENGINE": "django_mongoengine.sessions",
+	"SESSION_SERIALIZER": "django_mongoengine.sessions.BSONSerializer",
+	"LANGUAGE_CODE": "en-us",
+	"TIME_ZONE": "UTC",
+	"USE_I18N": true,
+	"USE_L10N": true,
+	"USE_TZ": true,
+	"STATIC_URL": "static/",
+	"ALLOWED_HOSTS": [],
+	"DEBUG": true,
+	"ROOT_URLCONF_1": "app_main.urls",
+	"ROUTES": ["route.main"],
+	"TEMPLATES_DIRS": ["apps/app_main/templates",
+		"apps/argo_admin/templates"
+	],
+	"STATICFILES_DIRS": ["apps/static"],
+	"STATIC_ROOT": "apps/static",
+	"MEMBERSHIP_PROVIDER": {
+		"NAME": "membership_mongo",
+		"config": {
+			"name": "bitnami_edxapp",
+			"user": "",
+			"password": "",
+			"host": "localhost",
+			"port": 27017
+		}
+	},
+	"SESSION_EXPIRE_AT_BROWSER_CLOSE": true,
+	"SESSION_COOKIE_AGE": 10,
+	"SESSION_SAVE_EVERY_REQUEST": true,
+	"DEBUG_PROPAGATE_EXCEPTIONS": "DEBUG"
+}
