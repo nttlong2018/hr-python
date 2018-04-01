@@ -160,6 +160,8 @@ def sign_in(username,session_id,language_code):
     })
     return  ret;
 def validate_session(session_id):
+    if session_id==None:
+        return None
     login=get_db().get_collection("sys_logins").find_one({
         "SessionId":session_id,
         "IsLogOut":False

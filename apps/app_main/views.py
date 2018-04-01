@@ -7,15 +7,16 @@ from django.http import HttpResponse
 from django.shortcuts import redirect
 import utilities
 import configuration
-from  models import ui
-from argo import models
-
+from . import models
+import argo
+from models import Login
+application=argo.get_application(__file__)
 # from django.urls import reverse
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
 def index(request):
-    model=models.base()
+    model=argo.models.base()
     user=membership.get_user("sys")
     if user==None:
         membership.create_user("sys","sys",None)
@@ -26,11 +27,15 @@ def index(request):
     from . import get_config
     app=get_config()
 
-    return utilities.render(request,__name__,"vi","index.html",model)
+    return application.render({"request":request,
+                              "file":"index.html",
+                              "model":model});
+
 
 def admin(request):
     return render(request, 'admin.html')
 def login(request):
+    _login=models.Login()
     if request._get_post().keys().__len__()>0:
         username=request._get_post().get("username")
         password=request._get_post().get("password")
@@ -49,7 +54,13 @@ def login(request):
                     "username":username
                 }
             })
-    return render(request, 'login.html')
+
+    return argo.utils.render({
+        "request":request,
+        "file":"login.html",
+        "language":"vn",
+        "model":Login
+    })
 def load_page(request,path):
     try:
         return render(request, path+'.html')

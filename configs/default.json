@@ -66,8 +66,8 @@
 			"port": 27017
 		}
 	},
-	"SESSION_ENGINE": "django_mongoengine.sessions",
-	"SESSION_SERIALIZER": "django_mongoengine.sessions.BSONSerializer",
+	"SESSION_ENGINE_1": "django_mongoengine.sessions",
+	"SESSION_SERIALIZER_1": "django_mongoengine.sessions.BSONSerializer",
 	"LANGUAGE_CODE": "en-us",
 	"TIME_ZONE": "UTC",
 	"USE_I18N": true,
@@ -103,5 +103,6 @@
 	"SESSION_EXPIRE_AT_BROWSER_CLOSE": true,
 	"SESSION_COOKIE_AGE": 10,
 	"SESSION_SAVE_EVERY_REQUEST": true,
-	"DEBUG_PROPAGATE_EXCEPTIONS": "DEBUG"
+	"DEBUG_PROPAGATE_EXCEPTIONS": "DEBUG",
+	"SESSION_SERIALIZER":"django.contrib.sessions.serializers.PickleSerializer"
 }
