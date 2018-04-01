@@ -7,6 +7,7 @@ class app_info:
     static_dir=""
     template_dir=""
     client_static=""
+    host=""
     def render(self,config):
         return utilities.render(config)
 

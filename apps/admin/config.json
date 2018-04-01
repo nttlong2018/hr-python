@@ -6,7 +6,7 @@
   },
   "ROUTES":[
     {
-      "url":"^$",
+      "url":"^/$",
       "view":"views.index",
       "name":"index"
     },{

@@ -24,8 +24,7 @@ def index(request):
     login_info=membership.validate_session(request.session._get_session_key())
     if login_info==None:
         return redirect("login")
-    from . import get_config
-    app=get_config()
+
 
     return application.render({"request":request,
                               "file":"index.html",
@@ -55,7 +54,7 @@ def login(request):
                 }
             })
 
-    return argo.utils.render({
+    return application.render({
         "request":request,
         "file":"login.html",
         "language":"vn",

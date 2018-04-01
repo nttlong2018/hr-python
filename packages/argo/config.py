@@ -143,6 +143,9 @@ def load_app_config(paths):
                 module=importlib.import_module(package_name)
                 ret_config.update({"MODULE":module})
                 ret_config.update({"PACKAGE_NAME": package_name})
+                get_app_info(module.__file__).update({"DIR": package_name})
+                get_app_info(module.__file__).update({"MODULE": module})
+                get_app_info(module.__file__).update({"HOST": p["HOST"]})
 
             except Exception as ex:
                 logger.error(ex)
@@ -183,13 +186,17 @@ def load_app_config(paths):
 
 def buil_urls(mdl,urls,static_url,static_root):
     urlpatterns=static(static_url, document_root=static_root)+[]
+    urlpatterns += static("default/static/", document_root=urls["DEFAULT"]["DIR"]+"/static") + []
 
     for app in urls["APPS"]:
+        urlpatterns += static(app["HOST"]+"/static/", document_root=app["DIR"]+"/static") + []
         url_module=build_sub_app_urls(app)
         urlpatterns +=[
             url("^"+app["HOST"]+"/", include(url_module.__name__, namespace=url_module.__name__))
         ]
+
     for route in urls["DEFAULT"]["URLS"]:
+
         urlpatterns+=[
             url(route.get("url"),  route.get("view"), name=route.get("name"))
         ]

@@ -31,7 +31,7 @@ def load_json_config_file(fileName):
     return  _utilities_json_config_cache.get(fileName)
 def render(render_config):
     http_request=render_config["request"]
-    app=render_config["app"]
+
     language=render_config["language"]
     fileName=render_config["file"]
     model=render_config["model"]
@@ -47,7 +47,8 @@ def render(render_config):
         render_model={
             "get_res":get_res,
             "get_app_res":get_app_res,
-            "get_global_res":get_global_res
+            "get_global_res":get_global_res,
+            "model":render_config["model"]
         }
 
         mylookup = TemplateLookup(directories=config._default_settings["TEMPLATES_DIRS"])
