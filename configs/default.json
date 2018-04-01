@@ -85,7 +85,8 @@
 		"HOST":"admin1",
 		"PATH":"apps/admin"
 	}],
-	"TEMPLATES_DIRS": ["apps/app_main/templates",
+	"TEMPLATES_DIRS_1": [
+		"apps/app_main/templates",
 		"apps/argo_admin/templates"
 	],
 	"STATICFILES_DIRS": ["apps/static"],

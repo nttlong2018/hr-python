@@ -51,7 +51,8 @@ def render(render_config):
             "model":render_config["model"]
         }
 
-        mylookup = TemplateLookup(directories=config._default_settings["TEMPLATES_DIRS"])
+        # mylookup = TemplateLookup(directories=config._default_settings["TEMPLATES_DIRS"])
+        mylookup = TemplateLookup(directories=["apps/" + render_config["templates"]])
         return HttpResponse(mylookup.get_template(fileName).render(**render_model))
     except Exception as ex:
         logger.error(ex)

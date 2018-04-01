@@ -41,8 +41,9 @@ def load_settings(name):
     _dict.update({"STATICFILES_DIRS":_staticDirs})
     _dict.update({"WSGI_APPLICATION":name+".wsgi.application"})
     dirs=[]
-    for x in template_dir:
-        dirs.append((utilities.get_host_directory()+"/"+ x).replace("\\","/"))
+    if template_dir!=None:
+        for x in template_dir:
+            dirs.append((utilities.get_host_directory()+"/"+ x).replace("\\","/"))
     _dict.get("TEMPLATES")[0].update({"DIRS":dirs})
     for  key in _dict.keys():
         setattr(ret_module,key,_dict.get(key))
