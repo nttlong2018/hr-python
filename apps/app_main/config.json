@@ -17,7 +17,7 @@
       "view":"views.load_page",
       "name":"page"
     },{
-      "url":"^(?P<path>.*)$",
+      "url":"^p/(?P<path>.*)$",
       "view":"views.load_page",
       "name":"page"
     }

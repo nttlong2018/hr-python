@@ -82,7 +82,7 @@
 		"HOST":"default",
 		"PATH":"apps/app_main"
 	},{
-		"HOST":"admin1",
+		"HOST":"admin",
 		"PATH":"apps/admin"
 	}],
 	"TEMPLATES_DIRS_1": [

@@ -186,7 +186,7 @@ def load_app_config(paths):
         raise ex
 
 def buil_urls(mdl,urls,static_url,static_root):
-    urlpatterns=static(static_url, document_root=static_root)+[]
+    urlpatterns=[] #static(static_url, document_root=static_root)+[]
     urlpatterns += static("default/static/", document_root=urls["DEFAULT"]["DIR"]+"/static") + []
 
     for app in urls["APPS"]:

@@ -41,6 +41,11 @@ def render(render_config):
         return key
     def get_global_res(key,**caption):
         return key
+    def get_abs_url():
+        return render_config["request"].build_absolute_uri().replace(render_config["request"].get_full_path(),"")
+
+    def get_static(path):
+        return render_config["request"].build_absolute_uri().replace(render_config["request"].get_full_path(),"") +"/"+render_config["static"]+path
     try:
 
 
@@ -48,6 +53,8 @@ def render(render_config):
             "get_res":get_res,
             "get_app_res":get_app_res,
             "get_global_res":get_global_res,
+            "get_static":get_static,
+            "get_abs_url":get_abs_url,
             "model":render_config["model"]
         }
 
