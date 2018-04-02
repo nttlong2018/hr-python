@@ -1,6 +1,6 @@
 import  os
 import json
-from pathlib import  Path
+from pathlib import Path
 import sys
 from django.http import HttpResponse
 from mako.template import Template

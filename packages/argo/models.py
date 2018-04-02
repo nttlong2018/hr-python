@@ -10,10 +10,6 @@ class app_info:
     client_static=""
     host=""
     def render(self,config):
-        from elasticsearch import Elasticsearch
-        es = Elasticsearch([{'host': 'localhost', 'port': 9200}])
-        res = es.bulk(index="test", body={"a":"test"}, refresh=True)
-
         request=None
         if not type(config) is dict:
             request=config
