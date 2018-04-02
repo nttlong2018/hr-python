@@ -9,12 +9,13 @@ import utilities
 import configuration
 from . import models
 import argo
+
 from models import Login
 application=argo.get_application(__file__)
 # from django.urls import reverse
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-
+@argo.template("index.html")
 def index(request):
     model=argo.models.base()
     user=membership.get_user("sys")
@@ -27,12 +28,12 @@ def index(request):
 
 
     return application.render({"request":request,
-                              "file":"index.html",
                               "model":model});
 
 
 def admin(request):
     return render(request, 'admin.html')
+@argo.template("login.html")
 def login(request):
     _login=models.Login()
     if request._get_post().keys().__len__()>0:
@@ -46,19 +47,25 @@ def login(request):
 
 
         except membership.models.exception:
-            return render(request, 'login.html',{
+            return application.render({
+                "request":request,
+                "model":{
                 "message":"Login fail",
                 "isError":True,
                 "data":{
                     "username":username
-                }
-            })
+                }}})
+        except Exception as ex:
+            return application.render({
+                "model": {
+                    "message": ex.message,
+                    "isError": True}})
 
     return application.render({
         "request":request,
-        "file":"login.html",
         "language":"vn",
         "model":Login
+
     })
 def load_page(request,path):
     try:

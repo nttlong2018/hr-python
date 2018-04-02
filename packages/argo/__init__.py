@@ -16,5 +16,12 @@ def get_application(file):
             file:ret_data
         })
     return __cache_app__[file]
+def template(file):
+    def template_decorator(fn):
+        def exec_request(request):
+            request.__dict__.update({"template_file":file})
+            return fn(request)
+        return  exec_request
+    return template_decorator
 
 

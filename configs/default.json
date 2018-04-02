@@ -105,5 +105,17 @@
 	"SESSION_COOKIE_AGE": 10,
 	"SESSION_SAVE_EVERY_REQUEST": true,
 	"DEBUG_PROPAGATE_EXCEPTIONS": "DEBUG",
-	"SESSION_SERIALIZER":"django.contrib.sessions.serializers.PickleSerializer"
+	"SESSION_SERIALIZER":"django.contrib.sessions.serializers.PickleSerializer",
+	"DEFAULT_LANGUAGE":"vn",
+	"DEFAULT_LANGUAGE_ENGINE":{
+		"NAME":"argo.language.mongo",
+		"CONFIG": {
+			"HOST": "localhost",
+			"PORT": 27017,
+			"USER": "",
+			"PASSWORD": "",
+			"NAME":"bitnami_edxapp",
+			"COLLECTION":"lv_language"
+		}
+	}
 }

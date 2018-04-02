@@ -79,6 +79,10 @@ def load_settings(name):
 def get_static_dirs():
     """Return static dirs """
     return  _default_settings.get("STATICFILES_DIRS")
+def get_default_language():
+    return _default_settings.get("DEFAULT_LANGUAGE")
+def get_default_language_engine():
+    return _default_settings.get("DEFAULT_LANGUAGE_ENGINE")
 def get_static_url():
     return _default_settings.get("STATIC_URL")
 def get_static_root():
