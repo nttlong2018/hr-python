@@ -117,5 +117,7 @@
 			"NAME":"bitnami_edxapp",
 			"COLLECTION":"lv_language"
 		}
-	}
+	},
+	"CLIENT_STATIC":"static",
+	"SERVER_STATIC":"apps/static"
 }

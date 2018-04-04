@@ -19,6 +19,7 @@ def load_settings(name):
     global _default_settings
     ret_module = imp.new_module(name)
     _dict=utilities.load_json_config_file(name)
+    _default_settings=_dict
     "if use sqlite3, resolve "
     if(_dict.has_key("SQLITE3")):
         if(not _dict.has_key("DATABASES")):
@@ -106,11 +107,14 @@ def get_app_info(file_name):
                 matched_app=app_info_dir[key]
     __cache_find_path.update({file_name:matched_app})
     return __cache_find_path[file_name]
+def get_app_info_by_name(module_name):
+    return __cache_find_name[module_name]
 def load_app_config(paths):
     """
     Load all application info according to 'paths'
     'paths' is a list of application directory
     """
+    global __cache_find_name
     try:
         ret={
             "APPS":[],
@@ -151,6 +155,7 @@ def load_app_config(paths):
                 get_app_info(module.__file__).update({"DIR": package_name})
                 get_app_info(module.__file__).update({"MODULE": module})
                 get_app_info(module.__file__).update({"HOST": p["HOST"]})
+                __cache_find_name[module.__name__]=get_app_info(module.__file__)
 
             except Exception as ex:
                 logger.error(ex)
@@ -190,7 +195,8 @@ def load_app_config(paths):
         raise ex
 
 def buil_urls(mdl,urls,static_url,static_root):
-    urlpatterns=[] #static(static_url, document_root=static_root)+[]
+
+    urlpatterns=static(_default_settings["CLIENT_STATIC"], document_root=utilities.get_host_directory()+"/"+_default_settings["SERVER_STATIC"])+[]
     urlpatterns += static("default/static/", document_root=urls["DEFAULT"]["DIR"]+"/static") + []
 
     for app in urls["APPS"]:
