@@ -153,5 +153,5 @@ def render(render_config):
 def build_language_engine(config):
     mdl=importlib.import_module(config["NAME"])
     mdl.load(config["CONFIG"])
-    return  mdl;
+    return  mdl
 

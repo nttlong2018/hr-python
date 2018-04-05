@@ -9,8 +9,7 @@ def load(config):
             config["HOST"], config["PORT"]
         )
         _db=_client.get_database(config["NAME"])
-        if config.has_key("USER") or config["USER"]!="":
-
+        if config.has_key("USER"):
             if not _db.authenticate(config["USER"],config["PASSWORD"]):
                 raise Exception("Can not connect to mongodb at language provider")
 
