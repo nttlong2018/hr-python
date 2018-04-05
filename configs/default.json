@@ -94,10 +94,10 @@
 	"MEMBERSHIP_PROVIDER": {
 		"NAME": "membership_mongo",
 		"config": {
-			"name": "bitnami_edxapp",
-			"user": "",
-			"password": "",
-			"host": "localhost",
+			"name": "lv01_lms",
+			"user": "sys",
+			"password": "123456",
+			"host": "172.16.7.63",
 			"port": 27017
 		}
 	},
@@ -110,11 +110,11 @@
 	"DEFAULT_LANGUAGE_ENGINE":{
 		"NAME":"argo.language.mongo",
 		"CONFIG": {
-			"HOST": "localhost",
+			"HOST": "172.16.7.63",
 			"PORT": 27017,
-			"USER": "",
-			"PASSWORD": "",
-			"NAME":"bitnami_edxapp",
+			"USER": "sys",
+			"PASSWORD": "123456",
+			"NAME":"lv01_lms",
 			"COLLECTION":"lv_language"
 		}
 	},

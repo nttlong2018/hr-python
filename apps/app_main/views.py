@@ -25,10 +25,7 @@ def index(request):
     login_info=membership.validate_session(request.session._get_session_key())
     if login_info==None:
         return redirect("login")
-
-
-    return application.render({"request":request,
-                              "model":model});
+    request.render(model)
 
 
 def admin(request):
@@ -47,7 +44,7 @@ def login(request):
 
 
         except membership.models.exception:
-            return application.render({
+            return request.render({
                 "request":request,
                 "model":{
                 "message":"Login fail",
@@ -56,19 +53,14 @@ def login(request):
                     "username":username
                 }}})
         except Exception as ex:
-            return application.render({
+            return request.render({
                 "model": {
                     "message": ex.message,
                     "isError": True}})
 
-    return application.render({
-        "request":request,
-        "language":"vn",
-        "model":Login
-
-    })
+    return request.render(Login)
 def load_page(request,path):
     try:
-        return render(request, path+'.html')
+        return request.render({})
     except:
         return HttpResponse("page was not found")

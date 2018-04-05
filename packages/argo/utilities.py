@@ -21,7 +21,7 @@ def get_host_directory():
     "get host directory"
     global _host_directory
     if _host_directory==None:
-        _host_directory=os.path.dirname(sys.modules['__main__'].__file__)
+        _host_directory=os.getcwd()
     return  _host_directory
 def load_json_from_file(file_name):
     with open(get_host_directory() + "/" + file_name + ".json") as json_file:

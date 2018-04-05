@@ -39,18 +39,19 @@ def template(file):
     def template_decorator(fn):
         def exec_request(request):
             app=get_application(fn.func_code.co_filename)
-            def render(**model):
+            def render(model):
                 return utils.render({
                     "app_name":app.name,
                     "request":request,
                     "language":"",
                     "file":file,
                     "model":model,
-                    "templates":app.template_dir
-                })
+                    "templates":app.template_dir,
+                    "file":file,
+                    "static":app.client_static,
+                    "application":app
 
-            request.__dict__.update({"template_file":file})
-            request.__dict__.update({"application": app})
+                })
             request.__dict__.update({"render":render})
             return fn(request)
         return  exec_request

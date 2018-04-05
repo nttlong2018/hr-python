@@ -9,9 +9,15 @@ def load(config):
             config["HOST"], config["PORT"]
         )
         _db=_client.get_database(config["NAME"])
+        if config.has_key("USER") or config["USER"]!="":
+
+            if not _db.authenticate(config["USER"],config["PASSWORD"]):
+                raise Exception("Can not connect to mongodb at language provider")
+
+
         _coll=_db.get_collection(config["COLLECTION"])
 
-    print(config)
+
 
 def get_language_item(language,app,view,key,caption):
     item=_coll.find_one({
