@@ -50,6 +50,7 @@ def get_application(file):
     return __cache_app__[file]
 def template(file):
     def template_decorator(fn):
+
         def exec_request(request):
             global _language_engine_module
             global _language_resource_cache

@@ -15,7 +15,7 @@ application=argo.get_application(__file__)
 # from django.urls import reverse
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-@argo.template({"file":"index.html","url":"index"})
+@argo.template("index.html")
 def index(request):
 
 

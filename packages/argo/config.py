@@ -127,7 +127,7 @@ def load_app_config(paths):
         global __cache_find_name
         for p in paths:
 
-            data=utilities.load_json_from_file(p["PATH"]+"/config")
+            data = utilities.load_json_from_file(p["PATH"]+"/config")
             app_info.update({data.get("NAME"): data})
 
 
