@@ -22,10 +22,10 @@ def index(request):
     if user==None:
         membership.create_user("sys","sys",None)
         membership.active_user("sys")
-    login_info=membership.validate_session(request.session._get_session_key())
-    if login_info==None:
+    # login_info=membership.validate_session(request.session._get_or_create_session_key())
+    if request.get_auth()["user"]==None:
         return redirect("login")
-    request.render(model)
+    return request.render(model)
 
 
 def admin(request):
@@ -38,25 +38,29 @@ def login(request):
         password=request._get_post().get("password")
         try:
             user=membership.validate_account(request._get_post().get("username"),request._get_post().get("password"))
-            login=membership.sign_in(request._get_post().get("username"),request.session._get_session_key(),"vn")
+            login=membership.sign_in(request._get_post().get("username"),request.session._get_or_create_session_key(),"vn")
+            request.set_auth({
+                "user":{
+                    "id":login.user.userId,
+                    "username":login.user.username,
+                    "email":login.user.email
+                }
+            })
 
             return  redirect("/")
 
 
         except membership.models.exception:
             return request.render({
-                "request":request,
-                "model":{
                 "message":"Login fail",
                 "isError":True,
                 "data":{
                     "username":username
-                }}})
+                }})
         except Exception as ex:
             return request.render({
-                "model": {
                     "message": ex.message,
-                    "isError": True}})
+                    "isError": True})
 
     return request.render(Login)
 def load_page(request,path):

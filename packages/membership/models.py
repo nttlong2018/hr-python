@@ -34,7 +34,7 @@ class sigin_info:
         self.token=""
         self.siginOn=None
         self.siginOnUtc=None
-        self.useername=None
+        self.username=None
         self.user=None
         self.userId=None
         self.language=None
