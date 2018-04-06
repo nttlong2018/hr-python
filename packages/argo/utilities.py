@@ -151,7 +151,15 @@ def render(render_config):
         return HttpResponse(ex.message)
 
 def build_language_engine(config):
-    mdl=importlib.import_module(config["NAME"])
-    mdl.load(config["CONFIG"])
-    return  mdl
+    try:
+        if not config.has_key("NAME"):
+            logger.error("Language module was not install as config.json")
+            raise Exception("Language module was not install as config.json")
+
+        mdl=importlib.import_module(config["NAME"])
+        mdl.load(config["CONFIG"])
+        return  mdl
+    except Exception as ex:
+        logger.error(ex)
+        raise Exception("Error in {0} with '{1}'".format(config.get("NAME",""),ex.message))
 

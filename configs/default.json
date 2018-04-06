@@ -97,12 +97,12 @@
 			"name": "lv01_lms",
 			"user_1": "sys",
 			"password": "123456",
-			"host": "localhost",
+			"host": "172.16.7.63",
 			"port": 27017
 		}
 	},
 	"SESSION_EXPIRE_AT_BROWSER_CLOSE": true,
-	"SESSION_COOKIE_AGE": 10,
+	"SESSION_COOKIE_AGE": 600,
 	"SESSION_SAVE_EVERY_REQUEST": true,
 	"DEBUG_PROPAGATE_EXCEPTIONS": "DEBUG",
 	"SESSION_SERIALIZER":"django.contrib.sessions.serializers.PickleSerializer",
@@ -110,12 +110,18 @@
 	"DEFAULT_LANGUAGE_ENGINE":{
 		"NAME":"argo.language.mongo",
 		"CONFIG": {
-			"HOST": "localhost",
+			"HOST": "172.16.7.63",
 			"PORT": 27017,
 			"USER_1": "sys",
-			"PASSWORD": "",
+			"PASSWORD": "123456",
 			"NAME":"lv01_lms",
 			"COLLECTION":"lv_language"
+		}
+	},
+	"DEFAULT_LANGUAGE_ENGINE_json":{
+		"NAME":"argo.language.json",
+		"CONFIG": {
+			"PATH": "argo.language.json"
 		}
 	},
 	"CLIENT_STATIC":"static",

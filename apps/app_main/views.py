@@ -17,6 +17,8 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 @argo.template("index.html")
 def index(request):
+
+
     model=argo.models.base()
     user=membership.get_user("sys")
     if user==None:
