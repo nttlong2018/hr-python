@@ -15,7 +15,7 @@ application=argo.get_application(__file__)
 # from django.urls import reverse
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-@argo.template("index.html")
+@argo.template({"file":"index.html","url":"index"})
 def index(request):
 
 
@@ -70,3 +70,7 @@ def load_page(request,path):
         return request.render({})
     except:
         return HttpResponse("page was not found")
+@argo.template("sign_out.html")
+def sign_out(request):
+    request.sign_out()
+    return request.render({})
