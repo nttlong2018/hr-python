@@ -13,6 +13,7 @@ _host_directory=None
 _utilities_json_config_cache=dict()
 _language_engine_module=None
 _language_resource_cache={}
+_root_url=None
 import logging
 
 logger = logging.getLogger(__name__)
@@ -119,12 +120,25 @@ def render(render_config):
                     pass
         return _language_resource_cache[lang_key]
     def get_abs_url():
-        return render_config["request"].build_absolute_uri().replace(render_config["request"].get_full_path(),"")
-
+        global _root_url
+        if _root_url==None:
+            if render_config["request"].get_full_path()=="/":
+                _root_url=render_config["request"].build_absolute_uri()
+            else:
+                _root_url=render_config["request"].build_absolute_uri().replace(render_config["request"].get_full_path(),"")
+            if _root_url[_root_url.__len__()-1]=="/":
+                _root_url=_root_url[0:_root_url.__len__() - 1]
+        return _root_url
     def get_static(path):
-        return render_config["request"].build_absolute_uri().replace(render_config["request"].get_full_path(),"") +"/"+render_config["static"]+path
+        return get_abs_url() +"/"+render_config["static"]+path
     def get_csrftoken():
         return  csrf(http_request)["csrf_token"]
+    def get_user():
+        if http_request.session.has_key('authenticate'):
+            if http_request.session['authenticate'].has_key("user"):
+                if http_request.session['authenticate']["user"]!=None:
+                    return http_request.session['authenticate']["user"]
+        return {}
     try:
 
 
@@ -136,7 +150,8 @@ def render(render_config):
             "get_abs_url":get_abs_url,
             "get_csrftoken":get_csrftoken,
             "model":model,
-            "get_view_path":get_view_path
+            "get_view_path":get_view_path,
+            "get_user":get_user
         }
 
         # mylookup = TemplateLookup(directories=config._default_settings["TEMPLATES_DIRS"])

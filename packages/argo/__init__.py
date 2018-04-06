@@ -105,7 +105,7 @@ def template(file):
                     "file":file,
                     "static":app.client_static,
                     "application":app,
-                    "user":request.session.get("user",{})
+                    "get_auth":get_auth
 
                 })
             request.__dict__.update({"render":render})
