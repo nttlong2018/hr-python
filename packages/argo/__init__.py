@@ -267,9 +267,8 @@ def template(fn,_path):
                                 "on file '{4}'".format(path_to_auth_mdl,ex.message,fn.__name__,fn.__module__,fn.func_code.co_filename))
 
             try:
-                user=getattr(mdl, path_to_auth_fn)(request)
-                if user!=None:
-                    request.set_auth(user)
+                is_ok=getattr(mdl, path_to_auth_fn)(request)
+                if is_ok:
                     fn(request)
                 else:
                     redirect(login_path)
