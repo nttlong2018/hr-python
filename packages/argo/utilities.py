@@ -75,10 +75,18 @@ def render(render_config):
         }
     # mylookup = TemplateLookup(directories=config._default_settings["TEMPLATES_DIRS"])
     if fileName!=None:
-            mylookup = TemplateLookup(directories=["apps/" + render_config["templates"]])
+            mylookup = TemplateLookup(directories=["apps/" + render_config["templates"]],
+                                      input_encoding='utf-8',
+                                      output_encoding='utf-8',
+                                      encoding_errors='replace'
+                                      )
             return HttpResponse(mylookup.get_template(fileName).render(**render_model))
     else:
-        mylookup = TemplateLookup(directories=["apps/" + render_config["templates"]])
+        mylookup = TemplateLookup(directories=["apps/" + render_config["templates"]],
+                                  input_encoding='utf-8',
+                                  output_encoding='utf-8',
+                                  encoding_errors='replace'
+                                  )
         return HttpResponse(mylookup.get_template(http_request.__dict__["template_file"]).render(**render_model))
 
 
