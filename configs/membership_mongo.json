@@ -1,0 +1,13 @@
+{
+		"name": "membership_mongo",
+		"config": {
+			"name": "lv01_lms",
+			"user_1": "sys",
+			"password": "123456",
+			"host": "localhost",
+			"port": 27017,
+			"elasticsearch":[
+				"http://localhost:9200"
+			]
+		}
+	}

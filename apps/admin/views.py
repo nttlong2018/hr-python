@@ -6,4 +6,4 @@ application=argo.get_application(__file__)
 
 @argo.template("index.html")
 def index(request):
-    return  application.render(request)
+    return  request.render({})

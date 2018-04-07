@@ -1,5 +1,8 @@
 class Login:
+    username=""
+    language="en"
+    password=""
     def __init__(self):
-        self.Username=""
-        self.Password=""
-        self.Language=""
+        self.username=""
+        self.password=""
+        self.language="en"

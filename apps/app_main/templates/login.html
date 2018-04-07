@@ -1,29 +1,43 @@
 <%inherit file="base.html"/>
-<div class="container-fluid">
+<div class="container-fluid small">
+	<div class="row">
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+				<div class="pull-right">
+					<a class="btn-small dropdown-toggle" type="button" id="dropdownMenu1"
+							data-toggle="dropdown">
+						${model.language}
+						<span class="caret"></span>
+					</a>
+					<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+						<li role="presentation" class="dropdown-header">
+							<a role="menuitem" tabindex="-1" href="?language=vn">Tiếng Việt</a>
+						</li>
+						<li role="presentation" class="dropdown-header">
+							<a role="menuitem" tabindex="-1" href="?language=en">English</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
     <div class="container"  style="max-width:300px">
+
  <form action="./login" method="POST" role="form" style="max-width:400px" >
     <input type="hidden" name="csrfmiddlewaretoken" value="${get_csrftoken()}"/>
     	<legend>${get_global_res("Login")}</legend>
-    	<div class="form-group">
+    	<div class="form-group small">
     		<label >${get_global_res("Username")}</label>
-    		<input type="text" class="form-control" name="username"  placeholder="${get_global_res('Enter username')}">
+    		<input type="text" class="form-control input-sm" name="username"  placeholder="${get_global_res('Enter username')}" value="${model.username}">
     	</div>
        <div class="form-group">
     		<label >${get_global_res("Password")}</label>
-    		<input type="password" class="form-control" name="password"  placeholder="${get_global_res('Enter password')}">
+    		<input type="password" class="form-control input-sm" name="password"  placeholder="${get_global_res('Enter password')}" value="${model.password}">
     	</div>
-	   <div class="form-group">
-    		<label >${get_global_res("Select language")}</label>
-		   <select name="name" id="inputID" class="form-control" name="language">
-		   	<option value="vn">Tiếng Việt </option>
-			   	<option value="en">English </option>
-		   </select>
 
-    	</div>
-    	<button type="submit" class="btn btn-primary">${get_global_res("Login")}</button>
+    	<button type="submit" class="btn btn-primary btn-sm">${get_global_res("Login")}</button>
     </form>
     </div>
 
 </div>
+
 
 

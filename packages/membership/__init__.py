@@ -38,3 +38,7 @@ def sign_out(sessin_id):
 def change_password(username,password):
     fn = getattr(_membership_instance, inspect.stack()[0][3])
     return fn(username,password)
+def find(search_text,page_index,page_size):
+    fn = getattr(_membership_instance, inspect.stack()[0][3])
+    return fn(search_text,page_index,page_size)
+

@@ -65,9 +65,17 @@ def load_settings(name):
     })
     _default_settings=_dict
     if(_dict.has_key("MEMBERSHIP_PROVIDER")):
+        membership_json_data=None
+        if type(_dict["MEMBERSHIP_PROVIDER"]) is _dict:
+            membership_json_data=_dict["MEMBERSHIP_PROVIDER"]
+        if type(_dict["MEMBERSHIP_PROVIDER"]) is str or type(_dict["MEMBERSHIP_PROVIDER"]) is unicode:
+            import json
+            with open(utilities.get_host_directory() + "/configs/" + _dict["MEMBERSHIP_PROVIDER"] + ".json") as json_file:
+                membership_json_data= json.load(json_file)
         import membership
-        membership.set_provider(_dict.get("MEMBERSHIP_PROVIDER").get("NAME"))
-        membership.set_config(_dict.get("MEMBERSHIP_PROVIDER").get("config"))
+        membership.set_provider(membership_json_data.get("name"))
+        membership.set_config(membership_json_data.get("config"))
+
 
     if not _dict.has_key("ROOT_URLCONF"):
         paths = _dict.get("APPS")
@@ -203,7 +211,7 @@ def buil_urls(mdl,urls,static_url,static_root):
         urlpatterns += static(app["HOST"]+"/static/", document_root=app["DIR"]+"/static") + []
         url_module=build_sub_app_urls(app)
         urlpatterns +=[
-            url("^"+app["HOST"]+"/", include(url_module.__name__, namespace=url_module.__name__))
+            url("^"+app["HOST"]+"/", include(url_module.__name__, namespace=url_module.__name__),name="apps_"+app["NAME"])
         ]
 
     for route in urls["DEFAULT"]["URLS"]:

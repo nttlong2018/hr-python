@@ -1,8 +1,5 @@
 {
   "NAME":"default",
-  "VIEWS_1":{
-    "name":"app_main"
-  },
   "ROUTES":[
     {
       "url":"^$",

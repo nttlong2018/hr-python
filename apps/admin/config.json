@@ -1,14 +1,10 @@
 {
   "NAME":"admin",
-  "VIEWS_1":{
-    "name":"admin",
-    "path":"apps"
-  },
   "ROUTES":[
     {
-      "url":"^index$",
+      "url":"^$",
       "view":"views.index",
-      "name":"index"
+      "name":"admin_index"
     },{
       "url":"^login$",
       "view":"views.index",

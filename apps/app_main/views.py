@@ -17,8 +17,6 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 @argo.template("index.html")
 def index(request):
-
-
     model=argo.models.base()
     user=membership.get_user("sys")
     if user==None:
@@ -29,12 +27,13 @@ def index(request):
         return redirect("login")
     return request.render(model)
 
-
 def admin(request):
     return render(request, 'admin.html')
 @argo.template("login.html")
 def login(request):
     _login=models.Login()
+    _login.language=request._get_request().get("language","en")
+    request.session["language"] = _login.language
     if request._get_post().keys().__len__()>0:
         username=request._get_post().get("username")
         password=request._get_post().get("password")
@@ -64,7 +63,7 @@ def login(request):
                     "message": ex.message,
                     "isError": True})
 
-    return request.render(Login)
+    return request.render(_login)
 def load_page(request,path):
     try:
         return request.render({})

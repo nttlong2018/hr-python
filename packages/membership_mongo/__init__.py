@@ -8,6 +8,10 @@ _mongo_membership_connection_string=""
 _mongo_membership_connection_client=None
 _mongo_membership_database=None
 _mongo_membership_config=None
+_mongo_membership_session_cach={}
+_is_use_elastic_search_=False
+_elasticsearch_servers_=None
+_ES_=None
 def get_db():
     "get a sigleton instance of database"
     global _mongo_membership_database
@@ -23,14 +27,30 @@ def get_db():
     return _mongo_membership_database
 def set_config(config):
     global _mongo_membership_config
+    global _is_use_elastic_search_
     _mongo_membership_config=config
+    if _mongo_membership_config.has_key("elasticsearch"):
+        _is_use_elastic_search_=True
+        _elasticsearch_servers_=_mongo_membership_config["elasticsearch"]
+def create_search_index_user(data):
+    from datetime import datetime
+    from elasticsearch import Elasticsearch
+    global _ES_
+    if _ES_==None:
+        _ES_=Elasticsearch(_elasticsearch_servers_)
+    doc={
+        "created_by":data.get("created_by","application"),
+        "username":data.get("username",""),
+        "email":data.get("email",""),
+        "timestamp":datetime.now()
+    }
+    res = _ES_.index(index="membership_user_index", doc_type='tweet', body=doc)
 def get_connection_string():
     return _mongo_membership_connection_string
-def  set_connection_string(strCnn):
+def set_connection_string(strCnn):
     global _mongo_membership_connection_string
     _mongo_membership_connection_string=strCnn
 def create_user(username,password,email):
-
     count_user_by_username=get_db().get_collection("sys_users").find_one({
         "Username":re.compile("^"+username+"$",re.IGNORECASE)
     })
@@ -50,7 +70,6 @@ def create_user(username,password,email):
             _exception.types = models.error_types.DUPLICATE
             _exception.fields = ["email"]
             raise _exception
-
     _user=dbModels.users()
     _user.Username=username
     _user.Email = email
@@ -61,6 +80,11 @@ def create_user(username,password,email):
     ret_user=models.user()
     ret_user=_user.tranfer_data_to(ret_user)
     ret_user.userId=ret_db.inserted_id.__str__()
+    if _is_use_elastic_search_:
+        create_search_index_user({
+            "username":username,
+            "email":email
+        })
     return ret_user
 def validate_account(username,password):
     user=get_db().get_collection("sys_users").find_one({
@@ -160,8 +184,11 @@ def sign_in(username,session_id,language_code):
     })
     return  ret;
 def validate_session(session_id):
+    global _mongo_membership_session_cach
     if session_id==None:
         return None
+    if _mongo_membership_session_cach.has_key(session_id):
+        return _mongo_membership_session_cach[session_id]
     login=get_db().get_collection("sys_logins").find_one({
         "SessionId":session_id,
         "IsLogOut":False
@@ -183,7 +210,8 @@ def validate_session(session_id):
     ret.token = login["_id"].__str__()
     ret.userId = user["_id"].__str__()
     ret.language=login["Language"]
-    return  ret
+    _mongo_membership_session_cach[session_id]=ret
+    return  _mongo_membership_session_cach[session_id]
 def active_user(username):
     get_db().get_collection("sys_users").update_one({
         "Username":re.compile("^"+username+"$",re.IGNORECASE)
@@ -219,6 +247,8 @@ def sign_out(session_id):
             }
         }
     })
+    if _mongo_membership_session_cach.has_key(session_id):
+        _mongo_membership_session_cach.__delitem__(session_id)
 def change_password(username,password):
     PasswordSalt = uuid.uuid4().hex
     Password = hashlib.sha512("uid=" + username.lower() + ";pwd=" + password + PasswordSalt).hexdigest()
@@ -241,6 +271,80 @@ def change_password(username,password):
             }
         }
     })
+def find(search_text,page_index,page_size):
+    if  _is_use_elastic_search_:
+        res = _ES_.search(index="membership_user_index",
+                          doc_type="tweet",
+                          body={"query": {"match": {"content": search_text}},
+                                "from":page_size*page_index,
+                                "size":page_size
+                                })
+        ret={
+            "pager":{},
+            "items":[]
+        }
+        ret_items=[]
+        for item in res["hist"]["hits"]:
+            ret_items.append(ret["hits"]["hits"]["_source"])
+        ret.update({
+            "items":ret_items
+        })
+        ret.update({
+            "pager":{
+                "index":page_index,
+                "size":page_size,
+                "total":res["hits"]["total"]
+            }
+        })
+        return  ret
+    else:
+
+        _match={
+            "$or":[
+                    {"Username":{
+                        "$regex":r".*"+search_text+r"*."
+                    }},
+                    {"Email":{
+                        "$regex":r".*"+search_text+r"*."
+                    }},
+                    {
+                        "DisplayName":{
+                            "$regex":r".*"+search_text+r"*."
+                        }
+                    },
+                    {
+                        "Description": {
+                            "$regex": r".*" + search_text + r"*."
+                        }
+                    }
+
+                ]
+        }
+        total_items = get_db().get_collection("sys_users").aggregate([
+            _match,{
+                "$count":"$_id"
+            }
+        ])
+
+        items=get_db().aggregate([
+            _match,{
+                "$skip":page_size*page_index
+            },{
+                "$limit":page_size
+            }
+        ])
+        return {
+            "items":items,
+            "pager":{
+                "size":page_size,
+                "index":page_index,
+                "total":total_items
+            }
+        }
+
+
+
+
 
 
 

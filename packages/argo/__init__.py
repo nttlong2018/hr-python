@@ -57,7 +57,9 @@ def template(file):
             if _language_engine_module == None:
                 _language_engine_module = build_language_engine(config.get_default_language_engine())
 
-            language = "vn"
+            language = "en"
+            if request.session.has_key("language"):
+                language=request.session["language"]
 
             app=get_application(fn.func_code.co_filename)
             def set_auth(data):
