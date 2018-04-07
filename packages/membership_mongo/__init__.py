@@ -204,7 +204,7 @@ def get_user(username):
     return  ret
 
 def sign_out(session_id):
-    login = get_db().get_collection("sys_logins").update_one({
+    login = get_db().get_collection("sys_logins").update_many({
         "SessionId": session_id
     },{
         "$set":{
@@ -241,6 +241,7 @@ def change_password(username,password):
             }
         }
     })
+
 
 
 

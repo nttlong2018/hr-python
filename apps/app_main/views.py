@@ -72,5 +72,6 @@ def load_page(request,path):
         return HttpResponse("page was not found")
 @argo.template("sign_out.html")
 def sign_out(request):
-    request.sign_out()
-    return request.render({})
+    membership.sign_out(request.session.session_key)
+    request.session.clear()
+    return redirect("/")

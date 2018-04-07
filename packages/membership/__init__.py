@@ -32,9 +32,9 @@ def active_user(username):
 def get_user(username):
     fn = getattr(_membership_instance, inspect.stack()[0][3])
     return fn(username)
-def sign_out(username):
+def sign_out(sessin_id):
     fn = getattr(_membership_instance, inspect.stack()[0][3])
-    return fn(username)
+    return fn(sessin_id)
 def change_password(username,password):
     fn = getattr(_membership_instance, inspect.stack()[0][3])
     return fn(username,password)
