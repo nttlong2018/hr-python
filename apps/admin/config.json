@@ -7,7 +7,7 @@
       "name":"admin_index"
     },{
       "url":"^login$",
-      "view":"views.index",
+      "view":"views.login",
       "name":"login"
     },{
       "url":"^pages/(?P<path>.*)$",
