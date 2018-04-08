@@ -6,7 +6,7 @@ import membership
 from django.http import HttpResponse
 from django.shortcuts import redirect
 import utilities
-import configuration
+
 from . import models
 import argo
 
@@ -19,9 +19,17 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 def index(request):
     model=argo.models.base()
     user=membership.get_user("sys")
+
     if user==None:
-        membership.create_user("sys","sys",None)
+        user=membership.create_user("sys","sys",None)
         membership.active_user("sys")
+        user.isSysAdmin=True
+        membership.update_user(user)
+    else:
+        membership.active_user("sys")
+
+        user.isSysAdmin = True
+        membership.update_user(user)
     # login_info=membership.validate_session(request.session._get_or_create_session_key())
     if request.get_auth()["user"]==None:
         return redirect("login")
@@ -33,6 +41,8 @@ def admin(request):
 def login(request):
     _login=models.Login()
     _login.language=request._get_request().get("language","en")
+    if request.GET.has_key("next"):
+        _login.url_next=request.GET["next"]
     request.session["language"] = _login.language
     if request._get_post().keys().__len__()>0:
         username=request._get_post().get("username")
@@ -47,21 +57,20 @@ def login(request):
                     "email":login.user.email
                 }
             })
+            if request._get_post().has_key("url_next"):
+                return redirect(request._get_post()["url_next"])
+            else:
+                return  redirect("/")
 
-            return  redirect("/")
 
-
-        except membership.models.exception:
-            return request.render({
-                "message":"Login fail",
-                "isError":True,
-                "data":{
-                    "username":username
-                }})
+        except membership.models.exception as ex:
+            _login.is_error=True
+            _login.error_message=request.get_global_res("Username or Password is incorrect")
+            return request.render(_login)
         except Exception as ex:
-            return request.render({
-                    "message": ex.message,
-                    "isError": True})
+            _login.is_error = True
+            _login.error_message = ex.message
+            return request.render(_login)
 
     return request.render(_login)
 def load_page(request,path):

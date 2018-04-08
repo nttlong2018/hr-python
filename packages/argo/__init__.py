@@ -129,7 +129,7 @@ def template(fn,_path):
             return utils.render({
                 "app_name": app.name,
                 "request": request,
-                "language": "",
+                "language": language,
                 "file": file_path,
                 "model": model,
                 "templates": app.template_dir,

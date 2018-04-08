@@ -1,5 +1,6 @@
 import re
 from  membership import models
+
 from pymongo import MongoClient
 import hashlib, uuid
 import  datetime
@@ -32,19 +33,19 @@ def set_config(config):
     if _mongo_membership_config.has_key("elasticsearch"):
         _is_use_elastic_search_=True
         _elasticsearch_servers_=_mongo_membership_config["elasticsearch"]
-def create_search_index_user(data):
-    from datetime import datetime
-    from elasticsearch import Elasticsearch
-    global _ES_
-    if _ES_==None:
-        _ES_=Elasticsearch(_elasticsearch_servers_)
-    doc={
-        "created_by":data.get("created_by","application"),
-        "username":data.get("username",""),
-        "email":data.get("email",""),
-        "timestamp":datetime.now()
-    }
-    res = _ES_.index(index="membership_user_index", doc_type='tweet', body=doc)
+        from datetime import datetime
+        from elasticsearch import Elasticsearch
+        global _ES_
+        if _ES_ == None:
+            _ES_ = Elasticsearch(_elasticsearch_servers_,
+                                 # sniff before doing anything
+                                 sniff_on_start=True,
+                                 # refresh nodes after a node fails to respond
+                                 sniff_on_connection_fail=True,
+                                 # and also every 60 seconds
+                                 sniffer_timeout=60)
+
+
 def get_connection_string():
     return _mongo_membership_connection_string
 def set_connection_string(strCnn):
@@ -80,11 +81,11 @@ def create_user(username,password,email):
     ret_user=models.user()
     ret_user=_user.tranfer_data_to(ret_user)
     ret_user.userId=ret_db.inserted_id.__str__()
-    if _is_use_elastic_search_:
-        create_search_index_user({
-            "username":username,
-            "email":email
-        })
+    if not _ES_== None:
+        res = _ES_.index(index="membership_user",
+                         doc_type='tweet',
+                         body=ret_user.__dict__,
+                         id=ret_user.userId)
     return ret_user
 def validate_account(username,password):
     user=get_db().get_collection("sys_users").find_one({
@@ -213,12 +214,23 @@ def validate_session(session_id):
     _mongo_membership_session_cach[session_id]=ret
     return  _mongo_membership_session_cach[session_id]
 def active_user(username):
-    get_db().get_collection("sys_users").update_one({
+    ret=get_db().get_collection("sys_users").update_one({
         "Username":re.compile("^"+username+"$",re.IGNORECASE)
     },{
         "$set":{
-            "IsActive":True
+            "IsActive":True,
+            "ActivationOnUTC":datetime.datetime.utcnow(),
+            "ActivationOn": datetime.datetime.now()
+
+        },
+        "$inc":{"ActivationCount":1},
+        "$push": {
+            "ActivationTimeList": {
+                "Time": datetime.datetime.now(),
+                "UTCTime": datetime.datetime.utcnow()
+            }
         }
+
     })
     return True
 def get_user(username):
@@ -229,6 +241,8 @@ def get_user(username):
         return  None
     ret=models.user()
     dbModels.load_data_from_dict(ret,ret_db)
+    ret.userId=ret_db["_id"].__str__()
+
     return  ret
 
 def sign_out(session_id):
@@ -341,6 +355,27 @@ def find(search_text,page_index,page_size):
                 "total":total_items
             }
         }
+def update_user(usr):
+    user_doc=dbModels.users()
+    user_doc=dbModels.load_data_from_dict(user_doc,usr.__dict__)
+    updater={
+        "Description":usr.description,
+        "Email":usr.email,
+        "IsSysAdmin":usr.isSysAdmin
+    }
+
+    get_db().get_collection("sys_users").update_one({
+        "Username":re.compile("^"+usr.username+"$",re.IGNORECASE)
+    },{
+        "$set":updater
+    })
+    if _ES_ !=None:
+        # _ES_.bulk(body=someBody, request_timeout=30)
+        res = _ES_.update(index="membership_user",
+                         doc_type='tweet',
+                         body={"doc":{}},
+                         id=usr.userId)
+
 
 
 

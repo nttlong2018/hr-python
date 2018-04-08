@@ -29,6 +29,7 @@ class user(base):
         self.totalLoginFail=0
         self.latestLoginOn=None
         self.latestLoginFail=None
+        self.isSysAdmin=False
 class sigin_info:
     def __init__(self):
         self.token=""

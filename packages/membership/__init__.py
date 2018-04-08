@@ -31,7 +31,15 @@ def active_user(username):
     return fn(username)
 def get_user(username):
     fn = getattr(_membership_instance, inspect.stack()[0][3])
-    return fn(username)
+    ret_user= fn(username)
+    if ret_user==None:
+        return ret_user
+    if not ret_user.__class__ is models.user:
+        raise Exception("'{0}' in '{1}' must return '{2}.{3}'"
+                        .format(fn.__name__,fn.__module__,
+                                models.user.__module__,
+                                models.user.__name__))
+    return ret_user
 def sign_out(sessin_id):
     fn = getattr(_membership_instance, inspect.stack()[0][3])
     return fn(sessin_id)
@@ -41,4 +49,11 @@ def change_password(username,password):
 def find(search_text,page_index,page_size):
     fn = getattr(_membership_instance, inspect.stack()[0][3])
     return fn(search_text,page_index,page_size)
+def update_user(user):
+    if not user.__class__ is models.user:
+        raise Exception("params 'user' in must be '{0}.{1}'"
+                        .format(type(models.user).__module__),
+                        type(models.user).__name__)
+    fn = getattr(_membership_instance, inspect.stack()[0][3])
+    return fn(user)
 
