@@ -1,5 +1,7 @@
 {
   "NAME":"admin",
+  "LOGIN":"./login",
+  "AUTH":"admin.auth.verify_user",
   "ROUTES":[
     {
       "url":"^$",

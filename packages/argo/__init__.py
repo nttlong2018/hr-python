@@ -14,6 +14,7 @@ __session_cache__={}
 __root_url__=None
 _language_engine_module=None
 _language_resource_cache={}
+
 def get_application_by_module_name(module_name):
     try:
         global __cache_app__by_module_name__
@@ -43,7 +44,9 @@ def get_application(file):
         ret_data.name=config.get_app_info(file)["NAME"]
         ret_data.template_dir=config.get_app_info(file)["DIR"]+"/templates"
         ret_data.client_static="default/static/"
-        ret_data.host=config.get_app_info(file)["HOST"]
+        ret_data.host= config.get_app_info(file)["HOST"]
+        ret_data.auth=config.get_app_info(file).get("AUTH",None)
+        ret_data.login = config.get_app_info(file).get("LOGIN", None)
         if ret_data.name!="default":
             ret_data.client_static = ret_data.host+"/static/"
         __cache_app__.update({
@@ -80,6 +83,8 @@ def template(fn,_path):
             language = request.session["language"]
 
         app = get_application(fn.func_code.co_filename)
+        auth_path=app.auth
+        login_path=app.login
 
         def set_auth(data):
             global __session_cache__
@@ -264,7 +269,14 @@ def template(fn,_path):
         request.__dict__.update({"decode_uri": decode_uri})
         request.__dict__.update({"encode_uri": encode_uri})
         request.__dict__.update({"get_raw_url":get_raw_url})
+        _url_login = ""
+        if login_path[0:2] == "./":
+            _url_login = app.host + "/" + login_path[2:login_path.__len__()]
+        else:
+            _url_login = app.host + "/" + login_path
 
+        if request.path_info== "/"+_url_login:
+            return fn(request)
         if auth_path != None:
             path_to_auth_fn = auth_path.split(".")[auth_path.split(".").__len__() - 1]
             path_to_auth_mdl = auth_path[0: auth_path.__len__() - path_to_auth_fn.__len__() - 1]
@@ -282,11 +294,7 @@ def template(fn,_path):
                 if is_ok:
                     fn(request)
                 else:
-                    _url_login=""
-                    if login_path[0:1]==".":
-                        _url_login="apps/"+login_path[1:login_path.__len__()-1]
-                    else:
-                        _url_login=app.host+"/"+login_path
+
                     url_next=request.get_abs_url()+"/"+_url_login+"?next="+request.encode_uri(request.get_raw_url())
                     return redirect(url_next)
             except Exception as ex:

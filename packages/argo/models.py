@@ -9,6 +9,8 @@ class app_info:
     template_dir=""
     client_static=""
     host=""
+    login=None
+    auth=None
     def render(self,config):
         request=None
         if not type(config) is dict:

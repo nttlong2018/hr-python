@@ -6,11 +6,7 @@ import urllib
 
 application=argo.get_application(__file__)
 
-@argo.template({
-    "file":"index.html",
-    "auth":"admin.auth.verify_user",
-    "login":"login"
-})
+@argo.template("index.html")
 def index(request):
     if request.get_auth()["user"]==None:
         return redirect(request.get_abs_url()+"/login?next="+urllib.quote(request.get_abs_url()+"/"+request.get_app_host(), safe='~()*!.\''))
