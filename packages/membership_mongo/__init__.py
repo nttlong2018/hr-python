@@ -361,7 +361,8 @@ def update_user(usr):
     updater={
         "Description":usr.description,
         "Email":usr.email,
-        "IsSysAdmin":usr.isSysAdmin
+        "IsSysAdmin":usr.isSysAdmin,
+        "DisplayName":usr.displayName
     }
 
     get_db().get_collection("sys_users").update_one({

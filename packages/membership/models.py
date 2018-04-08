@@ -23,6 +23,7 @@ class user(base):
     userId=None
     def __init__(self):
         base.__init__(self)
+        self.displayName=""
         self.username=""
         self.email=""
         self.totalLogin=0

@@ -270,10 +270,11 @@ def template(fn,_path):
         request.__dict__.update({"encode_uri": encode_uri})
         request.__dict__.update({"get_raw_url":get_raw_url})
         _url_login = ""
-        if login_path[0:2] == "./":
-            _url_login = app.host + "/" + login_path[2:login_path.__len__()]
-        else:
-            _url_login = app.host + "/" + login_path
+        if login_path!=None:
+            if login_path[0:2] == "./":
+                _url_login = app.host + "/" + login_path[2:login_path.__len__()]
+            else:
+                _url_login = app.host + "/" + login_path
 
         if request.path_info== "/"+_url_login:
             return fn(request)
