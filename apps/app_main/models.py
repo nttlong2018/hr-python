@@ -2,7 +2,7 @@ class Login:
     username=""
     language="en"
     password=""
-    url_next=None
+    url_next=""
     def __init__(self):
         self.username=""
         self.password=""

@@ -57,7 +57,8 @@ def login(request):
                     "email":login.user.email
                 }
             })
-            if request._get_post().has_key("url_next"):
+            if request._get_post().has_key("url_next") \
+                    and request._get_post()["url_next"]!="":
                 return redirect(request._get_post()["url_next"])
             else:
                 return  redirect("/")

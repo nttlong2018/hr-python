@@ -9,7 +9,7 @@ application=argo.get_application(__file__)
 @argo.template({
     "file":"index.html",
     "auth":"admin.auth.verify_user",
-    "login":"admin/login"
+    "login":"login"
 })
 def index(request):
     if request.get_auth()["user"]==None:

@@ -5,6 +5,7 @@ from django.shortcuts import redirect
 import membership
 import threading
 import importlib
+import urllib
 import logging
 logger = logging.getLogger(__name__)
 __cache_app__={}
@@ -240,6 +241,12 @@ def template(fn,_path):
 
         def get_static(path):
             return request.get_abs_url() + "/" + app.client_static + "/" + path
+        def encode_uri(uri):
+            return urllib.quote(uri, safe='~()*!.\'')
+        def decode_uri(encode_uri):
+            return urllib.unquote(encode_uri)
+        def get_raw_url():
+            return request.build_absolute_uri(request.get_full_path())
 
         request.__dict__.update({"render": render})
         request.__dict__.update({"set_auth": set_auth})
@@ -254,6 +261,10 @@ def template(fn,_path):
         request.__dict__.update({"get_res": get_res})
         request.__dict__.update({"get_app_res": get_app_res})
         request.__dict__.update({"get_global_res": get_global_res})
+        request.__dict__.update({"decode_uri": decode_uri})
+        request.__dict__.update({"encode_uri": encode_uri})
+        request.__dict__.update({"get_raw_url":get_raw_url})
+
         if auth_path != None:
             path_to_auth_fn = auth_path.split(".")[auth_path.split(".").__len__() - 1]
             path_to_auth_mdl = auth_path[0: auth_path.__len__() - path_to_auth_fn.__len__() - 1]
@@ -271,7 +282,13 @@ def template(fn,_path):
                 if is_ok:
                     fn(request)
                 else:
-                    redirect(login_path)
+                    _url_login=""
+                    if login_path[0:1]==".":
+                        _url_login="apps/"+login_path[1:login_path.__len__()-1]
+                    else:
+                        _url_login=app.host+"/"+login_path
+                    url_next=request.get_abs_url()+"/"+_url_login+"?next="+request.encode_uri(request.get_raw_url())
+                    return redirect(url_next)
             except Exception as ex:
                 raise Exception("Error '{0}' at '{1}' in file '{2}'".format(ex.message,mdl.__name__,mdl.__file__))
 
