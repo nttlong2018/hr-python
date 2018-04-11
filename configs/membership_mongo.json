@@ -2,12 +2,12 @@
 		"name": "membership_mongo",
 		"config": {
 			"name": "lv01_lms",
-			"user_1": "sys",
+			"user": "sys",
 			"password": "123456",
-			"host": "localhost",
+			"host": "172.16.7.63",
 			"port": 27017,
 			"elasticsearch":[
-				"http://localhost:9200"
+				"http://172.16.7.63:9200"
 			]
 		}
 	}

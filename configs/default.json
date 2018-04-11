@@ -115,7 +115,7 @@
 	"DEFAULT_LANGUAGE_ENGINE":{
 		"NAME":"argo.language.mongo",
 		"CONFIG": {
-			"HOST": "localhost",
+			"HOST": "172.16.7.63",
 			"PORT": 27017,
 			"USER_1": "sys",
 			"PASSWORD": "123456",

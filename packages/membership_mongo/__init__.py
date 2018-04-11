@@ -82,10 +82,7 @@ def create_user(username,password,email):
     ret_user=_user.tranfer_data_to(ret_user)
     ret_user.userId=ret_db.inserted_id.__str__()
     if not _ES_== None:
-        res = _ES_.index(index="membership_user",
-                         doc_type='tweet',
-                         body=ret_user.__dict__,
-                         id=ret_user.userId)
+        create_index_search_user(ret_user)
     return ret_user
 def validate_account(username,password):
     user=get_db().get_collection("sys_users").find_one({
@@ -371,11 +368,13 @@ def update_user(usr):
         "$set":updater
     })
     if _ES_ !=None:
-        # _ES_.bulk(body=someBody, request_timeout=30)
-        res = _ES_.update(index="membership_user",
-                         doc_type='tweet',
-                         body={"doc":{}},
-                         id=usr.userId)
+        create_index_search_user(usr)
+def create_index_search_user(data):
+    if _ES_.exists(index="membership",doc_type="user_info",id=data.userId):
+        _ES_.update(index="membership",doc_type="user_info",id=data.userId,body={"doc":data.__dict__})
+    else:
+        _ES_.create(index="membership", doc_type="user_info", id=data.userId, body=data.__dict__)
+
 
 
 
