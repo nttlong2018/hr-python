@@ -3,6 +3,7 @@ from django.shortcuts import redirect
 import argo
 import membership
 import urllib
+from . import menu_loader
 
 application=argo.get_application(__file__)
 
@@ -16,9 +17,13 @@ def index(request):
         if not user.isSysAdmin:
             return redirect(request.get_abs_url()+"/login")
         else:
-            return request.render({})
+            return request.render({
+                "menu_items":menu_loader.load_menu_items()
+            })
     else:
-         return  request.render({})
+         return  request.render({
+             "menu_items": menu_loader.load_menu_items()
+         })
 @argo.template("login.html")
 def login(request):
     return request.render({})
