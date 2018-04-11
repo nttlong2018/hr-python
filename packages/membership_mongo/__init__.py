@@ -37,13 +37,7 @@ def set_config(config):
         from elasticsearch import Elasticsearch
         global _ES_
         if _ES_ == None:
-            _ES_ = Elasticsearch(_elasticsearch_servers_,
-                                 # sniff before doing anything
-                                 sniff_on_start=True,
-                                 # refresh nodes after a node fails to respond
-                                 sniff_on_connection_fail=True,
-                                 # and also every 60 seconds
-                                 sniffer_timeout=60)
+            _ES_ = Elasticsearch(_elasticsearch_servers_)
 
 
 def get_connection_string():
