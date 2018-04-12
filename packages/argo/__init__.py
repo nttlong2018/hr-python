@@ -1,12 +1,14 @@
 from . import config
 from . import utilities as utils
 from . import models
+from . import db
 from django.shortcuts import redirect
 import membership
 import threading
 import importlib
 import urllib
 import logging
+
 logger = logging.getLogger(__name__)
 __cache_app__={}
 __cache_app__by_module_name__={}
@@ -60,9 +62,9 @@ def template_uri(fn):
         return repl
     return layer
 @template_uri
-def template(fn,_path):
+def template(fn,_path,**kwargs):
     fn.__dict__.update({"__params__": _path})
-    def exec_request(request):
+    def exec_request(request, **kwargs):
         file_path=fn.__dict__["__params__"]
         auth_path = None
         login_path = None
@@ -277,7 +279,7 @@ def template(fn,_path):
                 _url_login = app.host + "/" + login_path
 
         if request.path_info== "/"+_url_login:
-            return fn(request)
+            return fn(request,**kwargs)
         if auth_path != None:
             path_to_auth_fn = auth_path.split(".")[auth_path.split(".").__len__() - 1]
             path_to_auth_mdl = auth_path[0: auth_path.__len__() - path_to_auth_fn.__len__() - 1]
@@ -293,7 +295,7 @@ def template(fn,_path):
             try:
                 is_ok=getattr(mdl, path_to_auth_fn)(request)
                 if is_ok:
-                    fn(request)
+                    fn(request,**kwargs)
                 else:
 
                     url_next=request.get_abs_url()+"/"+_url_login+"?next="+request.encode_uri(request.get_raw_url())
@@ -301,7 +303,7 @@ def template(fn,_path):
             except Exception as ex:
                 raise Exception("Error '{0}' at '{1}' in file '{2}'".format(ex.message,mdl.__name__,mdl.__file__))
 
-        return fn(request)
+        return fn(request,**kwargs)
 
     return exec_request
 

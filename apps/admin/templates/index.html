@@ -6,6 +6,45 @@
     <%include file="sidebar.html"/>
 
     <main class="app-content" style="margin-left:0 !important">
+        <div c-template url="${get_abs_url()}/${get_app_host()}/{{$root.page}}">
+
+        </div>
+
 
     </main>
+ <script>
+      var app=angular.module("admin",["c-ui"]);
+      app.controller("admin",["$scope",function($scope){
+          history_navigator($scope.$root);
+          $scope.$root.$history.change(function(data){
+             $scope.$root.page=data.page
+             $scope.$root.$applyAsync();
 
+          })
+          $(window).resize(function(){
+              $(".app-content").css({
+                "width":$(window).width()-$(".app-sidebar").width(),
+                "position":"fixed",
+                "left":($(".app-sidebar").position().left<0)?0: $(".app-sidebar").width(),
+                "right":0
+              });
+              console.log($(".app-sidebar"));
+          });
+          $(".app-content").css({
+                "width":$(window).width()-$(".app-sidebar").width(),
+                "position":"fixed",
+                "left":($(".app-sidebar").position().left<0)?0: $(".app-sidebar").width(),
+                "right":0
+              });
+
+          $(".app-sidebar__toggle").bind("click",function(){
+
+                    $(".app-content").css({
+                "width":$(window).width()-$(".app-sidebar").width(),
+                "position":"fixed",
+                "left":($(".app-sidebar").position().left<0)?0: $(".app-sidebar").width(),
+                "right":0
+              });
+          });
+      }]);
+    </script>

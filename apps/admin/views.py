@@ -27,3 +27,6 @@ def index(request):
 @argo.template("login.html")
 def login(request):
     return request.render({})
+@argo.template("index.html")
+def load_page(request,path):
+    print (path)

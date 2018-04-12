@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="admin">
   <head>
     <meta name="description" content="Vali is a responsive and free admin theme built with Bootstrap 4, SASS and PUG.js. It's fully customizable and modular.">
     <!-- Twitter meta-->
@@ -27,14 +27,21 @@
           <!--}-->
 
       <!--</style>-->
+    <script src="${get_static('js/jquery-3.2.1.min.js')}"></script>
+    <script src="${get_static('angular.min.js')}"></script>
+    <script src="${get_static('ngDirectives.js')}"></script>
+
   </head>
-  <body class="app sidebar-mini rtl">
+  <body class="app sidebar-mini rtl" ng-controller="admin">
+
     ${self.body()}
 
     <!-- Essential javascripts for application to work-->
     <%include file="script.html"/>
 
     <!-- Page specific javascripts-->
+
+
 
 
   </body>
