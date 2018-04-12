@@ -31,6 +31,8 @@ def index(request):
         membership.active_user("sys")
 
         user.isSysAdmin = True
+        user.description="Ci la test thoi"
+        user.displayName="System administrator"
         membership.update_user(user)
     # login_info=membership.validate_session(request.session._get_or_create_session_key())
     if request.get_auth()["user"]==None:
