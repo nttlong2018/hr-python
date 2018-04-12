@@ -16,9 +16,8 @@
       "view":"views.load_page",
       "name":"page"
     },{
-      "url":"^(?P<path>.*)$",
-      "view":"views.load_page",
-      "name":"page"
+      "url":"^api$",
+      "view":"views.api"
     }
 
   ]

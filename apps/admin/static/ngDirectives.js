@@ -304,7 +304,7 @@ mdl.directive("cTemplate", ["$compile", function ($compile) {
         var $mask = $("<div class='mask'></div>");
         $mask.appendTo("body");
         $.ajax({
-            url: _appDirectiveSetRootUrl? _appDirectiveSetRootUrl + "/" + url:"/"+url,
+            url: _appDirectiveSetRootUrl? _appDirectiveSetRootUrl + "/" + url:url,
             method: "get",
             success: function (res) {
                 $mask.remove();

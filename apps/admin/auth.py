@@ -1,5 +1,6 @@
 import membership
 def verify_user(request):
+
     if request.get_auth()["user"]==None:
         return False
     if not request.get_auth()["user"].get("IsSysAdmin",False):

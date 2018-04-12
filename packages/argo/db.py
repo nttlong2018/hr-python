@@ -13,7 +13,7 @@ def set_connection_string(cnn):
 def begin_session():
     global db_engine
     if db_engine==None:
-        db_engine=create_engine('mysql://{0}:{1}@{2}:{3}/{4}'.format("root", "123456", "172.16.7.63", 3306, "lv_lms"))
+        db_engine=create_engine('mysql://{0}:{1}@{2}:{3}/{4}?charset=utf8'.format("root", "123456", "172.16.7.63", 3306, "lv_lms"))
     connection = db_engine.connect()
     Session = sessionmaker(bind=db_engine)
     session = Session()

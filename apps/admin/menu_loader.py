@@ -11,7 +11,18 @@ __menu_items__=[
                 }
             ]
 
-         }
+         },{
+        "caption":"content",
+        "items":[
+            {
+                "page":"Course",
+                "caption":"Course ware"
+            },{
+                "page":"Wiki",
+                "caption":"wiki"
+            }
+        ]
+    }
 
 ]
 

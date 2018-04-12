@@ -5,8 +5,9 @@
     <div class="app-sidebar__overlay" data-toggle="sidebar"></div>
     <%include file="sidebar.html"/>
 
-    <main class="app-content" style="margin-left:0 !important">
-        <div c-template url="${get_abs_url()}/${get_app_host()}/{{$root.page}}">
+    <main class="app-content" style="margin-left:0 !important;overflow-y:auto">
+
+        <div c-template url="${get_abs_url()}/${get_app_host()}/pages/{{$root.page}}" ng-if="$root.page">
 
         </div>
 
@@ -15,6 +16,7 @@
  <script>
       var app=angular.module("admin",["c-ui"]);
       app.controller("admin",["$scope",function($scope){
+          ws_set_url("${get_abs_url()}/${get_app_host()}/api")
           history_navigator($scope.$root);
           $scope.$root.$history.change(function(data){
              $scope.$root.page=data.page
@@ -26,7 +28,9 @@
                 "width":$(window).width()-$(".app-sidebar").width(),
                 "position":"fixed",
                 "left":($(".app-sidebar").position().left<0)?0: $(".app-sidebar").width(),
-                "right":0
+                "right":0,
+                "bottom":0,
+                "top":5
               });
               console.log($(".app-sidebar"));
           });
@@ -34,7 +38,9 @@
                 "width":$(window).width()-$(".app-sidebar").width(),
                 "position":"fixed",
                 "left":($(".app-sidebar").position().left<0)?0: $(".app-sidebar").width(),
-                "right":0
+                "right":0,
+                "bottom":0,
+                "top":5
               });
 
           $(".app-sidebar__toggle").bind("click",function(){
@@ -43,7 +49,9 @@
                 "width":$(window).width()-$(".app-sidebar").width(),
                 "position":"fixed",
                 "left":($(".app-sidebar").position().left<0)?0: $(".app-sidebar").width(),
-                "right":0
+                "right":0,
+                "bottom":0,
+                "top":5
               });
           });
       }]);
