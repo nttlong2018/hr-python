@@ -68,14 +68,17 @@ def api(request):
                 ret = getattr(mdl, method_path)()
 
         except Exception as ex:
-            raise Exception("Call  '{0}' in '{1}' encountered '{2}'".format(method_path, module_path, ex.message))
+            raise Exception("Call  '{0}' in '{1}' encountered '{2}'".format(method_path, module_path, ex))
     if type(ret) is list:
         ret_data=json.dumps([r.__dict__ for r in ret],default=json_serial)
     else:
         if ret==None:
             ret_data=None
         else:
-            ret_data = json.dumps(ret.__dict__, default=json_serial)
+            if type(ret) is dict:
+                ret_data = json.dumps(ret, default=json_serial)
+            else:
+                ret_data = json.dumps(ret.__dict__, default=json_serial)
     x=ret_data
     return HttpResponse(ret_data)
 

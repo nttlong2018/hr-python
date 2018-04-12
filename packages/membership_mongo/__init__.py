@@ -278,9 +278,12 @@ def change_password(username,password):
     })
 def find(search_text,page_index,page_size):
     if  _is_use_elastic_search_:
-        res = _ES_.search(index="membership_user_index",
+        from elasticsearch_dsl import Search
+        s = Search(using=_ES_, index="membership")
+
+        res = _ES_.search(index="membership",
                           doc_type="tweet",
-                          body={"query": {"match": {"content": search_text}},
+                          body={"query": {"match": {"username": search_text}},
                                 "from":page_size*page_index,
                                 "size":page_size
                                 })
@@ -289,7 +292,7 @@ def find(search_text,page_index,page_size):
             "items":[]
         }
         ret_items=[]
-        for item in res["hist"]["hits"]:
+        for item in res["hits"]["hits"]:
             ret_items.append(ret["hits"]["hits"]["_source"])
         ret.update({
             "items":ret_items

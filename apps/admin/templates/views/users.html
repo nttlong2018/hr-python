@@ -1,6 +1,17 @@
 
 <script>
     (function(scope){
+        ws_call("admin.api.users/get_list").then(function(res){
+            scope.data=res;
+            console.log(res);
+            scope.$applyAsync();
+        })
+        .catch(function(ex){
+         console.log(ex);
+        })
+        scope.doDelete=function(item){
+         console.log(item);
+        }
 
     });
 </script>

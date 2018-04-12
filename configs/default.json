@@ -4,8 +4,7 @@
 		"django.contrib.contenttypes",
 		"django.contrib.sessions",
 		"django.contrib.messages",
-		"django.contrib.staticfiles",
-		"django_mongoengine"
+		"django.contrib.staticfiles"
 	],
 	"MIDDLEWARE_CLASSES": [
 		"django.contrib.sessions.middleware.SessionMiddleware",
@@ -46,28 +45,6 @@
 		}
 	},
 	"SQLITE3": "db.sqlite3",
-	"MONGODB_DATABASES_1": {
-		"default": {
-
-			"name": "bitnami_edxapp",
-			"host": "locahost",
-			"password": "sa",
-			"username": "123456",
-			"tz_aware": true,
-			"port": 27017
-		}
-	},
-	"MONGODB_DATABASES": {
-		"default": {
-
-			"name": "bitnami_edxapp",
-			"host": "localhost",
-			"tz_aware": true,
-			"port": 27017
-		}
-	},
-	"SESSION_ENGINE_1": "django_mongoengine.sessions",
-	"SESSION_SERIALIZER_1": "django_mongoengine.sessions.BSONSerializer",
 	"LANGUAGE_CODE": "en-us",
 	"TIME_ZONE": "UTC",
 	"USE_I18N": true,
@@ -115,9 +92,9 @@
 	"DEFAULT_LANGUAGE_ENGINE":{
 		"NAME":"argo.language.mongo",
 		"CONFIG": {
-			"HOST": "172.16.7.63",
+			"HOST": "localhost",
 			"PORT": 27017,
-			"USER_1": "sys",
+			"_USER": "sys",
 			"PASSWORD": "123456",
 			"NAME":"lv01_lms",
 			"COLLECTION":"lv_language"
