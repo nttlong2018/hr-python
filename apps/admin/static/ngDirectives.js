@@ -5,7 +5,7 @@ function dialog_root_url(value) {
 function dialog($scope) {
     function getScript(content) {
         if (content.indexOf("<body>") > -1) {
-            var x = content.indexOf("<body>") + "body".length;
+            var x = content.indexOf("<body>") + "<body>".length;
             var y = content.indexOf("</body>");
             content = content.substring(x, y);
         }
@@ -34,9 +34,10 @@ function dialog($scope) {
             '<div class="modal-content">' +
 
             '<div class="modal-header">' +
-            '<button type="button" class="close" data-dismiss="modal">&times;</button>' +
 
-            '<h4 class="modal-title"><img src=""/ style="height:40px"><span></span></h4>' +
+
+            '<h4 class="modal-title"><img src=""/ style="height:40px"><span>dasdasdadasd</span></h4>' +
+            '<button type="button" class="close" data-dismiss="modal">&times;</button>' +
             '</div>' +
             '<div class="modal-body">' +
 
@@ -44,21 +45,34 @@ function dialog($scope) {
             '</div></div>'
         );
         var $ele = $("<div>" + content + "</div>");
+
         var child = $($ele.children()[0])
+        frm.attr("title",child.attr("title"))
+        frm.attr("icon",child.attr("icon"))
         $ele.children().appendTo(frm.find(".modal-body")[0]);
+        subScope.$element=frm
 
         subScope.$watch(function () {
-            return child.attr("title");
+            return subScope.$element.find(".modal-body").children().attr("title");
         }, function (val) {
-            subScope.$element.find(".modal-title span").html(val);
-
+            if(angular.isDefined(val)){
+                subScope.$element.find(".modal-title span").html(val);
+            }
         });
         subScope.$watch(function () {
-            return child.attr("icon");
+            return subScope.$element.find(".modal-body").children().attr("icon");
         }, function (val) {
-            subScope.$element.find(".modal-title img").attr("src", val);
+            if(angular.isDefined(val)){
+                subScope.$element.find(".modal-title img").attr("src", val);
+            }
+            else{
+                subScope.$element.find(".modal-title img").hide()
+            }
 
         });
+        if(!$scope.$root.$compile){
+            throw("Please use '$compile' at controller then set '$scope.$root.$compile=$compile'")
+        }
         $scope.$root.$compile(frm.contents())(subScope);
         subScope.$element = $(frm.children()[0]);
         subScope.$applyAsync();
@@ -297,6 +311,35 @@ function appDirectiveSetRootUrl(url) {
     _appDirectiveSetRootUrl = url;
 }
 var mdl = angular.module("c-ui", []);
+mdl.service("$dialog",["$compile",function($compile){
+    function getScope(id) {
+        var elem;
+        $('.ng-scope').each(function(){
+            var s = angular.element(this).scope(),
+                sid = s.$id;
+
+            if(sid == id) {
+                elem = this;
+                return false; // stop looking at the rest
+            }
+        });
+        return elem;
+    }
+    return function(scope){
+        scope.$root.$compile=$compile
+        scope.$root.$dialog=function(id){
+            if(!id){
+                return $dialog(scope.$root)
+            }
+            else {
+                var ele=getScope(id)
+                subScope=angular.element(ele).scope()
+                return dialog(subScope)
+            }
+
+        }
+    }
+}])
 // candidate portal directive ui
 mdl.directive("cTemplate", ["$compile", function ($compile) {
 

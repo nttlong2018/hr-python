@@ -4,6 +4,7 @@ from . import models
 from . import db
 from django.shortcuts import redirect
 import membership
+from . import language as language_provider
 import threading
 import importlib
 import urllib
@@ -16,7 +17,11 @@ __session_cache__={}
 __root_url__=None
 _language_engine_module=None
 _language_resource_cache={}
-
+def get_language_engine():
+    global _language_engine_module
+    if _language_engine_module == None:
+        _language_engine_module = build_language_engine(config.get_default_language_engine())
+    return _language_engine_module
 def get_application_by_module_name(module_name):
     try:
         global __cache_app__by_module_name__

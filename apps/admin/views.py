@@ -7,15 +7,21 @@ from . import menu_loader
 from django.views.decorators.http import require_http_methods
 from django.views.decorators.csrf import csrf_exempt
 from django.http import JsonResponse
+from bson.objectid import ObjectId
 import json
 import importlib
+import sqlalchemy
 application=argo.get_application(__file__)
 from datetime import date, datetime
 def json_serial(obj):
     """JSON serializer for objects not serializable by default json code"""
     if isinstance(obj, (datetime, date)):
         return obj.isoformat()
-    return None
+    elif type(obj) is ObjectId:
+        return obj.__str__()
+    elif type(obj) is sqlalchemy.orm.state.InstanceState:
+        return  None
+    return obj.__str__()
 @argo.template("index.html")
 def index(request):
     if request.get_auth()["user"]==None:

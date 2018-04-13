@@ -277,18 +277,22 @@ def change_password(username,password):
         }
     })
 def find(search_text,page_index,page_size):
-    if  _is_use_elastic_search_:
-        from elasticsearch_dsl import Search
-        s = Search(using=_ES_, index="membership")
-        x = s.query({"multi_match":{"query":search_text}})
-        res=x.execute()
+    if  _is_use_elastic_search_ and search_text!="":
+        # from elasticsearch_dsl import Search
+        # s = Search(using=_ES_, index="membership")
+        # x = s.query({"multi_match":{"query":search_text}})
+
+        # res=x.execute()
+
+        ret_search=_ES_.search(index="membership",body={"query":{"match":{"_all":search_text}}})["hits"]
+
 
 
 
 
         ret={
             "pager":{},
-            "items":[x["_source"] for x in res.hits.hits]
+            "items":[x["_source"] for x in ret_search["hits"]]
         }
         ret_items=[]
         # for item in res["hits"]["hits"]:
@@ -300,13 +304,13 @@ def find(search_text,page_index,page_size):
             "pager":{
                 "index":page_index,
                 "size":page_size,
-                "total":res.hits.total
+                "total":ret_search["total"]
             }
         })
         return  ret
     else:
 
-        _match={
+        _match={"$match":{
             "$or":[
                     {"Username":{
                         "$regex":r".*"+search_text+r"*."
@@ -326,20 +330,42 @@ def find(search_text,page_index,page_size):
                     }
 
                 ]
-        }
-        total_items = get_db().get_collection("sys_users").aggregate([
-            _match,{
-                "$count":"$_id"
-            }
-        ])
+        }}
+        _project={"$project":{
+            "username":"$Username",
+            "userId":"$_id",
+            "displayName":"$DisplayName",
+            "description":"$Description"
 
-        items=get_db().aggregate([
-            _match,{
-                "$skip":page_size*page_index
-            },{
-                "$limit":page_size
-            }
-        ])
+        }}
+        total_items=0
+        if search_text!="":
+            total_items = get_db().get_collection("sys_users").aggregate([
+                _match,{
+                    "$count":"$_id"
+                    }
+                ])
+        else:
+            total_items = get_db().get_collection("sys_users").count()
+        items=[]
+        if search_text!="":
+            items=list(get_db().get_collection("sys_users").aggregate([
+                _match,{
+                    "$skip":page_size*page_index
+                },{
+                    "$limit":page_size
+                },
+                _project
+            ]))
+        else:
+            items = list(get_db().get_collection("sys_users").aggregate([
+                {
+                    "$skip": page_size * page_index
+                }, {
+                    "$limit": page_size
+                },
+                _project
+            ]))
         return {
             "items":items,
             "pager":{
