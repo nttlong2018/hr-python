@@ -46,13 +46,13 @@ class course_overviews_courseoverview(Base):
     language=Column(String)
 
 
-class course_overviews_courseoverviewtab:
+class course_overviews_courseoverviewtab(Base):
     "`id` INT(11) NOT NULL AUTO_INCREMENT,\
     `tab_id` VARCHAR(50) NOT NULL,\
     `course_overview_id` VARCHAR(255) NOT NULL,\
       `idnew_table` INT NOT NULL,"
     __tablename__ = 'course_overviews_courseoverviewtab'
-    id=Column(INT)
+    id=Column(Integer,primary_key=True)
     tab_id=Column(String)
     course_overview_id=Column(String)
 

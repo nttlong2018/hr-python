@@ -242,12 +242,12 @@ def template(fn,_path,**kwargs):
 
         def get_app_url(path):
             if app.name == "default":
-                return get_abs_url() + "/" + path
+                return get_abs_url() + (lambda :"" if path=="" else "/"+path)()
             else:
-                return get_abs_url() + "/" + get_app_host() + "/" + path
+                return get_abs_url() + "/" + get_app_host() +  (lambda :"" if path=="" else "/"+path)()
 
         def get_static(path):
-            return request.get_abs_url() + "/" + app.client_static + "/" + path
+            return request.get_abs_url() + ("/" + app.client_static + "/" + path).replace("//","/")
         def encode_uri(uri):
             return urllib.quote(uri, safe='~()*!.\'')
         def decode_uri(encode_uri):

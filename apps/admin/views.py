@@ -35,7 +35,50 @@ def index(request):
          })
 @argo.template("login.html")
 def login(request):
-    return request.render({})
+    x = request.get_app_url("")
+
+
+    _login = {
+        "username":"",
+        "password":"",
+        "language":"en",
+        "next":""
+    }
+    _login["language"] = request._get_request().get("language", "en")
+    if request.GET.has_key("next"):
+        _login["next"] = request.GET.get("next",request.get_app_url(""))
+    request.session["language"] = _login["language"]
+    if request._get_post().keys().__len__() > 0:
+
+        _login["username"] = request._get_post().get("username","")
+        _login["password"] = request._get_post().get("password","")
+        _login["language"] = request._get_post().get("language", "en")
+
+        try:
+            user = membership.validate_account(_login["username"], _login["password"])
+            login = membership.sign_in(_login["username"],
+                                       request.session._get_or_create_session_key(), _login["language"])
+            request.set_auth({
+                "user": {
+                    "id": login.user.userId,
+                    "username": login.user.username,
+                    "email": login.user.email
+                }
+            })
+            return redirect(_login["next"])
+
+
+
+        except membership.models.exception as ex:
+            _login.is_error = True
+            _login.error_message = request.get_global_res("Username or Password is incorrect")
+            return request.render(_login)
+        except Exception as ex:
+            _login.is_error = True
+            _login.error_message = ex.message
+            return request.render(_login)
+
+    return request.render(_login)
 @argo.template("dynamic.html")
 def load_page(request,path):
     return  request.render({
