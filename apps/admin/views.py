@@ -41,7 +41,8 @@ def index(request):
          })
 @argo.template("login.html")
 def login(request):
-    x = request.get_app_url("")
+
+    membership.sign_out(request.session.session_key)
 
 
     _login = {
@@ -64,6 +65,16 @@ def login(request):
             user = membership.validate_account(_login["username"], _login["password"])
             login = membership.sign_in(_login["username"],
                                        request.session._get_or_create_session_key(), _login["language"])
+
+            if not user.isSysAdmin:
+                ret_model = {
+                    "is_error": True,
+                    "error_message": request.get_global_res("This application require sys admin user")
+                }
+                _login.update({
+                    "error": ret_model
+                })
+                return request.render(_login)
             request.set_auth({
                 "user": {
                     "id": login.user.userId,
@@ -76,16 +87,30 @@ def login(request):
 
 
         except membership.models.exception as ex:
-            _login.is_error = True
-            _login.error_message = request.get_global_res("Username or Password is incorrect")
+            ret_model={
+                "is_error":True,
+                "error_message":request.get_global_res("Username or Password is incorrect")
+            }
+            _login.update({
+                "error":ret_model
+            })
             return request.render(_login)
         except Exception as ex:
-            _login.is_error = True
-            _login.error_message = ex.message
+            ret_model = {
+                "is_error": True,
+                "error_message": ex.message
+            }
+            _login.update({
+                "error": ret_model
+            })
             return request.render(_login)
 
     return request.render(_login)
-@argo.template("dynamic.html")
+@argo.template({
+    "file":"dynamic.html",
+    "auth":"admin.auth.verify_template",
+    "login":"./login_to_template"
+})
 def load_page(request,path):
     return  request.render({
         "path":path.lower()
@@ -93,6 +118,12 @@ def load_page(request,path):
 @require_http_methods(["POST"])
 @csrf_exempt
 def api(request):
+    login_info=membership.validate_session(request.session.session_key)
+    if login_info==None:
+        return HttpResponse('401 Unauthorized', status=401)
+    if not login_info.user.isSysAdmin:
+        return HttpResponse('401 Unauthorized', status=401)
+
     post_data=json.loads(request.body)
     if not post_data.has_key("path"):
         raise Exception("Api post without using path")

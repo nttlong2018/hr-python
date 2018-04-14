@@ -62,15 +62,21 @@
         <input type="hidden" name="csrfmiddlewaretoken" value="${get_csrftoken()}"/>
         <h2 class="text-center">Login</h2>
         <div class="form-group has-error">
-        	<input type="text" class="form-control" name="username" placeholder="Username" required="required" value="${model['username']}">
+        	<input type="text" class="form-control" name="username" placeholder="${model['username']}" required="required" value="${model['username']}">
         </div>
 		<div class="form-group">
-            <input type="password" class="form-control" name="password" placeholder="Password" required="required" value="${model['password']}">
+            <input type="password" class="form-control" name="password" placeholder="${model['password']}" required="required" value="${model['password']}">
         </div>
         <div class="form-group">
-            <button type="submit" class="btn btn-primary btn-lg btn-block">Sign in</button>
+            <button type="submit" class="btn btn-primary btn-lg btn-block">${get_global_res("Sign in")}</button>
         </div>
-        <p><a href="#">Lost your Password?</a></p>
+
     </form>
-    <p class="text-center small">Don't have an account? <a href="#">Sign up here!</a></p>
+    % if model.get("error","")!="":
+        <div class="alert alert-warning" role="alert">
+            <strong>${get_global_res("Error !")}</strong>
+            ${model["error"]["error_message"]}
+        </div>
+    %endif
+
 </div>

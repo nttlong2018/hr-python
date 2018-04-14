@@ -284,12 +284,7 @@ def find(search_text,page_index,page_size):
             "pager":{},
             "items":[x["_source"] for x in ret_search["hits"]]
         }
-        ret_items=[]
-        # for item in res["hits"]["hits"]:
-        #     ret_items.append(ret["hits"]["hits"]["_source"])
-        # ret.update({
-        #     "items":ret_items
-        # })
+
         ret.update({
             "pager":{
                 "index":page_index,
@@ -331,7 +326,8 @@ def find(search_text,page_index,page_size):
             "createdBy":"$CreateBy",
             "createdOn":"$CreatedOn",
             "modifiedBy":"$ModifiedBy",
-            "modifiedOn":"$ModifiedOn"
+            "modifiedOn":"$ModifiedOn",
+            "isSysAdmin":"$IsSysAdmin"
 
         }}
         total_items=0

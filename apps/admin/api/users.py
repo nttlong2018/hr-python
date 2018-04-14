@@ -21,4 +21,19 @@ def create(args):
             "error":ex.message
         }
 
-    return args
+    return {}
+def update(args):
+    user=membership.get_user(args.get("username",""))
+    if user==None:
+        return {
+            "error":{
+                "code":"user_not_found"
+            }
+        }
+    user.description = args.get("description", "")
+    user.displayName = args.get("displayName", "")
+    user.isSysAdmin=args.get("isSysAdmin", False)
+    user.email = args.get("email,""")
+    membership.update_user(user)
+    membership.active_user(user.username)
+    return {}
