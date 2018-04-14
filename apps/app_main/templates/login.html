@@ -21,7 +21,7 @@
 		</div>
     <div class="container"  style="max-width:300px">
 
- <form action="./login" method="POST" role="form" style="max-width:400px" >
+ <form action="./login?next=${model.url_next}" method="POST" role="form" style="max-width:400px" >
     <input type="hidden" name="csrfmiddlewaretoken" value="${get_csrftoken()}"/>
     	<legend>${get_global_res("Login")}</legend>
     	<div class="form-group small">

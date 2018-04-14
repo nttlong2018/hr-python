@@ -4,11 +4,13 @@ from . import models
 from . import db
 from django.shortcuts import redirect
 import membership
+from . import language as language_provider
 import threading
 import importlib
 import urllib
 import logging
 
+lock = threading.Lock()
 logger = logging.getLogger(__name__)
 __cache_app__={}
 __cache_app__by_module_name__={}
@@ -16,7 +18,11 @@ __session_cache__={}
 __root_url__=None
 _language_engine_module=None
 _language_resource_cache={}
-
+def get_language_engine():
+    global _language_engine_module
+    if _language_engine_module == None:
+        _language_engine_module = build_language_engine(config.get_default_language_engine())
+    return _language_engine_module
 def get_application_by_module_name(module_name):
     try:
         global __cache_app__by_module_name__
@@ -186,7 +192,7 @@ def template(fn,_path,**kwargs):
                                                                   get_view_path(), key)
             ret_value = None
             if not _language_resource_cache.has_key(lang_key):
-                lock = threading.Lock()
+
                 with lock:
                     ret_value = _language_engine_module.get_language_item(language, app.name,
                                                                           get_view_path(), key, key)
@@ -203,7 +209,7 @@ def template(fn,_path,**kwargs):
             lang_key = "language={};app={};view={};key={}".format(language, app.name, "_", key)
             ret_value = None
             if not _language_resource_cache.has_key(lang_key):
-                lock = threading.Lock()
+
                 with lock:
                     try:
                         ret_value = _language_engine_module.get_language_item(language, app.name,
@@ -222,7 +228,7 @@ def template(fn,_path,**kwargs):
             lang_key = "language={};app={};view={};key={}".format(language, "_", "_", key)
             ret_value = None
             if not _language_resource_cache.has_key(lang_key):
-                lock = threading.Lock()
+
                 with lock:
                     try:
                         ret_value = _language_engine_module.get_language_item(language, "_",
@@ -242,12 +248,12 @@ def template(fn,_path,**kwargs):
 
         def get_app_url(path):
             if app.name == "default":
-                return get_abs_url() + "/" + path
+                return get_abs_url() + (lambda :"" if path=="" else "/"+path)()
             else:
-                return get_abs_url() + "/" + get_app_host() + "/" + path
+                return get_abs_url() + "/" + get_app_host() +  (lambda :"" if path=="" else "/"+path)()
 
         def get_static(path):
-            return request.get_abs_url() + "/" + app.client_static + "/" + path
+            return request.get_abs_url() + ("/" + app.client_static + "/" + path).replace("//","/")
         def encode_uri(uri):
             return urllib.quote(uri, safe='~()*!.\'')
         def decode_uri(encode_uri):

@@ -67,22 +67,6 @@
 	"STATICFILES_DIRS": ["apps/static"],
 	"STATIC_ROOT": "apps/static",
 	"MEMBERSHIP_PROVIDER":"membership_mongo",
-	"MEMBERSHIP_PROVIDER_1": {
-		"NAME": "membership_mongo",
-		"config": {
-			"name": "lv01_lms",
-			"user_1": "sys",
-			"password": "123456",
-			"host": "localhost",
-			"port": 27017,
-			"elasticsearch":[
-				{
-					"host":"localhost",
-					"port":9200
-				}
-			]
-		}
-	},
 	"SESSION_EXPIRE_AT_BROWSER_CLOSE": true,
 	"SESSION_COOKIE_AGE": 60000,
 	"SESSION_SAVE_EVERY_REQUEST": false,

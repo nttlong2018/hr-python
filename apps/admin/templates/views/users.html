@@ -1,17 +1,89 @@
+<div class="row">
+    <div class="col-md-12">
+
+        <div class="tile">
+            <h3>${get_app_res("List of users")}</h3>
+            <div class="table-responsive">
+                <table class="table table-bordered">
+                <thead>
+                <tr>
+                    <th>${get_app_res("Username")}</th>
+                    <th>${get_app_res("Email")}</th>
+
+                    <th>${get_app_res("Full name")}</th>
+                     <th>${get_app_res("Description")}</th>
+                    <th>
+                        <button class="btn btn-primary" ng-click="$root.$dialog($id).url('pages/users.new').done()">
+                            ${get_global_res("New")}
+                        </button>
+                    </th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="p in data.items">
+                    <td>
+                        {{p.username}}
+                    </td>
+                    <td>
+                        {{p.email}}
+                    </td>
+                     <td>
+                        {{p.displayName}}
+                    </td>
+                     <td>
+                        {{p.description}}
+                    </td>
+                    <td>
+                        <button class="btn btn-primary " ng-click="$root.$dialog($id).params(p).url('pages/users.new').done()">
+                            ${get_global_res("Edit")}
+                        </button>
+                    </td>
+                </tr>
+
+                </tbody>
+                  <thead>
+                    <tr>
+                    <th colspan="4"></th>
+                    <th>
+                        <button class="btn btn-primary " ng-click="$root.$dialog($id).url('pages/users.new').done()">
+                            ${get_global_res("New")}
+                        </button>
+                    </th>
+                </tr>
+                  </thead>
+            </table>
+                </div>
+
+
+
+        </div>
+
+
+    </div>
+</div>
+
 
 <script>
     (function(scope){
-        ws_call("admin.api.users/get_list").then(function(res){
-            scope.data=res;
-            console.log(res);
-            scope.$applyAsync();
+        scope.$root.onSearch(function(txt){
+            scope.load_data(txt);
         })
-        .catch(function(ex){
-         console.log(ex);
-        })
+        scope.load_data=function(txt){
+            ws_call("admin.api.users/get_list",{
+                search_text:txt
+            }).then(function(res){
+                scope.data=res;
+                console.log(res);
+                scope.$applyAsync();
+            }).catch(function(ex){
+                console.log(ex);
+            })
+
+        }
         scope.doDelete=function(item){
          console.log(item);
         }
+        scope.load_data("");
 
     });
 </script>

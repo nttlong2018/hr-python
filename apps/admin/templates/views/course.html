@@ -51,7 +51,16 @@
          console.log(ex);
         })
         scope.doDelete=function(item){
-         console.log(item);
+            ws_call("admin.api.course/delete_item",{
+                id:item.id
+            }).then(function(res){
+                scope.data=res;
+                console.log(res);
+                scope.$applyAsync();
+            })
+            .catch(function(ex){
+             console.log(ex);
+            })
         }
 
     });

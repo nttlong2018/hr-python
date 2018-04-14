@@ -5,7 +5,7 @@ from django.shortcuts import get_object_or_404, render
 import membership
 from django.http import HttpResponse
 from django.shortcuts import redirect
-import utilities
+
 
 from . import models
 import argo

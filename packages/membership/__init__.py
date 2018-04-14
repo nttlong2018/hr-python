@@ -2,6 +2,7 @@
 import importlib
 import inspect
 from . import models
+from models import error_types as error_types
 def set_connection_string(strConn):
     fn=getattr(_membership_instance,inspect.stack()[0][3])
     fn(strConn)

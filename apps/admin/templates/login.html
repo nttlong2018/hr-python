@@ -58,14 +58,14 @@
 	}
 </style>
 <div class="login-form">
-    <form action="./login" method="post">
+    <form action="./login?next=${model['next']}" method="post">
         <input type="hidden" name="csrfmiddlewaretoken" value="${get_csrftoken()}"/>
         <h2 class="text-center">Login</h2>
         <div class="form-group has-error">
-        	<input type="text" class="form-control" name="username" placeholder="Username" required="required">
+        	<input type="text" class="form-control" name="username" placeholder="Username" required="required" value="${model['username']}">
         </div>
 		<div class="form-group">
-            <input type="password" class="form-control" name="password" placeholder="Password" required="required">
+            <input type="password" class="form-control" name="password" placeholder="Password" required="required" value="${model['password']}">
         </div>
         <div class="form-group">
             <button type="submit" class="btn btn-primary btn-lg btn-block">Sign in</button>
