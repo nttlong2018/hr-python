@@ -68,18 +68,31 @@ def template_uri(fn):
         return repl
     return layer
 @template_uri
-def template(fn,_path,**kwargs):
+def template(fn,*_path,**kwargs):
+    # if kwargs.__len__()>0:
+    #     print kwargs
+    if _path.__len__()==1:
+        _path=_path[00]
+    if _path.__len__()==0:
+        _path=kwargs
+
     fn.__dict__.update({"__params__": _path})
     def exec_request(request, **kwargs):
         file_path=fn.__dict__["__params__"]
         auth_path = None
         login_path = None
+        is_login_page=False
+        is_public=False
         if type(file_path) is dict:
+            is_login_page = file_path.get("is_login_page", False)
+            is_public= file_path.get("is_public", False)
             auth_path = file_path.get("auth", None)
             login_path = file_path.get("login", None)
             file_path = file_path.get("file", "")
             if login_path == None and auth_path != None:
                 raise Exception("'auth' require 'login'. 'login' need to be set at '" + fn.__name__ + "'")
+
+
 
         global _language_engine_module
         global _language_resource_cache
@@ -91,8 +104,10 @@ def template(fn,_path,**kwargs):
             language = request.session["language"]
 
         app = get_application(fn.func_code.co_filename)
-        auth_path=app.auth
-        login_path=app.login
+        if auth_path==None:
+            auth_path=app.auth
+        if login_path==None:
+            login_path=app.login
 
         def set_auth(data):
             global __session_cache__
@@ -286,7 +301,7 @@ def template(fn,_path,**kwargs):
 
         if request.path_info== "/"+_url_login:
             return fn(request,**kwargs)
-        if auth_path != None:
+        if auth_path != None and (not is_login_page or not is_public):
             path_to_auth_fn = auth_path.split(".")[auth_path.split(".").__len__() - 1]
             path_to_auth_mdl = auth_path[0: auth_path.__len__() - path_to_auth_fn.__len__() - 1]
             import importlib

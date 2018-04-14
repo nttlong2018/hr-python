@@ -106,11 +106,16 @@ def login(request):
             return request.render(_login)
 
     return request.render(_login)
-@argo.template({
-    "file":"dynamic.html",
-    "auth":"admin.auth.verify_template",
-    "login":"./login_to_template"
-})
+@argo.template(file="simple_login",
+               is_login_page=True)
+def login_to_template(request):
+    print request
+    return request.render({})
+@argo.template(
+    file="dynamic.html",
+    is_public=True
+
+)
 def load_page(request,path):
     return  request.render({
         "path":path.lower()
