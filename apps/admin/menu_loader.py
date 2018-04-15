@@ -3,11 +3,17 @@ import os
 __menu_items__=[
 
         {
-            "caption":"Users",
+            "caption":"Privileges",
             "items":[
                 {
                     "page":"users",
                     "caption":"Users"
+                },{
+                    "page":"roles",
+                    "caption":"Roles"
+                },{
+                    "page":"views",
+                    "caption":"Views"
                 }
             ]
 

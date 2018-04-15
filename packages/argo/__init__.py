@@ -9,7 +9,9 @@ import threading
 import importlib
 import urllib
 import logging
-
+import json
+import authorization
+_AUTH_ENGINE=None
 lock = threading.Lock()
 logger = logging.getLogger(__name__)
 __cache_app__={}
@@ -42,6 +44,14 @@ def get_application_by_module_name(module_name):
     except Exception as ex:
         logger.error(ex)
         raise Exception("Error in {0} with {1}".format(module_name,ex.message))
+def load_auth_engine():
+    setting=config._default_settings["AUTHORIZATION_ENGINE"]
+    if type(setting) is unicode:
+        with open(utils.get_host_directory()+"/configs/"+setting+".json") as data_file:
+            setting = json.load(data_file)
+    authorization.set_provider(setting["name"])
+    authorization.load_config(setting["config"])
+    return authorization
 
 def get_application(file):
     global __cache_app__
@@ -69,8 +79,9 @@ def template_uri(fn):
     return layer
 @template_uri
 def template(fn,*_path,**kwargs):
-    # if kwargs.__len__()>0:
-    #     print kwargs
+    global _AUTH_ENGINE
+    if _AUTH_ENGINE==None:
+        _AUTH_ENGINE=load_auth_engine()
     if _path.__len__()==1:
         _path=_path[00]
     if _path.__len__()==0:
@@ -330,7 +341,16 @@ def template(fn,*_path,**kwargs):
 
 
 
-def build_language_engine(config):
+def build_language_engine(config_info):
+    config=None
+    if type(config_info)==dict:
+        config=config_info
+    if type(config_info)==unicode:
+        try:
+            with open(utils.get_host_directory()+"/configs/"+config_info+".json") as data_file:
+                config = json.load(data_file)
+        except Exception as ex:
+            raise Exception("Load 'DEFAULT_LANGUAGE_ENGINE' from config.json fail, reason '{0}'".format(ex))
     try:
         if not config.has_key("NAME"):
             logger.error("Language module was not install as config.json")
@@ -342,6 +362,3 @@ def build_language_engine(config):
     except Exception as ex:
         logger.error(ex)
         raise Exception("Error in {0} with '{1}'".format(config.get("NAME",""),ex.message))
-def auth(_url):
-    def authdecorator(fn):
-        print (_url)

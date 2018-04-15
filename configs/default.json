@@ -38,12 +38,7 @@
 			}
 		}
 	],
-	"DATABASES_1": {
-		"default": {
-			"ENGINE": "django.db.backends.sqlite3",
-			"NAME": "db.sqlite3"
-		}
-	},
+
 	"SQLITE3": "db.sqlite3",
 	"LANGUAGE_CODE": "en-us",
 	"TIME_ZONE": "UTC",
@@ -60,10 +55,6 @@
 		"HOST":"admin",
 		"PATH":"apps/admin"
 	}],
-	"TEMPLATES_DIRS_1": [
-		"apps/app_main/templates",
-		"apps/argo_admin/templates"
-	],
 	"STATICFILES_DIRS": ["apps/static"],
 	"STATIC_ROOT": "apps/static",
 	"MEMBERSHIP_PROVIDER":"membership_mongo",
@@ -73,23 +64,8 @@
 	"DEBUG_PROPAGATE_EXCEPTIONS": "DEBUG",
 	"SESSION_SERIALIZER":"django.contrib.sessions.serializers.PickleSerializer",
 	"DEFAULT_LANGUAGE":"vn",
-	"DEFAULT_LANGUAGE_ENGINE":{
-		"NAME":"argo.language.mongo",
-		"CONFIG": {
-			"HOST": "localhost",
-			"PORT": 27017,
-			"_USER": "sys",
-			"PASSWORD": "123456",
-			"NAME":"lv01_lms",
-			"COLLECTION":"lv_language"
-		}
-	},
-	"DEFAULT_LANGUAGE_ENGINE_json":{
-		"NAME":"argo.language.json",
-		"CONFIG": {
-			"PATH": "argo.language.json"
-		}
-	},
+	"DEFAULT_LANGUAGE_ENGINE":"language_mongo",
 	"CLIENT_STATIC":"static",
-	"SERVER_STATIC":"apps/static"
+	"SERVER_STATIC":"apps/static",
+	"AUTHORIZATION_ENGINE":"authorzation_mongo"
 }
