@@ -11,6 +11,8 @@ import urllib
 import logging
 import json
 import authorization
+from django.http import HttpResponse
+
 _AUTH_ENGINE=None
 lock = threading.Lock()
 logger = logging.getLogger(__name__)
@@ -194,18 +196,24 @@ def template(fn,*_path,**kwargs):
             return language
 
         def get_view_path():
-            ret = request.get_full_path()
+            ret = request.get_full_path().split("?")[0]
             if app.name == "default":
                 if ret[0:1] == "/":
                     ret = ret[1:ret.__len__()]
-                return ret
+                if ret=="":
+                    return "index"
+                else:
+                    return ret
             else:
                 if ret[0:1] == "/":
                     ret = ret[1:ret.__len__()]
                 ret = ret[app.host.__len__():ret.__len__()]
                 if ret[0:1] == "/":
                     ret = ret[1:ret.__len__()]
-                return ret
+                if ret=="":
+                    return "index"
+                else:
+                    return ret
 
         def get_app_name():
             return app.name
@@ -313,6 +321,7 @@ def template(fn,*_path,**kwargs):
         if request.path_info== "/"+_url_login:
             return fn(request,**kwargs)
         if auth_path != None and (not is_login_page or not is_public):
+            _AUTH_ENGINE.register(app=app.name, id=get_view_path())
             path_to_auth_fn = auth_path.split(".")[auth_path.split(".").__len__() - 1]
             path_to_auth_mdl = auth_path[0: auth_path.__len__() - path_to_auth_fn.__len__() - 1]
             import importlib
@@ -335,7 +344,27 @@ def template(fn,*_path,**kwargs):
             except Exception as ex:
                 raise Exception("Error '{0}' at '{1}' in file '{2}'".format(ex.message,mdl.__name__,mdl.__file__))
 
-        return fn(request,**kwargs)
+
+
+        view_info=_AUTH_ENGINE.get_view_info(app=app.name,id=get_view_path())
+        if view_info==None:
+            return fn(request,**kwargs)
+        elif view_info["is_public"]:
+            return fn(request, **kwargs)
+        else:
+            _login_info=membership.validate_session(request.session.session_key)
+            if _login_info==None:
+                return HttpResponse('Unauthorized', status=401)
+            elif _login_info.user.isSysAdmin:
+                return fn(request, **kwargs)
+            elif _AUTH_ENGINE.validate_user_view(user_id=_login_info.user.userId,view_id=view_info["id"]):
+                return fn(request, **kwargs)
+            else:
+                return HttpResponse('Unauthorized', status=401)
+
+
+
+
 
     return exec_request
 

@@ -1,6 +1,7 @@
 _instance_=None
 _cache={}
 _cache_view={}
+_provider_name=""
 import importlib
 import inspect
 import threading
@@ -10,16 +11,30 @@ from threading import Lock
 _lock=None
 from . import models
 def set_provider(name):
+    global _provider_name
     global _instance_
     global _cache
     global lock
+    _provider_name = name
     _lock=Lock()
     _instance_ = importlib.import_module(name)
 def load_config(*args,**kwargs):
-    _instance_.load_config(kwargs)
+    fx = lambda x, y: y if x.keys().__len__() == 0 else x
+    _config=fx(kwargs,args)[0]
+
+    global _lock
+    if _lock == None:
+        _lock = Lock()
+    if _config==None or _config.keys().__len__()==0:
+        raise Exception("Config is emty")
+    try:
+        _instance_.load_config(_config)
+    except Exception as ex:
+        _lock.release()
+        raise Exception("Error at '{0}' with message {1}".format(_provider_name,ex))
 
 def validate_view_args(args):
-    print(args)
+
 
     keys=["id","path","name","create","read","dalete","update","app","custom","description"]
     require_keys=["id","path","name","create","read","dalete","update","app"]
@@ -36,12 +51,14 @@ def register(*arg,**args):
     key="{0}/{1}".format(args["app"],args["id"]).lower()
     try:
         if not _cache.has_key(key):
-            lock.acquire()
+            _lock.acquire()
             view=_instance_.register(**args)
             _cache[key]=view
-            lock.release()
+            _lock.release()
     except Exception as ex:
-        raise Exception("register {0}".format(ex))
+        _lock.release()
+        raise Exception("Error at '{0}' with message {1}".format(_provider_name, ex))
+
 def get_view_of_role(*self,**kwargs):
     view=None
     key="{0}/{1}/{2}".format(kwargs["app"],kwargs["id"],kwargs["role_id"])
@@ -64,7 +81,7 @@ def create_role(*self,**kwargs):
     try:
         return _instance_.create_role(kwargs)
     except Exception as ex:
-        raise Exception("create_role {0}".format(ex))
+        raise Exception("Error at '{0}' with message {1}".format(_provider_name, ex))
 
 def add_user_to_role(*args,**kwargs):
     try:
@@ -89,7 +106,7 @@ def set_view_to_role(*args,**kwargs):
     try:
         return _instance_.set_view_to_role(kwargs)
     except Exception as ex:
-        raise Exception("set_view_to_role {0}".format(ex))
+        raise Exception("Error at '{0}' with message {1}".format(_provider_name, ex))
 def get_list_of_roles(*args,**kwargs):
     if not kwargs.has_key("search"):
         raise Exception("search is missing")
@@ -105,4 +122,25 @@ def get_list_of_views(*args,**kwargs):
         raise Exception("page_index is missing")
     if not kwargs.has_key("page_size"):
         raise Exception("page_size is missing")
-    return _instance_.get_list_of_views(kwargs)
+    try:
+        return _instance_.get_list_of_views(kwargs)
+    except Exception as ex:
+        raise Exception("Error at '{0}' with message {1}".format(_provider_name, ex))
+def get_view_info(*args,**kwargs):
+    if not kwargs.has_key("id"):
+        raise Exception("id is missing")
+    if not kwargs.has_key("app"):
+        raise Exception("app is missing")
+    key = "{0}/{1}".format(kwargs["app"], kwargs["id"]).lower()
+
+    try:
+        if not _cache.has_key(key):
+            _lock.acquire()
+            view=_instance_.get_view_info(*args,**kwargs)
+            _cache[key]=view
+            _lock.release()
+        return _cache[key]
+    except Exception as ex:
+        _lock.release()
+        raise Exception("Error at '{0}' with message {1}".format(_provider_name, ex))
+
