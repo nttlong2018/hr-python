@@ -65,19 +65,31 @@
 
 <script>
     (function(scope){
+        scope.view_path="${get_view_path()}";
+        services=ws(scope);
+        console.log(services);
         scope.$root.onSearch(function(txt){
             scope.load_data(txt);
         })
         scope.load_data=function(txt){
-            ws_call("admin.api.users/get_list",{
-                search_text:txt
+            services.api("admin.api.users/get_list")
+                    .data({search_text:txt
+                    }).done().then(function(res){
+                        scope.data=res;
+                        console.log(res);
+                        scope.$applyAsync();
+                    })
+
+            /*ws_call("admin.api.users/get_list",{
+                view:scope.view_path,
+                data:{
+                    search_text:txt
+                }
             }).then(function(res){
-                scope.data=res;
-                console.log(res);
-                scope.$applyAsync();
+
             }).catch(function(ex){
                 console.log(ex);
-            })
+            })*/
 
         }
         scope.doDelete=function(item){

@@ -1,14 +1,12 @@
 import membership
 def verify_user(request):
-
-    if request.get_auth()["user"]==None:
+    login_info=membership.validate_session(request.session.session_key)
+    if login_info==None:
         return False
-    if not request.get_auth()["user"].get("IsSysAdmin",False):
-        user=membership.get_user(request.get_auth()["user"]["username"])
-        request.get_auth()["user"].update({"IsSysAdmin":user.isSysAdmin})
-        if not user.isSysAdmin:
-            return False
-        else:
-            return True
+    user = login_info.user;
+
+
+    if not user.isSysAdmin:
+        return user.isStaff
     else:
-         return  True
+        return True

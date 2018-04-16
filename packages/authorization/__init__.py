@@ -83,9 +83,13 @@ def create_role(*self,**kwargs):
     except Exception as ex:
         raise Exception("Error at '{0}' with message {1}".format(_provider_name, ex))
 
-def add_user_to_role(*args,**kwargs):
+def grant_role_to_user(*args,**kwargs):
+    if not kwargs.has_key("role_code"):
+        raise Exception("'role_code' is missing")
+    if not kwargs.has_key("username"):
+        raise Exception("'username' is missing")
     try:
-        return _instance_.add_user_to_role(kwargs)
+        return _instance_.grant_role_to_user(*args,**kwargs)
     except Exception as ex:
         raise Exception("create_role {0}".format(ex))
 def set_view_to_role(*args,**kwargs):
@@ -114,7 +118,10 @@ def get_list_of_roles(*args,**kwargs):
         raise Exception("page_index is missing")
     if not kwargs.has_key("page_size"):
         raise Exception("page_size is missing")
-    return _instance_.get_list_of_roles(kwargs)
+    try:
+        return _instance_.get_list_of_roles(kwargs)
+    except Exception as ex:
+        raise Exception("Error at '{0}' with message {1}".format(_provider_name, ex))
 def get_list_of_views(*args,**kwargs):
     if not kwargs.has_key("search"):
         raise Exception("search is missing")
@@ -144,3 +151,38 @@ def get_view_info(*args,**kwargs):
         _lock.release()
         raise Exception("Error at '{0}' with message {1}".format(_provider_name, ex))
 
+def get_view_of_user(*args,**kwargs):
+    return _instance_.get_view_of_user(*args,**kwargs)
+def is_allow_read(privileges):
+    if privileges.get("is_public",False):
+        return True
+    return privileges.get("read",False)
+def is_allow_create(privileges):
+    if privileges.get("is_public", False):
+        return True
+    return privileges.get("create", False)
+def add_view_to_role(*args,**kwargs):
+    if not kwargs.has_key("view_path"):
+        raise Exception("'view_path' was not found")
+    if not kwargs.has_key("app"):
+        raise Exception("'app' was not found")
+    if not kwargs.has_key("role_code"):
+        raise Exception("'role_code' was not found")
+    if not kwargs.has_key("create"):
+        raise Exception("'create' was not found")
+    if not kwargs.has_key("read"):
+        raise Exception("'read' was not found")
+    if not kwargs.has_key("update"):
+        raise Exception("'update' was not found")
+    if not kwargs.has_key("delete"):
+        raise Exception("'delete' was not found")
+    if not kwargs.has_key("extends"):
+        raise Exception("'extends' was not found")
+    if not kwargs.has_key("is_public"):
+        raise Exception("'is_public' was not found")
+
+    try:
+         ret = _instance_.add_view_to_role(*args,**kwargs)
+         return ret
+    except Exception as ex:
+        raise Exception("Error at '{0}' with message {1}".format(_provider_name, ex))

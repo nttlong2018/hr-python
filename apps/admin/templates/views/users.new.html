@@ -10,7 +10,7 @@
                 <span type="text" class="form-control" ng-if="!isNew">{{model.username}}</span>
             </div>
             </div>
-            <div class="row" ng-if="isNews">
+            <div class="row" ng-if="isNew">
                  <div class="col-sm-4">
                 <label>${get_global_res("Password")}</label>
             </div>
@@ -41,6 +41,16 @@
             <div class="col-sm-8">
                 <input type="checkbox" ng-model="model.isSysAdmin" class="form-control">
             </div>
+
+            </div>
+            <div class="row">
+                 <div class="col-sm-4">
+                <label>${get_global_res("Is admin")}</label>
+            </div>
+            <div class="col-sm-8">
+                <input type="checkbox" ng-model="model.isStaff" class="form-control">
+            </div>
+
             </div>
             <div class="row">
                  <div class="col-sm-4">
@@ -86,6 +96,7 @@
             alert(item);
         }
         scope.doAction=function(){
+            alert(scope.$parent.view_path)
             if(scope.isNew){
                 ws_call("admin.api.users/create",scope.model).then(function(res){
                     scope.data=res;

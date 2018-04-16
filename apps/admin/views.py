@@ -11,6 +11,7 @@ from bson.objectid import ObjectId
 import json
 import importlib
 import sqlalchemy
+import authorization
 application=argo.get_application(__file__)
 from datetime import date, datetime
 def json_serial(obj):
@@ -66,7 +67,7 @@ def login(request):
             login = membership.sign_in(_login["username"],
                                        request.session._get_or_create_session_key(), _login["language"])
 
-            if not user.isSysAdmin:
+            if not user.isSysAdmin and not user.isStaff:
                 ret_model = {
                     "is_error": True,
                     "error_message": request.get_global_res("This application require sys admin user")
@@ -79,7 +80,9 @@ def login(request):
                 "user": {
                     "id": login.user.userId,
                     "username": login.user.username,
-                    "email": login.user.email
+                    "email": login.user.email,
+                    "isSysAdmin":login.user.isSysAdmin,
+                    "isStaff":login.user.isStaff
                 }
             })
             return redirect(_login["next"])
@@ -130,11 +133,24 @@ def api(request):
         return HttpResponse('401 Unauthorized', status=401)
 
     post_data=json.loads(request.body)
+
+
     if not post_data.has_key("path"):
         raise Exception("Api post without using path")
     path=post_data["path"]
+    view=post_data["view"]
     if post_data["path"].split("/").__len__()!=2:
         raise Exception("'{0}' is invalid path, path must be */*")
+
+    view_privileges=authorization.get_view_of_user(
+        view_id=view,
+        user_id=login_info.user.userId
+    )
+    if login_info.user.isSysAdmin:
+        view_privileges={"is_public":True}
+    if view_privileges==None and not login_info.user.isSysAdmin:
+        return HttpResponse('401 Unauthorized', status=401)
+
     module_path=path.split("/")[0]
     method_path=path.split('/')[1]
     mdl=None
@@ -148,9 +164,18 @@ def api(request):
     if mdl!=None:
         try:
             if post_data.has_key("data"):
-                ret=getattr(mdl,method_path)(post_data.get("data",{}))
+                ret=getattr(mdl,method_path)(
+                    {
+                        "privileges":view_privileges,
+                        "data":post_data.get("data",{}),
+                        "user":login_info.user
+                    })
             else:
-                ret = getattr(mdl, method_path)()
+                ret = getattr(mdl, method_path)(
+                    {
+                        "privileges":view_privileges,
+                        "user":login_info.user
+                    })
 
         except Exception as ex:
             raise Exception("Call  '{0}' in '{1}' encountered '{2}'".format(method_path, module_path, ex))

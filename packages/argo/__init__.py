@@ -352,15 +352,28 @@ def template(fn,*_path,**kwargs):
         elif view_info["is_public"]:
             return fn(request, **kwargs)
         else:
+
             _login_info=membership.validate_session(request.session.session_key)
             if _login_info==None:
                 return HttpResponse('Unauthorized', status=401)
             elif _login_info.user.isSysAdmin:
                 return fn(request, **kwargs)
-            elif _AUTH_ENGINE.validate_user_view(user_id=_login_info.user.userId,view_id=view_info["id"]):
-                return fn(request, **kwargs)
             else:
-                return HttpResponse('Unauthorized', status=401)
+                privileges=_AUTH_ENGINE.get_view_of_user(user_id=_login_info.user.userId,view_id=view_info["id"])
+                if privileges==None:
+                    if _login_info.user.isSysAdmin:
+                        privileges={
+                            "is_public":True
+                        }
+                        return fn(request, **kwargs)
+                    else:
+                        return HttpResponse('Unauthorized', status=401)
+                else:
+                    return fn(request, **kwargs)
+
+
+
+
 
 
 

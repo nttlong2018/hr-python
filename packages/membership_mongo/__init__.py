@@ -119,6 +119,8 @@ def validate_account(username,password):
     ret_user=models.user()
     ret_user=dbModels.load_data_from_dict(ret_user,user)
     ret_user.userId=user["_id"]
+    ret_user.isSysAdmin=user.get("IsSysAdmin",False)
+    ret_user.isStaff==user.get("IsStaff",False)
     return  ret_user
 def sign_in(username,session_id,language_code):
     get_db().get_collection("sys_logins").update_many({
@@ -327,7 +329,8 @@ def find(search_text,page_index,page_size):
             "createdOn":"$CreatedOn",
             "modifiedBy":"$ModifiedBy",
             "modifiedOn":"$ModifiedOn",
-            "isSysAdmin":"$IsSysAdmin"
+            "isSysAdmin":"$IsSysAdmin",
+            "isStaff":"$IsStaff"
 
         }}
         total_items=0
@@ -373,7 +376,8 @@ def update_user(usr):
         "Description":usr.description,
         "Email":usr.email,
         "IsSysAdmin":usr.isSysAdmin,
-        "DisplayName":usr.displayName
+        "DisplayName":usr.displayName,
+        "IsStaff":usr.isStaff
     }
 
     get_db().get_collection("sys_users").update_one({

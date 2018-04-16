@@ -37,7 +37,7 @@ function dialog($scope) {
             '<div class="modal-header">' +
 
 
-            '<h4 class="modal-title"><img src=""/ style="height:40px"><span>dasdasdadasd</span></h4>' +
+            '<h4 class="modal-title"><img src=""/ style="height:40px"><span>...</span></h4>' +
             '<button type="button" class="close" data-dismiss="modal">&times;</button>' +
             '</div>' +
             '<div class="modal-body">' +

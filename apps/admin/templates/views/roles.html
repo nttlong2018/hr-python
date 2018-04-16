@@ -1,0 +1,33 @@
+<div>
+    {{data}}
+    <button class="btn btn-primary" ng-click="$root.$dialog($id).url('pages/roles.edit').done()">
+                            ${get_global_res("New")}
+     </button>
+</div>
+<script>
+    (function(scope){
+        scope.view_path="${get_view_path()}";
+        service=ws(scope);
+        scope.$root.onSearch(function(txt){
+            scope.load_data(txt);
+        })
+        scope.load_data=function(txt){
+            service.api("admin.api.roles/get_list")
+            .data({
+                search_text:txt
+            }).done().then(function(res){
+                scope.data=res;
+                console.log(res);
+                scope.$applyAsync();
+            }).catch(function(ex){
+                console.log(ex);
+            })
+
+        }
+        scope.doDelete=function(item){
+         console.log(item);
+        }
+        scope.load_data("");
+
+    });
+</script>

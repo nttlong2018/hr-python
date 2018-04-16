@@ -1,0 +1,19 @@
+<input type="text" ng-model="model.code">
+<input type="text" ng-model="model.name">
+<input type="text" ng-model="model.description">
+<input type="button" value="submit" ng-click="doSave()">
+<script>
+    (function(scope){
+        scope.model={};
+        scope.doSave=function(txt){
+            ws(scope.$parent).api("admin.api.roles/create")
+            .data(scope.model)
+            .done()
+            .then(function(res){
+
+            })
+
+        }
+
+    });
+</script>
