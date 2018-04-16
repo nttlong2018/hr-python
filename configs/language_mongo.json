@@ -1,9 +1,9 @@
 {
 		"NAME":"argo.language.mongo",
 		"CONFIG": {
-			"HOST": "172.16.7.63",
+			"HOST": "localhost",
 			"PORT": 27017,
-			"USER": "sys",
+			"_USER": "sys",
 			"PASSWORD": "123456",
 			"NAME":"lv01_lms",
 			"COLLECTION":"lv_language"

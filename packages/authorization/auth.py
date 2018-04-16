@@ -316,14 +316,24 @@ def grant_role_to_user(*args,**kwargs):
                 }
             }
         })
+    lst = list(_db.get_collection("sys_roles").aggregate([
+        {
+            "$match": {
+                "Users.Username": {
+                    "$regex": re.compile("^" + username + "$", re.IGNORECASE)
+                }
+            }
+        }
+    ]))
+    if lst.__len__()==0:
         _db.get_collection("sys_roles").update_one({
             "Code": re.compile("^" + role_code + "$", re.IGNORECASE)
         }, {
             "$push": {
                 "Users": {
                     "Username": user["Username"],
-                    "DisplayName": user["DisplayName"],
-                    "Description": user["Description"]
+                    "DisplayName": user.get("DisplayName",""),
+                    "Description": user.get("Description","")
                 }
             }
         })
@@ -350,47 +360,31 @@ def add_view_to_role(*args,**kwargs):
                 "code": "RNF"
             }
         }
-    role_views=list(_db.get_collection("sys_roles").aggregate([
-        {
-            "$match":{
-                "Code": {"$regex": re.compile("^" + kwargs["role_code"] + "$", re.IGNORECASE)}
-            }
-        },
-        {
-            "$unwind":"$Views"
-        } ,
-        {
-            "$match":{
-                "$and":[{
-                "Views.Path":{
-                        "$regex":re.compile("^"+kwargs["view_path"]+"$",re.IGNORECASE)
+
+
+    _db.get_collection("sys_roles").update_one({
+        "Code": {"$regex": re.compile("^" + kwargs["role_code"] + "$", re.IGNORECASE)}
+    },{
+        "$pull":{
+            "Views":{
+                "$and": [{
+                    "Path": {
+                        "$regex": re.compile("^" + kwargs["view_path"] + "$", re.IGNORECASE)
                     }},
-                    {"App":{
-                    "$regex": re.compile("^" + kwargs["app"] + "$", re.IGNORECASE)
-                }}]
+                    {"App": {
+                        "$regex": re.compile("^" + kwargs["app"] + "$", re.IGNORECASE)
+                    }}]
             }
         }
-    ]))
-    if role_views.__len__()>0:
-        _db.get_collection("sys_roles").update_one({
-            "Code": {"$regex": re.compile("^" + kwargs["role_code"] + "$", re.IGNORECASE)}
-        },{
-            "$pull":{
-                 "$and":[{
-                "Views.Path":{
-                        "$regex":re.compile("^"+kwargs["view_path"]+"$",re.IGNORECASE)
-                    }},
-                     {"App":{
-                    "$regex": re.compile("^" + kwargs["app"] + "$", re.IGNORECASE)
-                }}]
-            }
-        })
+
+    })
 
     _db.get_collection("sys_roles").update_one({
         "Code": {"$regex": re.compile("^" + kwargs["role_code"] + "$", re.IGNORECASE)}
     }, {
         "$push": {
             "Views": {
+                "App":kwargs["app"],
                 "Path": kwargs["view_path"],
                 "Read":kwargs["read"],
                 "Created":kwargs["create"],
@@ -401,7 +395,29 @@ def add_view_to_role(*args,**kwargs):
             }
         }
     })
+def get_list_of_views(*args,**kwargs):
+   items=list(_db.get_collection("sys_views").aggregate([
+       {
+           "$project":{
+               "_id":0,
+               "id":"$_id",
+               "code":"$Code",
+               "name":"$Name",
+               "path":"$Path",
+               "app":"$App",
+               "description":"$Description"
+           }
+       }
 
+   ]))
+   return [{
+       "id":x["id"].__str__(),
+       "path":x["path"],
+       "name":x["name"],
+       "description":x.get("description"),
+       "app":x.get("app","")
+
+   } for x in items]
 
 
 

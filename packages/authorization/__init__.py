@@ -25,10 +25,13 @@ def load_config(*args,**kwargs):
     global _lock
     if _lock == None:
         _lock = Lock()
+    _lock.acquire()
     if _config==None or _config.keys().__len__()==0:
+        _lock.release()
         raise Exception("Config is emty")
     try:
         _instance_.load_config(_config)
+        _lock.release()
     except Exception as ex:
         _lock.release()
         raise Exception("Error at '{0}' with message {1}".format(_provider_name,ex))
@@ -130,7 +133,7 @@ def get_list_of_views(*args,**kwargs):
     if not kwargs.has_key("page_size"):
         raise Exception("page_size is missing")
     try:
-        return _instance_.get_list_of_views(kwargs)
+        return _instance_.get_list_of_views(*args,**kwargs)
     except Exception as ex:
         raise Exception("Error at '{0}' with message {1}".format(_provider_name, ex))
 def get_view_info(*args,**kwargs):

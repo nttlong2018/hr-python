@@ -180,7 +180,13 @@ def api(request):
         except Exception as ex:
             raise Exception("Call  '{0}' in '{1}' encountered '{2}'".format(method_path, module_path, ex))
     if type(ret) is list:
-        ret_data=json.dumps([r.__dict__ for r in ret],default=json_serial)
+        if ret.__len__()==0:
+            ret_data="[]"
+        else:
+            if type(ret[0]) is dict:
+                ret_data=json.dumps(ret)
+            else:
+                ret_data=json.dumps([r.__dict__ for r in ret],default=json_serial)
     else:
         if ret==None:
             ret_data=None

@@ -3,7 +3,8 @@ def get_list(*args,**kwargs):
     if not authorization.is_allow_read(args[0]["privileges"]):
         return []
     try:
-        authorization.add_view_to_role(view_path="index",
+        authorization.grant_role_to_user(role_code="admin", username="user1")
+        authorization.add_view_to_role(view_path="pages/roles",
                                        app="admin",
                                        role_code="admin",
                                        create=True,

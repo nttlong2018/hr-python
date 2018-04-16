@@ -1,9 +1,51 @@
-<div>
-    {{data}}
-    <button class="btn btn-primary" ng-click="$root.$dialog($id).url('pages/roles.edit').done()">
+<div class="row">
+    <div class="col-md-12">
+        <div class="tile">
+            <table class="table table-bodered">
+                <thead>
+                <tr>
+                    <th>
+                        ${get_global_res("Role code")}
+                    </th>
+                    <th>
+                        ${get_global_res("Role name")}
+                    </th>
+                    <th>
+                        ${get_global_res("Description")}
+                    </th>
+                    <th>
+                        <button class="btn btn-primary" ng-click="$root.$dialog($id).url('pages/roles.edit').done()">
                             ${get_global_res("New")}
-     </button>
+                        </button>
+                    </th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="p in data.items">
+                    <td>
+                        {{p.code}}
+                    </td>
+                    <td>
+                        {{p.name}}
+                    </td>
+                    <td>
+                        {{p.description}}
+                    </td>
+                    <td>
+                        <button class="btn btn-primary" ng-click="$root.$dialog($id).params(p).url('pages/roles.edit').done()">
+                            ${get_global_res("Edit")}
+                        </button>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+    {{data}}
+
 </div>
+
+    </div>
+</div>
+
 <script>
     (function(scope){
         scope.view_path="${get_view_path()}";
