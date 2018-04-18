@@ -15,7 +15,7 @@ def load_config(config):
     global _es
     if _db==None:
         _db=MongoClient(host=config["host"],port=config["port"]).get_database(config["name"])
-        if config.has_key("user"):
+        if config.has_key("user") and config.get("user","")!="":
             if not _db.authenticate(config["user"],config["password"]):
                 raise Exception("Authenticate error ast {0}:{1}".format(config["host"],config["port"]))
     if config.has_key("elasticsearch"):
