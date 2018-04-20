@@ -2,12 +2,12 @@
   "name":"authorization.auth",
   "config":{
     "name":"lv01_lms",
-    "host":"localhost",
+    "host":"172.16.7.63",
     "port":27017,
     "user":"sys",
     "password":"123456",
     "elasticsearch":[
-				"http://localhost:9200"
+				"http://172.16.7.63:9200"
     ]
   }
 }

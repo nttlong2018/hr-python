@@ -42,7 +42,10 @@
 
 <script>
     (function(scope){
-        ws_call("admin.api.course/get_list").then(function(res){
+        scope.view_path="${get_view_path()}";
+        service=ws(scope)
+
+        service.api("admin.api.course/get_list").done().then(function(res){
             scope.data=res;
             console.log(res);
             scope.$applyAsync();
