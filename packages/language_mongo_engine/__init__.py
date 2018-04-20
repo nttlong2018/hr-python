@@ -6,15 +6,14 @@ def load(config):
     global _coll
     if _db==None:
         _client = MongoClient(
-            config["HOST"], config["PORT"]
+            host=config["host"],
+            port=config["port"]
         )
-        _db=_client.get_database(config["NAME"])
-        if config.has_key("USER"):
-            if not _db.authenticate(config["USER"],config["PASSWORD"]):
+        _db=_client.get_database(config["name"])
+        if config.has_key("user") and config.get("user","")!="":
+            if not _db.authenticate(config["user"],config["password"]):
                 raise Exception("Can not connect to mongodb at language provider")
-
-
-        _coll=_db.get_collection(config["COLLECTION"])
+        _coll=_db.get_collection(config["collection"])
 
 
 
@@ -36,4 +35,3 @@ def get_language_item(language,app,view,key,caption):
             "value":caption
         })
         return caption
-

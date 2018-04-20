@@ -10,6 +10,11 @@ _view_index_search_="authorization_view_index"
 from threading import Lock
 _lock=None
 from . import models
+def load(*args,**kwargs):
+    params=(lambda x,y: x if x!=() else y)(args,kwargs)
+    get_value=lambda x,y: x.get(y) if x.has_key(y) else ""
+    set_provider(params["provider"])
+    load_config(params)
 def set_provider(name):
     global _provider_name
     global _instance_
@@ -20,7 +25,9 @@ def set_provider(name):
     _instance_ = importlib.import_module(name)
 def load_config(*args,**kwargs):
     fx = lambda x, y: y if x.keys().__len__() == 0 else x
-    _config=fx(kwargs,args)[0]
+    _config=fx(kwargs,args)
+    if type(_config) is tuple:
+        _config=_config[0]
 
     global _lock
     if _lock == None:

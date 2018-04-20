@@ -1,6 +1,7 @@
 from django.http import HttpResponse
 from django.shortcuts import redirect
 import argo
+from argo import applications
 import membership
 import urllib
 from . import menu_loader
@@ -12,7 +13,7 @@ import json
 import importlib
 import sqlalchemy
 import authorization
-application=argo.get_application(__file__)
+application=applications.get_app_by_file(__file__)
 from datetime import date, datetime
 def json_serial(obj):
     """JSON serializer for objects not serializable by default json code"""
@@ -23,7 +24,7 @@ def json_serial(obj):
     elif type(obj) is sqlalchemy.orm.state.InstanceState:
         return  None
     return obj.__str__()
-@argo.template("index.html")
+# @argo.template("index.html")
 def index(request):
     if request.get_auth()["user"]==None:
         return redirect(request.get_abs_url()+"/login?next="+urllib.quote(request.get_abs_url()+"/"+request.get_app_host(), safe='~()*!.\''))
@@ -40,7 +41,7 @@ def index(request):
          return  request.render({
              "menu_items": menu_loader.load_menu_items()
          })
-@argo.template("login.html")
+# @argo.template("login.html")
 def login(request):
 
     membership.sign_out(request.session.session_key)
@@ -109,16 +110,16 @@ def login(request):
             return request.render(_login)
 
     return request.render(_login)
-@argo.template(file="simple_login",
-               is_login_page=True)
+# @argo.template(file="simple_login",
+#                is_login_page=True)
 def login_to_template(request):
     print request
     return request.render({})
-@argo.template(
-    file="dynamic.html",
-    is_public=True
-
-)
+# @argo.template(
+#     file="dynamic.html",
+#     is_public=True
+#
+# )
 def load_page(request,path):
     return  request.render({
         "path":path.lower()

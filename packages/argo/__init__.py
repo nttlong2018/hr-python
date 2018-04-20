@@ -2,77 +2,20 @@ from . import config
 from . import utilities as utils
 from . import models
 from . import db
+from . import url
 from django.shortcuts import redirect
 import membership
-from . import language as language_provider
 import threading
-import importlib
 import urllib
 import logging
-import json
 import authorization
+import applications
+import language
 from django.http import HttpResponse
+import sys
 
-_AUTH_ENGINE=None
 lock = threading.Lock()
 logger = logging.getLogger(__name__)
-__cache_app__={}
-__cache_app__by_module_name__={}
-__session_cache__={}
-__root_url__=None
-_language_engine_module=None
-_language_resource_cache={}
-def get_language_engine():
-    global _language_engine_module
-    if _language_engine_module == None:
-        _language_engine_module = build_language_engine(config.get_default_language_engine())
-    return _language_engine_module
-def get_application_by_module_name(module_name):
-    try:
-        global __cache_app__by_module_name__
-        if not __cache_app__by_module_name__.has_key(module_name):
-            ret_data = models.app_info()
-            app=config.get_app_info_by_name(module_name)
-            ret_data.name = app["NAME"]
-            ret_data.template_dir = app["DIR"] + "/templates"
-            ret_data.client_static = "default/static/"
-            ret_data.host = app["HOST"]
-            if ret_data.name != "default":
-                ret_data.client_static = ret_data.host + "/static/"
-            __cache_app__by_module_name__.update({
-                file: ret_data
-            })
-        return __cache_app__by_module_name__[file]
-    except Exception as ex:
-        logger.error(ex)
-        raise Exception("Error in {0} with {1}".format(module_name,ex.message))
-def load_auth_engine():
-    setting=config._default_settings["AUTHORIZATION_ENGINE"]
-    if type(setting) is unicode:
-        with open(utils.get_host_directory()+"/configs/"+setting+".json") as data_file:
-            setting = json.load(data_file)
-    authorization.set_provider(setting["name"])
-    authorization.load_config(setting["config"])
-    return authorization
-
-def get_application(file):
-    global __cache_app__
-    global __cache_app__by_module_name__
-    if not __cache_app__.has_key(file):
-        ret_data=models.app_info()
-        __cache_app__by_module_name__[config.get_app_info(file)["MODULE"].__name__]=ret_data
-        ret_data.name=config.get_app_info(file)["NAME"]
-        ret_data.template_dir=config.get_app_info(file)["DIR"]+"/templates"
-        ret_data.client_static="default/static/"
-        ret_data.host= config.get_app_info(file)["HOST"]
-        ret_data.auth=config.get_app_info(file).get("AUTH",None)
-        ret_data.login = config.get_app_info(file).get("LOGIN", None)
-        if ret_data.name!="default":
-            ret_data.client_static = ret_data.host+"/static/"
-        __cache_app__.update({
-            file:ret_data
-        })
-    return __cache_app__[file]
 def template_uri(fn):
     def layer(*args, **kwargs):
         def repl(f):
@@ -81,9 +24,6 @@ def template_uri(fn):
     return layer
 @template_uri
 def template(fn,*_path,**kwargs):
-    global _AUTH_ENGINE
-    if _AUTH_ENGINE==None:
-        _AUTH_ENGINE=load_auth_engine()
     if _path.__len__()==1:
         _path=_path[00]
     if _path.__len__()==0:
@@ -109,14 +49,13 @@ def template(fn,*_path,**kwargs):
 
         global _language_engine_module
         global _language_resource_cache
-        if _language_engine_module == None:
-            _language_engine_module = build_language_engine(config.get_default_language_engine())
+
 
         language = "en"
         if request.session.has_key("language"):
             language = request.session["language"]
 
-        app = get_application(fn.func_code.co_filename)
+        app = applications.get_app_by_file(fn.func_code.co_filename)
         if auth_path==None:
             auth_path=app.auth
         if login_path==None:
@@ -383,24 +322,6 @@ def template(fn,*_path,**kwargs):
 
 
 
-def build_language_engine(config_info):
-    config=None
-    if type(config_info)==dict:
-        config=config_info
-    if type(config_info)==unicode:
-        try:
-            with open(utils.get_host_directory()+"/configs/"+config_info+".json") as data_file:
-                config = json.load(data_file)
-        except Exception as ex:
-            raise Exception("Load 'DEFAULT_LANGUAGE_ENGINE' from config.json fail, reason '{0}'".format(ex))
-    try:
-        if not config.has_key("NAME"):
-            logger.error("Language module was not install as config.json")
-            raise Exception("Language module was not install as config.json")
 
-        mdl=importlib.import_module(config["NAME"])
-        mdl.load(config["CONFIG"])
-        return  mdl
-    except Exception as ex:
-        logger.error(ex)
-        raise Exception("Error in {0} with '{1}'".format(config.get("NAME",""),ex.message))
+def get_settings():
+    return sys.modules["settings"]

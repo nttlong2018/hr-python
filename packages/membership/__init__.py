@@ -3,6 +3,10 @@ import importlib
 import inspect
 from . import models
 from models import error_types as error_types
+def load(*args,**kwargs):
+    set_provider(kwargs.get("provider"))
+    set_config(kwargs)
+    print args
 def set_connection_string(strConn):
     fn=getattr(_membership_instance,inspect.stack()[0][3])
     fn(strConn)

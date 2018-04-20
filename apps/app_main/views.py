@@ -9,11 +9,11 @@ from django.shortcuts import redirect
 
 from . import models
 import argo
-
+from argo import applications
 from models import Login
+from  argo import membership
 
-
-application=argo.get_application(__file__)
+application=applications.get_app_by_file(__file__)
 # from django.urls import reverse
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -41,7 +41,7 @@ def index(request):
 
 def admin(request):
     return render(request, 'admin.html')
-@argo.template("login.html")
+# @argo.template("login.html")
 def login(request):
     _login=models.Login()
     _login.language=request._get_request().get("language","en")
@@ -83,7 +83,7 @@ def load_page(request,path):
         return request.render({})
     except:
         return HttpResponse("page was not found")
-@argo.template("sign_out.html")
+# @argo.template("sign_out.html")
 def sign_out(request):
     membership.sign_out(request.session.session_key)
     request.session.clear()
