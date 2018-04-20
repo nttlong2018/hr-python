@@ -11,7 +11,7 @@ class app_config():
     urls=None
     host_dir=""
     name=""
-    auth_path=None
+    auth=None
     def __init__(self,path):
         global _apps
         if _apps==None:
