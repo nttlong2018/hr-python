@@ -4,6 +4,9 @@ import inspect
 from . import models
 from models import error_types as error_types
 def load(*args,**kwargs):
+    if type(args) is tuple and args.__len__()>0:
+        kwargs=args[0]
+
     set_provider(kwargs.get("provider"))
     set_config(kwargs)
     print args

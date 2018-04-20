@@ -12,6 +12,9 @@ _lock=None
 from . import models
 def load(*args,**kwargs):
     params=(lambda x,y: x if x!=() else y)(args,kwargs)
+    if type(params) is tuple:
+        params=params[0]
+
     get_value=lambda x,y: x.get(y) if x.has_key(y) else ""
     set_provider(params["provider"])
     load_config(params)

@@ -12,6 +12,7 @@ class app_config():
     host_dir=""
     name=""
     auth=None
+    login=None
     def __init__(self,path):
         global _apps
         if _apps==None:
