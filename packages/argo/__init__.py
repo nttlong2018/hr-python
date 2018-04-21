@@ -47,24 +47,17 @@ def template(fn,*_path,**kwargs):
             file_path = file_path.get("file", "")
             if login_path == None and auth_path != None:
                 raise Exception("'auth' require 'login'. 'login' need to be set at '" + fn.__name__ + "'")
-
-
-
         global _language_engine_module
         global _language_resource_cache
-
-
         language = "en"
         if request.session.has_key("language"):
             language = request.session["language"]
-
         app = applications.get_app_by_file(fn.func_code.co_filename)
         setattr(request,"application",app)
         if auth_path==None:
             auth_path=app.auth
         if login_path==None:
             login_path=app.login
-
         def set_auth(data):
             global __session_cache__
 
@@ -76,7 +69,6 @@ def template(fn,*_path,**kwargs):
             request.session["authenticate"] = {
                 "user": data
             }
-
         def get_auth():
             global __session_cache__
             login_info = membership.validate_session(request.session._get_or_create_session_key())
@@ -109,7 +101,6 @@ def template(fn,*_path,**kwargs):
                 })
 
             return __session_cache__[request.session._get_session_key()]
-
         def render(model):
             return utils.render({
                 "app_name": app.name,
@@ -122,7 +113,6 @@ def template(fn,*_path,**kwargs):
                 "application": app
 
             })
-
         def get_abs_url():
             global __root_url__
             if __root_url__ == None:
@@ -134,10 +124,8 @@ def template(fn,*_path,**kwargs):
                 if __root_url__[__root_url__.__len__() - 1] == "/":
                     __root_url__ = __root_url__[0:__root_url__.__len__() - 1]
             return __root_url__
-
         def get_language():
             return language
-
         def get_view_path():
             ret = request.get_full_path().split("?")[0]
             if app.name == "default":
@@ -157,10 +145,8 @@ def template(fn,*_path,**kwargs):
                     return "index"
                 else:
                     return ret
-
         def get_app_name():
             return app.name
-
         def get_res(key, **caption):
             if caption == None:
                 caption = key
@@ -178,7 +164,6 @@ def template(fn,*_path,**kwargs):
                     })
 
             return _language_resource_cache[lang_key]
-
         def get_app_res(key, **caption):
             if caption == None:
                 caption = key
@@ -197,7 +182,6 @@ def template(fn,*_path,**kwargs):
                     except Exception:
                         pass
             return _language_resource_cache[lang_key]
-
         def get_global_res(key, **caption):
             if caption == None:
                 caption = key
@@ -217,19 +201,16 @@ def template(fn,*_path,**kwargs):
                         raise("'get_global_res' error {0}".format(ex))
                         pass
             return _language_resource_cache[lang_key]
-
         def get_app_host():
             if app.name == "default":
                 return ""
             else:
                 return app.host_dir
-
         def get_app_url(path):
             if app.name == "default":
                 return get_abs_url() + (lambda :"" if path=="" else "/"+path)()
             else:
                 return get_abs_url() + "/" + get_app_host() +  (lambda :"" if path=="" else "/"+path)()
-
         def get_static(path):
             return request.get_abs_url() + ("/" + app.client_static + "/" + path).replace("//","/")
         def encode_uri(uri):
@@ -258,73 +239,88 @@ def template(fn,*_path,**kwargs):
         _url_login = ""
         if login_path!=None:
             if login_path[0:2] == "./":
-                _url_login = app.host + "/" + login_path[2:login_path.__len__()]
+                _url_login = get_abs_url() + "/" + login_path[2:login_path.__len__()]
             else:
                 _url_login = app.host + "/" + login_path
 
         if request.path_info== "/"+_url_login:
             return fn(request,**kwargs)
-        if auth_path != None and (not is_login_page or not is_public):
-            _AUTH_ENGINE.register(app=app.name, id=get_view_path())
-            path_to_auth_fn = auth_path.split(".")[auth_path.split(".").__len__() - 1]
-            path_to_auth_mdl = auth_path[0: auth_path.__len__() - path_to_auth_fn.__len__() - 1]
-            import importlib
-            mdl=None
-            try:
-                mdl = importlib.import_module(path_to_auth_mdl)
-            except Exception as ex:
-                raise Exception("{0} was not found or error. Error message '{1}'\r\n"
+        fn_on_authenticate=None
+        _url_login = "login"
+        if hasattr(app.settings, "login"):
+            _url_login = getattr(app.settings, "login")
+        if _url_login[0:2] == "~/":
+            _url_login = "/" + _url_login[2:_url_login.__len__()]
+        else:
+            _url_login = app.host_dir + "/" + _url_login
+        _url_login="/"+_url_login
+        is_login_page=request.path_info.lower()==_url_login.lower()
+        if app.authenticate != None and (not is_login_page and not is_public):
+            authorization.register(app=app.name, id=get_view_path())
+            if type(app.authenticate) is str:
+                path_to_auth_fn = app.authenticate.split(".")[app.authenticate.split(".").__len__() - 1]
+                path_to_auth_mdl = app.authenticate[0: app.authenticate.__len__() - path_to_auth_fn.__len__() - 1]
+                import importlib
+                mdl=None
+                try:
+                    mdl = importlib.import_module(path_to_auth_mdl)
+                except Exception as ex:
+                    raise Exception("{0} was not found or error. Error message '{1}'\r\n"
                                 ". See '{2}' at '{3}' \r\n"
                                 "on file '{4}'".format(path_to_auth_mdl,ex.message,fn.__name__,fn.__module__,fn.func_code.co_filename))
+                try:
+                    if hasattr(mdl,path_to_auth_fn):
+                        fn_on_authenticate=getattr(mdl, path_to_auth_fn)
+                        if not callable(fn_on_authenticate):
+                            raise (Exception("'{0}' in '{1}' must be a function".format(path_to_auth_fn, path_to_auth_fn)))
+                    else:
+                        raise(Exception("'{0}' was noy found in '{1}'".format(path_to_auth_fn,path_to_auth_fn)))
+                except Exception as ex:
+                    raise Exception("Error '{0}' at '{1}' in file '{2}'".format(ex.message,mdl.__name__,mdl.__file__))
+            elif callable(app.authenticate):
+                fn_on_authenticate=app.authenticate
 
-            try:
-                is_ok=getattr(mdl, path_to_auth_fn)(request)
+        if fn_on_authenticate!=None:
+                is_ok=fn_on_authenticate(request)
                 if is_ok:
-                    fn(request,**kwargs)
+                    ret= fn(request, **kwargs)
+                    return ret
                 else:
-
-                    url_next=request.get_abs_url()+"/"+_url_login+"?next="+request.encode_uri(request.get_raw_url())
+                    url_next = request.get_abs_url()  +\
+                               _url_login + "?next=" +\
+                               request.encode_uri(request.get_raw_url())
                     return redirect(url_next)
-            except Exception as ex:
-                raise Exception("Error '{0}' at '{1}' in file '{2}'".format(ex.message,mdl.__name__,mdl.__file__))
-
-
-
-        view_info=get_settings().AUTHORIZATION_ENGINE.get_view_info(
-            app=app.name,
-            id=get_view_path())
-        if view_info==None:
-            return fn(request,**kwargs)
-        elif view_info["is_public"]:
+        elif is_login_page:
+            return fn(request, **kwargs)
+        elif is_public:
             return fn(request, **kwargs)
         else:
+            view_info=authorization.get_view_info(
+                app=app.name,
+                id=get_view_path())
 
-            _login_info=membership.validate_session(request.session.session_key)
-            if _login_info==None:
-                return HttpResponse('Unauthorized', status=401)
-            elif _login_info.user.isSysAdmin:
+            if view_info==None:
+                return fn(request,**kwargs)
+            elif view_info["is_public"]:
                 return fn(request, **kwargs)
             else:
-                privileges=_AUTH_ENGINE.get_view_of_user(user_id=_login_info.user.userId,view_id=view_info["id"])
-                if privileges==None:
-                    if _login_info.user.isSysAdmin:
-                        privileges={
-                            "is_public":True
-                        }
-                        return fn(request, **kwargs)
-                    else:
-                        return HttpResponse('Unauthorized', status=401)
-                else:
+                _login_info=membership.validate_session(request.session.session_key)
+                if _login_info==None:
+                    return HttpResponse('Unauthorized', status=401)
+                elif _login_info.user.isSysAdmin:
                     return fn(request, **kwargs)
-
-
-
-
-
-
-
-
-
+                else:
+                    privileges=authorization.get_view_of_user(user_id=_login_info.user.userId,view_id=view_info["id"])
+                    if privileges==None:
+                        if _login_info.user.isSysAdmin:
+                            privileges={
+                                "is_public":True
+                            }
+                            return fn(request, **kwargs)
+                        else:
+                            return HttpResponse('Unauthorized', status=401)
+                    else:
+                        return fn(request, **kwargs)
     return exec_request
 
 

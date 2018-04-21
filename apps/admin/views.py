@@ -86,7 +86,7 @@ def login(request):
                     "isStaff":login.user.isStaff
                 }
             })
-            return redirect(_login["next"])
+            return redirect("/")
 
 
 

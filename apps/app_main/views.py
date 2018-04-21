@@ -36,7 +36,7 @@ def index(request):
         membership.update_user(user)
     # login_info=membership.validate_session(request.session._get_or_create_session_key())
     if request.get_auth()["user"]==None:
-        return redirect("login")
+        return redirect(request.get_app_url("login"))
     return request.render(model)
 
 def admin(request):
@@ -83,7 +83,7 @@ def load_page(request,path):
         return request.render({})
     except:
         return HttpResponse("page was not found")
-# @argo.template("sign_out.html")
+@argo.template("sign_out.html")
 def sign_out(request):
     membership.sign_out(request.session.session_key)
     request.session.clear()

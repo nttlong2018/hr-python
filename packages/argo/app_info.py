@@ -17,6 +17,9 @@ class app_config():
     template_dir=""
     client_static=""
     static=""
+    settings=None
+    authenticate=None
+    onAuthenticate=None
     def __init__(self,path):
         global _apps
         if _apps==None:
@@ -32,6 +35,13 @@ class app_config():
         self.path=path
         sys.path.append(self.package_path)
         self.mdl=importlib.import_module(self.package_name)
+        if hasattr(self.mdl,"settings"):
+            self.settings=getattr(self.mdl,"settings")
+        if(self.settings!=None):
+            if hasattr(self.settings,"authenticate"):
+                self.authenticate=getattr(self.settings,"authenticate")
+            if hasattr(self.settings,"onAuthenticate"):
+                self.onAuthenticate=getattr(self.settings,"onAuthenticate")
         self.host_dir=(lambda x:x if x!="default" else "")(_apps.get(path).get("host"))
         self.name=_apps.get(path).get("host")
         self.template_dir = _apps[path].get("template_dir", os.path.join(path, "templates"))
