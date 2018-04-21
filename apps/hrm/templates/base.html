@@ -1,0 +1,30 @@
+<%page cached="True"/>
+<html>
+<head>
+    <script src="${get_static('js/jquery-3.3.1.min.js')}"></script>
+    <link href="${get_static('bs/css/bootstrap.min.css')}" rel="stylesheet">
+    <link href="${get_static('bs/css/bootstrap-theme.min.css')}" rel="stylesheet">
+    <script src="${get_static('bs/js/bootstrap.min.js')}"></script>
+    <style>
+        *{
+        font-size:8pt !important
+
+        }
+
+    </style>
+
+</head>
+    <body>
+        <div class="header">
+            <%block name="header"/>
+        </div>
+
+        ${self.body()}
+
+        <div class="footer">
+            <%block name="footer">
+
+            </%block>
+        </div>
+    </body>
+</html>

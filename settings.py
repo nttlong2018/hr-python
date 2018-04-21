@@ -101,9 +101,14 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 APPS=[dict(host="default",
+           name="argo",
            path="apps/app_main"),
       dict(host="admin",
-           path="apps/admin")]
+           name="admin",
+           path="apps/admin"),
+      dict(host="hrm",
+           name="hrm",
+           path="apps/hrm")]
 aut_config_local=dict(
     provider="authorization.auth",
     name="lv01_lms",

@@ -49,7 +49,7 @@ class app_config():
             if hasattr(self.settings,"on_end_request"):
                 self.on_end_request = getattr(self.settings, "on_end_request")
         self.host_dir=(lambda x:x if x!="default" else "")(_apps.get(path).get("host"))
-        self.name=_apps.get(path).get("host")
+        self.name=_apps.get(path).get("name")
         self.template_dir = _apps[path].get("template_dir", os.path.join(path, "templates"))
         self.client_static=_apps[path].get("client_static",path+ "/static")
         self.static=_apps[path].get("static_dir",os.path.join(path, "static"))

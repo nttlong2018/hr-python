@@ -59,20 +59,23 @@ def template(fn,*_path,**kwargs):
 
         setattr(request,"application",app)
         if auth_path==None:
-            auth_path=app.auth
+            auth_path=app.authenticate
         if login_path==None:
             login_path=app.login
-        def set_auth(data):
+        def set_auth(*args,**kwargs):
             global __session_cache__
+            data=kwargs
+            if type(args) is tuple:
+                if args.__len__()>0:
+                    data=args[0]
+
 
             if not data.has_key("user"):
                 raise Exception("Please set 'user' info {id:string,username:string}")
             __session_cache__.update({
                 request.session._get_session_key(): data
             })
-            request.session["authenticate"] = {
-                "user": data
-            }
+            request.session["authenticate"] = data
         def get_auth():
             global __session_cache__
             login_info = membership.validate_session(request.session._get_or_create_session_key())
@@ -114,7 +117,8 @@ def template(fn,*_path,**kwargs):
                 "model": model,
                 "templates": app.template_dir,
                 "static": app.client_static,
-                "application": app
+                "application": app,
+                "get_user":request.get_user
 
             })
         def get_abs_url():
@@ -223,6 +227,10 @@ def template(fn,*_path,**kwargs):
             return urllib.unquote(encode_uri)
         def get_raw_url():
             return request.build_absolute_uri(request.get_full_path())
+        def get_user():
+            if not request.session.has_key("authenticate"):
+                return None
+            return request.session["authenticate"].get("user",None)
 
         setattr(request,"render", render)
         setattr(request,"set_auth", set_auth)
@@ -240,6 +248,7 @@ def template(fn,*_path,**kwargs):
         setattr(request,"decode_uri", decode_uri)
         setattr(request,"encode_uri",encode_uri)
         setattr(request,"get_raw_url",get_raw_url)
+        setattr(request, "get_user", get_user)
         _url_login = ""
         if login_path!=None:
             if login_path[0:2] == "./":
@@ -258,7 +267,7 @@ def template(fn,*_path,**kwargs):
         if hasattr(app.settings, "login"):
             _url_login = getattr(app.settings, "login")
         if _url_login[0:2] == "~/":
-            _url_login = "/" + _url_login[2:_url_login.__len__()]
+            _url_login = _url_login[2:_url_login.__len__()]
         else:
             _url_login = app.host_dir + "/" + _url_login
         _url_login="/"+_url_login
