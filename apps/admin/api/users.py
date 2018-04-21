@@ -3,7 +3,7 @@ import membership
 import authorization
 def get_list(args):
     if authorization.is_allow_read(args["privileges"]):
-        list=argo.membership.find(args.get("search_text",""),0,50)
+        list=argo.membership.find(args["data"].get("search_text",""),0,50)
         return list
     else:
         return []
