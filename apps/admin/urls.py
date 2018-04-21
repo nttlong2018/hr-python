@@ -21,5 +21,7 @@ from django.conf.urls.static import static
 urlpatterns = [
     url(r'^$', views.index, name='index'),
     url(r'^login$',views.login,name='logn'),
-    url(r'^pages/(?P<path>.*)$', views.load_page, name='singleshop')
+    url(r'^pages/(?P<path>.*)$', views.load_page, name='singleshop'),
+    url(r'^pages/(?P<path>.*)$',views.load_page),
+    url(r'^api$',views.api)
 ]

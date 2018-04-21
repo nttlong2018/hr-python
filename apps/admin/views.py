@@ -41,7 +41,7 @@ def index(request):
          return  request.render({
              "menu_items": menu_loader.load_menu_items()
          })
-# @argo.template("login.html")
+@argo.template("login.html")
 def login(request):
 
     membership.sign_out(request.session.session_key)
@@ -99,15 +99,15 @@ def login(request):
                 "error":ret_model
             })
             return request.render(_login)
-        except Exception as ex:
-            ret_model = {
-                "is_error": True,
-                "error_message": ex.message
-            }
-            _login.update({
-                "error": ret_model
-            })
-            return request.render(_login)
+        # except Exception as ex:
+        #     ret_model = {
+        #         "is_error": True,
+        #         "error_message": ex.message
+        #     }
+        #     _login.update({
+        #         "error": ret_model
+        #     })
+        #     return request.render(_login)
 
     return request.render(_login)
 # @argo.template(file="simple_login",
@@ -115,11 +115,11 @@ def login(request):
 def login_to_template(request):
     print request
     return request.render({})
-# @argo.template(
-#     file="dynamic.html",
-#     is_public=True
-#
-# )
+@argo.template(
+    file="dynamic.html",
+    is_public=True
+
+)
 def load_page(request,path):
     return  request.render({
         "path":path.lower()
