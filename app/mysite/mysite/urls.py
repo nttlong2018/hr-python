@@ -1,4 +1,4 @@
-"""argo1 URL Configuration
+"""mysite URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/1.8/topics/http/urls/
@@ -14,15 +14,7 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
-from . import views
-
-from django.conf.urls.static import static
-import os
 
 urlpatterns = [
-    url(r'^$', views.index, name='index'),
-    url(r'^admin$',views.admin,name='admin'),
-    url(r'^login$',views.login,name='logn'),
-    url(r'^pages/(?P<path>.*)$', views.load_page, name='singleshop')
+    url(r'^admin/', include(admin.site.urls)),
 ]
-

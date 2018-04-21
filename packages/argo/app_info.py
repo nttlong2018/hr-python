@@ -1,6 +1,7 @@
 import os
 import sys
 import importlib
+from django.conf.urls.static import static
 from django.conf.urls import include,url
 _apps=None
 class app_config():
@@ -13,6 +14,9 @@ class app_config():
     name=""
     auth=None
     login=None
+    template_dir=""
+    client_static=""
+    static=""
     def __init__(self,path):
         global _apps
         if _apps==None:
@@ -30,6 +34,9 @@ class app_config():
         self.mdl=importlib.import_module(self.package_name)
         self.host_dir=(lambda x:x if x!="default" else "")(_apps.get(path).get("host"))
         self.name=_apps.get(path).get("host")
+        self.template_dir = _apps[path].get("template_dir", os.path.join(path, "templates"))
+        self.client_static=_apps[path].get("client_static",path+ "/static")
+        self.static=_apps[path].get("static_dir",os.path.join(path, "static"))
     def get_urls(self):
         if self.urls==None:
             self.urls=[]
@@ -37,5 +44,16 @@ class app_config():
             self.urls=url(r'^', include(self.package_name+".urls"))
         else:
             self.urls = url(r'^' + self.host_dir + "/", include(self.package_name + ".urls"))
-        return self.urls
+        return dict(
+            urls=self.urls,
+            static_url=static(self.get_client_static(), document_root=self.get_server_static())
+        )
+    def get_client_static(self):
+        return self.client_static
+    def get_server_static(self):
+        _path= (self.static).replace("/",os.path.sep)
+        return os.getcwd()+os.path.sep+_path
+
+
+
 

@@ -75,7 +75,7 @@ def render(render_config):
         }
     # mylookup = TemplateLookup(directories=config._default_settings["TEMPLATES_DIRS"])
     if fileName!=None:
-            mylookup = TemplateLookup(directories=["apps/" + render_config["templates"]],
+            mylookup = TemplateLookup(directories=[http_request.application.template_dir],
                                       input_encoding='utf-8',
                                       output_encoding='utf-8',
                                       encoding_errors='replace'

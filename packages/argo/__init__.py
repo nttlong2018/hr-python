@@ -13,10 +13,12 @@ import applications
 import language
 from django.http import HttpResponse
 import sys
-
+__root_url__=None
 lock = threading.Lock()
 logger = logging.getLogger(__name__)
 __session_cache__={}
+_language_resource_cache={}
+_settings=None
 def template_uri(fn):
     def layer(*args, **kwargs):
         def repl(f):
@@ -57,6 +59,7 @@ def template(fn,*_path,**kwargs):
             language = request.session["language"]
 
         app = applications.get_app_by_file(fn.func_code.co_filename)
+        setattr(request,"application",app)
         if auth_path==None:
             auth_path=app.auth
         if login_path==None:
@@ -147,7 +150,7 @@ def template(fn,*_path,**kwargs):
             else:
                 if ret[0:1] == "/":
                     ret = ret[1:ret.__len__()]
-                ret = ret[app.host.__len__():ret.__len__()]
+                ret = ret[app.host_dir.__len__():ret.__len__()]
                 if ret[0:1] == "/":
                     ret = ret[1:ret.__len__()]
                 if ret=="":
@@ -168,7 +171,7 @@ def template(fn,*_path,**kwargs):
             if not _language_resource_cache.has_key(lang_key):
 
                 with lock:
-                    ret_value = _language_engine_module.get_language_item(language, app.name,
+                    ret_value =  get_settings().LANGUAGE_ENGINE.get_language_item(language, app.name,
                                                                           get_view_path(), key, key)
                     _language_resource_cache.update({
                         lang_key: ret_value
@@ -186,7 +189,7 @@ def template(fn,*_path,**kwargs):
 
                 with lock:
                     try:
-                        ret_value = _language_engine_module.get_language_item(language, app.name,
+                        ret_value =  get_settings().LANGUAGE_ENGINE.get_language_item(language, app.name,
                                                                               "_", key, key)
                         _language_resource_cache.update({
                             lang_key: ret_value
@@ -205,12 +208,13 @@ def template(fn,*_path,**kwargs):
 
                 with lock:
                     try:
-                        ret_value = _language_engine_module.get_language_item(language, "_",
+                        ret_value = get_settings().LANGUAGE_ENGINE.get_language_item(language, "_",
                                                                               "_", key, key)
                         _language_resource_cache.update({
                             lang_key: ret_value
                         })
-                    except Exception:
+                    except Exception as ex:
+                        raise("'get_global_res' error {0}".format(ex))
                         pass
             return _language_resource_cache[lang_key]
 
@@ -218,7 +222,7 @@ def template(fn,*_path,**kwargs):
             if app.name == "default":
                 return ""
             else:
-                return app.host
+                return app.host_dir
 
         def get_app_url(path):
             if app.name == "default":
@@ -235,22 +239,22 @@ def template(fn,*_path,**kwargs):
         def get_raw_url():
             return request.build_absolute_uri(request.get_full_path())
 
-        request.__dict__.update({"render": render})
-        request.__dict__.update({"set_auth": set_auth})
-        request.__dict__.update({"get_auth": get_auth})
-        request.__dict__.update({"get_app_host": get_app_host})
-        request.__dict__.update({"get_app_url": get_app_url})
-        request.__dict__.update({"get_abs_url": get_abs_url})
-        request.__dict__.update({"get_static": get_static})
-        request.__dict__.update({"get_language": get_language})
-        request.__dict__.update({"get_view_path": get_view_path})
-        request.__dict__.update({"get_app_name": get_app_name})
-        request.__dict__.update({"get_res": get_res})
-        request.__dict__.update({"get_app_res": get_app_res})
-        request.__dict__.update({"get_global_res": get_global_res})
-        request.__dict__.update({"decode_uri": decode_uri})
-        request.__dict__.update({"encode_uri": encode_uri})
-        request.__dict__.update({"get_raw_url":get_raw_url})
+        setattr(request,"render", render)
+        setattr(request,"set_auth", set_auth)
+        setattr(request,"get_auth", get_auth)
+        setattr(request,"get_app_host",get_app_host)
+        setattr(request,"get_app_url", get_app_url)
+        setattr(request,"get_abs_url", get_abs_url)
+        setattr(request,"get_static",get_static)
+        setattr(request,"get_language", get_language)
+        setattr(request,"get_view_path",get_view_path)
+        setattr(request,"get_app_name", get_app_name)
+        setattr(request,"get_res",get_res)
+        setattr(request,"get_app_res", get_app_res)
+        setattr(request,"get_global_res", get_global_res)
+        setattr(request,"decode_uri", decode_uri)
+        setattr(request,"encode_uri",encode_uri)
+        setattr(request,"get_raw_url",get_raw_url)
         _url_login = ""
         if login_path!=None:
             if login_path[0:2] == "./":
@@ -286,7 +290,9 @@ def template(fn,*_path,**kwargs):
 
 
 
-        view_info=get_settings().AUTH_ENGINE.get_view_info(app=app.name,id=get_view_path())
+        view_info=get_settings().AUTHORIZATION_ENGINE.get_view_info(
+            app=app.name,
+            id=get_view_path())
         if view_info==None:
             return fn(request,**kwargs)
         elif view_info["is_public"]:
@@ -325,4 +331,10 @@ def template(fn,*_path,**kwargs):
 
 
 def get_settings():
-    return sys.modules["settings"]
+    global _settings
+    if _settings==None:
+        _settings = sys.modules.get("settings")
+        STATIC_URL = getattr(_settings, "STATIC_URL")
+        if STATIC_URL == None:
+            setattr(_settings, "STATIC_URL", "/static/")
+    return _settings
