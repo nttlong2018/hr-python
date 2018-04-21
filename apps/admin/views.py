@@ -24,7 +24,7 @@ def json_serial(obj):
     elif type(obj) is sqlalchemy.orm.state.InstanceState:
         return  None
     return obj.__str__()
-# @argo.template("index.html")
+@argo.template("index.html")
 def index(request):
     if request.get_auth()["user"]==None:
         return redirect(request.get_abs_url()+"/login?next="+urllib.quote(request.get_abs_url()+"/"+request.get_app_host(), safe='~()*!.\''))

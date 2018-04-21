@@ -41,7 +41,7 @@ def index(request):
 
 def admin(request):
     return render(request, 'admin.html')
-# @argo.template("login.html")
+@argo.template("login.html")
 def login(request):
     _login=models.Login()
     _login.language=request._get_request().get("language","en")

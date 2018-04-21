@@ -16,6 +16,7 @@ import sys
 
 lock = threading.Lock()
 logger = logging.getLogger(__name__)
+__session_cache__={}
 def template_uri(fn):
     def layer(*args, **kwargs):
         def repl(f):
@@ -285,7 +286,7 @@ def template(fn,*_path,**kwargs):
 
 
 
-        view_info=_AUTH_ENGINE.get_view_info(app=app.name,id=get_view_path())
+        view_info=get_settings().AUTH_ENGINE.get_view_info(app=app.name,id=get_view_path())
         if view_info==None:
             return fn(request,**kwargs)
         elif view_info["is_public"]:

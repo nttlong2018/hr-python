@@ -135,8 +135,8 @@ provider="language_mongo_engine",
 )
 argo.language.load(language_congig_local)
 
-AUTH=argo.authorization
-MEMBERSHIP=argo.membership
+AUTHORIZATION_ENGINE=argo.authorization
+MEMBERSHIP_ENGINE=argo.membership
 LANGUAGE_ENGINE=argo.language
 
 argo.url.build_urls("apps",APPS)
