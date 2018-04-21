@@ -34,6 +34,10 @@ def template(fn,*_path,**kwargs):
 
     fn.__dict__.update({"__params__": _path})
     def exec_request(request, **kwargs):
+        app = applications.get_app_by_file(fn.func_code.co_filename)
+        if app.on_begin_request!=None and callable(app.on_begin_request):
+            app.on_begin_request(request)
+
         file_path=fn.__dict__["__params__"]
         auth_path = None
         login_path = None
@@ -52,7 +56,7 @@ def template(fn,*_path,**kwargs):
         language = "en"
         if request.session.has_key("language"):
             language = request.session["language"]
-        app = applications.get_app_by_file(fn.func_code.co_filename)
+
         setattr(request,"application",app)
         if auth_path==None:
             auth_path=app.auth
@@ -244,6 +248,10 @@ def template(fn,*_path,**kwargs):
                 _url_login = app.host + "/" + login_path
 
         if request.path_info== "/"+_url_login:
+            if app.on_end_request != None and callable(app.on_end_request):
+                res=app.on_end_request(request)
+                if res!=None:
+                    return res
             return fn(request,**kwargs)
         fn_on_authenticate=None
         _url_login = "login"
@@ -283,6 +291,10 @@ def template(fn,*_path,**kwargs):
         if fn_on_authenticate!=None:
                 is_ok=fn_on_authenticate(request)
                 if is_ok:
+                    if app.on_end_request != None and callable(app.on_end_request):
+                        res = app.on_end_request(request)
+                        if res != None:
+                            return res
                     ret= fn(request, **kwargs)
                     return ret
                 else:
@@ -291,8 +303,16 @@ def template(fn,*_path,**kwargs):
                                request.encode_uri(request.get_raw_url())
                     return redirect(url_next)
         elif is_login_page:
+            if app.on_end_request != None and callable(app.on_end_request):
+                res=app.on_end_request(request)
+                if res!=None:
+                    return res
             return fn(request, **kwargs)
         elif is_public:
+            if app.on_end_request != None and callable(app.on_end_request):
+                res=app.on_end_request(request)
+                if res!=None:
+                    return res
             return fn(request, **kwargs)
         else:
             view_info=authorization.get_view_info(
@@ -300,12 +320,20 @@ def template(fn,*_path,**kwargs):
                 id=get_view_path())
 
             if view_info==None:
+                if app.on_end_request != None and callable(app.on_end_request):
+                    res = app.on_end_request(request)
+                    if res != None:
+                        return res
                 return fn(request,**kwargs)
             elif view_info["is_public"]:
                 return fn(request, **kwargs)
             else:
                 _login_info=membership.validate_session(request.session.session_key)
                 if _login_info==None:
+                    if app.on_end_request != None and callable(app.on_end_request):
+                        res = app.on_end_request(request)
+                        if res != None:
+                            return res
                     return HttpResponse('Unauthorized', status=401)
                 elif _login_info.user.isSysAdmin:
                     return fn(request, **kwargs)
@@ -316,10 +344,22 @@ def template(fn,*_path,**kwargs):
                             privileges={
                                 "is_public":True
                             }
+                            if app.on_end_request != None and callable(app.on_end_request):
+                                res = app.on_end_request(request)
+                                if res != None:
+                                    return res
                             return fn(request, **kwargs)
                         else:
+                            if app.on_end_request != None and callable(app.on_end_request):
+                                res = app.on_end_request(request)
+                                if res != None:
+                                    return res
                             return HttpResponse('Unauthorized', status=401)
                     else:
+                        if app.on_end_request != None and callable(app.on_end_request):
+                            res = app.on_end_request(request)
+                            if res != None:
+                                return res
                         return fn(request, **kwargs)
     return exec_request
 

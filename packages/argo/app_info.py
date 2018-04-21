@@ -19,7 +19,9 @@ class app_config():
     static=""
     settings=None
     authenticate=None
-    onAuthenticate=None
+    on_begin_request=None
+    on_end_request = None
+
     def __init__(self,path):
         global _apps
         if _apps==None:
@@ -40,8 +42,12 @@ class app_config():
         if(self.settings!=None):
             if hasattr(self.settings,"authenticate"):
                 self.authenticate=getattr(self.settings,"authenticate")
-            if hasattr(self.settings,"onAuthenticate"):
-                self.onAuthenticate=getattr(self.settings,"onAuthenticate")
+            if hasattr(self.settings,"on_authenticate"):
+                self.onAuthenticate=getattr(self.settings,"on_authenticate")
+            if hasattr(self.settings,"on_begin_request"):
+                self.on_begin_request = getattr(self.settings, "on_begin_request")
+            if hasattr(self.settings,"on_end_request"):
+                self.on_end_request = getattr(self.settings, "on_end_request")
         self.host_dir=(lambda x:x if x!="default" else "")(_apps.get(path).get("host"))
         self.name=_apps.get(path).get("host")
         self.template_dir = _apps[path].get("template_dir", os.path.join(path, "templates"))
