@@ -52,7 +52,7 @@
 <script>
 (function(scope){
     scope.view_path="${get_view_path()}";
-    service=ws(scope);
+    services=ws(scope);
     scope.doLoadData=function(){
         services.api("admin.api.views/get_list")
         .data({

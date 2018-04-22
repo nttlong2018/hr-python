@@ -1,2 +1,21 @@
 <%inherit file="base.html"/>
 <%include file="navbar.html"/>
+<div class="container">
+<div c-template url="${get_app_url('')}/{{$root.page}}">
+
+</div>
+</div>
+
+<script>
+var app=angular.module("app",["c-ui"])
+app.controller("app",["$scope",function(scope){
+    ws_set_url("${get_app_url('api')}")
+    history_navigator(scope.$root)
+    scope.$root.$history.change(function(data){
+        scope.$root.page=data.page;
+        scope.$root.$applyAsync();
+
+    });
+
+}]);
+</script>
