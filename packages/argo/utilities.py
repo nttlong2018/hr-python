@@ -6,7 +6,9 @@ from django.http import HttpResponse
 from mako.template import Template
 from mako.lookup import TemplateLookup
 import config
-
+from datetime import date, datetime
+import sqlalchemy
+from bson.objectid import ObjectId
 import importlib
 
 _host_directory=None
@@ -90,6 +92,31 @@ def render(render_config):
                                   encoding_errors='replace'
                                   )
         return HttpResponse(mylookup.get_template(http_request.__dict__["template_file"]).render(**render_model))
-
-
+def json_serial(obj):
+    """JSON serializer for objects not serializable by default json code"""
+    if isinstance(obj, (datetime, date)):
+        return obj.isoformat()
+    elif type(obj) is ObjectId:
+        return obj.__str__()
+    elif type(obj) is sqlalchemy.orm.state.InstanceState:
+        return  None
+    return obj.__str__()
+def to_json(ret):
+    if type(ret) is list:
+        if ret.__len__()==0:
+            ret_data="[]"
+        else:
+            if type(ret[0]) is dict:
+                ret_data=json.dumps(ret)
+            else:
+                ret_data=json.dumps([r.__dict__ for r in ret],default=json_serial)
+    else:
+        if ret==None:
+            ret_data=None
+        else:
+            if type(ret) is dict:
+                ret_data = json.dumps(ret, default=json_serial)
+            else:
+                ret_data = json.dumps(ret.__dict__, default=json_serial)
+    return ret_data
 

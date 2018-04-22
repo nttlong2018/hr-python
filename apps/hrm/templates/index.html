@@ -1,5 +1,14 @@
 <%inherit file="base.html"/>
 <%include file="navbar.html"/>
+<style>
+    .modal-dialog .form-control {
+        margin:2px;
+
+    }
+    .modal-dialog .field-label{
+
+    }
+</style>
 <div class="container">
 <div c-template url="${get_app_url('')}/{{$root.page}}">
 
@@ -8,9 +17,12 @@
 
 <script>
 var app=angular.module("app",["c-ui"])
-app.controller("app",["$scope",function(scope){
+app.controller("app",["$compile","$scope",function($compile,scope){
+    scope.$root.$compile=$compile;
     ws_set_url("${get_app_url('api')}")
     history_navigator(scope.$root)
+    scope.$root.$dialog=dialog
+    console.log(scope.$root);
     scope.$root.$history.change(function(data){
         scope.$root.page=data.page;
         scope.$root.$applyAsync();

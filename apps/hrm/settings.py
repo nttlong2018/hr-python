@@ -22,3 +22,10 @@ def authenticate(request):
         ))
     user = request.get_user()
     return user.get("isSysAdmin")==True
+DATABASE=dict(
+    host="localhost",
+    port=27017,
+    user_="sys",
+    password_="123456",
+    name="hrm"
+)

@@ -6,24 +6,16 @@ menu_items=[
         items=[
             dict(
                 caption="Tỉnh thành",
-                page="categories/provinces"
+                page="categories/provinces",
+                display_index=100
             ),
             dict(
                 caption="Quận huyện",
-                page="categories/disctricts"
+                page="categories/disctricts",
+                display_index=100
             )
         ]
     )
 ]
-from  . import list_config
 
-list_config.regist_lits("provinces",dict(
-    collection="list.provinces",
-    columns=list_config.extend_columns(
-        list_config.basic_cloumns,
-        [dict(
-            caption="Postal Code",
-            field="PostalCode"
-        )]
-    )
-))
+

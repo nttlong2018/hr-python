@@ -18,7 +18,7 @@ function ws_call(api_path,view_path,data,cb){
             }) ,
             success: function (res) {
                if(cb){
-                cb(undefine,res)
+                cb(undefined,res)
                }
                else{
                 resolve(res)

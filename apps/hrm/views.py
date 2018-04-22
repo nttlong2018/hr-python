@@ -1,10 +1,14 @@
 # -*- coding: utf-8 -*-
 import argo
 from . import menu
+import importlib
+import json
 from django.views.decorators.http import require_http_methods
 from django.views.decorators.csrf import csrf_exempt
 from django.http import HttpResponse
-from . import list_config
+from quicky import layout_view
+import forms
+
 @argo.template("index.html")
 def index(request):
     txt=request.get_app_res("Tỉnh thành")
@@ -14,15 +18,26 @@ def index(request):
             menu_items=menu.menu_items
         )
     )
+
+
 @argo.template("category.html")
 def load_categories(request,path):
-
+    form = getattr(forms, path)
     return request.render({
         "path": path.lower(),
-        "columns":list_config.get_columns(path)
+        "columns":form.layout.get_table_columns()
+    })
+@argo.template("category-editor.html")
+def load_category(request,path):
+    form = getattr(forms, path)
+    return request.render({
+        "path": path.lower(),
+        "form": form.layout.get_form(),
+        "get_col": form.layout.get_form_col
     })
 @argo.template("dynamic.html")
 def load_page(request,path):
+
     return request.render({
         "path": path.lower()
     })
@@ -45,7 +60,7 @@ def api(request):
     if post_data["path"].split("/").__len__()!=2:
         raise Exception("'{0}' is invalid path, path must be */*")
 
-    view_privileges=authorization.get_view_of_user(
+    view_privileges=argo.get_settings().AUTHORIZATION_ENGINE.get_view_of_user(
         view_id=view,
         user_id=login_info.user.userId
     )
@@ -58,45 +73,33 @@ def api(request):
     method_path=path.split('/')[1]
     mdl=None
     try:
-        mdl = importlib.import_module(module_path)
+        mdl = importlib.import_module("hrm.bll."+module_path)
     except Exception as ex:
         raise Exception("import '{0}' encountered '{1}'".format(module_path,ex.message))
 
     ret=None
 
     if mdl!=None:
+        if not hasattr(mdl,method_path):
+            raise (Exception("'{0}' was not found in '{1}'".format(method_path,"hrm.bll."+module_path)))
         try:
             if post_data.has_key("data"):
                 ret=getattr(mdl,method_path)(
                     {
                         "privileges":view_privileges,
                         "data":post_data.get("data",{}),
-                        "user":login_info.user
+                        "user":login_info.user,
+                        "view":view
                     })
             else:
                 ret = getattr(mdl, method_path)(
                     {
                         "privileges":view_privileges,
-                        "user":login_info.user
+                        "user":login_info.user,
+                        "view":view
                     })
 
         except Exception as ex:
             raise Exception("Call  '{0}' in '{1}' encountered '{2}'".format(method_path, module_path, ex))
-    if type(ret) is list:
-        if ret.__len__()==0:
-            ret_data="[]"
-        else:
-            if type(ret[0]) is dict:
-                ret_data=json.dumps(ret)
-            else:
-                ret_data=json.dumps([r.__dict__ for r in ret],default=json_serial)
-    else:
-        if ret==None:
-            ret_data=None
-        else:
-            if type(ret) is dict:
-                ret_data = json.dumps(ret, default=json_serial)
-            else:
-                ret_data = json.dumps(ret.__dict__, default=json_serial)
-    x=ret_data
+    ret_data=argo.utilities.to_json(ret)
     return HttpResponse(ret_data)
