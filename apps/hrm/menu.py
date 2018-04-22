@@ -11,7 +11,7 @@ menu_items=[
             ),
             dict(
                 caption="Quận huyện",
-                page="categories/disctricts",
+                page="categories/districts",
                 display_index=100
             )
         ]
