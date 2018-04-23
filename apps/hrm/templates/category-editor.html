@@ -21,6 +21,27 @@
                             <textarea class="form-control input-small" ng-model="data.${col['field']}">
 
                             </textarea>
+                        %elif col["type"]=="select":
+                            <select class="form-control input-small" ng-model="data.${col['field']}">
+                                <option ng-repeat="p in source_${col['source'].replace('.','_')}" value="{{p.value}}">
+                                    {{p.text}}
+                                </option>
+                            </select>
+                        <script>
+                            (function(scope){
+
+                                scope.$parent.$ws.api("categories/get_data_source")
+                                          .data({
+                                                source:"${col['source']}",
+                                                "lookup-field":"${col['lookup_field']}",
+                                                "display-field":"${col['display_field']}"
+                                          }).done(function(err,res){
+                                               scope.source_${col['source'].replace('.','_')}=res;
+                                               scope.$applyAsync();
+
+                                          });
+                            });
+                        </script>
                         %endif
 
                     </div>

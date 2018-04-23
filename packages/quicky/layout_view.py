@@ -1,5 +1,11 @@
 # -*- coding: utf-8 -*-
+import threading
+lock=None
+global lock
+lock=threading.Lock()
 _caching={}
+
+
 def get_form_col(fields,index):
     if index % 2==0:
         field_name=fields[index/2]["name"]
@@ -71,7 +77,10 @@ class view():
             return {
                 "is_label": False,
                 "field": fields[(index - 1) / 2]["name"],
-                "type": fields[(index - 1) / 2].get("type", "text")
+                "type": fields[(index - 1) / 2].get("type", "text"),
+                "source":fields[(index - 1) / 2].get("source", ""),
+                "lookup_field": fields[(index - 1) / 2].get("lookup_field", ""),
+                "display_field": fields[(index - 1) / 2].get("display_field", ""),
             }
     def get_config(self):
         return self._data[self._layout_name]

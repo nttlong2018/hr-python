@@ -2,7 +2,7 @@
 from quicky import layout_view
 from . import category
 
-layout=layout_view.create("hrm","provinces")
+layout=layout_view.create("hrm","districts")
 layout.create(dict(
     collection="list.districts",
     columns=layout_view.extend_columns(
@@ -29,7 +29,11 @@ layout.create(dict(
                 col_sm=[4, 8],
                 col_xs=[4, 8],
                 fields=[
-                    dict(name="ProvinceId")
+                    dict(name="ProvinceId",
+                         type="select",
+                         source="list.provinces",
+                         lookup_field="_id",
+                         display_field="Name")
 
                 ]
             ),

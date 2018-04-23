@@ -106,8 +106,10 @@ def to_json(ret):
         if ret.__len__()==0:
             ret_data="[]"
         else:
+
+
             if type(ret[0]) is dict:
-                ret_data=json.dumps(ret)
+                ret_data=[json.loads(json.dumps(r,default=json_serial)) for r in ret]
             else:
                 ret_data=json.dumps([r.__dict__ for r in ret],default=json_serial)
     else:
