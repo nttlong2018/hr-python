@@ -1,4 +1,5 @@
-def application(env, start_response):
-    start_response('200 OK', [('Content-Type','text/html')])
-    return [b"Hello World"] # python3
-    #return ["Hello World"] # python2
+import sys
+sys.path.append("E:\code\python\p2018\packages")
+import quicky
+x=quicky.m_query()
+quicky.pql.find("a > 1 and b == @c or not c.d == False")
