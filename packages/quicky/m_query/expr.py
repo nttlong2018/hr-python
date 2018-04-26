@@ -213,6 +213,14 @@ def get_right(cp,*params):
                 "id": "contains",
                 "field": cp.args[1].s
             }
+    if type(cp) is _ast.Call and cp.func.id.lower() == "get_params":
+        return {
+            "type":"params",
+            "value":cp.args[0].n
+        }
+
+
+
 
 
 
@@ -302,6 +310,25 @@ def get_tree(expr,*params,**kwargs):
             "left":get_left(cmp.value.values[0],*params),
             "right": get_left(cmp.value.values[1],*params)
         }
+    if type(cmp.value) is _ast.Call and \
+            cmp.value.func.id=="contains":
+        if type(cmp.value.args[1]) is _ast.Call and \
+                cmp.value.args[1].func.id=="get_params":
+            return {
+                "left": cmp.value.args[0].id,
+                "operator": "$eq",
+                "right": params[cmp.value.args[1].args[0].n]
+            }
+        else:
+            return {
+                "left":cmp.value.args[0].id,
+                "operator":"$eq",
+                "right":cmp.value.args[1].s
+            }
+
+
+
+
 
     return ret
 def get_expr(fx,*params):
@@ -312,36 +339,50 @@ def get_expr(fx,*params):
     ret={}
     if fx.has_key("operator"):
         if fx["operator"]=="$eq":
-            if fx["right"]["type"]=="params":
-                val=params[fx["right"]["value"]]
-                if type(val) is str:
-                    return {
-                        fx["left"]["id"]:{
-                            "$regex":re.compile("^"+val+"$",re.IGNORECASE)
-                        }
+            if type(fx["right"]) is str:
+                return {
+                    fx["left"]: {
+                        "$regex": re.compile(fx["right"], re.IGNORECASE)
                     }
-                else:
-                    return {
-                        fx["left"]:{
-                            fx["operator"]: val
-                        }
+                }
+            else:
+                if fx["right"]["type"]=="params":
+                    val=params[fx["right"]["value"]]
+                    if type(val) is str:
+                        if type(fx["left"]) is str:
+                            return {
+                                fx["left"]: {
+                                    "$regex": re.compile("^" + val + "$", re.IGNORECASE)
+                                }
+                            }
+                        else:
+                            return {
+                                fx["left"]["id"]:{
+                                    "$regex":re.compile("^"+val+"$",re.IGNORECASE)
+                                }
+                            }
+                    else:
+                        return {
+                            fx["left"]:{
+                                fx["operator"]: val
+                            }
 
-                    }
-            if fx["right"]["type"]=="const":
-                val = fx["right"]["value"]
-                if type(val) is str:
-                    return {
-                        fx["left"]["id"]: {
-                            "$regex": re.compile("^" + val + "$", re.IGNORECASE)
                         }
-                    }
-                else:
-                    return {
-                        fx["left"]["id"]: {
-                            fx["operator"]: val
+                if fx["right"]["type"]=="const":
+                    val = fx["right"]["value"]
+                    if type(val) is str:
+                        return {
+                            fx["left"]["id"]: {
+                                "$regex": re.compile("^" + val + "$", re.IGNORECASE)
+                            }
                         }
+                    else:
+                        return {
+                            fx["left"]["id"]: {
+                                fx["operator"]: val
+                            }
 
-                    }
+                        }
         else:
             if fx.has_key("right"):
                 if fx["right"].get("type","") == "const":
@@ -400,8 +441,55 @@ def get_expr(fx,*params):
         ]
     })
     return ret;
-def parse_expression_to_json_expression(expression,*params):
-    expr_tree=get_tree(expression,*params)
-    return get_expr(expr_tree,*params)
+def get_calc_expr(expr,*params,**kwargs):
+    if type(params) is tuple and params.__len__() > 0 and type(params[0]) is dict:
+        _params = []
+        _expr = expr
+        _index = 0;
+        for key in params[0].keys():
+            _expr = _expr.replace("@" + key, "{" + _index.__str__() + "}")
+            _params.append(params[0][key])
+            _index += 1
+        expr = _expr
+        params = _params
+    elif params == ():
+        _params = []
+        _expr = expr
+        _index = 0;
+        for key in kwargs.keys():
+            _expr = _expr.replace("@" + key, "{" + _index.__str__() + "}")
+            _params.append(kwargs[key])
+            _index += 1
+        expr = _expr
+        params = _params
+    cmp = compile(expr, '<unknown>', 'exec', 1024).body.pop()
+    if type(cmp.value) is _ast.Call:
+        return {
+            "$"+cmp.value.func.id:[
+                get_calc_get_param(x) for x in cmp.value.args
+
+            ]
+        }
+    if type(cmp.value) is _ast.BinOp:
+        return {
+            find_operator(cmp.value.op):[
+                get_calc_get_param(cmp.value.left),
+                get_calc_get_param(cmp.value.right)
+            ]
+        }
+def get_calc_get_param(fx):
+    if type(fx) is _ast.Name:
+        return "$"+get_calc_get_names(fx)
+    if type(fx) is _ast.Str:
+        return fx.s
+
+    if type(fx) is _ast.Num:
+        return fx.n
+
+def get_calc_get_names(fx):
+    return fx.id
+def parse_expression_to_json_expression(expression,*params,**kwargs):
+    expr_tree=get_tree(expression,*params,**kwargs)
+    return get_expr(expr_tree,*params,**kwargs)
 
 

@@ -142,7 +142,38 @@ class ENTITY():
                 self._data = {}
                 return ret
             if self._action=="update_many":
-                ret = self.qr.db.get_collection(self.name).update_many(self._expr,self._data)
+                updater={}
+                for key in self._data.keys():
+                    if key=="$pull":
+                        fx={}
+                        for x in self._data["$pull"].keys():
+                            if x.count(".")>0:
+                                items=x.split('.')
+                                index=0
+                                c=fx
+                                while index<items.__len__()-1:
+                                    c.update({
+                                        items[index]: {}
+                                    })
+                                    c = c[items[index]]
+                                    index+=1
+                                c.update({
+                                    items[items.__len__()-1]:self._data["$pull"][x]
+                                })
+
+                            else:
+                                fx.update({
+                                    x:self._data["$pull"]
+                                })
+                        updater.update({
+                            "$pull": fx
+                        })
+
+                    else:
+                        updater.update({
+                            key:self._data[key]
+                        })
+                ret = self.qr.db.get_collection(self.name).update_many(self._expr,updater)
                 self._expr = None
                 self._action = None
                 self._data = {}
@@ -298,13 +329,90 @@ class COLL():
         if self._entity==None:
             self._entity=ENTITY(self.qr,self.name)
         return self._entity
+    def aggregate(self):
+        return AGGREGATE(self.qr,self.name)
 class AGGREGATE():
     name = ""
     qr = None
+    _pipe=[]
 
     def __init__(self, qr, name):
         self.qr = qr
         self.name = name
+    def project(self,*args,**kwargs):
+        _project={}
+        for x in args:
+            _project.update({
+                x:1
+            })
+        for key in kwargs.keys():
+            _project.update({
+                key: expr.get_calc_expr(kwargs[key])
+            })
+        self._pipe.append({
+            "$project":_project
+        })
+        return self
+    def skip(self,len):
+        self._pipe.append({
+            "$skip":len
+        })
+        return self
+    def limit(self,num):
+        self._pipe.append({
+            "$limit": len
+        })
+        return self
+    def unwind(self,field_name):
+        if field_name[0:1]!="$":
+            field_name="$"+field_name
+        self._pipe.append({
+            "$unwind":{"path":field_name,
+                        "preserveNullAndEmptyArrays":True
+                    }
+        })
+        return self
+    def match(self,expression, *args,**kwargs):
+        if args==():
+            args=kwargs
+
+        if type(expression) is dict:
+            self._pipe.append({
+                "$match":expression
+            })
+            return self
+        if type(expression) is str:
+            self._pipe.append({
+                "$match": expr.parse_expression_to_json_expression(expression,args)
+            })
+            return self
+
+        pass
+    def lookup(self, *args,**kwargs):
+        if not kwargs.has_key("source"):
+            raise Exception("'source' was not found")
+        if not kwargs.has_key("local_field"):
+            raise Exception("'local_field' was not found")
+        if not kwargs.has_key("foreign_field"):
+            raise Exception("'foreign_field' was not found")
+        if not kwargs.has_key("alias"):
+            raise Exception("'alias' was not found")
+        self._pipe.append({
+            "$lookup":{
+                "from":kwargs["source"],
+                "localField":kwargs["local_field"],
+                "foreignField":kwargs["foreign_field"],
+                "as":kwargs["alias"]
+            }
+        })
+        return self
+    def get_list(self):
+        return self.qr.db.get_collection("test_from_long").aggregate(self._pipe,explain=False)["cursor"]["firstBatch"]
+
+
+
+
+
 def get_query(*args,**kwargs):
     global _db
     if args.__len__()==0:
