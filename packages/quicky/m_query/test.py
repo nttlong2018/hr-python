@@ -10,12 +10,12 @@ import datetime
 #                 "contains(name,{2})",
 #                     "test cai coi","a","b")
 # y=expr.get_expr(x,"a","b","c")
-qr=query.get_query(host="172.16.7.63",
-           name="lv_lms",
+qr=query.get_query(host="localhot",
+           name="hrm",
            port=27017,
-           user="root",
+           user="",
            password="123456")
-qr=qr.collection("test_from_long").aggregate()
+qr=qr.collection("hrm.").aggregate()
 qr.project(
     username=lambda x:len(x) if len(x)>3 else 1,
     password=1
