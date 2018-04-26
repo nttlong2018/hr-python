@@ -1,5 +1,6 @@
 import _ast
 import re
+import inspect
 _operators=[
     dict(op="$eq",fn=_ast.Eq),
     dict(op="$ne",fn=_ast.NotEq),
@@ -441,6 +442,8 @@ def get_expr(fx,*params):
         ]
     })
     return ret;
+def get_calc_expr_if(ifexpr):
+    pass
 def get_calc_expr(expr,*params,**kwargs):
     if type(params) is tuple and params.__len__() > 0 and type(params[0]) is dict:
         _params = []
@@ -462,7 +465,18 @@ def get_calc_expr(expr,*params,**kwargs):
             _index += 1
         expr = _expr
         params = _params
+    if callable(expr):
+        field_name=inspect.getsource(expr).split('=')[0]
+        expr=inspect.getsource(expr)[field_name.__len__()+1:inspect.getsource(expr).__len__()]
+
+
+
     cmp = compile(expr, '<unknown>', 'exec', 1024).body.pop()
+    if type(cmp.value) is _ast.Tuple and cmp.value._fields.count("elts")>0 and type(cmp.value.elts[0]) is _ast.Lambda:
+        if type(cmp.value.elts[0].body) is _ast.IfExp:
+            return get_calc_expr_if(cmp.value.elts[0].body)
+
+
     if type(cmp.value) is _ast.Call:
         return {
             "$"+cmp.value.func.id:[

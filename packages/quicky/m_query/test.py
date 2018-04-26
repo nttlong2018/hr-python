@@ -16,12 +16,10 @@ qr=query.get_query(host="172.16.7.63",
            user="root",
            password="123456")
 qr=qr.collection("test_from_long").aggregate()
-qr.project("username",
-           fullname="concat(username,' ',password)",
-           grage="1+1",
-           lenOfName="strLenCP(username)").match("contains(fullname,@name)",name="a01")\
-            .lookup(source="sys_user",local_field="_id",foreign_field="_id",alias="user")\
-    .unwind("user")
+qr.project(
+    username=lambda x:len(x) if len(x)>3 else 1,
+    password=1
+)
 
 
 print qr.get_list()
