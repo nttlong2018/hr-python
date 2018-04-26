@@ -1,4 +1,5 @@
 import expr
+
 from pymongo import MongoClient
 _db={}
 class QR():
@@ -7,46 +8,303 @@ class QR():
         self.db=_db
     def collection(self,name):
         return COLL(self,name)
+    def get_collection_names(self):
+        return list(self.db.collection_names())
 class ENTITY():
     name = ""
     qr = None
+    _data={}
+    _action=None
+    _expr=None
     def __init__(self, qr, name):
         self.qr = qr
         self.name = name
     def insert_one(self,data):
-        ret=self.qr.db.get_collection(self.name).insert_one(data)
-        data.update({
-            "_id":ret.inserted_id
-        })
-        return ret
+        self._action="insert_one"
+        self._data=data
+        return self
     def insert_many(self,data):
-        ret = self.qr.db.get_collection(self.name).insert_one(data)
-        return ret
+        self._action = "insert_many"
+        self._data = data
+        return self
+    def update_one(self,data):
+        self._action="update_one"
+        if not self._data.has_key("$set"):
+            self._data.update({
+                "$set":data
+            })
+        else:
+            x=self._data["$set"]
+            for key in data.keys():
+                x.update({
+                    key:data[key]
+                })
+        return self
+    def update_many(self,expression,data,*params):
+        self._action = "update_many"
+        if not self._data.has_key("$set"):
+            self._data.update({
+                "$set": data
+            })
+        else:
+            x = self._data["$set"]
+            for key in data.keys():
+                x.update({
+                    key: data[key]
+                })
+        return self
+    def push(self,data):
+        if self._action==None:
+            self._action="update_many"
+        if not self._data.has_key("$push"):
+            self._data.update({
+                "$push": data
+            })
+        else:
+            x = self._data["$push"]
+            for key in data.keys():
+                x.update({
+                    key: data[key]
+                })
+        return self
+    def pull(self,data):
+        if self._action==None:
+            self._action="update_many"
+        if not self._data.has_key("$pull"):
+            self._data.update({
+                "$pull": data
+            })
+        else:
+            x = self._data["$pull"]
+            for key in data.keys():
+                x.update({
+                    key: data[key]
+                })
+        return self
+    def inc(self,data):
+        if self._action==None:
+            self._action="update_many"
+        if not self._data.has_key("$inc"):
+            self._data.update({
+                "$inc": data
+            })
+        else:
+            x = self._data["$inc"]
+            for key in data.keys():
+                x.update({
+                    key: data[key]
+                })
+        return self
+    def dec(self,data):
+        if self._action == None:
+            self._action = "update_many"
+        if not self._data.has_key("$dec"):
+            self._data.update({
+                "$dec": data
+            })
+        else:
+            x = self._data["$dec"]
+            for key in data.keys():
+                x.update({
+                    key: data[key]
+                })
+        return self
+    def filter(self,expression,*params):
+        self._expr = expression
+        if type(expression) is str:
+            self._expr = expr.parse_expression_to_json_expression(expression, *params)
+        return self
+    def delete(self):
+        self._action="delete"
+        return self
+    def commit(self):
+        if self._action=="insert_one":
+            ret=self.qr.db.get_collection(self.name).insert_one(self._data)
+            ret_data=self._data.copy()
+            ret_data.update({
+                "_id":ret.inserted_id
+            })
+            self._action=None
+            self._data={}
+            return ret_data
+        elif self._action=="insert_many":
+            ret = self.qr.db.get_collection(self.name).insert_many(self._data)
+            self._action = None
+            self._data = {}
+            return ret
+        else:
+            if self._expr==None:
+                raise Exception("Can not modified data without using filter")
+            if self._action=="update_one":
+                ret = self.qr.db.get_collection(self.name).update_one(self._expr,self._data)
+                self._expr=None
+                self._action = None
+                self._data = {}
+                return ret
+            if self._action=="update_many":
+                ret = self.qr.db.get_collection(self.name).update_many(self._expr,self._data)
+                self._expr = None
+                self._action = None
+                self._data = {}
+                return ret
+            if self._action=="delete":
+                ret = self.qr.db.get_collection(self.name).delete(self._expr)
+                self._expr = None
+                self._action = None
+                self._data = {}
+                return ret
 
 
 
+
+
+class WHERE():
+    name = ""
+    _coll = None
+    _where_list=[]
+    _entity=None
+
+    def _get_where(self):
+        i = 0
+        x = expr.get_tree(self._where_list[i]["expression"], *self._where_list[i].get("params", []))
+        y = expr.get_expr(x, self._where_list[i].get("params", []))
+        i += 1
+        while i < self._where_list.__len__():
+            item = self._where_list[i]
+            _x = expr.get_tree(item["expression"], *item.get("params", []))
+            _y = expr.get_expr(_x, *item.get("params", []))
+            y = {
+                "$" + item["type"]: [
+                    y, _y
+                ]
+            }
+            i += 1
+        return y
+
+    def __init__(self, coll):
+        self._coll = coll
+        self.name=coll.name
+    def get_list(self):
+        if self._where_list.__len__()==0:
+            return self._coll.get_list()
+        else:
+            return self._coll.find(self._get_where())
+    def get_item(self):
+        if self._where_list.__len__() == 0:
+            return self._coll.get_item()
+        else:
+            return self._coll.find_one(self._get_where())
+    def to_entity(self):
+        if self._entity==None:
+            self._entity=ENTITY(self._coll.qr,self.name)
+        return self._entity
+    def where(self,expression,*params):
+        self._where_list.append(dict(
+            expression=expression,
+            params=params,
+            type=None
+        ))
+        return self
+    def where_and(self,expression,*params):
+        self._where_list.append(dict(
+            expression=expression,
+            params=params,
+            type="and"
+
+        ))
+        return self
+    def where_or(self,expression,*params):
+        self._where_list.append(dict(
+            expression=expression,
+            params=params,
+            type="or"
+
+        ))
+        return self
+    def update(self,data):
+        self.to_entity().filter(self._get_where())
+        self.to_entity().update_one(data)
+        return self
+    def update_many(self,data):
+        self.to_entity().filter(self._get_where())
+        self.to_entity().update_many(data)
+        return self
+    def push(self,data):
+        self.to_entity().filter(self._get_where())
+        self.to_entity().push(data)
+        return self
+    def pull(self,data):
+        self.to_entity().filter(self._get_where())
+        self.to_entity().pull(data)
+        return self
+    def inc(self,data):
+        self.to_entity().filter(self._get_where())
+        self.to_entity().inc(data)
+        return self
+    def dec(self,data):
+        self.to_entity().filter(self._get_where())
+        self.to_entity().dec(data)
+        return self
+    def delete(self,data):
+        self.to_entity().filter(self._get_where())
+        self.to_entity().delete()
+        return self
+    def commit(self):
+        return self.to_entity().commit()
 class COLL():
     name=""
     qr=None
+    _where=None
+    _entity=None
     def __init__(self,qr,name):
         self.qr=qr
         self.name=name
     def find_one(self,exprression,*params):
-        x=expr.get_tree(exprression,params)
-        y=expr.get_expr(x,params)
-        ret=self.qr.db.get_collection(self.name).find_one(y)
-        return ret
+        if type(exprression) is dict:
+            ret = self.qr.db.get_collection(self.name).find_one(exprression)
+            return ret
+        elif type(exprression) is tuple:
+            ret = self.qr.db.get_collection(self.name).find_one(exprression[0])
+            return ret
+        else:
+            x=expr.get_tree(exprression,params)
+            y=expr.get_expr(x,params)
+            ret=self.qr.db.get_collection(self.name).find_one(y)
+            return ret
     def find(self,exprression,*params):
-        x=expr.get_tree(exprression,params)
-        y=expr.get_expr(x,params)
-        ret=self.qr.db.get_collection(self.name).find(y)
+        if type(exprression) is dict:
+            ret = self.qr.db.get_collection(self.name).find(exprression)
+            return list(ret)
+        elif type(exprression) is tuple:
+            ret = self.qr.db.get_collection(self.name).find(exprression[0])
+            return list(ret)
+        else:
+            x=expr.get_tree(exprression,params)
+            y=expr.get_expr(x,params)
+            ret=self.qr.db.get_collection(self.name).find(y)
+            return list(ret)
+    def get_list(self):
+        ret = self.qr.db.get_collection(self.name).find()
         return list(ret)
+    def get_item(self):
+        ret = self.qr.db.get_collection(self.name).find_one()
+        return ret
+    def where(self,exprression,*params):
+        if self._where==None:
+            self._where=WHERE(self)
+            self._where.where(exprression,params)
+        return self._where
+    def entity(self):
+        if self._entity==None:
+            self._entity=ENTITY(self.qr,self.name)
+        return self._entity
+class AGGREGATE():
+    name = ""
+    qr = None
 
-
-
-
-
-
+    def __init__(self, qr, name):
+        self.qr = qr
+        self.name = name
 def get_query(*args,**kwargs):
     global _db
     if args.__len__()==0:
