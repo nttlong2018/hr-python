@@ -15,13 +15,14 @@ qr=query.get_query(host="172.16.7.63",
            port=27017,
            user="root",
            password="123456")
-qr=qr.collection("").aggregate()
+qr=qr.collection("test_from_long").aggregate()
 qr.project(
     dict(
-        username="iif(strLenCP(login.username)>{0} and strLenCP(username)<{1},{0},{1})",
-        password=1
+        username="switch(case(strLenCP(username)>{0},strLenCP(username)),"
+                 "case(strLenCP(username)+{0}==1,strLenCP(username)-{1}),"
+                 "year(CreatedOn)-month(CreatedOn))"
     ),
-    100,20
+    100,20,'%Y-%m-%d'
 )
 print  qr._pipe
 

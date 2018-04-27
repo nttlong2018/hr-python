@@ -12,7 +12,7 @@ _operators=[
     dict(op="$div",fn=_ast.Div),
     dict(op="$mode",fn=_ast.Mod),
     dict(op="$add",fn=_ast.Add),
-    dict(op="$sub",fn=_ast.Sub),
+    dict(op="$subtract",fn=_ast.Sub),
     dict(op="$and",fn=_ast.And),
     dict(op="$or",fn=_ast.Or),
     dict(op="$not",fn=_ast.Not),
@@ -457,10 +457,10 @@ def get_calc_exprt_boolean_expression(fx,*params):
             }
         if p["right"]["type"]=="params":
             return {
-                p["operator"]:[
+                p["operator"]: [
                     {
-                        "$" + fx.left.func.id:"$" + (lambda x: x if type(x) is str else x["id"])(field)
-                    },params[p["right"]["value"]]
+                        "$" + fx.left.func.id: "$" + (lambda x: x if type(x) is str else x["id"])(field)
+                    }, params[p["right"]["value"]]
                 ]
             }
 
@@ -480,13 +480,99 @@ def get_calc_exprt_boolean_expression(fx,*params):
 
             ]
         }
+def extract_json(fx,*params):
+    if type(fx) is _ast.Num:
+        return fx.n
+    if type(fx) is _ast.Str:
+        return fx.s
 
+    if type(fx) is _ast.Call:
+        if fx.func.id=="get_params":
+            return params[fx.args[0].n]
+
+        if fx.func.id=="iif":
+            return {
+                "$cond": { "if": get_calc_exprt_boolean_expression(fx.args[0],*params),
+                           "then": extract_json(fx.args[1],*params),
+                            "else": extract_json(fx.args[2],*params) }
+            }
+        elif fx.func.id=="dateToString":
+            p_left = get_left(fx.args[0],*params)
+            p_right = get_left(fx.args[1],*params)
+            val=p_right["value"]
+            if p_right["type"]=="function" and p_right["id"]=="get_params":
+                val=params[val]
+            # return { $dateToString: { format: "%Y-%m-%d", date: "$date" } }
+            return {
+                "$dateToString":{
+                    "format":val,
+                    "date":"$"+p_left["id"]
+
+                }
+            }
+        elif fx.func.id=="dateFromString":
+            p_left = get_left(fx.args[0], *params)
+            p_right = get_left(fx.args[1], *params)
+            val = p_right["value"]
+            if p_right["type"] == "function" and p_right["id"] == "get_params":
+                val = params[val]
+            # return { $dateToString: { format: "%Y-%m-%d", date: "$date" } }
+            return {
+                "$dateToString": {
+                    "timezone": val,
+                    "dateString": "$" + p_left["id"]
+
+                }
+            }
+        elif fx.func.id=="switch":
+            branches=[]
+            for item in fx.args:
+                if fx.args.index(item)<fx.args.__len__()-1:
+
+                    branches.append({
+                        "case":extract_json(item.args[0],*params),
+                        "then":extract_json(item.args[1],*params)
+
+                    })
+
+            return {
+                "$switch":{
+                    "branches":branches,
+                    "default":extract_json(fx.args[fx.args.__len__()-1],*params)
+                }
+            }
+            k=cmp
+            pass
+
+        else:
+            return {
+                "$"+fx.func.id:[
+                    get_calc_get_param(x,*params) for x in fx.args
+
+                ]
+            }
+    if type(fx) is _ast.BinOp:
+        return {
+            find_operator(fx.op):[
+                extract_json(fx.left,*params),
+                extract_json(fx.right,*params)
+            ]
+        }
+    if type(fx) is _ast.Compare:
+        return {
+            find_operator(fx.ops[0]):[
+                extract_json(fx.left, *params),
+                extract_json(fx.comparators[0], *params)
+            ]
+
+        }
 def get_calc_expr_boolean_expression_result(fx,*params):
     p = get_left(fx,*params)
     if p["type"]=="const":
         return p["value"]
     if p["type"]=="function" and p["id"]=="get_params":
         return params[p["value"]]
+
 
 def get_calc_expr(expr,*params,**kwargs):
     if expr==1:
@@ -518,32 +604,14 @@ def get_calc_expr(expr,*params,**kwargs):
 
     expr=vert_expr(expr,*params)
     cmp = compile(expr, '<unknown>', 'exec', 1024).body.pop()
+    return extract_json(cmp.value,*params)
 
 
 
 
-    if type(cmp.value) is _ast.Call:
-        if cmp.value.func.id=="iif":
-            return {
-                "$cond": { "if": get_calc_exprt_boolean_expression(cmp.value.args[0],*params),
-                           "then": get_calc_expr_boolean_expression_result(cmp.value.args[1],*params),
-                            "else": get_calc_expr_boolean_expression_result(cmp.value.args[2],*params) }
-            }
-        else:
-            return {
-                "$"+cmp.value.func.id:[
-                    get_calc_get_param(x) for x in cmp.value.args
 
-                ]
-            }
-    if type(cmp.value) is _ast.BinOp:
-        return {
-            find_operator(cmp.value.op):[
-                get_calc_get_param(cmp.value.left),
-                get_calc_get_param(cmp.value.right)
-            ]
-        }
-def get_calc_get_param(fx):
+
+def get_calc_get_param(fx,*params):
     if type(fx) is _ast.Name:
         return "$"+get_calc_get_names(fx)
     if type(fx) is _ast.Str:
@@ -551,6 +619,8 @@ def get_calc_get_param(fx):
 
     if type(fx) is _ast.Num:
         return fx.n
+    if type(fx) is _ast.Attribute:
+        return "$" + get_left(fx)
 
 def get_calc_get_names(fx):
     return fx.id

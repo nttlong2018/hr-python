@@ -7,6 +7,8 @@ class QR():
     def __init__(self,_db):
         self.db=_db
     def collection(self,name):
+        if name==None or name=="":
+            raise Exception("'name' can not be null or empty")
         return COLL(self,name)
     def get_collection_names(self):
         return list(self.db.collection_names())
@@ -413,7 +415,7 @@ class AGGREGATE():
         })
         return self
     def get_list(self):
-        return self.qr.db.get_collection("test_from_long").aggregate(self._pipe,explain=False)["cursor"]["firstBatch"]
+        return self.qr.db.get_collection(self.name).aggregate(self._pipe,explain=False)["cursor"]["firstBatch"]
 
 
 
