@@ -11,10 +11,10 @@ import datetime
 #                     "test cai coi","a","b")
 # y=expr.get_expr(x,"a","b","c")
 import datetime
-qr=query.get_query(host="172.16.7.63",
-           name="lv_lms",
+qr=query.get_query(host="localhost",
+           name="hrm",
            port=27017,
-           user="root",
+           user="",
            password="123456")
 qr=qr.collection("test_from_long").aggregate()
 # qr.project(
@@ -26,7 +26,8 @@ qr=qr.collection("test_from_long").aggregate()
 #     ),
 #     time_now=datetime.datetime.now()
 # )
-qr.match("contains(username,@time_now)",time_now="")
+qr.match("contains(username,@time_now)",time_now="").unwind("$users")
+
 print  qr._pipe
 
 

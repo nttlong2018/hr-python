@@ -4,6 +4,7 @@ from pymongo import MongoClient
 _db={}
 class QR():
     db=None
+    _entity=None
     def __init__(self,_db):
         self.db=_db
     def collection(self,name):
@@ -13,6 +14,7 @@ class QR():
         return COLL(self,name)
     def get_collection_names(self):
         return list(self.db.collection_names())
+
 class ENTITY():
     name = ""
     qr = None
@@ -22,9 +24,14 @@ class ENTITY():
     def __init__(self, qr, name):
         self.qr = qr
         self.name = name
-    def insert_one(self,data):
+    def insert_one(self,*args,**kwargs):
+        if args==():
+            self._data=kwargs
+        else:
+            self._data = args[0]
+
         self._action="insert_one"
-        self._data=data
+
         return self
     def insert_many(self,data):
         self._action = "insert_many"
@@ -349,6 +356,13 @@ class COLL():
     def aggregate(self):
         """create aggregate before create pipeline"""
         return AGGREGATE(self.qr,self.name)
+    def entity(self):
+        if self._entity==None:
+            self._entity=ENTITY(self.qr,self.name)
+        return self._entity
+    def insert_one(self,*args,**kwargs):
+        self.entity().insert_one(*args,**kwargs)
+        return self.entity()
 class AGGREGATE():
     name = ""
     qr = None
@@ -440,15 +454,30 @@ class AGGREGATE():
             return self
 
         pass
-    def lookup(self, *args,**kwargs):
-        if not kwargs.has_key("source"):
-            raise Exception("'source' was not found")
-        if not kwargs.has_key("local_field"):
-            raise Exception("'local_field' was not found")
-        if not kwargs.has_key("foreign_field"):
-            raise Exception("'foreign_field' was not found")
-        if not kwargs.has_key("alias"):
-            raise Exception("'alias' was not found")
+    def lookup(self,
+               source=None,
+               local_field=None,
+               foreign_field=None,
+               alias=None,
+               *args,**kwargs):
+        if args==() and kwargs=={}:
+            _source=source
+            if source.__class__ is COLL:
+                _source=source.name
+
+            kwargs.update(source=_source,
+                          local_field=local_field,
+                          foreign_field=foreign_field,
+                          alias=alias)
+        else:
+            if not kwargs.has_key("source"):
+                raise Exception("'source' was not found")
+            if not kwargs.has_key("local_field"):
+                raise Exception("'local_field' was not found")
+            if not kwargs.has_key("foreign_field"):
+                raise Exception("'foreign_field' was not found")
+            if not kwargs.has_key("alias"):
+                raise Exception("'alias' was not found")
         self._pipe.append({
             "$lookup":{
                 "from":kwargs["source"],
@@ -459,7 +488,11 @@ class AGGREGATE():
         })
         return self
     def get_list(self):
-        return self.qr.db.get_collection(self.name).aggregate(self._pipe,explain=False)["cursor"]["firstBatch"]
+        # try:
+        #     return self.qr.db.get_collection(self.name).aggregate(self._pipe,explain=False)["cursor"]["firstBatch"]
+        # except Exception as ex:
+        #     return list(self.qr.db.get_collection(self.name).aggregate(self._pipe))
+        return list(self.qr.db.get_collection(self.name).aggregate(self._pipe))
 def get_query(*args,**kwargs):
     """
     Create db instance <br/>
