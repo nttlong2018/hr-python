@@ -10,6 +10,7 @@ import datetime
 #                 "contains(name,{2})",
 #                     "test cai coi","a","b")
 # y=expr.get_expr(x,"a","b","c")
+import datetime
 qr=query.get_query(host="172.16.7.63",
            name="lv_lms",
            port=27017,
@@ -18,11 +19,12 @@ qr=query.get_query(host="172.16.7.63",
 qr=qr.collection("test_from_long").aggregate()
 qr.project(
     dict(
-        username="switch(case(strLenCP(username)>{0},strLenCP(username)),"
-                 "case(strLenCP(username)+{0}==1,strLenCP(username)-{1}),"
-                 "year(CreatedOn)-month(CreatedOn))"
+        FullName="toUpper(concat(FirstName,' ',LastName))",
+        Age="year(@time_now)- year(BirthDate)",
+        Username=1,
+        CreatedOn=1
     ),
-    100,20,'%Y-%m-%d'
+    time_now=datetime.datetime.now()
 )
 print  qr._pipe
 

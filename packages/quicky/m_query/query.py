@@ -7,6 +7,7 @@ class QR():
     def __init__(self,_db):
         self.db=_db
     def collection(self,name):
+        "get collection from database. including methods: find_one,find,get_list,get_item,where,entity,aggregate "
         if name==None or name=="":
             raise Exception("'name' can not be null or empty")
         return COLL(self,name)
@@ -293,6 +294,10 @@ class COLL():
         self.qr=qr
         self.name=name
     def find_one(self,exprression,*params):
+        """find one item with conditional ex: find_one("Username={0}","admin"),
+            find_one("Username='admin'"),
+            find_one("Username=@username",username="admin")
+         """
         if type(exprression) is dict:
             ret = self.qr.db.get_collection(self.name).find_one(exprression)
             return ret
@@ -305,6 +310,10 @@ class COLL():
             ret=self.qr.db.get_collection(self.name).find_one(y)
             return ret
     def find(self,exprression,*params):
+        """find and get a list of items item with conditional ex: find("Username={0}","admin"),
+                    find("Username='admin'"),
+                    find("Username=@username",username="admin")
+                 """
         if type(exprression) is dict:
             ret = self.qr.db.get_collection(self.name).find(exprression)
             return list(ret)
@@ -323,6 +332,12 @@ class COLL():
         ret = self.qr.db.get_collection(self.name).find_one()
         return ret
     def where(self,exprression,*params):
+        """Create filter expression before get data from mongo
+            Ex:where("strLenCP(Username)<3").get_list(),
+               where("strLenCP(Username)<@strong_number",strong_number=5).get_list()
+               where("strLenCP(Username)<{0}",5).get_list()
+
+        """
         if self._where==None:
             self._where=WHERE(self)
             self._where.where(exprression,params)
@@ -332,6 +347,7 @@ class COLL():
             self._entity=ENTITY(self.qr,self.name)
         return self._entity
     def aggregate(self):
+        """create aggregate before create pipeline"""
         return AGGREGATE(self.qr,self.name)
 class AGGREGATE():
     name = ""
@@ -342,20 +358,45 @@ class AGGREGATE():
         self.qr = qr
         self.name = name
     def project(self,*args,**kwargs):
-        _project={}
-        params=[]
-        if type(args) is tuple and args.__len__()>1 and type(args[0]) is dict:
+        """
+        Create project pipeline
+        Ex:
+            project(
+                dict(
+                    FullName="toUpper(concat(FirstName,' ',LastName))",
+                    Age="year(@time_now)- year(BirthDate)",
+                    Username=1,
+                    CreatedOn=1
+                ),
+                time_now=datetime.now()
+            )
+        :param args:
+        :param kwargs:
+        :return:
+        """
+        _project = {}
+        if kwargs=={}:
+            kwargs=args[0]
+            params=args[1]
 
-            params=[e for e in args if args.index(e)>0]
-            kwargs = args[0]
-            args=[]
-        for x in args:
-            _project.update({
-                x:1
-            })
+        else:
+
+            params=[]
+            if type(args) is tuple and args.__len__()>1 and type(args[0]) is dict:
+
+                params=[e for e in args if args.index(e)>0]
+                kwargs = args[0]
+                args=[]
+            elif type(args) is tuple and args.__len__()==1 and type(args[0]) is dict:
+                params=kwargs
+                kwargs=args[0]
+            # for x in args:
+            #     _project.update({
+            #         x:1
+            #     })
         for key in kwargs.keys():
             _project.update({
-                key: expr.get_calc_expr(kwargs[key],*params)
+                key: expr.get_calc_expr(kwargs[key],params)
             })
         self._pipe.append({
             "$project":_project
@@ -416,12 +457,11 @@ class AGGREGATE():
         return self
     def get_list(self):
         return self.qr.db.get_collection(self.name).aggregate(self._pipe,explain=False)["cursor"]["firstBatch"]
-
-
-
-
-
 def get_query(*args,**kwargs):
+    """
+    Create db instance <br/>
+    Ex:query.get_query(host="ip address", name="database name",port=,user=,password=)
+    """
     global _db
     if args.__len__()==0:
         args=kwargs
