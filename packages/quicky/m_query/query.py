@@ -422,6 +422,9 @@ class AGGREGATE():
         })
         return self
     def match(self,expression, *args,**kwargs):
+        """Beware! You could not use any Aggregation Pipeline Operators, just use this function with Field Logic comparasion such as:
+        and,or, contains,==,!=,>,<,..
+        """
         if args==():
             args=kwargs
 

@@ -362,11 +362,7 @@ def get_expr(fx,*params):
     if(type(fx) is str):
         return fx
     ret={}
-    if fx.has_key("left") and fx["left"].has_key("params") and fx["left"].has_key("type") and fx["left"]["type"]=="function":
-        return {fx["operator"]:[
-            {fx["left"]["id"]:fx["left"]["params"]},
-            fx["right"]["value"]
-        ]}
+
     if fx.has_key("operator"):
         if fx["operator"]=="$contains":
             return {

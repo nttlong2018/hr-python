@@ -26,7 +26,7 @@ qr=qr.collection("test_from_long").aggregate()
 #     ),
 #     time_now=datetime.datetime.now()
 # )
-qr.match("contains(username,@time_now)or(year(CreatedOn))==2018",time_now="XXX")
+qr.match("contains(username,@time_now)",time_now="")
 print  qr._pipe
 
 
