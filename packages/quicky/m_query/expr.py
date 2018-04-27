@@ -244,6 +244,8 @@ def vert_expr(str,*params):
         index=index+1
     return ret
 def get_tree(expr,*params,**kwargs):
+    while type(params) is tuple and params.__len__()>0 and type(params[0]) is dict:
+        params=params[0]
     if type(params) is tuple and params.__len__()>0 and type(params[0]) is dict:
         _params=[]
         _expr=expr
@@ -254,6 +256,16 @@ def get_tree(expr,*params,**kwargs):
             _index+=1
         expr=_expr
         params=_params
+    elif type(params) is dict:
+        _params = []
+        _expr = expr
+        _index = 0;
+        for key in params.keys():
+            _expr = _expr.replace("@" + key, "{" + _index.__str__() + "}")
+            _params.append(params[key])
+            _index += 1
+        expr = _expr
+        params = _params
     elif params==():
         _params = []
         _expr = expr
@@ -318,13 +330,13 @@ def get_tree(expr,*params,**kwargs):
                 cmp.value.args[1].func.id=="get_params":
             return {
                 "left": cmp.value.args[0].id,
-                "operator": "$eq",
+                "operator": "$contains",
                 "right": params[cmp.value.args[1].args[0].n]
             }
         else:
             return {
                 "left":cmp.value.args[0].id,
-                "operator":"$eq",
+                "operator":"$contains",
                 "right":cmp.value.args[1].s
             }
 
@@ -336,10 +348,21 @@ def get_tree(expr,*params,**kwargs):
 def get_expr(fx,*params):
     while type(params) is tuple and params.__len__()>0 and type(params[0]) is tuple:
         params=params[0]
+    while type(params) is tuple and params.__len__()>0 and type(params[0]) is dict:
+        params = params[0]
+    if type(params) is dict:
+        params=[params[key] for key in params.keys()]
+
     if(type(fx) is str):
         return fx
     ret={}
     if fx.has_key("operator"):
+        if fx["operator"]=="$contains":
+            return {
+                fx["left"]:re.compile(fx["right"],re.IGNORECASE)
+
+            }
+
         if fx["operator"]=="$eq":
             if type(fx["right"]) is str:
                 return {
@@ -364,12 +387,38 @@ def get_expr(fx,*params):
                                 }
                             }
                     else:
-                        return {
-                            fx["left"]:{
-                                fx["operator"]: val
-                            }
+                        if fx["operator"]=="$eq" and type(val) is str:
+                            if type(fx["left"]) is str:
+                                return {
+                                    fx["left"]: {
+                                        "$regex":re.compile("^"+val+"$",re.IGNORECASE)
+                                    }
 
-                        }
+                                }
+                            if type(fx["left"]) is dict:
+                                return {
+                                    fx["left"]["id"]:{
+                                        "$regex":re.compile("^"+val+"$",re.IGNORECASE)
+                                    }
+
+                                }
+
+                        else:
+                            if type(fx["left"]) is str:
+                                return {
+                                    fx["left"]:{
+                                        fx["operator"]: val
+                                    }
+
+                                }
+                            if type(fx["left"]) is dict:
+                                return {
+                                    fx["left"]["id"]: {
+                                        fx["operator"]: val
+                                    }
+
+                                }
+
                 if fx["right"]["type"]=="const":
                     val = fx["right"]["value"]
                     if type(val) is str:
@@ -481,6 +530,9 @@ def get_calc_exprt_boolean_expression(fx,*params):
             ]
         }
 def extract_json(fx,*params):
+    if type(fx) is _ast.Name:
+        p=get_left(fx,*params)
+        return p["id"]
     if type(fx) is _ast.Num:
         return fx.n
     if type(fx) is _ast.Str:
@@ -547,7 +599,7 @@ def extract_json(fx,*params):
         else:
             return {
                 "$"+fx.func.id:[
-                    get_calc_get_param(x,*params) for x in fx.args
+                    extract_json(x,*params) for x in fx.args
 
                 ]
             }

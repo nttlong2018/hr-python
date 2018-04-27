@@ -17,15 +17,16 @@ qr=query.get_query(host="172.16.7.63",
            user="root",
            password="123456")
 qr=qr.collection("test_from_long").aggregate()
-qr.project(
-    dict(
-        FullName="toUpper(concat(FirstName,' ',LastName))",
-        Age="year(@time_now)- year(BirthDate)",
-        Username=1,
-        CreatedOn=1
-    ),
-    time_now=datetime.datetime.now()
-)
+# qr.project(
+#     dict(
+#         FullName="toUpper(concat(FirstName,' ',LastName))",
+#         Age="year(@time_now)- year(BirthDate)",
+#         Username=1,
+#         CreatedOn=1
+#     ),
+#     time_now=datetime.datetime.now()
+# )
+qr.match("contains(username,@time_now)",time_now="XXX")
 print  qr._pipe
 
 
