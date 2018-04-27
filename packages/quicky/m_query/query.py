@@ -341,13 +341,19 @@ class AGGREGATE():
         self.name = name
     def project(self,*args,**kwargs):
         _project={}
+        params=[]
+        if type(args) is tuple and args.__len__()>1 and type(args[0]) is dict:
+
+            params=[e for e in args if args.index(e)>0]
+            kwargs = args[0]
+            args=[]
         for x in args:
             _project.update({
                 x:1
             })
         for key in kwargs.keys():
             _project.update({
-                key: expr.get_calc_expr(kwargs[key])
+                key: expr.get_calc_expr(kwargs[key],*params)
             })
         self._pipe.append({
             "$project":_project

@@ -19,6 +19,7 @@ _operators=[
     dict(op="$in",fn=_ast.In),
     dict(op="$notin",fn=_ast.NotIn)
 ]
+
 def get_comparators(cp):
     if cp._fields.count("elts")>0:
         if type(cp.elts[0]) is _ast.Num:
@@ -442,9 +443,54 @@ def get_expr(fx,*params):
         ]
     })
     return ret;
-def get_calc_expr_if(ifexpr):
-    pass
+def get_calc_exprt_boolean_expression(fx,*params):
+    p=get_right(fx,*params)
+    if fx._fields.count("left")>0 and type(fx.left) is _ast.Call:
+        field = get_left(fx.left.args[0])
+        if p["right"]["type"]=="const":
+            return {
+                p["operator"]:[
+                    {
+                        "$" + fx.left.func.id:"$"+field["id"]
+                    },p["right"]["value"]
+                ]
+            }
+        if p["right"]["type"]=="params":
+            return {
+                p["operator"]:[
+                    {
+                        "$" + fx.left.func.id:"$" + (lambda x: x if type(x) is str else x["id"])(field)
+                    },params[p["right"]["value"]]
+                ]
+            }
+
+
+    if type(fx) is _ast.Compare:
+        return {
+            find_operator(fx.ops[0]):[
+                get_calc_exprt_boolean_expression(fx.left,*params),
+                get_calc_exprt_boolean_expression(fx.comparators[0],*params)
+            ]
+        }
+
+    if type(fx) is _ast.BoolOp:
+        return {
+            find_operator(fx.op): [
+                [get_calc_exprt_boolean_expression(x,*params) for x in fx.values]
+
+            ]
+        }
+
+def get_calc_expr_boolean_expression_result(fx,*params):
+    p = get_left(fx,*params)
+    if p["type"]=="const":
+        return p["value"]
+    if p["type"]=="function" and p["id"]=="get_params":
+        return params[p["value"]]
+
 def get_calc_expr(expr,*params,**kwargs):
+    if expr==1:
+        return expr
     if type(params) is tuple and params.__len__() > 0 and type(params[0]) is dict:
         _params = []
         _expr = expr
@@ -470,20 +516,26 @@ def get_calc_expr(expr,*params,**kwargs):
         expr=inspect.getsource(expr)[field_name.__len__()+1:inspect.getsource(expr).__len__()]
 
 
-
+    expr=vert_expr(expr,*params)
     cmp = compile(expr, '<unknown>', 'exec', 1024).body.pop()
-    if type(cmp.value) is _ast.Tuple and cmp.value._fields.count("elts")>0 and type(cmp.value.elts[0]) is _ast.Lambda:
-        if type(cmp.value.elts[0].body) is _ast.IfExp:
-            return get_calc_expr_if(cmp.value.elts[0].body)
+
+
 
 
     if type(cmp.value) is _ast.Call:
-        return {
-            "$"+cmp.value.func.id:[
-                get_calc_get_param(x) for x in cmp.value.args
+        if cmp.value.func.id=="iif":
+            return {
+                "$cond": { "if": get_calc_exprt_boolean_expression(cmp.value.args[0],*params),
+                           "then": get_calc_expr_boolean_expression_result(cmp.value.args[1],*params),
+                            "else": get_calc_expr_boolean_expression_result(cmp.value.args[2],*params) }
+            }
+        else:
+            return {
+                "$"+cmp.value.func.id:[
+                    get_calc_get_param(x) for x in cmp.value.args
 
-            ]
-        }
+                ]
+            }
     if type(cmp.value) is _ast.BinOp:
         return {
             find_operator(cmp.value.op):[
