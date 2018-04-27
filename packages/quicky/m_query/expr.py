@@ -54,12 +54,21 @@ def get_left(cp,*params):
                 "function":cp.func.id,
                 "params":[get_left(x,*params) for x in cp.args]
             }
-        if cp.func.id=="get_params":
+        elif cp.func.id=="get_params":
             return {
                 "type":"function",
                 "id":"get_params",
                 "value":cp.args[0].n
             }
+        else:
+            return {
+                "type": "function",
+                "id": "$"+cp.func.id,
+                "params":[
+                    extract_json(x, *params) for x in cp.args
+                ]
+            }
+
     if type(cp) is _ast.Set:
         return {
             "type":"const",
@@ -309,15 +318,12 @@ def get_tree(expr,*params,**kwargs):
             "operator": find_operator(cmp.value.ops[0])
         })
     if cmp.value._fields.count("op")>0:
-        ret.update({
-            "operator": find_operator(cmp.value.op)
-        })
-        ret.update({
-            "left": get_left(cmp.value.values[0],*params)
-        })
-        ret.update({
-            "right": get_right(cmp.value.values[1],*params)
-        })
+
+        return {
+            "operator": find_operator(cmp.value.op),
+            "left": get_left(cmp.value.values[0], *params),
+            "right": get_right(cmp.value.values[1], *params)
+        }
     if type(cmp.value) is _ast.BoolOp:
         return {
             "operator":find_operator(cmp.value.op),
@@ -356,6 +362,11 @@ def get_expr(fx,*params):
     if(type(fx) is str):
         return fx
     ret={}
+    if fx.has_key("left") and fx["left"].has_key("params") and fx["left"].has_key("type") and fx["left"]["type"]=="function":
+        return {fx["operator"]:[
+            {fx["left"]["id"]:fx["left"]["params"]},
+            fx["right"]["value"]
+        ]}
     if fx.has_key("operator"):
         if fx["operator"]=="$contains":
             return {
@@ -467,6 +478,7 @@ def get_expr(fx,*params):
                                 get_expr(fx["right"], *params)
                             ]
                         }
+
             if fx.has_key("operator") and fx.has_key("expr"):
                 return {
                     fx["operator"]:[
@@ -485,13 +497,14 @@ def get_expr(fx,*params):
                 return {
                     fx["params"][0]["id"]: fx["params"][1]["value"]
                 }
-    ret.update({
+
+
+    return {
         fx["operator"]:[
             get_expr(fx["left"],*params),
             get_expr(fx["right"],*params)
         ]
-    })
-    return ret;
+    };
 def get_calc_exprt_boolean_expression(fx,*params):
     p=get_right(fx,*params)
     if fx._fields.count("left")>0 and type(fx.left) is _ast.Call:
