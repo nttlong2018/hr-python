@@ -29,6 +29,7 @@
                             </select>
                         <script>
                             (function(scope){
+                                    debugger
                                     scope.$parent.$ws.api("categories/get_data_source")
                                               .data({
                                                     source:"${col['source']}",

@@ -13,11 +13,17 @@ function ws_onAfterCall(callback){
 function ws_get_url(){
     return _ws_url_;
 }
-function ws_call(api_path,view_path,data,cb){
+function ws_call(api_path,view_path,data,cb,owner){
+    
     return new Promise(function(resolve,reject){
+        
+        owner.api_path=api_path;
+        console.log("before")
+        
         sender=undefined;
         if(_wsOnBeforeCall){
-            sender=_wsOnBeforeCall()
+            owner.sender=_wsOnBeforeCall();
+            console.log(owner)
         }
           $.ajax({
             url: ws_get_url(),
@@ -29,8 +35,10 @@ function ws_call(api_path,view_path,data,cb){
                    data:data
             }) ,
             success: function (res) {
+                console.log("after")
+                console.log(owner)
                 if(_wsOnAfterCall){
-                    _wsOnAfterCall(sender)
+                    _wsOnAfterCall(owner.sender)
                 }
                if(cb){
                 cb(undefined,res)
@@ -42,7 +50,7 @@ function ws_call(api_path,view_path,data,cb){
             },
             error: function(jqXHR, textStatus, errorThrown) {
                 if(_wsOnAfterCall){
-                    _wsOnAfterCall(sender)
+                    _wsOnAfterCall(me.sender)
                 }
                 var newWindow = window.open();
                 newWindow.document.write(errorThrown);
@@ -84,7 +92,7 @@ function ws(scope){
                        if(!scope.view_path){
                             throw("view_path is empty")
                        }
-                       return ws_call(_me._api,scope.view_path,_me._data,cb)
+                       return ws_call(_me._api,scope.view_path,_me._data,cb,_me)
 
                 }
             }
