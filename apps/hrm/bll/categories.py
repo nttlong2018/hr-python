@@ -126,7 +126,8 @@ def get_data_source(data):
         .aggregate()\
         .project(
         value=data["data"]["lookup-field"],
-        text=data["data"]["display-field"]).get_list()
+        text=data["data"]["display-field"])\
+        .get_list()
     return ret
 
 

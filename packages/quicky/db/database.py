@@ -365,6 +365,7 @@ class AGGREGATE():
     def __init__(self, qr, name):
         self.qr = qr
         self.name = name
+        self._pipe=[]
     def project(self,*args,**kwargs):
         """
         Create project pipeline
@@ -486,7 +487,9 @@ class AGGREGATE():
         #     return self.qr.db.get_collection(self.name).aggregate(self._pipe,explain=False)["cursor"]["firstBatch"]
         # except Exception as ex:
         #     return list(self.qr.db.get_collection(self.name).aggregate(self._pipe))
-        return list(self.qr.db.get_collection(self.name).aggregate(self._pipe))
+        ret=list(self.qr.db.get_collection(self.name).aggregate(self._pipe))
+        self._pipe=[]
+        return ret
 def connect(*args,**kwargs):
     """
     Create db instance <br/>
