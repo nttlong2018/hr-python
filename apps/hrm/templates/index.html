@@ -20,6 +20,14 @@ var app=angular.module("app",["c-ui"])
 app.controller("app",["$compile","$scope",function($compile,scope){
     scope.$root.$compile=$compile;
     ws_set_url("${get_app_url('api')}")
+    ws_onBeforeCall(function(){
+        mask=$("<div class='mask'></div>")
+        mask.appendTo("body");
+        return mask
+    });
+    ws_onAfterCall(function(mask){
+        mask.remove();
+    })
     history_navigator(scope.$root)
     scope.$root.$dialog=dialog
     console.log(scope.$root);

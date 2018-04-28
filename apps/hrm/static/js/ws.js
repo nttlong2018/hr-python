@@ -1,12 +1,24 @@
 var _ws_url_
+var _wsOnBeforeCall;
+var _wsOnAfterCall;
 function ws_set_url(url){
     _ws_url_=url;
+}
+function ws_onBeforeCall(callback){
+    _wsOnBeforeCall=callback
+}
+function ws_onAfterCall(callback){
+    _wsOnAfterCall=callback
 }
 function ws_get_url(){
     return _ws_url_;
 }
 function ws_call(api_path,view_path,data,cb){
     return new Promise(function(resolve,reject){
+        sender=undefined;
+        if(_wsOnBeforeCall){
+            sender=_wsOnBeforeCall()
+        }
           $.ajax({
             url: ws_get_url(),
             type: "post",
@@ -17,6 +29,9 @@ function ws_call(api_path,view_path,data,cb){
                    data:data
             }) ,
             success: function (res) {
+                if(_wsOnAfterCall){
+                    _wsOnAfterCall(sender)
+                }
                if(cb){
                 cb(undefined,res)
                }
@@ -26,7 +41,9 @@ function ws_call(api_path,view_path,data,cb){
 
             },
             error: function(jqXHR, textStatus, errorThrown) {
-
+                if(_wsOnAfterCall){
+                    _wsOnAfterCall(sender)
+                }
                 var newWindow = window.open();
                 newWindow.document.write(errorThrown);
                 if(cb){
