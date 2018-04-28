@@ -29,17 +29,18 @@
                             </select>
                         <script>
                             (function(scope){
+                                    scope.$parent.$ws.api("categories/get_data_source")
+                                              .data({
+                                                    source:"${col['source']}",
+                                                    "lookup-field":"${col['lookup_field']}",
+                                                    "display-field":"${col['display_field']}"
+                                              }).done(function(err,res){
+                                                   scope.source_${col['source'].replace('.','_')}=res;
+                                                   console.log(scope.source_${col['source'].replace('.','_')})
+                                                   scope.$applyAsync();
 
-                                scope.$parent.$ws.api("categories/get_data_source")
-                                          .data({
-                                                source:"${col['source']}",
-                                                "lookup-field":"${col['lookup_field']}",
-                                                "display-field":"${col['display_field']}"
-                                          }).done(function(err,res){
-                                               scope.source_${col['source'].replace('.','_')}=res;
-                                               scope.$applyAsync();
+                                              });
 
-                                          });
                             });
                         </script>
                         %endif

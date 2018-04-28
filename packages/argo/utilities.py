@@ -109,7 +109,7 @@ def to_json(ret):
 
 
             if type(ret[0]) is dict:
-                ret_data=[json.loads(json.dumps(r,default=json_serial)) for r in ret]
+                ret_data=json.dumps(ret,default=json_serial)
             else:
                 ret_data=json.dumps([r.__dict__ for r in ret],default=json_serial)
     else:

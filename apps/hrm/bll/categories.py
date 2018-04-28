@@ -3,6 +3,10 @@ from hrm.bll import db
 from hrm import forms
 import datetime
 from bson.objectid import ObjectId
+import quicky
+import argo
+app=argo.applications.get_app_by_file(__file__)
+cnn=quicky.mongodb.connect(app.settings.DATABASE)
 def get_list(data):
     form_name = data["view"].split("/")[1]
     form = getattr(forms, form_name)
@@ -102,21 +106,27 @@ def update_item(data):
     # else:
     #     return ret_data[0]
 def get_data_source(data):
-    coll=db.coll(data["data"]["source"])
-    project={
-        "value":data["data"]["lookup-field"],
-        "text":data["data"]["display-field"]
-    }
-    ret=list(coll.aggregate([
-        {
-            "$project":project
-        },{
-            "$sort":{
-                "text": 1
-            }
-        }
-    ]))
-    print(ret)
+    # coll=db.coll(data["data"]["source"])
+    # project={
+    #     "value":data["data"]["lookup-field"],
+    #     "text":data["data"]["display-field"]
+    # }
+    # ret=list(coll.aggregate([
+    #     {
+    #         "$project":project
+    #     },{
+    #         "$sort":{
+    #             "text": 1
+    #         }
+    #     }
+    # ]))
+    # print(ret)
+    # return ret
+    ret=cnn.collection(data["data"]["source"])\
+        .aggregate()\
+        .project(
+        value=data["data"]["lookup-field"],
+        text=data["data"]["display-field"]).get_list()
     return ret
 
 

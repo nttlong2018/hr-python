@@ -14,7 +14,6 @@ class QR():
         return COLL(self,name)
     def get_collection_names(self):
         return list(self.db.collection_names())
-
 class ENTITY():
     name = ""
     qr = None
@@ -194,11 +193,6 @@ class ENTITY():
                 self._action = None
                 self._data = {}
                 return ret
-
-
-
-
-
 class WHERE():
     name = ""
     _coll = None
@@ -493,7 +487,7 @@ class AGGREGATE():
         # except Exception as ex:
         #     return list(self.qr.db.get_collection(self.name).aggregate(self._pipe))
         return list(self.qr.db.get_collection(self.name).aggregate(self._pipe))
-def get_query(*args,**kwargs):
+def connect(*args,**kwargs):
     """
     Create db instance <br/>
     Ex:query.get_query(host="ip address", name="database name",port=,user=,password=)

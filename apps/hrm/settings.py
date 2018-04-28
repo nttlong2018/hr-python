@@ -25,7 +25,7 @@ def authenticate(request):
 DATABASE=dict(
     host="localhost",
     port=27017,
-    user_="sys",
-    password_="123456",
+    user="",
+    password="",
     name="hrm"
 )

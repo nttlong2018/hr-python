@@ -11,7 +11,7 @@ import datetime
 #                     "test cai coi","a","b")
 # y=expr.get_expr(x,"a","b","c")
 import datetime
-qr=query.get_query(host="localhost",
+qr=query.connect(host="localhost",
            name="hrm",
            port=27017,
            user="",

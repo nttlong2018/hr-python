@@ -541,7 +541,7 @@ def get_calc_exprt_boolean_expression(fx,*params):
 def extract_json(fx,*params):
     if type(fx) is _ast.Name:
         p=get_left(fx,*params)
-        return p["id"]
+        return "$"+p["id"]
     if type(fx) is _ast.Num:
         return fx.n
     if type(fx) is _ast.Str:
