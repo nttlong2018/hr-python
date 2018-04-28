@@ -42,18 +42,17 @@ def template(fn,*_path,**kwargs):
         file_path=fn.__dict__["__params__"]
         auth_path = None
         login_path = None
-        is_login_page=False
+        
         is_public=False
         if type(file_path) is dict:
-            is_login_page = file_path.get("is_login_page", False)
+            # is_login_page = file_path.get("is_login_page", False)
             is_public= file_path.get("is_public", False)
             auth_path = file_path.get("auth", None)
             login_path = file_path.get("login", None)
             file_path = file_path.get("file", "")
             if login_path == None and auth_path != None:
                 raise Exception("'auth' require 'login'. 'login' need to be set at '" + fn.__name__ + "'")
-        global _language_engine_module
-        global _language_resource_cache
+       
         language = "en"
         if request.session.has_key("language"):
             language = request.session["language"]
@@ -208,7 +207,7 @@ def template(fn,*_path,**kwargs):
                         })
                     except Exception as ex:
                         raise("'get_global_res' error {0}".format(ex))
-                        pass
+                        
             return _language_resource_cache[lang_key]
         def get_app_host():
             if app.name == "default":

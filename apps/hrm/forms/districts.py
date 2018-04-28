@@ -10,7 +10,14 @@ layout.create(dict(
         [dict(
             caption="Province",
             name="ProvinceId",
-            display_index=2010
+            display_index=2010,
+            lookup=dict(
+                source="list.provinces",
+                local_field="ProvinceId",
+                foreign_field="ProvinceId",
+                alias="Province",
+                display_field="ProvinceName"
+            )
         )]
     ),
     form=dict(

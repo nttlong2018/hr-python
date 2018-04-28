@@ -26,11 +26,22 @@ function ws_call(api_path,view_path,data,cb){
 
             },
             error: function(jqXHR, textStatus, errorThrown) {
+
+                var newWindow = window.open();
+                newWindow.document.write(errorThrown);
                 if(cb){
-                    cb(errorThrown)
+                    cb({
+                        error:{
+                            type:"server"
+                        }
+                    })
                 }
                 else {
-                reject(errorThrown)}
+                reject({
+                        error:{
+                            type:"server"
+                        }
+                    })}
 
             }
 
