@@ -52,7 +52,9 @@ def render(render_config):
 
 
     def get_csrftoken():
-        return  csrf(http_request)["csrf_token"]
+        # return  csrf(http_request)["csrf_token"]
+        return csrf(http_request)["csrf_token"].encode()
+
     def get_user():
         if http_request.session.has_key('authenticate'):
             if http_request.session['authenticate'].has_key("user"):

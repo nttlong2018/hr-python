@@ -16,7 +16,9 @@ import sys
 from django.conf.urls import url, include
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.append(BASE_DIR+"/packages")
+sys.path.append(BASE_DIR+"/packages/django")
 import argo
+# import django
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.8/howto/deployment/checklist/
@@ -31,6 +33,7 @@ ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
 # Application definition
 
 INSTALLED_APPS = (
+    'permission_backend_nonrel',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -38,16 +41,18 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
 )
-
+AUTHENTICATION_BACKENDS = (
+    'permission_backend_nonrel.backends.NonrelPermissionBackend'
+)
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
+    # 'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'django.middleware.security.SecurityMiddleware',
+    # 'django.middleware.security.SecurityMiddleware',
 )
 
 
@@ -73,13 +78,22 @@ WSGI_APPLICATION = 'wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/1.8/ref/settings/#databases
-
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME':os.path.join(os.getcwd(), 'database','db.sqlite3'),
-    }
+   'default' : {
+       'ENGINE' : 'django_mongodb_engine',
+       'NAME' : 'hrm',
+       'HOST':'localhost',
+       'PORT':27017,
+       'USER':'root',
+       'PASSWORD':'123456'
+   }
 }
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME':os.path.join(os.getcwd(), 'database','db.sqlite3'),
+#     }
+# }
 
 
 # Internationalization
@@ -89,7 +103,7 @@ LANGUAGE_CODE = 'en-us'
 
 TIME_ZONE = 'UTC'
 
-USE_I18N = True
+USE_I18N = False
 
 USE_L10N = True
 
@@ -146,6 +160,5 @@ LANGUAGE_ENGINE=argo.language
 
 argo.url.build_urls("apps",APPS)
 ROOT_URLCONF = 'apps'
-
 
 # STATIC_ROOT = os.path.join(*(BASE_DIR.split(os.path.sep) + ['apps/static','apps/app_main/static']))

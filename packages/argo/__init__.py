@@ -4,7 +4,7 @@ from . import utilities as utils
 from . import models
 from . import db
 from . import url
-from django.shortcuts import redirect
+
 import membership
 import threading
 import urllib
@@ -28,6 +28,7 @@ def template_uri(fn):
     return layer
 @template_uri
 def template(fn,*_path,**kwargs):
+    from django.shortcuts import redirect
     if _path.__len__()==1:
         _path=_path[00]
     if _path.__len__()==0:
@@ -218,7 +219,7 @@ def template(fn,*_path,**kwargs):
             if app.name == "default":
                 return get_abs_url() + (lambda :"" if path=="" else "/"+path)()
             else:
-                return get_abs_url() + "/" + get_app_host() +  (lambda :"" if path=="" else "/"+path)()
+                return get_abs_url() + (lambda x:"/"+x if x!="" else "")(get_app_host()) +  (lambda :"" if path=="" else "/"+path)()
         def get_static(path):
             return request.get_abs_url() + ("/" + app.client_static + "/" + path).replace("//","/")
         def encode_uri(uri):
