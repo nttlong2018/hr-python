@@ -119,7 +119,7 @@ def template(fn,*_path,**kwargs):
                 "templates": app.template_dir,
                 "static": app.client_static,
                 "application": app,
-                "get_user":request.get_user
+                "get_user":get_user
 
             })
         def get_abs_url():
@@ -229,9 +229,7 @@ def template(fn,*_path,**kwargs):
         def get_raw_url():
             return request.build_absolute_uri(request.get_full_path())
         def get_user():
-            if not request.session.has_key("authenticate"):
-                return None
-            return request.session["authenticate"].get("user",None)
+            return request.user
 
         setattr(request,"render", render)
         setattr(request,"set_auth", set_auth)

@@ -14,6 +14,7 @@ from models import Login
 from  argo import membership
 from django.contrib.auth.models import User
 from django.core.exceptions import ObjectDoesNotExist
+from django.contrib.auth import authenticate,login as form_login
 application=applications.get_app_by_file(__file__)
 # from django.urls import reverse
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -27,12 +28,9 @@ def index(request):
         user.save()
     if request.user.is_anonymous():
         return redirect(request.get_app_url("login"))
-
-    model=argo.models.base()
-    user=membership.get_user("sys")
-    if request.get_auth()["user"]==None:
-        return redirect(request.get_app_url("login"))
-    return request.render(model)
+    else:
+        model = argo.models.base()
+        return request.render(model)
 
 def admin(request):
     return render(request, 'admin.html')
@@ -47,31 +45,13 @@ def login(request):
         username=request._get_post().get("username")
         password=request._get_post().get("password")
         try:
-            user=membership.validate_account(request._get_post().get("username"),request._get_post().get("password"))
-            login=membership.sign_in(request._get_post().get("username"),request.session._get_or_create_session_key(),"vn")
-            request.set_auth({
-                "user":{
-                    "id":login.user.userId,
-                    "username":login.user.username,
-                    "email":login.user.email
-                }
-            })
-            if request._get_post().has_key("url_next") \
-                    and request._get_post()["url_next"]!="":
-                return redirect(request._get_post()["url_next"])
-            else:
-                return  redirect("/")
-
-
+            ret=authenticate(username=request._get_post().get("username"), password=request._get_post().get("password"))
+            form_login(request,ret)
+            return redirect("/")
         except membership.models.exception as ex:
             _login.is_error=True
             _login.error_message=request.get_global_res("Username or Password is incorrect")
             return request.render(_login)
-        except Exception as ex:
-            _login.is_error = True
-            _login.error_message = ex.message
-            return request.render(_login)
-
     return request.render(_login)
 def load_page(request,path):
     try:

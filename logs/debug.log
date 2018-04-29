@@ -1,0 +1,4 @@
+django_session.find (0.00) {'_id': 'thdfnvx0whi0zpkuf9wxoicdxz15s4ra', 'expire_date': {'$gt': datetime.datetime(2018, 4, 29, 16, 22, 32, 201000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'thdfnvx0whi0zpkuf9wxoicdxz15s4ra', 'expire_date': {'$gt': datetime.datetime(2018, 4, 29, 16, 22, 32, 693000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}

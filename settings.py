@@ -41,9 +41,9 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
 )
-AUTHENTICATION_BACKENDS = (
+AUTHENTICATION_BACKENDS = [
     'permission_backend_nonrel.backends.NonrelPermissionBackend'
-)
+]
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -125,7 +125,7 @@ APPS=[dict(host="default",
            path="apps/hrm")]
 aut_config_local=dict(
     provider="authorization.auth",
-    name="lv01_lms",
+    name="hrm",
     host="localhost",
     port=27017,
     _user="sys",
@@ -133,19 +133,19 @@ aut_config_local=dict(
 )
 argo.authorization.load(aut_config_local)
 
-membership_config_local=dict(
-    provider="membership_mongo",
-    name="lv01_lms",
-    host="localhost",
-    port=27017,
-    _user="sys",
-    _password="123456",
-    elasticsearch=["http://localhost:9200"]
-)
-argo.membership.load(membership_config_local)
+# membership_config_local=dict(
+#     provider="membership_mongo",
+#     name="lv01_lms",
+#     host="localhost",
+#     port=27017,
+#     _user="sys",
+#     _password="123456",
+#     elasticsearch=["http://localhost:9200"]
+# )
+# argo.membership.load(membership_config_local)
 language_congig_local=dict(
 provider="language_mongo_engine",
-    name="lv01_lms",
+    name="hrm",
     host="localhost",
     port=27017,
     _user="sys",
@@ -160,5 +160,24 @@ LANGUAGE_ENGINE=argo.language
 
 argo.url.build_urls("apps",APPS)
 ROOT_URLCONF = 'apps'
+import os
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'file': {
+            'level': 'DEBUG',
+            'class': 'logging.FileHandler',
+            'filename': os.getcwd()+os.sep+ 'logs'+os.sep+'debug.log',
+        },
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['file'],
+            'level': 'DEBUG',
+            'propagate': False,
+        },
+    },
+}
 
 # STATIC_ROOT = os.path.join(*(BASE_DIR.split(os.path.sep) + ['apps/static','apps/app_main/static']))
