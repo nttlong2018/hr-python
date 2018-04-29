@@ -1,6 +1,9 @@
 import expr
 
 from pymongo import MongoClient
+from pymongo.errors import OperationFailure
+import logging
+logger = logging.getLogger(__name__)
 _db={}
 class QR():
     db=None
@@ -491,29 +494,38 @@ class AGGREGATE():
         self._pipe=[]
         return ret
 def connect(*args,**kwargs):
+
+
     """
     Create db instance <br/>
     Ex:query.get_query(host="ip address", name="database name",port=,user=,password=)
     """
-    global _db
-    if args.__len__()==0:
-        args=kwargs
-    else:
-        args=args[0]
-    key="host={0};port={1};user={2};pass={3};name={4}".format(
-        args["host"],
-        args["port"],
-        args["user"],
-        args["password"],
-        args["name"]
-    )
-    if not _db.has_key(key):
-        cnn=MongoClient(
-            host=args["host"],
-            port=args["port"]
+    try:
+        global _db
+        if args.__len__()==0:
+            args=kwargs
+        else:
+            args=args[0]
+        key="host={0};port={1};user={2};pass={3};name={4}".format(
+            args["host"],
+            args["port"],
+            args["user"],
+            args["password"],
+            args["name"]
         )
-        db=cnn.get_database(args["name"])
-        if args["user"]!="":
-            db.authenticate(args["user"],args["password"])
-        _db[key]=db
-    return QR(_db[key])
+        if not _db.has_key(key):
+            cnn=MongoClient(
+                host=args["host"],
+                port=args["port"]
+            )
+            db=cnn.get_database(args["name"])
+            if args["user"]!="":
+                db.authenticate(args["user"],args["password"])
+            _db[key]=db
+        return QR(_db[key])
+    except OperationFailure as ex:
+        logger.debug(ex)
+        raise ex
+    except Exception as ex:
+        logger.debug(ex)
+        raise ex

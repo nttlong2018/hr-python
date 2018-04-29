@@ -50,7 +50,7 @@ function ws_call(api_path,view_path,data,cb,owner){
             },
             error: function(jqXHR, textStatus, errorThrown) {
                 if(_wsOnAfterCall){
-                    _wsOnAfterCall(me.sender)
+                    _wsOnAfterCall(owner.sender)
                 }
                 var newWindow = window.open();
                 newWindow.document.write(errorThrown);

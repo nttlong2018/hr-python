@@ -12,7 +12,7 @@ def authenticate(request):
 DATABASE=dict(
     host="localhost",
     port=27017,
-    user="rot",
+    user="root",
     password="123456",
     name="hrm"
 )
