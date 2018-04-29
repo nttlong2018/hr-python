@@ -106,22 +106,6 @@ def update_item(data):
     # else:
     #     return ret_data[0]
 def get_data_source(data):
-    # coll=db.coll(data["data"]["source"])
-    # project={
-    #     "value":data["data"]["lookup-field"],
-    #     "text":data["data"]["display-field"]
-    # }
-    # ret=list(coll.aggregate([
-    #     {
-    #         "$project":project
-    #     },{
-    #         "$sort":{
-    #             "text": 1
-    #         }
-    #     }
-    # ]))
-    # print(ret)
-    # return ret
     ret=cnn.collection(data["data"]["source"])\
         .aggregate()\
         .project(
