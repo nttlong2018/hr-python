@@ -12,29 +12,24 @@ import argo
 from argo import applications
 from models import Login
 from  argo import membership
-
+from django.contrib.auth.models import User
+from django.core.exceptions import ObjectDoesNotExist
 application=applications.get_app_by_file(__file__)
 # from django.urls import reverse
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 @argo.template("index.html")
 def index(request):
+    try:
+        sys_user=User.objects.get(username="sys")
+    except ObjectDoesNotExist as ex:
+        user = User.objects.create_user('sys', '', '123456')
+        user.save()
+    if request.user.is_anonymous():
+        return redirect(request.get_app_url("login"))
+
     model=argo.models.base()
     user=membership.get_user("sys")
-
-    if user==None:
-        user=membership.create_user("sys","sys",None)
-        membership.active_user("sys")
-        user.isSysAdmin=True
-        membership.update_user(user)
-    else:
-        membership.active_user("sys")
-
-        user.isSysAdmin = True
-        user.description="Ci la test thoi"
-        user.displayName="System administrator"
-        membership.update_user(user)
-    # login_info=membership.validate_session(request.session._get_or_create_session_key())
     if request.get_auth()["user"]==None:
         return redirect(request.get_app_url("login"))
     return request.render(model)
