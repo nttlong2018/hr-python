@@ -421,7 +421,7 @@ class AGGREGATE():
         return self
     def limit(self,num):
         self._pipe.append({
-            "$limit": len
+            "$limit": num
         })
         return self
     def unwind(self,field_name):
@@ -485,6 +485,17 @@ class AGGREGATE():
             }
         })
         return self
+    def count(self,alias):
+        self._pipe.append({
+            "$count":alias
+        })
+        return self
+    def get_item(self):
+        ret=self.get_list()
+        if ret.__len__()==0:
+            return None
+        else:
+            return ret[0]
     def get_list(self):
         # try:
         #     return self.qr.db.get_collection(self.name).aggregate(self._pipe,explain=False)["cursor"]["firstBatch"]
@@ -493,6 +504,13 @@ class AGGREGATE():
         ret=list(self.qr.db.get_collection(self.name).aggregate(self._pipe))
         self._pipe=[]
         return ret
+    def __copy__(self):
+        ret=AGGREGATE(self.qr,self.name)
+        ret._pipe=[x for x in self._pipe]
+        return ret
+    def copy(self):
+        return self.__copy__()
+
 def connect(*args,**kwargs):
 
 

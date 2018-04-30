@@ -73,7 +73,11 @@
         })
         scope.load_data=function(txt){
             services.api("admin.api.users/get_list")
-                    .data({search_text:txt
+                    .data({
+                        searchText:txt,
+                        pageSize:50,
+                        pageIndex:0
+
                     }).done().then(function(res){
                         scope.data=res;
                         console.log(res);

@@ -204,3 +204,585 @@ django_session.find (0.00) {'_id': 'thdfnvx0whi0zpkuf9wxoicdxz15s4ra', 'expire_d
 django_session.find (0.00) {'_id': 'thdfnvx0whi0zpkuf9wxoicdxz15s4ra', 'expire_date': {'$gt': datetime.datetime(2018, 4, 29, 16, 56, 21, 600000, tzinfo=<UTC>)}}
 auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
 auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'thdfnvx0whi0zpkuf9wxoicdxz15s4ra', 'expire_date': {'$gt': datetime.datetime(2018, 4, 29, 16, 57, 16, 159000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'thdfnvx0whi0zpkuf9wxoicdxz15s4ra', 'expire_date': {'$gt': datetime.datetime(2018, 4, 29, 16, 57, 16, 625000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'thdfnvx0whi0zpkuf9wxoicdxz15s4ra', 'expire_date': {'$gt': datetime.datetime(2018, 4, 29, 16, 57, 16, 686000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Internal Server Error: /hrm/api
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\code\python\p2018\apps\hrm\views.py", line 109, in api
+    raise Exception("Call  '{0}' in '{1}' encountered '{2}'".format(method_path, module_path, ex))
+Exception: Call  'get_list' in 'categories' encountered ''module' object has no attribute '__getitem__''
+django_session.find (0.00) {'_id': 'thdfnvx0whi0zpkuf9wxoicdxz15s4ra', 'expire_date': {'$gt': datetime.datetime(2018, 4, 29, 16, 57, 20, 402000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'thdfnvx0whi0zpkuf9wxoicdxz15s4ra', 'expire_date': {'$gt': datetime.datetime(2018, 4, 29, 16, 57, 20, 557000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'thdfnvx0whi0zpkuf9wxoicdxz15s4ra', 'expire_date': {'$gt': datetime.datetime(2018, 4, 29, 16, 57, 20, 622000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'thdfnvx0whi0zpkuf9wxoicdxz15s4ra', 'expire_date': {'$gt': datetime.datetime(2018, 4, 29, 16, 57, 22, 618000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'thdfnvx0whi0zpkuf9wxoicdxz15s4ra', 'expire_date': {'$gt': datetime.datetime(2018, 4, 29, 16, 57, 22, 688000, tzinfo=<UTC>)}}
+django_session.find (0.00) {'_id': 'thdfnvx0whi0zpkuf9wxoicdxz15s4ra', 'expire_date': {'$gt': datetime.datetime(2018, 4, 29, 16, 57, 22, 689000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'thdfnvx0whi0zpkuf9wxoicdxz15s4ra', 'expire_date': {'$gt': datetime.datetime(2018, 4, 29, 16, 57, 24, 698000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'thdfnvx0whi0zpkuf9wxoicdxz15s4ra', 'expire_date': {'$gt': datetime.datetime(2018, 4, 29, 16, 57, 24, 770000, tzinfo=<UTC>)}}
+django_session.find (0.00) {'_id': 'thdfnvx0whi0zpkuf9wxoicdxz15s4ra', 'expire_date': {'$gt': datetime.datetime(2018, 4, 29, 16, 57, 24, 772000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'thdfnvx0whi0zpkuf9wxoicdxz15s4ra', 'expire_date': {'$gt': datetime.datetime(2018, 4, 29, 16, 57, 26, 653000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'thdfnvx0whi0zpkuf9wxoicdxz15s4ra', 'expire_date': {'$gt': datetime.datetime(2018, 4, 29, 16, 57, 26, 718000, tzinfo=<UTC>)}}
+django_session.find (0.00) {'_id': 'thdfnvx0whi0zpkuf9wxoicdxz15s4ra', 'expire_date': {'$gt': datetime.datetime(2018, 4, 29, 16, 57, 26, 718000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'thdfnvx0whi0zpkuf9wxoicdxz15s4ra', 'expire_date': {'$gt': datetime.datetime(2018, 4, 29, 16, 58, 0, 254000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'thdfnvx0whi0zpkuf9wxoicdxz15s4ra', 'expire_date': {'$gt': datetime.datetime(2018, 4, 29, 16, 58, 0, 316000, tzinfo=<UTC>)}}
+django_session.find (0.00) {'_id': 'thdfnvx0whi0zpkuf9wxoicdxz15s4ra', 'expire_date': {'$gt': datetime.datetime(2018, 4, 29, 16, 58, 0, 322000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'thdfnvx0whi0zpkuf9wxoicdxz15s4ra', 'expire_date': {'$gt': datetime.datetime(2018, 4, 29, 16, 58, 4, 606000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'thdfnvx0whi0zpkuf9wxoicdxz15s4ra', 'expire_date': {'$gt': datetime.datetime(2018, 4, 29, 16, 58, 4, 671000, tzinfo=<UTC>)}}
+django_session.find (0.00) {'_id': 'thdfnvx0whi0zpkuf9wxoicdxz15s4ra', 'expire_date': {'$gt': datetime.datetime(2018, 4, 29, 16, 58, 4, 676000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+auth_user.find (0.05) {'username': 'sys'}
+django_session.save (0.07) {'_id': u'stvoxzwv2se87y9yydm9rom7ucm9sfno', 'expire_date': datetime.datetime(2018, 5, 14, 12, 30, 19, 779000, tzinfo=<UTC>), 'session_data': u'YjAwMTViM2E0OTNjMDE0N2NjMTFiZjIxNzYzNmNkYTg5OGRiZGZjMzp7Imxhbmd1YWdlIjoiZW4ifQ=='}
+Not Found: /favicon.ico
+django_session.find (0.00) {'_id': 'stvoxzwv2se87y9yydm9rom7ucm9sfno', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 12, 30, 27, 860000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'username': u'sys'}
+django_session.save (0.00) {'_id': u'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': datetime.datetime(2018, 5, 14, 12, 30, 27, 956000, tzinfo=<UTC>), 'session_data': u'YjAwMTViM2E0OTNjMDE0N2NjMTFiZjIxNzYzNmNkYTg5OGRiZGZjMzp7Imxhbmd1YWdlIjoiZW4ifQ=='}
+django_session.find (0.00) {'_id': 'stvoxzwv2se87y9yydm9rom7ucm9sfno'}
+django_session.remove (0.03) {'_id': {'$in': [u'stvoxzwv2se87y9yydm9rom7ucm9sfno']}}
+auth_user.save (0.09) {'username': u'sys', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5ae5cb53cddcb0354c11cf6a'), 'is_active': True, 'email': u'', 'is_superuser': True, 'is_staff': False, 'last_login': datetime.datetime(2018, 4, 30, 12, 30, 27, 994000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$RM3mR6ar66t8$SRS3qPBkBP7FldCNOuunX0f1RK/YppeImlg2lVhOJZo=', 'date_joined': datetime.datetime(2018, 4, 29, 13, 40, 35, 764000, tzinfo=<UTC>)}
+django_session.save (0.00) {'_id': u'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': datetime.datetime(2018, 5, 14, 12, 30, 28, 147000, tzinfo=<UTC>), 'session_data': u'MmU5YzEwYjExYTI3YTY2YmIwMGM0YmYwZWUwYmFkNmZjYzQyMzQ1OTp7Il9hdXRoX3VzZXJfYmFja2VuZCI6InBlcm1pc3Npb25fYmFja2VuZF9ub25yZWwuYmFja2VuZHMuTm9ucmVsUGVybWlzc2lvbkJhY2tlbmQiLCJfYXV0aF91c2VyX2lkIjoiNWFlNWNiNTNjZGRjYjAzNTRjMTFjZjZhIiwibGFuZ3VhZ2UiOiJlbiJ9'}
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 12, 30, 28, 202000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'username': 'sys'}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 12, 30, 41, 501000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 12, 30, 45, 413000, tzinfo=<UTC>)}}
+Internal Server Error: /admin/api
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\code\python\p2018\apps\admin\views.py", line 119, in api
+    login_info=membership.validate_session(request.session.session_key)
+  File "E:\code\python\p2018\packages\membership\__init__.py", line 35, in validate_session
+    fn = getattr(_membership_instance, inspect.stack()[0][3])
+NameError: global name '_membership_instance' is not defined
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 12, 32, 25, 67000, tzinfo=<UTC>)}}
+Internal Server Error: /admin/api
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\code\python\p2018\apps\admin\views.py", line 119, in api
+    login_info=membership.validate_session(request.session.session_key)
+  File "E:\code\python\p2018\packages\membership\__init__.py", line 35, in validate_session
+    fn = getattr(_membership_instance, inspect.stack()[0][3])
+NameError: global name '_membership_instance' is not defined
+Not Found: /apps/admin/static/angular.min.js.map
+Not Found: /polyfills/promise-6.1.0.js.map
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 12, 33, 8, 847000, tzinfo=<UTC>)}}
+Internal Server Error: /admin/api
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\code\python\p2018\apps\admin\views.py", line 119, in api
+    login_info=membership.validate_session(request.session.session_key)
+  File "E:\code\python\p2018\packages\membership\__init__.py", line 35, in validate_session
+    fn = getattr(_membership_instance, inspect.stack()[0][3])
+NameError: global name '_membership_instance' is not defined
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 12, 34, 47, 131000, tzinfo=<UTC>)}}
+Internal Server Error: /admin/api
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\code\python\p2018\apps\admin\views.py", line 119, in api
+    login_info=membership.validate_session(request.session.session_key)
+  File "E:\code\python\p2018\packages\membership\__init__.py", line 35, in validate_session
+    fn = getattr(_membership_instance, inspect.stack()[0][3])
+NameError: global name '_membership_instance' is not defined
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 12, 35, 48, 12000, tzinfo=<UTC>)}}
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 12, 35, 48, 110000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 12, 38, 54, 288000, tzinfo=<UTC>)}}
+Internal Server Error: /admin/api
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\code\python\p2018\apps\admin\views.py", line 121, in api
+    return HttpResponse('401 Unauthorized', status=401)
+  File "E:\code\python\p2018\packages\membership\__init__.py", line 35, in validate_session
+    fn = getattr(_membership_instance, inspect.stack()[0][3])
+NameError: global name '_membership_instance' is not defined
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 12, 38, 54, 395000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 12, 39, 4, 978000, tzinfo=<UTC>)}}
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 12, 39, 7, 617000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Internal Server Error: /admin/api
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\code\python\p2018\apps\admin\views.py", line 121, in api
+    return HttpResponse('401 Unauthorized', status=401)
+  File "E:\code\python\p2018\packages\membership\__init__.py", line 35, in validate_session
+    fn = getattr(_membership_instance, inspect.stack()[0][3])
+NameError: global name '_membership_instance' is not defined
+Internal Server Error: /admin/api
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\code\python\p2018\apps\admin\views.py", line 121, in api
+    return HttpResponse('401 Unauthorized', status=401)
+  File "E:\code\python\p2018\packages\membership\__init__.py", line 35, in validate_session
+    fn = getattr(_membership_instance, inspect.stack()[0][3])
+NameError: global name '_membership_instance' is not defined
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 12, 39, 28, 911000, tzinfo=<UTC>)}}
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 12, 39, 32, 418000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Internal Server Error: /admin/api
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\code\python\p2018\apps\admin\views.py", line 134, in api
+    user_id=user.id
+  File "E:\code\python\p2018\packages/django\django\utils\functional.py", line 214, in inner
+    return func(self._wrapped, *args)
+AttributeError: 'User' object has no attribute 'userId'
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 12, 39, 57, 308000, tzinfo=<UTC>)}}
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 12, 40, 0, 296000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Internal Server Error: /admin/api
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\code\python\p2018\apps\admin\views.py", line 167, in api
+    raise Exception("Call  '{0}' in '{1}' encountered '{2}'".format(method_path, module_path, ex))
+Exception: Call  'get_list' in 'admin.api.users' encountered 'global name '_membership_instance' is not defined'
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 12, 44, 21, 17000, tzinfo=<UTC>)}}
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 12, 45, 4, 857000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Internal Server Error: /admin/api
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\code\python\p2018\apps\admin\views.py", line 167, in api
+    raise Exception("Call  '{0}' in '{1}' encountered '{2}'".format(method_path, module_path, ex))
+Exception: Call  'get_list' in 'admin.api.users' encountered 'global name '_membership_instance' is not defined'
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 12, 46, 55, 737000, tzinfo=<UTC>)}}
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 12, 46, 59, 367000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Internal Server Error: /admin/api
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\code\python\p2018\apps\admin\views.py", line 173, in api
+    ret_data=json.dumps(ret)
+  File "C:\Python27\Lib\json\__init__.py", line 244, in dumps
+    return _default_encoder.encode(obj)
+  File "C:\Python27\Lib\json\encoder.py", line 207, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Python27\Lib\json\encoder.py", line 270, in iterencode
+    return _iterencode(o, 0)
+  File "C:\Python27\Lib\json\encoder.py", line 184, in default
+    raise TypeError(repr(o) + " is not JSON serializable")
+TypeError: datetime.datetime(2018, 4, 30, 12, 30, 27, 994000) is not JSON serializable
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 12, 47, 16, 406000, tzinfo=<UTC>)}}
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 12, 47, 16, 455000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Internal Server Error: /admin/api
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\code\python\p2018\apps\admin\views.py", line 173, in api
+    ret_data=json.dumps(ret)
+  File "C:\Python27\Lib\json\__init__.py", line 244, in dumps
+    return _default_encoder.encode(obj)
+  File "C:\Python27\Lib\json\encoder.py", line 207, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Python27\Lib\json\encoder.py", line 270, in iterencode
+    return _iterencode(o, 0)
+  File "C:\Python27\Lib\json\encoder.py", line 184, in default
+    raise TypeError(repr(o) + " is not JSON serializable")
+TypeError: datetime.datetime(2018, 4, 30, 12, 30, 27, 994000) is not JSON serializable
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 12, 47, 31, 135000, tzinfo=<UTC>)}}
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 12, 47, 31, 176000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Internal Server Error: /admin/api
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\code\python\p2018\apps\admin\views.py", line 173, in api
+    ret_data=json.dumps(ret)
+  File "C:\Python27\Lib\json\__init__.py", line 244, in dumps
+    return _default_encoder.encode(obj)
+  File "C:\Python27\Lib\json\encoder.py", line 207, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Python27\Lib\json\encoder.py", line 270, in iterencode
+    return _iterencode(o, 0)
+  File "C:\Python27\Lib\json\encoder.py", line 184, in default
+    raise TypeError(repr(o) + " is not JSON serializable")
+TypeError: datetime.datetime(2018, 4, 30, 12, 30, 27, 994000) is not JSON serializable
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 12, 47, 49, 537000, tzinfo=<UTC>)}}
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 12, 47, 49, 594000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 12, 50, 29, 167000, tzinfo=<UTC>)}}
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 12, 50, 29, 272000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Internal Server Error: /admin/api
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\code\python\p2018\apps\admin\views.py", line 169, in api
+    ret_data=quicky.serilize.to_json(ret)
+  File "E:\code\python\p2018\packages\quicky\serilize.py", line 22, in to_json
+    ret_data=json.dumps(ret)
+  File "C:\Python27\Lib\json\__init__.py", line 244, in dumps
+    return _default_encoder.encode(obj)
+  File "C:\Python27\Lib\json\encoder.py", line 207, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Python27\Lib\json\encoder.py", line 270, in iterencode
+    return _iterencode(o, 0)
+  File "C:\Python27\Lib\json\encoder.py", line 184, in default
+    raise TypeError(repr(o) + " is not JSON serializable")
+TypeError: datetime.datetime(2018, 4, 30, 12, 30, 27, 994000) is not JSON serializable
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 12, 51, 26, 655000, tzinfo=<UTC>)}}
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 12, 51, 26, 698000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Internal Server Error: /admin/api
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\code\python\p2018\apps\admin\views.py", line 169, in api
+    ret_data=quicky.serilize.to_json(ret)
+  File "E:\code\python\p2018\packages\quicky\serilize.py", line 22, in to_json
+    ret_data=json.dumps(ret,default=json_serial)
+  File "C:\Python27\Lib\json\__init__.py", line 244, in dumps
+    return _default_encoder.encode(obj)
+  File "C:\Python27\Lib\json\encoder.py", line 207, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Python27\Lib\json\encoder.py", line 270, in iterencode
+    return _iterencode(o, 0)
+  File "C:\Python27\Lib\json\encoder.py", line 184, in default
+    raise TypeError(repr(o) + " is not JSON serializable")
+TypeError: datetime.datetime(2018, 4, 30, 12, 30, 27, 994000) is not JSON serializable
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 12, 52, 4, 911000, tzinfo=<UTC>)}}
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 12, 52, 4, 987000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 12, 52, 20, 61000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 12, 52, 20, 280000, tzinfo=<UTC>)}}
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 12, 52, 20, 342000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 12, 53, 44, 845000, tzinfo=<UTC>)}}
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 12, 53, 44, 885000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 13, 2, 48, 760000, tzinfo=<UTC>)}}
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 13, 2, 48, 800000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 13, 5, 49, 453000, tzinfo=<UTC>)}}
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 13, 5, 49, 531000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Internal Server Error: /admin/api
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\code\python\p2018\apps\admin\views.py", line 168, in api
+    raise Exception("Call  '{0}' in '{1}' encountered '{2}'".format(method_path, module_path, ex))
+Exception: Call  'get_list' in 'admin.api.users' encountered 'Cannot encode object: <built-in function len>'
+Not Found: /apps/admin/static/angular.min.js.map
+Not Found: /polyfills/promise-6.1.0.js.map
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 13, 6, 8, 503000, tzinfo=<UTC>)}}
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 13, 6, 8, 552000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Internal Server Error: /admin/api
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\code\python\p2018\apps\admin\views.py", line 168, in api
+    raise Exception("Call  '{0}' in '{1}' encountered '{2}'".format(method_path, module_path, ex))
+Exception: Call  'get_list' in 'admin.api.users' encountered 'Cannot encode object: <built-in function len>'
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 13, 7, 30, 578000, tzinfo=<UTC>)}}
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 13, 7, 30, 669000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Internal Server Error: /admin/api
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\code\python\p2018\apps\admin\views.py", line 168, in api
+    raise Exception("Call  '{0}' in '{1}' encountered '{2}'".format(method_path, module_path, ex))
+Exception: Call  'get_list' in 'admin.api.users' encountered 'Cannot encode object: <built-in function len>'
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 13, 7, 48, 300000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Not Found: /apps/admin/static/angular.min.js.map
+Not Found: /polyfills/promise-6.1.0.js.map
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 13, 7, 48, 557000, tzinfo=<UTC>)}}
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 13, 7, 48, 601000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Internal Server Error: /admin/api
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\code\python\p2018\apps\admin\views.py", line 168, in api
+    raise Exception("Call  '{0}' in '{1}' encountered '{2}'".format(method_path, module_path, ex))
+Exception: Call  'get_list' in 'admin.api.users' encountered 'Cannot encode object: <built-in function len>'
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 13, 8, 2, 683000, tzinfo=<UTC>)}}
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 13, 8, 2, 727000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Internal Server Error: /admin/api
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\code\python\p2018\apps\admin\views.py", line 168, in api
+    raise Exception("Call  '{0}' in '{1}' encountered '{2}'".format(method_path, module_path, ex))
+Exception: Call  'get_list' in 'admin.api.users' encountered 'Cannot encode object: <built-in function len>'
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 13, 9, 26, 842000, tzinfo=<UTC>)}}
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 13, 9, 26, 886000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Internal Server Error: /admin/api
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\code\python\p2018\apps\admin\views.py", line 168, in api
+    raise Exception("Call  '{0}' in '{1}' encountered '{2}'".format(method_path, module_path, ex))
+Exception: Call  'get_list' in 'admin.api.users' encountered 'Cannot encode object: <built-in function len>'
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 13, 10, 28, 529000, tzinfo=<UTC>)}}
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 13, 10, 28, 590000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Internal Server Error: /admin/api
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\code\python\p2018\apps\admin\views.py", line 168, in api
+    raise Exception("Call  '{0}' in '{1}' encountered '{2}'".format(method_path, module_path, ex))
+Exception: Call  'get_list' in 'admin.api.users' encountered 'Cannot encode object: <built-in function len>'
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 13, 11, 0, 995000, tzinfo=<UTC>)}}
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 13, 11, 1, 41000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Internal Server Error: /admin/api
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\code\python\p2018\apps\admin\views.py", line 168, in api
+    raise Exception("Call  '{0}' in '{1}' encountered '{2}'".format(method_path, module_path, ex))
+Exception: Call  'get_list' in 'admin.api.users' encountered 'Cannot encode object: <built-in function len>'
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 13, 11, 33, 188000, tzinfo=<UTC>)}}
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 13, 11, 33, 288000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 13, 20, 17, 27000, tzinfo=<UTC>)}}
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 13, 20, 17, 105000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Internal Server Error: /admin/api
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\code\python\p2018\apps\admin\views.py", line 168, in api
+    raise Exception("Call  '{0}' in '{1}' encountered '{2}'".format(method_path, module_path, ex))
+Exception: Call  'get_list' in 'admin.api.users' encountered 'AGGREGATE instance has no attribute 'copy''
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 13, 20, 30, 831000, tzinfo=<UTC>)}}
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 13, 20, 30, 874000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 13, 21, 40, 28000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 13, 21, 40, 241000, tzinfo=<UTC>)}}
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 13, 21, 40, 285000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Internal Server Error: /admin/api
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\code\python\p2018\apps\admin\views.py", line 168, in api
+    raise Exception("Call  '{0}' in '{1}' encountered '{2}'".format(method_path, module_path, ex))
+Exception: Call  'get_list' in 'admin.api.users' encountered 'AGGREGATE instance has no attribute 'copy''
+Internal Server Error: /admin/api
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\code\python\p2018\apps\admin\views.py", line 168, in api
+    raise Exception("Call  '{0}' in '{1}' encountered '{2}'".format(method_path, module_path, ex))
+Exception: Call  'get_list' in 'admin.api.users' encountered 'AGGREGATE instance has no attribute 'copy''
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 13, 21, 52, 746000, tzinfo=<UTC>)}}
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 13, 21, 52, 786000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Internal Server Error: /admin/api
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\code\python\p2018\apps\admin\views.py", line 168, in api
+    raise Exception("Call  '{0}' in '{1}' encountered '{2}'".format(method_path, module_path, ex))
+Exception: Call  'get_list' in 'admin.api.users' encountered 'AGGREGATE instance has no attribute 'copy''
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 13, 22, 0, 757000, tzinfo=<UTC>)}}
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 13, 22, 0, 833000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Internal Server Error: /admin/api
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\code\python\p2018\apps\admin\views.py", line 168, in api
+    raise Exception("Call  '{0}' in '{1}' encountered '{2}'".format(method_path, module_path, ex))
+Exception: Call  'get_list' in 'admin.api.users' encountered 'Each element of the 'pipeline' array must be an object'
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 13, 22, 25, 774000, tzinfo=<UTC>)}}
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 13, 22, 25, 815000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Internal Server Error: /admin/api
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\code\python\p2018\apps\admin\views.py", line 168, in api
+    raise Exception("Call  '{0}' in '{1}' encountered '{2}'".format(method_path, module_path, ex))
+Exception: Call  'get_list' in 'admin.api.users' encountered 'Each element of the 'pipeline' array must be an object'
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 13, 23, 11, 889000, tzinfo=<UTC>)}}
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 13, 23, 11, 928000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Internal Server Error: /admin/api
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\code\python\p2018\apps\admin\views.py", line 168, in api
+    raise Exception("Call  '{0}' in '{1}' encountered '{2}'".format(method_path, module_path, ex))
+Exception: Call  'get_list' in 'admin.api.users' encountered 'Each element of the 'pipeline' array must be an object'
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 13, 23, 34, 3000, tzinfo=<UTC>)}}
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 13, 23, 34, 76000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 13, 23, 58, 754000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 13, 24, 36, 257000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 13, 24, 36, 432000, tzinfo=<UTC>)}}
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 13, 24, 36, 471000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 13, 24, 54, 293000, tzinfo=<UTC>)}}
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 13, 24, 57, 217000, tzinfo=<UTC>)}}
