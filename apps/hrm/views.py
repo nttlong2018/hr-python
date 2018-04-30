@@ -47,16 +47,7 @@ def load_page(request,path):
 @csrf_exempt
 def api(request):
     user=request.user
-
-    # login_info=argo.get_settings().MEMBERSHIP_ENGINE.validate_session(request.session.session_key)
-    # if login_info==None:
-    #     return HttpResponse('401 Unauthorized', status=401)
-    # if not login_info.user.isSysAdmin:
-    #     return HttpResponse('401 Unauthorized', status=401)
-
     post_data=json.loads(request.body)
-
-
     if not post_data.has_key("path"):
         raise Exception("Api post without using path")
     path=post_data["path"]

@@ -12,6 +12,9 @@
 
                     <th>${get_app_res("Full name")}</th>
                      <th>${get_app_res("Description")}</th>
+                    <th>${get_app_res("Is Active")}</th>
+                    <th>${get_app_res("Is Supper User")}</th>
+                    <th>${get_app_res("Is Staff")}</th>
                     <th>
                         <button class="btn btn-primary" ng-click="$root.$dialog($id).url('pages/users.new').done()">
                             ${get_global_res("New")}
@@ -34,6 +37,15 @@
                         {{p.description}}
                     </td>
                     <td>
+                        {{p.is_active}}
+                    </td>
+                    <td>
+                        {{p.is_superuser}}
+                    </td>
+                    <td>
+                        {{p.is_staff}}
+                    </td>
+                    <td>
                         <button class="btn btn-primary " ng-click="$root.$dialog($id).params(p).url('pages/users.new').done()">
                             ${get_global_res("Edit")}
                         </button>
@@ -43,7 +55,7 @@
                 </tbody>
                   <thead>
                     <tr>
-                    <th colspan="4"></th>
+                    <th colspan="7"></th>
                     <th>
                         <button class="btn btn-primary " ng-click="$root.$dialog($id).url('pages/users.new').done()">
                             ${get_global_res("New")}
@@ -66,7 +78,7 @@
 <script>
     (function(scope){
         scope.view_path="${get_view_path()}";
-        services=ws(scope);
+        scope.services=services=ws(scope);
         console.log(services);
         scope.$root.onSearch(function(txt){
             scope.load_data(txt);

@@ -18,7 +18,7 @@
                 <input type="password" ng-model="model.password" class="form-control">
             </div>
             </div>
-             <div class="row">
+            <div class="row">
                  <div class="col-sm-4">
                 <label>${get_global_res("Email")}</label>
             </div>
@@ -28,40 +28,56 @@
             </div>
             <div class="row">
                  <div class="col-sm-4">
-                <label>${get_global_res("Display name")}</label>
-            </div>
-            <div class="col-sm-8">
-                <input type="text" ng-model="model.displayName" class="form-control">
-            </div>
+                    <label>${get_global_res("First name")}</label>
+                 </div>
+                 <div class="col-sm-8">
+                    <input type="text" ng-model="model.first_name" class="form-control">
+                </div>
             </div>
             <div class="row">
                  <div class="col-sm-4">
-                <label>${get_global_res("System admin")}</label>
+                    <label>${get_global_res("Last name")}</label>
+                </div>
+                <div class="col-sm-8">
+                    <input type="text" ng-model="model.last_name" class="form-control">
+                </div>
             </div>
-            <div class="col-sm-8">
-                <input type="checkbox" ng-model="model.isSysAdmin" class="form-control">
+            <div class="row">
+                 <div class="col-sm-4">
+                    <label>${get_global_res("Is supper user")}</label>
+                </div>
+                <div class="col-sm-8">
+                    <input type="checkbox" ng-model="model.is_superuser" class="form-control">
+                </div>
             </div>
+            <div class="row">
+                <div class="col-sm-4">
+                    <label>${get_global_res("Is staff")}</label>
+                </div>
+                <div class="col-sm-8">
+                    <input type="checkbox" ng-model="model.is_staff" class="form-control">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4">
+                    <label>${get_global_res("Is admin")}</label>
+                </div>
+                <div class="col-sm-8">
+                    <input type="checkbox" ng-model="model.isStaff" class="form-control">
+                </div>
 
             </div>
             <div class="row">
                  <div class="col-sm-4">
-                <label>${get_global_res("Is admin")}</label>
-            </div>
-            <div class="col-sm-8">
-                <input type="checkbox" ng-model="model.isStaff" class="form-control">
+                    <label>${get_global_res("Description")}</label>
+                </div>
+                <div class="col-sm-8">
+                    <textarea ng-model="model.description" class="form-control">
+
+                    </textarea>
+                </div>
             </div>
 
-            </div>
-            <div class="row">
-                 <div class="col-sm-4">
-                <label>${get_global_res("Description")}</label>
-            </div>
-            <div class="col-sm-8">
-                <textarea ng-model="model.description" class="form-control">
-
-                </textarea>
-            </div>
-            </div>
             <div class="row">
                 <div class="col-sm-12">
                       <div class="btn-toolbar pull-right" role="toolbar" aria-label="">
@@ -89,23 +105,29 @@
 </div>
 <script>
     (function(scope,params){
+        console.log(scope)
 
         scope.model=params||{}
         scope.isNew=!angular.isDefined(params);
         scope.load=function(item){
             alert(item);
         }
+
         scope.doAction=function(){
-            alert(scope.$parent.view_path)
+
             if(scope.isNew){
-                ws_call("admin.api.users/create",scope.model).then(function(res){
+                scope.$parent.services.api("admin.api.users/create")
+                .data(scope.model).done(function(error,res){
                     scope.data=res;
+                    if(res.error && res.error.message){
+                        scope.$root.error(res.error.message)
+                        return;
+                    }
+
                     console.log(res);
                     scope.$applyAsync();
                 })
-                .catch(function(ex){
-                    console.log(ex);
-                })
+
            }
            else{
                 ws_call("admin.api.users/update",scope.model).then(function(res){

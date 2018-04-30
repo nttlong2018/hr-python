@@ -1,8 +1,20 @@
 import argo
+import django
 import quicky
 import authorization
+from django.contrib.auth.models import User
 app=argo.applications.get_app_by_file(__file__)
 database=quicky.db.database.connect(app.settings.Database)
+def get_app_res(key):
+    language=django.utils.translation.get_language()
+    return argo.get_settings().LANGUAGE_ENGINE.get_language_item(language,app.name,"-",key,key)
+def get_res(view,key):
+    language=django.utils.translation.get_language()
+    return argo.get_settings().LANGUAGE_ENGINE.get_language_item(language,app.name,view,key,key)
+def get_global_res(key):
+    language=django.utils.translation.get_language()
+    return argo.get_settings().LANGUAGE_ENGINE.get_language_item(language,"-","-",key,key)
+
 def get_list(args):
     if authorization.is_allow_read(args["privileges"]):
         coll = database.collection("auth_user").aggregate()
@@ -29,7 +41,9 @@ def get_list(args):
                      is_supperuser=1,
                      is_staff=1,
                      last_logon=1,
-                     date_joined=1)
+                     date_joined=1,
+                     displayName="concat(first_name,' ',last_name)",
+                     description=1)
         coll=coll.skip(page_index*page_size).limit(page_size)
         items=coll.get_list()
         return dict(
@@ -42,26 +56,37 @@ def get_list(args):
     else:
         return []
 def create(args):
-    try:
-        user=membership.create_user(args.get("username",""),args.get("password",""),args.get("email",""))
-        user.description=args.get("description","")
-        user.displayName = args.get("displayName", "")
-        user.email=args.get("email,""")
-        user.isSysAdmin = args.get("isSysAdmin", False)
-        user.isStaff = args.get("isStaff", False)
-        membership.update_user(user)
-        membership.active_user(user.username)
+    data=args.get("data",{})
+    if data.get("username",None)==None:
+        return dict(
+            error=dict(
+                message=get_app_res("Please enter Username"),
+                code="miss_param",
+                field="username"
+            )
+        )
+    if data.get("password",None)==None:
+        return dict(
+            error=dict(
+                message=get_app_res("Please enter Password"),
+                code="miss_param",
+                field="password"
+            )
+        )
 
-    except membership.models.exception as ex:
-        return {
-            "error": ex.message
-        }
-    except Exception  as ex:
-        return {
-            "error":ex.message
-        }
+    user = User.objects.create_user(data.get("username",""),
+                                    data.get("email",None),
+                                    data.get("password",""))
+    user.is_superuser=data.get("is_superuser",False)
+    user.is_staff=data.get("is_staff",False)
+    user.is_active=data.get("is_active",False)
+    user.save()
 
-    return {}
+
+
+
+    print args
+    pass
 def update(args):
     user=membership.get_user(args.get("username",""))
     if user==None:

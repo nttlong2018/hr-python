@@ -4,7 +4,7 @@ from . import utilities as utils
 from . import models
 from . import db
 from . import url
-
+import django
 import membership
 import threading
 import urllib
@@ -54,9 +54,9 @@ def template(fn,*_path,**kwargs):
             if login_path == None and auth_path != None:
                 raise Exception("'auth' require 'login'. 'login' need to be set at '" + fn.__name__ + "'")
        
-        language = "en"
-        if request.session.has_key("language"):
-            language = request.session["language"]
+        language = django.utils.translation.get_language()
+        # if request.session.has_key("language"):
+        #     language = request.session["language"]
 
         setattr(request,"application",app)
         if auth_path==None:
@@ -271,7 +271,7 @@ def template(fn,*_path,**kwargs):
             _url_login = app.host_dir + "/" + _url_login
         _url_login="/"+_url_login
         is_login_page=request.path_info.lower()==_url_login.lower()
-        if app.authenticate != None and (not is_login_page and not is_public):
+        if app.authenticate != None and (not is_login_page):
             authorization.register(app=app.name, id=get_view_path())
             if type(app.authenticate) is str:
                 path_to_auth_fn = app.authenticate.split(".")[app.authenticate.split(".").__len__() - 1]

@@ -786,3 +786,1013 @@ django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_d
 auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
 django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 13, 24, 54, 293000, tzinfo=<UTC>)}}
 django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 13, 24, 57, 217000, tzinfo=<UTC>)}}
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 13, 26, 44, 231000, tzinfo=<UTC>)}}
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 13, 26, 47, 174000, tzinfo=<UTC>)}}
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 13, 26, 50, 142000, tzinfo=<UTC>)}}
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 13, 30, 46, 272000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 13, 30, 46, 575000, tzinfo=<UTC>)}}
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 13, 30, 46, 624000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 13, 34, 57, 878000, tzinfo=<UTC>)}}
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 13, 34, 57, 982000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 13, 37, 24, 488000, tzinfo=<UTC>)}}
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 13, 37, 24, 565000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 13, 38, 24, 971000, tzinfo=<UTC>)}}
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 13, 38, 25, 17000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 13, 39, 24, 996000, tzinfo=<UTC>)}}
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 13, 39, 25, 37000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 13, 40, 3, 225000, tzinfo=<UTC>)}}
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 13, 40, 3, 320000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 13, 42, 25, 777000, tzinfo=<UTC>)}}
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 13, 42, 25, 822000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 13, 43, 9, 363000, tzinfo=<UTC>)}}
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 13, 44, 6, 600000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 13, 44, 15, 223000, tzinfo=<UTC>)}}
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 13, 44, 57, 814000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 13, 45, 14, 135000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 13, 45, 40, 310000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 13, 45, 52, 434000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 13, 46, 1, 832000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 13, 46, 9, 112000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 13, 46, 9, 158000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 13, 46, 10, 281000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 13, 46, 10, 320000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 13, 46, 40, 839000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 13, 46, 40, 883000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 13, 46, 42, 756000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 13, 46, 42, 796000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 13, 46, 43, 969000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 13, 46, 44, 11000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 13, 46, 48, 152000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 13, 49, 17, 967000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 13, 49, 18, 45000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 13, 49, 19, 267000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 13, 49, 19, 314000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 13, 51, 52, 676000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 13, 51, 52, 855000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 13, 51, 52, 909000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 13, 52, 16, 190000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 13, 52, 16, 356000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 13, 52, 16, 399000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 13, 52, 17, 873000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 13, 55, 21, 129000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 14, 0, 30, 247000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 14, 1, 12, 500000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 14, 1, 17, 230000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 14, 1, 29, 477000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 14, 1, 34, 670000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Internal Server Error: /admin/api
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\code\python\p2018\apps\admin\views.py", line 135, in api
+    user_id=user.id
+  File "E:\code\python\p2018\packages\authorization\__init__.py", line 168, in get_view_of_user
+    return _instance_.get_view_of_user(*args,**kwargs)
+  File "E:\code\python\p2018\packages\authorization\auth.py", line 141, in get_view_of_user
+    raise ex
+TypeError: cannot concatenate 'str' and 'dict' objects
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 14, 3, 30, 60000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Internal Server Error: /admin/api
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\code\python\p2018\apps\admin\views.py", line 135, in api
+    user_id=user.id
+  File "E:\code\python\p2018\packages\authorization\__init__.py", line 168, in get_view_of_user
+    return _instance_.get_view_of_user(*args,**kwargs)
+  File "E:\code\python\p2018\packages\authorization\auth.py", line 141, in get_view_of_user
+    raise ex
+TypeError: cannot concatenate 'str' and 'dict' objects
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 14, 3, 45, 371000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Internal Server Error: /admin/api
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\code\python\p2018\apps\admin\views.py", line 135, in api
+    user_id=user.id
+  File "E:\code\python\p2018\packages\authorization\__init__.py", line 168, in get_view_of_user
+    return _instance_.get_view_of_user(*args,**kwargs)
+  File "E:\code\python\p2018\packages\authorization\auth.py", line 141, in get_view_of_user
+    raise ex
+TypeError: cannot concatenate 'str' and 'dict' objects
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 14, 4, 31, 885000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Internal Server Error: /admin/api
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\code\python\p2018\apps\admin\views.py", line 135, in api
+    user_id=user.id
+  File "E:\code\python\p2018\packages\authorization\__init__.py", line 168, in get_view_of_user
+    return _instance_.get_view_of_user(*args,**kwargs)
+  File "E:\code\python\p2018\packages\authorization\auth.py", line 141, in get_view_of_user
+    raise ex
+TypeError: cannot concatenate 'str' and 'dict' objects
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 14, 4, 38, 180000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Not Found: /apps/admin/static/angular.min.js.map
+Not Found: /polyfills/promise-6.1.0.js.map
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 14, 4, 38, 446000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 14, 4, 38, 512000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 14, 4, 42, 246000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 14, 4, 43, 712000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Internal Server Error: /admin/api
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\code\python\p2018\apps\admin\views.py", line 135, in api
+    user_id=user.id
+  File "E:\code\python\p2018\packages\authorization\__init__.py", line 168, in get_view_of_user
+    return _instance_.get_view_of_user(*args,**kwargs)
+  File "E:\code\python\p2018\packages\authorization\auth.py", line 141, in get_view_of_user
+    raise ex
+TypeError: cannot concatenate 'str' and 'dict' objects
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 14, 5, 28, 364000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Internal Server Error: /admin/api
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\code\python\p2018\apps\admin\views.py", line 135, in api
+    user_id=user.id
+  File "E:\code\python\p2018\packages\authorization\__init__.py", line 168, in get_view_of_user
+    return _instance_.get_view_of_user(*args,**kwargs)
+  File "E:\code\python\p2018\packages\authorization\auth.py", line 141, in get_view_of_user
+    raise ex
+TypeError: cannot concatenate 'str' and 'dict' objects
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 14, 5, 46, 567000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Internal Server Error: /admin/api
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\code\python\p2018\apps\admin\views.py", line 135, in api
+    user_id=user.id
+  File "E:\code\python\p2018\packages\authorization\__init__.py", line 168, in get_view_of_user
+    return _instance_.get_view_of_user(*args,**kwargs)
+  File "E:\code\python\p2018\packages\authorization\auth.py", line 141, in get_view_of_user
+    raise ex
+TypeError: cannot concatenate 'str' and 'dict' objects
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 14, 6, 42, 452000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 14, 6, 45, 444000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 14, 6, 50, 215000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 14, 6, 53, 471000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 14, 9, 5, 629000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 14, 9, 5, 838000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 14, 9, 9, 218000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 14, 9, 12, 653000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Not Found: /apps/admin/static/angular.min.js.map
+Not Found: /polyfills/promise-6.1.0.js.map
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 14, 9, 29, 472000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Not Found: /apps/admin/static/angular.min.js.map
+Not Found: /polyfills/promise-6.1.0.js.map
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 14, 9, 29, 699000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 14, 9, 34, 246000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 14, 9, 37, 731000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 14, 11, 12, 354000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Not Found: /apps/admin/static/angular.min.js.map
+Not Found: /polyfills/promise-6.1.0.js.map
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 14, 11, 12, 589000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 14, 11, 12, 636000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 14, 11, 15, 344000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 14, 12, 3, 909000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Not Found: /apps/admin/static/angular.min.js.map
+Not Found: /polyfills/promise-6.1.0.js.map
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 14, 12, 4, 147000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 14, 12, 4, 198000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 14, 12, 6, 553000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 14, 12, 9, 520000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 14, 15, 27, 872000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 14, 22, 16, 270000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Not Found: /apps/admin/static/angular.min.js.map
+Not Found: /polyfills/promise-6.1.0.js.map
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 14, 22, 20, 349000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Not Found: /apps/admin/static/angular.min.js.map
+Not Found: /polyfills/promise-6.1.0.js.map
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 14, 22, 26, 689000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Not Found: /apps/admin/static/angular.min.js.map
+Not Found: /polyfills/promise-6.1.0.js.map
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 14, 22, 28, 469000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 14, 22, 28, 554000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 14, 22, 33, 453000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 14, 22, 33, 661000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 14, 22, 33, 710000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 14, 22, 35, 521000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 14, 22, 35, 657000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 14, 22, 35, 705000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 14, 22, 38, 287000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 14, 24, 11, 698000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Not Found: /apps/admin/static/angular.min.js.map
+Not Found: /polyfills/promise-6.1.0.js.map
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 14, 24, 12, 61000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 14, 24, 12, 115000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 14, 24, 14, 962000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 14, 24, 16, 500000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 14, 26, 40, 524000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Not Found: /apps/admin/static/angular.min.js.map
+Not Found: /polyfills/promise-6.1.0.js.map
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 14, 26, 40, 908000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 14, 26, 40, 965000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 14, 26, 44, 8000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 14, 26, 45, 537000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 14, 32, 33, 151000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Not Found: /apps/admin/static/angular.min.js.map
+Not Found: /polyfills/promise-6.1.0.js.map
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 14, 32, 52, 215000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Not Found: /apps/admin/static/angular.min.js.map
+Not Found: /polyfills/promise-6.1.0.js.map
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 14, 32, 52, 569000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 14, 32, 52, 631000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 14, 32, 57, 494000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 14, 32, 57, 709000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 14, 32, 57, 759000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 14, 33, 22, 191000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 14, 33, 25, 507000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 14, 33, 27, 278000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 14, 37, 45, 296000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 14, 37, 45, 352000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 14, 37, 47, 15000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 14, 37, 47, 63000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 14, 38, 1, 91000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 14, 38, 2, 329000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 14, 39, 17, 874000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 14, 39, 19, 577000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 14, 44, 29, 863000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 14, 44, 30, 130000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 14, 44, 30, 230000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 14, 45, 51, 95000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 14, 45, 52, 535000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 14, 52, 48, 780000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 14, 52, 49, 18000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 14, 52, 49, 76000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 14, 52, 50, 639000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 14, 52, 52, 121000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 14, 52, 56, 748000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 14, 53, 4, 448000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 14, 54, 38, 847000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 14, 54, 41, 442000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 14, 55, 14, 481000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 14, 55, 17, 46000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 14, 55, 24, 349000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 14, 57, 30, 346000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Internal Server Error: /admin/api
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\code\python\p2018\apps\admin\views.py", line 170, in api
+    raise Exception("Call  '{0}' in '{1}' encountered '{2}'".format(method_path, module_path, ex))
+Exception: Call  'create' in 'admin.api.users' encountered 'E11000 duplicate key error collection: hrm.auth_user index: email_1 dup key: { : "" }'
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 14, 57, 38, 932000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Internal Server Error: /admin/api
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\code\python\p2018\apps\admin\views.py", line 170, in api
+    raise Exception("Call  '{0}' in '{1}' encountered '{2}'".format(method_path, module_path, ex))
+Exception: Call  'create' in 'admin.api.users' encountered 'E11000 duplicate key error collection: hrm.auth_user index: email_1 dup key: { : "" }'
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 14, 58, 14, 178000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Internal Server Error: /admin/api
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\code\python\p2018\apps\admin\views.py", line 170, in api
+    raise Exception("Call  '{0}' in '{1}' encountered '{2}'".format(method_path, module_path, ex))
+Exception: Call  'create' in 'admin.api.users' encountered 'E11000 duplicate key error collection: hrm.auth_user index: email_1 dup key: { : "" }'
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 14, 59, 51, 474000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Internal Server Error: /admin/api
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\code\python\p2018\apps\admin\views.py", line 170, in api
+    raise Exception("Call  '{0}' in '{1}' encountered '{2}'".format(method_path, module_path, ex))
+Exception: Call  'create' in 'admin.api.users' encountered 'E11000 duplicate key error collection: hrm.auth_user index: email_1 dup key: { : "" }'
+django_session.find (0.00) {'_id': 'aqi6vxlw5ui5yww1a6967yvzt2b7kppd', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 15, 0, 54, 617000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+auth_user.save (0.00) {'username': u'admin', 'first_name': u'', 'last_name': u'', 'is_active': True, '_id': ObjectId('5ae72fb0cddcb023202040c3'), 'is_superuser': False, 'is_staff': False, 'last_login': datetime.datetime(2018, 4, 30, 15, 1, 3, 995000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$5kPGIv8FNhYl$XTy5FLc/cSHcgIJ19gzjd7hvsPa7GkY76QhRIGJ4uVw=', 'email': u'', 'date_joined': datetime.datetime(2018, 4, 30, 15, 1, 3, 995000, tzinfo=<UTC>)}
+Internal Server Error: /admin/api
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\code\python\p2018\apps\admin\views.py", line 170, in api
+    raise Exception("Call  '{0}' in '{1}' encountered '{2}'".format(method_path, module_path, ex))
+Exception: Call  'create' in 'admin.api.users' encountered 'E11000 duplicate key error collection: hrm.auth_user index: username_1 dup key: { : "admin" }'
+auth_user.find (0.00) {'username': 'sys'}
+django_session.save (0.00) {'_id': u'65tvumsi92o1m5dhfc4xlp5facyj9d95', 'expire_date': datetime.datetime(2018, 5, 14, 15, 9, 50, 525000, tzinfo=<UTC>), 'session_data': u'YjAwMTViM2E0OTNjMDE0N2NjMTFiZjIxNzYzNmNkYTg5OGRiZGZjMzp7Imxhbmd1YWdlIjoiZW4ifQ=='}
+Not Found: /favicon.ico
+django_session.find (0.00) {'_id': '65tvumsi92o1m5dhfc4xlp5facyj9d95', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 15, 9, 58, 289000, tzinfo=<UTC>)}}
+Internal Server Error: /admin/login
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages\argo\__init__.py", line 318, in exec_request
+    return fn(request, **kwargs)
+  File "E:\code\python\p2018\apps\admin\views.py", line 37, in login
+    membership.sign_out(request.session.session_key)
+  File "E:\code\python\p2018\packages\membership\__init__.py", line 52, in sign_out
+    fn = getattr(_membership_instance, inspect.stack()[0][3])
+NameError: global name '_membership_instance' is not defined
+django_session.find (0.00) {'_id': '65tvumsi92o1m5dhfc4xlp5facyj9d95', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 15, 11, 36, 569000, tzinfo=<UTC>)}}
+django_session.save (0.00) {'_id': '65tvumsi92o1m5dhfc4xlp5facyj9d95', 'expire_date': datetime.datetime(2018, 5, 14, 15, 11, 36, 696000, tzinfo=<UTC>), 'session_data': u'YjAwMTViM2E0OTNjMDE0N2NjMTFiZjIxNzYzNmNkYTg5OGRiZGZjMzp7Imxhbmd1YWdlIjoiZW4ifQ=='}
+django_session.find (0.00) {'_id': '65tvumsi92o1m5dhfc4xlp5facyj9d95', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 15, 11, 47, 211000, tzinfo=<UTC>)}}
+Internal Server Error: /admin/login
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages\argo\__init__.py", line 318, in exec_request
+    return fn(request, **kwargs)
+  File "E:\code\python\p2018\apps\admin\views.py", line 53, in login
+    user = membership.validate_account(_login["username"], _login["password"])
+  File "E:\code\python\p2018\packages\membership\__init__.py", line 26, in validate_account
+    fn = getattr(_membership_instance, inspect.stack()[0][3])
+NameError: global name '_membership_instance' is not defined
+django_session.find (0.00) {'_id': '65tvumsi92o1m5dhfc4xlp5facyj9d95', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 15, 12, 19, 893000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'username': None}
+auth_user.find (0.00) {'username': 'root'}
+auth_user.find (0.00) {'username': 'root'}
+auth_user.find (0.00) {'username': 'root'}
+auth_user.find (0.00) {'username': None}
+auth_user.find (0.00) {'username': None}
+auth_user.find (0.00) {'username': 'root'}
+Internal Server Error: /admin/login
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages\argo\__init__.py", line 318, in exec_request
+    return fn(request, **kwargs)
+  File "E:\code\python\p2018\apps\admin\views.py", line 53, in login
+    return redirect(request["next"])
+  File "E:\code\python\p2018\packages\membership\__init__.py", line 26, in validate_account
+    fn = getattr(_membership_instance, inspect.stack()[0][3])
+NameError: global name '_membership_instance' is not defined
+django_session.find (0.00) {'_id': '65tvumsi92o1m5dhfc4xlp5facyj9d95', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 15, 22, 0, 791000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'username': u'root'}
+Internal Server Error: /admin/login
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages\argo\__init__.py", line 318, in exec_request
+    return fn(request, **kwargs)
+  File "E:\code\python\p2018\apps\admin\views.py", line 50, in login
+    return request.render(_login)
+  File "E:\code\python\p2018\packages\argo\__init__.py", line 122, in render
+    "get_user":get_user
+  File "E:\code\python\p2018\packages\argo\utilities.py", line 91, in render
+    ret_content = mylookup.get_template(fileName).render(**render_model)
+  File "E:\code\python\p2018\venv1\lib\site-packages\mako\template.py", line 462, in render
+    return runtime._render(self, self.callable_, args, data)
+  File "E:\code\python\p2018\venv1\lib\site-packages\mako\runtime.py", line 838, in _render
+    **_kwargs_for_callable(callable_, data))
+  File "E:\code\python\p2018\venv1\lib\site-packages\mako\runtime.py", line 873, in _render_context
+    _exec_template(inherit, lclcontext, args=args, kwargs=kwargs)
+  File "E:\code\python\p2018\venv1\lib\site-packages\mako\runtime.py", line 899, in _exec_template
+    callable_(context, *args, **kwargs)
+  File "base_html", line 37, in render_body
+  File "login_html", line 53, in render_body
+TypeError: 'bool' object has no attribute '__getitem__'
+django_session.find (0.00) {'_id': '65tvumsi92o1m5dhfc4xlp5facyj9d95', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 15, 22, 42, 243000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'username': u'root'}
+Internal Server Error: /admin/login
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages\argo\__init__.py", line 318, in exec_request
+    return fn(request, **kwargs)
+  File "E:\code\python\p2018\apps\admin\views.py", line 50, in login
+    return request.render(_login)
+  File "E:\code\python\p2018\packages\argo\__init__.py", line 122, in render
+    "get_user":get_user
+  File "E:\code\python\p2018\packages\argo\utilities.py", line 91, in render
+    ret_content = mylookup.get_template(fileName).render(**render_model)
+  File "E:\code\python\p2018\venv1\lib\site-packages\mako\template.py", line 462, in render
+    return runtime._render(self, self.callable_, args, data)
+  File "E:\code\python\p2018\venv1\lib\site-packages\mako\runtime.py", line 838, in _render
+    **_kwargs_for_callable(callable_, data))
+  File "E:\code\python\p2018\venv1\lib\site-packages\mako\runtime.py", line 873, in _render_context
+    _exec_template(inherit, lclcontext, args=args, kwargs=kwargs)
+  File "E:\code\python\p2018\venv1\lib\site-packages\mako\runtime.py", line 899, in _exec_template
+    callable_(context, *args, **kwargs)
+  File "base_html", line 37, in render_body
+  File "login_html", line 53, in render_body
+TypeError: 'bool' object has no attribute '__getitem__'
+django_session.find (0.00) {'_id': '65tvumsi92o1m5dhfc4xlp5facyj9d95', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 15, 26, 49, 433000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'username': u'root'}
+django_session.save (0.00) {'_id': '65tvumsi92o1m5dhfc4xlp5facyj9d95', 'expire_date': datetime.datetime(2018, 5, 14, 15, 26, 52, 961000, tzinfo=<UTC>), 'session_data': u'YjAwMTViM2E0OTNjMDE0N2NjMTFiZjIxNzYzNmNkYTg5OGRiZGZjMzp7Imxhbmd1YWdlIjoiZW4ifQ=='}
+django_session.find (0.00) {'_id': '65tvumsi92o1m5dhfc4xlp5facyj9d95', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 15, 27, 3, 382000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'username': u'sys'}
+Internal Server Error: /admin/login
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages\argo\__init__.py", line 318, in exec_request
+    return fn(request, **kwargs)
+  File "E:\code\python\p2018\apps\admin\views.py", line 53, in login
+    if request.get("next","")!="":
+AttributeError: 'WSGIRequest' object has no attribute 'get'
+django_session.find (0.00) {'_id': '65tvumsi92o1m5dhfc4xlp5facyj9d95', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 15, 27, 15, 979000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'username': u'sys'}
+Internal Server Error: /admin/login
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages\argo\__init__.py", line 318, in exec_request
+    return fn(request, **kwargs)
+  File "E:\code\python\p2018\apps\admin\views.py", line 53, in login
+    return redirect(_login["next"])
+AttributeError: 'WSGIRequest' object has no attribute 'get'
+django_session.find (0.00) {'_id': '65tvumsi92o1m5dhfc4xlp5facyj9d95', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 15, 28, 7, 117000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'username': u'sys'}
+django_session.find (0.00) {'_id': '65tvumsi92o1m5dhfc4xlp5facyj9d95', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 15, 29, 7, 282000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'username': u'sys'}
+django_session.save (0.00) {'_id': '65tvumsi92o1m5dhfc4xlp5facyj9d95', 'expire_date': datetime.datetime(2018, 5, 14, 15, 29, 20, 826000, tzinfo=<UTC>), 'session_data': u'YjAwMTViM2E0OTNjMDE0N2NjMTFiZjIxNzYzNmNkYTg5OGRiZGZjMzp7Imxhbmd1YWdlIjoiZW4ifQ=='}
+django_session.find (0.00) {'_id': '65tvumsi92o1m5dhfc4xlp5facyj9d95', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 15, 29, 21, 251000, tzinfo=<UTC>)}}
+django_session.find (0.00) {'_id': '65tvumsi92o1m5dhfc4xlp5facyj9d95', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 15, 29, 21, 504000, tzinfo=<UTC>)}}
+django_session.save (0.00) {'_id': '65tvumsi92o1m5dhfc4xlp5facyj9d95', 'expire_date': datetime.datetime(2018, 5, 14, 15, 29, 21, 549000, tzinfo=<UTC>), 'session_data': u'YjAwMTViM2E0OTNjMDE0N2NjMTFiZjIxNzYzNmNkYTg5OGRiZGZjMzp7Imxhbmd1YWdlIjoiZW4ifQ=='}
+django_session.find (0.00) {'_id': '65tvumsi92o1m5dhfc4xlp5facyj9d95', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 15, 29, 29, 887000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'username': u'sys'}
+django_session.save (0.00) {'_id': '65tvumsi92o1m5dhfc4xlp5facyj9d95', 'expire_date': datetime.datetime(2018, 5, 14, 15, 29, 49, 982000, tzinfo=<UTC>), 'session_data': u'YjAwMTViM2E0OTNjMDE0N2NjMTFiZjIxNzYzNmNkYTg5OGRiZGZjMzp7Imxhbmd1YWdlIjoiZW4ifQ=='}
+django_session.find (0.00) {'_id': '65tvumsi92o1m5dhfc4xlp5facyj9d95', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 15, 29, 50, 330000, tzinfo=<UTC>)}}
+django_session.find (0.00) {'_id': '65tvumsi92o1m5dhfc4xlp5facyj9d95', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 15, 29, 50, 618000, tzinfo=<UTC>)}}
+django_session.save (0.00) {'_id': '65tvumsi92o1m5dhfc4xlp5facyj9d95', 'expire_date': datetime.datetime(2018, 5, 14, 15, 29, 50, 648000, tzinfo=<UTC>), 'session_data': u'YjAwMTViM2E0OTNjMDE0N2NjMTFiZjIxNzYzNmNkYTg5OGRiZGZjMzp7Imxhbmd1YWdlIjoiZW4ifQ=='}
+django_session.find (0.00) {'_id': '65tvumsi92o1m5dhfc4xlp5facyj9d95', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 15, 29, 57, 255000, tzinfo=<UTC>)}}
+django_session.find (0.00) {'_id': '65tvumsi92o1m5dhfc4xlp5facyj9d95', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 15, 29, 57, 602000, tzinfo=<UTC>)}}
+django_session.save (0.00) {'_id': '65tvumsi92o1m5dhfc4xlp5facyj9d95', 'expire_date': datetime.datetime(2018, 5, 14, 15, 29, 57, 629000, tzinfo=<UTC>), 'session_data': u'YjAwMTViM2E0OTNjMDE0N2NjMTFiZjIxNzYzNmNkYTg5OGRiZGZjMzp7Imxhbmd1YWdlIjoiZW4ifQ=='}
+django_session.find (0.00) {'_id': '65tvumsi92o1m5dhfc4xlp5facyj9d95', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 15, 31, 13, 67000, tzinfo=<UTC>)}}
+django_session.find (0.00) {'_id': '65tvumsi92o1m5dhfc4xlp5facyj9d95', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 15, 32, 45, 8000, tzinfo=<UTC>)}}
+django_session.save (0.00) {'_id': '65tvumsi92o1m5dhfc4xlp5facyj9d95', 'expire_date': datetime.datetime(2018, 5, 14, 15, 32, 45, 42000, tzinfo=<UTC>), 'session_data': u'YjAwMTViM2E0OTNjMDE0N2NjMTFiZjIxNzYzNmNkYTg5OGRiZGZjMzp7Imxhbmd1YWdlIjoiZW4ifQ=='}
+django_session.find (0.00) {'_id': '65tvumsi92o1m5dhfc4xlp5facyj9d95', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 15, 33, 0, 804000, tzinfo=<UTC>)}}
+django_session.save (0.00) {'_id': '65tvumsi92o1m5dhfc4xlp5facyj9d95', 'expire_date': datetime.datetime(2018, 5, 14, 15, 33, 0, 897000, tzinfo=<UTC>), 'session_data': u'YjAwMTViM2E0OTNjMDE0N2NjMTFiZjIxNzYzNmNkYTg5OGRiZGZjMzp7Imxhbmd1YWdlIjoiZW4ifQ=='}
+django_session.find (0.00) {'_id': '65tvumsi92o1m5dhfc4xlp5facyj9d95', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 15, 33, 12, 608000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'username': u'sys'}
+django_session.save (0.00) {'_id': u'3rx3xl0dero3sjjzn0dgtefi45sboi0h', 'expire_date': datetime.datetime(2018, 5, 14, 15, 33, 12, 704000, tzinfo=<UTC>), 'session_data': u'YjAwMTViM2E0OTNjMDE0N2NjMTFiZjIxNzYzNmNkYTg5OGRiZGZjMzp7Imxhbmd1YWdlIjoiZW4ifQ=='}
+django_session.find (0.00) {'_id': '65tvumsi92o1m5dhfc4xlp5facyj9d95'}
+django_session.remove (0.00) {'_id': {'$in': [u'65tvumsi92o1m5dhfc4xlp5facyj9d95']}}
+Internal Server Error: /admin/login
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages\argo\__init__.py", line 318, in exec_request
+    return fn(request, **kwargs)
+  File "E:\code\python\p2018\apps\admin\views.py", line 53, in login
+    request_login(request,user)
+  File "E:\code\python\p2018\packages/django\django\contrib\auth\__init__.py", line 89, in login
+    user_logged_in.send(sender=user.__class__, request=request, user=user)
+  File "E:\code\python\p2018\packages/django\django\dispatch\dispatcher.py", line 185, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "E:\code\python\p2018\packages/django\django\contrib\auth\models.py", line 30, in update_last_login
+    user.save(update_fields=['last_login'])
+  File "E:\code\python\p2018\packages/django\django\db\models\base.py", line 547, in save
+    force_update=force_update, update_fields=update_fields)
+  File "E:\code\python\p2018\packages/django\django\db\models\base.py", line 575, in save_base
+    updated = self._save_table(raw, cls, force_insert, force_update, using, update_fields)
+  File "E:\code\python\p2018\packages/django\django\db\models\base.py", line 670, in _save_table
+    result = self._do_insert(cls._base_manager, using, fields, update_pk, raw)
+  File "E:\code\python\p2018\packages/django\django\db\models\base.py", line 706, in _do_insert
+    using=using, raw=raw)
+  File "E:\code\python\p2018\packages/django\django\db\models\manager.py", line 232, in _insert
+    return insert_query(self.model, objs, fields, **kwargs)
+  File "E:\code\python\p2018\packages/django\django\db\models\query.py", line 1514, in insert_query
+    return query.get_compiler(using=using).execute_sql(return_id)
+  File "C:\Python27\lib\site-packages\djangotoolbox\db\basecompiler.py", line 640, in execute_sql
+    key = self.insert(to_insert, return_id=return_id)
+  File "C:\Python27\lib\site-packages\django_mongodb_engine\compiler.py", line 84, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Python27\lib\site-packages\django_mongodb_engine\compiler.py", line 393, in insert
+    collection.save(doc, **options)
+  File "C:\Python27\lib\site-packages\django_mongodb_engine\utils.py", line 79, in wrapper
+    duration, retval = self.profile_call(func, args, kwargs)
+  File "C:\Python27\lib\site-packages\django_mongodb_engine\utils.py", line 58, in profile_call
+    retval = func(*args, **kwargs)
+  File "C:\Python27\lib\site-packages\pymongo\collection.py", line 2922, in save
+    collation=collation)
+  File "C:\Python27\lib\site-packages\pymongo\collection.py", line 836, in _update_retryable
+    _update, session)
+  File "C:\Python27\lib\site-packages\pymongo\mongo_client.py", line 1102, in _retryable_write
+    return self._retry_with_session(retryable, func, s, None)
+  File "C:\Python27\lib\site-packages\pymongo\mongo_client.py", line 1079, in _retry_with_session
+    return func(session, sock_info, retryable)
+  File "C:\Python27\lib\site-packages\pymongo\collection.py", line 832, in _update
+    retryable_write=retryable_write)
+  File "C:\Python27\lib\site-packages\pymongo\collection.py", line 798, in _update
+    _check_write_command_response(result)
+  File "C:\Python27\lib\site-packages\pymongo\helpers.py", line 207, in _check_write_command_response
+    _raise_last_write_error(write_errors)
+  File "C:\Python27\lib\site-packages\pymongo\helpers.py", line 188, in _raise_last_write_error
+    raise DuplicateKeyError(error.get("errmsg"), 11000, error)
+IntegrityError: E11000 duplicate key error collection: hrm.auth_user index: email_1 dup key: { : "" }
+Forbidden (CSRF token missing or incorrect.): /admin/login
+django_session.find (0.00) {'_id': '65tvumsi92o1m5dhfc4xlp5facyj9d95', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 15, 33, 57, 779000, tzinfo=<UTC>)}}
+django_session.save (0.00) {'_id': u'4yexkv4g5wbhzwcz7pbdga2yywe7ozom', 'expire_date': datetime.datetime(2018, 5, 14, 15, 33, 57, 784000, tzinfo=<UTC>), 'session_data': u'MjY1MGI5ZjE5YWFjZTM1OTM5NmFkNjA4ODFhYTVmNzUxZDA3ZTkxMjp7fQ=='}
+django_session.save (0.00) {'_id': u'4yexkv4g5wbhzwcz7pbdga2yywe7ozom', 'expire_date': datetime.datetime(2018, 5, 14, 15, 33, 57, 811000, tzinfo=<UTC>), 'session_data': u'YjAwMTViM2E0OTNjMDE0N2NjMTFiZjIxNzYzNmNkYTg5OGRiZGZjMzp7Imxhbmd1YWdlIjoiZW4ifQ=='}
+django_session.find (0.00) {'_id': '4yexkv4g5wbhzwcz7pbdga2yywe7ozom', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 15, 33, 59, 476000, tzinfo=<UTC>)}}
+django_session.save (0.00) {'_id': '4yexkv4g5wbhzwcz7pbdga2yywe7ozom', 'expire_date': datetime.datetime(2018, 5, 14, 15, 33, 59, 521000, tzinfo=<UTC>), 'session_data': u'YjAwMTViM2E0OTNjMDE0N2NjMTFiZjIxNzYzNmNkYTg5OGRiZGZjMzp7Imxhbmd1YWdlIjoiZW4ifQ=='}
+django_session.find (0.00) {'_id': '4yexkv4g5wbhzwcz7pbdga2yywe7ozom', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 15, 34, 6, 197000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'username': u'sys'}
+django_session.save (0.00) {'_id': u'kulp591xh3p7s1m52ijw787mwufz8aan', 'expire_date': datetime.datetime(2018, 5, 14, 15, 34, 6, 296000, tzinfo=<UTC>), 'session_data': u'YjAwMTViM2E0OTNjMDE0N2NjMTFiZjIxNzYzNmNkYTg5OGRiZGZjMzp7Imxhbmd1YWdlIjoiZW4ifQ=='}
+django_session.find (0.00) {'_id': '4yexkv4g5wbhzwcz7pbdga2yywe7ozom'}
+django_session.remove (0.00) {'_id': {'$in': [u'4yexkv4g5wbhzwcz7pbdga2yywe7ozom']}}
+Internal Server Error: /admin/login
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages\argo\__init__.py", line 318, in exec_request
+    return fn(request, **kwargs)
+  File "E:\code\python\p2018\apps\admin\views.py", line 53, in login
+    request_login(request,user)
+  File "E:\code\python\p2018\packages/django\django\contrib\auth\__init__.py", line 89, in login
+    user_logged_in.send(sender=user.__class__, request=request, user=user)
+  File "E:\code\python\p2018\packages/django\django\dispatch\dispatcher.py", line 185, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "E:\code\python\p2018\packages/django\django\contrib\auth\models.py", line 30, in update_last_login
+    user.save(update_fields=['last_login'])
+  File "E:\code\python\p2018\packages/django\django\db\models\base.py", line 547, in save
+    force_update=force_update, update_fields=update_fields)
+  File "E:\code\python\p2018\packages/django\django\db\models\base.py", line 575, in save_base
+    updated = self._save_table(raw, cls, force_insert, force_update, using, update_fields)
+  File "E:\code\python\p2018\packages/django\django\db\models\base.py", line 670, in _save_table
+    result = self._do_insert(cls._base_manager, using, fields, update_pk, raw)
+  File "E:\code\python\p2018\packages/django\django\db\models\base.py", line 706, in _do_insert
+    using=using, raw=raw)
+  File "E:\code\python\p2018\packages/django\django\db\models\manager.py", line 232, in _insert
+    return insert_query(self.model, objs, fields, **kwargs)
+  File "E:\code\python\p2018\packages/django\django\db\models\query.py", line 1514, in insert_query
+    return query.get_compiler(using=using).execute_sql(return_id)
+  File "C:\Python27\lib\site-packages\djangotoolbox\db\basecompiler.py", line 640, in execute_sql
+    key = self.insert(to_insert, return_id=return_id)
+  File "C:\Python27\lib\site-packages\django_mongodb_engine\compiler.py", line 84, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Python27\lib\site-packages\django_mongodb_engine\compiler.py", line 393, in insert
+    collection.save(doc, **options)
+  File "C:\Python27\lib\site-packages\django_mongodb_engine\utils.py", line 79, in wrapper
+    duration, retval = self.profile_call(func, args, kwargs)
+  File "C:\Python27\lib\site-packages\django_mongodb_engine\utils.py", line 58, in profile_call
+    retval = func(*args, **kwargs)
+  File "C:\Python27\lib\site-packages\pymongo\collection.py", line 2922, in save
+    collation=collation)
+  File "C:\Python27\lib\site-packages\pymongo\collection.py", line 836, in _update_retryable
+    _update, session)
+  File "C:\Python27\lib\site-packages\pymongo\mongo_client.py", line 1102, in _retryable_write
+    return self._retry_with_session(retryable, func, s, None)
+  File "C:\Python27\lib\site-packages\pymongo\mongo_client.py", line 1079, in _retry_with_session
+    return func(session, sock_info, retryable)
+  File "C:\Python27\lib\site-packages\pymongo\collection.py", line 832, in _update
+    retryable_write=retryable_write)
+  File "C:\Python27\lib\site-packages\pymongo\collection.py", line 798, in _update
+    _check_write_command_response(result)
+  File "C:\Python27\lib\site-packages\pymongo\helpers.py", line 207, in _check_write_command_response
+    _raise_last_write_error(write_errors)
+  File "C:\Python27\lib\site-packages\pymongo\helpers.py", line 188, in _raise_last_write_error
+    raise DuplicateKeyError(error.get("errmsg"), 11000, error)
+IntegrityError: E11000 duplicate key error collection: hrm.auth_user index: email_1 dup key: { : "" }
+django_session.find (0.00) {'_id': '4yexkv4g5wbhzwcz7pbdga2yywe7ozom', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 15, 35, 58, 476000, tzinfo=<UTC>)}}
+django_session.save (0.00) {'_id': u't228ebsnawdpi8s7rjeecuey52mjkj5c', 'expire_date': datetime.datetime(2018, 5, 14, 15, 35, 58, 479000, tzinfo=<UTC>), 'session_data': u'MjY1MGI5ZjE5YWFjZTM1OTM5NmFkNjA4ODFhYTVmNzUxZDA3ZTkxMjp7fQ=='}
+django_session.save (0.00) {'_id': u't228ebsnawdpi8s7rjeecuey52mjkj5c', 'expire_date': datetime.datetime(2018, 5, 14, 15, 35, 58, 485000, tzinfo=<UTC>), 'session_data': u'MjY1MGI5ZjE5YWFjZTM1OTM5NmFkNjA4ODFhYTVmNzUxZDA3ZTkxMjp7fQ=='}
+django_session.find (0.00) {'_id': 't228ebsnawdpi8s7rjeecuey52mjkj5c', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 15, 35, 58, 520000, tzinfo=<UTC>)}}
+django_session.save (0.00) {'_id': 't228ebsnawdpi8s7rjeecuey52mjkj5c', 'expire_date': datetime.datetime(2018, 5, 14, 15, 35, 58, 546000, tzinfo=<UTC>), 'session_data': u'YjAwMTViM2E0OTNjMDE0N2NjMTFiZjIxNzYzNmNkYTg5OGRiZGZjMzp7Imxhbmd1YWdlIjoiZW4ifQ=='}
+django_session.find (0.00) {'_id': 't228ebsnawdpi8s7rjeecuey52mjkj5c', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 15, 36, 5, 552000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'username': u'sys'}
+django_session.save (0.00) {'_id': u'5igkb64ozyt2rhq24kflert49fp63frx', 'expire_date': datetime.datetime(2018, 5, 14, 15, 36, 5, 641000, tzinfo=<UTC>), 'session_data': u'YjAwMTViM2E0OTNjMDE0N2NjMTFiZjIxNzYzNmNkYTg5OGRiZGZjMzp7Imxhbmd1YWdlIjoiZW4ifQ=='}
+django_session.find (0.00) {'_id': 't228ebsnawdpi8s7rjeecuey52mjkj5c'}
+django_session.remove (0.00) {'_id': {'$in': [u't228ebsnawdpi8s7rjeecuey52mjkj5c']}}
+Internal Server Error: /admin/login
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages\argo\__init__.py", line 318, in exec_request
+    return fn(request, **kwargs)
+  File "E:\code\python\p2018\apps\admin\views.py", line 53, in login
+    request_login(request,user)
+  File "E:\code\python\p2018\packages/django\django\contrib\auth\__init__.py", line 89, in login
+    user_logged_in.send(sender=user.__class__, request=request, user=user)
+  File "E:\code\python\p2018\packages/django\django\dispatch\dispatcher.py", line 185, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "E:\code\python\p2018\packages/django\django\contrib\auth\models.py", line 30, in update_last_login
+    user.save(update_fields=['last_login'])
+  File "E:\code\python\p2018\packages/django\django\db\models\base.py", line 547, in save
+    force_update=force_update, update_fields=update_fields)
+  File "E:\code\python\p2018\packages/django\django\db\models\base.py", line 575, in save_base
+    updated = self._save_table(raw, cls, force_insert, force_update, using, update_fields)
+  File "E:\code\python\p2018\packages/django\django\db\models\base.py", line 670, in _save_table
+    result = self._do_insert(cls._base_manager, using, fields, update_pk, raw)
+  File "E:\code\python\p2018\packages/django\django\db\models\base.py", line 706, in _do_insert
+    using=using, raw=raw)
+  File "E:\code\python\p2018\packages/django\django\db\models\manager.py", line 232, in _insert
+    return insert_query(self.model, objs, fields, **kwargs)
+  File "E:\code\python\p2018\packages/django\django\db\models\query.py", line 1514, in insert_query
+    return query.get_compiler(using=using).execute_sql(return_id)
+  File "C:\Python27\lib\site-packages\djangotoolbox\db\basecompiler.py", line 640, in execute_sql
+    key = self.insert(to_insert, return_id=return_id)
+  File "C:\Python27\lib\site-packages\django_mongodb_engine\compiler.py", line 84, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Python27\lib\site-packages\django_mongodb_engine\compiler.py", line 393, in insert
+    collection.save(doc, **options)
+  File "C:\Python27\lib\site-packages\django_mongodb_engine\utils.py", line 79, in wrapper
+    duration, retval = self.profile_call(func, args, kwargs)
+  File "C:\Python27\lib\site-packages\django_mongodb_engine\utils.py", line 58, in profile_call
+    retval = func(*args, **kwargs)
+  File "C:\Python27\lib\site-packages\pymongo\collection.py", line 2922, in save
+    collation=collation)
+  File "C:\Python27\lib\site-packages\pymongo\collection.py", line 836, in _update_retryable
+    _update, session)
+  File "C:\Python27\lib\site-packages\pymongo\mongo_client.py", line 1102, in _retryable_write
+    return self._retry_with_session(retryable, func, s, None)
+  File "C:\Python27\lib\site-packages\pymongo\mongo_client.py", line 1079, in _retry_with_session
+    return func(session, sock_info, retryable)
+  File "C:\Python27\lib\site-packages\pymongo\collection.py", line 832, in _update
+    retryable_write=retryable_write)
+  File "C:\Python27\lib\site-packages\pymongo\collection.py", line 798, in _update
+    _check_write_command_response(result)
+  File "C:\Python27\lib\site-packages\pymongo\helpers.py", line 207, in _check_write_command_response
+    _raise_last_write_error(write_errors)
+  File "C:\Python27\lib\site-packages\pymongo\helpers.py", line 188, in _raise_last_write_error
+    raise DuplicateKeyError(error.get("errmsg"), 11000, error)
+IntegrityError: E11000 duplicate key error collection: hrm.auth_user index: email_1 dup key: { : "" }
+django_session.find (0.00) {'_id': 't228ebsnawdpi8s7rjeecuey52mjkj5c', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 15, 36, 18, 388000, tzinfo=<UTC>)}}
+django_session.save (0.00) {'_id': u'hh2fm5ljitm3clj95essdcbh6cmh9jcw', 'expire_date': datetime.datetime(2018, 5, 14, 15, 36, 18, 393000, tzinfo=<UTC>), 'session_data': u'MjY1MGI5ZjE5YWFjZTM1OTM5NmFkNjA4ODFhYTVmNzUxZDA3ZTkxMjp7fQ=='}
+django_session.save (0.00) {'_id': u'hh2fm5ljitm3clj95essdcbh6cmh9jcw', 'expire_date': datetime.datetime(2018, 5, 14, 15, 36, 18, 396000, tzinfo=<UTC>), 'session_data': u'MjY1MGI5ZjE5YWFjZTM1OTM5NmFkNjA4ODFhYTVmNzUxZDA3ZTkxMjp7fQ=='}
+django_session.find (0.00) {'_id': 'hh2fm5ljitm3clj95essdcbh6cmh9jcw', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 15, 36, 18, 432000, tzinfo=<UTC>)}}
+django_session.save (0.00) {'_id': 'hh2fm5ljitm3clj95essdcbh6cmh9jcw', 'expire_date': datetime.datetime(2018, 5, 14, 15, 36, 18, 460000, tzinfo=<UTC>), 'session_data': u'YjAwMTViM2E0OTNjMDE0N2NjMTFiZjIxNzYzNmNkYTg5OGRiZGZjMzp7Imxhbmd1YWdlIjoiZW4ifQ=='}
+django_session.find (0.00) {'_id': 'hh2fm5ljitm3clj95essdcbh6cmh9jcw', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 15, 36, 25, 206000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'username': u'sys'}
+django_session.save (0.00) {'_id': u'68imtojc1c97omhqpld738v1tpeu96y4', 'expire_date': datetime.datetime(2018, 5, 14, 15, 36, 25, 294000, tzinfo=<UTC>), 'session_data': u'YjAwMTViM2E0OTNjMDE0N2NjMTFiZjIxNzYzNmNkYTg5OGRiZGZjMzp7Imxhbmd1YWdlIjoiZW4ifQ=='}
+django_session.find (0.00) {'_id': 'hh2fm5ljitm3clj95essdcbh6cmh9jcw'}
+django_session.remove (0.00) {'_id': {'$in': [u'hh2fm5ljitm3clj95essdcbh6cmh9jcw']}}
+Internal Server Error: /admin/login
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages\argo\__init__.py", line 318, in exec_request
+    return fn(request, **kwargs)
+  File "E:\code\python\p2018\apps\admin\views.py", line 53, in login
+    request_login(request,user)
+  File "E:\code\python\p2018\packages/django\django\contrib\auth\__init__.py", line 89, in login
+    user_logged_in.send(sender=user.__class__, request=request, user=user)
+  File "E:\code\python\p2018\packages/django\django\dispatch\dispatcher.py", line 185, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "E:\code\python\p2018\packages/django\django\contrib\auth\models.py", line 30, in update_last_login
+    user.save(update_fields=['last_login'])
+  File "E:\code\python\p2018\packages/django\django\db\models\base.py", line 547, in save
+    force_update=force_update, update_fields=update_fields)
+  File "E:\code\python\p2018\packages/django\django\db\models\base.py", line 575, in save_base
+    updated = self._save_table(raw, cls, force_insert, force_update, using, update_fields)
+  File "E:\code\python\p2018\packages/django\django\db\models\base.py", line 670, in _save_table
+    result = self._do_insert(cls._base_manager, using, fields, update_pk, raw)
+  File "E:\code\python\p2018\packages/django\django\db\models\base.py", line 706, in _do_insert
+    using=using, raw=raw)
+  File "E:\code\python\p2018\packages/django\django\db\models\manager.py", line 232, in _insert
+    return insert_query(self.model, objs, fields, **kwargs)
+  File "E:\code\python\p2018\packages/django\django\db\models\query.py", line 1514, in insert_query
+    return query.get_compiler(using=using).execute_sql(return_id)
+  File "C:\Python27\lib\site-packages\djangotoolbox\db\basecompiler.py", line 640, in execute_sql
+    key = self.insert(to_insert, return_id=return_id)
+  File "C:\Python27\lib\site-packages\django_mongodb_engine\compiler.py", line 84, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Python27\lib\site-packages\django_mongodb_engine\compiler.py", line 393, in insert
+    collection.save(doc, **options)
+  File "C:\Python27\lib\site-packages\django_mongodb_engine\utils.py", line 79, in wrapper
+    duration, retval = self.profile_call(func, args, kwargs)
+  File "C:\Python27\lib\site-packages\django_mongodb_engine\utils.py", line 58, in profile_call
+    retval = func(*args, **kwargs)
+  File "C:\Python27\lib\site-packages\pymongo\collection.py", line 2922, in save
+    collation=collation)
+  File "C:\Python27\lib\site-packages\pymongo\collection.py", line 836, in _update_retryable
+    _update, session)
+  File "C:\Python27\lib\site-packages\pymongo\mongo_client.py", line 1102, in _retryable_write
+    return self._retry_with_session(retryable, func, s, None)
+  File "C:\Python27\lib\site-packages\pymongo\mongo_client.py", line 1079, in _retry_with_session
+    return func(session, sock_info, retryable)
+  File "C:\Python27\lib\site-packages\pymongo\collection.py", line 832, in _update
+    retryable_write=retryable_write)
+  File "C:\Python27\lib\site-packages\pymongo\collection.py", line 798, in _update
+    _check_write_command_response(result)
+  File "C:\Python27\lib\site-packages\pymongo\helpers.py", line 207, in _check_write_command_response
+    _raise_last_write_error(write_errors)
+  File "C:\Python27\lib\site-packages\pymongo\helpers.py", line 188, in _raise_last_write_error
+    raise DuplicateKeyError(error.get("errmsg"), 11000, error)
+IntegrityError: E11000 duplicate key error collection: hrm.auth_user index: email_1 dup key: { : "" }
+django_session.find (0.00) {'_id': 'hh2fm5ljitm3clj95essdcbh6cmh9jcw', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 15, 36, 41, 213000, tzinfo=<UTC>)}}
+django_session.save (0.00) {'_id': u'ku0a4mju6x7jpt4fogv3asbxyhbklsg4', 'expire_date': datetime.datetime(2018, 5, 14, 15, 36, 41, 218000, tzinfo=<UTC>), 'session_data': u'MjY1MGI5ZjE5YWFjZTM1OTM5NmFkNjA4ODFhYTVmNzUxZDA3ZTkxMjp7fQ=='}
+django_session.save (0.00) {'_id': u'ku0a4mju6x7jpt4fogv3asbxyhbklsg4', 'expire_date': datetime.datetime(2018, 5, 14, 15, 36, 41, 220000, tzinfo=<UTC>), 'session_data': u'MjY1MGI5ZjE5YWFjZTM1OTM5NmFkNjA4ODFhYTVmNzUxZDA3ZTkxMjp7fQ=='}
+django_session.find (0.00) {'_id': 'ku0a4mju6x7jpt4fogv3asbxyhbklsg4', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 15, 36, 41, 257000, tzinfo=<UTC>)}}
+django_session.save (0.00) {'_id': 'ku0a4mju6x7jpt4fogv3asbxyhbklsg4', 'expire_date': datetime.datetime(2018, 5, 14, 15, 36, 41, 285000, tzinfo=<UTC>), 'session_data': u'YjAwMTViM2E0OTNjMDE0N2NjMTFiZjIxNzYzNmNkYTg5OGRiZGZjMzp7Imxhbmd1YWdlIjoiZW4ifQ=='}
+django_session.find (0.00) {'_id': 'ku0a4mju6x7jpt4fogv3asbxyhbklsg4', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 15, 36, 47, 511000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'username': u'sys'}
+django_session.save (0.00) {'_id': u'68nyqq6cdyg8buhezv55aus6cn33zght', 'expire_date': datetime.datetime(2018, 5, 14, 15, 36, 47, 602000, tzinfo=<UTC>), 'session_data': u'YjAwMTViM2E0OTNjMDE0N2NjMTFiZjIxNzYzNmNkYTg5OGRiZGZjMzp7Imxhbmd1YWdlIjoiZW4ifQ=='}
+django_session.find (0.00) {'_id': 'ku0a4mju6x7jpt4fogv3asbxyhbklsg4'}
+django_session.remove (0.00) {'_id': {'$in': [u'ku0a4mju6x7jpt4fogv3asbxyhbklsg4']}}
+Internal Server Error: /admin/login
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages\argo\__init__.py", line 318, in exec_request
+    return fn(request, **kwargs)
+  File "E:\code\python\p2018\apps\admin\views.py", line 53, in login
+    request_login(request,user)
+  File "E:\code\python\p2018\packages/django\django\contrib\auth\__init__.py", line 89, in login
+    user_logged_in.send(sender=user.__class__, request=request, user=user)
+  File "E:\code\python\p2018\packages/django\django\dispatch\dispatcher.py", line 185, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "E:\code\python\p2018\packages/django\django\contrib\auth\models.py", line 30, in update_last_login
+    user.save(update_fields=['last_login'])
+  File "E:\code\python\p2018\packages/django\django\db\models\base.py", line 547, in save
+    force_update=force_update, update_fields=update_fields)
+  File "E:\code\python\p2018\packages/django\django\db\models\base.py", line 575, in save_base
+    updated = self._save_table(raw, cls, force_insert, force_update, using, update_fields)
+  File "E:\code\python\p2018\packages/django\django\db\models\base.py", line 670, in _save_table
+    result = self._do_insert(cls._base_manager, using, fields, update_pk, raw)
+  File "E:\code\python\p2018\packages/django\django\db\models\base.py", line 706, in _do_insert
+    using=using, raw=raw)
+  File "E:\code\python\p2018\packages/django\django\db\models\manager.py", line 232, in _insert
+    return insert_query(self.model, objs, fields, **kwargs)
+  File "E:\code\python\p2018\packages/django\django\db\models\query.py", line 1514, in insert_query
+    return query.get_compiler(using=using).execute_sql(return_id)
+  File "C:\Python27\lib\site-packages\djangotoolbox\db\basecompiler.py", line 640, in execute_sql
+    key = self.insert(to_insert, return_id=return_id)
+  File "C:\Python27\lib\site-packages\django_mongodb_engine\compiler.py", line 84, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Python27\lib\site-packages\django_mongodb_engine\compiler.py", line 393, in insert
+    collection.save(doc, **options)
+  File "C:\Python27\lib\site-packages\django_mongodb_engine\utils.py", line 79, in wrapper
+    duration, retval = self.profile_call(func, args, kwargs)
+  File "C:\Python27\lib\site-packages\django_mongodb_engine\utils.py", line 58, in profile_call
+    retval = func(*args, **kwargs)
+  File "C:\Python27\lib\site-packages\pymongo\collection.py", line 2922, in save
+    collation=collation)
+  File "C:\Python27\lib\site-packages\pymongo\collection.py", line 836, in _update_retryable
+    _update, session)
+  File "C:\Python27\lib\site-packages\pymongo\mongo_client.py", line 1102, in _retryable_write
+    return self._retry_with_session(retryable, func, s, None)
+  File "C:\Python27\lib\site-packages\pymongo\mongo_client.py", line 1079, in _retry_with_session
+    return func(session, sock_info, retryable)
+  File "C:\Python27\lib\site-packages\pymongo\collection.py", line 832, in _update
+    retryable_write=retryable_write)
+  File "C:\Python27\lib\site-packages\pymongo\collection.py", line 798, in _update
+    _check_write_command_response(result)
+  File "C:\Python27\lib\site-packages\pymongo\helpers.py", line 207, in _check_write_command_response
+    _raise_last_write_error(write_errors)
+  File "C:\Python27\lib\site-packages\pymongo\helpers.py", line 188, in _raise_last_write_error
+    raise DuplicateKeyError(error.get("errmsg"), 11000, error)
+IntegrityError: E11000 duplicate key error collection: hrm.auth_user index: email_1 dup key: { : "" }
+django_session.find (0.00) {'_id': 'ku0a4mju6x7jpt4fogv3asbxyhbklsg4', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 15, 37, 14, 516000, tzinfo=<UTC>)}}
+django_session.save (0.00) {'_id': u'7g730qk61qsx62gh3sve4ciku3q6xj4d', 'expire_date': datetime.datetime(2018, 5, 14, 15, 37, 14, 520000, tzinfo=<UTC>), 'session_data': u'MjY1MGI5ZjE5YWFjZTM1OTM5NmFkNjA4ODFhYTVmNzUxZDA3ZTkxMjp7fQ=='}
+django_session.save (0.00) {'_id': u'7g730qk61qsx62gh3sve4ciku3q6xj4d', 'expire_date': datetime.datetime(2018, 5, 14, 15, 37, 14, 522000, tzinfo=<UTC>), 'session_data': u'MjY1MGI5ZjE5YWFjZTM1OTM5NmFkNjA4ODFhYTVmNzUxZDA3ZTkxMjp7fQ=='}
+django_session.find (0.00) {'_id': '7g730qk61qsx62gh3sve4ciku3q6xj4d', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 15, 37, 14, 560000, tzinfo=<UTC>)}}
+django_session.save (0.00) {'_id': '7g730qk61qsx62gh3sve4ciku3q6xj4d', 'expire_date': datetime.datetime(2018, 5, 14, 15, 37, 14, 588000, tzinfo=<UTC>), 'session_data': u'YjAwMTViM2E0OTNjMDE0N2NjMTFiZjIxNzYzNmNkYTg5OGRiZGZjMzp7Imxhbmd1YWdlIjoiZW4ifQ=='}
+django_session.find (0.00) {'_id': '7g730qk61qsx62gh3sve4ciku3q6xj4d', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 15, 37, 21, 710000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'username': u'sys'}
+django_session.save (0.00) {'_id': u'mr0p5zah28sxcs7ku8k6e1szgj04o7lo', 'expire_date': datetime.datetime(2018, 5, 14, 15, 37, 21, 809000, tzinfo=<UTC>), 'session_data': u'YjAwMTViM2E0OTNjMDE0N2NjMTFiZjIxNzYzNmNkYTg5OGRiZGZjMzp7Imxhbmd1YWdlIjoiZW4ifQ=='}
+django_session.find (0.00) {'_id': '7g730qk61qsx62gh3sve4ciku3q6xj4d'}
+django_session.remove (0.00) {'_id': {'$in': [u'7g730qk61qsx62gh3sve4ciku3q6xj4d']}}
+Internal Server Error: /admin/login
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages\argo\__init__.py", line 318, in exec_request
+    return fn(request, **kwargs)
+  File "E:\code\python\p2018\apps\admin\views.py", line 53, in login
+    request_login(request,user)
+  File "E:\code\python\p2018\packages/django\django\contrib\auth\__init__.py", line 89, in login
+    user_logged_in.send(sender=user.__class__, request=request, user=user)
+  File "E:\code\python\p2018\packages/django\django\dispatch\dispatcher.py", line 185, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "E:\code\python\p2018\packages/django\django\contrib\auth\models.py", line 30, in update_last_login
+    user.save(update_fields=['last_login'])
+  File "E:\code\python\p2018\packages/django\django\db\models\base.py", line 547, in save
+    force_update=force_update, update_fields=update_fields)
+  File "E:\code\python\p2018\packages/django\django\db\models\base.py", line 575, in save_base
+    updated = self._save_table(raw, cls, force_insert, force_update, using, update_fields)
+  File "E:\code\python\p2018\packages/django\django\db\models\base.py", line 670, in _save_table
+    result = self._do_insert(cls._base_manager, using, fields, update_pk, raw)
+  File "E:\code\python\p2018\packages/django\django\db\models\base.py", line 706, in _do_insert
+    using=using, raw=raw)
+  File "E:\code\python\p2018\packages/django\django\db\models\manager.py", line 232, in _insert
+    return insert_query(self.model, objs, fields, **kwargs)
+  File "E:\code\python\p2018\packages/django\django\db\models\query.py", line 1514, in insert_query
+    return query.get_compiler(using=using).execute_sql(return_id)
+  File "C:\Python27\lib\site-packages\djangotoolbox\db\basecompiler.py", line 640, in execute_sql
+    key = self.insert(to_insert, return_id=return_id)
+  File "C:\Python27\lib\site-packages\django_mongodb_engine\compiler.py", line 84, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Python27\lib\site-packages\django_mongodb_engine\compiler.py", line 393, in insert
+    collection.save(doc, **options)
+  File "C:\Python27\lib\site-packages\django_mongodb_engine\utils.py", line 79, in wrapper
+    duration, retval = self.profile_call(func, args, kwargs)
+  File "C:\Python27\lib\site-packages\django_mongodb_engine\utils.py", line 58, in profile_call
+    retval = func(*args, **kwargs)
+  File "C:\Python27\lib\site-packages\pymongo\collection.py", line 2922, in save
+    collation=collation)
+  File "C:\Python27\lib\site-packages\pymongo\collection.py", line 836, in _update_retryable
+    _update, session)
+  File "C:\Python27\lib\site-packages\pymongo\mongo_client.py", line 1102, in _retryable_write
+    return self._retry_with_session(retryable, func, s, None)
+  File "C:\Python27\lib\site-packages\pymongo\mongo_client.py", line 1079, in _retry_with_session
+    return func(session, sock_info, retryable)
+  File "C:\Python27\lib\site-packages\pymongo\collection.py", line 832, in _update
+    retryable_write=retryable_write)
+  File "C:\Python27\lib\site-packages\pymongo\collection.py", line 798, in _update
+    _check_write_command_response(result)
+  File "C:\Python27\lib\site-packages\pymongo\helpers.py", line 207, in _check_write_command_response
+    _raise_last_write_error(write_errors)
+  File "C:\Python27\lib\site-packages\pymongo\helpers.py", line 188, in _raise_last_write_error
+    raise DuplicateKeyError(error.get("errmsg"), 11000, error)
+IntegrityError: E11000 duplicate key error collection: hrm.auth_user index: email_1 dup key: { : "" }
+django_session.find (0.00) {'_id': '7g730qk61qsx62gh3sve4ciku3q6xj4d', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 15, 38, 3, 246000, tzinfo=<UTC>)}}
+django_session.save (0.00) {'_id': u'l2881kq41hw2j2ce9agn662cyxkpost6', 'expire_date': datetime.datetime(2018, 5, 14, 15, 38, 3, 251000, tzinfo=<UTC>), 'session_data': u'MjY1MGI5ZjE5YWFjZTM1OTM5NmFkNjA4ODFhYTVmNzUxZDA3ZTkxMjp7fQ=='}
+django_session.save (0.00) {'_id': u'l2881kq41hw2j2ce9agn662cyxkpost6', 'expire_date': datetime.datetime(2018, 5, 14, 15, 38, 3, 280000, tzinfo=<UTC>), 'session_data': u'YjAwMTViM2E0OTNjMDE0N2NjMTFiZjIxNzYzNmNkYTg5OGRiZGZjMzp7Imxhbmd1YWdlIjoiZW4ifQ=='}
+django_session.find (0.00) {'_id': 'l2881kq41hw2j2ce9agn662cyxkpost6', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 15, 38, 8, 847000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'username': u'sys'}
+django_session.save (0.00) {'_id': u'bmoclu0w2qafj90kgvfmgki7hwl264fi', 'expire_date': datetime.datetime(2018, 5, 14, 15, 38, 34, 434000, tzinfo=<UTC>), 'session_data': u'YjAwMTViM2E0OTNjMDE0N2NjMTFiZjIxNzYzNmNkYTg5OGRiZGZjMzp7Imxhbmd1YWdlIjoiZW4ifQ=='}
+django_session.find (0.00) {'_id': 'l2881kq41hw2j2ce9agn662cyxkpost6'}
+django_session.remove (0.00) {'_id': {'$in': [u'l2881kq41hw2j2ce9agn662cyxkpost6']}}
+auth_user.save (0.00) {'username': u'sys', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5ae5cb53cddcb0354c11cf6a'), 'is_active': True, 'email': u'', 'is_superuser': True, 'is_staff': False, 'last_login': datetime.datetime(2018, 4, 30, 15, 39, 24, 779000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$RM3mR6ar66t8$SRS3qPBkBP7FldCNOuunX0f1RK/YppeImlg2lVhOJZo=', 'date_joined': datetime.datetime(2018, 4, 29, 13, 40, 35, 764000, tzinfo=<UTC>)}
+auth_user.save (0.00) {'username': u'sys', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5ae5cb53cddcb0354c11cf6a'), 'is_active': True, 'email': u'', 'is_superuser': True, 'is_staff': False, 'last_login': datetime.datetime(2018, 4, 30, 15, 39, 31, 834000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$RM3mR6ar66t8$SRS3qPBkBP7FldCNOuunX0f1RK/YppeImlg2lVhOJZo=', 'date_joined': datetime.datetime(2018, 4, 29, 13, 40, 35, 764000, tzinfo=<UTC>)}
+django_session.save (0.01) {'_id': u'bmoclu0w2qafj90kgvfmgki7hwl264fi', 'expire_date': datetime.datetime(2018, 5, 14, 15, 39, 34, 188000, tzinfo=<UTC>), 'session_data': u'MmU5YzEwYjExYTI3YTY2YmIwMGM0YmYwZWUwYmFkNmZjYzQyMzQ1OTp7Il9hdXRoX3VzZXJfYmFja2VuZCI6InBlcm1pc3Npb25fYmFja2VuZF9ub25yZWwuYmFja2VuZHMuTm9ucmVsUGVybWlzc2lvbkJhY2tlbmQiLCJfYXV0aF91c2VyX2lkIjoiNWFlNWNiNTNjZGRjYjAzNTRjMTFjZjZhIiwibGFuZ3VhZ2UiOiJlbiJ9'}
+django_session.find (0.00) {'_id': 'bmoclu0w2qafj90kgvfmgki7hwl264fi', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 15, 39, 34, 568000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'bmoclu0w2qafj90kgvfmgki7hwl264fi', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 15, 39, 53, 402000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'bmoclu0w2qafj90kgvfmgki7hwl264fi', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 15, 39, 53, 513000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Not Found: /admin/page-login.html
+django_session.find (0.00) {'_id': 'bmoclu0w2qafj90kgvfmgki7hwl264fi', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 15, 40, 0, 981000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'bmoclu0w2qafj90kgvfmgki7hwl264fi', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 15, 40, 1, 34000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}

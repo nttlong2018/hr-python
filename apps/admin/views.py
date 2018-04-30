@@ -7,7 +7,7 @@ import urllib
 from . import menu_loader
 from django.views.decorators.http import require_http_methods
 from django.views.decorators.csrf import csrf_exempt
-# from django.http import JsonResponse
+from django.contrib.auth import authenticate, login as request_login# from django.http import JsonResponse
 from bson.objectid import ObjectId
 import json
 import importlib
@@ -16,15 +16,7 @@ import authorization
 application=applications.get_app_by_file(__file__)
 from datetime import date, datetime
 import quicky
-def json_serial(obj):
-    """JSON serializer for objects not serializable by default json code"""
-    if isinstance(obj, (datetime, date)):
-        return obj.isoformat()
-    elif type(obj) is ObjectId:
-        return obj.__str__()
-    elif type(obj) is sqlalchemy.orm.state.InstanceState:
-        return  None
-    return obj.__str__()
+
 @argo.template("index.html")
 def index(request):
     return request.render({
@@ -33,10 +25,6 @@ def index(request):
 
 @argo.template("login.html")
 def login(request):
-
-    membership.sign_out(request.session.session_key)
-
-
     _login = {
         "username":"",
         "password":"",
@@ -52,52 +40,19 @@ def login(request):
         _login["username"] = request._get_post().get("username","")
         _login["password"] = request._get_post().get("password","")
         _login["language"] = request._get_post().get("language", "en")
-
-        try:
-            user = membership.validate_account(_login["username"], _login["password"])
-            login = membership.sign_in(_login["username"],
-                                       request.session._get_or_create_session_key(), _login["language"])
-
-            if not user.isSysAdmin and not user.isStaff:
-                ret_model = {
-                    "is_error": True,
-                    "error_message": request.get_global_res("This application require sys admin user")
-                }
-                _login.update({
-                    "error": ret_model
-                })
-                return request.render(_login)
-            request.set_auth({
-                "user": {
-                    "id": login.user.userId,
-                    "username": login.user.username,
-                    "email": login.user.email,
-                    "isSysAdmin":login.user.isSysAdmin,
-                    "isStaff":login.user.isStaff
-                }
-            })
-            return redirect("/")
-
-
-
-        except membership.models.exception as ex:
-            ret_model={
-                "is_error":True,
-                "error_message":request.get_global_res("Username or Password is incorrect")
-            }
-            _login.update({
-                "error":ret_model
-            })
+        user=authenticate(username=request._get_post().get("username",""),
+                          password=request._get_post().get("password",""))
+        if user==None:
+            _login.update(dict(
+                error=dict(
+                    message=request.get_global_res("Username or Password is incorrect")
+                )
+            ))
             return request.render(_login)
-        # except Exception as ex:
-        #     ret_model = {
-        #         "is_error": True,
-        #         "error_message": ex.message
-        #     }
-        #     _login.update({
-        #         "error": ret_model
-        #     })
-        #     return request.render(_login)
+        else:
+            request_login(request,user)
+            return redirect(_login["next"])
+
 
     return request.render(_login)
 # @argo.template(file="simple_login",
@@ -130,7 +85,7 @@ def api(request):
     if post_data["path"].split("/").__len__()!=2:
         raise Exception("'{0}' is invalid path, path must be */*")
 
-    view_privileges=authorization.get_view_of_user(
+    view_privileges = argo.get_settings().AUTHORIZATION_ENGINE.get_view_of_user(
         view_id=view,
         user_id=user.id
     )
@@ -155,13 +110,15 @@ def api(request):
                     {
                         "privileges":view_privileges,
                         "data":post_data.get("data",{}),
-                        "user":user
+                        "user":user,
+                        "request":request
                     })
             else:
                 ret = getattr(mdl, method_path)(
                     {
                         "privileges":view_privileges,
-                        "user":user
+                        "user":user,
+                        "request":request
                     })
 
         except Exception as ex:
