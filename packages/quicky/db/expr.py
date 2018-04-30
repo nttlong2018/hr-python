@@ -318,12 +318,18 @@ def get_tree(expr,*params,**kwargs):
             "operator": find_operator(cmp.value.ops[0])
         })
     if cmp.value._fields.count("op")>0:
-
-        return {
-            "operator": find_operator(cmp.value.op),
-            "left": get_left(cmp.value.values[0], *params),
-            "right": get_right(cmp.value.values[1], *params)
-        }
+        if type(cmp.value.values[1]) is _ast.Call:
+            return {
+                "operator": find_operator(cmp.value.op),
+                "left": get_left(cmp.value.values[0], *params),
+                "right": get_left(cmp.value.values[1], *params)
+            }
+        else:
+            return {
+                "operator": find_operator(cmp.value.op),
+                "left": get_left(cmp.value.values[0], *params),
+                "right": get_right(cmp.value.values[1], *params)
+            }
     if type(cmp.value) is _ast.BoolOp:
         return {
             "operator":find_operator(cmp.value.op),
@@ -487,11 +493,11 @@ def get_expr(fx,*params):
                fx["params"][1]["type"]=="function" and\
                 fx["params"][1]["id"]=="get_params":
                 return {
-                    fx["params"][0]["id"]: params[fx["params"][1]["value"]]
+                    fx["params"][0]["id"]:{"$regex":re.compile(params[fx["params"][1]["value"]],re.IGNORECASE)}
                 }
             else:
                 return {
-                    fx["params"][0]["id"]: fx["params"][1]["value"]
+                    fx["params"][0]["id"]:{"$regex":re.compile(fx["params"][1]["value"],re.IGNORECASE)}
                 }
 
 

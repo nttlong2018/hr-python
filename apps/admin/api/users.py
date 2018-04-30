@@ -75,18 +75,14 @@ def create(args):
         )
 
     user = User.objects.create_user(data.get("username",""),
-                                    data.get("email",None),
+                                    data.get("email",data["username"]),
                                     data.get("password",""))
     user.is_superuser=data.get("is_superuser",False)
     user.is_staff=data.get("is_staff",False)
     user.is_active=data.get("is_active",False)
     user.save()
+    return user
 
-
-
-
-    print args
-    pass
 def update(args):
     user=membership.get_user(args.get("username",""))
     if user==None:
