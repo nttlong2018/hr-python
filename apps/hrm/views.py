@@ -13,7 +13,7 @@ import logging
 logger = logging.getLogger(__name__)
 @argo.template("index.html")
 def index(request):
-    txt=request.get_app_res("Tỉnh thành")
+
     menu_items=[]
     return request.render(
         dict(

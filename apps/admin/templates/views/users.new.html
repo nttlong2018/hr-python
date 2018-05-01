@@ -60,10 +60,10 @@
             </div>
             <div class="row">
                 <div class="col-sm-4">
-                    <label>${get_global_res("Is admin")}</label>
+                    <label>${get_global_res("Is active")}</label>
                 </div>
                 <div class="col-sm-8">
-                    <input type="checkbox" ng-model="model.isStaff" class="form-control">
+                    <input type="checkbox" ng-model="model.is_active" class="form-control">
                 </div>
 
             </div>
@@ -130,13 +130,16 @@
 
            }
            else{
-                ws_call("admin.api.users/update",scope.model).then(function(res){
+                 scope.$parent.services.api("admin.api.users/update")
+                .data(scope.model).done(function(error,res){
                     scope.data=res;
+                    if(res.error && res.error.message){
+                        scope.$root.error(res.error.message)
+                        return;
+                    }
+
                     console.log(res);
                     scope.$applyAsync();
-                })
-                .catch(function(ex){
-                    console.log(ex);
                 })
            }
         }

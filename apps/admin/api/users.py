@@ -84,18 +84,24 @@ def create(args):
     return user
 
 def update(args):
-    user=membership.get_user(args.get("username",""))
-    if user==None:
-        return {
-            "error":{
-                "code":"user_not_found"
-            }
-        }
-    user.description = args.get("description", "")
-    user.displayName = args.get("displayName", "")
-    user.isSysAdmin=args.get("isSysAdmin", False)
-    user.isStaff=args.get("isStaff",False)
-    user.email = args.get("email,""")
-    membership.update_user(user)
-    membership.active_user(user.username)
+    data=args["data"]
+    user=User.objects.get(username=data["username"])
+    user.is_superuser = data.get("is_superuser", False)
+    user.is_staff = data.get("is_staff", False)
+    user.is_active = data.get("is_active", False)
+    user.save()
+    # user=membership.get_user(args.get("username",""))
+    # if user==None:
+    #     return {
+    #         "error":{
+    #             "code":"user_not_found"
+    #         }
+    #     }
+    # user.description = args.get("description", "")
+    # user.displayName = args.get("displayName", "")
+    # user.isSysAdmin=args.get("isSysAdmin", False)
+    # user.isStaff=args.get("isStaff",False)
+    # user.email = args.get("email,""")
+    # membership.update_user(user)
+    # membership.active_user(user.username)
     return {}

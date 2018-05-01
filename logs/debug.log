@@ -2112,3 +2112,489 @@ django_session.find (0.00) {'_id': 'bmoclu0w2qafj90kgvfmgki7hwl264fi', 'expire_d
 auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
 django_session.find (0.00) {'_id': 'bmoclu0w2qafj90kgvfmgki7hwl264fi', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 16, 0, 41, 913000, tzinfo=<UTC>)}}
 auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'bmoclu0w2qafj90kgvfmgki7hwl264fi', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 16, 6, 49, 58000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'bmoclu0w2qafj90kgvfmgki7hwl264fi', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 16, 6, 50, 616000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'bmoclu0w2qafj90kgvfmgki7hwl264fi', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 16, 6, 58, 507000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'bmoclu0w2qafj90kgvfmgki7hwl264fi', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 16, 7, 1, 672000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'bmoclu0w2qafj90kgvfmgki7hwl264fi', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 16, 7, 7, 477000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'bmoclu0w2qafj90kgvfmgki7hwl264fi', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 16, 7, 8, 945000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'bmoclu0w2qafj90kgvfmgki7hwl264fi', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 16, 7, 15, 683000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'bmoclu0w2qafj90kgvfmgki7hwl264fi', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 16, 7, 15, 880000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Internal Server Error: /admin/api
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\code\python\p2018\apps\admin\views.py", line 125, in api
+    raise Exception("Call  '{0}' in '{1}' encountered '{2}'".format(method_path, module_path, ex))
+Exception: Call  'get_list' in 'admin.api.course' encountered 'No module named MySQLdb'
+django_session.find (0.00) {'_id': 'bmoclu0w2qafj90kgvfmgki7hwl264fi', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 16, 7, 21, 25000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'bmoclu0w2qafj90kgvfmgki7hwl264fi', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 16, 7, 21, 389000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'bmoclu0w2qafj90kgvfmgki7hwl264fi', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 16, 7, 23, 910000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'bmoclu0w2qafj90kgvfmgki7hwl264fi', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 16, 7, 24, 265000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'bmoclu0w2qafj90kgvfmgki7hwl264fi', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 16, 7, 25, 510000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'bmoclu0w2qafj90kgvfmgki7hwl264fi', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 16, 7, 25, 885000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'bmoclu0w2qafj90kgvfmgki7hwl264fi', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 16, 7, 27, 191000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'bmoclu0w2qafj90kgvfmgki7hwl264fi', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 16, 7, 27, 561000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'bmoclu0w2qafj90kgvfmgki7hwl264fi', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 16, 7, 28, 308000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'bmoclu0w2qafj90kgvfmgki7hwl264fi', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 16, 7, 28, 655000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'bmoclu0w2qafj90kgvfmgki7hwl264fi', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 16, 7, 37, 116000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'bmoclu0w2qafj90kgvfmgki7hwl264fi', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 16, 7, 39, 833000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'bmoclu0w2qafj90kgvfmgki7hwl264fi', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 16, 7, 42, 70000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'bmoclu0w2qafj90kgvfmgki7hwl264fi', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 16, 7, 47, 853000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'bmoclu0w2qafj90kgvfmgki7hwl264fi', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 16, 7, 48, 88000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'bmoclu0w2qafj90kgvfmgki7hwl264fi', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 16, 7, 49, 883000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'bmoclu0w2qafj90kgvfmgki7hwl264fi', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 16, 7, 50, 239000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'bmoclu0w2qafj90kgvfmgki7hwl264fi', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 16, 7, 51, 637000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'bmoclu0w2qafj90kgvfmgki7hwl264fi', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 16, 7, 51, 983000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'bmoclu0w2qafj90kgvfmgki7hwl264fi', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 16, 7, 52, 889000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'bmoclu0w2qafj90kgvfmgki7hwl264fi', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 16, 7, 56, 3000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'bmoclu0w2qafj90kgvfmgki7hwl264fi', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 16, 7, 59, 51000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'bmoclu0w2qafj90kgvfmgki7hwl264fi', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 16, 7, 59, 423000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'bmoclu0w2qafj90kgvfmgki7hwl264fi', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 16, 8, 0, 672000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'bmoclu0w2qafj90kgvfmgki7hwl264fi', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 16, 8, 3, 621000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'bmoclu0w2qafj90kgvfmgki7hwl264fi', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 16, 8, 5, 916000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'bmoclu0w2qafj90kgvfmgki7hwl264fi', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 16, 8, 8, 638000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'bmoclu0w2qafj90kgvfmgki7hwl264fi', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 16, 8, 10, 928000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'bmoclu0w2qafj90kgvfmgki7hwl264fi', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 16, 8, 13, 769000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'bmoclu0w2qafj90kgvfmgki7hwl264fi', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 16, 8, 15, 843000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'bmoclu0w2qafj90kgvfmgki7hwl264fi', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 16, 8, 18, 400000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'bmoclu0w2qafj90kgvfmgki7hwl264fi', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 16, 8, 20, 317000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'bmoclu0w2qafj90kgvfmgki7hwl264fi', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 16, 8, 22, 972000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'bmoclu0w2qafj90kgvfmgki7hwl264fi', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 16, 8, 26, 75000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'bmoclu0w2qafj90kgvfmgki7hwl264fi', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 16, 8, 29, 69000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'bmoclu0w2qafj90kgvfmgki7hwl264fi', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 16, 8, 36, 123000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'bmoclu0w2qafj90kgvfmgki7hwl264fi', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 16, 8, 36, 473000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'bmoclu0w2qafj90kgvfmgki7hwl264fi', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 16, 21, 3, 531000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'bmoclu0w2qafj90kgvfmgki7hwl264fi', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 16, 21, 3, 756000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'bmoclu0w2qafj90kgvfmgki7hwl264fi', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 16, 21, 7, 548000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'bmoclu0w2qafj90kgvfmgki7hwl264fi', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 16, 21, 7, 818000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'bmoclu0w2qafj90kgvfmgki7hwl264fi', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 16, 21, 9, 294000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'bmoclu0w2qafj90kgvfmgki7hwl264fi', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 16, 21, 9, 344000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'bmoclu0w2qafj90kgvfmgki7hwl264fi', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 16, 21, 10, 684000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'bmoclu0w2qafj90kgvfmgki7hwl264fi', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 16, 21, 10, 864000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'bmoclu0w2qafj90kgvfmgki7hwl264fi', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 16, 21, 14, 64000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'bmoclu0w2qafj90kgvfmgki7hwl264fi', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 16, 21, 14, 114000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'bmoclu0w2qafj90kgvfmgki7hwl264fi', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 16, 21, 24, 991000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'bmoclu0w2qafj90kgvfmgki7hwl264fi', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 16, 21, 56, 830000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+auth_user.save (0.00) {'username': u'kanji', 'first_name': u'', 'last_name': u'', 'is_active': True, '_id': ObjectId('5ae742a4cddcb008a401f411'), 'is_superuser': False, 'is_staff': False, 'last_login': datetime.datetime(2018, 4, 30, 16, 21, 56, 838000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$BCKcKquq3bIq$xDfI1EZxBfG7vNf8q1j9HkENZvBNEXmuSqNEI5z9WEc=', 'email': u'kanji', 'date_joined': datetime.datetime(2018, 4, 30, 16, 21, 56, 838000, tzinfo=<UTC>)}
+auth_user.save (0.00) {'username': u'kanji', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5ae742a4cddcb008a401f411'), 'is_active': False, 'email': u'kanji', 'is_superuser': True, 'is_staff': False, 'last_login': datetime.datetime(2018, 4, 30, 16, 21, 56, 838000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$BCKcKquq3bIq$xDfI1EZxBfG7vNf8q1j9HkENZvBNEXmuSqNEI5z9WEc=', 'date_joined': datetime.datetime(2018, 4, 30, 16, 21, 56, 838000, tzinfo=<UTC>)}
+django_session.find (0.00) {'_id': 'bmoclu0w2qafj90kgvfmgki7hwl264fi', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 16, 21, 59, 912000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Not Found: /admin/page-login.html
+django_session.find (0.00) {'_id': 'bmoclu0w2qafj90kgvfmgki7hwl264fi', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 16, 22, 26, 886000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'bmoclu0w2qafj90kgvfmgki7hwl264fi', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 16, 22, 26, 942000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.save (0.00) {'_id': u'4p4k8jc39ox61gff1po01pi571ptdbvi', 'expire_date': datetime.datetime(2018, 5, 14, 16, 22, 43, 112000, tzinfo=<UTC>), 'session_data': u'YjAwMTViM2E0OTNjMDE0N2NjMTFiZjIxNzYzNmNkYTg5OGRiZGZjMzp7Imxhbmd1YWdlIjoiZW4ifQ=='}
+Not Found: /favicon.ico
+django_session.find (0.00) {'_id': '4p4k8jc39ox61gff1po01pi571ptdbvi', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 16, 22, 57, 387000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'username': u'kanji'}
+django_session.save (0.00) {'_id': u'4pbt9jr2oyidpzlrk8o9tb8rtqjv9b6o', 'expire_date': datetime.datetime(2018, 5, 14, 16, 23, 1, 318000, tzinfo=<UTC>), 'session_data': u'YjAwMTViM2E0OTNjMDE0N2NjMTFiZjIxNzYzNmNkYTg5OGRiZGZjMzp7Imxhbmd1YWdlIjoiZW4ifQ=='}
+django_session.find (0.00) {'_id': '4p4k8jc39ox61gff1po01pi571ptdbvi'}
+django_session.remove (0.00) {'_id': {'$in': [u'4p4k8jc39ox61gff1po01pi571ptdbvi']}}
+auth_user.save (0.00) {'username': u'kanji', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5ae742a4cddcb008a401f411'), 'is_active': False, 'email': u'kanji', 'is_superuser': True, 'is_staff': False, 'last_login': datetime.datetime(2018, 4, 30, 16, 23, 1, 323000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$BCKcKquq3bIq$xDfI1EZxBfG7vNf8q1j9HkENZvBNEXmuSqNEI5z9WEc=', 'date_joined': datetime.datetime(2018, 4, 30, 16, 21, 56, 838000, tzinfo=<UTC>)}
+django_session.save (0.00) {'_id': u'4pbt9jr2oyidpzlrk8o9tb8rtqjv9b6o', 'expire_date': datetime.datetime(2018, 5, 14, 16, 23, 4, 17000, tzinfo=<UTC>), 'session_data': u'ZDkzMDQ5OTQzMzgyZmFjZmQ1ZmM0ZThiNmVmNmY0YmJlNjEwNDM3Mjp7Il9hdXRoX3VzZXJfYmFja2VuZCI6InBlcm1pc3Npb25fYmFja2VuZF9ub25yZWwuYmFja2VuZHMuTm9ucmVsUGVybWlzc2lvbkJhY2tlbmQiLCJfYXV0aF91c2VyX2lkIjoiNWFlNzQyYTRjZGRjYjAwOGE0MDFmNDExIiwibGFuZ3VhZ2UiOiJlbiJ9'}
+django_session.find (0.00) {'_id': '4pbt9jr2oyidpzlrk8o9tb8rtqjv9b6o', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 16, 23, 4, 81000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae742a4cddcb008a401f411')}
+django_session.find (0.00) {'_id': '4pbt9jr2oyidpzlrk8o9tb8rtqjv9b6o', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 16, 23, 4, 428000, tzinfo=<UTC>)}}
+django_session.save (0.00) {'_id': '4pbt9jr2oyidpzlrk8o9tb8rtqjv9b6o', 'expire_date': datetime.datetime(2018, 5, 14, 16, 23, 4, 456000, tzinfo=<UTC>), 'session_data': u'YmM0ZGExMDI4OWE1NDI4OWU3MmMyNDUyM2IzZTcwNzk3ZDBlMDk4OTp7Imxhbmd1YWdlIjoiZW4iLCJfYXV0aF91c2VyX2lkIjoiNWFlNzQyYTRjZGRjYjAwOGE0MDFmNDExIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoicGVybWlzc2lvbl9iYWNrZW5kX25vbnJlbC5iYWNrZW5kcy5Ob25yZWxQZXJtaXNzaW9uQmFja2VuZCJ9'}
+django_session.find (0.00) {'_id': '4pbt9jr2oyidpzlrk8o9tb8rtqjv9b6o', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 16, 23, 13, 297000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'username': u'test'}
+django_session.find (0.00) {'_id': '4pbt9jr2oyidpzlrk8o9tb8rtqjv9b6o'}
+django_session.remove (0.00) {'_id': {'$in': [u'4pbt9jr2oyidpzlrk8o9tb8rtqjv9b6o']}}
+django_session.save (0.00) {'_id': u'd5af1r18kqvwms009ankrfnl7u2vvyo8', 'expire_date': datetime.datetime(2018, 5, 14, 16, 23, 13, 391000, tzinfo=<UTC>), 'session_data': u'MjY1MGI5ZjE5YWFjZTM1OTM5NmFkNjA4ODFhYTVmNzUxZDA3ZTkxMjp7fQ=='}
+auth_user.save (0.00) {'username': u'test', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5ae73a58cddcb018088540a6'), 'is_active': True, 'email': u'test', 'is_superuser': False, 'is_staff': False, 'last_login': datetime.datetime(2018, 4, 30, 16, 23, 13, 392000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$VnjSOca3BjhC$11Nj/UBGLzFQPHzUHeDp536DGTouEIirkcNOuw6UO2g=', 'date_joined': datetime.datetime(2018, 4, 30, 15, 46, 32, 449000, tzinfo=<UTC>)}
+django_session.save (0.00) {'_id': u'd5af1r18kqvwms009ankrfnl7u2vvyo8', 'expire_date': datetime.datetime(2018, 5, 14, 16, 23, 13, 394000, tzinfo=<UTC>), 'session_data': u'ZDFjM2YxYzBjYzBjZTEwNzk3MWVhYmI5YzE4ZDRjNjYwNTFiNTI4OTp7Il9hdXRoX3VzZXJfYmFja2VuZCI6InBlcm1pc3Npb25fYmFja2VuZF9ub25yZWwuYmFja2VuZHMuTm9ucmVsUGVybWlzc2lvbkJhY2tlbmQiLCJfYXV0aF91c2VyX2lkIjoiNWFlNzNhNThjZGRjYjAxODA4ODU0MGE2In0='}
+django_session.find (0.00) {'_id': 'd5af1r18kqvwms009ankrfnl7u2vvyo8', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 16, 23, 13, 770000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae73a58cddcb018088540a6')}
+django_session.find (0.00) {'_id': 'd5af1r18kqvwms009ankrfnl7u2vvyo8', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 16, 23, 13, 985000, tzinfo=<UTC>)}}
+django_session.save (0.00) {'_id': 'd5af1r18kqvwms009ankrfnl7u2vvyo8', 'expire_date': datetime.datetime(2018, 5, 14, 16, 23, 14, 14000, tzinfo=<UTC>), 'session_data': u'ZTM5YmZmM2EzZTg3ZWYxM2U4NDhjZGQwNzU2Nzc2NjVmYjRiOTE0Yjp7Imxhbmd1YWdlIjoiZW4iLCJfYXV0aF91c2VyX2lkIjoiNWFlNzNhNThjZGRjYjAxODA4ODU0MGE2IiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoicGVybWlzc2lvbl9iYWNrZW5kX25vbnJlbC5iYWNrZW5kcy5Ob25yZWxQZXJtaXNzaW9uQmFja2VuZCJ9'}
+django_session.find (0.00) {'_id': 'd5af1r18kqvwms009ankrfnl7u2vvyo8', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 16, 23, 22, 906000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'username': u'sys'}
+django_session.find (0.00) {'_id': 'd5af1r18kqvwms009ankrfnl7u2vvyo8'}
+django_session.remove (0.00) {'_id': {'$in': [u'd5af1r18kqvwms009ankrfnl7u2vvyo8']}}
+django_session.save (0.00) {'_id': u'67tyzvg7ge3fehimcldycf7zlmbvik0q', 'expire_date': datetime.datetime(2018, 5, 14, 16, 23, 22, 997000, tzinfo=<UTC>), 'session_data': u'MjY1MGI5ZjE5YWFjZTM1OTM5NmFkNjA4ODFhYTVmNzUxZDA3ZTkxMjp7fQ=='}
+auth_user.save (0.00) {'username': u'sys', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5ae5cb53cddcb0354c11cf6a'), 'is_active': True, 'email': u'', 'is_superuser': True, 'is_staff': False, 'last_login': datetime.datetime(2018, 4, 30, 16, 23, 22, 998000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$RM3mR6ar66t8$SRS3qPBkBP7FldCNOuunX0f1RK/YppeImlg2lVhOJZo=', 'date_joined': datetime.datetime(2018, 4, 29, 13, 40, 35, 764000, tzinfo=<UTC>)}
+django_session.save (0.00) {'_id': u'67tyzvg7ge3fehimcldycf7zlmbvik0q', 'expire_date': datetime.datetime(2018, 5, 14, 16, 23, 23, 1000, tzinfo=<UTC>), 'session_data': u'MmZkNDhkMjFhZmM0OTBlZTEwY2UwOGM1YmZlNjI3ZmNmYzQ2MGIzZjp7Il9hdXRoX3VzZXJfYmFja2VuZCI6InBlcm1pc3Npb25fYmFja2VuZF9ub25yZWwuYmFja2VuZHMuTm9ucmVsUGVybWlzc2lvbkJhY2tlbmQiLCJfYXV0aF91c2VyX2lkIjoiNWFlNWNiNTNjZGRjYjAzNTRjMTFjZjZhIn0='}
+django_session.find (0.00) {'_id': '67tyzvg7ge3fehimcldycf7zlmbvik0q', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 16, 23, 23, 344000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '67tyzvg7ge3fehimcldycf7zlmbvik0q', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 16, 23, 28, 166000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '67tyzvg7ge3fehimcldycf7zlmbvik0q', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 16, 23, 28, 520000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '67tyzvg7ge3fehimcldycf7zlmbvik0q', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 16, 23, 34, 476000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '67tyzvg7ge3fehimcldycf7zlmbvik0q', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 16, 24, 4, 257000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '67tyzvg7ge3fehimcldycf7zlmbvik0q', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 16, 24, 6, 827000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '67tyzvg7ge3fehimcldycf7zlmbvik0q', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 16, 24, 17, 274000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '67tyzvg7ge3fehimcldycf7zlmbvik0q', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 16, 24, 17, 530000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '67tyzvg7ge3fehimcldycf7zlmbvik0q', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 16, 25, 2, 642000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '67tyzvg7ge3fehimcldycf7zlmbvik0q', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 16, 25, 6, 840000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '67tyzvg7ge3fehimcldycf7zlmbvik0q', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 16, 25, 9, 505000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '67tyzvg7ge3fehimcldycf7zlmbvik0q', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 16, 25, 12, 166000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '67tyzvg7ge3fehimcldycf7zlmbvik0q', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 16, 25, 14, 791000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '67tyzvg7ge3fehimcldycf7zlmbvik0q', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 16, 25, 18, 508000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '67tyzvg7ge3fehimcldycf7zlmbvik0q', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 16, 25, 18, 854000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '67tyzvg7ge3fehimcldycf7zlmbvik0q', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 16, 25, 20, 316000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '67tyzvg7ge3fehimcldycf7zlmbvik0q', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 16, 25, 20, 661000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '67tyzvg7ge3fehimcldycf7zlmbvik0q', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 16, 25, 23, 189000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '67tyzvg7ge3fehimcldycf7zlmbvik0q', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 16, 25, 23, 552000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '67tyzvg7ge3fehimcldycf7zlmbvik0q', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 16, 25, 24, 855000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '67tyzvg7ge3fehimcldycf7zlmbvik0q', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 16, 25, 25, 215000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '67tyzvg7ge3fehimcldycf7zlmbvik0q', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 16, 25, 26, 311000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '67tyzvg7ge3fehimcldycf7zlmbvik0q', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 16, 25, 26, 698000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '67tyzvg7ge3fehimcldycf7zlmbvik0q', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 16, 25, 28, 84000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '67tyzvg7ge3fehimcldycf7zlmbvik0q', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 16, 25, 28, 461000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Not Found: /admin/page-user.html
+django_session.find (0.00) {'_id': '67tyzvg7ge3fehimcldycf7zlmbvik0q', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 16, 25, 34, 741000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '67tyzvg7ge3fehimcldycf7zlmbvik0q', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 16, 25, 34, 789000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '67tyzvg7ge3fehimcldycf7zlmbvik0q', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 16, 25, 38, 661000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '67tyzvg7ge3fehimcldycf7zlmbvik0q', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 16, 25, 42, 274000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '67tyzvg7ge3fehimcldycf7zlmbvik0q', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 16, 25, 45, 555000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '67tyzvg7ge3fehimcldycf7zlmbvik0q', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 16, 25, 45, 597000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '67tyzvg7ge3fehimcldycf7zlmbvik0q', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 16, 26, 55, 185000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '67tyzvg7ge3fehimcldycf7zlmbvik0q', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 16, 26, 59, 591000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '67tyzvg7ge3fehimcldycf7zlmbvik0q', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 16, 27, 2, 237000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '67tyzvg7ge3fehimcldycf7zlmbvik0q', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 16, 27, 4, 108000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '67tyzvg7ge3fehimcldycf7zlmbvik0q', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 16, 27, 6, 237000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '67tyzvg7ge3fehimcldycf7zlmbvik0q', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 16, 27, 8, 215000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '67tyzvg7ge3fehimcldycf7zlmbvik0q', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 16, 27, 15, 181000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '67tyzvg7ge3fehimcldycf7zlmbvik0q', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 16, 27, 17, 387000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '67tyzvg7ge3fehimcldycf7zlmbvik0q', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 16, 27, 20, 284000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '67tyzvg7ge3fehimcldycf7zlmbvik0q', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 16, 27, 22, 326000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '67tyzvg7ge3fehimcldycf7zlmbvik0q', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 16, 27, 24, 585000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '67tyzvg7ge3fehimcldycf7zlmbvik0q', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 16, 27, 35, 792000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '67tyzvg7ge3fehimcldycf7zlmbvik0q', 'expire_date': {'$gt': datetime.datetime(2018, 4, 30, 16, 27, 35, 988000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '67tyzvg7ge3fehimcldycf7zlmbvik0q', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 0, 47, 8, 507000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '67tyzvg7ge3fehimcldycf7zlmbvik0q', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 0, 47, 57, 867000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '67tyzvg7ge3fehimcldycf7zlmbvik0q', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 0, 49, 9, 766000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '67tyzvg7ge3fehimcldycf7zlmbvik0q', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 0, 49, 14, 257000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '67tyzvg7ge3fehimcldycf7zlmbvik0q', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 0, 49, 20, 89000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '67tyzvg7ge3fehimcldycf7zlmbvik0q', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 0, 49, 56, 375000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '67tyzvg7ge3fehimcldycf7zlmbvik0q', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 0, 49, 57, 788000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+auth_user.find (0.00) {'username': u'test'}
+django_session.find (0.00) {'_id': '67tyzvg7ge3fehimcldycf7zlmbvik0q', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 0, 52, 32, 294000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '67tyzvg7ge3fehimcldycf7zlmbvik0q', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 0, 52, 35, 360000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+auth_user.find (0.00) {'username': u'test002'}
+auth_user.save (0.00) {'username': u'test002', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5ae73aefcddcb00a18f5ab13'), 'is_active': True, 'email': u'test002', 'is_superuser': False, 'is_staff': False, 'last_login': datetime.datetime(2018, 4, 30, 15, 49, 3, 545000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$TyDDw4Jy9Qbt$xC+OSjkZ4A/f1aWUIGrL6rT0VQYIp+TFKbLcrXIAH4Y=', 'date_joined': datetime.datetime(2018, 4, 30, 15, 49, 3, 545000, tzinfo=<UTC>)}
+django_session.find (0.00) {'_id': '67tyzvg7ge3fehimcldycf7zlmbvik0q', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 0, 52, 42, 875000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '67tyzvg7ge3fehimcldycf7zlmbvik0q', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 0, 52, 44, 37000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+auth_user.find (0.00) {'username': u'kanji'}
+auth_user.save (0.00) {'username': u'kanji', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5ae742a4cddcb008a401f411'), 'is_active': False, 'email': u'kanji', 'is_superuser': False, 'is_staff': False, 'last_login': datetime.datetime(2018, 4, 30, 16, 23, 1, 323000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$BCKcKquq3bIq$xDfI1EZxBfG7vNf8q1j9HkENZvBNEXmuSqNEI5z9WEc=', 'date_joined': datetime.datetime(2018, 4, 30, 16, 21, 56, 838000, tzinfo=<UTC>)}
+django_session.find (0.00) {'_id': '67tyzvg7ge3fehimcldycf7zlmbvik0q', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 0, 53, 7, 571000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '67tyzvg7ge3fehimcldycf7zlmbvik0q', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 0, 53, 7, 799000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '67tyzvg7ge3fehimcldycf7zlmbvik0q', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 0, 53, 9, 144000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '67tyzvg7ge3fehimcldycf7zlmbvik0q', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 0, 53, 9, 525000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '67tyzvg7ge3fehimcldycf7zlmbvik0q', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 0, 54, 13, 33000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '67tyzvg7ge3fehimcldycf7zlmbvik0q', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 0, 54, 13, 262000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '67tyzvg7ge3fehimcldycf7zlmbvik0q', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 0, 54, 40, 880000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '67tyzvg7ge3fehimcldycf7zlmbvik0q', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 0, 54, 40, 934000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '67tyzvg7ge3fehimcldycf7zlmbvik0q', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 0, 54, 42, 161000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '67tyzvg7ge3fehimcldycf7zlmbvik0q', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 0, 54, 42, 202000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '67tyzvg7ge3fehimcldycf7zlmbvik0q', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 0, 54, 43, 869000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '67tyzvg7ge3fehimcldycf7zlmbvik0q', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 0, 54, 43, 919000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '67tyzvg7ge3fehimcldycf7zlmbvik0q', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 0, 54, 46, 100000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '67tyzvg7ge3fehimcldycf7zlmbvik0q', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 0, 54, 46, 356000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '67tyzvg7ge3fehimcldycf7zlmbvik0q', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 0, 54, 49, 954000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '67tyzvg7ge3fehimcldycf7zlmbvik0q', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 0, 54, 52, 369000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '67tyzvg7ge3fehimcldycf7zlmbvik0q', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 0, 54, 54, 732000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '67tyzvg7ge3fehimcldycf7zlmbvik0q', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 0, 54, 57, 796000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '67tyzvg7ge3fehimcldycf7zlmbvik0q', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 0, 58, 8, 954000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '67tyzvg7ge3fehimcldycf7zlmbvik0q', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 0, 58, 9, 163000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '67tyzvg7ge3fehimcldycf7zlmbvik0q', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 0, 58, 10, 415000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '67tyzvg7ge3fehimcldycf7zlmbvik0q', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 0, 58, 10, 771000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '67tyzvg7ge3fehimcldycf7zlmbvik0q', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 0, 59, 1, 242000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '67tyzvg7ge3fehimcldycf7zlmbvik0q', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 0, 59, 3, 657000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '67tyzvg7ge3fehimcldycf7zlmbvik0q', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 0, 59, 5, 938000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '67tyzvg7ge3fehimcldycf7zlmbvik0q', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 0, 59, 23, 146000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '67tyzvg7ge3fehimcldycf7zlmbvik0q', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 0, 59, 23, 370000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '67tyzvg7ge3fehimcldycf7zlmbvik0q', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 0, 59, 24, 657000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '67tyzvg7ge3fehimcldycf7zlmbvik0q', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 0, 59, 25, 10000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '67tyzvg7ge3fehimcldycf7zlmbvik0q', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 0, 59, 42, 290000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '67tyzvg7ge3fehimcldycf7zlmbvik0q', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 0, 59, 42, 537000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '67tyzvg7ge3fehimcldycf7zlmbvik0q', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 0, 59, 44, 548000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '67tyzvg7ge3fehimcldycf7zlmbvik0q', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 0, 59, 44, 920000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '67tyzvg7ge3fehimcldycf7zlmbvik0q', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 1, 1, 5, 368000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '67tyzvg7ge3fehimcldycf7zlmbvik0q', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 1, 1, 9, 972000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '67tyzvg7ge3fehimcldycf7zlmbvik0q', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 1, 1, 13, 170000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '67tyzvg7ge3fehimcldycf7zlmbvik0q', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 1, 1, 13, 583000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Internal Server Error: /hrm/api
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\code\python\p2018\apps\hrm\views.py", line 100, in api
+    raise Exception("Call  '{0}' in '{1}' encountered '{2}'".format(method_path, module_path, ex))
+Exception: Call  'get_list' in 'categories' encountered ''module' object has no attribute '__getitem__''
+Not Found: /apps/hrm/static/js/angular.min.js.map
+Not Found: /polyfills/promise-6.1.0.js.map
+django_session.find (0.00) {'_id': '67tyzvg7ge3fehimcldycf7zlmbvik0q', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 1, 1, 28, 953000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '67tyzvg7ge3fehimcldycf7zlmbvik0q', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 1, 1, 29, 198000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '67tyzvg7ge3fehimcldycf7zlmbvik0q', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 1, 1, 32, 578000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '67tyzvg7ge3fehimcldycf7zlmbvik0q', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 1, 1, 32, 942000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '67tyzvg7ge3fehimcldycf7zlmbvik0q', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 1, 1, 35, 195000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '67tyzvg7ge3fehimcldycf7zlmbvik0q', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 1, 1, 35, 551000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '67tyzvg7ge3fehimcldycf7zlmbvik0q', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 1, 1, 37, 314000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '67tyzvg7ge3fehimcldycf7zlmbvik0q', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 1, 1, 37, 665000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '67tyzvg7ge3fehimcldycf7zlmbvik0q', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 1, 1, 39, 528000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '67tyzvg7ge3fehimcldycf7zlmbvik0q', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 1, 1, 39, 886000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '67tyzvg7ge3fehimcldycf7zlmbvik0q', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 1, 1, 42, 462000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '67tyzvg7ge3fehimcldycf7zlmbvik0q', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 1, 1, 42, 829000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '67tyzvg7ge3fehimcldycf7zlmbvik0q', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 1, 1, 45, 97000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '67tyzvg7ge3fehimcldycf7zlmbvik0q', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 1, 1, 45, 524000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '67tyzvg7ge3fehimcldycf7zlmbvik0q', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 1, 1, 47, 536000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '67tyzvg7ge3fehimcldycf7zlmbvik0q', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 1, 1, 47, 925000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '67tyzvg7ge3fehimcldycf7zlmbvik0q', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 1, 1, 50, 37000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '67tyzvg7ge3fehimcldycf7zlmbvik0q', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 1, 1, 50, 436000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '67tyzvg7ge3fehimcldycf7zlmbvik0q', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 1, 1, 53, 174000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '67tyzvg7ge3fehimcldycf7zlmbvik0q', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 1, 1, 53, 553000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '67tyzvg7ge3fehimcldycf7zlmbvik0q', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 1, 1, 55, 829000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '67tyzvg7ge3fehimcldycf7zlmbvik0q', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 1, 1, 56, 220000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '67tyzvg7ge3fehimcldycf7zlmbvik0q', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 1, 2, 1, 512000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '67tyzvg7ge3fehimcldycf7zlmbvik0q', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 1, 2, 1, 869000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '67tyzvg7ge3fehimcldycf7zlmbvik0q', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 1, 2, 7, 253000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '67tyzvg7ge3fehimcldycf7zlmbvik0q', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 1, 2, 7, 507000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '67tyzvg7ge3fehimcldycf7zlmbvik0q', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 1, 2, 8, 365000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '67tyzvg7ge3fehimcldycf7zlmbvik0q', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 1, 2, 8, 432000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '67tyzvg7ge3fehimcldycf7zlmbvik0q', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 1, 2, 9, 65000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '67tyzvg7ge3fehimcldycf7zlmbvik0q', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 1, 2, 9, 111000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '67tyzvg7ge3fehimcldycf7zlmbvik0q', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 1, 2, 9, 672000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '67tyzvg7ge3fehimcldycf7zlmbvik0q', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 1, 2, 9, 897000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '67tyzvg7ge3fehimcldycf7zlmbvik0q', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 1, 2, 10, 483000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '67tyzvg7ge3fehimcldycf7zlmbvik0q', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 1, 2, 10, 751000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '67tyzvg7ge3fehimcldycf7zlmbvik0q', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 1, 2, 11, 383000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '67tyzvg7ge3fehimcldycf7zlmbvik0q', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 1, 2, 11, 634000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '67tyzvg7ge3fehimcldycf7zlmbvik0q', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 1, 2, 12, 197000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '67tyzvg7ge3fehimcldycf7zlmbvik0q', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 1, 2, 12, 548000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '67tyzvg7ge3fehimcldycf7zlmbvik0q', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 1, 2, 13, 207000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '67tyzvg7ge3fehimcldycf7zlmbvik0q', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 1, 2, 15, 706000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '67tyzvg7ge3fehimcldycf7zlmbvik0q', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 1, 2, 16, 59000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '67tyzvg7ge3fehimcldycf7zlmbvik0q', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 1, 2, 17, 878000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '67tyzvg7ge3fehimcldycf7zlmbvik0q', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 1, 2, 19, 374000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '67tyzvg7ge3fehimcldycf7zlmbvik0q', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 1, 2, 19, 736000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '67tyzvg7ge3fehimcldycf7zlmbvik0q', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 1, 2, 21, 496000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '67tyzvg7ge3fehimcldycf7zlmbvik0q', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 1, 2, 21, 853000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '67tyzvg7ge3fehimcldycf7zlmbvik0q', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 1, 2, 23, 96000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '67tyzvg7ge3fehimcldycf7zlmbvik0q', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 1, 2, 23, 340000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '67tyzvg7ge3fehimcldycf7zlmbvik0q', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 1, 2, 24, 110000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '67tyzvg7ge3fehimcldycf7zlmbvik0q', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 1, 2, 25, 755000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '67tyzvg7ge3fehimcldycf7zlmbvik0q', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 1, 2, 25, 802000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '67tyzvg7ge3fehimcldycf7zlmbvik0q', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 1, 2, 46, 212000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.01) {'_id': '67tyzvg7ge3fehimcldycf7zlmbvik0q', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 1, 2, 46, 411000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '67tyzvg7ge3fehimcldycf7zlmbvik0q', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 1, 37, 20, 25000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '67tyzvg7ge3fehimcldycf7zlmbvik0q', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 1, 37, 20, 244000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '67tyzvg7ge3fehimcldycf7zlmbvik0q', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 1, 37, 21, 629000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '67tyzvg7ge3fehimcldycf7zlmbvik0q', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 1, 37, 21, 979000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '67tyzvg7ge3fehimcldycf7zlmbvik0q', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 1, 37, 23, 338000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '67tyzvg7ge3fehimcldycf7zlmbvik0q', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 1, 37, 25, 976000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
