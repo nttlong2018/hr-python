@@ -388,8 +388,12 @@ class AGGREGATE():
         """
         _project = {}
         if kwargs=={}:
-            kwargs=args[0]
-            params=args[1]
+            kwargs = args[0]
+            if args.__len__()>1:
+
+                params=args[1]
+            else:
+                params = args[0]
 
         else:
 

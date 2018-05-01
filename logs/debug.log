@@ -4972,3 +4972,368 @@ django_session.find (0.00) {'_id': '1oi2uer8mwj7whnqykuv6wcx0lxdbpqp', 'expire_d
 auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
 django_session.find (0.00) {'_id': '1oi2uer8mwj7whnqykuv6wcx0lxdbpqp', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 13, 45, 20, 553000, tzinfo=<UTC>)}}
 auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '1oi2uer8mwj7whnqykuv6wcx0lxdbpqp', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 13, 47, 33, 80000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Internal Server Error: /admin/api
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\code\python\p2018\packages\quicky\api.py", line 83, in call
+    raise ex
+Exception: 'admin.api.roles/get_list' was not found
+django_session.find (0.00) {'_id': '1oi2uer8mwj7whnqykuv6wcx0lxdbpqp', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 13, 47, 36, 165000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '1oi2uer8mwj7whnqykuv6wcx0lxdbpqp', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 13, 47, 36, 462000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '1oi2uer8mwj7whnqykuv6wcx0lxdbpqp', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 13, 53, 56, 265000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Internal Server Error: /admin/api
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\code\python\p2018\packages\quicky\api.py", line 83, in call
+    raise ex
+Exception: 'admin.api.roles/get_list' was not found
+django_session.find (0.00) {'_id': '1oi2uer8mwj7whnqykuv6wcx0lxdbpqp', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 13, 53, 59, 91000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '1oi2uer8mwj7whnqykuv6wcx0lxdbpqp', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 13, 53, 59, 368000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '1oi2uer8mwj7whnqykuv6wcx0lxdbpqp', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 13, 56, 9, 319000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Internal Server Error: /admin/api
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\code\python\p2018\packages\quicky\api.py", line 83, in call
+    raise ex
+Exception: 'admin.api.roles/get_list' was not found
+django_session.find (0.00) {'_id': '1oi2uer8mwj7whnqykuv6wcx0lxdbpqp', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 13, 56, 12, 414000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '1oi2uer8mwj7whnqykuv6wcx0lxdbpqp', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 13, 56, 12, 696000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Internal Server Error: /admin/api
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\code\python\p2018\packages\quicky\api.py", line 83, in call
+    raise ex
+Exception: Call  'get_list' in 'admin/api/categories' encountered 'tuple index out of range'
+django_session.find (0.00) {'_id': '1oi2uer8mwj7whnqykuv6wcx0lxdbpqp', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 13, 56, 29, 9000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Internal Server Error: /admin/api
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\code\python\p2018\packages\quicky\api.py", line 83, in call
+    raise ex
+Exception: 'admin.api.roles/get_list' was not found
+django_session.find (0.00) {'_id': '1oi2uer8mwj7whnqykuv6wcx0lxdbpqp', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 13, 56, 31, 727000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '1oi2uer8mwj7whnqykuv6wcx0lxdbpqp', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 13, 56, 31, 999000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Internal Server Error: /admin/api
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\code\python\p2018\packages\quicky\api.py", line 83, in call
+    raise ex
+Exception: Call  'get_list' in 'admin/api/categories' encountered 'tuple index out of range'
+django_session.find (0.00) {'_id': '1oi2uer8mwj7whnqykuv6wcx0lxdbpqp', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 13, 57, 15, 359000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Internal Server Error: /admin/api
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\code\python\p2018\packages\quicky\api.py", line 83, in call
+    raise ex
+Exception: 'admin.api.roles/get_list' was not found
+django_session.find (0.00) {'_id': '1oi2uer8mwj7whnqykuv6wcx0lxdbpqp', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 13, 57, 17, 734000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '1oi2uer8mwj7whnqykuv6wcx0lxdbpqp', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 13, 57, 18, 32000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Internal Server Error: /admin/api
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\code\python\p2018\packages\quicky\api.py", line 83, in call
+    raise ex
+Exception: Call  'get_list' in 'admin/api/categories' encountered 'tuple index out of range'
+django_session.find (0.00) {'_id': '1oi2uer8mwj7whnqykuv6wcx0lxdbpqp', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 13, 57, 30, 356000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Internal Server Error: /admin/api
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\code\python\p2018\packages\quicky\api.py", line 83, in call
+    raise ex
+Exception: 'admin.api.roles/get_list' was not found
+django_session.find (0.00) {'_id': '1oi2uer8mwj7whnqykuv6wcx0lxdbpqp', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 13, 57, 33, 43000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '1oi2uer8mwj7whnqykuv6wcx0lxdbpqp', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 13, 57, 33, 321000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Internal Server Error: /admin/api
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\code\python\p2018\packages\quicky\api.py", line 83, in call
+    raise ex
+Exception: Call  'get_list' in 'admin/api/categories' encountered 'tuple index out of range'
+django_session.find (0.00) {'_id': '1oi2uer8mwj7whnqykuv6wcx0lxdbpqp', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 13, 58, 8, 314000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Internal Server Error: /admin/api
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\code\python\p2018\packages\quicky\api.py", line 83, in call
+    raise ex
+Exception: 'admin.api.roles/get_list' was not found
+django_session.find (0.00) {'_id': '1oi2uer8mwj7whnqykuv6wcx0lxdbpqp', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 13, 58, 11, 154000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '1oi2uer8mwj7whnqykuv6wcx0lxdbpqp', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 13, 58, 11, 420000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Internal Server Error: /admin/api
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\code\python\p2018\packages\quicky\api.py", line 83, in call
+    raise ex
+Exception: Call  'get_list' in 'admin/api/categories' encountered 'tuple index out of range'
+django_session.find (0.00) {'_id': '1oi2uer8mwj7whnqykuv6wcx0lxdbpqp', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 13, 59, 20, 725000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Internal Server Error: /admin/api
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\code\python\p2018\packages\quicky\api.py", line 83, in call
+    raise ex
+Exception: 'admin.api.roles/get_list' was not found
+django_session.find (0.00) {'_id': '1oi2uer8mwj7whnqykuv6wcx0lxdbpqp', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 13, 59, 23, 262000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '1oi2uer8mwj7whnqykuv6wcx0lxdbpqp', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 13, 59, 23, 533000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Internal Server Error: /admin/api
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\code\python\p2018\packages\quicky\api.py", line 83, in call
+    raise ex
+Exception: Call  'get_list' in 'admin/api/categories' encountered 'Invalid $project :: caused by :: specification must have at least one field'
+django_session.find (0.00) {'_id': '1oi2uer8mwj7whnqykuv6wcx0lxdbpqp', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 13, 59, 41, 820000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Internal Server Error: /admin/api
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\code\python\p2018\packages\quicky\api.py", line 83, in call
+    raise ex
+Exception: 'admin.api.roles/get_list' was not found
+django_session.find (0.00) {'_id': '1oi2uer8mwj7whnqykuv6wcx0lxdbpqp', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 13, 59, 44, 536000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '1oi2uer8mwj7whnqykuv6wcx0lxdbpqp', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 13, 59, 44, 821000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Internal Server Error: /admin/api
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\code\python\p2018\packages\quicky\api.py", line 83, in call
+    raise ex
+Exception: Call  'get_list' in 'admin/api/categories' encountered 'Invalid $project :: caused by :: specification must have at least one field'
+django_session.find (0.00) {'_id': '1oi2uer8mwj7whnqykuv6wcx0lxdbpqp', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 14, 0, 17, 428000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Internal Server Error: /admin/api
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\code\python\p2018\packages\quicky\api.py", line 83, in call
+    raise ex
+Exception: 'admin.api.roles/get_list' was not found
+django_session.find (0.00) {'_id': '1oi2uer8mwj7whnqykuv6wcx0lxdbpqp', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 14, 0, 20, 103000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '1oi2uer8mwj7whnqykuv6wcx0lxdbpqp', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 14, 0, 20, 326000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Internal Server Error: /admin/api
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\code\python\p2018\packages\quicky\api.py", line 83, in call
+    raise ex
+Exception: Call  'get_list' in 'admin/api/categories' encountered 'Invalid $project :: caused by :: specification must have at least one field'
+django_session.find (0.00) {'_id': '1oi2uer8mwj7whnqykuv6wcx0lxdbpqp', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 14, 0, 28, 956000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Internal Server Error: /admin/api
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\code\python\p2018\packages\quicky\api.py", line 83, in call
+    raise ex
+Exception: 'admin.api.roles/get_list' was not found
+django_session.find (0.00) {'_id': '1oi2uer8mwj7whnqykuv6wcx0lxdbpqp', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 14, 0, 32, 290000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '1oi2uer8mwj7whnqykuv6wcx0lxdbpqp', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 14, 0, 32, 551000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Internal Server Error: /admin/api
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\code\python\p2018\packages\quicky\api.py", line 83, in call
+    raise ex
+Exception: Call  'get_list' in 'admin/api/categories' encountered 'Invalid $project :: caused by :: specification must have at least one field'
+django_session.find (0.00) {'_id': '1oi2uer8mwj7whnqykuv6wcx0lxdbpqp', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 14, 1, 6, 402000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Internal Server Error: /admin/api
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\code\python\p2018\packages\quicky\api.py", line 83, in call
+    raise ex
+Exception: 'admin.api.roles/get_list' was not found
+django_session.find (0.00) {'_id': '1oi2uer8mwj7whnqykuv6wcx0lxdbpqp', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 14, 1, 9, 609000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '1oi2uer8mwj7whnqykuv6wcx0lxdbpqp', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 14, 1, 9, 829000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '1oi2uer8mwj7whnqykuv6wcx0lxdbpqp', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 14, 1, 39, 635000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Internal Server Error: /admin/api
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\code\python\p2018\packages\quicky\api.py", line 83, in call
+    raise ex
+Exception: 'admin.api.roles/get_list' was not found
+django_session.find (0.00) {'_id': '1oi2uer8mwj7whnqykuv6wcx0lxdbpqp', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 14, 1, 42, 296000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '1oi2uer8mwj7whnqykuv6wcx0lxdbpqp', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 14, 1, 42, 542000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '1oi2uer8mwj7whnqykuv6wcx0lxdbpqp', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 14, 3, 45, 309000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Internal Server Error: /admin/api
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\code\python\p2018\packages\quicky\api.py", line 83, in call
+    raise ex
+Exception: 'admin.api.roles/get_list' was not found
+django_session.find (0.00) {'_id': '1oi2uer8mwj7whnqykuv6wcx0lxdbpqp', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 14, 3, 47, 887000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '1oi2uer8mwj7whnqykuv6wcx0lxdbpqp', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 14, 3, 48, 63000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Internal Server Error: /admin/api
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\code\python\p2018\packages\quicky\api.py", line 83, in call
+    raise ex
+Exception: Call  'get_list' in 'admin/api/categories' encountered ''totalItems''
+django_session.find (0.00) {'_id': '1oi2uer8mwj7whnqykuv6wcx0lxdbpqp', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 14, 4, 10, 148000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Internal Server Error: /admin/api
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\code\python\p2018\packages\quicky\api.py", line 83, in call
+    raise ex
+Exception: 'admin.api.roles/get_list' was not found
+django_session.find (0.00) {'_id': '1oi2uer8mwj7whnqykuv6wcx0lxdbpqp', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 14, 4, 14, 863000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '1oi2uer8mwj7whnqykuv6wcx0lxdbpqp', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 14, 4, 15, 73000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
