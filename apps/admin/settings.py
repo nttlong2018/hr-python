@@ -33,3 +33,4 @@ Database=dict(
     user="root",
     password="123456"
 )
+login_url="login"

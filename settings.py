@@ -18,6 +18,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.append(BASE_DIR+"/packages")
 sys.path.append(BASE_DIR+"/packages/django")
 import argo
+import quicky
 # import django
 
 # Quick-start development settings - unsuitable for production
@@ -131,7 +132,8 @@ aut_config_local=dict(
     _user="sys",
     _password="123456"
 )
-argo.authorization.load(aut_config_local)
+quicky.authorize.set_config(aut_config_local)
+# argo.authorization.load(aut_config_local)
 
 # membership_config_local=dict(
 #     provider="membership_mongo",
@@ -152,13 +154,14 @@ provider="language_mongo_engine",
     _password="123456",
     collection="sys_languages"
 )
-argo.language.load(language_congig_local)
+quicky.language.set_config(language_congig_local)
+# argo.language.load(language_congig_local)
+quicky.url.build_urls("apps",APPS)
+AUTHORIZATION_ENGINE=quicky.authorize
 
-AUTHORIZATION_ENGINE=argo.authorization
-MEMBERSHIP_ENGINE=argo.membership
-LANGUAGE_ENGINE=argo.language
-
-argo.url.build_urls("apps",APPS)
+LANGUAGE_ENGINE=quicky.language
+LANGUAGE_CODE="en-us"
+# argo.url.build_urls("apps",APPS)
 ROOT_URLCONF = 'apps'
 import os
 LOGGING = {

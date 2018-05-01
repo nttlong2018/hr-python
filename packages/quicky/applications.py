@@ -1,9 +1,10 @@
 from . import app_info
 import os
+import sys
 
 _cache_apps={}
 __cache_find_path={}
-
+_settings=None
 def load_app(*args,**kwargs):
     global _cache_apps
     try:
@@ -38,3 +39,11 @@ def get_app_by_name(app_name):
     for key in _cache_apps.keys():
         if _cache_apps[key].name.lower()==app_name.lower():
             return _cache_apps[key]
+def get_settings():
+    global _settings
+    if _settings==None:
+        _settings = sys.modules.get("settings")
+        STATIC_URL = getattr(_settings, "STATIC_URL")
+        if STATIC_URL == None:
+            setattr(_settings, "STATIC_URL", "/static/")
+    return _settings

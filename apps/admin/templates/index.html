@@ -8,7 +8,7 @@
 
     <main class="app-content" style="margin-left:0 !important;overflow-y:auto">
 
-        <div c-template url="${get_abs_url()}/${get_app_host()}/pages/{{$root.page}}" ng-if="$root.page">
+        <div c-template c-template url="${get_app_url('')}/{{$root.page}}" ng-if="$root.page">
 
         </div>
 
@@ -17,6 +17,7 @@
  <script>
       var app=angular.module("admin",["c-ui"]);
       app.controller("admin",["$dialog","$scope",function($dialog,$scope){
+            $scope.VIEW_ID="${register_view()}"
           $dialog($scope)
         $scope.$root.error=function(msg){
             bootoast.toast({

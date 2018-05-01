@@ -57,9 +57,11 @@ class app_config():
         self.template_dir = config.get("templates", os.path.join(path, "templates"))
         self.client_static=config.get("client_static",path+ "/static")
         self.static=config.get("static_dir",os.path.join(path, "static"))
-
     def get_static_urls(self):
-        return url(r'^static\/(?P<path>.*)$', 'django.views.static.serve',{'document_root':self.get_server_static(), 'show_indexes': True})
+        if self.host_dir == "":
+            return url(r'^static\/(?P<path>.*)$', 'django.views.static.serve',{'document_root':self.get_server_static(), 'show_indexes': True})
+        else:
+            return url(r'^'+self.host_dir+'\/static\/(?P<path>.*)$', 'django.views.static.serve',{'document_root':self.get_server_static(), 'show_indexes': True})
     def get_urls(self):
         if self.urls==None:
             self.urls=[]
@@ -67,12 +69,15 @@ class app_config():
             self.urls=url(r'^', include(self.package_name+".urls"))
         else:
             self.urls = url(r'^' + self.host_dir + "/", include(self.package_name + ".urls"))
-        return dict(
-            urls=self.urls,
-            static_url=static(self.get_client_static(), document_root=self.get_server_static())
-        )
+        return self.urls
     def get_client_static(self):
         return self.client_static
     def get_server_static(self):
         _path= (self.static).replace("/",os.path.sep)
         return os.getcwd()+os.path.sep+_path
+    def get_login_url(self):
+        if hasattr(self.mdl.settings,"login_url"):
+            if self.host_dir=="":
+                return "/"+self.mdl.settings.login_url
+            else:
+                return "/"+self.host_dir+"/"+self.mdl.settings.login_url

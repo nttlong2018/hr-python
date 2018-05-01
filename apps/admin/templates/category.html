@@ -1,0 +1,81 @@
+<div class="tile">
+
+<div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+
+		<table class="table table-bordered table-hover small">
+
+	<thead>
+		<tr>
+            %for col in model["columns"]:
+                <th style="${col.get('style','')}">${get_res(col["caption"])}</th>
+            %endfor
+				<th style="width:80px">
+					 <button type="button" class="btn btn-primary btn-sm" ng-click="doAddNew()">
+                    ${get_app_res("Thêm")}
+                	</button>
+				</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="item in data.items">
+            %for col in model["columns"]:
+                <td>{{item.${col["name"]}}}</td>
+            %endfor
+			<td>
+				 <button type="button" class="btn btn-default" ng-click="doEdit(item)">
+                    ${get_app_res("Sửa")}
+                </button>
+			</td>
+
+		</tr>
+	</tbody>
+			<thead ng-if="data.items && data.items.length>0">
+		<tr>
+            %for col in model["columns"]:
+                <th style="${col.get('style','')}">${get_res(col["caption"])}</th>
+            %endfor
+				<th style="width:80px">
+					 <button type="button" class="btn btn-primary btn-sm" ng-click="doAddNew()">
+                    ${get_app_res("Thêm")}
+                	</button>
+				</th>
+		</tr>
+	</thead>
+</table>
+		</div>
+	</div>
+
+
+</div>
+<script>
+    (function(scope){
+
+        scope.view_path="${get_view_path()}"
+
+        scope.$ws=ws(scope)
+        console.log(scope.$ws);
+        scope.doAddNew=function(){
+            dialog(scope).url('${get_app_url("category")}/${model["path"]}').done();
+        }
+        scope.doEdit=function(item){
+            dialog(scope).url('${get_app_url("category")}/${model["path"]}')
+            				.params(item)
+            				.done();
+        }
+        scope.doLoadData=function(){
+            scope.$ws.api("${get_api_key('admin/api/categories/get_list')}")
+            .data({
+                path:'${model["path"]}'
+            }).done(function(error,res){
+            	if(!error){
+					scope.data=res;
+					console.log(res);
+					scope.$applyAsync();
+                }
+            });
+        }
+        scope.doLoadData();
+
+    });
+</script>

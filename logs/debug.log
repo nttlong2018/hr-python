@@ -2598,3 +2598,2377 @@ django_session.find (0.00) {'_id': '67tyzvg7ge3fehimcldycf7zlmbvik0q', 'expire_d
 auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
 django_session.find (0.00) {'_id': '67tyzvg7ge3fehimcldycf7zlmbvik0q', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 1, 37, 25, 976000, tzinfo=<UTC>)}}
 auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+auth_user.find (0.00) {'username': 'sys'}
+django_session.save (0.00) {'_id': u'7srd30psho3mhxn5s3v94z8638zcc8mi', 'expire_date': datetime.datetime(2018, 5, 15, 6, 37, 27, 248000, tzinfo=<UTC>), 'session_data': u'YjAwMTViM2E0OTNjMDE0N2NjMTFiZjIxNzYzNmNkYTg5OGRiZGZjMzp7Imxhbmd1YWdlIjoiZW4ifQ=='}
+Not Found: /favicon.ico
+django_session.find (0.00) {'_id': '7srd30psho3mhxn5s3v94z8638zcc8mi', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 6, 37, 29, 400000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'username': u'sys'}
+django_session.save (0.00) {'_id': u'5260xw66hy5wsuyj7g64mmbofvewkdo2', 'expire_date': datetime.datetime(2018, 5, 15, 6, 37, 29, 490000, tzinfo=<UTC>), 'session_data': u'YjAwMTViM2E0OTNjMDE0N2NjMTFiZjIxNzYzNmNkYTg5OGRiZGZjMzp7Imxhbmd1YWdlIjoiZW4ifQ=='}
+django_session.find (0.00) {'_id': '7srd30psho3mhxn5s3v94z8638zcc8mi'}
+django_session.remove (0.00) {'_id': {'$in': [u'7srd30psho3mhxn5s3v94z8638zcc8mi']}}
+auth_user.save (0.00) {'username': u'sys', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5ae5cb53cddcb0354c11cf6a'), 'is_active': True, 'email': u'', 'is_superuser': True, 'is_staff': False, 'last_login': datetime.datetime(2018, 5, 1, 6, 37, 29, 495000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$RM3mR6ar66t8$SRS3qPBkBP7FldCNOuunX0f1RK/YppeImlg2lVhOJZo=', 'date_joined': datetime.datetime(2018, 4, 29, 13, 40, 35, 764000, tzinfo=<UTC>)}
+django_session.save (0.00) {'_id': u'5260xw66hy5wsuyj7g64mmbofvewkdo2', 'expire_date': datetime.datetime(2018, 5, 15, 6, 37, 29, 544000, tzinfo=<UTC>), 'session_data': u'MmU5YzEwYjExYTI3YTY2YmIwMGM0YmYwZWUwYmFkNmZjYzQyMzQ1OTp7Il9hdXRoX3VzZXJfYmFja2VuZCI6InBlcm1pc3Npb25fYmFja2VuZF9ub25yZWwuYmFja2VuZHMuTm9ucmVsUGVybWlzc2lvbkJhY2tlbmQiLCJfYXV0aF91c2VyX2lkIjoiNWFlNWNiNTNjZGRjYjAzNTRjMTFjZjZhIiwibGFuZ3VhZ2UiOiJlbiJ9'}
+auth_user.find (0.00) {'username': 'sys'}
+django_session.find (0.00) {'_id': '5260xw66hy5wsuyj7g64mmbofvewkdo2', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 6, 37, 29, 569000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '5260xw66hy5wsuyj7g64mmbofvewkdo2', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 6, 37, 34, 854000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '5260xw66hy5wsuyj7g64mmbofvewkdo2', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 6, 37, 37, 929000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '5260xw66hy5wsuyj7g64mmbofvewkdo2', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 6, 37, 37, 985000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '5260xw66hy5wsuyj7g64mmbofvewkdo2', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 6, 37, 39, 523000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '5260xw66hy5wsuyj7g64mmbofvewkdo2', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 6, 37, 39, 574000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '5260xw66hy5wsuyj7g64mmbofvewkdo2', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 6, 37, 42, 100000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '5260xw66hy5wsuyj7g64mmbofvewkdo2', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 6, 37, 42, 147000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '5260xw66hy5wsuyj7g64mmbofvewkdo2', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 6, 41, 11, 150000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '5260xw66hy5wsuyj7g64mmbofvewkdo2', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 6, 41, 12, 690000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '5260xw66hy5wsuyj7g64mmbofvewkdo2', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 6, 41, 15, 7000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '5260xw66hy5wsuyj7g64mmbofvewkdo2', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 6, 41, 22, 108000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Internal Server Error: /hrm/api
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\code\python\p2018\apps\hrm\views.py", line 100, in api
+    raise Exception("Call  '{0}' in '{1}' encountered '{2}'".format(method_path, module_path, ex))
+Exception: Call  'get_list' in 'categories' encountered ''module' object has no attribute '__getitem__''
+django_session.find (0.00) {'_id': '5260xw66hy5wsuyj7g64mmbofvewkdo2', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 6, 48, 57, 22000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '5260xw66hy5wsuyj7g64mmbofvewkdo2', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 6, 49, 17, 971000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '5260xw66hy5wsuyj7g64mmbofvewkdo2', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 6, 53, 14, 911000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Internal Server Error: /admin/pages/users
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\apps\admin\views.py", line 76, in load_page
+    return  request.render({
+AttributeError: 'WSGIRequest' object has no attribute 'render'
+Internal Server Error: /admin/pages/roles
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\apps\admin\views.py", line 76, in load_page
+    return  request.render({
+AttributeError: 'WSGIRequest' object has no attribute 'render'
+Internal Server Error: /admin/pages/views
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\apps\admin\views.py", line 76, in load_page
+    return  request.render({
+AttributeError: 'WSGIRequest' object has no attribute 'render'
+Internal Server Error: /admin/pages/roles
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\apps\admin\views.py", line 76, in load_page
+    return  request.render({
+AttributeError: 'WSGIRequest' object has no attribute 'render'
+Internal Server Error: /admin/pages/users
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\apps\admin\views.py", line 76, in load_page
+    return  request.render({
+AttributeError: 'WSGIRequest' object has no attribute 'render'
+django_session.find (0.00) {'_id': '5260xw66hy5wsuyj7g64mmbofvewkdo2', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 6, 53, 40, 371000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Internal Server Error: /admin/pages/users
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\apps\admin\views.py", line 76, in load_page
+    return  request.render({
+AttributeError: 'WSGIRequest' object has no attribute 'render'
+Internal Server Error: /admin/pages/roles
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\apps\admin\views.py", line 76, in load_page
+    return  request.render({
+AttributeError: 'WSGIRequest' object has no attribute 'render'
+Internal Server Error: /admin/pages/views
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\apps\admin\views.py", line 76, in load_page
+    return  request.render({
+AttributeError: 'WSGIRequest' object has no attribute 'render'
+Internal Server Error: /admin/pages/roles
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\apps\admin\views.py", line 76, in load_page
+    return  request.render({
+AttributeError: 'WSGIRequest' object has no attribute 'render'
+Internal Server Error: /admin/pages/users
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\apps\admin\views.py", line 76, in load_page
+    return  request.render({
+AttributeError: 'WSGIRequest' object has no attribute 'render'
+Not Found: /polyfills/promise-6.1.0.js.map
+Not Found: /apps/admin/static/angular.min.js.map
+Internal Server Error: /admin/pages/roles
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\apps\admin\views.py", line 76, in load_page
+    return  request.render({
+AttributeError: 'WSGIRequest' object has no attribute 'render'
+Internal Server Error: /admin/pages/users
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\apps\admin\views.py", line 76, in load_page
+    return  request.render({
+AttributeError: 'WSGIRequest' object has no attribute 'render'
+Internal Server Error: /admin/pages/views
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\apps\admin\views.py", line 76, in load_page
+    return  request.render({
+AttributeError: 'WSGIRequest' object has no attribute 'render'
+Internal Server Error: /admin/pages/users
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\apps\admin\views.py", line 76, in load_page
+    return  request.render({
+AttributeError: 'WSGIRequest' object has no attribute 'render'
+django_session.find (0.00) {'_id': '5260xw66hy5wsuyj7g64mmbofvewkdo2', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 6, 55, 45, 426000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Not Found: /apps/admin/static/angular.min.js.map
+Not Found: /polyfills/promise-6.1.0.js.map
+Internal Server Error: /admin/pages/users
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\apps\admin\views.py", line 76, in load_page
+    return  request.render({
+AttributeError: 'WSGIRequest' object has no attribute 'render'
+Internal Server Error: /admin/pages/roles
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\apps\admin\views.py", line 76, in load_page
+    return  request.render({
+AttributeError: 'WSGIRequest' object has no attribute 'render'
+Internal Server Error: /admin/pages/users
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\apps\admin\views.py", line 76, in load_page
+    return  request.render({
+AttributeError: 'WSGIRequest' object has no attribute 'render'
+django_session.find (0.00) {'_id': '5260xw66hy5wsuyj7g64mmbofvewkdo2', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 6, 57, 16, 875000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Not Found: /apps/admin/static/angular.min.js.map
+Not Found: /polyfills/promise-6.1.0.js.map
+django_session.find (0.00) {'_id': '5260xw66hy5wsuyj7g64mmbofvewkdo2', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 6, 57, 18, 653000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '5260xw66hy5wsuyj7g64mmbofvewkdo2', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 6, 57, 22, 86000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '5260xw66hy5wsuyj7g64mmbofvewkdo2', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 6, 58, 54, 559000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Not Found: /apps/admin/static/angular.min.js.map
+Not Found: /polyfills/promise-6.1.0.js.map
+django_session.find (0.00) {'_id': '5260xw66hy5wsuyj7g64mmbofvewkdo2', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 6, 58, 55, 28000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '5260xw66hy5wsuyj7g64mmbofvewkdo2', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 6, 58, 59, 376000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '5260xw66hy5wsuyj7g64mmbofvewkdo2', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 6, 59, 6, 13000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '5260xw66hy5wsuyj7g64mmbofvewkdo2', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 6, 59, 6, 556000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '5260xw66hy5wsuyj7g64mmbofvewkdo2', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 6, 59, 11, 785000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '5260xw66hy5wsuyj7g64mmbofvewkdo2', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 6, 59, 15, 786000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '5260xw66hy5wsuyj7g64mmbofvewkdo2', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 6, 59, 19, 663000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '5260xw66hy5wsuyj7g64mmbofvewkdo2', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 6, 59, 19, 702000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '5260xw66hy5wsuyj7g64mmbofvewkdo2', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 6, 59, 21, 185000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '5260xw66hy5wsuyj7g64mmbofvewkdo2', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 6, 59, 21, 237000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '5260xw66hy5wsuyj7g64mmbofvewkdo2', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 7, 1, 54, 616000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '5260xw66hy5wsuyj7g64mmbofvewkdo2', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 7, 1, 54, 848000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Not Found: /apps/hrm/static/js/angular.min.js.map
+Not Found: /polyfills/promise-6.1.0.js.map
+django_session.find (0.00) {'_id': '5260xw66hy5wsuyj7g64mmbofvewkdo2', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 7, 2, 1, 91000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '5260xw66hy5wsuyj7g64mmbofvewkdo2', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 7, 2, 8, 69000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Internal Server Error: /hrm/api
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\code\python\p2018\apps\hrm\views.py", line 100, in api
+    raise Exception("Call  '{0}' in '{1}' encountered '{2}'".format(method_path, module_path, ex))
+Exception: Call  'get_list' in 'categories' encountered ''module' object has no attribute '__getitem__''
+django_session.find (0.00) {'_id': '5260xw66hy5wsuyj7g64mmbofvewkdo2', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 7, 3, 29, 56000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Not Found: /apps/admin/static/angular.min.js.map
+Not Found: /polyfills/promise-6.1.0.js.map
+django_session.find (0.00) {'_id': '5260xw66hy5wsuyj7g64mmbofvewkdo2', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 7, 3, 33, 238000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Internal Server Error: /admin/pages/categories/users
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages\argo\__init__.py", line 306, in exec_request
+    ret= fn(request, **kwargs)
+  File "E:\code\python\p2018\apps\admin\views.py", line 78, in load_page
+    "path":path.lower()
+  File "E:\code\python\p2018\packages\argo\__init__.py", line 122, in render
+    "get_user":get_user
+  File "E:\code\python\p2018\packages\argo\utilities.py", line 94, in render
+    raise ex
+TemplateLookupException: Cant locate template for uri u'views/categories/users.html'
+django_session.find (0.00) {'_id': '5260xw66hy5wsuyj7g64mmbofvewkdo2', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 7, 3, 37, 222000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '5260xw66hy5wsuyj7g64mmbofvewkdo2', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 7, 3, 37, 274000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '5260xw66hy5wsuyj7g64mmbofvewkdo2', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 7, 3, 42, 41000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '5260xw66hy5wsuyj7g64mmbofvewkdo2', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 7, 3, 42, 257000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '5260xw66hy5wsuyj7g64mmbofvewkdo2', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 7, 3, 42, 301000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '5260xw66hy5wsuyj7g64mmbofvewkdo2', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 7, 6, 11, 236000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Internal Server Error: /admin/pages/categories/users
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages\argo\__init__.py", line 306, in exec_request
+    ret= fn(request, **kwargs)
+  File "E:\code\python\p2018\apps\admin\views.py", line 78, in load_page
+    "path":path.lower()
+  File "E:\code\python\p2018\packages\argo\__init__.py", line 122, in render
+    "get_user":get_user
+  File "E:\code\python\p2018\packages\argo\utilities.py", line 94, in render
+    raise ex
+TemplateLookupException: Cant locate template for uri u'views/categories/users.html'
+django_session.find (0.00) {'_id': '5260xw66hy5wsuyj7g64mmbofvewkdo2', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 7, 6, 37, 819000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '5260xw66hy5wsuyj7g64mmbofvewkdo2', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 7, 6, 37, 863000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '5260xw66hy5wsuyj7g64mmbofvewkdo2', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 7, 6, 38, 825000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Internal Server Error: /admin/pages/categories/users
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages\argo\__init__.py", line 306, in exec_request
+    ret= fn(request, **kwargs)
+  File "E:\code\python\p2018\apps\admin\views.py", line 78, in load_page
+    "path":path.lower()
+  File "E:\code\python\p2018\packages\argo\__init__.py", line 122, in render
+    "get_user":get_user
+  File "E:\code\python\p2018\packages\argo\utilities.py", line 94, in render
+    raise ex
+TemplateLookupException: Cant locate template for uri u'views/categories/users.html'
+Not Found: /apps/admin/static/angular.min.js.map
+Not Found: /polyfills/promise-6.1.0.js.map
+django_session.find (0.00) {'_id': '5260xw66hy5wsuyj7g64mmbofvewkdo2', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 7, 6, 56, 775000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '5260xw66hy5wsuyj7g64mmbofvewkdo2', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 7, 6, 56, 836000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '5260xw66hy5wsuyj7g64mmbofvewkdo2', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 7, 6, 58, 200000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Internal Server Error: /admin/pages/categories/users
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages\argo\__init__.py", line 306, in exec_request
+    ret= fn(request, **kwargs)
+  File "E:\code\python\p2018\apps\admin\views.py", line 78, in load_page
+    "path":path.lower()
+  File "E:\code\python\p2018\packages\argo\__init__.py", line 122, in render
+    "get_user":get_user
+  File "E:\code\python\p2018\packages\argo\utilities.py", line 94, in render
+    raise ex
+TemplateLookupException: Cant locate template for uri u'views/categories/users.html'
+django_session.save (0.00) {'_id': u'd6kjnv988bfi6gn3dzx3dxwginbn4unv', 'expire_date': datetime.datetime(2018, 5, 15, 7, 7, 57, 137000, tzinfo=<UTC>), 'session_data': u'YjAwMTViM2E0OTNjMDE0N2NjMTFiZjIxNzYzNmNkYTg5OGRiZGZjMzp7Imxhbmd1YWdlIjoiZW4ifQ=='}
+Not Found: /favicon.ico
+django_session.find (0.00) {'_id': 'd6kjnv988bfi6gn3dzx3dxwginbn4unv', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 7, 7, 59, 407000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'username': u'sys'}
+django_session.save (0.00) {'_id': u'7an2xtzg92zkkd0m4jo6isqkpbnmv2st', 'expire_date': datetime.datetime(2018, 5, 15, 7, 7, 59, 496000, tzinfo=<UTC>), 'session_data': u'YjAwMTViM2E0OTNjMDE0N2NjMTFiZjIxNzYzNmNkYTg5OGRiZGZjMzp7Imxhbmd1YWdlIjoiZW4ifQ=='}
+django_session.find (0.00) {'_id': 'd6kjnv988bfi6gn3dzx3dxwginbn4unv'}
+django_session.remove (0.00) {'_id': {'$in': [u'd6kjnv988bfi6gn3dzx3dxwginbn4unv']}}
+auth_user.save (0.00) {'username': u'sys', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5ae5cb53cddcb0354c11cf6a'), 'is_active': True, 'email': u'', 'is_superuser': True, 'is_staff': False, 'last_login': datetime.datetime(2018, 5, 1, 7, 7, 59, 501000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$RM3mR6ar66t8$SRS3qPBkBP7FldCNOuunX0f1RK/YppeImlg2lVhOJZo=', 'date_joined': datetime.datetime(2018, 4, 29, 13, 40, 35, 764000, tzinfo=<UTC>)}
+django_session.save (0.00) {'_id': u'7an2xtzg92zkkd0m4jo6isqkpbnmv2st', 'expire_date': datetime.datetime(2018, 5, 15, 7, 7, 59, 505000, tzinfo=<UTC>), 'session_data': u'MmU5YzEwYjExYTI3YTY2YmIwMGM0YmYwZWUwYmFkNmZjYzQyMzQ1OTp7Il9hdXRoX3VzZXJfYmFja2VuZCI6InBlcm1pc3Npb25fYmFja2VuZF9ub25yZWwuYmFja2VuZHMuTm9ucmVsUGVybWlzc2lvbkJhY2tlbmQiLCJfYXV0aF91c2VyX2lkIjoiNWFlNWNiNTNjZGRjYjAzNTRjMTFjZjZhIiwibGFuZ3VhZ2UiOiJlbiJ9'}
+django_session.find (0.00) {'_id': '7an2xtzg92zkkd0m4jo6isqkpbnmv2st', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 7, 7, 59, 922000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '7an2xtzg92zkkd0m4jo6isqkpbnmv2st', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 7, 8, 2, 458000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Internal Server Error: /admin/pages/categories/users
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages\argo\__init__.py", line 306, in exec_request
+    ret= fn(request, **kwargs)
+  File "E:\code\python\p2018\apps\admin\views.py", line 78, in load_page
+    "path":path.lower()
+  File "E:\code\python\p2018\packages\argo\__init__.py", line 122, in render
+    "get_user":get_user
+  File "E:\code\python\p2018\packages\argo\utilities.py", line 94, in render
+    raise ex
+TemplateLookupException: Cant locate template for uri u'views/categories/users.html'
+django_session.find (0.00) {'_id': '7an2xtzg92zkkd0m4jo6isqkpbnmv2st', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 7, 8, 7, 232000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Internal Server Error: /admin/pages/categories/users
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages\argo\__init__.py", line 306, in exec_request
+    ret= fn(request, **kwargs)
+  File "E:\code\python\p2018\apps\admin\views.py", line 78, in load_page
+    "path":path.lower()
+  File "E:\code\python\p2018\packages\argo\__init__.py", line 122, in render
+    "get_user":get_user
+  File "E:\code\python\p2018\packages\argo\utilities.py", line 94, in render
+    raise ex
+TemplateLookupException: Cant locate template for uri u'views/categories/users.html'
+django_session.find (0.00) {'_id': '7an2xtzg92zkkd0m4jo6isqkpbnmv2st', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 7, 8, 58, 664000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '7an2xtzg92zkkd0m4jo6isqkpbnmv2st', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 7, 9, 1, 146000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Internal Server Error: /admin/pages/categories/users
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages\argo\__init__.py", line 306, in exec_request
+    ret= fn(request, **kwargs)
+  File "E:\code\python\p2018\apps\admin\views.py", line 78, in load_page
+    "path":path.lower()
+  File "E:\code\python\p2018\packages\argo\__init__.py", line 122, in render
+    "get_user":get_user
+  File "E:\code\python\p2018\packages\argo\utilities.py", line 94, in render
+    raise ex
+TemplateLookupException: Cant locate template for uri u'views/categories/users.html'
+Not Found: /apps/admin/static/angular.min.js.map
+Not Found: /polyfills/promise-6.1.0.js.map
+django_session.find (0.00) {'_id': '7an2xtzg92zkkd0m4jo6isqkpbnmv2st', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 7, 9, 21, 28000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '7an2xtzg92zkkd0m4jo6isqkpbnmv2st', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 7, 9, 21, 480000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Internal Server Error: /admin/pages/categories/users
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages\argo\__init__.py", line 306, in exec_request
+    ret= fn(request, **kwargs)
+  File "E:\code\python\p2018\apps\admin\views.py", line 78, in load_page
+    "path":path.lower()
+  File "E:\code\python\p2018\packages\argo\__init__.py", line 122, in render
+    "get_user":get_user
+  File "E:\code\python\p2018\packages\argo\utilities.py", line 94, in render
+    raise ex
+TemplateLookupException: Cant locate template for uri u'views/categories/users.html'
+auth_user.find (0.00) {'username': 'sys'}
+django_session.find (0.00) {'_id': '7an2xtzg92zkkd0m4jo6isqkpbnmv2st', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 7, 9, 32, 622000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '7an2xtzg92zkkd0m4jo6isqkpbnmv2st', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 7, 9, 36, 763000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '7an2xtzg92zkkd0m4jo6isqkpbnmv2st', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 7, 9, 36, 990000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '7an2xtzg92zkkd0m4jo6isqkpbnmv2st', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 7, 9, 39, 749000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '7an2xtzg92zkkd0m4jo6isqkpbnmv2st', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 7, 9, 44, 619000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Internal Server Error: /hrm/api
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\code\python\p2018\apps\hrm\views.py", line 100, in api
+    raise Exception("Call  '{0}' in '{1}' encountered '{2}'".format(method_path, module_path, ex))
+Exception: Call  'get_list' in 'categories' encountered ''module' object has no attribute '__getitem__''
+django_session.find (0.00) {'_id': '7an2xtzg92zkkd0m4jo6isqkpbnmv2st', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 7, 10, 30, 380000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '7an2xtzg92zkkd0m4jo6isqkpbnmv2st', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 7, 10, 30, 826000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Internal Server Error: /admin/pages/categories/users
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages\argo\__init__.py", line 306, in exec_request
+    ret= fn(request, **kwargs)
+  File "E:\code\python\p2018\apps\admin\views.py", line 78, in load_page
+    "path":path.lower()
+  File "E:\code\python\p2018\packages\argo\__init__.py", line 122, in render
+    "get_user":get_user
+  File "E:\code\python\p2018\packages\argo\utilities.py", line 94, in render
+    raise ex
+TemplateLookupException: Cant locate template for uri u'views/categories/users.html'
+django_session.find (0.00) {'_id': '7an2xtzg92zkkd0m4jo6isqkpbnmv2st', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 7, 10, 34, 55000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Internal Server Error: /admin/pages/categories/users
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages\argo\__init__.py", line 306, in exec_request
+    ret= fn(request, **kwargs)
+  File "E:\code\python\p2018\apps\admin\views.py", line 78, in load_page
+    "path":path.lower()
+  File "E:\code\python\p2018\packages\argo\__init__.py", line 122, in render
+    "get_user":get_user
+  File "E:\code\python\p2018\packages\argo\utilities.py", line 94, in render
+    raise ex
+TemplateLookupException: Cant locate template for uri u'views/categories/users.html'
+django_session.find (0.00) {'_id': '7an2xtzg92zkkd0m4jo6isqkpbnmv2st', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 7, 12, 28, 451000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '7an2xtzg92zkkd0m4jo6isqkpbnmv2st', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 7, 13, 47, 604000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Internal Server Error: /admin/categories/users
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages\argo\__init__.py", line 40, in exec_request
+    if app.on_begin_request!=None and callable(app.on_begin_request):
+AttributeError: 'NoneType' object has no attribute 'on_begin_request'
+Not Found: /admin/roles
+Internal Server Error: /admin/categories/users
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages\argo\__init__.py", line 40, in exec_request
+    if app.on_begin_request!=None and callable(app.on_begin_request):
+AttributeError: 'NoneType' object has no attribute 'on_begin_request'
+Not Found: /admin/views
+Internal Server Error: /admin/categories/users
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages\argo\__init__.py", line 40, in exec_request
+    if app.on_begin_request!=None and callable(app.on_begin_request):
+AttributeError: 'NoneType' object has no attribute 'on_begin_request'
+Not Found: /polyfills/promise-6.1.0.js.map
+Not Found: /apps/admin/static/angular.min.js.map
+Not Found: /admin/views
+Internal Server Error: /admin/categories/users
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages\argo\__init__.py", line 40, in exec_request
+    if app.on_begin_request!=None and callable(app.on_begin_request):
+AttributeError: 'NoneType' object has no attribute 'on_begin_request'
+Internal Server Error: /admin/categories/users
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages\argo\__init__.py", line 40, in exec_request
+    if app.on_begin_request!=None and callable(app.on_begin_request):
+AttributeError: 'NoneType' object has no attribute 'on_begin_request'
+Internal Server Error: /admin/categories/users
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages\argo\__init__.py", line 40, in exec_request
+    _on_begin_request=getattr(app,"on_begin_request")
+AttributeError: 'NoneType' object has no attribute 'on_begin_request'
+Internal Server Error: /admin/categories/users
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages\argo\__init__.py", line 40, in exec_request
+    _on_begin_request=getattr(app,"on_begin_request")
+AttributeError: 'NoneType' object has no attribute 'on_begin_request'
+django_session.find (0.00) {'_id': '7an2xtzg92zkkd0m4jo6isqkpbnmv2st', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 7, 19, 29, 983000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '7an2xtzg92zkkd0m4jo6isqkpbnmv2st', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 7, 19, 33, 90000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Internal Server Error: /hrm/api
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\code\python\p2018\apps\hrm\views.py", line 100, in api
+    raise Exception("Call  '{0}' in '{1}' encountered '{2}'".format(method_path, module_path, ex))
+Exception: Call  'get_list' in 'categories' encountered ''module' object has no attribute '__getitem__''
+Internal Server Error: /admin/categories/users
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages\argo\__init__.py", line 40, in exec_request
+    _on_begin_request=getattr(app,"on_begin_request")
+AttributeError: 'NoneType' object has no attribute 'on_begin_request'
+django_session.find (0.00) {'_id': '7an2xtzg92zkkd0m4jo6isqkpbnmv2st', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 7, 21, 35, 87000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Internal Server Error: /admin/categories/users
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages\argo\__init__.py", line 307, in exec_request
+    ret= fn(request, **kwargs)
+  File "E:\code\python\p2018\apps\admin\views.py", line 69, in load_categories
+    "columns":form.layout.get_table_columns()
+  File "E:\code\python\p2018\packages\argo\__init__.py", line 123, in render
+    "get_user":get_user
+  File "E:\code\python\p2018\packages\argo\utilities.py", line 94, in render
+    raise ex
+TemplateLookupException: Cant locate template for uri u'category-toolbar.html'
+django_session.find (0.00) {'_id': '7an2xtzg92zkkd0m4jo6isqkpbnmv2st', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 7, 22, 27, 739000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '7an2xtzg92zkkd0m4jo6isqkpbnmv2st', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 7, 22, 39, 12000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '7an2xtzg92zkkd0m4jo6isqkpbnmv2st', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 7, 22, 42, 695000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '7an2xtzg92zkkd0m4jo6isqkpbnmv2st', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 7, 22, 45, 438000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Internal Server Error: /admin/api
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\code\python\p2018\apps\admin\views.py", line 110, in api
+    raise Exception("import '{0}' encountered '{1}'".format(module_path,ex.message))
+Exception: import 'categories' encountered 'No module named categories'
+Not Found: /apps/admin/static/angular.min.js.map
+Not Found: /polyfills/promise-6.1.0.js.map
+django_session.find (0.00) {'_id': '7an2xtzg92zkkd0m4jo6isqkpbnmv2st', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 7, 23, 7, 965000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Not Found: /apps/admin/static/angular.min.js.map
+django_session.find (0.00) {'_id': '7an2xtzg92zkkd0m4jo6isqkpbnmv2st', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 7, 23, 10, 860000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Not Found: /polyfills/promise-6.1.0.js.map
+django_session.find (0.00) {'_id': '7an2xtzg92zkkd0m4jo6isqkpbnmv2st', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 7, 23, 11, 95000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Internal Server Error: /admin/api
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\code\python\p2018\apps\admin\views.py", line 110, in api
+    raise Exception("import '{0}' encountered '{1}'".format(module_path,ex.message))
+Exception: import 'categories' encountered 'No module named categories'
+django_session.find (0.00) {'_id': '7an2xtzg92zkkd0m4jo6isqkpbnmv2st', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 7, 23, 51, 385000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '7an2xtzg92zkkd0m4jo6isqkpbnmv2st', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 7, 23, 51, 871000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '7an2xtzg92zkkd0m4jo6isqkpbnmv2st', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 7, 23, 55, 444000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Internal Server Error: /admin/api
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\code\python\p2018\apps\admin\views.py", line 110, in api
+    raise Exception("import '{0}' encountered '{1}'".format(module_path,ex.message))
+Exception: import 'categories' encountered 'No module named categories'
+django_session.find (0.00) {'_id': '7an2xtzg92zkkd0m4jo6isqkpbnmv2st', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 7, 25, 25, 372000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '7an2xtzg92zkkd0m4jo6isqkpbnmv2st', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 7, 25, 25, 801000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '7an2xtzg92zkkd0m4jo6isqkpbnmv2st', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 7, 25, 31, 59000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Internal Server Error: /admin/api
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\code\python\p2018\apps\admin\views.py", line 110, in api
+    raise Exception("import '{0}' encountered '{1}'".format(module_path,ex.message))
+Exception: import 'categories' encountered 'No module named categories'
+django_session.find (0.00) {'_id': '7an2xtzg92zkkd0m4jo6isqkpbnmv2st', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 7, 26, 1, 9000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '7an2xtzg92zkkd0m4jo6isqkpbnmv2st', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 7, 26, 1, 441000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '7an2xtzg92zkkd0m4jo6isqkpbnmv2st', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 7, 26, 1, 499000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Internal Server Error: /admin/api
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\code\python\p2018\apps\admin\views.py", line 110, in api
+    raise Exception("import '{0}' encountered '{1}'".format(module_path,ex.message))
+Exception: import 'categories' encountered 'No module named categories'
+django_session.find (0.00) {'_id': '7an2xtzg92zkkd0m4jo6isqkpbnmv2st', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 7, 26, 46, 912000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '7an2xtzg92zkkd0m4jo6isqkpbnmv2st', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 7, 26, 47, 323000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '7an2xtzg92zkkd0m4jo6isqkpbnmv2st', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 7, 26, 47, 379000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Internal Server Error: /admin/api
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\code\python\p2018\apps\admin\views.py", line 110, in api
+    raise Exception("import '{0}' encountered '{1}'".format(module_path,ex.message))
+Exception: import 'categories' encountered 'No module named categories'
+django_session.find (0.00) {'_id': '7an2xtzg92zkkd0m4jo6isqkpbnmv2st', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 7, 27, 12, 415000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '7an2xtzg92zkkd0m4jo6isqkpbnmv2st', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 7, 27, 12, 832000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '7an2xtzg92zkkd0m4jo6isqkpbnmv2st', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 7, 27, 12, 888000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Internal Server Error: /admin/api
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\code\python\p2018\apps\admin\views.py", line 110, in api
+    raise Exception("import '{0}' encountered '{1}'".format(module_path,ex.message))
+Exception: import 'categories' encountered 'No module named categories'
+Not Found: /admin/category/users
+Not Found: /admin/category/users
+Not Found: /admin/views
+Not Found: /admin/roles
+Not Found: /admin/views
+django_session.find (0.00) {'_id': '7an2xtzg92zkkd0m4jo6isqkpbnmv2st', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 7, 27, 43, 133000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '7an2xtzg92zkkd0m4jo6isqkpbnmv2st', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 7, 27, 43, 300000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '7an2xtzg92zkkd0m4jo6isqkpbnmv2st', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 7, 28, 12, 858000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '7an2xtzg92zkkd0m4jo6isqkpbnmv2st', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 7, 28, 13, 329000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '7an2xtzg92zkkd0m4jo6isqkpbnmv2st', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 7, 28, 13, 379000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '7an2xtzg92zkkd0m4jo6isqkpbnmv2st', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 7, 28, 15, 997000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '7an2xtzg92zkkd0m4jo6isqkpbnmv2st', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 7, 28, 16, 215000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '7an2xtzg92zkkd0m4jo6isqkpbnmv2st', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 7, 28, 28, 826000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Not Found: /admin/views
+django_session.find (0.00) {'_id': '7an2xtzg92zkkd0m4jo6isqkpbnmv2st', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 7, 28, 34, 556000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '7an2xtzg92zkkd0m4jo6isqkpbnmv2st', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 7, 28, 34, 961000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Not Found: /admin/views
+django_session.find (0.00) {'_id': '7an2xtzg92zkkd0m4jo6isqkpbnmv2st', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 7, 28, 47, 380000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Not Found: /admin/views
+django_session.find (0.00) {'_id': '7an2xtzg92zkkd0m4jo6isqkpbnmv2st', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 7, 28, 50, 468000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '7an2xtzg92zkkd0m4jo6isqkpbnmv2st', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 7, 28, 50, 829000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '7an2xtzg92zkkd0m4jo6isqkpbnmv2st', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 7, 28, 51, 895000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '7an2xtzg92zkkd0m4jo6isqkpbnmv2st', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 7, 28, 52, 241000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '7an2xtzg92zkkd0m4jo6isqkpbnmv2st', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 7, 28, 53, 498000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '7an2xtzg92zkkd0m4jo6isqkpbnmv2st', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 7, 28, 53, 865000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Internal Server Error: /admin/api
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\code\python\p2018\apps\admin\views.py", line 110, in api
+    raise Exception("import '{0}' encountered '{1}'".format(module_path,ex.message))
+Exception: import 'categories' encountered 'No module named categories'
+Not Found: /admin/category/users
+Not Found: /admin/category/users
+django_session.find (0.00) {'_id': '7an2xtzg92zkkd0m4jo6isqkpbnmv2st', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 7, 29, 55, 270000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '7an2xtzg92zkkd0m4jo6isqkpbnmv2st', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 7, 29, 55, 679000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '7an2xtzg92zkkd0m4jo6isqkpbnmv2st', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 7, 29, 55, 730000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Internal Server Error: /admin/api
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\code\python\p2018\apps\admin\views.py", line 110, in api
+    raise Exception("import '{0}' encountered '{1}'".format(module_path,ex.message))
+Exception: import 'categories' encountered 'No module named categories'
+Not Found: /admin/category/users
+django_session.save (0.00) {'_id': u'tizf9z3gupmlpny7ianmfvr47d8wt6or', 'expire_date': datetime.datetime(2018, 5, 15, 8, 12, 11, 178000, tzinfo=<UTC>), 'session_data': u'YjAwMTViM2E0OTNjMDE0N2NjMTFiZjIxNzYzNmNkYTg5OGRiZGZjMzp7Imxhbmd1YWdlIjoiZW4ifQ=='}
+Not Found: /favicon.ico
+django_session.find (0.00) {'_id': 'tizf9z3gupmlpny7ianmfvr47d8wt6or', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 8, 12, 12, 902000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'username': u'sys'}
+django_session.save (0.00) {'_id': u'cgidaqz4h8xzlzaono7b5o41tijjehhc', 'expire_date': datetime.datetime(2018, 5, 15, 8, 12, 12, 997000, tzinfo=<UTC>), 'session_data': u'YjAwMTViM2E0OTNjMDE0N2NjMTFiZjIxNzYzNmNkYTg5OGRiZGZjMzp7Imxhbmd1YWdlIjoiZW4ifQ=='}
+django_session.find (0.00) {'_id': 'tizf9z3gupmlpny7ianmfvr47d8wt6or'}
+django_session.remove (0.00) {'_id': {'$in': [u'tizf9z3gupmlpny7ianmfvr47d8wt6or']}}
+auth_user.save (0.00) {'username': u'sys', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5ae5cb53cddcb0354c11cf6a'), 'is_active': True, 'email': u'', 'is_superuser': True, 'is_staff': False, 'last_login': datetime.datetime(2018, 5, 1, 8, 12, 13, 2000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$RM3mR6ar66t8$SRS3qPBkBP7FldCNOuunX0f1RK/YppeImlg2lVhOJZo=', 'date_joined': datetime.datetime(2018, 4, 29, 13, 40, 35, 764000, tzinfo=<UTC>)}
+django_session.save (0.00) {'_id': u'cgidaqz4h8xzlzaono7b5o41tijjehhc', 'expire_date': datetime.datetime(2018, 5, 15, 8, 12, 13, 8000, tzinfo=<UTC>), 'session_data': u'MmU5YzEwYjExYTI3YTY2YmIwMGM0YmYwZWUwYmFkNmZjYzQyMzQ1OTp7Il9hdXRoX3VzZXJfYmFja2VuZCI6InBlcm1pc3Npb25fYmFja2VuZF9ub25yZWwuYmFja2VuZHMuTm9ucmVsUGVybWlzc2lvbkJhY2tlbmQiLCJfYXV0aF91c2VyX2lkIjoiNWFlNWNiNTNjZGRjYjAzNTRjMTFjZjZhIiwibGFuZ3VhZ2UiOiJlbiJ9'}
+django_session.find (0.00) {'_id': 'cgidaqz4h8xzlzaono7b5o41tijjehhc', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 8, 12, 13, 405000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'cgidaqz4h8xzlzaono7b5o41tijjehhc', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 8, 12, 15, 812000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'cgidaqz4h8xzlzaono7b5o41tijjehhc', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 8, 12, 16, 163000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Internal Server Error: /admin/api
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\code\python\p2018\apps\admin\views.py", line 110, in api
+    raise Exception("import '{0}' encountered '{1}'".format(module_path,ex.message))
+Exception: import 'categories' encountered 'No module named categories'
+django_session.find (0.00) {'_id': 'cgidaqz4h8xzlzaono7b5o41tijjehhc', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 8, 13, 38, 450000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'cgidaqz4h8xzlzaono7b5o41tijjehhc', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 8, 13, 41, 316000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Internal Server Error: /admin/api
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\code\python\p2018\apps\admin\views.py", line 110, in api
+    raise Exception("import '{0}' encountered '{1}'".format(module_path,ex.message))
+Exception: import 'categories' encountered 'No module named categories'
+django_session.find (0.00) {'_id': 'cgidaqz4h8xzlzaono7b5o41tijjehhc', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 8, 14, 47, 343000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'cgidaqz4h8xzlzaono7b5o41tijjehhc', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 8, 14, 49, 138000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'cgidaqz4h8xzlzaono7b5o41tijjehhc', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 8, 14, 52, 376000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Internal Server Error: /admin/api
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\code\python\p2018\apps\admin\views.py", line 94, in api
+    raise Exception("'{0}' is invalid path, path must be */*")
+Exception: '{0}' is invalid path, path must be */*
+django_session.find (0.00) {'_id': 'cgidaqz4h8xzlzaono7b5o41tijjehhc', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 8, 15, 1, 801000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'cgidaqz4h8xzlzaono7b5o41tijjehhc', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 8, 15, 4, 362000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Internal Server Error: /admin/api
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\code\python\p2018\apps\admin\views.py", line 94, in api
+    raise Exception("'{0}' is invalid path, path must be */*")
+Exception: '{0}' is invalid path, path must be */*
+django_session.find (0.00) {'_id': 'cgidaqz4h8xzlzaono7b5o41tijjehhc', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 8, 15, 13, 284000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'cgidaqz4h8xzlzaono7b5o41tijjehhc', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 8, 15, 16, 641000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Internal Server Error: /admin/api
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\code\python\p2018\apps\admin\views.py", line 94, in api
+    raise Exception("'{0}' is invalid path, path must be */*")
+Exception: '{0}' is invalid path, path must be */*
+django_session.find (0.00) {'_id': 'cgidaqz4h8xzlzaono7b5o41tijjehhc', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 8, 15, 28, 319000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'cgidaqz4h8xzlzaono7b5o41tijjehhc', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 8, 15, 31, 537000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Internal Server Error: /admin/api
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\code\python\p2018\apps\admin\views.py", line 94, in api
+    raise Exception("'{0}' is invalid path, path must be */*")
+Exception: '{0}' is invalid path, path must be */*
+django_session.find (0.00) {'_id': 'cgidaqz4h8xzlzaono7b5o41tijjehhc', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 9, 2, 22, 239000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'cgidaqz4h8xzlzaono7b5o41tijjehhc', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 9, 2, 25, 727000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Internal Server Error: /admin/api
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\code\python\p2018\apps\admin\views.py", line 94, in api
+    raise Exception("'{0}' is invalid path, path must be */*")
+Exception: '{0}' is invalid path, path must be */*
+django_session.find (0.00) {'_id': 'cgidaqz4h8xzlzaono7b5o41tijjehhc', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 9, 4, 28, 887000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'cgidaqz4h8xzlzaono7b5o41tijjehhc', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 9, 4, 31, 21000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Internal Server Error: /admin/api
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\code\python\p2018\apps\admin\views.py", line 133, in api
+    raise Exception("Call  '{0}' in '{1}' encountered '{2}'".format(method_path, module_path, ex))
+Exception: Call  'categories' in 'admin' encountered ''module' object has no attribute 'categories''
+django_session.find (0.00) {'_id': 'cgidaqz4h8xzlzaono7b5o41tijjehhc', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 9, 6, 4, 172000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'cgidaqz4h8xzlzaono7b5o41tijjehhc', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 9, 6, 6, 28000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Internal Server Error: /admin/api
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\code\python\p2018\apps\admin\views.py", line 111, in api
+    raise Exception("import '{0}' encountered '{1}'".format(module_path,ex.message))
+Exception: import 'admin/ca' encountered 'Import by filename is not supported.'
+django_session.find (0.00) {'_id': 'cgidaqz4h8xzlzaono7b5o41tijjehhc', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 9, 7, 2, 609000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'cgidaqz4h8xzlzaono7b5o41tijjehhc', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 9, 7, 4, 710000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Internal Server Error: /admin/api
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\code\python\p2018\apps\admin\views.py", line 111, in api
+    except ImportError as ex:
+Exception: import 'admin/categories/' encountered 'Import by filename is not supported.'
+django_session.find (0.00) {'_id': 'cgidaqz4h8xzlzaono7b5o41tijjehhc', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 9, 12, 59, 7000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'cgidaqz4h8xzlzaono7b5o41tijjehhc', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 9, 12, 59, 91000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Internal Server Error: /admin/api
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\code\python\p2018\apps\admin\views.py", line 145, in api
+    raise ex
+ImportError: Import by filename is not supported.
+django_session.find (0.00) {'_id': 'cgidaqz4h8xzlzaono7b5o41tijjehhc', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 9, 15, 32, 746000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'cgidaqz4h8xzlzaono7b5o41tijjehhc', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 9, 15, 32, 837000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Internal Server Error: /admin/api
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\code\python\p2018\apps\admin\views.py", line 145, in api
+    raise ex
+Exception: import admin/categories/ is error or not found
+django_session.find (0.00) {'_id': 'cgidaqz4h8xzlzaono7b5o41tijjehhc', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 9, 51, 3, 471000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'cgidaqz4h8xzlzaono7b5o41tijjehhc', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 9, 52, 18, 217000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'cgidaqz4h8xzlzaono7b5o41tijjehhc', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 9, 52, 18, 732000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Not Found: /apps/admin/static/angular.min.js.map
+Not Found: /polyfills/promise-6.1.0.js.map
+django_session.find (0.00) {'_id': 'cgidaqz4h8xzlzaono7b5o41tijjehhc', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 9, 52, 24, 781000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'cgidaqz4h8xzlzaono7b5o41tijjehhc', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 9, 52, 51, 369000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'cgidaqz4h8xzlzaono7b5o41tijjehhc', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 9, 52, 53, 915000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Internal Server Error: /admin/categories/users
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages\argo\__init__.py", line 316, in exec_request
+    ret= fn(request, **kwargs)
+  File "E:\code\python\p2018\apps\admin\views.py", line 71, in load_categories
+    "columns":form.layout.get_table_columns()
+  File "E:\code\python\p2018\packages\argo\__init__.py", line 126, in render
+    "get_api_key":get_api_key
+  File "E:\code\python\p2018\packages\argo\utilities.py", line 91, in render
+    ret_content = mylookup.get_template(fileName).render(**render_model)
+  File "E:\code\python\p2018\venv1\lib\site-packages\mako\template.py", line 462, in render
+    return runtime._render(self, self.callable_, args, data)
+  File "E:\code\python\p2018\venv1\lib\site-packages\mako\runtime.py", line 838, in _render
+    **_kwargs_for_callable(callable_, data))
+  File "E:\code\python\p2018\venv1\lib\site-packages\mako\runtime.py", line 873, in _render_context
+    _exec_template(inherit, lclcontext, args=args, kwargs=kwargs)
+  File "E:\code\python\p2018\venv1\lib\site-packages\mako\runtime.py", line 899, in _exec_template
+    callable_(context, *args, **kwargs)
+  File "category_html", line 62, in render_body
+TypeError: 'Undefined' object is not callable
+Not Found: /apps/admin/static/angular.min.js.map
+Not Found: /polyfills/promise-6.1.0.js.map
+django_session.find (0.00) {'_id': 'cgidaqz4h8xzlzaono7b5o41tijjehhc', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 9, 53, 1, 922000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Internal Server Error: /admin/categories/users
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages\argo\__init__.py", line 316, in exec_request
+    ret= fn(request, **kwargs)
+  File "E:\code\python\p2018\apps\admin\views.py", line 71, in load_categories
+    "columns":form.layout.get_table_columns()
+  File "E:\code\python\p2018\packages\argo\__init__.py", line 126, in render
+    "get_api_key":get_api_key
+  File "E:\code\python\p2018\packages\argo\utilities.py", line 91, in render
+    ret_content = mylookup.get_template(fileName).render(**render_model)
+  File "E:\code\python\p2018\venv1\lib\site-packages\mako\template.py", line 462, in render
+    return runtime._render(self, self.callable_, args, data)
+  File "E:\code\python\p2018\venv1\lib\site-packages\mako\runtime.py", line 838, in _render
+    **_kwargs_for_callable(callable_, data))
+  File "E:\code\python\p2018\venv1\lib\site-packages\mako\runtime.py", line 873, in _render_context
+    _exec_template(inherit, lclcontext, args=args, kwargs=kwargs)
+  File "E:\code\python\p2018\venv1\lib\site-packages\mako\runtime.py", line 899, in _exec_template
+    callable_(context, *args, **kwargs)
+  File "category_html", line 62, in render_body
+TypeError: 'Undefined' object is not callable
+django_session.find (0.00) {'_id': 'cgidaqz4h8xzlzaono7b5o41tijjehhc', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 9, 53, 36, 404000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Internal Server Error: /admin/categories/users
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages\argo\__init__.py", line 316, in exec_request
+    ret= fn(request, **kwargs)
+  File "E:\code\python\p2018\apps\admin\views.py", line 71, in load_categories
+    "columns":form.layout.get_table_columns()
+  File "E:\code\python\p2018\packages\argo\__init__.py", line 126, in render
+    "get_api_key":get_api_key
+  File "E:\code\python\p2018\packages\argo\utilities.py", line 91, in render
+    ret_content = mylookup.get_template(fileName).render(**render_model)
+  File "E:\code\python\p2018\venv1\lib\site-packages\mako\template.py", line 462, in render
+    return runtime._render(self, self.callable_, args, data)
+  File "E:\code\python\p2018\venv1\lib\site-packages\mako\runtime.py", line 838, in _render
+    **_kwargs_for_callable(callable_, data))
+  File "E:\code\python\p2018\venv1\lib\site-packages\mako\runtime.py", line 873, in _render_context
+    _exec_template(inherit, lclcontext, args=args, kwargs=kwargs)
+  File "E:\code\python\p2018\venv1\lib\site-packages\mako\runtime.py", line 899, in _exec_template
+    callable_(context, *args, **kwargs)
+  File "category_html", line 62, in render_body
+TypeError: 'Undefined' object is not callable
+django_session.find (0.00) {'_id': 'cgidaqz4h8xzlzaono7b5o41tijjehhc', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 9, 55, 17, 592000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Internal Server Error: /admin/categories/users
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages\argo\__init__.py", line 316, in exec_request
+    ret= fn(request, **kwargs)
+  File "E:\code\python\p2018\apps\admin\views.py", line 71, in load_categories
+    "columns":form.layout.get_table_columns()
+  File "E:\code\python\p2018\packages\argo\__init__.py", line 126, in render
+    "get_api_key":get_api_key
+  File "E:\code\python\p2018\packages\argo\utilities.py", line 91, in render
+    ret_content = mylookup.get_template(fileName).render(**render_model)
+  File "E:\code\python\p2018\venv1\lib\site-packages\mako\template.py", line 462, in render
+    return runtime._render(self, self.callable_, args, data)
+  File "E:\code\python\p2018\venv1\lib\site-packages\mako\runtime.py", line 838, in _render
+    **_kwargs_for_callable(callable_, data))
+  File "E:\code\python\p2018\venv1\lib\site-packages\mako\runtime.py", line 873, in _render_context
+    _exec_template(inherit, lclcontext, args=args, kwargs=kwargs)
+  File "E:\code\python\p2018\venv1\lib\site-packages\mako\runtime.py", line 899, in _exec_template
+    callable_(context, *args, **kwargs)
+  File "category_html", line 62, in render_body
+TypeError: 'Undefined' object is not callable
+django_session.find (0.00) {'_id': 'cgidaqz4h8xzlzaono7b5o41tijjehhc', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 9, 56, 13, 964000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Internal Server Error: /admin/categories/users
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages\argo\__init__.py", line 316, in exec_request
+    ret= fn(request, **kwargs)
+  File "E:\code\python\p2018\apps\admin\views.py", line 71, in load_categories
+    "columns":form.layout.get_table_columns()
+  File "E:\code\python\p2018\packages\argo\__init__.py", line 126, in render
+    "get_api_key":get_api_key
+  File "E:\code\python\p2018\packages\argo\utilities.py", line 91, in render
+    )
+  File "E:\code\python\p2018\venv1\lib\site-packages\mako\template.py", line 462, in render
+    return runtime._render(self, self.callable_, args, data)
+  File "E:\code\python\p2018\venv1\lib\site-packages\mako\runtime.py", line 838, in _render
+    **_kwargs_for_callable(callable_, data))
+  File "E:\code\python\p2018\venv1\lib\site-packages\mako\runtime.py", line 873, in _render_context
+    _exec_template(inherit, lclcontext, args=args, kwargs=kwargs)
+  File "E:\code\python\p2018\venv1\lib\site-packages\mako\runtime.py", line 899, in _exec_template
+    callable_(context, *args, **kwargs)
+  File "category_html", line 62, in render_body
+TypeError: 'Undefined' object is not callable
+django_session.find (0.00) {'_id': 'cgidaqz4h8xzlzaono7b5o41tijjehhc', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 9, 59, 10, 416000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'cgidaqz4h8xzlzaono7b5o41tijjehhc', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 9, 59, 12, 339000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'cgidaqz4h8xzlzaono7b5o41tijjehhc', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 9, 59, 38, 674000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'cgidaqz4h8xzlzaono7b5o41tijjehhc', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 9, 59, 40, 882000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'cgidaqz4h8xzlzaono7b5o41tijjehhc', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 9, 59, 41, 23000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Not Found: /apps/admin/static/angular.min.js.map
+Internal Server Error: /admin/api
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\code\python\p2018\apps\admin\views.py", line 145, in api
+    raise ex
+Exception: '{0}' is invalid path, path must be */*
+Not Found: /polyfills/promise-6.1.0.js.map
+django_session.find (0.00) {'_id': 'cgidaqz4h8xzlzaono7b5o41tijjehhc', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 10, 12, 15, 665000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Not Found: /apps/admin/static/angular.min.js.map
+Not Found: /polyfills/promise-6.1.0.js.map
+django_session.find (0.00) {'_id': 'cgidaqz4h8xzlzaono7b5o41tijjehhc', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 10, 12, 17, 599000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Internal Server Error: /admin/categories/users
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages\argo\__init__.py", line 316, in exec_request
+    ret= fn(request, **kwargs)
+  File "E:\code\python\p2018\apps\admin\views.py", line 71, in load_categories
+    "columns":form.layout.get_table_columns()
+  File "E:\code\python\p2018\packages\argo\__init__.py", line 126, in render
+    "get_api_key":get_api_key
+  File "E:\code\python\p2018\packages\argo\utilities.py", line 94, in render
+    ret_content = mylookup.get_template(fileName).render(**render_model)
+  File "E:\code\python\p2018\venv1\lib\site-packages\mako\template.py", line 462, in render
+    return runtime._render(self, self.callable_, args, data)
+  File "E:\code\python\p2018\venv1\lib\site-packages\mako\runtime.py", line 838, in _render
+    **_kwargs_for_callable(callable_, data))
+  File "E:\code\python\p2018\venv1\lib\site-packages\mako\runtime.py", line 873, in _render_context
+    _exec_template(inherit, lclcontext, args=args, kwargs=kwargs)
+  File "E:\code\python\p2018\venv1\lib\site-packages\mako\runtime.py", line 899, in _exec_template
+    callable_(context, *args, **kwargs)
+  File "category_html", line 62, in render_body
+  File "E:\code\python\p2018\packages\argo\__init__.py", line 238, in get_api_key
+    return quicky.api.get_api_key(path)
+AttributeError: 'module' object has no attribute 'api'
+django_session.find (0.00) {'_id': 'cgidaqz4h8xzlzaono7b5o41tijjehhc', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 10, 14, 32, 692000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Not Found: /apps/admin/static/angular.min.js.map
+Not Found: /polyfills/promise-6.1.0.js.map
+django_session.find (0.00) {'_id': 'cgidaqz4h8xzlzaono7b5o41tijjehhc', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 10, 14, 37, 570000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'cgidaqz4h8xzlzaono7b5o41tijjehhc', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 10, 14, 44, 631000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Internal Server Error: /admin/api
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\code\python\p2018\packages\quicky\api.py", line 87, in call
+    raise ex
+Exception: '{0}' is invalid path, path must be */*
+django_session.find (0.00) {'_id': 'cgidaqz4h8xzlzaono7b5o41tijjehhc', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 10, 14, 50, 289000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'cgidaqz4h8xzlzaono7b5o41tijjehhc', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 10, 14, 50, 754000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'cgidaqz4h8xzlzaono7b5o41tijjehhc', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 10, 14, 51, 118000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Internal Server Error: /admin/api
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\code\python\p2018\packages\quicky\api.py", line 87, in call
+    raise ex
+Exception: '{0}' is invalid path, path must be */*
+django_session.find (0.00) {'_id': 'cgidaqz4h8xzlzaono7b5o41tijjehhc', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 10, 15, 5, 134000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'cgidaqz4h8xzlzaono7b5o41tijjehhc', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 10, 15, 7, 591000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Internal Server Error: /admin/api
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\code\python\p2018\packages\quicky\api.py", line 87, in call
+    raise ex
+Exception: '{0}' is invalid path, path must be */*
+django_session.find (0.00) {'_id': 'cgidaqz4h8xzlzaono7b5o41tijjehhc', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 10, 16, 7, 360000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'cgidaqz4h8xzlzaono7b5o41tijjehhc', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 10, 16, 17, 356000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Internal Server Error: /admin/api
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\code\python\p2018\packages\quicky\api.py", line 87, in call
+    except Exception as ex:
+Exception: '{0}' is invalid path, path must be */*
+django_session.find (0.00) {'_id': 'cgidaqz4h8xzlzaono7b5o41tijjehhc', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 10, 17, 33, 581000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'cgidaqz4h8xzlzaono7b5o41tijjehhc', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 10, 17, 34, 58000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'cgidaqz4h8xzlzaono7b5o41tijjehhc', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 10, 17, 36, 705000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Internal Server Error: /admin/api
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\code\python\p2018\packages\quicky\api.py", line 89, in call
+    raise ex
+Exception: '{0}' is invalid path, path must be */*
+django_session.find (0.00) {'_id': 'cgidaqz4h8xzlzaono7b5o41tijjehhc', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 10, 17, 54, 896000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'cgidaqz4h8xzlzaono7b5o41tijjehhc', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 10, 17, 57, 33000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Internal Server Error: /admin/api
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\code\python\p2018\packages\quicky\api.py", line 89, in call
+    raise ex
+Exception: '{0}' is invalid path, path must be */*
+django_session.find (0.00) {'_id': 'cgidaqz4h8xzlzaono7b5o41tijjehhc', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 10, 18, 28, 835000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'cgidaqz4h8xzlzaono7b5o41tijjehhc', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 10, 18, 31, 844000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Internal Server Error: /admin/api
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\code\python\p2018\packages\quicky\api.py", line 88, in call
+    raise ex
+NameError: global name '_settings' is not defined
+django_session.find (0.00) {'_id': 'cgidaqz4h8xzlzaono7b5o41tijjehhc', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 10, 18, 47, 413000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'cgidaqz4h8xzlzaono7b5o41tijjehhc', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 10, 18, 50, 894000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Internal Server Error: /admin/api
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\code\python\p2018\packages\quicky\api.py", line 88, in call
+    raise ex
+NameError: global name '_settings' is not defined
+django_session.find (0.00) {'_id': 'cgidaqz4h8xzlzaono7b5o41tijjehhc', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 10, 19, 14, 312000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'cgidaqz4h8xzlzaono7b5o41tijjehhc', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 10, 19, 16, 954000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Internal Server Error: /admin/api
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\code\python\p2018\packages\quicky\api.py", line 88, in call
+    raise ex
+NameError: global name '_settings' is not defined
+django_session.find (0.00) {'_id': 'cgidaqz4h8xzlzaono7b5o41tijjehhc', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 10, 20, 5, 126000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'cgidaqz4h8xzlzaono7b5o41tijjehhc', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 10, 20, 7, 986000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Internal Server Error: /admin/api
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\code\python\p2018\packages\quicky\api.py", line 88, in call
+    raise ex
+NameError: global name '_settings' is not defined
+django_session.find (0.00) {'_id': 'cgidaqz4h8xzlzaono7b5o41tijjehhc', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 10, 20, 19, 388000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'cgidaqz4h8xzlzaono7b5o41tijjehhc', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 10, 20, 21, 846000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Internal Server Error: /admin/api
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\code\python\p2018\packages\quicky\api.py", line 88, in call
+    logger.debug(ex)
+NameError: global name '_settings' is not defined
+django_session.find (0.00) {'_id': 'cgidaqz4h8xzlzaono7b5o41tijjehhc', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 10, 20, 47, 109000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'cgidaqz4h8xzlzaono7b5o41tijjehhc', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 10, 20, 50, 469000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Internal Server Error: /admin/api
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\code\python\p2018\packages\quicky\api.py", line 89, in call
+    raise ex
+Exception: import admin/categories/ is error or not found
+django_session.find (0.00) {'_id': 'cgidaqz4h8xzlzaono7b5o41tijjehhc', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 10, 21, 25, 113000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'cgidaqz4h8xzlzaono7b5o41tijjehhc', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 10, 21, 27, 286000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Internal Server Error: /admin/api
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\code\python\p2018\packages\quicky\api.py", line 89, in call
+    raise ex
+Exception: import admin/categories is error or not found
+django_session.find (0.00) {'_id': 'cgidaqz4h8xzlzaono7b5o41tijjehhc', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 10, 24, 55, 392000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'cgidaqz4h8xzlzaono7b5o41tijjehhc', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 10, 24, 58, 203000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Internal Server Error: /admin/api
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\code\python\p2018\packages\quicky\api.py", line 89, in call
+    raise ex
+Exception: import admin/api/categories is error or not found
+django_session.find (0.00) {'_id': 'cgidaqz4h8xzlzaono7b5o41tijjehhc', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 10, 28, 19, 458000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'cgidaqz4h8xzlzaono7b5o41tijjehhc', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 10, 28, 22, 4000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Internal Server Error: /admin/api
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\code\python\p2018\packages\quicky\api.py", line 89, in call
+    raise ex
+Exception: Call  'get_list' in 'admin/api/categories' encountered ''module' object has no attribute 'get_list''
+django_session.find (0.00) {'_id': 'cgidaqz4h8xzlzaono7b5o41tijjehhc', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 10, 29, 20, 811000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'cgidaqz4h8xzlzaono7b5o41tijjehhc', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 10, 29, 25, 847000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Internal Server Error: /admin/api
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\code\python\p2018\packages\quicky\api.py", line 89, in call
+    raise ex
+Exception: Call  'get_list' in 'admin/api/categories' encountered ''module' object has no attribute 'get_list''
+django_session.find (0.00) {'_id': 'cgidaqz4h8xzlzaono7b5o41tijjehhc', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 10, 29, 36, 225000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'cgidaqz4h8xzlzaono7b5o41tijjehhc', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 10, 29, 36, 273000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Internal Server Error: /admin/api
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\code\python\p2018\packages\quicky\api.py", line 89, in call
+    raise ex
+Exception: Call  'get_list' in 'admin/api/categories' encountered ''module' object has no attribute 'get_list''
+django_session.find (0.00) {'_id': 'cgidaqz4h8xzlzaono7b5o41tijjehhc', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 10, 29, 46, 615000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'cgidaqz4h8xzlzaono7b5o41tijjehhc', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 10, 29, 46, 668000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'cgidaqz4h8xzlzaono7b5o41tijjehhc', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 10, 30, 15, 957000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'cgidaqz4h8xzlzaono7b5o41tijjehhc', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 10, 30, 16, 44000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Internal Server Error: /admin/
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 99, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "E:\code\python\p2018\packages/django\django\core\urlresolvers.py", line 337, in resolve
+    for pattern in self.url_patterns:
+  File "E:\code\python\p2018\packages/django\django\core\urlresolvers.py", line 369, in url_patterns
+    raise ImproperlyConfigured("The included urlconf %s doesn't have any patterns in it" % self.urlconf_name)
+ImproperlyConfigured: The included urlconf apps doesn't have any patterns in it
+Internal Server Error: /admin/
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 99, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "E:\code\python\p2018\packages/django\django\core\urlresolvers.py", line 337, in resolve
+    for pattern in self.url_patterns:
+  File "E:\code\python\p2018\packages/django\django\core\urlresolvers.py", line 369, in url_patterns
+    raise ImproperlyConfigured("The included urlconf %s doesn't have any patterns in it" % self.urlconf_name)
+ImproperlyConfigured: The included urlconf apps doesn't have any patterns in it
+Internal Server Error: /admin/
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages\argo\__init__.py", line 41, in exec_request
+    _on_begin_request=getattr(app,"on_begin_request")
+AttributeError: 'NoneType' object has no attribute 'on_begin_request'
+Internal Server Error: /admin/
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages\quicky\view.py", line 28, in exec_request
+    if hasattr(app.settings, "is_public"):
+AttributeError: 'NoneType' object has no attribute 'settings'
+Internal Server Error: /admin/
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages\quicky\view.py", line 28, in exec_request
+    if hasattr(app.settings, "is_public"):
+AttributeError: 'NoneType' object has no attribute 'settings'
+Internal Server Error: /admin/
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages\quicky\view.py", line 28, in exec_request
+    if hasattr(app.settings, "is_public"):
+AttributeError: 'NoneType' object has no attribute 'settings'
+Not Found: /admin/static/css/main.css
+Not Found: /admin/static/toast/bootoast.min.css
+Not Found: /admin/static/css/site.css
+Not Found: /admin/static/angular.min.js
+Not Found: /admin/static/js/jquery-3.2.1.min.js
+Not Found: /admin/static/toast/bootoast.min.js
+Not Found: /admin/static/ngDirectives.js
+Not Found: /admin/static/js/popper.min.js
+Not Found: /admin/static/js/bootstrap.min.js
+Not Found: /admin/static/js/main.js
+Not Found: /admin/static/js/plugins/chart.js
+Not Found: /admin/static/js/plugins/pace.min.js
+Not Found: /admin/static/js/promise-6.1.0.js
+Not Found: /admin/static/js/ws.js
+Not Found: /admin/static/angular.min.js
+Not Found: /admin/static/ngDirectives.js
+Not Found: /admin/static/toast/bootoast.min.css
+Not Found: /admin/static/css/site.css
+Not Found: /admin/static/js/popper.min.js
+Not Found: /admin/static/js/bootstrap.min.js
+Not Found: /admin/static/js/main.js
+Not Found: /admin/static/js/plugins/pace.min.js
+Not Found: /admin/static/js/plugins/chart.js
+Not Found: /admin/static/js/plugins/chart.js
+Not Found: /admin/static/js/promise-6.1.0.js
+Not Found: /admin/static/js/ws.js
+Not Found: /admin/static/css/site.css
+Not Found: /admin/static/css/site.css
+Internal Server Error: /admin/categories/users
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages\argo\__init__.py", line 41, in exec_request
+    _on_begin_request=getattr(app,"on_begin_request")
+AttributeError: 'NoneType' object has no attribute 'on_begin_request'
+Internal Server Error: /admin/pages/roles
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages\argo\__init__.py", line 41, in exec_request
+    _on_begin_request=getattr(app,"on_begin_request")
+AttributeError: 'NoneType' object has no attribute 'on_begin_request'
+Internal Server Error: /admin/categories/users
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages\argo\__init__.py", line 41, in exec_request
+    _on_begin_request=getattr(app,"on_begin_request")
+AttributeError: 'NoneType' object has no attribute 'on_begin_request'
+Internal Server Error: /admin/pages/views
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages\argo\__init__.py", line 41, in exec_request
+    _on_begin_request=getattr(app,"on_begin_request")
+AttributeError: 'NoneType' object has no attribute 'on_begin_request'
+Not Found: /admin/static/angular.min.js.map
+Not Found: /polyfills/promise-6.1.0.js.map
+Internal Server Error: /admin/categories/users
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages\argo\__init__.py", line 41, in exec_request
+    _on_begin_request=getattr(app,"on_begin_request")
+AttributeError: 'NoneType' object has no attribute 'on_begin_request'
+Internal Server Error: /admin/categories/users
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages\argo\__init__.py", line 41, in exec_request
+    _on_begin_request=getattr(app,"on_begin_request")
+AttributeError: 'NoneType' object has no attribute 'on_begin_request'
+Internal Server Error: /admin/categories/users
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages\quicky\view.py", line 56, in exec_request
+    return fn(request, **kwargs)
+  File "E:\code\python\p2018\apps\admin\views.py", line 71, in load_categories
+    "columns":form.layout.get_table_columns()
+  File "E:\code\python\p2018\packages\quicky\extens.py", line 139, in render
+    return HttpResponse(mylookup.get_template(fileName).render(**render_model))
+  File "E:\code\python\p2018\venv1\lib\site-packages\mako\template.py", line 462, in render
+    return runtime._render(self, self.callable_, args, data)
+  File "E:\code\python\p2018\venv1\lib\site-packages\mako\runtime.py", line 838, in _render
+    **_kwargs_for_callable(callable_, data))
+  File "E:\code\python\p2018\venv1\lib\site-packages\mako\runtime.py", line 873, in _render_context
+    _exec_template(inherit, lclcontext, args=args, kwargs=kwargs)
+  File "E:\code\python\p2018\venv1\lib\site-packages\mako\runtime.py", line 899, in _exec_template
+    callable_(context, *args, **kwargs)
+  File "category_html", line 31, in render_body
+  File "E:\code\python\p2018\packages\quicky\extens.py", line 74, in get_res
+    return get_language_item(get_language(),app.name,get_view_path(),key,key)
+  File "E:\code\python\p2018\packages\quicky\extens.py", line 40, in get_language
+    return request.LANGUAGE_CODE
+AttributeError: 'WSGIRequest' object has no attribute 'LANGUAGE_CODE'
+Not Found: /admin/static/angular.min.js.map
+Not Found: /polyfills/promise-6.1.0.js.map
+Internal Server Error: /admin/categories/users
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages\quicky\view.py", line 56, in exec_request
+    return fn(request, **kwargs)
+  File "E:\code\python\p2018\apps\admin\views.py", line 71, in load_categories
+    "columns":form.layout.get_table_columns()
+  File "E:\code\python\p2018\packages\quicky\extens.py", line 139, in render
+    mylookup = TemplateLookup(directories=[os.getcwd()+"/"+request.get_app().template_dir],
+  File "E:\code\python\p2018\venv1\lib\site-packages\mako\template.py", line 462, in render
+    return runtime._render(self, self.callable_, args, data)
+  File "E:\code\python\p2018\venv1\lib\site-packages\mako\runtime.py", line 838, in _render
+    **_kwargs_for_callable(callable_, data))
+  File "E:\code\python\p2018\venv1\lib\site-packages\mako\runtime.py", line 873, in _render_context
+    _exec_template(inherit, lclcontext, args=args, kwargs=kwargs)
+  File "E:\code\python\p2018\venv1\lib\site-packages\mako\runtime.py", line 899, in _exec_template
+    callable_(context, *args, **kwargs)
+  File "category_html", line 31, in render_body
+  File "E:\code\python\p2018\packages\quicky\extens.py", line 74, in get_res
+    return "index"
+  File "E:\code\python\p2018\packages\quicky\extens.py", line 40, in get_language
+    if hasattr(request,"request.LANGUAGE_CODE"):
+AttributeError: 'WSGIRequest' object has no attribute 'LANGUAGE_CODE'
+Not Found: /admin/static/angular.min.js.map
+django_session.find (0.00) {'_id': 'cgidaqz4h8xzlzaono7b5o41tijjehhc', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 11, 18, 32, 950000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Internal Server Error: /admin/api
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\code\python\p2018\packages\quicky\api.py", line 89, in call
+    raise ex
+AttributeError: 'NoneType' object has no attribute 'get_view_of_user'
+Not Found: /polyfills/promise-6.1.0.js.map
+Internal Server Error: /admin/pages/roles
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages\quicky\view.py", line 56, in exec_request
+    return fn(request, **kwargs)
+  File "E:\code\python\p2018\apps\admin\views.py", line 80, in load_page
+    "path":path.lower()
+  File "E:\code\python\p2018\packages\quicky\extens.py", line 145, in render
+    return HttpResponse(mylookup.get_template(fileName).render(**render_model))
+  File "E:\code\python\p2018\venv1\lib\site-packages\mako\lookup.py", line 247, in get_template
+    return self._check(uri, self._collection[uri])
+TypeError: unhashable type: 'dict'
+django_session.find (0.00) {'_id': 'cgidaqz4h8xzlzaono7b5o41tijjehhc', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 11, 19, 32, 25000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Internal Server Error: /admin/api
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\code\python\p2018\packages\quicky\api.py", line 89, in call
+    raise ex
+AttributeError: 'NoneType' object has no attribute 'get_view_of_user'
+Not Found: /admin/static/angular.min.js.map
+django_session.find (0.00) {'_id': 'cgidaqz4h8xzlzaono7b5o41tijjehhc', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 11, 22, 36, 240000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Not Found: /polyfills/promise-6.1.0.js.map
+Internal Server Error: /admin/api
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\code\python\p2018\packages\quicky\api.py", line 89, in call
+    raise ex
+AttributeError: 'module' object has no attribute 'get_view_of_user'
+Internal Server Error: /admin/pages/roles
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages\quicky\view.py", line 56, in exec_request
+    return fn(request, **kwargs)
+  File "E:\code\python\p2018\apps\admin\views.py", line 80, in load_page
+    "path":path.lower()
+  File "E:\code\python\p2018\packages\quicky\extens.py", line 145, in render
+    return HttpResponse(mylookup.get_template(fileName).render(**render_model))
+  File "E:\code\python\p2018\venv1\lib\site-packages\mako\lookup.py", line 247, in get_template
+    return self._check(uri, self._collection[uri])
+TypeError: unhashable type: 'dict'
+django_session.find (0.00) {'_id': 'cgidaqz4h8xzlzaono7b5o41tijjehhc', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 11, 22, 54, 710000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Internal Server Error: /admin/api
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\code\python\p2018\packages\quicky\api.py", line 89, in call
+    raise ex
+AttributeError: 'module' object has no attribute 'get_view_of_user'
+Internal Server Error: /admin/pages/roles
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages\quicky\view.py", line 56, in exec_request
+    return fn(request, **kwargs)
+  File "E:\code\python\p2018\apps\admin\views.py", line 80, in load_page
+    "path":path.lower()
+  File "E:\code\python\p2018\packages\quicky\extens.py", line 145, in render
+    return HttpResponse(mylookup.get_template(fileName).render(**render_model))
+  File "E:\code\python\p2018\venv1\lib\site-packages\mako\lookup.py", line 247, in get_template
+    return self._check(uri, self._collection[uri])
+TypeError: unhashable type: 'dict'
+django_session.find (0.00) {'_id': 'cgidaqz4h8xzlzaono7b5o41tijjehhc', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 11, 24, 19, 782000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Internal Server Error: /admin/api
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\code\python\p2018\packages\quicky\api.py", line 89, in call
+    id = uuid.uuid4().__str__()
+AttributeError: 'module' object has no attribute 'get_view_of_user'
+Not Found: /admin/static/angular.min.js.map
+django_session.find (0.00) {'_id': 'cgidaqz4h8xzlzaono7b5o41tijjehhc', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 11, 45, 12, 666000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Not Found: /polyfills/promise-6.1.0.js.map
+Internal Server Error: /admin/api
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\code\python\p2018\packages\quicky\api.py", line 83, in call
+    raise ex
+NameError: global name 'sys' is not defined
+django_session.find (0.00) {'_id': 'cgidaqz4h8xzlzaono7b5o41tijjehhc', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 11, 46, 14, 375000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Internal Server Error: /admin/api
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\code\python\p2018\packages\quicky\api.py", line 83, in call
+    raise ex
+NameError: global name 'sys' is not defined
+django_session.find (0.00) {'_id': 'cgidaqz4h8xzlzaono7b5o41tijjehhc', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 11, 47, 32, 309000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Internal Server Error: /admin/api
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\code\python\p2018\packages\quicky\api.py", line 83, in call
+    raise ex
+NameError: global name 'sys' is not defined
+django_session.find (0.00) {'_id': 'cgidaqz4h8xzlzaono7b5o41tijjehhc', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 11, 50, 6, 893000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Internal Server Error: /admin/api
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\code\python\p2018\packages\quicky\api.py", line 83, in call
+    raise ex
+NameError: global name 'sys' is not defined
+django_session.find (0.00) {'_id': 'cgidaqz4h8xzlzaono7b5o41tijjehhc', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 11, 50, 21, 297000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Internal Server Error: /admin/api
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\code\python\p2018\packages\quicky\api.py", line 83, in call
+    raise ex
+NameError: global name 'sys' is not defined
+Internal Server Error: /admin/pages/roles
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages\quicky\view.py", line 56, in exec_request
+    return fn(request, **kwargs)
+  File "E:\code\python\p2018\apps\admin\views.py", line 80, in load_page
+    "path":path.lower()
+  File "E:\code\python\p2018\packages\quicky\extens.py", line 141, in render
+    return HttpResponse(mylookup.get_template(fileName).render(**render_model))
+  File "E:\code\python\p2018\venv1\lib\site-packages\mako\lookup.py", line 247, in get_template
+    return self._check(uri, self._collection[uri])
+TypeError: unhashable type: 'dict'
+django_session.find (0.00) {'_id': 'cgidaqz4h8xzlzaono7b5o41tijjehhc', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 11, 51, 1, 580000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Internal Server Error: /admin/api
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\code\python\p2018\packages\quicky\api.py", line 83, in call
+    raise ex
+NameError: global name 'sys' is not defined
+Internal Server Error: /admin/pages/roles
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages\quicky\view.py", line 56, in exec_request
+    return fn(request, **kwargs)
+  File "E:\code\python\p2018\apps\admin\views.py", line 80, in load_page
+    "path":path.lower()
+  File "E:\code\python\p2018\packages\quicky\extens.py", line 141, in render
+    return HttpResponse(mylookup.get_template(fileName).render(**render_model))
+  File "E:\code\python\p2018\venv1\lib\site-packages\mako\lookup.py", line 247, in get_template
+    return self._check(uri, self._collection[uri])
+TypeError: unhashable type: 'dict'
+django_session.find (0.00) {'_id': 'cgidaqz4h8xzlzaono7b5o41tijjehhc', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 11, 51, 30, 900000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Internal Server Error: /admin/api
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\code\python\p2018\packages\quicky\api.py", line 83, in call
+    raise ex
+NameError: global name 'sys' is not defined
+Not Found: /admin/static/angular.min.js.map
+Not Found: /polyfills/promise-6.1.0.js.map
+Internal Server Error: /admin/pages/roles
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages\quicky\view.py", line 56, in exec_request
+    return fn(request, **kwargs)
+  File "E:\code\python\p2018\apps\admin\views.py", line 80, in load_page
+    "path":path.lower()
+  File "E:\code\python\p2018\packages\quicky\extens.py", line 141, in render
+    return HttpResponse(mylookup.get_template(fileName).render(**render_model))
+  File "E:\code\python\p2018\venv1\lib\site-packages\mako\lookup.py", line 247, in get_template
+    return self._check(uri, self._collection[uri])
+TypeError: unhashable type: 'dict'
+django_session.find (0.00) {'_id': 'cgidaqz4h8xzlzaono7b5o41tijjehhc', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 11, 51, 40, 846000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Internal Server Error: /admin/api
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\code\python\p2018\packages\quicky\api.py", line 83, in call
+    raise ex
+NameError: global name 'sys' is not defined
+Internal Server Error: /admin/pages/roles
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages\quicky\view.py", line 56, in exec_request
+    return fn(request, **kwargs)
+  File "E:\code\python\p2018\apps\admin\views.py", line 80, in load_page
+    "path":path.lower()
+  File "E:\code\python\p2018\packages\quicky\extens.py", line 141, in render
+    return HttpResponse(mylookup.get_template(fileName).render(**render_model))
+  File "E:\code\python\p2018\venv1\lib\site-packages\mako\lookup.py", line 247, in get_template
+    return self._check(uri, self._collection[uri])
+TypeError: unhashable type: 'dict'
+django_session.find (0.00) {'_id': 'cgidaqz4h8xzlzaono7b5o41tijjehhc', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 11, 52, 6, 868000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Internal Server Error: /admin/api
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\code\python\p2018\packages\quicky\api.py", line 83, in call
+    raise ex
+NameError: global name 'sys' is not defined
+Internal Server Error: /admin/pages/roles
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages\quicky\view.py", line 56, in exec_request
+    return fn(request, **kwargs)
+  File "E:\code\python\p2018\apps\admin\views.py", line 80, in load_page
+    "path":path.lower()
+  File "E:\code\python\p2018\packages\quicky\extens.py", line 141, in render
+    return HttpResponse(mylookup.get_template(fileName).render(**render_model))
+  File "E:\code\python\p2018\venv1\lib\site-packages\mako\lookup.py", line 247, in get_template
+    return self._check(uri, self._collection[uri])
+TypeError: unhashable type: 'dict'
+django_session.find (0.00) {'_id': 'cgidaqz4h8xzlzaono7b5o41tijjehhc', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 11, 52, 53, 407000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'cgidaqz4h8xzlzaono7b5o41tijjehhc', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 11, 53, 22, 922000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'cgidaqz4h8xzlzaono7b5o41tijjehhc', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 11, 55, 15, 952000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'cgidaqz4h8xzlzaono7b5o41tijjehhc', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 11, 55, 37, 477000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'cgidaqz4h8xzlzaono7b5o41tijjehhc', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 11, 55, 57, 630000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'cgidaqz4h8xzlzaono7b5o41tijjehhc', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 12, 4, 59, 102000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Internal Server Error: /admin/pages/roles
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages\quicky\view.py", line 56, in exec_request
+    return fn(request, **kwargs)
+  File "E:\code\python\p2018\apps\admin\views.py", line 80, in load_page
+    "path":path.lower()
+  File "E:\code\python\p2018\packages\quicky\extens.py", line 141, in render
+    return HttpResponse(mylookup.get_template(fileName).render(**render_model))
+  File "E:\code\python\p2018\venv1\lib\site-packages\mako\lookup.py", line 247, in get_template
+    return self._check(uri, self._collection[uri])
+TypeError: unhashable type: 'dict'
+Not Found: /admin/static/angular.min.js.map
+Not Found: /polyfills/promise-6.1.0.js.map
+django_session.find (0.00) {'_id': 'cgidaqz4h8xzlzaono7b5o41tijjehhc', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 12, 5, 19, 742000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Internal Server Error: /admin/pages/roles
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages\quicky\view.py", line 56, in exec_request
+    return fn(request, **kwargs)
+  File "E:\code\python\p2018\apps\admin\views.py", line 80, in load_page
+    "path":path.lower()
+  File "E:\code\python\p2018\packages\quicky\extens.py", line 141, in render
+    return HttpResponse(mylookup.get_template(fileName).render(**render_model))
+  File "E:\code\python\p2018\venv1\lib\site-packages\mako\lookup.py", line 247, in get_template
+    return self._check(uri, self._collection[uri])
+TypeError: unhashable type: 'dict'
+django_session.find (0.00) {'_id': 'cgidaqz4h8xzlzaono7b5o41tijjehhc', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 12, 5, 55, 755000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Internal Server Error: /admin/pages/roles
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages\quicky\view.py", line 56, in exec_request
+    return fn(request, **kwargs)
+  File "E:\code\python\p2018\apps\admin\views.py", line 80, in load_page
+    "path":path.lower()
+  File "E:\code\python\p2018\packages\quicky\extens.py", line 141, in render
+    output_encoding='utf-8',
+  File "E:\code\python\p2018\venv1\lib\site-packages\mako\lookup.py", line 247, in get_template
+    return self._check(uri, self._collection[uri])
+TypeError: unhashable type: 'dict'
+Not Found: /admin/static/angular.min.js.map
+Not Found: /polyfills/promise-6.1.0.js.map
+django_session.find (0.00) {'_id': 'cgidaqz4h8xzlzaono7b5o41tijjehhc', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 12, 15, 20, 272000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'cgidaqz4h8xzlzaono7b5o41tijjehhc', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 12, 20, 15, 927000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Internal Server Error: /admin/api
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\code\python\p2018\packages\quicky\api.py", line 83, in call
+    raise ex
+Exception: 'admin.api.roles/get_list' was not found
+django_session.find (0.00) {'_id': 'cgidaqz4h8xzlzaono7b5o41tijjehhc', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 12, 20, 26, 20000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Not Found: /admin/static/angular.min.js.map
+Not Found: /polyfills/promise-6.1.0.js.map
+django_session.find (0.00) {'_id': 'cgidaqz4h8xzlzaono7b5o41tijjehhc', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 12, 23, 23, 481000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.save (0.00) {'_id': 'cgidaqz4h8xzlzaono7b5o41tijjehhc', 'expire_date': datetime.datetime(2018, 5, 15, 12, 24, 37, 447000, tzinfo=<UTC>), 'session_data': u'MjY1MGI5ZjE5YWFjZTM1OTM5NmFkNjA4ODFhYTVmNzUxZDA3ZTkxMjp7fQ=='}
+django_session.find (0.00) {'_id': 'cgidaqz4h8xzlzaono7b5o41tijjehhc', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 12, 24, 37, 802000, tzinfo=<UTC>)}}
+django_session.find (0.00) {'_id': 'cgidaqz4h8xzlzaono7b5o41tijjehhc', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 12, 25, 49, 782000, tzinfo=<UTC>)}}
+django_session.find (0.00) {'_id': 'cgidaqz4h8xzlzaono7b5o41tijjehhc'}
+django_session.remove (0.00) {'_id': {'$in': [u'cgidaqz4h8xzlzaono7b5o41tijjehhc']}}
+django_session.save (0.00) {'_id': u'ou4g5f4ayu1luzcqwu9r6r2fucwvp4gu', 'expire_date': datetime.datetime(2018, 5, 15, 12, 25, 49, 800000, tzinfo=<UTC>), 'session_data': u'MjY1MGI5ZjE5YWFjZTM1OTM5NmFkNjA4ODFhYTVmNzUxZDA3ZTkxMjp7fQ=='}
+django_session.find (0.00) {'_id': u'ou4g5f4ayu1luzcqwu9r6r2fucwvp4gu'}
+django_session.remove (0.00) {'_id': {'$in': [u'ou4g5f4ayu1luzcqwu9r6r2fucwvp4gu']}}
+django_session.save (0.00) {'_id': u'670vok3chi9ebcj831r6587d19kdsetb', 'expire_date': datetime.datetime(2018, 5, 15, 12, 26, 9, 246000, tzinfo=<UTC>), 'session_data': u'MjY1MGI5ZjE5YWFjZTM1OTM5NmFkNjA4ODFhYTVmNzUxZDA3ZTkxMjp7fQ=='}
+django_session.save (0.00) {'_id': u'670vok3chi9ebcj831r6587d19kdsetb', 'expire_date': datetime.datetime(2018, 5, 15, 12, 27, 38, 629000, tzinfo=<UTC>), 'session_data': u'MjY1MGI5ZjE5YWFjZTM1OTM5NmFkNjA4ODFhYTVmNzUxZDA3ZTkxMjp7fQ=='}
+Not Found: /admin/admin/login
+Not Found: /admin/admin/login
+django_session.find (0.00) {'_id': '670vok3chi9ebcj831r6587d19kdsetb', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 12, 27, 52, 346000, tzinfo=<UTC>)}}
+Not Found: /admin/admin/login
+Internal Server Error: /
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages\argo\__init__.py", line 41, in exec_request
+    _on_begin_request=getattr(app,"on_begin_request")
+AttributeError: 'NoneType' object has no attribute 'on_begin_request'
+django_session.find (0.00) {'_id': '670vok3chi9ebcj831r6587d19kdsetb', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 12, 41, 6, 282000, tzinfo=<UTC>)}}
+django_session.find (0.00) {'_id': '670vok3chi9ebcj831r6587d19kdsetb', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 12, 41, 9, 611000, tzinfo=<UTC>)}}
+django_session.find (0.00) {'_id': '670vok3chi9ebcj831r6587d19kdsetb', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 12, 41, 9, 660000, tzinfo=<UTC>)}}
+django_session.find (0.00) {'_id': '670vok3chi9ebcj831r6587d19kdsetb', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 12, 41, 10, 26000, tzinfo=<UTC>)}}
+django_session.find (0.00) {'_id': '670vok3chi9ebcj831r6587d19kdsetb', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 12, 41, 10, 272000, tzinfo=<UTC>)}}
+django_session.find (0.00) {'_id': '670vok3chi9ebcj831r6587d19kdsetb', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 12, 41, 10, 380000, tzinfo=<UTC>)}}
+django_session.find (0.00) {'_id': '670vok3chi9ebcj831r6587d19kdsetb', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 12, 41, 10, 603000, tzinfo=<UTC>)}}
+django_session.find (0.00) {'_id': '670vok3chi9ebcj831r6587d19kdsetb', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 12, 41, 10, 731000, tzinfo=<UTC>)}}
+django_session.find (0.00) {'_id': '670vok3chi9ebcj831r6587d19kdsetb', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 12, 41, 10, 949000, tzinfo=<UTC>)}}
+django_session.find (0.00) {'_id': '670vok3chi9ebcj831r6587d19kdsetb', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 12, 41, 11, 73000, tzinfo=<UTC>)}}
+django_session.find (0.00) {'_id': '670vok3chi9ebcj831r6587d19kdsetb', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 12, 41, 11, 293000, tzinfo=<UTC>)}}
+django_session.find (0.00) {'_id': '670vok3chi9ebcj831r6587d19kdsetb', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 12, 41, 11, 406000, tzinfo=<UTC>)}}
+django_session.find (0.00) {'_id': '670vok3chi9ebcj831r6587d19kdsetb', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 12, 41, 11, 622000, tzinfo=<UTC>)}}
+django_session.find (0.00) {'_id': '670vok3chi9ebcj831r6587d19kdsetb', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 12, 41, 11, 738000, tzinfo=<UTC>)}}
+django_session.find (0.00) {'_id': '670vok3chi9ebcj831r6587d19kdsetb', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 12, 41, 11, 969000, tzinfo=<UTC>)}}
+django_session.find (0.00) {'_id': '670vok3chi9ebcj831r6587d19kdsetb', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 12, 41, 12, 82000, tzinfo=<UTC>)}}
+django_session.find (0.00) {'_id': '670vok3chi9ebcj831r6587d19kdsetb', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 12, 41, 12, 327000, tzinfo=<UTC>)}}
+django_session.find (0.00) {'_id': '670vok3chi9ebcj831r6587d19kdsetb', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 12, 41, 12, 413000, tzinfo=<UTC>)}}
+django_session.find (0.00) {'_id': '670vok3chi9ebcj831r6587d19kdsetb', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 12, 41, 12, 659000, tzinfo=<UTC>)}}
+django_session.find (0.00) {'_id': '670vok3chi9ebcj831r6587d19kdsetb', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 12, 41, 12, 747000, tzinfo=<UTC>)}}
+django_session.find (0.00) {'_id': '670vok3chi9ebcj831r6587d19kdsetb', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 12, 41, 13, 27000, tzinfo=<UTC>)}}
+django_session.find (0.00) {'_id': '670vok3chi9ebcj831r6587d19kdsetb', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 12, 41, 13, 138000, tzinfo=<UTC>)}}
+django_session.find (0.00) {'_id': '670vok3chi9ebcj831r6587d19kdsetb', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 12, 41, 13, 361000, tzinfo=<UTC>)}}
+django_session.find (0.00) {'_id': '670vok3chi9ebcj831r6587d19kdsetb', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 12, 41, 13, 464000, tzinfo=<UTC>)}}
+django_session.find (0.00) {'_id': '670vok3chi9ebcj831r6587d19kdsetb', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 12, 41, 13, 693000, tzinfo=<UTC>)}}
+django_session.find (0.00) {'_id': '670vok3chi9ebcj831r6587d19kdsetb', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 12, 41, 13, 788000, tzinfo=<UTC>)}}
+django_session.find (0.00) {'_id': '670vok3chi9ebcj831r6587d19kdsetb', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 12, 41, 14, 36000, tzinfo=<UTC>)}}
+django_session.find (0.00) {'_id': '670vok3chi9ebcj831r6587d19kdsetb', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 12, 41, 14, 114000, tzinfo=<UTC>)}}
+django_session.find (0.00) {'_id': '670vok3chi9ebcj831r6587d19kdsetb', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 12, 41, 14, 362000, tzinfo=<UTC>)}}
+django_session.find (0.00) {'_id': '670vok3chi9ebcj831r6587d19kdsetb', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 12, 41, 14, 440000, tzinfo=<UTC>)}}
+django_session.find (0.00) {'_id': '670vok3chi9ebcj831r6587d19kdsetb', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 12, 41, 14, 688000, tzinfo=<UTC>)}}
+django_session.find (0.00) {'_id': '670vok3chi9ebcj831r6587d19kdsetb', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 12, 41, 14, 765000, tzinfo=<UTC>)}}
+django_session.find (0.00) {'_id': '670vok3chi9ebcj831r6587d19kdsetb', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 12, 41, 15, 58000, tzinfo=<UTC>)}}
+django_session.find (0.00) {'_id': '670vok3chi9ebcj831r6587d19kdsetb', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 12, 41, 15, 96000, tzinfo=<UTC>)}}
+django_session.find (0.00) {'_id': '670vok3chi9ebcj831r6587d19kdsetb', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 12, 41, 15, 387000, tzinfo=<UTC>)}}
+django_session.find (0.00) {'_id': '670vok3chi9ebcj831r6587d19kdsetb', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 12, 41, 15, 458000, tzinfo=<UTC>)}}
+django_session.find (0.00) {'_id': '670vok3chi9ebcj831r6587d19kdsetb', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 12, 41, 15, 808000, tzinfo=<UTC>)}}
+django_session.find (0.00) {'_id': '670vok3chi9ebcj831r6587d19kdsetb', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 12, 41, 16, 73000, tzinfo=<UTC>)}}
+django_session.find (0.00) {'_id': '670vok3chi9ebcj831r6587d19kdsetb', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 12, 41, 16, 133000, tzinfo=<UTC>)}}
+django_session.find (0.00) {'_id': '670vok3chi9ebcj831r6587d19kdsetb', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 12, 41, 16, 425000, tzinfo=<UTC>)}}
+django_session.find (0.00) {'_id': '670vok3chi9ebcj831r6587d19kdsetb', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 12, 41, 16, 464000, tzinfo=<UTC>)}}
+django_session.find (0.00) {'_id': '670vok3chi9ebcj831r6587d19kdsetb', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 12, 41, 21, 528000, tzinfo=<UTC>)}}
+django_session.find (0.00) {'_id': '670vok3chi9ebcj831r6587d19kdsetb', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 12, 41, 21, 860000, tzinfo=<UTC>)}}
+django_session.find (0.00) {'_id': '670vok3chi9ebcj831r6587d19kdsetb', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 12, 41, 22, 108000, tzinfo=<UTC>)}}
+django_session.find (0.00) {'_id': '670vok3chi9ebcj831r6587d19kdsetb', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 12, 41, 22, 186000, tzinfo=<UTC>)}}
+django_session.find (0.00) {'_id': '670vok3chi9ebcj831r6587d19kdsetb', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 12, 41, 22, 474000, tzinfo=<UTC>)}}
+django_session.find (0.00) {'_id': '670vok3chi9ebcj831r6587d19kdsetb', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 12, 41, 22, 523000, tzinfo=<UTC>)}}
+django_session.find (0.00) {'_id': '670vok3chi9ebcj831r6587d19kdsetb', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 12, 41, 22, 819000, tzinfo=<UTC>)}}
+django_session.find (0.00) {'_id': '670vok3chi9ebcj831r6587d19kdsetb', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 12, 41, 22, 850000, tzinfo=<UTC>)}}
+django_session.find (0.00) {'_id': '670vok3chi9ebcj831r6587d19kdsetb', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 12, 41, 23, 161000, tzinfo=<UTC>)}}
+django_session.find (0.00) {'_id': '670vok3chi9ebcj831r6587d19kdsetb', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 12, 41, 23, 184000, tzinfo=<UTC>)}}
+django_session.find (0.00) {'_id': '670vok3chi9ebcj831r6587d19kdsetb', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 12, 41, 23, 522000, tzinfo=<UTC>)}}
+django_session.find (0.00) {'_id': '670vok3chi9ebcj831r6587d19kdsetb', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 12, 41, 23, 777000, tzinfo=<UTC>)}}
+django_session.find (0.00) {'_id': '670vok3chi9ebcj831r6587d19kdsetb', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 12, 41, 23, 852000, tzinfo=<UTC>)}}
+django_session.find (0.00) {'_id': '670vok3chi9ebcj831r6587d19kdsetb', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 12, 41, 24, 113000, tzinfo=<UTC>)}}
+django_session.find (0.00) {'_id': '670vok3chi9ebcj831r6587d19kdsetb', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 12, 41, 24, 179000, tzinfo=<UTC>)}}
+django_session.find (0.00) {'_id': '670vok3chi9ebcj831r6587d19kdsetb', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 12, 41, 24, 439000, tzinfo=<UTC>)}}
+django_session.find (0.00) {'_id': '670vok3chi9ebcj831r6587d19kdsetb', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 12, 41, 24, 505000, tzinfo=<UTC>)}}
+django_session.find (0.00) {'_id': '670vok3chi9ebcj831r6587d19kdsetb', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 12, 41, 24, 763000, tzinfo=<UTC>)}}
+django_session.find (0.00) {'_id': '670vok3chi9ebcj831r6587d19kdsetb', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 12, 41, 24, 859000, tzinfo=<UTC>)}}
+django_session.find (0.00) {'_id': '670vok3chi9ebcj831r6587d19kdsetb', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 12, 41, 25, 94000, tzinfo=<UTC>)}}
+django_session.find (0.00) {'_id': '670vok3chi9ebcj831r6587d19kdsetb', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 12, 41, 25, 202000, tzinfo=<UTC>)}}
+django_session.find (0.00) {'_id': '670vok3chi9ebcj831r6587d19kdsetb', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 12, 41, 49, 176000, tzinfo=<UTC>)}}
+django_session.find (0.00) {'_id': '670vok3chi9ebcj831r6587d19kdsetb', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 12, 43, 5, 99000, tzinfo=<UTC>)}}
+django_session.find (0.00) {'_id': '670vok3chi9ebcj831r6587d19kdsetb', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 12, 43, 16, 280000, tzinfo=<UTC>)}}
+django_session.save (0.00) {'_id': '670vok3chi9ebcj831r6587d19kdsetb', 'expire_date': datetime.datetime(2018, 5, 15, 12, 43, 18, 412000, tzinfo=<UTC>), 'session_data': u'YjAwMTViM2E0OTNjMDE0N2NjMTFiZjIxNzYzNmNkYTg5OGRiZGZjMzp7Imxhbmd1YWdlIjoiZW4ifQ=='}
+Forbidden (CSRF token missing or incorrect.): /admin/login
+Forbidden (CSRF token missing or incorrect.): /admin/login
+django_session.find (0.00) {'_id': '670vok3chi9ebcj831r6587d19kdsetb', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 12, 44, 27, 831000, tzinfo=<UTC>)}}
+Not Found: /admin/login
+django_session.find (0.00) {'_id': '670vok3chi9ebcj831r6587d19kdsetb', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 12, 44, 45, 963000, tzinfo=<UTC>)}}
+Not Found: /admin/login
+Not Found: /admin/login
+django_session.find (0.00) {'_id': '670vok3chi9ebcj831r6587d19kdsetb', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 12, 45, 14, 71000, tzinfo=<UTC>)}}
+django_session.find (0.00) {'_id': '670vok3chi9ebcj831r6587d19kdsetb', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 12, 45, 15, 828000, tzinfo=<UTC>)}}
+django_session.save (0.00) {'_id': '670vok3chi9ebcj831r6587d19kdsetb', 'expire_date': datetime.datetime(2018, 5, 15, 12, 45, 19, 273000, tzinfo=<UTC>), 'session_data': u'YjAwMTViM2E0OTNjMDE0N2NjMTFiZjIxNzYzNmNkYTg5OGRiZGZjMzp7Imxhbmd1YWdlIjoiZW4ifQ=='}
+django_session.find (0.01) {'_id': '670vok3chi9ebcj831r6587d19kdsetb', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 12, 45, 39, 571000, tzinfo=<UTC>)}}
+django_session.save (0.00) {'_id': '670vok3chi9ebcj831r6587d19kdsetb', 'expire_date': datetime.datetime(2018, 5, 15, 12, 47, 42, 212000, tzinfo=<UTC>), 'session_data': u'YjAwMTViM2E0OTNjMDE0N2NjMTFiZjIxNzYzNmNkYTg5OGRiZGZjMzp7Imxhbmd1YWdlIjoiZW4ifQ=='}
+django_session.find (0.00) {'_id': '670vok3chi9ebcj831r6587d19kdsetb', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 12, 47, 57, 885000, tzinfo=<UTC>)}}
+django_session.save (0.00) {'_id': '670vok3chi9ebcj831r6587d19kdsetb', 'expire_date': datetime.datetime(2018, 5, 15, 12, 48, 1, 117000, tzinfo=<UTC>), 'session_data': u'YjAwMTViM2E0OTNjMDE0N2NjMTFiZjIxNzYzNmNkYTg5OGRiZGZjMzp7Imxhbmd1YWdlIjoiZW4ifQ=='}
+django_session.find (0.00) {'_id': '670vok3chi9ebcj831r6587d19kdsetb', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 12, 48, 11, 524000, tzinfo=<UTC>)}}
+django_session.save (0.00) {'_id': '670vok3chi9ebcj831r6587d19kdsetb', 'expire_date': datetime.datetime(2018, 5, 15, 12, 48, 15, 227000, tzinfo=<UTC>), 'session_data': u'YjAwMTViM2E0OTNjMDE0N2NjMTFiZjIxNzYzNmNkYTg5OGRiZGZjMzp7Imxhbmd1YWdlIjoiZW4ifQ=='}
+django_session.find (0.01) {'_id': '670vok3chi9ebcj831r6587d19kdsetb', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 12, 48, 24, 842000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'username': u'sys'}
+django_session.save (0.00) {'_id': u'1oi2uer8mwj7whnqykuv6wcx0lxdbpqp', 'expire_date': datetime.datetime(2018, 5, 15, 12, 48, 31, 306000, tzinfo=<UTC>), 'session_data': u'YjAwMTViM2E0OTNjMDE0N2NjMTFiZjIxNzYzNmNkYTg5OGRiZGZjMzp7Imxhbmd1YWdlIjoiZW4ifQ=='}
+django_session.find (0.00) {'_id': '670vok3chi9ebcj831r6587d19kdsetb'}
+django_session.remove (0.00) {'_id': {'$in': [u'670vok3chi9ebcj831r6587d19kdsetb']}}
+auth_user.save (0.00) {'username': u'sys', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5ae5cb53cddcb0354c11cf6a'), 'is_active': True, 'email': u'', 'is_superuser': True, 'is_staff': False, 'last_login': datetime.datetime(2018, 5, 1, 12, 48, 31, 311000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$RM3mR6ar66t8$SRS3qPBkBP7FldCNOuunX0f1RK/YppeImlg2lVhOJZo=', 'date_joined': datetime.datetime(2018, 4, 29, 13, 40, 35, 764000, tzinfo=<UTC>)}
+django_session.save (0.00) {'_id': u'1oi2uer8mwj7whnqykuv6wcx0lxdbpqp', 'expire_date': datetime.datetime(2018, 5, 15, 12, 48, 31, 319000, tzinfo=<UTC>), 'session_data': u'MmU5YzEwYjExYTI3YTY2YmIwMGM0YmYwZWUwYmFkNmZjYzQyMzQ1OTp7Il9hdXRoX3VzZXJfYmFja2VuZCI6InBlcm1pc3Npb25fYmFja2VuZF9ub25yZWwuYmFja2VuZHMuTm9ucmVsUGVybWlzc2lvbkJhY2tlbmQiLCJfYXV0aF91c2VyX2lkIjoiNWFlNWNiNTNjZGRjYjAzNTRjMTFjZjZhIiwibGFuZ3VhZ2UiOiJlbiJ9'}
+django_session.find (0.00) {'_id': '1oi2uer8mwj7whnqykuv6wcx0lxdbpqp', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 12, 48, 36, 102000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '1oi2uer8mwj7whnqykuv6wcx0lxdbpqp', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 12, 51, 13, 799000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '1oi2uer8mwj7whnqykuv6wcx0lxdbpqp', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 12, 52, 5, 435000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '1oi2uer8mwj7whnqykuv6wcx0lxdbpqp', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 12, 52, 5, 847000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '1oi2uer8mwj7whnqykuv6wcx0lxdbpqp', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 12, 52, 37, 772000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '1oi2uer8mwj7whnqykuv6wcx0lxdbpqp', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 12, 52, 46, 949000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Internal Server Error: /admin/api
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\code\python\p2018\packages\quicky\api.py", line 83, in call
+    raise ex
+Exception: 'admin.api.roles/get_list' was not found
+django_session.find (0.00) {'_id': '1oi2uer8mwj7whnqykuv6wcx0lxdbpqp', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 12, 53, 35, 575000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '1oi2uer8mwj7whnqykuv6wcx0lxdbpqp', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 12, 53, 50, 190000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Internal Server Error: /admin/api
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\code\python\p2018\packages\quicky\api.py", line 83, in call
+    raise ex
+Exception: 'admin.api.views/get_list' was not found
+Not Found: /admin/static/angular.min.js.map
+Not Found: /polyfills/promise-6.1.0.js.map
+django_session.find (0.00) {'_id': '1oi2uer8mwj7whnqykuv6wcx0lxdbpqp', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 12, 54, 3, 739000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '1oi2uer8mwj7whnqykuv6wcx0lxdbpqp', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 12, 54, 4, 281000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Internal Server Error: /admin/api
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\code\python\p2018\packages\quicky\api.py", line 83, in call
+    raise ex
+Exception: 'admin.api.roles/get_list' was not found
+django_session.find (0.00) {'_id': '1oi2uer8mwj7whnqykuv6wcx0lxdbpqp', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 12, 57, 35, 813000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '1oi2uer8mwj7whnqykuv6wcx0lxdbpqp', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 12, 58, 35, 116000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '1oi2uer8mwj7whnqykuv6wcx0lxdbpqp', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 12, 58, 46, 629000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '1oi2uer8mwj7whnqykuv6wcx0lxdbpqp', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 12, 59, 1, 692000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '1oi2uer8mwj7whnqykuv6wcx0lxdbpqp', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 13, 0, 16, 176000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '1oi2uer8mwj7whnqykuv6wcx0lxdbpqp', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 13, 0, 19, 541000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Internal Server Error: /admin/api
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\code\python\p2018\packages\quicky\api.py", line 83, in call
+    raise ex
+Exception: 'admin.api.roles/get_list' was not found
+django_session.find (0.00) {'_id': '1oi2uer8mwj7whnqykuv6wcx0lxdbpqp', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 13, 1, 0, 961000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '1oi2uer8mwj7whnqykuv6wcx0lxdbpqp', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 13, 1, 1, 411000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Internal Server Error: /admin/api
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\code\python\p2018\packages\quicky\api.py", line 83, in call
+    raise ex
+Exception: 'admin.api.roles/get_list' was not found
+django_session.find (0.00) {'_id': '1oi2uer8mwj7whnqykuv6wcx0lxdbpqp', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 13, 3, 4, 978000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '1oi2uer8mwj7whnqykuv6wcx0lxdbpqp', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 13, 3, 5, 441000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Internal Server Error: /admin/api
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\code\python\p2018\packages\quicky\api.py", line 83, in call
+    raise ex
+Exception: 'admin.api.roles/get_list' was not found
+django_session.find (0.00) {'_id': '1oi2uer8mwj7whnqykuv6wcx0lxdbpqp', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 13, 3, 56, 51000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '1oi2uer8mwj7whnqykuv6wcx0lxdbpqp', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 13, 4, 43, 241000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '1oi2uer8mwj7whnqykuv6wcx0lxdbpqp', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 13, 5, 52, 813000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '1oi2uer8mwj7whnqykuv6wcx0lxdbpqp', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 13, 6, 0, 67000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '1oi2uer8mwj7whnqykuv6wcx0lxdbpqp', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 13, 6, 2, 989000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Internal Server Error: /admin/api
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\code\python\p2018\packages\quicky\api.py", line 83, in call
+    raise ex
+Exception: 'admin.api.roles/get_list' was not found
+django_session.find (0.00) {'_id': '1oi2uer8mwj7whnqykuv6wcx0lxdbpqp', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 13, 6, 24, 961000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '1oi2uer8mwj7whnqykuv6wcx0lxdbpqp', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 13, 7, 1, 849000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '1oi2uer8mwj7whnqykuv6wcx0lxdbpqp', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 13, 7, 7, 629000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '1oi2uer8mwj7whnqykuv6wcx0lxdbpqp', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 13, 7, 43, 250000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Internal Server Error: /admin/api
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\code\python\p2018\packages\quicky\api.py", line 83, in call
+    raise ex
+Exception: 'admin.api.views/get_list' was not found
+django_session.find (0.00) {'_id': '1oi2uer8mwj7whnqykuv6wcx0lxdbpqp', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 13, 8, 4, 652000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '1oi2uer8mwj7whnqykuv6wcx0lxdbpqp', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 13, 8, 4, 923000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '1oi2uer8mwj7whnqykuv6wcx0lxdbpqp', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 13, 8, 9, 719000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Internal Server Error: /admin/api
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\code\python\p2018\packages\quicky\api.py", line 83, in call
+    raise ex
+Exception: 'admin.api.roles/get_list' was not found
+django_session.find (0.00) {'_id': '1oi2uer8mwj7whnqykuv6wcx0lxdbpqp', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 13, 8, 12, 197000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '1oi2uer8mwj7whnqykuv6wcx0lxdbpqp', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 13, 8, 12, 550000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '1oi2uer8mwj7whnqykuv6wcx0lxdbpqp', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 13, 13, 10, 219000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Internal Server Error: /admin/
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 199, in get_response
+    response = middleware_method(request, response)
+  File "E:\code\python\p2018\packages/django\django\middleware\clickjacking.py", line 30, in process_response
+    if response.get('X-Frame-Options', None) is not None:
+AttributeError: 'bool' object has no attribute 'get'
+django_session.find (0.00) {'_id': '1oi2uer8mwj7whnqykuv6wcx0lxdbpqp', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 13, 13, 19, 361000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Internal Server Error: /admin/
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 199, in get_response
+    response = middleware_method(request, response)
+  File "E:\code\python\p2018\packages/django\django\middleware\clickjacking.py", line 30, in process_response
+    if response.get('X-Frame-Options', None) is not None:
+AttributeError: 'bool' object has no attribute 'get'
+django_session.find (0.00) {'_id': '1oi2uer8mwj7whnqykuv6wcx0lxdbpqp', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 13, 15, 12, 2000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Internal Server Error: /admin/
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 199, in get_response
+    response = middleware_method(request, response)
+  File "E:\code\python\p2018\packages/django\django\middleware\clickjacking.py", line 30, in process_response
+    if response.get('X-Frame-Options', None) is not None:
+AttributeError: 'bool' object has no attribute 'get'
+django_session.find (0.00) {'_id': '1oi2uer8mwj7whnqykuv6wcx0lxdbpqp', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 13, 15, 45, 843000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Internal Server Error: /admin/
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages\quicky\view.py", line 61, in exec_request
+    return fn(request, **kwargs)
+  File "E:\code\python\p2018\apps\admin\views.py", line 25, in index
+    "menu_items": menu_loader.load_menu_items()
+  File "E:\code\python\p2018\packages\quicky\extens.py", line 151, in render
+    return HttpResponse(mylookup.get_template(fileName).render(**render_model))
+  File "E:\code\python\p2018\venv1\lib\site-packages\mako\template.py", line 462, in render
+    return runtime._render(self, self.callable_, args, data)
+  File "E:\code\python\p2018\venv1\lib\site-packages\mako\runtime.py", line 838, in _render
+    **_kwargs_for_callable(callable_, data))
+  File "E:\code\python\p2018\venv1\lib\site-packages\mako\runtime.py", line 873, in _render_context
+    _exec_template(inherit, lclcontext, args=args, kwargs=kwargs)
+  File "E:\code\python\p2018\venv1\lib\site-packages\mako\runtime.py", line 899, in _exec_template
+    callable_(context, *args, **kwargs)
+  File "base_html", line 37, in render_body
+  File "index_html", line 40, in render_body
+  File "E:\code\python\p2018\packages\quicky\extens.py", line 107, in register_view
+    return applications.get_settings().AUTHORIZATION_ENGINE.register_view(app=get_app_name(),view=get_view_path())
+  File "E:\code\python\p2018\packages\quicky\authorize.py", line 63, in register_view
+    lock.release()
+error: release unlocked lock
+django_session.find (0.00) {'_id': '1oi2uer8mwj7whnqykuv6wcx0lxdbpqp', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 13, 16, 19, 797000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '1oi2uer8mwj7whnqykuv6wcx0lxdbpqp', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 13, 16, 20, 231000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '1oi2uer8mwj7whnqykuv6wcx0lxdbpqp', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 13, 16, 20, 292000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '1oi2uer8mwj7whnqykuv6wcx0lxdbpqp', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 13, 16, 35, 649000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Internal Server Error: /admin/api
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\code\python\p2018\packages\quicky\api.py", line 83, in call
+    raise ex
+Exception: 'admin.api.views/get_list' was not found
+django_session.find (0.00) {'_id': '1oi2uer8mwj7whnqykuv6wcx0lxdbpqp', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 13, 17, 41, 637000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '1oi2uer8mwj7whnqykuv6wcx0lxdbpqp', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 13, 17, 51, 551000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Internal Server Error: /admin/
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages\quicky\view.py", line 61, in exec_request
+    return fn(request, **kwargs)
+  File "E:\code\python\p2018\apps\admin\views.py", line 25, in index
+    "menu_items": menu_loader.load_menu_items()
+  File "E:\code\python\p2018\packages\quicky\extens.py", line 151, in render
+    return HttpResponse(mylookup.get_template(fileName).render(**render_model))
+  File "E:\code\python\p2018\venv1\lib\site-packages\mako\template.py", line 462, in render
+    return runtime._render(self, self.callable_, args, data)
+  File "E:\code\python\p2018\venv1\lib\site-packages\mako\runtime.py", line 838, in _render
+    **_kwargs_for_callable(callable_, data))
+  File "E:\code\python\p2018\venv1\lib\site-packages\mako\runtime.py", line 873, in _render_context
+    _exec_template(inherit, lclcontext, args=args, kwargs=kwargs)
+  File "E:\code\python\p2018\venv1\lib\site-packages\mako\runtime.py", line 899, in _exec_template
+    callable_(context, *args, **kwargs)
+  File "base_html", line 37, in render_body
+  File "index_html", line 40, in render_body
+  File "E:\code\python\p2018\packages\quicky\extens.py", line 107, in register_view
+    return applications.get_settings().AUTHORIZATION_ENGINE.register_view(app=get_app_name(),view=get_view_path())
+  File "E:\code\python\p2018\packages\quicky\authorize.py", line 62, in register_view
+    lock.release()
+error: release unlocked lock
+django_session.find (0.00) {'_id': '1oi2uer8mwj7whnqykuv6wcx0lxdbpqp', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 13, 20, 39, 340000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '1oi2uer8mwj7whnqykuv6wcx0lxdbpqp', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 13, 20, 40, 135000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '1oi2uer8mwj7whnqykuv6wcx0lxdbpqp', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 13, 20, 40, 361000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '1oi2uer8mwj7whnqykuv6wcx0lxdbpqp', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 13, 20, 43, 170000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '1oi2uer8mwj7whnqykuv6wcx0lxdbpqp', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 13, 20, 43, 472000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '1oi2uer8mwj7whnqykuv6wcx0lxdbpqp', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 13, 20, 43, 869000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '1oi2uer8mwj7whnqykuv6wcx0lxdbpqp', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 13, 44, 19, 280000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Internal Server Error: /admin/api
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\code\python\p2018\packages\quicky\api.py", line 83, in call
+    raise ex
+Exception: 'admin.api.views/get_list' was not found
+django_session.find (0.00) {'_id': '1oi2uer8mwj7whnqykuv6wcx0lxdbpqp', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 13, 44, 29, 358000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '1oi2uer8mwj7whnqykuv6wcx0lxdbpqp', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 13, 44, 29, 650000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '1oi2uer8mwj7whnqykuv6wcx0lxdbpqp', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 13, 44, 57, 644000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '1oi2uer8mwj7whnqykuv6wcx0lxdbpqp', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 13, 45, 0, 235000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Not Found: /admin/static/angular.min.js.map
+django_session.find (0.00) {'_id': '1oi2uer8mwj7whnqykuv6wcx0lxdbpqp', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 13, 45, 0, 401000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Not Found: /polyfills/promise-6.1.0.js.map
+django_session.find (0.00) {'_id': '1oi2uer8mwj7whnqykuv6wcx0lxdbpqp', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 13, 45, 7, 508000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '1oi2uer8mwj7whnqykuv6wcx0lxdbpqp', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 13, 45, 7, 939000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '1oi2uer8mwj7whnqykuv6wcx0lxdbpqp', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 13, 45, 7, 988000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '1oi2uer8mwj7whnqykuv6wcx0lxdbpqp', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 13, 45, 17, 26000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Internal Server Error: /admin/api
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\code\python\p2018\packages\quicky\api.py", line 83, in call
+    raise ex
+Exception: 'admin.api.roles/get_list' was not found
+django_session.find (0.00) {'_id': '1oi2uer8mwj7whnqykuv6wcx0lxdbpqp', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 13, 45, 20, 190000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '1oi2uer8mwj7whnqykuv6wcx0lxdbpqp', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 13, 45, 20, 553000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}

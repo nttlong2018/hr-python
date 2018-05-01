@@ -13,6 +13,7 @@ import authorization
 import applications
 import language
 from django.http import HttpResponse
+import quicky
 import sys
 __root_url__=None
 lock = threading.Lock()
@@ -37,8 +38,9 @@ def template(fn,*_path,**kwargs):
     fn.__dict__.update({"__params__": _path})
     def exec_request(request, **kwargs):
         app = applications.get_app_by_file(fn.func_code.co_filename)
-        if app.on_begin_request!=None and callable(app.on_begin_request):
-            app.on_begin_request(request)
+        _on_begin_request=getattr(app,"on_begin_request")
+        if _on_begin_request!=None and callable(_on_begin_request):
+            _on_begin_request(request)
 
         file_path=fn.__dict__["__params__"]
         auth_path = None
@@ -119,7 +121,9 @@ def template(fn,*_path,**kwargs):
                 "templates": app.template_dir,
                 "static": app.client_static,
                 "application": app,
-                "get_user":get_user
+                "get_user":get_user,
+                "get_api_path":get_api_path,
+                "get_api_key":get_api_key
 
             })
         def get_abs_url():
@@ -230,6 +234,12 @@ def template(fn,*_path,**kwargs):
             return request.build_absolute_uri(request.get_full_path())
         def get_user():
             return request.user
+        def get_api_key(path):
+            from quicky import api
+            return api.get_api_key(path)
+        def get_api_path(id):
+            from quicky import api
+            return api.get_api_path(id)
 
         setattr(request,"render", render)
         setattr(request,"set_auth", set_auth)
@@ -248,6 +258,8 @@ def template(fn,*_path,**kwargs):
         setattr(request,"encode_uri",encode_uri)
         setattr(request,"get_raw_url",get_raw_url)
         setattr(request, "get_user", get_user)
+        setattr(request,"get_api_key",get_api_key)
+        setattr(request, "get_api_path", get_api_path)
         _url_login = ""
         if login_path!=None:
             if login_path[0:2] == "./":

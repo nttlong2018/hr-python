@@ -76,7 +76,10 @@ def render(render_config):
             "get_app_host":http_request.get_app_host,
             "get_static":http_request.get_static,
             "get_language":http_request.get_language,
-            "request":http_request
+            "request":http_request,
+            "get_api_path":http_request.get_api_path,
+            "get_api_key":http_request.get_api_key
+
         }
     # mylookup = TemplateLookup(directories=config._default_settings["TEMPLATES_DIRS"])
     if fileName!=None:
