@@ -61,7 +61,7 @@ class app_config():
         if self.host_dir == "":
             return url(r'^'+self.name+'\/static\/(?P<path>.*)$', 'django.views.static.serve',{'document_root':self.get_server_static(), 'show_indexes': True})
         else:
-            return url(r'^/static\/(?P<path>.*)$', 'django.views.static.serve',{'document_root':self.get_server_static(), 'show_indexes': True})
+            return url(r'^static\/(?P<path>.*)$', 'django.views.static.serve',{'document_root':self.get_server_static(), 'show_indexes': True})
     def get_urls(self):
         if self.urls==None:
             self.urls=[]

@@ -54,7 +54,7 @@ def template(fn,*_path,**kwargs):
 
             if login_url != None:
                 if request.user.is_anonymous():
-                    if request.path_info == login_url:
+                    if request.path_info.lower() == login_url.lower():
                         return fn(request, **kwargs)
                     else:
                         url = request.get_abs_url() + login_url
@@ -64,6 +64,8 @@ def template(fn,*_path,**kwargs):
                 if not app.settings.authenticate(request):
                     if login_url==None:
                         raise (Exception("it look like you forgot set 'login_url' in {0}/settings.py".format(app.path)))
+                    if request.path_info.lower() == login_url.lower():
+                        return fn(request, **kwargs)
                     url = request.get_abs_url() + login_url
                     url += "?next=" + request.get_abs_url() + request.path
                     return redirect(url)
