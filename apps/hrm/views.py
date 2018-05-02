@@ -9,9 +9,9 @@ from django.http import HttpResponse
 from quicky import layout_view
 import forms
 import logging
-
+from quicky import view as view_layout
 logger = logging.getLogger(__name__)
-@argo.template("index.html")
+@view_layout.template("index.html")
 def index(request):
 
     menu_items=[]
@@ -22,14 +22,14 @@ def index(request):
     )
 
 
-@argo.template("category.html")
+@view_layout.template("category.html")
 def load_categories(request,path):
     form = getattr(forms, path)
     return request.render({
         "path": path.lower(),
         "columns":form.layout.get_table_columns()
     })
-@argo.template("category-editor.html")
+@view_layout.template("category-editor.html")
 def load_category(request,path):
     form = getattr(forms, path)
     return request.render({
@@ -37,7 +37,7 @@ def load_category(request,path):
         "form": form.layout.get_form(),
         "get_col": form.layout.get_form_col
     })
-@argo.template("dynamic.html")
+@view_layout.template("dynamic.html")
 def load_page(request,path):
 
     return request.render({

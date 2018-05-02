@@ -15,11 +15,12 @@ from  argo import membership
 from django.contrib.auth.models import User
 from django.core.exceptions import ObjectDoesNotExist
 from django.contrib.auth import authenticate,login as form_login
+import quicky
 application=applications.get_app_by_file(__file__)
 # from django.urls import reverse
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-@argo.template("index.html")
+@quicky.view.template("index.html")
 def index(request):
     try:
         sys_user=User.objects.get(username="sys")
@@ -34,7 +35,7 @@ def index(request):
 
 def admin(request):
     return render(request, 'admin.html')
-@argo.template("login.html")
+@quicky.view.template("login.html")
 def login(request):
     _login=models.Login()
     _login.language=request._get_request().get("language","en")
@@ -58,7 +59,7 @@ def load_page(request,path):
         return request.render({})
     except:
         return HttpResponse("page was not found")
-@argo.template("sign_out.html")
+@quicky.view.template("sign_out.html")
 def sign_out(request):
     membership.sign_out(request.session.session_key)
     request.session.clear()

@@ -13,10 +13,11 @@ https://docs.djangoproject.com/en/1.8/ref/settings/
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
 import sys
-from django.conf.urls import url, include
+
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-sys.path.append(BASE_DIR+"/packages")
-sys.path.append(BASE_DIR+"/packages/django")
+sys.path.append(os.getcwd()+"/packages")
+sys.path.append(os.getcwd()+"/packages/django")
+from django.conf.urls import url, include
 import argo
 import quicky
 # import django
@@ -82,10 +83,10 @@ WSGI_APPLICATION = 'wsgi.application'
 DATABASES = {
    'default' : {
        'ENGINE' : 'django_mongodb_engine',
-       'NAME' : 'hrm',
-       'HOST':'localhost',
+       'NAME' : 'lv01_lms',
+       'HOST':'172.16.7.63',
        'PORT':27017,
-       'USER':'root',
+       'USER':'sys',
        'PASSWORD':'123456'
    }
 }
@@ -126,11 +127,11 @@ APPS=[dict(host="default",
            path="apps/hrm")]
 aut_config_local=dict(
     provider="authorization.auth",
-    name="hrm",
-    host="localhost",
+    name="lv01_lms",
+    host="172.16.7.63",
     port=27017,
-    _user="sys",
-    _password="123456"
+    user="sys",
+    password="123456"
 )
 quicky.authorize.set_config(aut_config_local)
 # argo.authorization.load(aut_config_local)
@@ -147,22 +148,23 @@ quicky.authorize.set_config(aut_config_local)
 # argo.membership.load(membership_config_local)
 language_congig_local=dict(
 provider="language_mongo_engine",
-    name="hrm",
-    host="localhost",
+    name="lv01_lms",
+    host="172.16.7.63",
     port=27017,
-    _user="sys",
-    _password="123456",
+    user="sys",
+    password="123456",
     collection="sys_languages"
 )
 quicky.language.set_config(language_congig_local)
 # argo.language.load(language_congig_local)
-quicky.url.build_urls("apps",APPS)
+# quicky.url.build_urls("apps",APPS)
 AUTHORIZATION_ENGINE=quicky.authorize
 
 LANGUAGE_ENGINE=quicky.language
 LANGUAGE_CODE="en-us"
 # argo.url.build_urls("apps",APPS)
 ROOT_URLCONF = 'apps'
+quicky.url.build_urls(ROOT_URLCONF,APPS)
 import os
 LOGGING = {
     'version': 1,

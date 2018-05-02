@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 import threading
-lock=None
+
 global lock
 lock=threading.Lock()
 _caching={}
