@@ -16,7 +16,10 @@ import sys
 from django.conf.urls import url, include
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.append(BASE_DIR+"/packages")
+sys.path.append(BASE_DIR+"/packages/django")
 import argo
+import quicky
+# import django
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.8/howto/deployment/checklist/
@@ -31,6 +34,7 @@ ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
 # Application definition
 
 INSTALLED_APPS = (
+    'permission_backend_nonrel',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -38,16 +42,18 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
 )
-
+AUTHENTICATION_BACKENDS = [
+    'permission_backend_nonrel.backends.NonrelPermissionBackend'
+]
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
+    # 'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'django.middleware.security.SecurityMiddleware',
+    # 'django.middleware.security.SecurityMiddleware',
 )
 
 
@@ -67,19 +73,28 @@ TEMPLATES = [
         },
     },
 ]
-
+SESSION_EXPIRE_AT_BROWSER_CLOSE=True
 WSGI_APPLICATION = 'wsgi.application'
 
 
 # Database
 # https://docs.djangoproject.com/en/1.8/ref/settings/#databases
-
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME':os.path.join(os.getcwd(), 'database','db.sqlite3'),
-    }
+   'default' : {
+       'ENGINE' : 'django_mongodb_engine',
+       'NAME' : 'hrm',
+       'HOST':'localhost',
+       'PORT':27017,
+       'USER':'root',
+       'PASSWORD':'123456'
+   }
 }
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME':os.path.join(os.getcwd(), 'database','db.sqlite3'),
+#     }
+# }
 
 
 # Internationalization
@@ -89,7 +104,7 @@ LANGUAGE_CODE = 'en-us'
 
 TIME_ZONE = 'UTC'
 
-USE_I18N = True
+USE_I18N = False
 
 USE_L10N = True
 
@@ -111,41 +126,61 @@ APPS=[dict(host="default",
            path="apps/hrm")]
 aut_config_local=dict(
     provider="authorization.auth",
-    name="lv01_lms",
+    name="hrm",
     host="localhost",
     port=27017,
     _user="sys",
     _password="123456"
 )
-argo.authorization.load(aut_config_local)
+quicky.authorize.set_config(aut_config_local)
+# argo.authorization.load(aut_config_local)
 
-membership_config_local=dict(
-    provider="membership_mongo",
-    name="lv01_lms",
-    host="localhost",
-    port=27017,
-    _user="sys",
-    _password="123456",
-    elasticsearch=["http://localhost:9200"]
-)
-argo.membership.load(membership_config_local)
+# membership_config_local=dict(
+#     provider="membership_mongo",
+#     name="lv01_lms",
+#     host="localhost",
+#     port=27017,
+#     _user="sys",
+#     _password="123456",
+#     elasticsearch=["http://localhost:9200"]
+# )
+# argo.membership.load(membership_config_local)
 language_congig_local=dict(
 provider="language_mongo_engine",
-    name="lv01_lms",
+    name="hrm",
     host="localhost",
     port=27017,
     _user="sys",
     _password="123456",
     collection="sys_languages"
 )
-argo.language.load(language_congig_local)
+quicky.language.set_config(language_congig_local)
+# argo.language.load(language_congig_local)
+quicky.url.build_urls("apps",APPS)
+AUTHORIZATION_ENGINE=quicky.authorize
 
-AUTHORIZATION_ENGINE=argo.authorization
-MEMBERSHIP_ENGINE=argo.membership
-LANGUAGE_ENGINE=argo.language
-
-argo.url.build_urls("apps",APPS)
+LANGUAGE_ENGINE=quicky.language
+LANGUAGE_CODE="en-us"
+# argo.url.build_urls("apps",APPS)
 ROOT_URLCONF = 'apps'
-
+import os
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'file': {
+            'level': 'DEBUG',
+            'class': 'logging.FileHandler',
+            'filename': os.getcwd()+os.sep+ 'logs'+os.sep+'debug.log',
+        },
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['file'],
+            'level': 'DEBUG',
+            'propagate': False,
+        },
+    },
+}
 
 # STATIC_ROOT = os.path.join(*(BASE_DIR.split(os.path.sep) + ['apps/static','apps/app_main/static']))

@@ -1,9 +1,12 @@
 <body>
-<%include file='views/${model["path"]+".html"}' />
+
 <script>
     (function(scope,params){
         scope.$params=params;
         scope.view_path="${get_view_path()}"
+        scope.$ws=ws(scope)
+
     })
 </script>
+<%include file='views/${model["path"]+".html"}' />
 </body>

@@ -1,7 +1,8 @@
+<div class="tile">
 <div class="row">
     <div class="col-md-12">
 
-        <div class="tile">
+
             <h3>${get_app_res("List of users")}</h3>
             <div class="table-responsive">
                 <table class="table table-bordered">
@@ -12,6 +13,9 @@
 
                     <th>${get_app_res("Full name")}</th>
                      <th>${get_app_res("Description")}</th>
+                    <th>${get_app_res("Is Active")}</th>
+                    <th>${get_app_res("Is Supper User")}</th>
+                    <th>${get_app_res("Is Staff")}</th>
                     <th>
                         <button class="btn btn-primary" ng-click="$root.$dialog($id).url('pages/users.new').done()">
                             ${get_global_res("New")}
@@ -34,6 +38,15 @@
                         {{p.description}}
                     </td>
                     <td>
+                        {{p.is_active}}
+                    </td>
+                    <td>
+                        {{p.is_superuser}}
+                    </td>
+                    <td>
+                        {{p.is_staff}}
+                    </td>
+                    <td>
                         <button class="btn btn-primary " ng-click="$root.$dialog($id).params(p).url('pages/users.new').done()">
                             ${get_global_res("Edit")}
                         </button>
@@ -43,7 +56,7 @@
                 </tbody>
                   <thead>
                     <tr>
-                    <th colspan="4"></th>
+                    <th colspan="7"></th>
                     <th>
                         <button class="btn btn-primary " ng-click="$root.$dialog($id).url('pages/users.new').done()">
                             ${get_global_res("New")}
@@ -66,14 +79,18 @@
 <script>
     (function(scope){
         scope.view_path="${get_view_path()}";
-        services=ws(scope);
+        scope.services=services=ws(scope);
         console.log(services);
         scope.$root.onSearch(function(txt){
             scope.load_data(txt);
         })
         scope.load_data=function(txt){
             services.api("admin.api.users/get_list")
-                    .data({search_text:txt
+                    .data({
+                        searchText:txt,
+                        pageSize:50,
+                        pageIndex:0
+
                     }).done().then(function(res){
                         scope.data=res;
                         console.log(res);

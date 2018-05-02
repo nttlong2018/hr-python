@@ -6,13 +6,13 @@ __menu_items__=[
             "caption":"Privileges",
             "items":[
                 {
-                    "page":"users",
+                    "page":"categories/users",
                     "caption":"Users"
                 },{
-                    "page":"roles",
+                    "page":"pages/roles",
                     "caption":"Roles"
                 },{
-                    "page":"views",
+                    "page":"pages/views",
                     "caption":"Views"
                 }
             ]

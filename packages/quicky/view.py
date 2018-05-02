@@ -2,7 +2,7 @@ from . import extens
 from . import applications
 from . import authorize
 import threading
-lock = None
+
 global lock
 lock=threading.Lock()
 _cache_view={}
@@ -22,9 +22,11 @@ def template(fn,*_path,**kwargs):
 
     app=applications.get_app_by_file(fn.func_code.co_filename)
     def exec_request(request, **kwargs):
+        from django.shortcuts import redirect
         is_allow=True
         is_public=False
         authenticate=None
+        login_url=app.get_login_url()
         if hasattr(app.settings, "is_public"):
             is_public = getattr(app.settings,"is_public")
         if hasattr(app.settings,"authenticate"):
@@ -33,25 +35,28 @@ def template(fn,*_path,**kwargs):
 
 
         extens.apply(request,_path,app)
-        if not _cache_view.has_key(app.name):
-            lock.acquire()
-            _cache_view.update({app.name:{}})
-            lock.release()
-        if not _cache_view[app.name].has_key(request.get_view_path()):
-            try:
-                lock.acquire()
+        if type(_path) is dict:
+            if _path.get("is_public",False):
+                return fn(request, **kwargs)
+            elif _path.get("login_url",None)!=None:
+                if app.host_dir!="":
+                    login_url="/"+app.host_dir+"/"+ _path["login_url"]
+                else:
+                    login_url = "/" + _path["login_url"]
 
-                ret=authorize.register_view(
-                    app=app.name,
-                    view=request.get_view_path()
-                )
-                _cache_view[app.name].update({
-                    request.get_view_path(): ret
-                })
-                lock.release()
-            except Exception as ex:
-                lock.release()
-                raise ex
+        if login_url!=None:
+            if request.user.is_anonymous():
+                if request.path_info==login_url:
+                    return fn(request, **kwargs)
+                else:
+                    url=request.get_abs_url()+login_url
+                    url+="?next="+request.get_abs_url()+request.path
+                    return redirect(url)
+        if hasattr(app.settings,"authenticate"):
+            if not app.settings.authenticate(request):
+                url = request.get_abs_url() + login_url
+                url += "?next=" + request.get_abs_url() + request.path
+                return redirect(url)
 
         return fn(request, **kwargs)
     return exec_request

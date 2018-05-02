@@ -1,5 +1,6 @@
 import  os
 import json
+import applications
 
 import sys
 from django.http import HttpResponse
@@ -7,7 +8,7 @@ from mako.template import Template
 from mako.lookup import TemplateLookup
 from . import language as lang_manager
 import threading
-lock = None
+
 global lock
 lock=threading.Lock()
 from datetime import date, datetime
@@ -33,10 +34,16 @@ def get_language_item(language,app_name,view,key,value):
             raise ex
     return _language_cache[hash_key]
 def apply(request,template_file,app):
-
+    import api
     from django.core.context_processors import csrf
     def get_language():
-        return request.LANGUAGE_CODE
+        if hasattr(request,"request.LANGUAGE_CODE"):
+            return request.LANGUAGE_CODE
+        else:
+            from django.utils import translation
+            return translation.get_language()
+
+
     def get_app_url(path):
         if app.name == "default":
             return get_abs_url() + (lambda: "" if path == "" else "/" + path)()
@@ -92,13 +99,27 @@ def apply(request,template_file,app):
         return app
     def get_app_name():
         return app.name
-
-
+    def get_api_key(path):
+        return api.get_api_key(path)
+    def get_api_path(id):
+        return api.get_api_path(id)
+    def register_view():
+        return applications.get_settings().AUTHORIZATION_ENGINE.register_view(app=get_app_name(),view=get_view_path())
 
     def render(model):
-        fileName = template_file
+        login_page=None
+        is_public=None
+        if type(template_file) is dict:
+            fileName=template_file["file"]
+            login_page=template_file.get("login",None)
+            is_public = template_file.get("is_public", False)
+        else:
+            fileName = template_file
         def get_csrftoken():
-            return csrf(request)["csrf_token"]
+            if type(csrf(request)["csrf_token"]) is str:
+                return csrf(request)["csrf_token"]
+            else:
+                return csrf(request)["csrf_token"].encode()
 
         render_model = {
             "get_res": get_res,
@@ -115,12 +136,10 @@ def apply(request,template_file,app):
             "get_static": get_static,
             "get_language": get_language,
             "template_file": template_file,
+            "get_api_key":get_api_key,
+            "get_api_path":get_api_path,
+            "register_view":register_view
         }
-
-
-
-
-
         # mylookup = TemplateLookup(directories=config._default_settings["TEMPLATES_DIRS"])
         if fileName != None:
             mylookup = TemplateLookup(directories=[os.getcwd()+"/"+request.get_app().template_dir],
@@ -139,6 +158,7 @@ def apply(request,template_file,app):
                                       )
             return HttpResponse(mylookup.get_template(fileName).render(**render_model))
 
+
     setattr(request,"template_file",template_file)
     setattr(request, "render", render)
     setattr(request, "get_user", get_user)
@@ -153,6 +173,9 @@ def apply(request,template_file,app):
     setattr(request, "get_app_url", get_app_url)
     setattr(request,"get_language",get_language)
     setattr(request, "get_app_name", get_app_name)
+    setattr(request, "get_api_key", get_api_key)
+    setattr(request, "get_api_path", get_api_path)
+    setattr(request,"register_view",register_view)
 
 
 

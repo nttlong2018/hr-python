@@ -10,7 +10,7 @@ from datetime import date, datetime
 import sqlalchemy
 from bson.objectid import ObjectId
 import importlib
-
+from mako import exceptions
 _host_directory=None
 _utilities_json_config_cache=dict()
 _language_engine_module=None
@@ -52,7 +52,9 @@ def render(render_config):
 
 
     def get_csrftoken():
-        return  csrf(http_request)["csrf_token"]
+        # return  csrf(http_request)["csrf_token"]
+        return csrf(http_request)["csrf_token"].encode()
+
     def get_user():
         if http_request.session.has_key('authenticate'):
             if http_request.session['authenticate'].has_key("user"):
@@ -69,11 +71,15 @@ def render(render_config):
             "get_csrftoken":get_csrftoken,
             "model":model,
             "get_view_path":http_request.get_view_path,
-            "get_user":get_user,
+
             "get_app_url":http_request.get_app_url,
             "get_app_host":http_request.get_app_host,
             "get_static":http_request.get_static,
-            "get_language":http_request.get_language
+            "get_language":http_request.get_language,
+            "request":http_request,
+            "get_api_path":http_request.get_api_path,
+            "get_api_key":http_request.get_api_key
+
         }
     # mylookup = TemplateLookup(directories=config._default_settings["TEMPLATES_DIRS"])
     if fileName!=None:
@@ -83,7 +89,20 @@ def render(render_config):
                                       output_encoding='utf-8',
                                       encoding_errors='replace'
                                       )
-            return HttpResponse(mylookup.get_template(fileName).render(**render_model))
+            ret_content=None
+            try:
+                ret_content = mylookup.get_template(fileName).render(**render_model)
+            except exceptions.MakoException as ex:
+                logger.debug(exceptions.html_error_template().render())
+                raise ex
+
+
+            try:
+
+                return HttpResponse(ret_content)
+            except Exception as ex:
+                logger.debug(ex)
+                raise ex
     else:
         mylookup = TemplateLookup(directories=["apps/" + render_config["templates"]],
                                   default_filters=['decode.utf8'],
@@ -109,7 +128,7 @@ def to_json(ret):
 
 
             if type(ret[0]) is dict:
-                ret_data=[json.loads(json.dumps(r,default=json_serial)) for r in ret]
+                ret_data=json.dumps(ret,default=json_serial)
             else:
                 ret_data=json.dumps([r.__dict__ for r in ret],default=json_serial)
     else:

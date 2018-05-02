@@ -8,7 +8,7 @@
 
     <main class="app-content" style="margin-left:0 !important;overflow-y:auto">
 
-        <div c-template url="${get_abs_url()}/${get_app_host()}/pages/{{$root.page}}" ng-if="$root.page">
+        <div c-template c-template url="${get_app_url('')}/{{$root.page}}" ng-if="$root.page">
 
         </div>
 
@@ -17,8 +17,31 @@
  <script>
       var app=angular.module("admin",["c-ui"]);
       app.controller("admin",["$dialog","$scope",function($dialog,$scope){
+            $scope.VIEW_ID="${register_view()}"
           $dialog($scope)
-          ws_set_url("${get_abs_url()}/${get_app_host()}/api")
+        $scope.$root.error=function(msg){
+            bootoast.toast({
+                message: msg,
+                 position: 'top',
+                 type:"error"
+            });
+        }
+        $scope.$root.success=function(msg){
+            bootoast.toast({
+                 message: msg,
+                 position: 'top',
+                 type:"success"
+            });
+        }
+        ws_set_url("${get_app_url('api')}")
+        ws_onBeforeCall(function(){
+            mask=$("<div class='mask'></div>")
+            mask.appendTo("body");
+            return mask
+        });
+        ws_onAfterCall(function(mask){
+            mask.remove();
+        })
           history_navigator($scope.$root);
           $scope.$root.$history.change(function(data){
              $scope._onSearch=undefined;

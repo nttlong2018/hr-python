@@ -8,10 +8,12 @@ from django.views.decorators.csrf import csrf_exempt
 from django.http import HttpResponse
 from quicky import layout_view
 import forms
+import logging
 
+logger = logging.getLogger(__name__)
 @argo.template("index.html")
 def index(request):
-    txt=request.get_app_res("Tỉnh thành")
+
     menu_items=[]
     return request.render(
         dict(
@@ -44,15 +46,8 @@ def load_page(request,path):
 @require_http_methods(["POST"])
 @csrf_exempt
 def api(request):
-    login_info=argo.get_settings().MEMBERSHIP_ENGINE.validate_session(request.session.session_key)
-    if login_info==None:
-        return HttpResponse('401 Unauthorized', status=401)
-    if not login_info.user.isSysAdmin:
-        return HttpResponse('401 Unauthorized', status=401)
-
+    user=request.user
     post_data=json.loads(request.body)
-
-
     if not post_data.has_key("path"):
         raise Exception("Api post without using path")
     path=post_data["path"]
@@ -62,9 +57,9 @@ def api(request):
 
     view_privileges=argo.get_settings().AUTHORIZATION_ENGINE.get_view_of_user(
         view_id=view,
-        user_id=login_info.user.userId
+        user_id=user.id
     )
-    if login_info.user.isSysAdmin:
+    if user.is_superuser:
         view_privileges={"is_public":True}
     if view_privileges==None and not login_info.user.isSysAdmin:
         return HttpResponse('401 Unauthorized', status=401)
@@ -75,6 +70,8 @@ def api(request):
     try:
         mdl = importlib.import_module("hrm.bll."+module_path)
     except Exception as ex:
+        logger.debug(ex)
+
         raise Exception("import '{0}' encountered '{1}'".format(module_path,ex.message))
 
     ret=None
@@ -88,14 +85,14 @@ def api(request):
                     {
                         "privileges":view_privileges,
                         "data":post_data.get("data",{}),
-                        "user":login_info.user,
+                        "user":user,
                         "view":view
                     })
             else:
                 ret = getattr(mdl, method_path)(
                     {
                         "privileges":view_privileges,
-                        "user":login_info.user,
+                        "user":user,
                         "view":view
                     })
 

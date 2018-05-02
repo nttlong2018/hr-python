@@ -1,4 +1,5 @@
 import importlib
+
 _instance=None
 def load(*args,**kwargs):
     global _instance

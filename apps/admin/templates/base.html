@@ -23,10 +23,10 @@
     <!-- Font-icon css-->
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
       <style>
-          *{
-            font-size:8pt;
-            font-weight:normal
-          }
+          <!--*{-->
+            <!--font-size:8pt;-->
+            <!--font-weight:normal-->
+          <!--}-->
           .dialog-form .row {
             padding-bottom:4px
           }
@@ -36,8 +36,12 @@
 
       </style>
     <script src="${get_static('js/jquery-3.2.1.min.js')}"></script>
+    <script src="${get_static('toast/bootoast.min.js')}"></script>
+
     <script src="${get_static('angular.min.js')}"></script>
     <script src="${get_static('ngDirectives.js')}"></script>
+    <link href="${get_static('toast/bootoast.min.css')}" rel="stylesheet">
+    <link href="${get_static('css/site.css')}" rel="stylesheet">
 
   </head>
   <body class="app sidebar-mini rtl" ng-controller="admin">

@@ -19,7 +19,7 @@ def to_json(ret):
             ret_data="[]"
         else:
             if type(ret[0]) is dict:
-                ret_data=json.dumps(ret)
+                ret_data=json.dumps(ret,default=json_serial)
             else:
                 ret_data=json.dumps([r.__dict__ for r in ret],default=json_serial)
     else:

@@ -4,7 +4,7 @@ from . import utilities as utils
 from . import models
 from . import db
 from . import url
-from django.shortcuts import redirect
+import django
 import membership
 import threading
 import urllib
@@ -13,6 +13,7 @@ import authorization
 import applications
 import language
 from django.http import HttpResponse
+import quicky
 import sys
 __root_url__=None
 lock = threading.Lock()
@@ -28,6 +29,7 @@ def template_uri(fn):
     return layer
 @template_uri
 def template(fn,*_path,**kwargs):
+    from django.shortcuts import redirect
     if _path.__len__()==1:
         _path=_path[00]
     if _path.__len__()==0:
@@ -36,27 +38,27 @@ def template(fn,*_path,**kwargs):
     fn.__dict__.update({"__params__": _path})
     def exec_request(request, **kwargs):
         app = applications.get_app_by_file(fn.func_code.co_filename)
-        if app.on_begin_request!=None and callable(app.on_begin_request):
-            app.on_begin_request(request)
+        _on_begin_request=getattr(app,"on_begin_request")
+        if _on_begin_request!=None and callable(_on_begin_request):
+            _on_begin_request(request)
 
         file_path=fn.__dict__["__params__"]
         auth_path = None
         login_path = None
-        is_login_page=False
+        
         is_public=False
         if type(file_path) is dict:
-            is_login_page = file_path.get("is_login_page", False)
+            # is_login_page = file_path.get("is_login_page", False)
             is_public= file_path.get("is_public", False)
             auth_path = file_path.get("auth", None)
             login_path = file_path.get("login", None)
             file_path = file_path.get("file", "")
             if login_path == None and auth_path != None:
                 raise Exception("'auth' require 'login'. 'login' need to be set at '" + fn.__name__ + "'")
-        global _language_engine_module
-        global _language_resource_cache
-        language = "en"
-        if request.session.has_key("language"):
-            language = request.session["language"]
+       
+        language = django.utils.translation.get_language()
+        # if request.session.has_key("language"):
+        #     language = request.session["language"]
 
         setattr(request,"application",app)
         if auth_path==None:
@@ -119,7 +121,9 @@ def template(fn,*_path,**kwargs):
                 "templates": app.template_dir,
                 "static": app.client_static,
                 "application": app,
-                "get_user":request.get_user
+                "get_user":get_user,
+                "get_api_path":get_api_path,
+                "get_api_key":get_api_key
 
             })
         def get_abs_url():
@@ -208,7 +212,7 @@ def template(fn,*_path,**kwargs):
                         })
                     except Exception as ex:
                         raise("'get_global_res' error {0}".format(ex))
-                        pass
+                        
             return _language_resource_cache[lang_key]
         def get_app_host():
             if app.name == "default":
@@ -219,7 +223,7 @@ def template(fn,*_path,**kwargs):
             if app.name == "default":
                 return get_abs_url() + (lambda :"" if path=="" else "/"+path)()
             else:
-                return get_abs_url() + "/" + get_app_host() +  (lambda :"" if path=="" else "/"+path)()
+                return get_abs_url() + (lambda x:"/"+x if x!="" else "")(get_app_host()) +  (lambda :"" if path=="" else "/"+path)()
         def get_static(path):
             return request.get_abs_url() + ("/" + app.client_static + "/" + path).replace("//","/")
         def encode_uri(uri):
@@ -229,9 +233,13 @@ def template(fn,*_path,**kwargs):
         def get_raw_url():
             return request.build_absolute_uri(request.get_full_path())
         def get_user():
-            if not request.session.has_key("authenticate"):
-                return None
-            return request.session["authenticate"].get("user",None)
+            return request.user
+        def get_api_key(path):
+            from quicky import api
+            return api.get_api_key(path)
+        def get_api_path(id):
+            from quicky import api
+            return api.get_api_path(id)
 
         setattr(request,"render", render)
         setattr(request,"set_auth", set_auth)
@@ -250,6 +258,8 @@ def template(fn,*_path,**kwargs):
         setattr(request,"encode_uri",encode_uri)
         setattr(request,"get_raw_url",get_raw_url)
         setattr(request, "get_user", get_user)
+        setattr(request,"get_api_key",get_api_key)
+        setattr(request, "get_api_path", get_api_path)
         _url_login = ""
         if login_path!=None:
             if login_path[0:2] == "./":
@@ -273,7 +283,7 @@ def template(fn,*_path,**kwargs):
             _url_login = app.host_dir + "/" + _url_login
         _url_login="/"+_url_login
         is_login_page=request.path_info.lower()==_url_login.lower()
-        if app.authenticate != None and (not is_login_page and not is_public):
+        if app.authenticate != None and (not is_login_page):
             authorization.register(app=app.name, id=get_view_path())
             if type(app.authenticate) is str:
                 path_to_auth_fn = app.authenticate.split(".")[app.authenticate.split(".").__len__() - 1]
