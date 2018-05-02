@@ -396,3 +396,357 @@ Not Found: /admin/static/js/ws.js
 Not Found: /admin/static/toast/bootoast.min.css
 Not Found: /admin/static/css/site.css
 Not Found: /admin/static/js/ws.js
+auth_user.find (0.00) {'username': 'sys'}
+django_session.find (0.00) {'_id': '60vyrel3203a7ix25h0zlw7v9aylbrmj', 'expire_date': {'$gt': datetime.datetime(2018, 5, 2, 4, 25, 53, 771232, tzinfo=<UTC>)}}
+django_session.find (0.00) {'_id': '60vyrel3203a7ix25h0zlw7v9aylbrmj', 'expire_date': {'$gt': datetime.datetime(2018, 5, 2, 4, 25, 57, 227259, tzinfo=<UTC>)}}
+django_session.save (0.00) {'_id': '60vyrel3203a7ix25h0zlw7v9aylbrmj', 'expire_date': datetime.datetime(2018, 5, 16, 4, 25, 57, 288964, tzinfo=<UTC>), 'session_data': u'YjAwMTViM2E0OTNjMDE0N2NjMTFiZjIxNzYzNmNkYTg5OGRiZGZjMzp7Imxhbmd1YWdlIjoiZW4ifQ=='}
+django_session.find (0.00) {'_id': '60vyrel3203a7ix25h0zlw7v9aylbrmj', 'expire_date': {'$gt': datetime.datetime(2018, 5, 2, 4, 26, 4, 293649, tzinfo=<UTC>)}}
+django_session.find (0.00) {'_id': '60vyrel3203a7ix25h0zlw7v9aylbrmj', 'expire_date': {'$gt': datetime.datetime(2018, 5, 2, 4, 26, 4, 316254, tzinfo=<UTC>)}}
+django_session.save (0.00) {'_id': '60vyrel3203a7ix25h0zlw7v9aylbrmj', 'expire_date': datetime.datetime(2018, 5, 16, 4, 26, 4, 373166, tzinfo=<UTC>), 'session_data': u'YjAwMTViM2E0OTNjMDE0N2NjMTFiZjIxNzYzNmNkYTg5OGRiZGZjMzp7Imxhbmd1YWdlIjoiZW4ifQ=='}
+Not Found: /admin/static/toast/bootoast.min.js
+Not Found: /admin/static/toast/bootoast.min.css
+Not Found: /admin/static/css/site.css
+Not Found: /admin/static/js/ws.js
+Not Found: /admin/static/toast/bootoast.min.js
+Not Found: /admin/static/css/site.css
+Not Found: /admin/static/toast/bootoast.min.css
+Not Found: /admin/static/js/ws.js
+django_session.find (0.00) {'_id': '60vyrel3203a7ix25h0zlw7v9aylbrmj', 'expire_date': {'$gt': datetime.datetime(2018, 5, 2, 4, 26, 17, 857143, tzinfo=<UTC>)}}
+django_session.find (0.00) {'_id': '60vyrel3203a7ix25h0zlw7v9aylbrmj', 'expire_date': {'$gt': datetime.datetime(2018, 5, 2, 4, 26, 17, 875146, tzinfo=<UTC>)}}
+django_session.save (0.00) {'_id': '60vyrel3203a7ix25h0zlw7v9aylbrmj', 'expire_date': datetime.datetime(2018, 5, 16, 4, 26, 17, 912304, tzinfo=<UTC>), 'session_data': u'YjAwMTViM2E0OTNjMDE0N2NjMTFiZjIxNzYzNmNkYTg5OGRiZGZjMzp7Imxhbmd1YWdlIjoiZW4ifQ=='}
+Not Found: /admin/static/toast/bootoast.min.js
+Not Found: /admin/static/toast/bootoast.min.css
+Not Found: /admin/static/js/ws.js
+Not Found: /admin/static/css/site.css
+Not Found: /admin/static/toast/bootoast.min.js
+Not Found: /admin/static/toast/bootoast.min.css
+Not Found: /admin/static/css/site.css
+Not Found: /admin/static/js/ws.js
+django_session.find (0.00) {'_id': '60vyrel3203a7ix25h0zlw7v9aylbrmj', 'expire_date': {'$gt': datetime.datetime(2018, 5, 2, 4, 26, 51, 888348, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'username': u'sys'}
+django_session.save (0.00) {'_id': '60vyrel3203a7ix25h0zlw7v9aylbrmj', 'expire_date': datetime.datetime(2018, 5, 16, 4, 26, 52, 7454, tzinfo=<UTC>), 'session_data': u'YjAwMTViM2E0OTNjMDE0N2NjMTFiZjIxNzYzNmNkYTg5OGRiZGZjMzp7Imxhbmd1YWdlIjoiZW4ifQ=='}
+Not Found: /admin/static/css/site.css
+Not Found: /admin/static/toast/bootoast.min.js
+Not Found: /admin/static/toast/bootoast.min.css
+Not Found: /admin/static/js/ws.js
+Not Found: /admin/static/css/site.css
+Not Found: /admin/static/js/ws.js
+django_session.find (0.00) {'_id': '60vyrel3203a7ix25h0zlw7v9aylbrmj', 'expire_date': {'$gt': datetime.datetime(2018, 5, 2, 4, 27, 38, 850003, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'username': u'sys'}
+django_session.save (0.00) {'_id': '60vyrel3203a7ix25h0zlw7v9aylbrmj', 'expire_date': datetime.datetime(2018, 5, 16, 4, 27, 38, 966794, tzinfo=<UTC>), 'session_data': u'YjAwMTViM2E0OTNjMDE0N2NjMTFiZjIxNzYzNmNkYTg5OGRiZGZjMzp7Imxhbmd1YWdlIjoiZW4ifQ=='}
+Not Found: /admin/static/toast/bootoast.min.js
+Not Found: /admin/static/js/ws.js
+Not Found: /admin/static/toast/bootoast.min.css
+Not Found: /admin/static/css/site.css
+Not Found: /admin/static/js/ws.js
+django_session.find (0.00) {'_id': '60vyrel3203a7ix25h0zlw7v9aylbrmj', 'expire_date': {'$gt': datetime.datetime(2018, 5, 2, 4, 27, 44, 856880, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'username': u'sys'}
+django_session.save (0.01) {'_id': '60vyrel3203a7ix25h0zlw7v9aylbrmj', 'expire_date': datetime.datetime(2018, 5, 16, 4, 27, 44, 973920, tzinfo=<UTC>), 'session_data': u'YjAwMTViM2E0OTNjMDE0N2NjMTFiZjIxNzYzNmNkYTg5OGRiZGZjMzp7Imxhbmd1YWdlIjoiZW4ifQ=='}
+Not Found: /admin/static/toast/bootoast.min.js
+Not Found: /admin/static/css/site.css
+Not Found: /admin/static/toast/bootoast.min.css
+Not Found: /admin/static/js/ws.js
+Not Found: /admin/static/js/ws.js
+django_session.find (0.00) {'_id': '60vyrel3203a7ix25h0zlw7v9aylbrmj', 'expire_date': {'$gt': datetime.datetime(2018, 5, 2, 4, 28, 12, 910085, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'username': u'sys'}
+django_session.save (0.00) {'_id': '60vyrel3203a7ix25h0zlw7v9aylbrmj', 'expire_date': datetime.datetime(2018, 5, 16, 4, 28, 13, 52188, tzinfo=<UTC>), 'session_data': u'YjAwMTViM2E0OTNjMDE0N2NjMTFiZjIxNzYzNmNkYTg5OGRiZGZjMzp7Imxhbmd1YWdlIjoiZW4ifQ=='}
+Not Found: /admin/static/toast/bootoast.min.js
+Not Found: /admin/static/css/site.css
+Not Found: /admin/static/toast/bootoast.min.css
+Not Found: /admin/static/js/ws.js
+auth_user.find (0.00) {'username': 'sys'}
+auth_user.save (0.01) {'username': 'sys', 'first_name': u'', 'last_name': u'', 'is_active': True, '_id': ObjectId('5ae93eda927e0076396dae43'), 'is_superuser': False, 'is_staff': False, 'last_login': datetime.datetime(2018, 5, 2, 4, 30, 18, 595106, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$yS9DDOd72DVJ$Zrr3bSGNme9Vntc76DkeOP/QjJMRcxc+Ps0C/6prAy4=', 'email': u'', 'date_joined': datetime.datetime(2018, 5, 2, 4, 30, 18, 595106, tzinfo=<UTC>)}
+auth_user.save (0.01) {'username': 'sys', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5ae93eda927e0076396dae43'), 'is_active': True, 'email': u'', 'is_superuser': False, 'is_staff': False, 'last_login': datetime.datetime(2018, 5, 2, 4, 30, 18, 595106, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$yS9DDOd72DVJ$Zrr3bSGNme9Vntc76DkeOP/QjJMRcxc+Ps0C/6prAy4=', 'date_joined': datetime.datetime(2018, 5, 2, 4, 30, 18, 595106, tzinfo=<UTC>)}
+django_session.find (0.00) {'_id': '60vyrel3203a7ix25h0zlw7v9aylbrmj', 'expire_date': {'$gt': datetime.datetime(2018, 5, 2, 4, 30, 23, 491460, tzinfo=<UTC>)}}
+django_session.find (0.00) {'_id': '60vyrel3203a7ix25h0zlw7v9aylbrmj', 'expire_date': {'$gt': datetime.datetime(2018, 5, 2, 4, 30, 23, 515172, tzinfo=<UTC>)}}
+django_session.save (0.00) {'_id': '60vyrel3203a7ix25h0zlw7v9aylbrmj', 'expire_date': datetime.datetime(2018, 5, 16, 4, 30, 23, 584177, tzinfo=<UTC>), 'session_data': u'YjAwMTViM2E0OTNjMDE0N2NjMTFiZjIxNzYzNmNkYTg5OGRiZGZjMzp7Imxhbmd1YWdlIjoiZW4ifQ=='}
+django_session.find (0.00) {'_id': '60vyrel3203a7ix25h0zlw7v9aylbrmj', 'expire_date': {'$gt': datetime.datetime(2018, 5, 2, 4, 30, 40, 428377, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'username': u'sys'}
+django_session.save (0.01) {'_id': u'swhhxfxee7mzr9xdviyd6p9odrtnq34k', 'expire_date': datetime.datetime(2018, 5, 16, 4, 30, 43, 719134, tzinfo=<UTC>), 'session_data': u'YjAwMTViM2E0OTNjMDE0N2NjMTFiZjIxNzYzNmNkYTg5OGRiZGZjMzp7Imxhbmd1YWdlIjoiZW4ifQ=='}
+django_session.find (0.00) {'_id': '60vyrel3203a7ix25h0zlw7v9aylbrmj'}
+django_session.remove (0.01) {'_id': {'$in': [u'60vyrel3203a7ix25h0zlw7v9aylbrmj']}}
+Internal Server Error: /login
+Traceback (most recent call last):
+  File "/home/hcsadmin/argo/packages/django/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/hcsadmin/argo/packages/quicky/view.py", line 74, in exec_request
+    raise (ex)
+AttributeError: 'AnonymousUser' object has no attribute 'backend'
+auth_user.find (0.00) {'username': 'sys'}
+django_session.find (0.01) {'_id': '60vyrel3203a7ix25h0zlw7v9aylbrmj', 'expire_date': {'$gt': datetime.datetime(2018, 5, 2, 4, 31, 49, 539284, tzinfo=<UTC>)}}
+django_session.save (0.00) {'_id': u'aj7hk79ot482t6oh3kmh3iku7t7sfe1k', 'expire_date': datetime.datetime(2018, 5, 16, 4, 31, 49, 565654, tzinfo=<UTC>), 'session_data': u'MjY1MGI5ZjE5YWFjZTM1OTM5NmFkNjA4ODFhYTVmNzUxZDA3ZTkxMjp7fQ=='}
+django_session.save (0.00) {'_id': u'aj7hk79ot482t6oh3kmh3iku7t7sfe1k', 'expire_date': datetime.datetime(2018, 5, 16, 4, 31, 52, 471975, tzinfo=<UTC>), 'session_data': u'MjY1MGI5ZjE5YWFjZTM1OTM5NmFkNjA4ODFhYTVmNzUxZDA3ZTkxMjp7fQ=='}
+django_session.find (0.00) {'_id': 'aj7hk79ot482t6oh3kmh3iku7t7sfe1k', 'expire_date': {'$gt': datetime.datetime(2018, 5, 2, 4, 32, 16, 694504, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'username': u'sys'}
+django_session.save (0.00) {'_id': u'qa6510kjt7icbnpdwmhg27ojae8fjlv8', 'expire_date': datetime.datetime(2018, 5, 16, 4, 32, 33, 192987, tzinfo=<UTC>), 'session_data': u'YjAwMTViM2E0OTNjMDE0N2NjMTFiZjIxNzYzNmNkYTg5OGRiZGZjMzp7Imxhbmd1YWdlIjoiZW4ifQ=='}
+django_session.find (0.00) {'_id': 'aj7hk79ot482t6oh3kmh3iku7t7sfe1k'}
+django_session.remove (0.00) {'_id': {'$in': [u'aj7hk79ot482t6oh3kmh3iku7t7sfe1k']}}
+Internal Server Error: /login
+Traceback (most recent call last):
+  File "/home/hcsadmin/argo/packages/django/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/hcsadmin/argo/packages/quicky/view.py", line 74, in exec_request
+    raise (ex)
+AttributeError: 'AnonymousUser' object has no attribute 'backend'
+django_session.find (0.00) {'_id': 'aj7hk79ot482t6oh3kmh3iku7t7sfe1k', 'expire_date': {'$gt': datetime.datetime(2018, 5, 2, 4, 33, 14, 464022, tzinfo=<UTC>)}}
+django_session.find (0.00) {'_id': 'aj7hk79ot482t6oh3kmh3iku7t7sfe1k', 'expire_date': {'$gt': datetime.datetime(2018, 5, 2, 4, 33, 14, 466420, tzinfo=<UTC>)}}
+django_session.find (0.01) {'_id': 'aj7hk79ot482t6oh3kmh3iku7t7sfe1k', 'expire_date': {'$gt': datetime.datetime(2018, 5, 2, 4, 33, 14, 460895, tzinfo=<UTC>)}}
+django_session.save (0.01) {'_id': u'0rzh3ycfsuod82n2w4yzp74yayvy4114', 'expire_date': datetime.datetime(2018, 5, 16, 4, 33, 14, 474739, tzinfo=<UTC>), 'session_data': u'MjY1MGI5ZjE5YWFjZTM1OTM5NmFkNjA4ODFhYTVmNzUxZDA3ZTkxMjp7fQ=='}
+django_session.save (0.00) {'_id': u'qe940ch717a81oudfxh1u6wwyxq4uz3f', 'expire_date': datetime.datetime(2018, 5, 16, 4, 33, 14, 478571, tzinfo=<UTC>), 'session_data': u'MjY1MGI5ZjE5YWFjZTM1OTM5NmFkNjA4ODFhYTVmNzUxZDA3ZTkxMjp7fQ=='}
+django_session.save (0.03) {'_id': u'gde96y13ko6buh0w8aqbjt5yv27ihmok', 'expire_date': datetime.datetime(2018, 5, 16, 4, 33, 14, 477224, tzinfo=<UTC>), 'session_data': u'MjY1MGI5ZjE5YWFjZTM1OTM5NmFkNjA4ODFhYTVmNzUxZDA3ZTkxMjp7fQ=='}
+django_session.save (0.00) {'_id': u'qe940ch717a81oudfxh1u6wwyxq4uz3f', 'expire_date': datetime.datetime(2018, 5, 16, 4, 33, 14, 611676, tzinfo=<UTC>), 'session_data': u'YjAwMTViM2E0OTNjMDE0N2NjMTFiZjIxNzYzNmNkYTg5OGRiZGZjMzp7Imxhbmd1YWdlIjoiZW4ifQ=='}
+django_session.save (0.00) {'_id': u'gde96y13ko6buh0w8aqbjt5yv27ihmok', 'expire_date': datetime.datetime(2018, 5, 16, 4, 33, 14, 610685, tzinfo=<UTC>), 'session_data': u'YjAwMTViM2E0OTNjMDE0N2NjMTFiZjIxNzYzNmNkYTg5OGRiZGZjMzp7Imxhbmd1YWdlIjoiZW4ifQ=='}
+django_session.save (0.00) {'_id': u'0rzh3ycfsuod82n2w4yzp74yayvy4114', 'expire_date': datetime.datetime(2018, 5, 16, 4, 33, 14, 613045, tzinfo=<UTC>), 'session_data': u'YjAwMTViM2E0OTNjMDE0N2NjMTFiZjIxNzYzNmNkYTg5OGRiZGZjMzp7Imxhbmd1YWdlIjoiZW4ifQ=='}
+django_session.find (0.00) {'_id': 'gde96y13ko6buh0w8aqbjt5yv27ihmok', 'expire_date': {'$gt': datetime.datetime(2018, 5, 2, 4, 33, 29, 528029, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'username': u'sys'}
+django_session.save (0.00) {'_id': u'dnwbr4o5fhv46dqcvbte0zqojfh2fkfb', 'expire_date': datetime.datetime(2018, 5, 16, 4, 33, 29, 604596, tzinfo=<UTC>), 'session_data': u'YjAwMTViM2E0OTNjMDE0N2NjMTFiZjIxNzYzNmNkYTg5OGRiZGZjMzp7Imxhbmd1YWdlIjoiZW4ifQ=='}
+django_session.find (0.00) {'_id': 'gde96y13ko6buh0w8aqbjt5yv27ihmok'}
+django_session.remove (0.00) {'_id': {'$in': [u'gde96y13ko6buh0w8aqbjt5yv27ihmok']}}
+auth_user.save (0.00) {'username': u'sys', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5ae93eda927e0076396dae43'), 'is_active': True, 'email': u'', 'is_superuser': False, 'is_staff': False, 'last_login': datetime.datetime(2018, 5, 2, 4, 33, 29, 610848, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$yS9DDOd72DVJ$Zrr3bSGNme9Vntc76DkeOP/QjJMRcxc+Ps0C/6prAy4=', 'date_joined': datetime.datetime(2018, 5, 2, 4, 30, 18, 595000, tzinfo=<LocalTimezone>)}
+django_session.save (0.00) {'_id': u'dnwbr4o5fhv46dqcvbte0zqojfh2fkfb', 'expire_date': datetime.datetime(2018, 5, 16, 4, 33, 29, 618149, tzinfo=<UTC>), 'session_data': u'NzljZDI2MzdjNjc1N2U4MjYxNzU2MzNkYWE0MmU4ZjU3MmM2MGJjMTp7Il9hdXRoX3VzZXJfYmFja2VuZCI6InBlcm1pc3Npb25fYmFja2VuZF9ub25yZWwuYmFja2VuZHMuTm9ucmVsUGVybWlzc2lvbkJhY2tlbmQiLCJfYXV0aF91c2VyX2lkIjoiNWFlOTNlZGE5MjdlMDA3NjM5NmRhZTQzIiwibGFuZ3VhZ2UiOiJlbiJ9'}
+auth_user.find (0.00) {'username': 'sys'}
+django_session.find (0.00) {'_id': 'dnwbr4o5fhv46dqcvbte0zqojfh2fkfb', 'expire_date': {'$gt': datetime.datetime(2018, 5, 2, 4, 33, 30, 690243, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+Internal Server Error: /
+Traceback (most recent call last):
+  File "/home/hcsadmin/argo/packages/django/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/hcsadmin/argo/packages/quicky/view.py", line 74, in exec_request
+    raise (ex)
+AttributeError: 'Undefined' object has no attribute 'user'
+auth_user.find (0.00) {'username': 'sys'}
+django_session.find (0.00) {'_id': 'dnwbr4o5fhv46dqcvbte0zqojfh2fkfb', 'expire_date': {'$gt': datetime.datetime(2018, 5, 2, 4, 33, 46, 85298, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+Internal Server Error: /
+Traceback (most recent call last):
+  File "/home/hcsadmin/argo/packages/django/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/hcsadmin/argo/packages/quicky/view.py", line 74, in exec_request
+    raise (ex)
+AttributeError: 'Undefined' object has no attribute 'user'
+auth_user.find (0.00) {'username': 'sys'}
+django_session.find (0.00) {'_id': 'dnwbr4o5fhv46dqcvbte0zqojfh2fkfb', 'expire_date': {'$gt': datetime.datetime(2018, 5, 2, 4, 34, 51, 930678, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+Internal Server Error: /
+Traceback (most recent call last):
+  File "/home/hcsadmin/argo/packages/django/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/hcsadmin/argo/packages/quicky/view.py", line 74, in exec_request
+    raise (ex)
+AttributeError: 'Undefined' object has no attribute 'user'
+auth_user.find (0.01) {'username': 'sys'}
+django_session.find (0.01) {'_id': 'dnwbr4o5fhv46dqcvbte0zqojfh2fkfb', 'expire_date': {'$gt': datetime.datetime(2018, 5, 2, 4, 39, 32, 79126, tzinfo=<UTC>)}}
+auth_user.find (0.01) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+Internal Server Error: /
+Traceback (most recent call last):
+  File "/home/hcsadmin/argo/packages/django/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/hcsadmin/argo/packages/quicky/view.py", line 74, in exec_request
+    raise (ex)
+AttributeError: 'Undefined' object has no attribute 'user'
+auth_user.find (0.00) {'username': 'sys'}
+django_session.find (0.00) {'_id': 'dnwbr4o5fhv46dqcvbte0zqojfh2fkfb', 'expire_date': {'$gt': datetime.datetime(2018, 5, 2, 4, 40, 24, 643941, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+Internal Server Error: /
+Traceback (most recent call last):
+  File "/home/hcsadmin/argo/packages/django/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/hcsadmin/argo/packages/quicky/view.py", line 74, in exec_request
+    raise (ex)
+AttributeError: 'Undefined' object has no attribute 'user'
+auth_user.find (0.00) {'username': 'sys'}
+django_session.find (0.00) {'_id': 'dnwbr4o5fhv46dqcvbte0zqojfh2fkfb', 'expire_date': {'$gt': datetime.datetime(2018, 5, 2, 4, 42, 19, 319364, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+Internal Server Error: /
+Traceback (most recent call last):
+  File "/home/hcsadmin/argo/packages/django/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/hcsadmin/argo/packages/quicky/view.py", line 74, in exec_request
+    raise (ex)
+AttributeError: 'Undefined' object has no attribute 'user'
+auth_user.find (0.00) {'username': 'sys'}
+django_session.find (0.00) {'_id': 'dnwbr4o5fhv46dqcvbte0zqojfh2fkfb', 'expire_date': {'$gt': datetime.datetime(2018, 5, 2, 4, 42, 36, 303869, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+Internal Server Error: /
+Traceback (most recent call last):
+  File "/home/hcsadmin/argo/packages/django/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/hcsadmin/argo/packages/quicky/view.py", line 74, in exec_request
+    raise (ex)
+AttributeError: 'Undefined' object has no attribute 'user'
+auth_user.find (0.00) {'username': 'sys'}
+django_session.find (0.00) {'_id': 'dnwbr4o5fhv46dqcvbte0zqojfh2fkfb', 'expire_date': {'$gt': datetime.datetime(2018, 5, 2, 4, 44, 37, 464958, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+Internal Server Error: /
+Traceback (most recent call last):
+  File "/home/hcsadmin/argo/packages/django/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/hcsadmin/argo/packages/quicky/view.py", line 74, in exec_request
+    raise (ex)
+Exception: None
+auth_user.find (0.00) {'username': 'sys'}
+django_session.find (0.00) {'_id': 'dnwbr4o5fhv46dqcvbte0zqojfh2fkfb', 'expire_date': {'$gt': datetime.datetime(2018, 5, 2, 4, 44, 59, 937043, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+Internal Server Error: /
+Traceback (most recent call last):
+  File "/home/hcsadmin/argo/packages/django/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/hcsadmin/argo/packages/quicky/view.py", line 74, in exec_request
+    raise (ex)
+Exception: None
+auth_user.find (0.00) {'username': 'sys'}
+django_session.find (0.00) {'_id': 'dnwbr4o5fhv46dqcvbte0zqojfh2fkfb', 'expire_date': {'$gt': datetime.datetime(2018, 5, 2, 4, 45, 44, 380199, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+Internal Server Error: /
+Traceback (most recent call last):
+  File "/home/hcsadmin/argo/packages/django/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/hcsadmin/argo/packages/quicky/view.py", line 74, in exec_request
+    raise (ex)
+Exception: 
+
+
+<html>
+<head>
+    <title>Mako Runtime Error</title>
+    <style>
+        body { font-family:verdana; margin:10px 30px 10px 30px;}
+        .stacktrace { margin:5px 5px 5px 5px; }
+        .highlight { padding:0px 10px 0px 10px; background-color:#9F9FDF; }
+        .nonhighlight { padding:0px; background-color:#DFDFDF; }
+        .sample { padding:10px; margin:10px 10px 10px 10px;
+                  font-family:monospace; }
+        .sampleline { padding:0px 10px 0px 10px; }
+        .sourceline { margin:5px 5px 10px 5px; font-family:monospace;}
+        .location { font-size:80%; }
+        .highlight { white-space:pre; }
+        .sampleline { white-space:pre; }
+
+
+    </style>
+</head>
+<body>
+
+<h2>Error !</h2>
+
+<h3>AttributeError: &#39;Undefined&#39; object has no attribute &#39;user&#39;</h3>
+
+    <div class="sample">
+    <div class="nonhighlight">
+    
+                    &lt;%
+    
+                        print context
+    
+                    %&gt;
+    
+    
+                  &lt;a href=&#34;#&#34; class=&#34;dropdown-toggle&#34; data-toggle=&#34;dropdown&#34; role=&#34;button&#34; aria-haspopup=&#34;true&#34; aria-expanded=&#34;false&#34;&gt;${request.user} &lt;span class=&#34;caret&#34;&gt;&lt;/span&gt;&lt;/a&gt;
+    
+    
+                  &lt;ul class=&#34;dropdown-menu&#34;&gt;
+    
+        
+    
+                    &lt;li&gt;&lt;a href=&#34;#&#34;&gt;Another action&lt;/a&gt;&lt;/li&gt;
+    
+                    &lt;li&gt;&lt;a href=&#34;#&#34;&gt;Something else here&lt;/a&gt;&lt;/li&gt;
+    
+                    &lt;li role=&#34;separator&#34; class=&#34;divider&#34;&gt;&lt;/li&gt;
+    </div>
+    </div>
+
+<div class="stacktrace">
+    <div class="location">/home/hcsadmin/argo/apps/app_main/templates/navbar-right-dropdown.html, line 7:</div>
+    <div class="nonhighlight">
+    
+      <div class="sourceline">          &lt;a href=&#34;#&#34; class=&#34;dropdown-toggle&#34; data-toggle=&#34;dropdown&#34; role=&#34;button&#34; aria-haspopup=&#34;true&#34; aria-expanded=&#34;false&#34;&gt;${request.user} &lt;span class=&#34;caret&#34;&gt;&lt;/span&gt;&lt;/a&gt;</div>
+    </div>
+    <div class="location">/home/hcsadmin/argo/uwsgi-argo/local/lib/python2.7/site-packages/mako/runtime.py, line 761:</div>
+    <div class="nonhighlight">
+    
+      <div class="sourceline">callable_(ctx, **kwargs)</div>
+    </div>
+    <div class="location">/home/hcsadmin/argo/apps/app_main/templates/navbar.html, line 33:</div>
+    <div class="nonhighlight">
+    
+      <div class="sourceline">      &lt;%include file=&#34;navbar-right-dropdown.html&#34;/&gt;</div>
+    </div>
+    <div class="location">/home/hcsadmin/argo/uwsgi-argo/local/lib/python2.7/site-packages/mako/runtime.py, line 761:</div>
+    <div class="nonhighlight">
+    
+      <div class="sourceline">callable_(ctx, **kwargs)</div>
+    </div>
+    <div class="location">/home/hcsadmin/argo/apps/app_main/templates/index.html, line 2:</div>
+    <div class="nonhighlight">
+    
+      <div class="sourceline">&lt;%include file=&#34;navbar.html&#34;/&gt;</div>
+    </div>
+    <div class="location">/home/hcsadmin/argo/apps/app_main/templates/base.html, line 22:</div>
+    <div class="nonhighlight">
+    
+      <div class="sourceline">        ${self.body()}</div>
+    </div>
+    <div class="location">/home/hcsadmin/argo/apps/app_main/templates/base.html, line 27:</div>
+    <div class="nonhighlight">
+    
+      <div class="sourceline">            &lt;/%block&gt;</div>
+    </div>
+    <div class="location">/home/hcsadmin/argo/uwsgi-argo/local/lib/python2.7/site-packages/beaker/container.py, line 380:</div>
+    <div class="nonhighlight">
+    
+      <div class="sourceline">v = self.createfunc()</div>
+    </div>
+    <div class="location">/home/hcsadmin/argo/uwsgi-argo/local/lib/python2.7/site-packages/beaker/cache.py, line 322:</div>
+    <div class="nonhighlight">
+    
+      <div class="sourceline">return self._get_value(key, **kw).get_value()</div>
+    </div>
+    <div class="location">/home/hcsadmin/argo/uwsgi-argo/local/lib/python2.7/site-packages/mako/ext/beaker_cache.py, line 64:</div>
+    <div class="nonhighlight">
+    
+      <div class="sourceline">return cache.get(key, createfunc=creation_function, **kw)</div>
+    </div>
+    <div class="location">/home/hcsadmin/argo/uwsgi-argo/local/lib/python2.7/site-packages/mako/cache.py, line 95:</div>
+    <div class="nonhighlight">
+    
+      <div class="sourceline">**self._get_cache_kw(kw, context))</div>
+    </div>
+    <div class="location">/home/hcsadmin/argo/apps/app_main/templates/base.html, line 27:</div>
+    <div class="nonhighlight">
+    
+      <div class="sourceline">            &lt;/%block&gt;</div>
+    </div>
+    <div class="location">/home/hcsadmin/argo/uwsgi-argo/local/lib/python2.7/site-packages/mako/runtime.py, line 899:</div>
+    <div class="nonhighlight">
+    
+      <div class="sourceline">callable_(context, *args, **kwargs)</div>
+    </div>
+    <div class="location">/home/hcsadmin/argo/uwsgi-argo/local/lib/python2.7/site-packages/mako/runtime.py, line 873:</div>
+    <div class="nonhighlight">
+    
+      <div class="sourceline">_exec_template(inherit, lclcontext, args=args, kwargs=kwargs)</div>
+    </div>
+    <div class="location">/home/hcsadmin/argo/uwsgi-argo/local/lib/python2.7/site-packages/mako/runtime.py, line 838:</div>
+    <div class="nonhighlight">
+    
+      <div class="sourceline">**_kwargs_for_callable(callable_, data))</div>
+    </div>
+    <div class="location">/home/hcsadmin/argo/uwsgi-argo/local/lib/python2.7/site-packages/mako/template.py, line 462:</div>
+    <div class="nonhighlight">
+    
+      <div class="sourceline">return runtime._render(self, self.callable_, args, data)</div>
+    </div>
+    <div class="location">/home/hcsadmin/argo/packages/quicky/extens.py, line 159:</div>
+    <div class="nonhighlight">
+    
+      <div class="sourceline">ret_res=mylookup.get_template(fileName).render(**render_model)</div>
+    </div>
+</div>
+
+</body>
+</html>
+
+auth_user.find (0.00) {'username': 'sys'}
+django_session.find (0.00) {'_id': 'dnwbr4o5fhv46dqcvbte0zqojfh2fkfb', 'expire_date': {'$gt': datetime.datetime(2018, 5, 2, 4, 49, 10, 737873, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}

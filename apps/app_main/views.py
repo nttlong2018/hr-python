@@ -23,9 +23,12 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 @quicky.view.template("index.html")
 def index(request):
     try:
+
         sys_user=User.objects.get(username="sys")
     except ObjectDoesNotExist as ex:
         user = User.objects.create_user('sys', '', '123456')
+        user.is_active=True
+        user.is_supperuser=True
         user.save()
     if request.user.is_anonymous():
         return redirect(request.get_app_url("login"))

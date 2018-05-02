@@ -8,7 +8,8 @@ from mako.template import Template
 from mako.lookup import TemplateLookup
 from . import language as lang_manager
 import threading
-
+import logging
+logger=logging.getLogger(__name__)
 global lock
 lock=threading.Lock()
 from datetime import date, datetime
@@ -111,6 +112,7 @@ def apply(request,template_file,app):
         return applications.get_settings().AUTHORIZATION_ENGINE.register_view(app=get_app_name(),view=get_view_path())
 
     def render(model):
+        from mako import exceptions
         login_page=None
         is_public=None
         if type(template_file) is dict:
@@ -142,17 +144,30 @@ def apply(request,template_file,app):
             "template_file": template_file,
             "get_api_key":get_api_key,
             "get_api_path":get_api_path,
-            "register_view":register_view
+            "register_view":register_view,
+            "request":request
         }
         # mylookup = TemplateLookup(directories=config._default_settings["TEMPLATES_DIRS"])
         if fileName != None:
-            mylookup = TemplateLookup(directories=[os.getcwd()+"/"+request.get_app().template_dir],
+            ret_res=None
+            mylookup = TemplateLookup(directories=[os.getcwd() + "/" + request.get_app().template_dir],
                                       default_filters=['decode.utf8'],
                                       input_encoding='utf-8',
                                       output_encoding='utf-8',
                                       encoding_errors='replace'
                                       )
-            return HttpResponse(mylookup.get_template(fileName).render(**render_model))
+            try:
+                ret_res=mylookup.get_template(fileName).render(**render_model)
+
+            except exceptions.MakoException as ex:
+                logger.debug(ex)
+                raise (ex)
+            except Exception as ex:
+                logger.debug(exceptions.html_error_template().render())
+                raise (Exception(exceptions.html_error_template().render()))
+            return HttpResponse(ret_res)
+
+
         else:
             mylookup = TemplateLookup(directories=["apps/templates"],
                                       default_filters=['decode.utf8'],
