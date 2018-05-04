@@ -45,7 +45,7 @@ def apply(request,template_file,app):
 
 
     def get_app_url(path):
-        if app.name == "default":
+        if get_app_host() == "":
             return get_abs_url() + (lambda: "" if path == "" else "/" + path)()
         else:
             return get_abs_url() + "/" + get_app_host() + (lambda: "" if path == "" else "/" + path)()
@@ -83,7 +83,10 @@ def apply(request,template_file,app):
     def get_global_res(key):
         return get_language_item(get_language(), "-", "-", key, key)
     def get_static(path):
-        return request.get_app_url("static")+"/"+path
+        if app.host_dir=="":
+            return request.get_app_url(app.name+"/static") + "/" + path
+        else:
+            return request.get_app_url("static")+"/"+path
     def get_abs_url():
         __root_url__= None
 

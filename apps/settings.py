@@ -17,7 +17,7 @@ from django.conf.urls import url, include
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.append(BASE_DIR+"/packages")
 sys.path.append(BASE_DIR+"/packages/django")
-import argo
+
 # import django
 
 # Quick-start development settings - unsuitable for production

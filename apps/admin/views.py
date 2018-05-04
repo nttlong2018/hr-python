@@ -1,7 +1,7 @@
 from django.http import HttpResponse
 from django.shortcuts import redirect
-import argo
-from argo import applications
+
+
 import membership
 import urllib
 from . import menu_loader
@@ -13,9 +13,10 @@ import json
 import importlib
 import sqlalchemy
 import authorization
-application=applications.get_app_by_file(__file__)
+
 from datetime import date, datetime
 import quicky
+application=quicky.applications.get_app_by_file(__file__)
 import forms
 import logging
 logger = logging.getLogger(__name__)

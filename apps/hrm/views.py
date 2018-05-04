@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-import argo
+
 from . import menu
 import importlib
 import json
@@ -9,9 +9,9 @@ from django.http import HttpResponse
 from quicky import layout_view
 import forms
 import logging
-
+import quicky
 logger = logging.getLogger(__name__)
-@argo.template("index.html")
+@quicky.view.template("index.html")
 def index(request):
 
     menu_items=[]
@@ -22,14 +22,14 @@ def index(request):
     )
 
 
-@argo.template("category.html")
+@quicky.view.template("category.html")
 def load_categories(request,path):
     form = getattr(forms, path)
     return request.render({
         "path": path.lower(),
         "columns":form.layout.get_table_columns()
     })
-@argo.template("category-editor.html")
+@quicky.view.template("category-editor.html")
 def load_category(request,path):
     form = getattr(forms, path)
     return request.render({
@@ -37,7 +37,7 @@ def load_category(request,path):
         "form": form.layout.get_form(),
         "get_col": form.layout.get_form_col
     })
-@argo.template("dynamic.html")
+@quicky.view.template("dynamic.html")
 def load_page(request,path):
 
     return request.render({
@@ -55,7 +55,7 @@ def api(request):
     if post_data["path"].split("/").__len__()!=2:
         raise Exception("'{0}' is invalid path, path must be */*")
 
-    view_privileges=argo.get_settings().AUTHORIZATION_ENGINE.get_view_of_user(
+    view_privileges=quicky.get_settings().AUTHORIZATION_ENGINE.get_view_of_user(
         view_id=view,
         user_id=user.id
     )
@@ -98,5 +98,5 @@ def api(request):
 
         except Exception as ex:
             raise Exception("Call  '{0}' in '{1}' encountered '{2}'".format(method_path, module_path, ex))
-    ret_data=argo.utilities.to_json(ret)
+    ret_data=quicky.serilize.to_json(ret)
     return HttpResponse(ret_data)

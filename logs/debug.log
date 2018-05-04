@@ -5337,3 +5337,69 @@ django_session.find (0.00) {'_id': '1oi2uer8mwj7whnqykuv6wcx0lxdbpqp', 'expire_d
 auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
 django_session.find (0.00) {'_id': '1oi2uer8mwj7whnqykuv6wcx0lxdbpqp', 'expire_date': {'$gt': datetime.datetime(2018, 5, 1, 14, 4, 15, 73000, tzinfo=<UTC>)}}
 auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Internal Server Error: /
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages\argo\__init__.py", line 41, in exec_request
+    _on_begin_request=getattr(app,"on_begin_request")
+AttributeError: 'NoneType' object has no attribute 'on_begin_request'
+Internal Server Error: /
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages\argo\__init__.py", line 41, in exec_request
+    _on_begin_request=getattr(app,"on_begin_request")
+AttributeError: 'NoneType' object has no attribute 'on_begin_request'
+Not Found: /favicon.ico
+Internal Server Error: /
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages\quicky\view.py", line 29, in exec_request
+    login_url=app.get_login_url()
+  File "E:\code\python\p2018\packages\quicky\app_info.py", line 79, in get_login_url
+    if hasattr(self.mdl.settings,"login_url"):
+AttributeError: 'module' object has no attribute 'settings'
+Not Found: /favicon.ico
+django_session.save (0.01) {'_id': u'thdtajrwj3bcud3393jz30496gkbolwc', 'expire_date': datetime.datetime(2018, 5, 18, 12, 13, 53, 977000, tzinfo=<UTC>), 'session_data': u'YjAwMTViM2E0OTNjMDE0N2NjMTFiZjIxNzYzNmNkYTg5OGRiZGZjMzp7Imxhbmd1YWdlIjoiZW4ifQ=='}
+django_session.find (0.00) {'_id': 'thdtajrwj3bcud3393jz30496gkbolwc', 'expire_date': {'$gt': datetime.datetime(2018, 5, 4, 12, 13, 55, 375000, tzinfo=<UTC>)}}
+django_session.find (0.00) {'_id': 'thdtajrwj3bcud3393jz30496gkbolwc', 'expire_date': {'$gt': datetime.datetime(2018, 5, 4, 12, 13, 55, 413000, tzinfo=<UTC>)}}
+django_session.save (0.00) {'_id': 'thdtajrwj3bcud3393jz30496gkbolwc', 'expire_date': datetime.datetime(2018, 5, 18, 12, 13, 55, 456000, tzinfo=<UTC>), 'session_data': u'YjAwMTViM2E0OTNjMDE0N2NjMTFiZjIxNzYzNmNkYTg5OGRiZGZjMzp7Imxhbmd1YWdlIjoiZW4ifQ=='}
+django_session.save (0.00) {'_id': u'qsm8k5xoiugprumji93hikk7koma22u9', 'expire_date': datetime.datetime(2018, 5, 18, 12, 14, 22, 798000, tzinfo=<UTC>), 'session_data': u'YjAwMTViM2E0OTNjMDE0N2NjMTFiZjIxNzYzNmNkYTg5OGRiZGZjMzp7Imxhbmd1YWdlIjoiZW4ifQ=='}
+Not Found: /favicon.ico
+Internal Server Error: /
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages\quicky\view.py", line 29, in exec_request
+    login_url=app.get_login_url()
+  File "E:\code\python\p2018\packages\quicky\app_info.py", line 79, in get_login_url
+    if hasattr(self.mdl.settings,"login_url"):
+AttributeError: 'module' object has no attribute 'settings'
+auth_user.find (0.00) {'username': 'sys'}
+django_session.find (0.00) {'_id': 'qsm8k5xoiugprumji93hikk7koma22u9', 'expire_date': {'$gt': datetime.datetime(2018, 5, 4, 12, 15, 56, 819000, tzinfo=<UTC>)}}
+Not Found: /login
+django_session.find (0.00) {'_id': 'qsm8k5xoiugprumji93hikk7koma22u9', 'expire_date': {'$gt': datetime.datetime(2018, 5, 4, 12, 16, 4, 410000, tzinfo=<UTC>)}}
+django_session.save (0.00) {'_id': 'qsm8k5xoiugprumji93hikk7koma22u9', 'expire_date': datetime.datetime(2018, 5, 18, 12, 16, 5, 607000, tzinfo=<UTC>), 'session_data': u'YjAwMTViM2E0OTNjMDE0N2NjMTFiZjIxNzYzNmNkYTg5OGRiZGZjMzp7Imxhbmd1YWdlIjoiZW4ifQ=='}
+Not Found: /static/bs/css/bootstrap.min.css
+Not Found: /static/bs/js/bootstrap.min.js
+Not Found: /static/js/jquery-3.3.1.min.js
+Not Found: /static/bs/css/bootstrap-theme.min.css
+Not Found: /static/bs/js/bootstrap.min.js
+Not Found: /static/bs/css/bootstrap.min.css
+django_session.find (0.00) {'_id': 'qsm8k5xoiugprumji93hikk7koma22u9', 'expire_date': {'$gt': datetime.datetime(2018, 5, 4, 12, 16, 42, 754000, tzinfo=<UTC>)}}
+django_session.find (0.00) {'_id': 'qsm8k5xoiugprumji93hikk7koma22u9', 'expire_date': {'$gt': datetime.datetime(2018, 5, 4, 12, 17, 31, 528000, tzinfo=<UTC>)}}
+django_session.save (0.00) {'_id': 'qsm8k5xoiugprumji93hikk7koma22u9', 'expire_date': datetime.datetime(2018, 5, 18, 12, 17, 32, 228000, tzinfo=<UTC>), 'session_data': u'YjAwMTViM2E0OTNjMDE0N2NjMTFiZjIxNzYzNmNkYTg5OGRiZGZjMzp7Imxhbmd1YWdlIjoiZW4ifQ=='}
+auth_user.find (0.00) {'username': 'sys'}
+django_session.find (0.00) {'_id': 'qsm8k5xoiugprumji93hikk7koma22u9', 'expire_date': {'$gt': datetime.datetime(2018, 5, 4, 12, 17, 36, 428000, tzinfo=<UTC>)}}
+django_session.find (0.00) {'_id': 'qsm8k5xoiugprumji93hikk7koma22u9', 'expire_date': {'$gt': datetime.datetime(2018, 5, 4, 12, 17, 36, 465000, tzinfo=<UTC>)}}
+django_session.save (0.00) {'_id': 'qsm8k5xoiugprumji93hikk7koma22u9', 'expire_date': datetime.datetime(2018, 5, 18, 12, 17, 36, 490000, tzinfo=<UTC>), 'session_data': u'YjAwMTViM2E0OTNjMDE0N2NjMTFiZjIxNzYzNmNkYTg5OGRiZGZjMzp7Imxhbmd1YWdlIjoiZW4ifQ=='}
+django_session.find (0.00) {'_id': 'qsm8k5xoiugprumji93hikk7koma22u9', 'expire_date': {'$gt': datetime.datetime(2018, 5, 4, 12, 24, 3, 508000, tzinfo=<UTC>)}}
+django_session.save (0.00) {'_id': 'qsm8k5xoiugprumji93hikk7koma22u9', 'expire_date': datetime.datetime(2018, 5, 18, 12, 24, 7, 845000, tzinfo=<UTC>), 'session_data': u'YjAwMTViM2E0OTNjMDE0N2NjMTFiZjIxNzYzNmNkYTg5OGRiZGZjMzp7Imxhbmd1YWdlIjoiZW4ifQ=='}
+django_session.find (0.00) {'_id': 'qsm8k5xoiugprumji93hikk7koma22u9', 'expire_date': {'$gt': datetime.datetime(2018, 5, 4, 12, 29, 33, 894000, tzinfo=<UTC>)}}
+django_session.save (0.00) {'_id': 'qsm8k5xoiugprumji93hikk7koma22u9', 'expire_date': datetime.datetime(2018, 5, 18, 12, 29, 34, 140000, tzinfo=<UTC>), 'session_data': u'YjAwMTViM2E0OTNjMDE0N2NjMTFiZjIxNzYzNmNkYTg5OGRiZGZjMzp7Imxhbmd1YWdlIjoiZW4ifQ=='}
+django_session.find (0.00) {'_id': 'qsm8k5xoiugprumji93hikk7koma22u9', 'expire_date': {'$gt': datetime.datetime(2018, 5, 4, 12, 33, 16, 255000, tzinfo=<UTC>)}}
+django_session.save (0.00) {'_id': 'qsm8k5xoiugprumji93hikk7koma22u9', 'expire_date': datetime.datetime(2018, 5, 18, 12, 33, 16, 412000, tzinfo=<UTC>), 'session_data': u'YjAwMTViM2E0OTNjMDE0N2NjMTFiZjIxNzYzNmNkYTg5OGRiZGZjMzp7Imxhbmd1YWdlIjoiZW4ifQ=='}
+django_session.find (0.00) {'_id': 'qsm8k5xoiugprumji93hikk7koma22u9', 'expire_date': {'$gt': datetime.datetime(2018, 5, 4, 12, 33, 18, 697000, tzinfo=<UTC>)}}
+django_session.save (0.00) {'_id': 'qsm8k5xoiugprumji93hikk7koma22u9', 'expire_date': datetime.datetime(2018, 5, 18, 12, 33, 18, 720000, tzinfo=<UTC>), 'session_data': u'YjAwMTViM2E0OTNjMDE0N2NjMTFiZjIxNzYzNmNkYTg5OGRiZGZjMzp7Imxhbmd1YWdlIjoiZW4ifQ=='}

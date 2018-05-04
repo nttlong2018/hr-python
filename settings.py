@@ -17,9 +17,9 @@ from django.conf.urls import url, include
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.append(BASE_DIR+"/packages")
 sys.path.append(BASE_DIR+"/packages/django")
-import argo
+
 import quicky
-# import django
+
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.8/howto/deployment/checklist/
@@ -133,18 +133,7 @@ aut_config_local=dict(
     _password="123456"
 )
 quicky.authorize.set_config(aut_config_local)
-# argo.authorization.load(aut_config_local)
 
-# membership_config_local=dict(
-#     provider="membership_mongo",
-#     name="lv01_lms",
-#     host="localhost",
-#     port=27017,
-#     _user="sys",
-#     _password="123456",
-#     elasticsearch=["http://localhost:9200"]
-# )
-# argo.membership.load(membership_config_local)
 language_congig_local=dict(
 provider="language_mongo_engine",
     name="hrm",
@@ -161,7 +150,7 @@ AUTHORIZATION_ENGINE=quicky.authorize
 
 LANGUAGE_ENGINE=quicky.language
 LANGUAGE_CODE="en-us"
-# argo.url.build_urls("apps",APPS)
+
 ROOT_URLCONF = 'apps'
 import os
 LOGGING = {

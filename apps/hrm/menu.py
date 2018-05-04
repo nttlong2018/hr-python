@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-import argo
+
 menu_items=[
     dict(
         caption="Danh mục",
