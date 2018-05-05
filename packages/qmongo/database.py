@@ -1,3 +1,5 @@
+from sqlalchemy.sql.functions import count
+
 import expr
 
 from pymongo import MongoClient
@@ -126,6 +128,7 @@ class ENTITY():
     def filter(self,expression,*args,**kwargs):
         self._expr = expression
         if type(expression) is str:
+            expr_tr=expr.get_tree(expression,*args,**kwargs)
             self._expr = expr.parse_expression_to_json_expression(expression,*args,**kwargs)
         return self
     def delete(self):
@@ -193,7 +196,7 @@ class ENTITY():
                 self._data = {}
                 return ret
             if self._action=="delete":
-                ret = self.qr.db.get_collection(self.name).delete(self._expr)
+                ret = self.qr.db.get_collection(self.name).delete_many(self._expr)
                 self._expr = None
                 self._action = None
                 self._data = {}
@@ -360,11 +363,11 @@ class COLL():
             self._entity=ENTITY(self.qr,self.name)
         return self._entity
     def insert(self,*args,**kwargs):
-        self.entity().insert_one(*args,**kwargs).commit()
-        return self
+        ret=self.entity().insert_one(*args,**kwargs).commit()
+        return ret
     def update(self,data,filter,*args,**kwargs):
-        self.entity().filter(filter,*args,**kwargs).update_many(data).commit()
-        return self
+        ret=self.entity().filter(filter,*args,**kwargs).update_many(data).commit()
+        return ret
     def create_unique_index(self,*args,**kwargs):
         for item in args:
             keys=[]
@@ -384,6 +387,12 @@ class COLL():
                               partialFilterExpression=partialFilterExpression)
 
         return self
+    def delete(self,filter,*args,**kwargs):
+        ac=self.entity().filter(filter,kwargs)
+        ac.delete()
+        ret=ac.commit()
+        return ret
+
 
 
 class AGGREGATE():
@@ -553,7 +562,6 @@ class AGGREGATE():
             total_items=total_items,
             items=items
         )
-
     def __copy__(self):
         ret=AGGREGATE(self.qr,self.name)
         ret._pipe=[x for x in self._pipe]
