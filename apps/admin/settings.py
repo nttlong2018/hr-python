@@ -1,4 +1,4 @@
-import membership
+
 import datetime
 def authenticate(request):
 

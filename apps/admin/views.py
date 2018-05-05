@@ -2,7 +2,7 @@ from django.http import HttpResponse
 from django.shortcuts import redirect
 
 
-import membership
+
 import urllib
 from . import menu_loader
 from django.views.decorators.http import require_http_methods

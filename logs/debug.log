@@ -117,3 +117,59 @@ Traceback (most recent call last):
 AttributeError: 'module' object has no attribute 'get_settings'
 django_session.find (0.00) {'_id': 'r9r25ef0fmbuki62vcsi4flg3b19iwvg', 'expire_date': {'$gt': datetime.datetime(2018, 5, 5, 3, 21, 40, 100000, tzinfo=<UTC>)}}
 auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.save (0.00) {'_id': u'rdq5ydvsn0us1nxrjrsp49duvjb3rhc2', 'expire_date': datetime.datetime(2018, 5, 19, 3, 48, 41, 662000, tzinfo=<UTC>), 'session_data': u'YjAwMTViM2E0OTNjMDE0N2NjMTFiZjIxNzYzNmNkYTg5OGRiZGZjMzp7Imxhbmd1YWdlIjoiZW4ifQ=='}
+Not Found: /favicon.ico
+django_session.find (0.00) {'_id': 'rdq5ydvsn0us1nxrjrsp49duvjb3rhc2', 'expire_date': {'$gt': datetime.datetime(2018, 5, 5, 3, 48, 44, 228000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'username': u'sys'}
+django_session.save (0.00) {'_id': u'tf899kdk2wprkbevgcft6l1xpz7mabsh', 'expire_date': datetime.datetime(2018, 5, 19, 3, 48, 44, 330000, tzinfo=<UTC>), 'session_data': u'YjAwMTViM2E0OTNjMDE0N2NjMTFiZjIxNzYzNmNkYTg5OGRiZGZjMzp7Imxhbmd1YWdlIjoiZW4ifQ=='}
+django_session.find (0.00) {'_id': 'rdq5ydvsn0us1nxrjrsp49duvjb3rhc2'}
+django_session.remove (0.00) {'_id': {'$in': [u'rdq5ydvsn0us1nxrjrsp49duvjb3rhc2']}}
+auth_user.save (0.00) {'username': u'sys', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5ae5cb53cddcb0354c11cf6a'), 'is_active': True, 'email': u'', 'is_superuser': True, 'is_staff': False, 'last_login': datetime.datetime(2018, 5, 5, 3, 48, 44, 335000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$RM3mR6ar66t8$SRS3qPBkBP7FldCNOuunX0f1RK/YppeImlg2lVhOJZo=', 'date_joined': datetime.datetime(2018, 4, 29, 13, 40, 35, 764000, tzinfo=<UTC>)}
+django_session.save (0.00) {'_id': u'tf899kdk2wprkbevgcft6l1xpz7mabsh', 'expire_date': datetime.datetime(2018, 5, 19, 3, 48, 44, 382000, tzinfo=<UTC>), 'session_data': u'MmU5YzEwYjExYTI3YTY2YmIwMGM0YmYwZWUwYmFkNmZjYzQyMzQ1OTp7Il9hdXRoX3VzZXJfYmFja2VuZCI6InBlcm1pc3Npb25fYmFja2VuZF9ub25yZWwuYmFja2VuZHMuTm9ucmVsUGVybWlzc2lvbkJhY2tlbmQiLCJfYXV0aF91c2VyX2lkIjoiNWFlNWNiNTNjZGRjYjAzNTRjMTFjZjZhIiwibGFuZ3VhZ2UiOiJlbiJ9'}
+django_session.find (0.00) {'_id': 'tf899kdk2wprkbevgcft6l1xpz7mabsh', 'expire_date': {'$gt': datetime.datetime(2018, 5, 5, 3, 48, 44, 726000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'tf899kdk2wprkbevgcft6l1xpz7mabsh', 'expire_date': {'$gt': datetime.datetime(2018, 5, 5, 3, 48, 47, 936000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'tf899kdk2wprkbevgcft6l1xpz7mabsh', 'expire_date': {'$gt': datetime.datetime(2018, 5, 5, 3, 48, 48, 339000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'tf899kdk2wprkbevgcft6l1xpz7mabsh', 'expire_date': {'$gt': datetime.datetime(2018, 5, 5, 3, 48, 53, 653000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Internal Server Error: /admin/api
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\code\python\p2018\packages\quicky\api.py", line 83, in call
+    raise ex
+Exception: 'admin.api.roles/get_list' was not found
+django_session.find (0.00) {'_id': 'tf899kdk2wprkbevgcft6l1xpz7mabsh', 'expire_date': {'$gt': datetime.datetime(2018, 5, 5, 3, 48, 57, 262000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Internal Server Error: /admin/api
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "E:\code\python\p2018\packages/django\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\code\python\p2018\packages\quicky\api.py", line 83, in call
+    raise ex
+Exception: 'admin.api.views/get_list' was not found
+django_session.find (0.00) {'_id': 'tf899kdk2wprkbevgcft6l1xpz7mabsh', 'expire_date': {'$gt': datetime.datetime(2018, 5, 5, 3, 48, 59, 880000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'tf899kdk2wprkbevgcft6l1xpz7mabsh', 'expire_date': {'$gt': datetime.datetime(2018, 5, 5, 3, 49, 0, 255000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Not Found: /admin/category/users
+Not Found: /admin/category/users
+Not Found: /admin/category/users
+Not Found: /admin/category/users
+Not Found: /admin/category/users
+django_session.find (0.00) {'_id': 'tf899kdk2wprkbevgcft6l1xpz7mabsh', 'expire_date': {'$gt': datetime.datetime(2018, 5, 5, 3, 56, 55, 449000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'tf899kdk2wprkbevgcft6l1xpz7mabsh', 'expire_date': {'$gt': datetime.datetime(2018, 5, 5, 3, 56, 55, 911000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': 'tf899kdk2wprkbevgcft6l1xpz7mabsh', 'expire_date': {'$gt': datetime.datetime(2018, 5, 5, 3, 56, 55, 977000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
