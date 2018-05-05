@@ -3,6 +3,7 @@ import expr
 from pymongo import MongoClient
 from pymongo.errors import OperationFailure
 import logging
+import pymongo
 logger = logging.getLogger(__name__)
 _db={}
 class QR():
@@ -360,6 +361,27 @@ class COLL():
     def insert_one(self,*args,**kwargs):
         self.entity().insert_one(*args,**kwargs)
         return self.entity()
+    def create_unique_index(self,*args,**kwargs):
+        for item in args:
+            keys=[]
+            partialFilterExpression={}
+            for x in item:
+                keys.append((x["field"],pymongo.ASCENDING))
+                partialFilterExpression.update({
+                    x["field"]:{
+                        "$type":x["type"]
+                    }
+                })
+            coll=self.qr.db.get_collection(self.name)
+            collation=pymongo.collation.Collation(locale="en_US")
+            coll.create_index(keys,
+                              unique=True,
+                              collation=collation,
+                              partialFilterExpression=partialFilterExpression)
+
+        return self
+
+
 class AGGREGATE():
     name = ""
     qr = None
@@ -515,8 +537,6 @@ class AGGREGATE():
     def copy(self):
         return self.__copy__()
 def connect(*args,**kwargs):
-
-
     """
     Create db instance <br/>
     Ex:query.get_query(host="ip address", name="database name",port=,user=,password=)

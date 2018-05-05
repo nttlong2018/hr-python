@@ -8,6 +8,7 @@ qr=database.connect(host="localhost",
            port=27017,
            user="",
            password="123456")
+
 qr=qr.collection("test_from_long").aggregate()
 
 # qr.project(
