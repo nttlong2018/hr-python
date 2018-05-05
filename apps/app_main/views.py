@@ -15,6 +15,7 @@ from models import Login
 from django.contrib.auth.models import User
 from django.core.exceptions import ObjectDoesNotExist
 from django.contrib.auth import authenticate,login as form_login
+import quicky
 application=applications.get_app_by_file(__file__)
 # from django.urls import reverse
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -22,14 +23,17 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 @quicky.view.template("index.html")
 def index(request):
     try:
+
         sys_user=User.objects.get(username="sys")
     except ObjectDoesNotExist as ex:
         user = User.objects.create_user('sys', '', '123456')
+        user.is_active=True
+        user.is_supperuser=True
         user.save()
     if request.user.is_anonymous():
         return redirect(request.get_app_url("login"))
     else:
-        model = quicky.view.models.base()
+        model = {}
         return request.render(model)
 
 def admin(request):

@@ -1,7 +1,8 @@
 from . import app_info
 import os
 import sys
-
+import logging
+logger=logging.getLogger(__name__)
 _cache_apps={}
 __cache_find_path={}
 _settings=None
@@ -15,7 +16,10 @@ def load_app(*args,**kwargs):
         return _cache_apps[args[0]["path"]]
 
     except Exception as ex:
-        raise (Exception("quicky.applications.load_app error {0}".format(ex)))
+        logger.debug(ex)
+        logger.debug("quicky.applications.load_app error {0} in '{1}'".format(ex,args[0]["path"]))
+        raise (Exception("quicky.applications.load_app error {0} in '{1}'".format(ex,args[0]["path"])))
+
 def get_app_by_file(file_name):
     """get application info by path of file
     if path of file is in application package"""

@@ -9,9 +9,14 @@ from django.http import HttpResponse
 from quicky import layout_view
 import forms
 import logging
+
 import quicky
 logger = logging.getLogger(__name__)
+
+
+logger = logging.getLogger(__name__)
 @quicky.view.template("index.html")
+
 def index(request):
 
     menu_items=[]
@@ -22,14 +27,18 @@ def index(request):
     )
 
 
+
 @quicky.view.template("category.html")
+
 def load_categories(request,path):
     form = getattr(forms, path)
     return request.render({
         "path": path.lower(),
         "columns":form.layout.get_table_columns()
     })
+
 @quicky.view.template("category-editor.html")
+
 def load_category(request,path):
     form = getattr(forms, path)
     return request.render({
@@ -37,7 +46,9 @@ def load_category(request,path):
         "form": form.layout.get_form(),
         "get_col": form.layout.get_form_col
     })
+
 @quicky.view.template("dynamic.html")
+
 def load_page(request,path):
 
     return request.render({

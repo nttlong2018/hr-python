@@ -13,10 +13,14 @@ https://docs.djangoproject.com/en/1.8/ref/settings/
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
 import sys
-from django.conf.urls import url, include
+
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.append(BASE_DIR+"/packages")
 sys.path.append(BASE_DIR+"/packages/django")
+
+sys.path.append(os.getcwd()+"/packages")
+sys.path.append(os.getcwd()+"/packages/django")
+from django.conf.urls import url, include
 
 import quicky
 
@@ -81,12 +85,12 @@ WSGI_APPLICATION = 'wsgi.application'
 # https://docs.djangoproject.com/en/1.8/ref/settings/#databases
 DATABASES = {
    'default' : {
-       'ENGINE' : 'django_mongodb_engine',
-       'NAME' : 'hrm',
-       'HOST':'localhost',
-       'PORT':27017,
-       'USER':'root',
-       'PASSWORD':'123456'
+       'ENGINE': 'django_mongodb_engine',
+       'NAME': 'hrm',
+       'HOST': 'localhost',
+       'PORT': 27017,
+       'USER': 'root',
+       'PASSWORD': '123456'
    }
 }
 # DATABASES = {
@@ -129,8 +133,8 @@ aut_config_local=dict(
     name="hrm",
     host="localhost",
     port=27017,
-    _user="sys",
-    _password="123456"
+    user="root",
+    password="123456"
 )
 quicky.authorize.set_config(aut_config_local)
 
@@ -139,19 +143,20 @@ provider="language_mongo_engine",
     name="hrm",
     host="localhost",
     port=27017,
-    _user="sys",
-    _password="123456",
+    user="root",
+    password="123456",
     collection="sys_languages"
 )
 quicky.language.set_config(language_congig_local)
 # argo.language.load(language_congig_local)
-quicky.url.build_urls("apps",APPS)
+# quicky.url.build_urls("apps",APPS)
 AUTHORIZATION_ENGINE=quicky.authorize
 
 LANGUAGE_ENGINE=quicky.language
 LANGUAGE_CODE="en-us"
 
 ROOT_URLCONF = 'apps'
+quicky.url.build_urls(ROOT_URLCONF,APPS)
 import os
 LOGGING = {
     'version': 1,
