@@ -3,6 +3,7 @@ import expr
 from pymongo import MongoClient
 from pymongo.errors import OperationFailure
 import logging
+import copy
 import pymongo
 logger = logging.getLogger(__name__)
 _db={}
@@ -122,10 +123,10 @@ class ENTITY():
                     key: data[key]
                 })
         return self
-    def filter(self,expression,*params):
+    def filter(self,expression,*args,**kwargs):
         self._expr = expression
         if type(expression) is str:
-            self._expr = expr.parse_expression_to_json_expression(expression, *params)
+            self._expr = expr.parse_expression_to_json_expression(expression,*args,**kwargs)
         return self
     def delete(self):
         self._action="delete"
@@ -358,9 +359,12 @@ class COLL():
         if self._entity==None:
             self._entity=ENTITY(self.qr,self.name)
         return self._entity
-    def insert_one(self,*args,**kwargs):
-        self.entity().insert_one(*args,**kwargs)
-        return self.entity()
+    def insert(self,*args,**kwargs):
+        self.entity().insert_one(*args,**kwargs).commit()
+        return self
+    def update(self,data,filter,*args,**kwargs):
+        self.entity().filter(filter,*args,**kwargs).update_many(data).commit()
+        return self
     def create_unique_index(self,*args,**kwargs):
         for item in args:
             keys=[]
@@ -511,6 +515,14 @@ class AGGREGATE():
             }
         })
         return self
+    def sort(self,*args,**kwargs):
+        _sort={
+
+        }
+        self._pipe.append({
+            "$sort":kwargs
+        })
+        return self
     def count(self,alias):
         self._pipe.append({
             "$count":alias
@@ -530,6 +542,18 @@ class AGGREGATE():
         ret=list(self.qr.db.get_collection(self.name).aggregate(self._pipe))
         self._pipe=[]
         return ret
+    def get_page(self,page_index,page_size):
+        _tmp_pipe=copy.copy(self._pipe)
+        total_items=self.count("total_items").get_item()
+        self._pipe=_tmp_pipe
+        items=self.skip(page_index*page_size).limit(page_size).get_list()
+        return dict(
+            page_size=page_size,
+            page_index=page_index,
+            total_items=total_items,
+            items=items
+        )
+
     def __copy__(self):
         ret=AGGREGATE(self.qr,self.name)
         ret._pipe=[x for x in self._pipe]
