@@ -347,7 +347,7 @@ class COLL():
     def __init__(self,qr,name):
         self.qr=qr
         self.name=name
-    def find_one(self,exprression,*params):
+    def find_one(self,exprression,*args,**kwargs):
         """find one item with conditional ex: find_one("Username={0}","admin"),
             find_one("Username='admin'"),
             find_one("Username=@username",username="admin")
@@ -359,9 +359,8 @@ class COLL():
             ret = self.qr.db.get_collection(self.name).find_one(exprression[0])
             return ret
         else:
-            x=expr.get_tree(exprression,params)
-            y=expr.get_expr(x,params)
-            ret=self.qr.db.get_collection(self.name).find_one(y)
+            filter = expr.parse_expression_to_json_expression(exprression, kwargs)
+            ret=self.qr.db.get_collection(self.name).find_one(filter)
             return ret
     def find(self,exprression,*params):
         """find and get a list of items item with conditional ex: find("Username={0}","admin"),

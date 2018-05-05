@@ -28,11 +28,9 @@ def get_coll_address(str):
         else:
             return ret
 def read_from_file(file_name):
-    wb =openpyxl.load_workbook(file_name)
-    ws_mapping=wb.get_sheet_by_name("mapping")
-    if ws_mapping==None:
-        wb.close()
-        raise "mapping sheet was not found in '{0}'".format(file_name)
+    wb =openpyxl.load_workbook(file_name, data_only=True)
+
+
     _model={}
     # cols=list(ws_mapping.columns)
     cells=list(wb.defined_names.definedName)

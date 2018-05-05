@@ -10,41 +10,33 @@ hrm.connect(
     password="123456"
 )
 emp=hrm.employees()
-# ret=emp.update(
-#                dict(
-#                Code="emp2",
-#                Username="001"),
-#                 "Code=='emp1'")
+deps=hrm.departments()
+position=hrm.positions()
 
-
-# lst=emp.delete("Code==@code",code="nv001")
-#     .aggregate()
-# emp.sort(
-#     Code=1,
-#     Name=-1
-# )
-# lst=emp.get_page(
-#     page_size=50,
-#     page_index=0
-# )
 data=emp.get_list()
 file="E:\\code\\python\\p2018\\packages\\excel\\test.xlsx"
-# exporter.write_to(file,data,[
-#     dict(
-#         field="Code",
-#         type="string"
-#     ),
-#     dict(
-#         field="FirstName",
-#         type="string"
-#     ),
-#     dict(
-#             field="LastName",
-#             type="string"
-#          )
-# ])
-ret=exporter.read_from_file(file)
+file_cv="E:\\code\\python\\p2018\\packages\\excel\\cv.xlsx"
+file_bp="E:\\code\\python\\p2018\\packages\\excel\\bp.xlsx"
+
+ret=exporter.read_from_file(file_bp)
+# for item in ret["data"]:
+#     data_item=emp.find_one("Code==@code",code=item["Code"])
+#     if data_item!=None:
+#         emp.update(item,"Code==@code",code=item["Code"])
+#     else:
+#         emp.insert(item)
+# for item in ret["data"]:
+#     data_item=position.find_one("Code==@code",code=item["Code"])
+#     if data_item!=None:
+#         position.update(item,"Code==@code",code=item["code"])
+#     else:
+#         position.insert(item)
 for item in ret["data"]:
-    emp.insert(item)
+    data_item=deps.find_one("Code==@code",code=item["Code"])
+    if data_item!=None:
+        deps.update(item,"Code==@code",code=item["Code"])
+    else:
+        deps.insert(item)
+
 print("xong")
 

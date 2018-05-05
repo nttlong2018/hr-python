@@ -41,3 +41,14 @@ def departments():
         ]
     )
     return ret
+def positions():
+    ret = _db.collection(get_name("hrm.positions"))
+    ret.create_unique_index(
+        [
+            dict(
+                field="Code",
+                type="string"
+            )
+        ]
+    )
+    return ret
