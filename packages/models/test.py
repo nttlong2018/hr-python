@@ -9,7 +9,14 @@ hrm.connect(
     password="123456"
 )
 emp=hrm.employees()
-lst=emp.delete("Code==@code",code="nv001")
+ret=emp.update(
+               dict(
+               Code="emp2",
+               Username="001"),
+                "Code=='emp1'")
+
+
+# lst=emp.delete("Code==@code",code="nv001")
 #     .aggregate()
 # emp.sort(
 #     Code=1,
@@ -19,4 +26,4 @@ lst=emp.delete("Code==@code",code="nv001")
 #     page_size=50,
 #     page_index=0
 # )
-print(lst)
+print(ret)

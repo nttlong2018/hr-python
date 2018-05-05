@@ -56,7 +56,7 @@ class ENTITY():
                     key:data[key]
                 })
         return self
-    def update_many(self,expression,data,*params):
+    def update_many(self,data,*params):
         self._action = "update_many"
         if not self._data.has_key("$set"):
             self._data.update({
@@ -134,16 +134,48 @@ class ENTITY():
     def delete(self):
         self._action="delete"
         return self
+    def get_duplicate_error(self,ex):
+        start = ex.message.find(" index:") + " index:".__len__()
+        end = ex.message.find(" dup key:", start)
+        key = ex.message[start:end]
+        key = key.replace(" ", "")
+        info = self.qr.db.get_collection(self.name).index_information()
+        fields = info[key]["key"]
+        ret_fields = []
+        for item in fields:
+            ret_fields.append(item[0])
+        return dict(
+            error=dict(
+                fields=ret_fields,
+                code="duplicate"
+            )
+        )
     def commit(self):
         if self._action=="insert_one":
-            ret=self.qr.db.get_collection(self.name).insert_one(self._data)
-            ret_data=self._data.copy()
-            ret_data.update({
-                "_id":ret.inserted_id
-            })
-            self._action=None
-            self._data={}
-            return ret_data
+            ret_data={}
+            try:
+                ret = self.qr.db.get_collection(self.name).insert_one(self._data)
+                ret_data = self._data.copy()
+                ret_data.update({
+                    "_id": ret.inserted_id
+                })
+                self._action = None
+                self._data = {}
+                return dict(
+                    error=None,
+                    data=ret_data
+                )
+            except pymongo.errors.DuplicateKeyError as ex:
+                ret_data= self.get_duplicate_error(ex)
+                ret_data.update({
+                    "data":self._data
+                })
+                return ret_data
+
+            except Exception as ex:
+                raise ex
+
+
         elif self._action=="insert_many":
             ret = self.qr.db.get_collection(self.name).insert_many(self._data)
             self._action = None
@@ -190,11 +222,24 @@ class ENTITY():
                         updater.update({
                             key:self._data[key]
                         })
-                ret = self.qr.db.get_collection(self.name).update_many(self._expr,updater)
-                self._expr = None
-                self._action = None
-                self._data = {}
-                return ret
+                try:
+                    ret = self.qr.db.get_collection(self.name).update_many(self._expr,updater)
+                    self._expr = None
+                    self._action = None
+                    self._data = {}
+                    return dict(
+                        error=None,
+                        data=ret
+                    )
+                except pymongo.errors.DuplicateKeyError as ex:
+                    ret_data = self.get_duplicate_error(ex)
+                    ret_data.update({
+                        "data": self._data
+                    })
+                    return ret_data
+                except Exception as ex:
+                    raise ex
+
             if self._action=="delete":
                 ret = self.qr.db.get_collection(self.name).delete_many(self._expr)
                 self._expr = None
@@ -363,10 +408,13 @@ class COLL():
             self._entity=ENTITY(self.qr,self.name)
         return self._entity
     def insert(self,*args,**kwargs):
-        ret=self.entity().insert_one(*args,**kwargs).commit()
+        ac=self.entity().insert_one(*args,**kwargs)
+        ret=ac.commit()
         return ret
     def update(self,data,filter,*args,**kwargs):
-        ret=self.entity().filter(filter,*args,**kwargs).update_many(data).commit()
+        ac=self.entity().filter(filter,kwargs)
+        ac.update_many(data)
+        ret=ac.commit()
         return ret
     def create_unique_index(self,*args,**kwargs):
         for item in args:
