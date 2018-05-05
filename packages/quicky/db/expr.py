@@ -75,7 +75,13 @@ def get_left(cp,*params):
             "value":cp.elts[0].n
         }
     if type(cp) is _ast.Compare:
-        if cp._fields.count("left"):
+        if cp._fields.count("left")>0:
+            return {
+                "operator":find_operator(cp.ops[0]),
+                "left":get_left(cp.left,*params),
+                "right":get_right(cp.comparators[0],*params)
+
+            }
             ret.update({
                 "left":get_left(cp.left,*params)
             })
@@ -122,6 +128,12 @@ def get_left(cp,*params):
             return cp.value.value.id + "["+cp.value.slice.value.n.__str__()+"]." + cp.attr
         else:
             return cp.value.id + "." + cp.attr
+    if type(cp) is _ast.Num:
+        return {
+            "type":"const",
+            "value":cp.n
+        }
+
 
 
 
@@ -163,7 +175,7 @@ def get_right(cp,*params):
     if type(cp) is _ast.Num:
         return {
             "type":"const",
-            "value":cp[0].n
+            "value":cp.n
         }
 
     if type(cp) is _ast.Compare:
@@ -291,6 +303,12 @@ def get_tree(expr,*params,**kwargs):
 
     str=vert_expr(expr,*params)
     cmp=compile(str, '<unknown>', 'exec', 1024).body.pop()
+    if type(cmp.value) is _ast.BoolOp:
+        return {
+            "operator": find_operator(cmp.value.op),
+            "left": [get_left(x, *params) for x in cmp.value.values],
+            "right": None
+        }
     if type(cmp.value) is _ast.Compare:
         return {
             "left":get_left(cmp.value.left,*params),
@@ -368,6 +386,11 @@ def get_expr(fx,*params):
     if(type(fx) is str):
         return fx
     ret={}
+    if fx.has_key("type") and fx["type"]=="const":
+        return fx["value"]
+    if fx.has_key("type") and fx["type"]=="field":
+        return fx["id"]
+
 
     if fx.has_key("operator"):
         if fx["operator"]=="$contains":
@@ -441,52 +464,73 @@ def get_expr(fx,*params):
                             }
                         }
                     else:
-                        return {
-                            fx["left"]["id"]: {
-                                fx["operator"]: val
+                        if fx["left"]=={}:
+                            return val
+                        elif fx["left"].has_key("id"):
+                            return {
+                                fx["left"]["id"]: {
+                                    fx["operator"]: val
+                                }
                             }
-
-                        }
         else:
             if fx.has_key("right"):
-                if fx["right"].get("type","") == "const":
-                    val = fx["right"]["value"]
-                    return {
-                        fx["left"]: {
-                            fx["operator"]: val
-                        }
-                    }
-                if fx["right"].get("type","") == "params":
-                    val =params[fx["right"]["value"]]
-                    return {
-                        fx["left"]: {
-                            fx["operator"]: val
-                        }
-                    }
-                if fx["right"].get("function","") == "contains":
-                    if fx.has_key("params"):
-                       if fx["params"][1].get("type","")=="const":
+                if fx["right"]!=None:
+                    if fx["right"].get("type","") == "const":
+                        val = fx["right"]["value"]
+                        if fx["left"]=={}:
+                            return val
+                        else:
                             return {
-                                fx["params"][0]["id"]:fx["params"][1]["value"]
+                                get_expr(fx["left"], *params):{
+                                    fx["operator"]:get_expr(fx["right"], *params)
+                                }
                             }
-                       if fx["params"][1].get("type", "") == "params":
-                           return {
-                               fx["params"][0]["id"]:params[fx["params"][1]["value"]]
-                           }
-                    if fx.has_key("operator"):
-                        return {
-                            fx["operator"]:[
-                                get_expr(fx["left"],*params),
-                                get_expr(fx["right"], *params)
-                            ]
-                        }
 
+                    if fx["right"].get("type","") == "params":
+                        val =params[fx["right"]["value"]]
+                        return {
+                            fx["left"]: {
+                                fx["operator"]: val
+                            }
+                        }
+                    if fx["right"].get("function","") == "contains":
+                        if fx.has_key("params"):
+                           if fx["params"][1].get("type","")=="const":
+                                return {
+                                    fx["params"][0]["id"]:fx["params"][1]["value"]
+                                }
+                           if fx["params"][1].get("type", "") == "params":
+                               return {
+                                   fx["params"][0]["id"]:params[fx["params"][1]["value"]]
+                               }
+                        if fx.has_key("operator"):
+                            return {
+                                fx["operator"]:[
+                                    get_expr(fx["left"],*params),
+                                    get_expr(fx["right"], *params)
+                                ]
+                            }
+                elif type(fx["left"]) is list:
+                    ret_json={
+                        fx["operator"]:[]
+                    }
+                    for item in fx["left"]:
+                        _m=get_expr(item,*params)
+                        ret_json[fx["operator"]].append(_m)
+                    return ret_json
             if fx.has_key("operator") and fx.has_key("expr"):
-                return {
-                    fx["operator"]:[
-                        get_expr(x,*params) for x in fx["expr"]
-                    ]
+                ret_json={
+                    fx["operator"]:[]
                 }
+                for item in fx["expr"]:
+                    _m=get_expr(item,*params)
+                    ret_json[fx["operator"]].append(_m)
+                return ret_json
+                # return {
+                #     fx["operator"]:[
+                #         get_expr(x,*params) for x in fx["expr"]
+                #     ]
+                # }
     elif fx.has_key("function") and fx["function"].lower()=="contains":
         if fx["params"][1].has_key("value"):
             if fx["params"][1].has_key("type") and\
@@ -500,13 +544,17 @@ def get_expr(fx,*params):
                     fx["params"][0]["id"]:{"$regex":re.compile(fx["params"][1]["value"],re.IGNORECASE)}
                 }
 
-
-    return {
-        fx["operator"]:[
-            get_expr(fx["left"],*params),
-            get_expr(fx["right"],*params)
-        ]
-    };
+    if fx.has_key("operator"):
+        return {
+            fx["operator"]:[
+                get_expr(fx["left"],*params),
+                get_expr(fx["right"],*params)
+            ]
+        };
+    if fx.has_key("type") and fx["type"]=="function":
+        return {
+            fx["id"]:[fx["params"]]
+        }
 def get_calc_exprt_boolean_expression(fx,*params):
     p=get_right(fx,*params)
     if fx._fields.count("left")>0 and type(fx.left) is _ast.Call:
@@ -691,8 +739,33 @@ def get_calc_get_param(fx,*params):
 
 def get_calc_get_names(fx):
     return fx.id
+def verify_match(fx):
+    if not fx.has_key("left"):
+        return None
+    if fx["left"].has_key("type") and fx["left"]["type"] == "function":
+        return "The left side of the expression is not a field of the document. " \
+               "It look like you use function. function name is '{0}' ".format(fx["left"]["id"])
+
+    if type(fx["left"]) is list:
+        index=0
+        msg=None
+        while msg==None and index<fx["left"].__len__():
+            msg = verify_match(fx["left"][index])
+            index=index+1
+        return msg
+
+
+    if fx["left"].has_key("type") and  fx["left"]["type"] =="const":
+        return "The left side of the expression is not a field of the document. " \
+               "It look like constant or expression. Actually expression is '{0}'  "\
+            .format(fx["left"]["value"])
+    else:
+        return verify_match(fx["left"])
 def parse_expression_to_json_expression(expression,*params,**kwargs):
     expr_tree=get_tree(expression,*params,**kwargs)
+    msg=verify_match(expr_tree)
+    if msg!=None:
+        raise(Exception(msg))
     return get_expr(expr_tree,*params,**kwargs)
 
 
