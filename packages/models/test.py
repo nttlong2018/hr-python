@@ -1,4 +1,5 @@
 import sys
+import os
 sys.path.append("E:\\code\\python\\p2018\\packages")
 import hrm
 from excel import exporter
@@ -15,13 +16,16 @@ position=hrm.positions()
 provinces=hrm.provinces()
 
 data=emp.get_list()
-file="E:\\code\\python\\p2018\\packages\\excel\\test.xlsx"
-file_cv="E:\\code\\python\\p2018\\packages\\excel\\cv.xlsx"
-file_bp="E:\\code\\python\\p2018\\packages\\excel\\bp.xlsx"
-file_province="E:\\code\\python\\p2018\\packages\\excel\\province.xlsx"
+def get_data_file(file):
+    return os.getcwd()+os.sep+"data"+os.sep+file
 
-ret=exporter.read_from_file(file_bp)
-coll=deps
+# file="E:\\code\\python\\p2018\\packages\\excel\\test.xlsx"
+# file_cv="E:\\code\\python\\p2018\\packages\\excel\\cv.xlsx"
+# file_bp="E:\\code\\python\\p2018\\packages\\excel\\bp.xlsx"
+# file_province="E:\\code\\python\\p2018\\packages\\excel\\province.xlsx"
+
+ret=exporter.read_from_file(get_data_file("employees.xlsx"))
+coll=emp
 # coll=coll.aggregate()
 # coll.project(
 #     monthly_salaray="(OfficialInfo.BasicSalary/26)*30",
