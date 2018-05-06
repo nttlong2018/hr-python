@@ -57,7 +57,7 @@ def read_from_file(file_name):
                         }
 
                     })
-                    field.update({item: ""})
+                    field.update({item: None})
             else:
                 field = field[item]
 
@@ -65,15 +65,21 @@ def read_from_file(file_name):
     ws_main = wb.get_sheet_by_name("main")
     row_count=ws_main.max_row
     ret=[]
+    import copy
 
     for i in range(2,row_count+1):
-        data_row=_model.copy()
+        data_row={}
         for key in hash_columns.keys():
             keys=hash_columns[key]["fields"]
             value=data_row
             for x in keys:
                 if keys.index(x)<keys.__len__()-1:
-                    value=value[x]
+                    if not value.has_key(x):
+                        value.update({
+                            x:{}
+                        })
+                    else:
+                        value=value[x]
                 else:
                     val=ws_main[hash_columns[key]["address"]+i.__str__()].value
                     value.update({

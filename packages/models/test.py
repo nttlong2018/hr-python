@@ -20,7 +20,7 @@ file_cv="E:\\code\\python\\p2018\\packages\\excel\\cv.xlsx"
 file_bp="E:\\code\\python\\p2018\\packages\\excel\\bp.xlsx"
 file_province="E:\\code\\python\\p2018\\packages\\excel\\province.xlsx"
 
-ret=exporter.read_from_file(file_province)
+ret=exporter.read_from_file(file)
 coll=emp
 # coll=coll.aggregate()
 # coll.project(

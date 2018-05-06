@@ -312,7 +312,7 @@ def get_tree(expr,*params,**kwargs):
         return {
             "left":get_left(cmp.value.left,*params),
             "operator":find_operator(cmp.value.ops[0]),
-            "right":get_right(cmp.value.comparators,*params)
+            "right":get_right(cmp.value.comparators[0],*params)
         }
 
     if cmp.value._fields.count("left")>0:
@@ -400,11 +400,18 @@ def get_expr(fx,*params):
 
         if fx["operator"]=="$eq":
             if type(fx["right"]) is str:
-                return {
-                    fx["left"]: {
-                        "$regex": re.compile(fx["right"], re.IGNORECASE)
+                if fx["left"].has_key("type")and fx["left"]["type"]=="field":
+                    return {
+                        fx["left"]["id"]: {
+                            "$regex": re.compile(fx["right"], re.IGNORECASE)
+                        }
                     }
-                }
+                else:
+                    return {
+                        fx["left"]: {
+                            "$regex": re.compile(fx["right"], re.IGNORECASE)
+                        }
+                    }
             else:
                 if fx["right"]["type"]=="params":
                     val=params[fx["right"]["value"]]
