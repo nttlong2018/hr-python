@@ -78,6 +78,7 @@ def read_from_file(file_name):
                         value.update({
                             x:{}
                         })
+                        value = value[x]
                     else:
                         value=value[x]
                 else:
