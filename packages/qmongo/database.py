@@ -464,7 +464,7 @@ class COLL():
             ret_val=self.insert(data)
             ret.update({
                 "action": "update",
-                "_id": data_item["_id"],
+                "_id": ret_val["data"]["_id"],
                 "error": ret_val["error"]
             })
 

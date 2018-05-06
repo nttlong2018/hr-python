@@ -21,30 +21,9 @@ file_bp="E:\\code\\python\\p2018\\packages\\excel\\bp.xlsx"
 file_province="E:\\code\\python\\p2018\\packages\\excel\\province.xlsx"
 
 ret=exporter.read_from_file(file_province)
-# for item in ret["data"]:
-#     data_item=emp.find_one("Code==@code",code=item["Code"])
-#     if data_item!=None:
-#         emp.update(item,"Code==@code",code=item["Code"])
-#     else:
-#         emp.insert(item)
-# for item in ret["data"]:
-#     data_item=position.find_one("Code==@code",code=item["Code"])
-#     if data_item!=None:
-#         position.update(item,"Code==@code",code=item["code"])
-#     else:
-#         position.insert(item)
-# for item in ret["data"]:
-#     data_item=deps.find_one("Code==@code",code=item["Code"])
-#     if data_item!=None:
-#         deps.update(item,"Code==@code",code=item["Code"])
-#     else:
-#         deps.insert(item)
+coll=emp
+
 for item in ret["data"]:
-    provinces.save(item,ret["keys"])
-    # data_item=provinces.find_one("Code==@code",code=item["Code"])
-    # if data_item!=None:
-    #     provinces.update(item,"Code==@code",code=item["Code"])
-    # else:
-    #     provinces.insert(item)
+    coll.save(item,ret["keys"])
 print("xong")
 
