@@ -35,8 +35,13 @@ def read_from_file(file_name):
     # cols=list(ws_mapping.columns)
     cells=list(wb.defined_names.definedName)
     hash_columns={}
+    key_fields=[]
     for row in cells:
         field_name=row.name
+        if field_name.__len__()>3 and field_name[0:4]=="_id.":
+            key=field_name[4:field_name.__len__()]
+            key_fields.append(key)
+            field_name=key
         items=field_name.split('.')
         field=_model
         for item in items:
@@ -45,11 +50,6 @@ def read_from_file(file_name):
                     field.update({item:{}})
                     field=field[item]
                 else:
-                    # info=dict(
-                    #     sheet=row[2].split('=')[1].split('!')[0],
-                    #     address=row[2].split('=')[1].split('!')[1],
-                    #     col_address=get_coll_address(row[2].split('=')[1].split('!')[1])
-                    # )
                     hash_columns.update({
                         field_name:{
                            "address": row.value.split("$")[1],
@@ -85,7 +85,8 @@ def read_from_file(file_name):
 
     return dict(
         data=ret,
-        model=_model
+        model=_model,
+        keys=key_fields
     )
 
 

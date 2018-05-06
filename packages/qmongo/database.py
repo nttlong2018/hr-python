@@ -344,6 +344,7 @@ class COLL():
     qr=None
     _where=None
     _entity=None
+
     def __init__(self,qr,name):
         self.qr=qr
         self.name=name
@@ -359,6 +360,8 @@ class COLL():
             ret = self.qr.db.get_collection(self.name).find_one(exprression[0])
             return ret
         else:
+            if type(args) is tuple and args.__len__()>0 and kwargs=={}:
+                kwargs=args[0]
             filter = expr.parse_expression_to_json_expression(exprression, kwargs)
             ret=self.qr.db.get_collection(self.name).find_one(filter)
             return ret
@@ -411,6 +414,8 @@ class COLL():
         ret=ac.commit()
         return ret
     def update(self,data,filter,*args,**kwargs):
+        if type(args) is tuple and args.__len__()>0 and kwargs=={}:
+            kwargs=args[0]
         ac=self.entity().filter(filter,kwargs)
         ac.update_many(data)
         ret=ac.commit()
@@ -439,6 +444,35 @@ class COLL():
         ac.delete()
         ret=ac.commit()
         return ret
+    def get_filter_keys(self,keys):
+        ret=""
+        for key in keys:
+            ret+="("+key+"==@"+key+")and"
+        return ret[0:ret.__len__()-3]
+    def save(self,data,keys):
+        filter_key=self.get_filter_keys(keys)
+        data_item=self.find_one(filter_key,data)
+        ret={}
+        if data_item!=None:
+            ret_val=self.update(data,filter_key,data)
+            ret.update({
+                "action":"update",
+                "_id":data_item["_id"],
+                "error": ret_val["error"]
+            })
+        else:
+            ret_val=self.insert(data)
+            ret.update({
+                "action": "update",
+                "_id": data_item["_id"],
+                "error": ret_val["error"]
+            })
+
+        return data_item
+
+
+
+
 
 
 
