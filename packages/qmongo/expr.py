@@ -8,9 +8,9 @@ _operators=[
     dict(op="$gte",fn=_ast.GtE),
     dict(op="$lt",fn=_ast.Lt),
     dict(op="$lte",fn=_ast.LtE),
-    dict(op="$multi",fn=_ast.Mult),
-    dict(op="$div",fn=_ast.Div),
-    dict(op="$mode",fn=_ast.Mod),
+    dict(op="$multiply",fn=_ast.Mult),
+    dict(op="$divide",fn=_ast.Div),
+    dict(op="$mod",fn=_ast.Mod),
     dict(op="$add",fn=_ast.Add),
     dict(op="$subtract",fn=_ast.Sub),
     dict(op="$and",fn=_ast.And),
@@ -141,6 +141,8 @@ def get_left(cp,*params):
 
 
 def get_right(cp,*params):
+    if type(cp) is list:
+        return "_"
     ret={}
     if type(cp) is list:
         if cp.__len__()>1 and\
@@ -182,7 +184,7 @@ def get_right(cp,*params):
         return {
             "left":get_left(cp.left,*params),
             "operator":find_operator(cp.ops[0]),
-            "right":get_right(cp.comparators,*params)
+            "right":get_right(cp.comparators[0],*params)
         }
     if type(cp) is list and\
             cp.__len__()==1 and \
@@ -202,11 +204,6 @@ def get_right(cp,*params):
             "type":"const",
             "value":cp[0].elts[0].n
         }
-
-
-
-
-
     if cp._fields.count("ops")>0:
         ret.update({
             "operator": find_operator(cp.ops[0])
@@ -241,6 +238,8 @@ def get_right(cp,*params):
             "type":"params",
             "value":cp.args[0].n
         }
+    if type(cp) is _ast.Name:
+        return  get_left(cp,params)
 
 
 
@@ -575,8 +574,6 @@ def get_calc_exprt_boolean_expression(fx,*params):
                     }, params[p["right"]["value"]]
                 ]
             }
-
-
     if type(fx) is _ast.Compare:
         return {
             find_operator(fx.ops[0]):[
@@ -584,7 +581,6 @@ def get_calc_exprt_boolean_expression(fx,*params):
                 get_calc_exprt_boolean_expression(fx.comparators[0],*params)
             ]
         }
-
     if type(fx) is _ast.BoolOp:
         return {
             find_operator(fx.op): [
@@ -592,7 +588,11 @@ def get_calc_exprt_boolean_expression(fx,*params):
 
             ]
         }
+    if type(fx) is _ast.Name:
+        return get_left(fx,*params)
 def extract_json(fx,*params):
+    if type(fx) is _ast.Attribute:
+        return "$"+get_left(fx)
     if type(fx) is _ast.Name:
         p=get_left(fx,*params)
         return "$"+p["id"]
