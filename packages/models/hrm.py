@@ -52,3 +52,14 @@ def positions():
         ]
     )
     return ret
+def provinces():
+    ret = _db.collection(get_name("hrm.provinces"))
+    ret.create_unique_index(
+        [
+            dict(
+                field="Code",
+                type="string"
+            )
+        ]
+    )
+    return ret
