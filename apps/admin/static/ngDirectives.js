@@ -2,6 +2,14 @@
 function dialog_root_url(value) {
     _dialog_root_url = value;
 }
+var _onBeforeLoadContent
+function onBeforeLoadContent(callback){
+    _onBeforeLoadContent=callback
+}
+var _onAfterLoadContent
+function onAfterLoadContent(callback){
+    _onAfterLoadContent=callback
+}
 function dialog($scope) {
     function getScript(content) {
         if (content.indexOf("<body>") > -1) {
@@ -97,12 +105,19 @@ function dialog($scope) {
             return me;
         }
         me.done = function (callback) {
+            var $sender=undefined
+            if(_onBeforeLoadContent){
+                $sender=_onBeforeLoadContent()
+            }
 
 
             $.ajax({
                 method: "GET",
                 url: me._url,
                 success: function (res) {
+                    if(_onAfterLoadContent){
+                        _onAfterLoadContent($sender)
+                    }
                     var ret = getScript(res);
                     var sScope = compile(scope, ret.scripts, ret.content,me._params);
                     if (callback) {
@@ -137,6 +152,12 @@ function dialog($scope) {
                         sScope.$element.modal('hide')
                     }
                     watch();
+                },
+                error:function(res){
+                    if(_onAfterLoadContent){
+                        _onAfterLoadContent($sender)
+                    }
+                    console.log(res)
                 }
             })
         }
@@ -351,17 +372,24 @@ mdl.service("$dialog",["$compile",function($compile){
 mdl.directive("cTemplate", ["$compile", function ($compile) {
 
     function loadUrl(url, handler) {
-        var $mask = $("<div class='mask'></div>");
-        $mask.appendTo("body");
+       var $sender=undefined;
+       if(_onBeforeLoadContent){
+            $sender=_onBeforeLoadContent()
+       }
         $.ajax({
             url: _appDirectiveSetRootUrl? _appDirectiveSetRootUrl + "/" + url:url,
             method: "get",
             success: function (res) {
-                $mask.remove();
+                if(_onAfterLoadContent){
+                    _onAfterLoadContent($sender)
+                }
+
                 handler(undefined, { url: url, res: res });
             },
             error: function (err) {
-                $mask.remove();
+                if(_onAfterLoadContent){
+                    _onAfterLoadContent($sender)
+                }
                 handler(err);
             }
         })

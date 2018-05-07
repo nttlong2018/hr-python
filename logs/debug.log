@@ -1071,3 +1071,15 @@ Traceback (most recent call last):
   File "/home/hcsadmin/argo/packages/quicky/api.py", line 83, in call
     raise ex
 Exception: import 'admin/api/categories' encountered 'localhost:27017: [Errno 111] Connection refused'
+auth_user.find (0.00) {'username': 'sys'}
+django_session.save (0.00) {'_id': u'mzax7s2nbxhyfqwr4bh4xlea9b2thng7', 'expire_date': datetime.datetime(2018, 5, 21, 2, 11, 19, 989593, tzinfo=<UTC>), 'session_data': u'YjAwMTViM2E0OTNjMDE0N2NjMTFiZjIxNzYzNmNkYTg5OGRiZGZjMzp7Imxhbmd1YWdlIjoiZW4ifQ=='}
+django_session.find (0.00) {'_id': 'mzax7s2nbxhyfqwr4bh4xlea9b2thng7', 'expire_date': {'$gt': datetime.datetime(2018, 5, 7, 2, 11, 25, 544446, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'username': u'sys'}
+django_session.save (0.00) {'_id': u'ja6pnxmwc5psq770om1ujot4owi86k89', 'expire_date': datetime.datetime(2018, 5, 21, 2, 11, 25, 642910, tzinfo=<UTC>), 'session_data': u'YjAwMTViM2E0OTNjMDE0N2NjMTFiZjIxNzYzNmNkYTg5OGRiZGZjMzp7Imxhbmd1YWdlIjoiZW4ifQ=='}
+django_session.find (0.00) {'_id': 'mzax7s2nbxhyfqwr4bh4xlea9b2thng7'}
+django_session.remove (0.00) {'_id': {'$in': [u'mzax7s2nbxhyfqwr4bh4xlea9b2thng7']}}
+auth_user.save (0.00) {'username': u'sys', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5ae93eda927e0076396dae43'), 'is_active': True, 'email': u'', 'is_superuser': True, 'is_staff': False, 'last_login': datetime.datetime(2018, 5, 7, 2, 11, 25, 650179, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$yS9DDOd72DVJ$Zrr3bSGNme9Vntc76DkeOP/QjJMRcxc+Ps0C/6prAy4=', 'date_joined': datetime.datetime(2018, 5, 1, 21, 30, 18, 595000, tzinfo=<LocalTimezone>)}
+django_session.save (0.00) {'_id': u'ja6pnxmwc5psq770om1ujot4owi86k89', 'expire_date': datetime.datetime(2018, 5, 21, 2, 11, 25, 655193, tzinfo=<UTC>), 'session_data': u'NzljZDI2MzdjNjc1N2U4MjYxNzU2MzNkYWE0MmU4ZjU3MmM2MGJjMTp7Il9hdXRoX3VzZXJfYmFja2VuZCI6InBlcm1pc3Npb25fYmFja2VuZF9ub25yZWwuYmFja2VuZHMuTm9ucmVsUGVybWlzc2lvbkJhY2tlbmQiLCJfYXV0aF91c2VyX2lkIjoiNWFlOTNlZGE5MjdlMDA3NjM5NmRhZTQzIiwibGFuZ3VhZ2UiOiJlbiJ9'}
+auth_user.find (0.00) {'username': 'sys'}
+django_session.find (0.00) {'_id': 'ja6pnxmwc5psq770om1ujot4owi86k89', 'expire_date': {'$gt': datetime.datetime(2018, 5, 7, 2, 11, 25, 671630, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
