@@ -16,7 +16,7 @@ def get_name(name):
     else:
         return _prefix+"."+name
 def employees():
-    ret=_db.collection(get_name("hrm.employees"))
+    ret=_db.collection(get_name("hrm.Employees"))
     ret.create_unique_index(
         [
             dict(
@@ -31,7 +31,7 @@ def employees():
     )
     return ret
 def departments():
-    ret = _db.collection(get_name("hrm.departments"))
+    ret = _db.collection(get_name("hrm.Departments"))
     ret.create_unique_index(
         [
             dict(
@@ -42,7 +42,7 @@ def departments():
     )
     return ret
 def positions():
-    ret = _db.collection(get_name("hrm.positions"))
+    ret = _db.collection(get_name("hrm.Positions"))
     ret.create_unique_index(
         [
             dict(
@@ -53,7 +53,18 @@ def positions():
     )
     return ret
 def provinces():
-    ret = _db.collection(get_name("hrm.provinces"))
+    ret = _db.collection(get_name("hrm.Provinces"))
+    ret.create_unique_index(
+        [
+            dict(
+                field="Code",
+                type="string"
+            )
+        ]
+    )
+    return ret
+def employee_types():
+    ret = _db.collection(get_name("hrm.EmployeeTypes"))
     ret.create_unique_index(
         [
             dict(

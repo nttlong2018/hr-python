@@ -27,10 +27,10 @@ def on_end_request(request):
 
     print("time is :{0} in {1}".format((datetime.datetime.now()-request.begin_time).microseconds,request.path_info))
 Database=dict(
-    host="localhost",
-    name="hrm",
+    host="172.16.7.63",
+    name="lv01_lms",
     port=27017,
-    user="root",
+    user="sys",
     password="123456"
 )
 login_url="login"

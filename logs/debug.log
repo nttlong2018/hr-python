@@ -5,3 +5,52 @@ auth_user.find (0.00) {'username': 'sys'}
 django_session.save (0.00) {'_id': u'spw1sm1kg7giyxkyd0ctyoz068yfkl55', 'expire_date': datetime.datetime(2018, 5, 21, 2, 20, 25, 670592, tzinfo=<UTC>), 'session_data': u'YjAwMTViM2E0OTNjMDE0N2NjMTFiZjIxNzYzNmNkYTg5OGRiZGZjMzp7Imxhbmd1YWdlIjoiZW4ifQ=='}
 auth_user.find (0.00) {'username': 'sys'}
 django_session.save (0.00) {'_id': u'qc2s9fno6d2xk2dpnaydpm40dccx4cx7', 'expire_date': datetime.datetime(2018, 5, 21, 2, 21, 10, 700568, tzinfo=<UTC>), 'session_data': u'YjAwMTViM2E0OTNjMDE0N2NjMTFiZjIxNzYzNmNkYTg5OGRiZGZjMzp7Imxhbmd1YWdlIjoiZW4ifQ=='}
+auth_user.find (0.00) {'username': 'sys'}
+django_session.save (0.00) {'_id': u'duj5f45nv7st9159cyj2qo27wotfm2i8', 'expire_date': datetime.datetime(2018, 5, 21, 4, 44, 18, 886509, tzinfo=<UTC>), 'session_data': u'YjAwMTViM2E0OTNjMDE0N2NjMTFiZjIxNzYzNmNkYTg5OGRiZGZjMzp7Imxhbmd1YWdlIjoiZW4ifQ=='}
+django_session.find (0.00) {'_id': 'duj5f45nv7st9159cyj2qo27wotfm2i8', 'expire_date': {'$gt': datetime.datetime(2018, 5, 7, 4, 44, 20, 486608, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'username': u'sys'}
+django_session.save (0.00) {'_id': u'ex2utkh9mk4m2vz4nnhen5wj6t0ffzdc', 'expire_date': datetime.datetime(2018, 5, 21, 4, 44, 20, 617861, tzinfo=<UTC>), 'session_data': u'YjAwMTViM2E0OTNjMDE0N2NjMTFiZjIxNzYzNmNkYTg5OGRiZGZjMzp7Imxhbmd1YWdlIjoiZW4ifQ=='}
+django_session.find (0.00) {'_id': 'duj5f45nv7st9159cyj2qo27wotfm2i8'}
+django_session.remove (0.00) {'_id': {'$in': [u'duj5f45nv7st9159cyj2qo27wotfm2i8']}}
+auth_user.save (0.00) {'username': u'sys', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5ae93eda927e0076396dae43'), 'is_active': True, 'email': u'', 'is_superuser': True, 'is_staff': False, 'last_login': datetime.datetime(2018, 5, 7, 4, 44, 20, 627699, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$yS9DDOd72DVJ$Zrr3bSGNme9Vntc76DkeOP/QjJMRcxc+Ps0C/6prAy4=', 'date_joined': datetime.datetime(2018, 5, 1, 21, 30, 18, 595000, tzinfo=<LocalTimezone>)}
+django_session.save (0.00) {'_id': u'ex2utkh9mk4m2vz4nnhen5wj6t0ffzdc', 'expire_date': datetime.datetime(2018, 5, 21, 4, 44, 20, 638420, tzinfo=<UTC>), 'session_data': u'NzljZDI2MzdjNjc1N2U4MjYxNzU2MzNkYWE0MmU4ZjU3MmM2MGJjMTp7Il9hdXRoX3VzZXJfYmFja2VuZCI6InBlcm1pc3Npb25fYmFja2VuZF9ub25yZWwuYmFja2VuZHMuTm9ucmVsUGVybWlzc2lvbkJhY2tlbmQiLCJfYXV0aF91c2VyX2lkIjoiNWFlOTNlZGE5MjdlMDA3NjM5NmRhZTQzIiwibGFuZ3VhZ2UiOiJlbiJ9'}
+auth_user.find (0.00) {'username': 'sys'}
+django_session.find (0.00) {'_id': 'ex2utkh9mk4m2vz4nnhen5wj6t0ffzdc', 'expire_date': {'$gt': datetime.datetime(2018, 5, 7, 4, 44, 20, 671274, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ex2utkh9mk4m2vz4nnhen5wj6t0ffzdc', 'expire_date': {'$gt': datetime.datetime(2018, 5, 7, 4, 44, 26, 175807, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ex2utkh9mk4m2vz4nnhen5wj6t0ffzdc', 'expire_date': {'$gt': datetime.datetime(2018, 5, 7, 4, 44, 29, 582198, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ex2utkh9mk4m2vz4nnhen5wj6t0ffzdc', 'expire_date': {'$gt': datetime.datetime(2018, 5, 7, 4, 44, 29, 633769, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+Internal Server Error: /admin/api
+Traceback (most recent call last):
+  File "/home/hcsadmin/argo/packages/django/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/hcsadmin/argo/packages/django/django/views/decorators/http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "/home/hcsadmin/argo/packages/django/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/hcsadmin/argo/packages/quicky/api.py", line 83, in call
+    raise ex
+Exception: import 'admin/api/categories' encountered 'localhost:27017: [Errno 111] Connection refused'
+auth_user.find (0.00) {'username': 'sys'}
+django_session.find (0.00) {'_id': 'ex2utkh9mk4m2vz4nnhen5wj6t0ffzdc', 'expire_date': {'$gt': datetime.datetime(2018, 5, 7, 4, 46, 0, 773000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ex2utkh9mk4m2vz4nnhen5wj6t0ffzdc', 'expire_date': {'$gt': datetime.datetime(2018, 5, 7, 4, 46, 3, 269625, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.01) {'_id': 'ex2utkh9mk4m2vz4nnhen5wj6t0ffzdc', 'expire_date': {'$gt': datetime.datetime(2018, 5, 7, 4, 46, 3, 479835, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+Not Found: /favicon.ico
+django_session.find (0.00) {'_id': 'ex2utkh9mk4m2vz4nnhen5wj6t0ffzdc', 'expire_date': {'$gt': datetime.datetime(2018, 5, 7, 4, 46, 3, 564904, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+Not Found: /admin/category/users
+Not Found: /admin/category/users
+Not Found: /polyfills/promise-6.1.0.js.map
+Not Found: /admin/static/angular.min.js.map
+Not Found: /admin/category/users
+Not Found: /admin/category/users
+Not Found: /admin/category/users
+Not Found: /admin/category/user
+Not Found: /admin/category/users
+Not Found: /admin/category/users
