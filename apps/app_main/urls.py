@@ -1,22 +1,9 @@
-"""argo1 URL Configuration
 
-The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/1.8/topics/http/urls/
-Examples:
-Function views
-    1. Add an import:  from my_app import views
-    2. Add a URL to urlpatterns:  url(r'^$', views.home, name='home')
-Class-based views
-    1. Add an import:  from other_app.views import Home
-    2. Add a URL to urlpatterns:  url(r'^$', Home.as_view(), name='home')
-Including another URLconf
-    1. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
-"""
 from django.conf.urls import include, url
 from django.contrib import admin
 from . import views
 import quicky
-
+app=quicky.applications.get_app_by_file(__file__)
 from django.conf.urls.static import static
 import os
 app=quicky.applications.get_app_by_file(__file__)
@@ -26,6 +13,5 @@ urlpatterns = [
     url(r'^pages/(?P<path>.*)$', views.load_page, name='singleshop'),
     url(r'^sign_out',views.sign_out),
     app.get_static_urls()
-
 ]
 

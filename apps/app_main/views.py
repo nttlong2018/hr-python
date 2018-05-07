@@ -2,16 +2,16 @@
 #
 import os
 from django.shortcuts import get_object_or_404, render
-import membership
+
 from django.http import HttpResponse
 from django.shortcuts import redirect
-
+import quicky
 
 from . import models
-import argo
-from argo import applications
+
+from quicky import applications
 from models import Login
-from  argo import membership
+
 from django.contrib.auth.models import User
 from django.core.exceptions import ObjectDoesNotExist
 from django.contrib.auth import authenticate,login as form_login
@@ -33,7 +33,7 @@ def index(request):
     if request.user.is_anonymous():
         return redirect(request.get_app_url("login"))
     else:
-        model = argo.models.base()
+        model = {}
         return request.render(model)
 
 def admin(request):

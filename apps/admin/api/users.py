@@ -1,19 +1,19 @@
-import argo
+
 import django
 import quicky
 import authorization
 from django.contrib.auth.models import User
-app=argo.applications.get_app_by_file(__file__)
+app=quicky.applications.get_app_by_file(__file__)
 database=quicky.db.database.connect(app.settings.Database)
 def get_app_res(key):
     language=django.utils.translation.get_language()
-    return argo.get_settings().LANGUAGE_ENGINE.get_language_item(language,app.name,"-",key,key)
+    return quicky.get_settings().LANGUAGE_ENGINE.get_language_item(language,app.name,"-",key,key)
 def get_res(view,key):
     language=django.utils.translation.get_language()
-    return argo.get_settings().LANGUAGE_ENGINE.get_language_item(language,app.name,view,key,key)
+    return quicky.get_settings().LANGUAGE_ENGINE.get_language_item(language,app.name,view,key,key)
 def get_global_res(key):
     language=django.utils.translation.get_language()
-    return argo.get_settings().LANGUAGE_ENGINE.get_language_item(language,"-","-",key,key)
+    return quicky.get_settings().LANGUAGE_ENGINE.get_language_item(language,"-","-",key,key)
 
 def get_list(args):
     if authorization.is_allow_read(args["privileges"]):

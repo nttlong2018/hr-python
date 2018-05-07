@@ -1,5 +1,4 @@
-import argo
-from argo import membership
+
 login_url="../admin/login"
 def authenticate(request):
     if not request.user.is_anonymous() and \

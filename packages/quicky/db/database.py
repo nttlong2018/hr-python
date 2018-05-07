@@ -514,7 +514,6 @@ class AGGREGATE():
         return ret
     def copy(self):
         return self.__copy__()
-
 def connect(*args,**kwargs):
 
 

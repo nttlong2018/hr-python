@@ -1,4 +1,4 @@
-from argo import db
+
 from beaker.util import machine_identifier
 
 from  . import models

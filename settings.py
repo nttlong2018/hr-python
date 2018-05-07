@@ -15,12 +15,15 @@ import os
 import sys
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.append(BASE_DIR+"/packages")
+sys.path.append(BASE_DIR+"/packages/django")
+
 sys.path.append(os.getcwd()+"/packages")
 sys.path.append(os.getcwd()+"/packages/django")
 from django.conf.urls import url, include
-import argo
+
 import quicky
-# import django
+
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.8/howto/deployment/checklist/
@@ -82,20 +85,15 @@ WSGI_APPLICATION = 'wsgi.application'
 # https://docs.djangoproject.com/en/1.8/ref/settings/#databases
 DATABASES = {
    'default' : {
-       'ENGINE' : 'django_mongodb_engine',
-       'NAME' : 'lv01_lms',
-       'HOST':'172.16.7.63',
-       'PORT':27017,
-       'USER':'sys',
-       'PASSWORD':'123456'
+       'ENGINE': 'django_mongodb_engine',
+       'NAME': 'lv01_lms',
+       'HOST': '172.16.7.63',
+       'PORT': 27017,
+       'USER': 'sys',
+       'PASSWORD': '123456'
    }
 }
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME':os.path.join(os.getcwd(), 'database','db.sqlite3'),
-#     }
-# }
+
 
 
 # Internationalization
@@ -134,18 +132,7 @@ aut_config_local=dict(
     password="123456"
 )
 quicky.authorize.set_config(aut_config_local)
-# argo.authorization.load(aut_config_local)
 
-# membership_config_local=dict(
-#     provider="membership_mongo",
-#     name="lv01_lms",
-#     host="localhost",
-#     port=27017,
-#     _user="sys",
-#     _password="123456",
-#     elasticsearch=["http://localhost:9200"]
-# )
-# argo.membership.load(membership_config_local)
 language_congig_local=dict(
 provider="language_mongo_engine",
     name="lv01_lms",
@@ -162,7 +149,7 @@ AUTHORIZATION_ENGINE=quicky.authorize
 
 LANGUAGE_ENGINE=quicky.language
 LANGUAGE_CODE="en-us"
-# argo.url.build_urls("apps",APPS)
+
 ROOT_URLCONF = 'apps'
 quicky.url.build_urls(ROOT_URLCONF,APPS)
 import os

@@ -4,8 +4,8 @@ from hrm import forms
 import datetime
 from bson.objectid import ObjectId
 import quicky
-import argo
-app=argo.applications.get_app_by_file(__file__)
+
+app=quicky.applications.get_app_by_file(__file__)
 cnn=quicky.mongodb.connect(app.settings.DATABASE)
 def get_list(data):
     form_name = data["view"].split("/")[1]

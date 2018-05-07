@@ -1,14 +1,16 @@
 import expr
-import query
+import database
 import datetime
 
 import datetime
-qr=query.connect(host="localhost",
+qr=database.connect(host="localhost",
            name="hrm",
            port=27017,
            user="",
            password="123456")
+
 qr=qr.collection("test_from_long").aggregate()
+
 # qr.project(
 #     dict(
 #         FullName="toUpper(concat(FirstName,' ',LastName))",
@@ -18,7 +20,8 @@ qr=qr.collection("test_from_long").aggregate()
 #     ),
 #     time_now=datetime.datetime.now()
 # )
-qr.match("contains(username,@time_now)",time_now="").unwind("$users")
+qr.match("12>12",time_now="")
+
 
 print  qr._pipe
 
