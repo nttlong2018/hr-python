@@ -469,13 +469,6 @@ class COLL():
             })
 
         return data_item
-
-
-
-
-
-
-
 class AGGREGATE():
     name = ""
     qr = None
@@ -534,6 +527,32 @@ class AGGREGATE():
             "$project":_project
         })
         return self
+    def group(self,_id,selectors,*args,**kwargs):
+        __id={}
+        if type(_id) is dict:
+            for key in _id.keys():
+                __id.update({
+                    key:expr.get_calc_expr(_id[key],*args,**kwargs)
+                })
+        else:
+            __id="$"+_id
+        _group = {
+            "$group": {
+                "_id": __id
+            }
+        }
+        if not type(selectors) is dict:
+            raise (Exception("'selectot' must be dict type"))
+
+
+        for key in selectors.keys():
+            _group["$group"].update({
+                key:expr.get_calc_expr(selectors[key],*args,**kwargs)
+            })
+        self._pipe.append(_group)
+        return self
+
+
     def skip(self,len):
         self._pipe.append({
             "$skip":len

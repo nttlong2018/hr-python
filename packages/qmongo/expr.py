@@ -19,7 +19,7 @@ _operators=[
     dict(op="$in",fn=_ast.In),
     dict(op="$notin",fn=_ast.NotIn)
 ]
-
+_avg_funcs="sum,avg,first,last,floor,min,max,push,addToSet,meta"
 def get_comparators(cp):
     if cp._fields.count("elts")>0:
         if type(cp.elts[0]) is _ast.Num:
@@ -617,6 +617,10 @@ def extract_json(fx,*params):
                 "$cond": { "if": get_calc_exprt_boolean_expression(fx.args[0],*params),
                            "then": extract_json(fx.args[1],*params),
                             "else": extract_json(fx.args[2],*params) }
+            }
+        if  _avg_funcs.find(fx.func.id)>-1:
+            return {
+                "$"+fx.func.id:extract_json(fx.args[0])
             }
         elif fx.func.id=="dateToString":
             p_left = get_left(fx.args[0],*params)
