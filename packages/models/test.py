@@ -42,7 +42,7 @@ coll=coll.aggregate()
 # )
 coll.group(
     _id=dict(
-        name="strLenCP(FirstName)"
+        name="a"
     ),
     selectors=dict(
         full_name="sum(strLenCP(concat(FirstName,' ',LastName)))"
