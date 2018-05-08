@@ -488,11 +488,23 @@ def get_expr(fx,*params):
 
                     if fx["right"].get("type","") == "params":
                         val =params[fx["right"]["value"]]
-                        return {
-                            fx["left"]: {
-                                fx["operator"]: val
+                        if type(fx["left"]) is dict and fx["left"]["type"]=="field":
+                            val=fx["right"]["value"]
+                            if fx["right"]["type"]=="params":
+                                val=params[val]
+                            # if fx["right"]["type"]=="function" and fx["right"]["id"]=="get_params":
+
+                            return {
+                                fx["left"]["id"]: {
+                                    fx["operator"]: val
+                                }
                             }
-                        }
+                        else:
+                            return {
+                                fx["left"]: {
+                                    fx["operator"]: val
+                                }
+                            }
                     if fx["right"].get("function","") == "contains":
                         if fx.has_key("params"):
                            if fx["params"][1].get("type","")=="const":
