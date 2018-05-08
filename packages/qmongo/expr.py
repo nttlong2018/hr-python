@@ -138,8 +138,6 @@ def get_left(cp,*params):
 
 
     return ret;
-
-
 def get_right(cp,*params):
     if type(cp) is list:
         return "_"
@@ -247,10 +245,6 @@ def get_right(cp,*params):
 
 
     return ret
-
-
-
-
 def find_operator(op):
     for x in _operators:
         if type(op) is x["fn"]:
@@ -698,8 +692,6 @@ def get_calc_expr_boolean_expression_result(fx,*params):
         return p["value"]
     if p["type"]=="function" and p["id"]=="get_params":
         return params[p["value"]]
-
-
 def get_calc_expr(expr,*params,**kwargs):
     if expr==1:
         return expr
@@ -731,12 +723,6 @@ def get_calc_expr(expr,*params,**kwargs):
     expr=vert_expr(expr,*params)
     cmp = compile(expr, '<unknown>', 'exec', 1024).body.pop()
     return extract_json(cmp.value,*params)
-
-
-
-
-
-
 def get_calc_get_param(fx,*params):
     if type(fx) is _ast.Name:
         return "$"+get_calc_get_names(fx)
@@ -747,7 +733,6 @@ def get_calc_get_param(fx,*params):
         return fx.n
     if type(fx) is _ast.Attribute:
         return "$" + get_left(fx)
-
 def get_calc_get_names(fx):
     return fx.id
 def verify_match(fx):
