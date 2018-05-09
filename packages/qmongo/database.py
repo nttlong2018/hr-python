@@ -551,8 +551,6 @@ class AGGREGATE():
             })
         self._pipe.append(_group)
         return self
-
-
     def skip(self,len):
         self._pipe.append({
             "$skip":len

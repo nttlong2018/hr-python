@@ -25,6 +25,6 @@ class filter_expression():
             "$or": ret
         })
         return self
-    def get_json(self):
+    def get_filter(self):
         return self._pipe
 

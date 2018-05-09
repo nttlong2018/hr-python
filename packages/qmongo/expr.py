@@ -177,6 +177,12 @@ def get_right(cp,*params):
             "type":"const",
             "value":cp.n
         }
+    if type(cp) is _ast.Str:
+        return {
+            "type":"const",
+            "value":cp.s,
+            "data_type":"string"
+        }
 
     if type(cp) is _ast.Compare:
         return {
