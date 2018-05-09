@@ -1,0 +1,47 @@
+import quicky
+from quicky import layout_view
+layout=layout_view.create("hrm","roles")
+layout.create(dict(
+    collection="sys.roles",
+    columns=[
+        dict(
+            caption="Code",
+            name="Code",
+            display_index=100
+        ),
+        dict(
+            caption="Name",
+            name="Name",
+            display_index=200
+        ),
+        dict(
+            caption="Description",
+            name="Description",
+            display_index=300
+        )
+    ],
+    form=dict(
+        rows=[
+            dict(
+                col_md=[2,4,2,4],
+                col_sm=[4,8],
+                col_xs=[4,8],
+                fields=[
+                    dict(name="Code"),
+                    dict(name="Name")
+                ]
+            ),
+            dict(
+                col_md=[2,10],
+                col_sm=[4,8],
+                col_xs=[4,8],
+                fields=[
+                    dict(
+                        name="Description"
+                    )
+                ]
+            )
+
+        ]
+    )
+))

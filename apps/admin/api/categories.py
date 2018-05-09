@@ -15,11 +15,17 @@ def get_list(params):
         })
     count=coll.copy()
     count.count("totalItems")
+    total_items =count.get_item()
+    if total_items==None:
+        total_items=0
+    else:
+        total_items=total_items["totalItems"]
+
     coll.project(project)
     items= coll.get_list()
     return dict(
         items=items,
-        totalItem=count.get_item()["totalItems"],
+        totalItems=total_items,
         pageIndex=0,
         pageSize=20
     )

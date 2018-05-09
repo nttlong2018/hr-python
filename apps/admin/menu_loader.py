@@ -9,10 +9,10 @@ __menu_items__=[
                     "page":"categories/users",
                     "caption":"Users"
                 },{
-                    "page":"pages/roles",
+                    "page":"categories/roles",
                     "caption":"Roles"
                 },{
-                    "page":"pages/views",
+                    "page":"categories/views",
                     "caption":"Views"
                 }
             ]

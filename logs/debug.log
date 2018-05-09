@@ -82,3 +82,374 @@ auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
 django_session.find (0.00) {'_id': 'ex2utkh9mk4m2vz4nnhen5wj6t0ffzdc', 'expire_date': {'$gt': datetime.datetime(2018, 5, 8, 3, 3, 57, 635587, tzinfo=<UTC>)}}
 auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
 Not Found: /hrm/sign_out
+auth_user.find (0.00) {'username': 'sys'}
+django_session.save (0.00) {'_id': u'ocrg190lu4rvs94pzrgoowgs05j0ndot', 'expire_date': datetime.datetime(2018, 5, 23, 10, 49, 17, 635142, tzinfo=<UTC>), 'session_data': u'YjAwMTViM2E0OTNjMDE0N2NjMTFiZjIxNzYzNmNkYTg5OGRiZGZjMzp7Imxhbmd1YWdlIjoiZW4ifQ=='}
+Not Found: /favicon.ico
+django_session.find (0.00) {'_id': 'ocrg190lu4rvs94pzrgoowgs05j0ndot', 'expire_date': {'$gt': datetime.datetime(2018, 5, 9, 10, 49, 19, 520019, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'username': u'sys'}
+django_session.save (0.00) {'_id': u'gtf27yzunbf5z6s5qqt5c4pgidmmryvn', 'expire_date': datetime.datetime(2018, 5, 23, 10, 49, 19, 606102, tzinfo=<UTC>), 'session_data': u'YjAwMTViM2E0OTNjMDE0N2NjMTFiZjIxNzYzNmNkYTg5OGRiZGZjMzp7Imxhbmd1YWdlIjoiZW4ifQ=='}
+django_session.find (0.00) {'_id': 'ocrg190lu4rvs94pzrgoowgs05j0ndot'}
+django_session.remove (0.00) {'_id': {'$in': [u'ocrg190lu4rvs94pzrgoowgs05j0ndot']}}
+auth_user.save (0.00) {'username': u'sys', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5ae93eda927e0076396dae43'), 'is_active': True, 'email': u'', 'is_superuser': True, 'is_staff': False, 'last_login': datetime.datetime(2018, 5, 9, 10, 49, 19, 611319, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$yS9DDOd72DVJ$Zrr3bSGNme9Vntc76DkeOP/QjJMRcxc+Ps0C/6prAy4=', 'date_joined': datetime.datetime(2018, 5, 1, 21, 30, 18, 595000, tzinfo=<LocalTimezone>)}
+django_session.save (0.00) {'_id': u'gtf27yzunbf5z6s5qqt5c4pgidmmryvn', 'expire_date': datetime.datetime(2018, 5, 23, 10, 49, 19, 616901, tzinfo=<UTC>), 'session_data': u'NzljZDI2MzdjNjc1N2U4MjYxNzU2MzNkYWE0MmU4ZjU3MmM2MGJjMTp7Il9hdXRoX3VzZXJfYmFja2VuZCI6InBlcm1pc3Npb25fYmFja2VuZF9ub25yZWwuYmFja2VuZHMuTm9ucmVsUGVybWlzc2lvbkJhY2tlbmQiLCJfYXV0aF91c2VyX2lkIjoiNWFlOTNlZGE5MjdlMDA3NjM5NmRhZTQzIiwibGFuZ3VhZ2UiOiJlbiJ9'}
+auth_user.find (0.00) {'username': 'sys'}
+django_session.find (0.00) {'_id': 'gtf27yzunbf5z6s5qqt5c4pgidmmryvn', 'expire_date': {'$gt': datetime.datetime(2018, 5, 9, 10, 49, 19, 631382, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'gtf27yzunbf5z6s5qqt5c4pgidmmryvn', 'expire_date': {'$gt': datetime.datetime(2018, 5, 9, 10, 49, 26, 905842, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'gtf27yzunbf5z6s5qqt5c4pgidmmryvn', 'expire_date': {'$gt': datetime.datetime(2018, 5, 9, 10, 49, 30, 39655, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'gtf27yzunbf5z6s5qqt5c4pgidmmryvn', 'expire_date': {'$gt': datetime.datetime(2018, 5, 9, 10, 49, 30, 83317, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'gtf27yzunbf5z6s5qqt5c4pgidmmryvn', 'expire_date': {'$gt': datetime.datetime(2018, 5, 9, 10, 49, 32, 497368, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+Internal Server Error: /admin/api
+Traceback (most recent call last):
+  File "/home/hcsadmin/argo/packages/django/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/hcsadmin/argo/packages/django/django/views/decorators/http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "/home/hcsadmin/argo/packages/django/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/hcsadmin/argo/packages/quicky/api.py", line 83, in call
+    raise ex
+Exception: 'admin.api.views/get_list' was not found
+django_session.find (0.00) {'_id': 'gtf27yzunbf5z6s5qqt5c4pgidmmryvn', 'expire_date': {'$gt': datetime.datetime(2018, 5, 9, 10, 49, 36, 190878, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+Internal Server Error: /admin/api
+Traceback (most recent call last):
+  File "/home/hcsadmin/argo/packages/django/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/hcsadmin/argo/packages/django/django/views/decorators/http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "/home/hcsadmin/argo/packages/django/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/hcsadmin/argo/packages/quicky/api.py", line 83, in call
+    raise ex
+Exception: 'admin.api.roles/get_list' was not found
+Not Found: /admin/static/angular.min.js.map
+Not Found: /polyfills/promise-6.1.0.js.map
+django_session.find (0.00) {'_id': 'gtf27yzunbf5z6s5qqt5c4pgidmmryvn', 'expire_date': {'$gt': datetime.datetime(2018, 5, 9, 10, 49, 42, 240924, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+Internal Server Error: /admin/api
+Traceback (most recent call last):
+  File "/home/hcsadmin/argo/packages/django/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/hcsadmin/argo/packages/django/django/views/decorators/http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "/home/hcsadmin/argo/packages/django/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/hcsadmin/argo/packages/quicky/api.py", line 83, in call
+    raise ex
+Exception: 'admin.api.views/get_list' was not found
+django_session.find (0.00) {'_id': 'gtf27yzunbf5z6s5qqt5c4pgidmmryvn', 'expire_date': {'$gt': datetime.datetime(2018, 5, 9, 10, 49, 46, 161165, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'gtf27yzunbf5z6s5qqt5c4pgidmmryvn', 'expire_date': {'$gt': datetime.datetime(2018, 5, 9, 10, 49, 46, 218445, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'gtf27yzunbf5z6s5qqt5c4pgidmmryvn', 'expire_date': {'$gt': datetime.datetime(2018, 5, 9, 10, 52, 28, 326282, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+Not Found: /admin/static/angular.min.js.map
+Not Found: /polyfills/promise-6.1.0.js.map
+django_session.find (0.00) {'_id': 'gtf27yzunbf5z6s5qqt5c4pgidmmryvn', 'expire_date': {'$gt': datetime.datetime(2018, 5, 9, 10, 52, 28, 775804, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'gtf27yzunbf5z6s5qqt5c4pgidmmryvn', 'expire_date': {'$gt': datetime.datetime(2018, 5, 9, 10, 52, 28, 853288, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'gtf27yzunbf5z6s5qqt5c4pgidmmryvn', 'expire_date': {'$gt': datetime.datetime(2018, 5, 9, 10, 52, 31, 872696, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+Internal Server Error: /admin/categories/roles
+Traceback (most recent call last):
+  File "/home/hcsadmin/argo/packages/django/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/hcsadmin/argo/packages/quicky/view.py", line 76, in exec_request
+    raise (ex)
+AttributeError: 'module' object has no attribute 'roles'
+django_session.find (0.00) {'_id': 'gtf27yzunbf5z6s5qqt5c4pgidmmryvn', 'expire_date': {'$gt': datetime.datetime(2018, 5, 9, 10, 52, 43, 493470, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+Internal Server Error: /admin/categories/roles
+Traceback (most recent call last):
+  File "/home/hcsadmin/argo/packages/django/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/hcsadmin/argo/packages/quicky/view.py", line 76, in exec_request
+    raise (ex)
+AttributeError: 'module' object has no attribute 'roles'
+django_session.find (0.00) {'_id': 'gtf27yzunbf5z6s5qqt5c4pgidmmryvn', 'expire_date': {'$gt': datetime.datetime(2018, 5, 9, 10, 52, 53, 930905, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'gtf27yzunbf5z6s5qqt5c4pgidmmryvn', 'expire_date': {'$gt': datetime.datetime(2018, 5, 9, 10, 52, 53, 974704, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'gtf27yzunbf5z6s5qqt5c4pgidmmryvn', 'expire_date': {'$gt': datetime.datetime(2018, 5, 9, 10, 52, 55, 435799, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+Internal Server Error: /admin/categories/roles
+Traceback (most recent call last):
+  File "/home/hcsadmin/argo/packages/django/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/hcsadmin/argo/packages/quicky/view.py", line 76, in exec_request
+    raise (ex)
+AttributeError: 'module' object has no attribute 'roles'
+django_session.find (0.00) {'_id': 'gtf27yzunbf5z6s5qqt5c4pgidmmryvn', 'expire_date': {'$gt': datetime.datetime(2018, 5, 9, 10, 53, 3, 846999, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+Internal Server Error: /admin/categories/views
+Traceback (most recent call last):
+  File "/home/hcsadmin/argo/packages/django/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/hcsadmin/argo/packages/quicky/view.py", line 76, in exec_request
+    raise (ex)
+AttributeError: 'module' object has no attribute 'views'
+django_session.find (0.00) {'_id': 'gtf27yzunbf5z6s5qqt5c4pgidmmryvn', 'expire_date': {'$gt': datetime.datetime(2018, 5, 9, 10, 53, 10, 412607, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+Internal Server Error: /admin/categories/views
+Traceback (most recent call last):
+  File "/home/hcsadmin/argo/packages/django/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/hcsadmin/argo/packages/quicky/view.py", line 76, in exec_request
+    raise (ex)
+AttributeError: 'module' object has no attribute 'views'
+django_session.find (0.00) {'_id': 'gtf27yzunbf5z6s5qqt5c4pgidmmryvn', 'expire_date': {'$gt': datetime.datetime(2018, 5, 9, 10, 53, 55, 880194, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'gtf27yzunbf5z6s5qqt5c4pgidmmryvn', 'expire_date': {'$gt': datetime.datetime(2018, 5, 9, 10, 56, 54, 65514, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+Not Found: /admin/static/angular.min.js.map
+Not Found: /polyfills/promise-6.1.0.js.map
+django_session.find (0.00) {'_id': 'gtf27yzunbf5z6s5qqt5c4pgidmmryvn', 'expire_date': {'$gt': datetime.datetime(2018, 5, 9, 10, 56, 54, 772190, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+Internal Server Error: /admin/categories/roles
+Traceback (most recent call last):
+  File "/home/hcsadmin/argo/packages/django/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/hcsadmin/argo/packages/quicky/view.py", line 76, in exec_request
+    raise (ex)
+AttributeError: 'module' object has no attribute 'roles'
+Internal Server Error: /admin/categories/roles
+Traceback (most recent call last):
+  File "/home/hcsadmin/argo/packages/django/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/hcsadmin/argo/packages/quicky/view.py", line 76, in exec_request
+    raise (ex)
+AttributeError: 'module' object has no attribute 'roles'
+django_session.find (0.00) {'_id': 'gtf27yzunbf5z6s5qqt5c4pgidmmryvn', 'expire_date': {'$gt': datetime.datetime(2018, 5, 9, 10, 57, 36, 250076, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'gtf27yzunbf5z6s5qqt5c4pgidmmryvn', 'expire_date': {'$gt': datetime.datetime(2018, 5, 9, 10, 57, 36, 297552, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'gtf27yzunbf5z6s5qqt5c4pgidmmryvn', 'expire_date': {'$gt': datetime.datetime(2018, 5, 9, 10, 57, 39, 359997, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+Internal Server Error: /admin/categories/roles
+Traceback (most recent call last):
+  File "/home/hcsadmin/argo/packages/django/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/hcsadmin/argo/packages/quicky/view.py", line 76, in exec_request
+    raise (ex)
+AttributeError: 'module' object has no attribute 'roles'
+django_session.find (0.00) {'_id': 'gtf27yzunbf5z6s5qqt5c4pgidmmryvn', 'expire_date': {'$gt': datetime.datetime(2018, 5, 9, 10, 57, 43, 46139, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+Internal Server Error: /admin/categories/roles
+Traceback (most recent call last):
+  File "/home/hcsadmin/argo/packages/django/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/hcsadmin/argo/packages/quicky/view.py", line 76, in exec_request
+    raise (ex)
+AttributeError: 'module' object has no attribute 'roles'
+django_session.find (0.00) {'_id': 'gtf27yzunbf5z6s5qqt5c4pgidmmryvn', 'expire_date': {'$gt': datetime.datetime(2018, 5, 9, 10, 57, 59, 613708, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+Internal Server Error: /admin/categories/views
+Traceback (most recent call last):
+  File "/home/hcsadmin/argo/packages/django/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/hcsadmin/argo/packages/quicky/view.py", line 76, in exec_request
+    raise (ex)
+AttributeError: 'module' object has no attribute 'views'
+django_session.find (0.00) {'_id': 'gtf27yzunbf5z6s5qqt5c4pgidmmryvn', 'expire_date': {'$gt': datetime.datetime(2018, 5, 9, 10, 58, 1, 444593, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+Internal Server Error: /admin/categories/roles
+Traceback (most recent call last):
+  File "/home/hcsadmin/argo/packages/django/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/hcsadmin/argo/packages/quicky/view.py", line 76, in exec_request
+    raise (ex)
+AttributeError: 'module' object has no attribute 'roles'
+django_session.find (0.00) {'_id': 'gtf27yzunbf5z6s5qqt5c4pgidmmryvn', 'expire_date': {'$gt': datetime.datetime(2018, 5, 9, 10, 58, 2, 513153, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'gtf27yzunbf5z6s5qqt5c4pgidmmryvn', 'expire_date': {'$gt': datetime.datetime(2018, 5, 9, 10, 58, 2, 580084, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'gtf27yzunbf5z6s5qqt5c4pgidmmryvn', 'expire_date': {'$gt': datetime.datetime(2018, 5, 9, 10, 58, 28, 892084, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+Internal Server Error: /admin/categories/roles
+Traceback (most recent call last):
+  File "/home/hcsadmin/argo/packages/django/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/hcsadmin/argo/packages/quicky/view.py", line 76, in exec_request
+    raise (ex)
+AttributeError: 'module' object has no attribute 'roles'
+django_session.find (0.00) {'_id': 'gtf27yzunbf5z6s5qqt5c4pgidmmryvn', 'expire_date': {'$gt': datetime.datetime(2018, 5, 9, 10, 58, 49, 51529, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+Internal Server Error: /admin/categories/roles
+Traceback (most recent call last):
+  File "/home/hcsadmin/argo/packages/django/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/hcsadmin/argo/packages/quicky/view.py", line 76, in exec_request
+    raise (ex)
+AttributeError: 'module' object has no attribute 'roles'
+django_session.find (0.00) {'_id': 'gtf27yzunbf5z6s5qqt5c4pgidmmryvn', 'expire_date': {'$gt': datetime.datetime(2018, 5, 9, 10, 59, 24, 191580, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+Internal Server Error: /admin/categories/xxxx
+Traceback (most recent call last):
+  File "/home/hcsadmin/argo/packages/django/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/hcsadmin/argo/packages/quicky/view.py", line 76, in exec_request
+    raise (ex)
+AttributeError: 'module' object has no attribute 'xxxx'
+django_session.find (0.00) {'_id': 'gtf27yzunbf5z6s5qqt5c4pgidmmryvn', 'expire_date': {'$gt': datetime.datetime(2018, 5, 9, 10, 59, 31, 65373, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+Internal Server Error: /admin/categories/
+Traceback (most recent call last):
+  File "/home/hcsadmin/argo/packages/django/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/hcsadmin/argo/packages/quicky/view.py", line 76, in exec_request
+    raise (ex)
+AttributeError: 'module' object has no attribute ''
+django_session.find (0.00) {'_id': 'gtf27yzunbf5z6s5qqt5c4pgidmmryvn', 'expire_date': {'$gt': datetime.datetime(2018, 5, 9, 10, 59, 34, 783195, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+Internal Server Error: /admin/categories/roles
+Traceback (most recent call last):
+  File "/home/hcsadmin/argo/packages/django/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/hcsadmin/argo/packages/quicky/view.py", line 76, in exec_request
+    raise (ex)
+AttributeError: 'module' object has no attribute 'roles'
+django_session.find (0.00) {'_id': 'gtf27yzunbf5z6s5qqt5c4pgidmmryvn', 'expire_date': {'$gt': datetime.datetime(2018, 5, 9, 11, 0, 6, 862317, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'gtf27yzunbf5z6s5qqt5c4pgidmmryvn', 'expire_date': {'$gt': datetime.datetime(2018, 5, 9, 11, 0, 39, 304776, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'gtf27yzunbf5z6s5qqt5c4pgidmmryvn', 'expire_date': {'$gt': datetime.datetime(2018, 5, 9, 11, 1, 18, 56681, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+Not Found: /admin/static/angular.min.js.map
+Not Found: /polyfills/promise-6.1.0.js.map
+django_session.find (0.00) {'_id': 'gtf27yzunbf5z6s5qqt5c4pgidmmryvn', 'expire_date': {'$gt': datetime.datetime(2018, 5, 9, 11, 1, 18, 851410, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+Internal Server Error: /admin/categories/roles
+Traceback (most recent call last):
+  File "/home/hcsadmin/argo/packages/django/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/hcsadmin/argo/packages/quicky/view.py", line 76, in exec_request
+    raise (ex)
+AttributeError: 'module' object has no attribute 'roles'
+django_session.find (0.00) {'_id': 'gtf27yzunbf5z6s5qqt5c4pgidmmryvn', 'expire_date': {'$gt': datetime.datetime(2018, 5, 9, 11, 2, 5, 766760, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'gtf27yzunbf5z6s5qqt5c4pgidmmryvn', 'expire_date': {'$gt': datetime.datetime(2018, 5, 9, 11, 2, 17, 719813, tzinfo=<UTC>)}}
+auth_user.find (0.01) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'gtf27yzunbf5z6s5qqt5c4pgidmmryvn', 'expire_date': {'$gt': datetime.datetime(2018, 5, 9, 11, 2, 21, 798898, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'gtf27yzunbf5z6s5qqt5c4pgidmmryvn', 'expire_date': {'$gt': datetime.datetime(2018, 5, 9, 11, 2, 26, 786855, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+Internal Server Error: /admin/api
+Traceback (most recent call last):
+  File "/home/hcsadmin/argo/packages/django/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/hcsadmin/argo/packages/django/django/views/decorators/http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "/home/hcsadmin/argo/packages/django/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/hcsadmin/argo/packages/quicky/api.py", line 83, in call
+    raise ex
+Exception: Call  'get_list' in 'admin/api/categories' encountered ''NoneType' object has no attribute '__getitem__''
+django_session.find (0.00) {'_id': 'gtf27yzunbf5z6s5qqt5c4pgidmmryvn', 'expire_date': {'$gt': datetime.datetime(2018, 5, 9, 11, 3, 16, 887647, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.01) {'_id': 'gtf27yzunbf5z6s5qqt5c4pgidmmryvn', 'expire_date': {'$gt': datetime.datetime(2018, 5, 9, 11, 3, 23, 507519, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'gtf27yzunbf5z6s5qqt5c4pgidmmryvn', 'expire_date': {'$gt': datetime.datetime(2018, 5, 9, 11, 3, 39, 35401, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'gtf27yzunbf5z6s5qqt5c4pgidmmryvn', 'expire_date': {'$gt': datetime.datetime(2018, 5, 9, 11, 3, 39, 70582, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+Internal Server Error: /admin/api
+Traceback (most recent call last):
+  File "/home/hcsadmin/argo/packages/django/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/hcsadmin/argo/packages/django/django/views/decorators/http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "/home/hcsadmin/argo/packages/django/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/hcsadmin/argo/packages/quicky/api.py", line 83, in call
+    raise ex
+Exception: Call  'get_list' in 'admin/api/categories' encountered ''NoneType' object has no attribute '__getitem__''
+django_session.find (0.00) {'_id': 'gtf27yzunbf5z6s5qqt5c4pgidmmryvn', 'expire_date': {'$gt': datetime.datetime(2018, 5, 9, 11, 5, 9, 953146, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'gtf27yzunbf5z6s5qqt5c4pgidmmryvn', 'expire_date': {'$gt': datetime.datetime(2018, 5, 9, 11, 5, 10, 23909, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'gtf27yzunbf5z6s5qqt5c4pgidmmryvn', 'expire_date': {'$gt': datetime.datetime(2018, 5, 9, 11, 5, 19, 283952, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'gtf27yzunbf5z6s5qqt5c4pgidmmryvn', 'expire_date': {'$gt': datetime.datetime(2018, 5, 9, 11, 5, 19, 322543, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+Internal Server Error: /admin/api
+Traceback (most recent call last):
+  File "/home/hcsadmin/argo/packages/django/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/hcsadmin/argo/packages/django/django/views/decorators/http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "/home/hcsadmin/argo/packages/django/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/hcsadmin/argo/packages/quicky/api.py", line 83, in call
+    raise ex
+Exception: Call  'get_list' in 'admin/api/categories' encountered ''NoneType' object has no attribute '__getitem__''
+django_session.find (0.00) {'_id': 'gtf27yzunbf5z6s5qqt5c4pgidmmryvn', 'expire_date': {'$gt': datetime.datetime(2018, 5, 9, 11, 6, 38, 707196, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+Not Found: /admin/static/angular.min.js.map
+Not Found: /polyfills/promise-6.1.0.js.map
+django_session.find (0.00) {'_id': 'gtf27yzunbf5z6s5qqt5c4pgidmmryvn', 'expire_date': {'$gt': datetime.datetime(2018, 5, 9, 11, 6, 39, 320124, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'gtf27yzunbf5z6s5qqt5c4pgidmmryvn', 'expire_date': {'$gt': datetime.datetime(2018, 5, 9, 11, 6, 39, 399176, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+Internal Server Error: /admin/api
+Traceback (most recent call last):
+  File "/home/hcsadmin/argo/packages/django/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/hcsadmin/argo/packages/django/django/views/decorators/http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "/home/hcsadmin/argo/packages/django/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/hcsadmin/argo/packages/quicky/api.py", line 83, in call
+    raise ex
+Exception: Call  'get_list' in 'admin/api/categories' encountered ''NoneType' object has no attribute '__getitem__''
+django_session.find (0.00) {'_id': 'gtf27yzunbf5z6s5qqt5c4pgidmmryvn', 'expire_date': {'$gt': datetime.datetime(2018, 5, 9, 11, 6, 47, 494748, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'gtf27yzunbf5z6s5qqt5c4pgidmmryvn', 'expire_date': {'$gt': datetime.datetime(2018, 5, 9, 11, 6, 47, 554412, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'gtf27yzunbf5z6s5qqt5c4pgidmmryvn', 'expire_date': {'$gt': datetime.datetime(2018, 5, 9, 11, 6, 58, 748139, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'gtf27yzunbf5z6s5qqt5c4pgidmmryvn', 'expire_date': {'$gt': datetime.datetime(2018, 5, 9, 11, 6, 58, 791454, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+Internal Server Error: /admin/api
+Traceback (most recent call last):
+  File "/home/hcsadmin/argo/packages/django/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/hcsadmin/argo/packages/django/django/views/decorators/http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "/home/hcsadmin/argo/packages/django/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/hcsadmin/argo/packages/quicky/api.py", line 83, in call
+    raise ex
+Exception: Call  'get_list' in 'admin/api/categories' encountered ''NoneType' object has no attribute '__getitem__''
+django_session.find (0.00) {'_id': 'gtf27yzunbf5z6s5qqt5c4pgidmmryvn', 'expire_date': {'$gt': datetime.datetime(2018, 5, 9, 11, 7, 8, 473555, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+Not Found: /admin/static/angular.min.js.map
+Not Found: /polyfills/promise-6.1.0.js.map
+django_session.find (0.00) {'_id': 'gtf27yzunbf5z6s5qqt5c4pgidmmryvn', 'expire_date': {'$gt': datetime.datetime(2018, 5, 9, 11, 7, 8, 972464, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'gtf27yzunbf5z6s5qqt5c4pgidmmryvn', 'expire_date': {'$gt': datetime.datetime(2018, 5, 9, 11, 7, 9, 38893, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+Internal Server Error: /admin/api
+Traceback (most recent call last):
+  File "/home/hcsadmin/argo/packages/django/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/hcsadmin/argo/packages/django/django/views/decorators/http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "/home/hcsadmin/argo/packages/django/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/hcsadmin/argo/packages/quicky/api.py", line 83, in call
+    raise ex
+Exception: Call  'get_list' in 'admin/api/categories' encountered ''NoneType' object has no attribute '__getitem__''
+django_session.find (0.00) {'_id': 'gtf27yzunbf5z6s5qqt5c4pgidmmryvn', 'expire_date': {'$gt': datetime.datetime(2018, 5, 9, 11, 7, 44, 945552, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+Not Found: /admin/static/angular.min.js.map
+Not Found: /polyfills/promise-6.1.0.js.map
+django_session.find (0.00) {'_id': 'gtf27yzunbf5z6s5qqt5c4pgidmmryvn', 'expire_date': {'$gt': datetime.datetime(2018, 5, 9, 11, 7, 45, 411833, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'gtf27yzunbf5z6s5qqt5c4pgidmmryvn', 'expire_date': {'$gt': datetime.datetime(2018, 5, 9, 11, 7, 45, 522995, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
