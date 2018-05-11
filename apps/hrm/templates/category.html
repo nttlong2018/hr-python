@@ -64,7 +64,7 @@
         }
         scope.doEdit=function(item){
             dialog(scope).url('${get_app_url("category")}/${model["path"]}')
-            				.params(item)
+            				.params({item:item})
             				.done();
         }
         scope.doLoadData=function(){

@@ -1,6 +1,6 @@
 from sqlalchemy.sql.functions import count
 
-import expr
+from helpers import expr
 
 from pymongo import MongoClient
 from pymongo.errors import OperationFailure

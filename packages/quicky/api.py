@@ -10,6 +10,9 @@ import JSON
 import applications
 import sys
 import threading
+
+from packages.quicky.layout_view import view
+
 global lock
 lock = threading.Lock()
 logger = logging.getLogger(__name__)
@@ -52,7 +55,12 @@ def call(request):
             raise Exception("import {0} is error or not found".format(module_path))
 
         except Exception as ex:
-            raise Exception("import '{0}' encountered '{1}'".format(module_path, ex.message))
+            if type(ex) is str:
+                raise Exception("import '{0}' encountered '{1}'".format(module_path, ex))
+            elif hasattr(ex,"messagte"):
+                raise Exception("import '{0}' encountered '{1}'".format(module_path, ex))
+            else:
+                raise Exception("import '{0}' encountered '{1}'".format(module_path, ex))
 
         ret = None
 
@@ -64,14 +72,16 @@ def call(request):
                             "privileges": view_privileges,
                             "data": post_data.get("data", {}),
                             "user": user,
-                            "request": request
+                            "request": request,
+                            "view":view
                         })
                 else:
                     ret = getattr(mdl, method_path)(
                         {
                             "privileges": view_privileges,
                             "user": user,
-                            "request": request
+                            "request": request,
+                            "view":view
                         })
 
             except Exception as ex:

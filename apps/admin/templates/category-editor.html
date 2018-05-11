@@ -63,7 +63,8 @@
         <%include file="category-editor-tool-bar.html"/>
     </div>
     <script>
-    (function(scope,params){
+    (function(scope,params,path){
+
         scope.data={}
         if(params){
             scope.$parent.$ws.api('${get_api_key(model["api_get_item"])}')
@@ -79,24 +80,12 @@
         }
 
         scope.doSave=function(){
-            if(scope.isNew){
-                scope.$parent.$ws.api("categories/add_item")
-                          .data(scope.data)
-                          .done(function(err,result){
-                                if(!err){
-                                    scope.$doClose()
-                                }
-                          });
-            }
-            else{
-                 scope.$parent.$ws.api("categories/update_item")
-                          .data(scope.data)
-                          .done(function(err,result){
-                                if(!err){
-                                    scope.$doClose()
-                                }
-                          });
-            }
+            scope.$parent.$ws.api('${get_api_key(model["api_save_item"])}')
+            .data(scope.data)
+            .done(function(error,res){
+                scope.data=res;
+                scope.$applyAsync();
+            });
         }
 
     });

@@ -13,7 +13,7 @@ __menu_items__=[
                     "caption":"Roles"
                 },{
                     "page":"categories/views",
-                    "caption":"Views"
+                    "caption":"Pages"
                 }
             ]
 
