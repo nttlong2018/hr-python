@@ -2,9 +2,10 @@
 import django
 import quicky
 import authorization
+from qmongo import database
 from django.contrib.auth.models import User
 app=quicky.applications.get_app_by_file(__file__)
-database=quicky.db.database.connect(app.settings.Database)
+database=db=database.connect(app.settings.Database)
 def get_app_res(key):
     language=django.utils.translation.get_language()
     return quicky.get_settings().LANGUAGE_ENGINE.get_language_item(language,app.name,"-",key,key)
