@@ -11,15 +11,26 @@ datetime_format_regex_from_javascript = re.compile(r'^\d{4}-\d{2}-\d{2}T\d{2}:\d
 
 
 def datetime_parser(dct):
-    if type(dct) is list:
-        return [datetime_parser(x) for x in dct]
-    for k, v in dct.items():
-        if (isinstance(v, str) or type(v) is unicode) and datetime_format_regex.match(v):
-            dct[k] = datetime.strptime(v, datetime_format)
-        elif (isinstance(v, str) or type(v) is unicode) and datetime_format_regex_from_javascript.match(v):
-            dct[k] = datetime.strptime(v, datetime_format_javascript)
+
+    if type(dct) in [unicode,str]:
+        if datetime_format_regex.match(dct):
+            return datetime.strptime(dict, datetime_format)
+        elif datetime_format_regex_from_javascript.match(dct):
+            return datetime.strptime(dict, datetime_format_javascript)
         else:
-            dct[k]=datetime_parser(v)
+            return dct
+    elif type(dct) is list:
+        return [datetime_parser(x) for x in dct]
+    elif type(dct) is dict:
+        for k, v in dct.items():
+            if (isinstance(v, str) or type(v) is unicode) and datetime_format_regex.match(v):
+                dct[k] = datetime.strptime(v, datetime_format)
+            elif (isinstance(v, str) or type(v) is unicode) and datetime_format_regex_from_javascript.match(v):
+                dct[k] = datetime.strptime(v, datetime_format_javascript)
+            else:
+                dct[k]=datetime_parser(v)
+    else:
+        return dct
 
 
     return dct
@@ -29,7 +40,7 @@ def json_serial(obj):
         return obj.isoformat()
     elif type(obj) is ObjectId:
         return obj.__str__()
-    elif obj.__class__.__class__ is sqlalchemy.ext.declarative.api.DeclarativeMeta:
+    elif hasattr(obj,"__dict__"):
         return obj.__dict__
     elif type(obj) is sqlalchemy.orm.state.InstanceState:
         return  None

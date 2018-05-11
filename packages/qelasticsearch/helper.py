@@ -1,5 +1,5 @@
 from elasticsearch import Elasticsearch
-import query
+import esquery
 _es=None
 def connect(*args,**kwargs):
     global _es
@@ -10,4 +10,4 @@ def connect(*args,**kwargs):
         else:
             params=args[0]
         _es = Elasticsearch(params)
-    return query.query(_es)
+    return esquery.es_query(_es)

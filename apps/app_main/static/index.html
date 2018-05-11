@@ -1,0 +1,455 @@
+<!Doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=-100%, user-scalable=yes" />
+<meta name="format-detection" content="telephone=no">
+<title></title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<link  href="./css/styles.css" rel="stylesheet" type="text/css" />
+<link  href="./css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+<link  href="./css/responsive.css" rel="stylesheet" type="text/css" />
+<link  href="./css/animate.css" rel="stylesheet" type="text/css" />
+<link  href="./css/jquery.jscrollpane.css" rel="stylesheet" type="text/css" />
+</head>
+<body id="index">
+<div id="wrapper"> 
+  <!-- header start -->
+  <div id="header" class="clearfix bg_blue_01">
+    <div class="container-fluid">
+      <div class="logo float-left">
+        <p class="mb-0"><a href="/"><img src="images/logo.png" alt="logo"></a></p>
+      </div>
+      <div class="header_content float-right clearfix">
+        <div class="cl_white box_main_title float-left">
+          <p class="main_title float-left mb-0">Quản lý<span class="font-weight-bold"> Sản phẩm</span></p>
+          <p class="main_time float-right text-right mb-0"><span>10:00 AM</span> <span>Tuesday, OCT 10, 2017</span></p>
+        </div>
+        <div class="btn_function float-right bg_blue_02">
+          <ul class="clearfix main_func mb-0 float-right">
+            <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <i class="bowtie-icon bowtie-mail-message"></i>
+              <div class="notify"><span class="heartbit"></span><span class="point">99</span></div>
+              </a>
+              <ul class="dropdown-menu mailbox animated bounceInDown">
+                <li>
+                  <div class="drop-title">Bạn có 8 tin nhắn mới</div>
+                </li>
+                <li>
+                  <div class="message-center"> <a href="#">
+                    <div class="user-img"> <img src="images/img_user.jpg" alt="user" class="img-circle"> <span class="profile-status online"></span> </div>
+                    <div class="mail-content">
+                      <h5>Trần Công Văn</h5>
+                      <span class="mail-desc">Hỗ trợ CS</span> <span class="time">9:30 AM</span> </div>
+                    </a> <a href="#">
+                    <div class="user-img"> <img src="images/img_user.jpg" alt="user" class="img-circle"> <span class="profile-status busy"></span> </div>
+                    <div class="mail-content">
+                      <h5>Nguyễn Ngọc Tiến</h5>
+                      <span class="mail-desc">Cần sự hỗ trợ</span> <span class="time">9:10 AM</span> </div>
+                    </a> <a href="#">
+                    <div class="user-img"> <img src="images/img_user.jpg" alt="user" class="img-circle"> <span class="profile-status away"></span> </div>
+                    <div class="mail-content">
+                      <h5>Dương Văn Bình</h5>
+                      <span class="mail-desc">Có một yêu cầu cần duyệt</span> <span class="time">9:08 AM</span> </div>
+                    </a> <a href="#">
+                    <div class="user-img"> <img src="images/img_user.jpg" alt="user" class="img-circle"> <span class="profile-status offline"></span> </div>
+                    <div class="mail-content">
+                      <h5>Nguyễn Thành Công</h5>
+                      <span class="mail-desc">Đã được thêm vào nhóm CS</span> <span class="time">9:02 AM</span> </div>
+                    </a> <a href="#">
+                    <div class="user-img"> <img src="images/img_user.jpg" alt="user" class="img-circle"> <span class="profile-status online"></span> </div>
+                    <div class="mail-content">
+                      <h5>Trần Công Văn</h5>
+                      <span class="mail-desc">Hỗ trợ CS</span> <span class="time">9:30 AM</span> </div>
+                    </a> <a href="#">
+                    <div class="user-img"> <img src="images/img_user.jpg" alt="user" class="img-circle"> <span class="profile-status busy"></span> </div>
+                    <div class="mail-content">
+                      <h5>Nguyễn Ngọc Tiến</h5>
+                      <span class="mail-desc">Cần sự hỗ trợ</span> <span class="time">9:10 AM</span> </div>
+                    </a> <a href="#">
+                    <div class="user-img"> <img src="images/img_user.jpg" alt="user" class="img-circle"> <span class="profile-status away"></span> </div>
+                    <div class="mail-content">
+                      <h5>Dương Văn Bình</h5>
+                      <span class="mail-desc">Có một yêu cầu cần duyệt</span> <span class="time">9:08 AM</span> </div>
+                    </a> <a href="#">
+                    <div class="user-img"> <img src="images/img_user.jpg" alt="user" class="img-circle"> <span class="profile-status offline"></span> </div>
+                    <div class="mail-content">
+                      <h5>Nguyễn Thành Công</h5>
+                      <span class="mail-desc">Đã được thêm vào nhóm CS</span> <span class="time">9:02 AM</span> </div>
+                    </a> </div>
+                </li>
+                <li class="center"> <a href="#" class="btn_01 mg_top_5"><span>xem thêm</span></a> </li>
+              </ul>
+            </li>
+            <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <i class="bowtie-icon bowtie-status-waiting"></i>
+              <div class="notify"><span class="heartbit"></span><span class="point">99</span></div>
+              </a>
+              <ul class="dropdown-menu mailbox animated bounceInDown">
+                <li>
+                  <div class="drop-title">Bạn có 8 thông báo mới</div>
+                </li>
+                <li>
+                  <div class="message-center"> <a href="#">
+                    <div class="mail-content"> <span class="mail-desc">Hỗ trợ CS</span> <span class="time">9:30 AM</span> </div>
+                    </a> <a href="#">
+                    <div class="mail-content"> <span class="mail-desc">Cần sự hỗ trợ</span> <span class="time">9:10 AM</span> </div>
+                    </a> <a href="#">
+                    <div class="mail-content"> <span class="mail-desc">Có một yêu cầu cần duyệt</span> <span class="time">9:08 AM</span> </div>
+                    </a> <a href="#">
+                    <div class="mail-content"> <span class="mail-desc">Đã được thêm vào nhóm CS</span> <span class="time">9:02 AM</span> </div>
+                    </a> <a href="#">
+                    <div class="mail-content"> <span class="mail-desc">Hỗ trợ CS</span> <span class="time">9:30 AM</span> </div>
+                    </a> <a href="#">
+                    <div class="mail-content"> <span class="mail-desc">Cần sự hỗ trợ</span> <span class="time">9:10 AM</span> </div>
+                    </a> <a href="#">
+                    <div class="mail-content"> <span class="mail-desc">Có một yêu cầu cần duyệt</span> <span class="time">9:08 AM</span> </div>
+                    </a> <a href="#">
+                    <div class="mail-content"> <span class="mail-desc">Đã được thêm vào nhóm CS</span> <span class="time">9:02 AM</span> </div>
+                    </a> </div>
+                </li>
+                <li class="center"> <a href="#" class="btn_01 mg_top_5"><span>xem thêm</span></a> </li>
+              </ul>
+            </li>
+            <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <i class="bowtie-icon bowtie-comment-discussion"></i>
+              <div class="notify"><span class="heartbit"></span><span class="point">99</span></div>
+              </a>
+              <ul class="dropdown-menu mailbox animated bounceInDown">
+                <li>
+                  <div class="drop-title">Bạn có 4 tin nhắn mới</div>
+                </li>
+                <li>
+                  <div class="message-center"> <a href="#">
+                    <div class="user-img"> <img src="images/img_user.jpg" alt="user" class="img-circle"> <span class="profile-status online"></span> </div>
+                    <div class="mail-content">
+                      <h5>Trần Công Văn</h5>
+                      <span class="mail-desc">Hỗ trợ CS</span> <span class="time">9:30 AM</span> </div>
+                    </a> <a href="#">
+                    <div class="user-img"> <img src="images/img_user.jpg" alt="user" class="img-circle"> <span class="profile-status busy"></span> </div>
+                    <div class="mail-content">
+                      <h5>Nguyễn Ngọc Tiến</h5>
+                      <span class="mail-desc">Cần sự hỗ trợ</span> <span class="time">9:10 AM</span> </div>
+                    </a> <a href="#">
+                    <div class="user-img"> <img src="images/img_user.jpg" alt="user" class="img-circle"> <span class="profile-status away"></span> </div>
+                    <div class="mail-content">
+                      <h5>Dương Văn Bình</h5>
+                      <span class="mail-desc">Có một yêu cầu cần duyệt</span> <span class="time">9:08 AM</span> </div>
+                    </a> <a href="#">
+                    <div class="user-img"> <img src="images/img_user.jpg" alt="user" class="img-circle"> <span class="profile-status offline"></span> </div>
+                    <div class="mail-content">
+                      <h5>Nguyễn Thành Công</h5>
+                      <span class="mail-desc">Đã được thêm vào nhóm CS</span> <span class="time">9:02 AM</span> </div>
+                    </a> <a href="#">
+                    <div class="user-img"> <img src="images/img_user.jpg" alt="user" class="img-circle"> <span class="profile-status online"></span> </div>
+                    <div class="mail-content">
+                      <h5>Trần Công Văn</h5>
+                      <span class="mail-desc">Hỗ trợ CS</span> <span class="time">9:30 AM</span> </div>
+                    </a> <a href="#">
+                    <div class="user-img"> <img src="images/img_user.jpg" alt="user" class="img-circle"> <span class="profile-status busy"></span> </div>
+                    <div class="mail-content">
+                      <h5>Nguyễn Ngọc Tiến</h5>
+                      <span class="mail-desc">Cần sự hỗ trợ</span> <span class="time">9:10 AM</span> </div>
+                    </a> <a href="#">
+                    <div class="user-img"> <img src="images/img_user.jpg" alt="user" class="img-circle"> <span class="profile-status away"></span> </div>
+                    <div class="mail-content">
+                      <h5>Dương Văn Bình</h5>
+                      <span class="mail-desc">Có một yêu cầu cần duyệt</span> <span class="time">9:08 AM</span> </div>
+                    </a> <a href="#">
+                    <div class="user-img"> <img src="images/img_user.jpg" alt="user" class="img-circle"> <span class="profile-status offline"></span> </div>
+                    <div class="mail-content">
+                      <h5>Nguyễn Thành Công</h5>
+                      <span class="mail-desc">Đã được thêm vào nhóm CS</span> <span class="time">9:02 AM</span> </div>
+                    </a> </div>
+                </li>
+                <li class="center"> <a href="#" class="btn_01 mg_top_5"><span>xem thêm</span></a> </li>
+              </ul>
+            </li>
+            <li class="setting dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <i class="bowtie-icon bowtie-settings-gear-outline"></i></a>
+              <ul class="dropdown-menu mailbox animated bounceInDown">
+                <li>
+                  <div class="drop-title">Ngôn ngữ</div>
+                </li>
+                <li>
+                  <div class="message-center"> <a href="#">
+                    <div class="mail-content"> <span class="mail-desc">English</span> </div>
+                    </a> <a href="#">
+                    <div class="mail-content"> <span class="mail-desc">Tiếng Việt</span> </div>
+                    </a> </div>
+                </li>
+              </ul>
+            </li>
+            <li> <a href="#" id="panel-fullscreen" role="button" title="Toggle fullscreen"><i class="bowtie-icon bowtie-view-full-screen"></i></a> </li>
+            <li class="user dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <span class="img_user"><img src="images/img_user.jpg" alt="img user" class="img-circle"></span> <span class="txt_user">Dương Tấn Long</span><i class="bowtie-icon bowtie-chevron-down"></i> </a>
+              <ul class="dropdown-menu mailbox animated bounceInDown">
+                <li>
+                  <div class="message-center"> <a href="#">
+                    <div class="mail-content"> <i class="bowtie-icon bowtie-user float-left"></i><span class="mail-desc">Hồ sơ</span> </div>
+                    </a> <a href="#">
+                    <div class="mail-content"> <i class="bowtie-icon bowtie-status-info-outline float-left"></i><span class="mail-desc">Trợ giúp</span> </div>
+                    </a> <a href="#">
+                    <div class="mail-content"> <i class="bowtie-icon bowtie-status-failure-outline float-left"></i><span class="mail-desc">Thoát</span> </div>
+                    </a></div>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- header end --> 
+  <!-- main start -->
+  <div id="main" class="clearfix">
+    <div class="container-fluid">
+      <div class="sidebar float-left">
+        <ul class="clearfix mb-0">
+          <li><a href=""><span><i class="bowtie-icon bowtie-dashboard"></i></span><span>Tổng quan</span></a></li>
+          <li><a href=""><span><i class="fas fa-sitemap"></i></span><span>Hoạch định</span></a></li>
+          <li><a href=""><span><i class="bowtie-icon bowtie-user"></i></span><span>Chân dung</span></a></li>
+          <li><a href=""><span><i class="fas fa-tasks"></i></span><span>Yêu cầu</span></a></li>
+          <li><a href=""><span><i class="fas fa-cubes"></i></span><span>Phân hệ</span></a></li>
+          <li><a href=""><span><i class="bowtie-icon bowtie-default-executable"></i></span><span>Chức năng</span></a></li>
+          <li><a href=""><span><i class="bowtie-icon bowtie-storyboard"></i></span><span>Kịch bản người dùng</span></a></li>
+          <li><a href=""><span><i class="far fa-newspaper"></i></span><span>Tài liệu</span></a></li>
+          <li><a href=""><span><i class="far fa-money-bill-alt"></i></span><span>Chi phí</span></a></li>
+          <li><a href=""><span><i class="bowtie-icon bowtie-users"></i></span><span>Thành viên</span></a></li>
+        </ul>
+      </div>
+      <!-- main_container start -->
+      <div class="main_container float-left">
+        <div class="main_container_header clearfix">
+          <div class="row pd_lr_7">
+            <div class="col-6">
+              <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                  <li class="btn_menu float-left"><a href="#" class="bg_blue_01"><i class="bowtie-icon bowtie-menu"></i></a></li>
+                  <li class="breadcrumb-item"><a href="#">Phần mềm quản lý SureERP</a></li>
+                  <li class="breadcrumb-item active" aria-current="page">Hoạch định</li>
+                </ol>
+              </nav>
+            </div>
+            <div class="col-6">
+              <ul class="box_btn mb-0">
+                <li><a href="" class="btn_refresh btn_38"><i class="bowtie-icon bowtie-navigate-refresh"></i></a></li>
+                <li><a href="" class="btn_save btn_38"><i class="bowtie-icon bowtie-save"></i></a></li>
+                <li>
+                  <div class="btn_search">
+                    <div class="input-group">
+                      <input type="text" class="form-control" placeholder="">
+                      <span class="input-group-btn">
+                      <button class="btn" type="button"><i class="fas fa-search"></i></button>
+                      </span> </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!-- main_box start -->
+        <div class="main_box"> 
+          <!-- Nav tabs -->
+          <ul class="nav nav-tabs" id="main_tab_01" role="tablist">
+            <li class="nav-item"> <a class="nav-link active" id="tab_01-tab" data-toggle="tab" href="#tab_01" role="tab" aria-controls="tab_01" aria-selected="true">Mô tả sản phẩm</a> </li>
+            <li class="nav-item"> <a class="nav-link" id="tab_02-tab" data-toggle="tab" href="#tab_02" role="tab" aria-controls="tab_02" aria-selected="false">Phân khúc thị trường</a> </li>
+            <li class="nav-item"> <a class="nav-link" id="tab_03-tab" data-toggle="tab" href="#tab_03" role="tab" aria-controls="tab_03" aria-selected="false">Mục tiêu kinh doanh</a> </li>
+            <li class="nav-item"> <a class="nav-link" id="tab_04-tab" data-toggle="tab" href="#tab_04" role="tab" aria-controls="tab_04" aria-selected="false">Tiêu chí thành công</a> </li>
+            <li class="nav-item"> <a class="nav-link" id="tab_05-tab" data-toggle="tab" href="#tab_04" role="tab" aria-controls="tab_05" aria-selected="false">Thực hiện hay không</a> </li>
+          </ul>
+          
+          <!-- Tab panes -->
+          <div class="tab-content">
+            <div class="tab-pane active" id="tab_01" role="tabpanel" aria-labelledby="tab_01-tab">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.</div>
+            <div class="tab-pane" id="tab_02" role="tabpanel" aria-labelledby="tab_02-tab">
+              <div class="row pd_lr_7 mb-15">
+                <div class="col-6">
+                  <div class="box_content mb_15_1024">
+                    <dl class="mb-0">
+                      <dt><a class="title_01 bg_blue_01" data-toggle="collapse" data-target="#multiCollapse_01" aria-expanded="true" aria-controls="multiCollapse_01"><i class="bowtie-icon bowtie-navigate-back-circle float-left ic_arrow"></i><span>Nhu cầu</span></a></dt>
+                      <dd>
+                        <div class="collapse multi-collapse coll_show" id="multiCollapse_01">
+                          <p class="mb-0 box_pd">Mô tả: Phần này mô tả tóm tắt những lý do vì sao xây dựng / phát triển sản phẩm này. Là bức tranh tổng thể mô tả các sự kiện, lịch sử hoặc tình huống, dữ kiện đã được xác định nhằm cho thấy sự cần thiết của việc xây dựng sản phẩm hoặc cần nâng cấp hệ thống....</p>
+                        </div>
+                      </dd>
+                    </dl>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="box_content">
+                    <dl class="mb-0">
+                      <dt><a class="title_01 bg_blue_01 show" data-toggle="collapse" data-target="#multiCollapse_02" aria-expanded="true" aria-controls="multiCollapse_02"><i class="bowtie-icon bowtie-navigate-back-circle float-left ic_arrow"></i><span>Ý tưởng</span></a></dt>
+                      <dd>
+                        <div class="collapse multi-collapse coll_show" id="multiCollapse_02">
+                          <p class="mb-0 box_pd">Mô tả: Phần này mô tả tóm tắt những lý do vì sao xây dựng / Phát triển sản phẩm này. Là bức tranh tổng thể mô tả các sự kiện, lịch sử hoặc tình huống, dữ kiện đã được xác định nhằm cho thấy sự cần thiết của việc xây dựng sản phẩm mới hoặc cần nâng cấp hệ thống...</p>
+                        </div>
+                      </dd>
+                    </dl>
+                  </div>
+                </div>
+              </div>
+              <div class="row pd_lr_7">
+                <div class="col-12">
+                  <div class="box_content mb_15_1024">
+                    <dl>
+                      <dt><a class="title_01 bg_blue_01" data-toggle="collapse" data-target="#multiCollapse_03" aria-expanded="true" aria-controls="multiCollapse_03"><i class="bowtie-icon bowtie-navigate-back-circle float-left ic_arrow"></i><span>Quy mô</span></a></dt>
+                      <dd>
+                        <div class="collapse multi-collapse coll_show" id="multiCollapse_03">
+                          <div class="box_check clearfix box_pd">
+                            <ul class="mb-0">
+                              <li>
+                                <div class="checkbox">
+                                  <label>
+                                    <input type="checkbox" value="">
+                                    Chức năng quản lý hệ thống</label>
+                                </div>
+                              </li>
+                              <li>
+                                <div class="checkbox">
+                                  <label>
+                                    <input type="checkbox" value="">
+                                    Quy mô doanh nghiệp từ 101 đến 500 nhân viên</label>
+                                </div>
+                              </li>
+                              <li>
+                                <div class="checkbox">
+                                  <label>
+                                    <input type="checkbox" value="">
+                                    Quy mô doanh nghiệp từ 501 đến 1000 nhân viên</label>
+                                </div>
+                              </li>
+                              <li>
+                                <div class="checkbox">
+                                  <label>
+                                    <input type="checkbox" value="">
+                                    Quy mô doanh nghiệp hơn 1000 nhân viên</label>
+                                </div>
+                              </li>
+                            </ul>
+                            <ul class="mb-0">
+                              <li>
+                                <div class="checkbox">
+                                  <label>
+                                    <input type="checkbox" value="">
+                                    Doanh nghiệp trong nước</label>
+                                </div>
+                              </li>
+                              <li>
+                                <div class="checkbox">
+                                  <label>
+                                    <input type="checkbox" value="">
+                                    Doanh nghiệp tập đoàn, đa quốc gia</label>
+                                </div>
+                              </li>
+                              <li>
+                                <div class="checkbox">
+                                  <label>
+                                    <input type="checkbox" value="">
+                                    Doanh nghiệp có vốn đầu tư nước ngoài</label>
+                                </div>
+                              </li>
+                              <li>
+                                <div class="checkbox">
+                                  <label>
+                                    <input type="checkbox" value="">
+                                    Doanh nghiệp nhà nước</label>
+                                </div>
+                              </li>
+                            </ul>
+                            <ul class="mb-0">
+                              <li>
+                                <div class="checkbox">
+                                  <label>
+                                    <input type="checkbox" value="">
+                                    Doanh nghiệp hoạt động trong lĩnh vực May Mặc</label>
+                                </div>
+                              </li>
+                              <li>
+                                <div class="checkbox">
+                                  <label>
+                                    <input type="checkbox" value="">
+                                    Doanh nghiệp hoạt động trong lĩnh vực Nông Nghiệp</label>
+                                </div>
+                              </li>
+                              <li>
+                                <div class="checkbox">
+                                  <label>
+                                    <input type="checkbox" value="">
+                                    Doanh nghiệp hoạt động trong lĩnh vực Cơ Khí</label>
+                                </div>
+                              </li>
+                              <li>
+                                <div class="checkbox">
+                                  <label>
+                                    <input type="checkbox" value="">
+                                    Doanh nghiệp hoạt động trong lĩnh vực Thủy Hải Sản</label>
+                                </div>
+                              </li>
+                              <li>
+                                <div class="checkbox">
+                                  <label>
+                                    <input type="checkbox" value="">
+                                    Doanh nghiệp hoạt động trong lĩnh vực Lâm Nghiệp</label>
+                                </div>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </dd>
+                    </dl>
+                  </div>
+                </div>
+              </div>
+              <div class="row pd_lr_7">
+                <div class="col-12">
+                  <div class="box_content mb_15_1024">
+                    <dl>
+                      <dt><a class="title_01 bg_blue_01" data-toggle="collapse" data-target="#multiCollapse_04" aria-expanded="true" aria-controls="multiCollapse_04"><i class="bowtie-icon bowtie-navigate-back-circle float-left ic_arrow"></i><span>Đối thủ cạnh tranh</span></a></dt>
+                      <dd>
+                        <div class="collapse multi-collapse coll_show" id="multiCollapse_04"> <img src="images/02_ERP_HoachDinh_PKTT.jpg" alt="" width="100%"> </div>
+                      </dd>
+                    </dl>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="tab-pane" id="tab_03" role="tabpanel" aria-labelledby="tab_03-tab">...</div>
+            <div class="tab-pane" id="tab_04" role="tabpanel" aria-labelledby="tab_04-tab">...</div>
+          </div>
+        </div>
+        <!-- main_box end --> 
+      </div>
+      <!-- main_container end --> 
+    </div>
+  </div>
+  <!-- main end --> 
+  <!-- footer start -->
+  <div id="footer">
+    <div class="container-fluid">
+      <div class="row">
+        <address class="clearfix bg_blue_01">
+        <ul class="footer_add float-left">
+          <li>&copy; Copyright 2018 | All Rights Reserved by Lac Viet Computing Corp.</li>
+          <li><i class="bowtie-icon bowtie-database"></i><span>Database (DEV): \SQL 2018</span></li>
+        </ul>
+        <ul class="footer_menu float-right bg_blue_02">
+          <li><a href="">Home</a></li>
+          <li><a href="">FAQs</a></li>
+          <li><a href="">About Us</a></li>
+        </ul>
+        </address>
+      </div>
+    </div>
+  </div>
+  <!-- footer end --> 
+</div>
+<script src="./js/jquery.min.js" type="text/javascript"></script> 
+<!-- Bootstrap Core JavaScript --> 
+<script src="./js/common.js" type="text/javascript"></script> 
+<script src="./js/bootstrap.min.js" type="text/javascript"></script> 
+<script src="./js/popper.min.js" type="text/javascript"></script> 
+<script src="./js/jquery.scroll.js" type="text/javascript"></script> 
+<script src="./js/fontawesome-all.min.js" type="text/javascript"></script>
+<script src="./js/jquery.jscrollpane.min.js" type="text/javascript"></script>
+</body>
+</html>

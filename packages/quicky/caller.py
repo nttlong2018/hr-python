@@ -1,6 +1,6 @@
 import json
 import importlib
-import serilize
+import JSON
 class caller_param():
     request=None
     user=None
@@ -47,5 +47,5 @@ def call(request):
         param.data=data["data"]
     if fn!=None:
         ret_data=fn(param)
-    ret_json=serilize.to_json(ret_data)
+    ret_json=JSON.to_json(ret_data)
     return ret_json

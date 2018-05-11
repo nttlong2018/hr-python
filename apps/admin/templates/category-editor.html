@@ -1,0 +1,102 @@
+<div title="Edit" class="container-fluid">
+    <div class="form-group">
+        %for row in model["form"]["rows"]:
+            <div class="row">
+                <%
+                    index=0
+                %>
+                %for col in row["col_md"]:
+
+                    <div class="col-md-${col}">
+                        <%
+                            col=model["get_col"](row["fields"],index)
+                        %>
+                        %if col["is_label"]:
+                            <span>
+                                ${get_app_res(col["caption"])}
+                            </span>
+                        %elif col["type"]=="text":
+                            <input type="text" class="form-control input-sm" ng-model="data.${col['field']}">
+                        %elif col["type"]=="text-area":
+                            <textarea class="form-control input-small" ng-model="data.${col['field']}">
+
+                            </textarea>
+                        %elif col["type"]=="select":
+                            <select class="form-control input-small" ng-model="data.${col['field']}">
+                                <option ng-repeat="p in source_${col['source'].replace('.','_')}" value="{{p.value}}">
+                                    {{p.text}}
+                                </option>
+                            </select>
+                        <script>
+                            (function(scope){
+                                    debugger
+                                    scope.$parent.$ws.api('${get_api_key(model["api_get_item"])}')
+                                              .data({
+                                                    source:"${col['source']}",
+                                                    "lookup-field":"${col['lookup_field']}",
+                                                    "display-field":"${col['display_field']}"
+                                              }).done(function(err,res){
+                                                   scope.source_${col['source'].replace('.','_')}=res;
+                                                   console.log(scope.source_${col['source'].replace('.','_')})
+                                                   scope.$applyAsync();
+
+                                              });
+
+                            });
+                        </script>
+                        %endif
+
+                    </div>
+                    <%
+                        index=index+1
+                    %>
+                %endfor
+
+
+            </div>
+        %endfor
+
+    </div>
+    <div class="form-group">
+        <%include file="category-editor-tool-bar.html"/>
+    </div>
+    <script>
+    (function(scope,params){
+        scope.data={}
+        if(params){
+            scope.$parent.$ws.api('${get_api_key(model["api_get_item"])}')
+            .data(params)
+            .done(function(error,res){
+                scope.data=res;
+                scope.$applyAsync();
+            });
+            scope.isNew=false
+        }
+        else {
+            scope.isNew=true
+        }
+
+        scope.doSave=function(){
+            if(scope.isNew){
+                scope.$parent.$ws.api("categories/add_item")
+                          .data(scope.data)
+                          .done(function(err,result){
+                                if(!err){
+                                    scope.$doClose()
+                                }
+                          });
+            }
+            else{
+                 scope.$parent.$ws.api("categories/update_item")
+                          .data(scope.data)
+                          .done(function(err,result){
+                                if(!err){
+                                    scope.$doClose()
+                                }
+                          });
+            }
+        }
+
+    });
+</script>
+</div>

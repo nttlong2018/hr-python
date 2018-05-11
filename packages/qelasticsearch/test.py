@@ -23,5 +23,5 @@ ret=exporter.read_from_file(get_data_file("employees.xlsx"))
 index=client.get_all_indexes()
 # for item in ret["data"]:
 #     client.create("employees_index_1",item,id=item["Code"])
-ret_data=client.search_text("employees_index_1","Tuấn")
+ret_data=client.search_text("employees_index_1",fields=[],content="test")
 print(ret_data)

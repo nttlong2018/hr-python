@@ -53,7 +53,11 @@ function ws_call(api_path,view_path,data,cb,owner){
                     _wsOnAfterCall(owner.sender)
                 }
                 var newWindow = window.open();
-                newWindow.document.write(errorThrown);
+                var txt=jqXHR.responseText
+                while(txt.indexOf(String.fromCharCode(10))>-1){
+                    txt=txt.replace(String.fromCharCode(10),"<br/>")
+                }
+                newWindow.document.write(txt);
                 if(cb){
                     cb({
                         error:{

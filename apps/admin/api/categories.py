@@ -29,4 +29,9 @@ def get_list(params):
         pageIndex=0,
         pageSize=20
     )
+def get_item(params):
+    x=params
+    return {
+
+    }
 

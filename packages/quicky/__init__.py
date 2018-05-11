@@ -2,7 +2,7 @@ import view
 import applications
 import authorize
 import language
-import serilize
+
 import caller
 import sql_db
 import os

@@ -64,7 +64,7 @@
             				.done();
         }
         scope.doLoadData=function(){
-            scope.$ws.api("${get_api_key('admin/api/categories/get_list')}")
+            scope.$ws.api("${get_api_key(model["api_get_list"])}")
             .data({
                 path:'${model["path"]}'
             }).done(function(error,res){

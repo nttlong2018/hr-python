@@ -66,10 +66,23 @@ def login_to_template(request):
 
 @quicky.view.template("category.html")
 def load_categories(request,path):
-    form = getattr(forms, path)
+    form = getattr(forms, path) # get declare form at forms package
+    config=form.layout.get_config() # get config of form
     return request.render({
         "path": path.lower(),
-        "columns":form.layout.get_table_columns()
+        "columns":form.layout.get_table_columns(),
+        "api_get_list":config.get("action_list","admin.api.categories/get_list")
+    })
+@quicky.view.template("category-editor.html")
+def load_category(request,path):
+    form = getattr(forms, path)
+    config = form.layout.get_config()
+    return request.render({
+        "path": path.lower(),
+        "form": form.layout.get_form(),
+        "get_col": form.layout.get_form_col,
+        "api_get_item": config.get("action_item", "admin.api.categories/get_item"),
+        "keys":config.get("keys", ["_id"]),
     })
 @quicky.view.template(
     file="dynamic.html",

@@ -5,7 +5,8 @@ from django.http import HttpResponse
 import json
 import importlib
 import logging
-import serilize
+
+import JSON
 import applications
 import sys
 import threading
@@ -25,7 +26,7 @@ def call(request):
             return HttpResponse('401 Unauthorized', status=401)
         if not user.is_staff and not user.is_superuser:
             return HttpResponse('401 Unauthorized', status=401)
-        post_data = json.loads(request.body)
+        post_data = JSON.from_json(request.body)
         if not post_data.has_key("path"):
             raise Exception("Api post without using path")
         path = post_data["path"]
@@ -75,7 +76,7 @@ def call(request):
 
             except Exception as ex:
                 raise Exception("Call  '{0}' in '{1}' encountered '{2}'".format(method_path, module_path, ex))
-        ret_data = serilize.to_json(ret)
+        ret_data = JSON.to_json(ret)
 
         return HttpResponse(ret_data)
     except Exception as ex:

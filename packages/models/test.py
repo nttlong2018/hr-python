@@ -1,3 +1,4 @@
+from django.contrib.auth.models import User
 import sys
 import os
 sys.path.append("/home/hcsadmin/argo/packages")
@@ -17,7 +18,7 @@ provinces=hrm.provinces()
 
 data=emp.get_list()
 def get_data_file(file):
-    return os.getcwd()+os.sep+"data"+os.sep+file
+    return os.getcwd()+os.sep+"packages/models/data"+os.sep+file
 
 # file="E:\\code\\python\\p2018\\packages\\excel\\test.xlsx"
 # file_cv="E:\\code\\python\\p2018\\packages\\excel\\cv.xlsx"
@@ -40,16 +41,26 @@ coll=coll.aggregate()
 #     day_salary="ifNull(salaray/26,0)"
 #
 # )
-coll.group(
-    _id=dict(
-        name="a"
-    ),
-    selectors=dict(
-        full_name="sum(strLenCP(concat(FirstName,' ',LastName)))"
-    )
-)
-lst=coll.get_list()
-# for item in ret["data"]:
-#     coll.save(item,ret["keys"])
+# coll.group(
+#     _id=dict(
+#         name="a"
+#     ),
+#     selectors=dict(
+#         full_name="sum(strLenCP(concat(FirstName,' ',LastName)))"
+#     )
+# )
+# lst=coll.get_list()
+for item in ret["data"]:
+    try:
+        user = User.objects.create_user(item["Code"],
+                                        item.get("email", item["Code"]+"@gmail.com"),
+                                        "123")
+        user.first_name = item["FirstName"]
+        user.last_name = item["LastName"]
+        user.save()
+    except:
+        print("error")
+
+    # coll.save(item,ret["keys"])
 print("xong")
 

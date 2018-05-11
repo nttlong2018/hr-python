@@ -16,36 +16,21 @@ def get_global_res(key):
     return quicky.get_settings().LANGUAGE_ENGINE.get_language_item(language,"-","-",key,key)
 
 def get_list(args):
+    from django.contrib.auth.models import User
+
+    page_size=args["data"].get("pageSize",20)
+    page_index = args["data"].get("pageIndex", 0)
+
     if authorization.is_allow_read(args["privileges"]):
-        coll = database.collection("auth_user").aggregate()
+        users = User.objects.all()
+        from_index=page_index*page_size
+        to_index=(page_index+1)*page_size
+        if to_index>users.__len__():
+            to_index=users.__len__()
+        total=users.__len__()
+        items=users[from_index:to_index]
 
-        list=database.collection("auth_user").get_list()
-        search_text=args["data"].get("searchText","")
-        page_size=args["data"].get("pageSize",20)
-        page_index=args["data"].get("pageIndex",0)
 
-        if search_text!="":
-            coll=coll.match("(contains(username,@search_text))or"
-                                        "(contains(first_name,@search_text))or"
-                                        "(contains(last_name,@search_text))",
-                                        search_text=search_text)
-        count=coll.copy()
-        count.count("totalItems")
-        totalItems=count.get_item().get("totalItems",0)
-
-        coll.project(username=1,
-                     first_name=1,
-                     last_name=1,
-                     is_active=1,
-                     email=1,
-                     is_supperuser=1,
-                     is_staff=1,
-                     last_logon=1,
-                     date_joined=1,
-                     displayName="concat(first_name,' ',last_name)",
-                     description=1)
-        coll=coll.skip(page_index*page_size).limit(page_size)
-        items=coll.get_list()
         return dict(
             pageSize=page_size,
             pageIndex=page_index,
@@ -56,6 +41,7 @@ def get_list(args):
     else:
         return []
 def create(args):
+    from models import test
     data=args.get("data",{})
     if data.get("username",None)==None:
         return dict(
@@ -90,18 +76,7 @@ def update(args):
     user.is_staff = data.get("is_staff", False)
     user.is_active = data.get("is_active", False)
     user.save()
-    # user=membership.get_user(args.get("username",""))
-    # if user==None:
-    #     return {
-    #         "error":{
-    #             "code":"user_not_found"
-    #         }
-    #     }
-    # user.description = args.get("description", "")
-    # user.displayName = args.get("displayName", "")
-    # user.isSysAdmin=args.get("isSysAdmin", False)
-    # user.isStaff=args.get("isStaff",False)
-    # user.email = args.get("email,""")
-    # membership.update_user(user)
-    # membership.active_user(user.username)
     return {}
+def get_item(args):
+    print args
+    pass
