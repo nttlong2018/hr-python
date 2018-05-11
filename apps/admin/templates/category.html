@@ -30,6 +30,7 @@
 
 		</tr>
 	</tbody>
+
 			<thead ng-if="data.items && data.items.length>0">
 		<tr>
             %for col in model["columns"]:
@@ -43,6 +44,9 @@
 		</tr>
 	</thead>
 </table>
+		<div>
+			<div b-pager page-size="20" total-items="data.totalItems" page-index="pageIndex" on-change="pageChange" ng-model="pageIndex"/>
+		</div>
 		</div>
 	</div>
 
@@ -51,7 +55,12 @@
 <script>
     (function(scope){
 
-        scope.view_path="${get_view_path()}"
+        scope.view_path="${get_view_path()}";
+        scope.pageIndex=0
+        scope.pageChange=function(data){
+        	scope.pageIndex=data
+        	scope.doLoadData();
+        }
 
         scope.$ws=ws(scope)
         console.log(scope.$ws);
@@ -66,10 +75,12 @@
         scope.doLoadData=function(){
             scope.$ws.api("${get_api_key(model["api_get_list"])}")
             .data({
-                path:'${model["path"]}'
+                path:'${model["path"]}',
+                pageIndex:scope.pageIndex
             }).done(function(error,res){
             	if(!error){
 					scope.data=res;
+
 					console.log(res);
 					scope.$applyAsync();
                 }

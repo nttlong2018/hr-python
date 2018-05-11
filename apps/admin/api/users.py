@@ -17,12 +17,15 @@ def get_global_res(key):
 
 def get_list(args):
     from django.contrib.auth.models import User
+    # from models import  test
 
     page_size=args["data"].get("pageSize",20)
     page_index = args["data"].get("pageIndex", 0)
+    total_items=0
 
     if authorization.is_allow_read(args["privileges"]):
         users = User.objects.all()
+        total_items=users.__len__()
         from_index=page_index*page_size
         to_index=(page_index+1)*page_size
         if to_index>users.__len__():
@@ -35,13 +38,12 @@ def get_list(args):
             pageSize=page_size,
             pageIndex=page_index,
             items=items,
-            total=1000
+            totalItems=total_items
         )
 
     else:
         return []
 def create(args):
-    from models import test
     data=args.get("data",{})
     if data.get("username",None)==None:
         return dict(
@@ -78,5 +80,11 @@ def update(args):
     user.save()
     return {}
 def get_item(args):
-    print args
-    pass
+    data=args["data"]
+    user=None
+    try:
+        user=User.objects.get(username=data["username"])
+    except Exception as ex:
+        x=ex
+        return None
+    return user

@@ -38,15 +38,6 @@ layout.create(dict(
                     dict(name="first_name"),
                     dict(name="last_name")
                 ]
-            ),
-            dict(
-                col_md=[2,10],
-                col_sm=[4, 8],
-                col_xs=[4, 8],
-                fields=[
-                    dict(name="Description",
-                         type="text-area")
-                ]
             )
         ]
     ),

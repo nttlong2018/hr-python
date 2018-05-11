@@ -46,6 +46,8 @@ def json_serial(obj):
         return  None
     return obj.__str__()
 def to_json(ret):
+    if ret==None:
+        return json.dumps(ret)
     if type(ret) is list:
         if ret.__len__()==0:
             ret_data="[]"

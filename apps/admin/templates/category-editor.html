@@ -1,7 +1,7 @@
 <div title="Edit" class="container-fluid">
     <div class="form-group">
         %for row in model["form"]["rows"]:
-            <div class="row">
+            <div class="row form-group">
                 <%
                     index=0
                 %>
@@ -27,6 +27,8 @@
                                     {{p.text}}
                                 </option>
                             </select>
+                        %elif col["type"]=="html-editor":
+                            <div b-html-editor></div>
                         <script>
                             (function(scope){
                                     debugger
