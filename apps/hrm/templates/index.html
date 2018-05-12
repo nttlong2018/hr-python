@@ -16,7 +16,7 @@
 </div>
 
 <script>
-var app=angular.module("app",["c-ui"])
+var app=angular.module("app",["c-ui","ui"])
 app.controller("app",["$compile","$scope",function($compile,scope){
     scope.$root.$compile=$compile;
     ws_set_url("${get_app_url('api')}")
