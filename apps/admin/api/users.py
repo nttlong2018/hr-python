@@ -1,4 +1,3 @@
-
 import django
 import quicky
 import authorization

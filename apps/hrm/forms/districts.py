@@ -1,22 +1,21 @@
 # -*- coding: utf-8 -*-
 from quicky import layout_view
 from . import category
-
-layout=layout_view.create("hrm","districts")
+import quicky
+app=quicky.applications.get_app_by_file(__file__)
+layout=layout_view.create(app.name,"districts")
 layout.create(dict(
     collection="list.districts",
     columns=layout_view.extend_columns(
         category.basic_columns,
         [dict(
             caption="Province",
-            name="ProvinceId",
+            name="ProvinceCode",
             display_index=2010,
             lookup=dict(
                 source="list.provinces",
-                local_field="ProvinceId",
-                foreign_field="ProvinceId",
-                alias="Province",
-                display_field="ProvinceName"
+                field="Code",
+                alias="Province"
             )
         )]
     ),

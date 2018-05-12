@@ -1,19 +1,7 @@
 import quicky
 from quicky import layout_view
-layout=layout_view.create("hrm","views")
-# "_id": ObjectId("5ad4250d927e004ab36cc2bc"),
-# "Name": "index",
-# "Create": false,
-# "Delete": false,
-# "Description": "",
-# "Extend": {
-#
-#           },
-# "Read": false,
-# "App": "admin",
-# "Update": false,
-# "Path": "index",
-# "IsPulic": false
+app=quicky.applications.get_app_by_file(__file__)
+layout=layout_view.create(app.name,"views")
 layout.create(dict(
     collection="sys_views",
     columns=[

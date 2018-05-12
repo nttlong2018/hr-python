@@ -8,7 +8,7 @@ def authenticate(request):
         return True
     else:
         return False
-DATABASE=dict(
+Database=dict(
     host="localhost",
     port=27017,
     user="root",

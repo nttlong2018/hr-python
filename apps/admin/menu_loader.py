@@ -2,22 +2,23 @@ import json
 import os
 __menu_items__=[
 
-        {
-            "caption":"Privileges",
-            "items":[
-                {
-                    "page":"categories/users",
-                    "caption":"Users"
-                },{
-                    "page":"categories/roles",
-                    "caption":"Roles"
-                },{
-                    "page":"categories/views",
-                    "caption":"Pages"
-                }
-            ]
+    {
+        "caption":"Privileges",
+        "items":[
+            {
+                "page":"categories/users",
+                "caption":"Users"
+            },{
+                "page":"categories/roles",
+                "caption":"Roles"
+            },{
+                "page":"categories/views",
+                "caption":"Pages"
+            }
+        ]
 
-         },{
+     },
+    {
         "caption":"content",
         "items":[
             {
@@ -27,6 +28,14 @@ __menu_items__=[
                 "page":"Wiki",
                 "caption":"wiki"
             }
+        ]
+    },{
+        "caption":"Settings",
+        "items":[
+            dict(
+                page="form/config",
+                caption="Settings"
+            )
         ]
     }
 

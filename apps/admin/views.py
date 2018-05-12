@@ -85,6 +85,18 @@ def load_category(request,path):
         "api_save_item": config.get("action_save_item", "admin.api.categories/save_item"),
         "keys":config.get("keys", ["_id"]),
     })
+@quicky.view.template("category-editor.html")
+def load_form(request,path):
+    form = importlib.import_module("{0}.forms.{1}".format(application.name, path))
+    config = form.layout.get_config()
+    return request.render({
+        "path": path.lower(),
+        "form": form.layout.get_form(),
+        "get_col": form.layout.get_form_col,
+        "api_get_item": config.get("action_item", "admin.api.categories/get_item"),
+        "api_save_item": config.get("action_save_item", "admin.api.categories/save_item"),
+        "keys":config.get("keys", ["_id"]),
+    })
 @quicky.view.template(
     file="dynamic.html",
     is_public=True

@@ -1,6 +1,7 @@
 import quicky
 from quicky import layout_view
-layout=layout_view.create("hrm","users")
+app=quicky.applications.get_app_by_file(__file__)
+layout=layout_view.create(app.name,"users")
 layout.create(dict(
     collection="auth_user",
     columns=[

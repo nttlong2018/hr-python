@@ -3,7 +3,7 @@ from quicky import layout_view
 app=quicky.applications.get_app_by_file(__file__)
 layout=layout_view.create(app.name,"roles")
 layout.create(dict(
-    collection="sys.roles",
+    collection="sys.config",
     columns=[
         dict(
             caption="Code",

@@ -13,7 +13,7 @@ import logging
 import quicky
 logger = logging.getLogger(__name__)
 
-
+application=quicky.applications.get_app_by_file(__file__)
 logger = logging.getLogger(__name__)
 @quicky.view.template("index.html")
 
@@ -29,22 +29,25 @@ def index(request):
 
 
 @quicky.view.template("category.html")
-
 def load_categories(request,path):
-    form = getattr(forms, path)
+    form =importlib.import_module("{0}.forms.{1}".format(application.name,path))# get declare form at forms package
+    config=form.layout.get_config() # get config of form
     return request.render({
         "path": path.lower(),
-        "columns":form.layout.get_table_columns()
+        "columns":form.layout.get_table_columns(),
+        "api_get_list":config.get("action_list","hrm.api.categories/get_list")
     })
-
 @quicky.view.template("category-editor.html")
-
 def load_category(request,path):
-    form = getattr(forms, path)
+    form = importlib.import_module("{0}.forms.{1}".format(application.name, path))
+    config = form.layout.get_config()
     return request.render({
         "path": path.lower(),
         "form": form.layout.get_form(),
-        "get_col": form.layout.get_form_col
+        "get_col": form.layout.get_form_col,
+        "api_get_item": config.get("action_item", "hrm.api.categories/get_item"),
+        "api_save_item": config.get("action_save_item", "hrm.api.categories/save_item"),
+        "keys":config.get("keys", ["_id"]),
     })
 
 @quicky.view.template("dynamic.html")

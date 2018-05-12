@@ -1,3 +1,0 @@
-import category
-import provinces
-import districts

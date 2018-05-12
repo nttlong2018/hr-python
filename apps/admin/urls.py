@@ -12,6 +12,7 @@ urlpatterns = [
     url(r'^pages/(?P<path>.*)$', views.load_page, name='singleshop'),
     url(r'^categories/(?P<path>.*)$', views.load_categories, name='singleshop'),
     url(r'^category/(?P<path>.*)$', views.load_category),
+    url(r'^form/(?P<path>.*)$', views.load_form),
     url(r'^api$',"quicky.api.call"),
     app.get_static_urls()
     ]

@@ -1,8 +1,9 @@
 # -*- coding: utf-8 -*-
 from quicky import layout_view
 from . import category
-
-layout=layout_view.create("hrm","provinces")
+import quicky
+app=quicky.applications.get_app_by_file(__file__)
+layout=layout_view.create(app.name,"provinces")
 layout.create(dict(
     collection="list.provinces",
     columns=layout_view.extend_columns(
@@ -16,24 +17,40 @@ layout.create(dict(
     form=dict(
         rows=[
             dict(
-                col_md=[2,4,2,4],
+                col_md=[4,8],
                 col_sm=[4,8],
                 col_xs=[4,8],
                 fields=[
-                    dict(name="Code"),
+                    dict(name="Code")
+                ]
+            ),
+            dict(
+                col_md=[4,8],
+                col_sm=[4,8],
+                col_xs=[4,8],
+                fields=[
                     dict(name="Name")
                 ]
             ),
             dict(
-                col_md=[2, 10],
+                col_md=[4,8],
+                col_sm=[4,8],
+                col_xs=[4,8],
+                fields=[
+                    dict(name="ForeignName")
+                ]
+            ),
+            dict(
+                col_md=[4,8],
                 col_sm=[4, 8],
                 col_xs=[4, 8],
                 fields=[
                     dict(name="PostalCode")
+
                 ]
             ),
             dict(
-                col_md=[2,10],
+                col_md=[4,8],
                 col_sm=[4, 8],
                 col_xs=[4, 8],
                 fields=[

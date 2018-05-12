@@ -1,11 +1,10 @@
-<div class="row">
-	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-        <%include file="category-toolbar.html"/>
-	</div>
-</div>
+<div class="tile">
+
 <div class="row">
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+
 		<table class="table table-bordered table-hover small">
+
 	<thead>
 		<tr>
             %for col in model["columns"]:
@@ -21,7 +20,11 @@
 	<tbody>
 		<tr ng-repeat="item in data.items">
             %for col in model["columns"]:
-                <td>{{item.${col["name"]}}}</td>
+				%if col.get("date_format",None)!=None:
+					<td>{{item.${col["name"]}|date:'${col["date_format"]}'}}<br></td>
+				%else:
+					<td>{{item.${col["name"]}}}</td>
+				%endif
             %endfor
 			<td>
 				 <button type="button" class="btn btn-default" ng-click="doEdit(item)">
@@ -31,6 +34,7 @@
 
 		</tr>
 	</tbody>
+
 			<thead ng-if="data.items && data.items.length>0">
 		<tr>
             %for col in model["columns"]:
@@ -44,36 +48,43 @@
 		</tr>
 	</thead>
 </table>
+		<div>
+			<div b-pager page-size="20" total-items="data.totalItems" page-index="pageIndex" on-change="pageChange" ng-model="pageIndex"/>
+		</div>
+		</div>
 	</div>
-</div>
-<div class="row">
-    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-        <%include file="category-toolbar.html"/>
-	</div>
-</div>
 
+
+</div>
 <script>
     (function(scope){
 
-        scope.view_path="${get_view_path()}"
+        scope.view_path="${get_view_path()}";
+        scope.pageIndex=0
+        scope.pageChange=function(data){
+        	scope.pageIndex=data
+        	scope.doLoadData();
+        }
 
         scope.$ws=ws(scope)
-        console.log(scope.$ws);
+
         scope.doAddNew=function(){
             dialog(scope).url('${get_app_url("category")}/${model["path"]}').done();
         }
         scope.doEdit=function(item){
             dialog(scope).url('${get_app_url("category")}/${model["path"]}')
-            				.params({item:item})
+            				.params(item)
             				.done();
         }
         scope.doLoadData=function(){
-            scope.$ws.api("categories/get_list")
+            scope.$ws.api("${get_api_key(model["api_get_list"])}")
             .data({
-                path:'${model["path"]}'
+                path:'${model["path"]}',
+                pageIndex:scope.pageIndex
             }).done(function(error,res){
             	if(!error){
 					scope.data=res;
+
 					console.log(res);
 					scope.$applyAsync();
                 }
