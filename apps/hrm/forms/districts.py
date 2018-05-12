@@ -6,17 +6,24 @@ app=quicky.applications.get_app_by_file(__file__)
 layout=layout_view.create(app.name,"districts")
 layout.create(dict(
     collection="list.districts",
+    lookups=[
+        dict(
+            source="list.provinces",
+            local_field="ProvinceCode",
+            foreign_field="Code",
+            alias="Province"
+        )
+    ],
     columns=layout_view.extend_columns(
         category.basic_columns,
         [dict(
-            caption="Province",
-            name="ProvinceCode",
-            display_index=2010,
-            lookup=dict(
-                source="list.provinces",
-                field="Code",
-                alias="Province"
-            )
+            caption="Province Code",
+            name="Province.Code",
+        ),
+        dict(
+            caption="Province Name",
+            name="Province.Name"
+
         )]
     ),
     form=dict(
@@ -35,10 +42,10 @@ layout.create(dict(
                 col_sm=[4, 8],
                 col_xs=[4, 8],
                 fields=[
-                    dict(name="ProvinceId",
+                    dict(name="ProvinceCode",
                          type="select",
                          source="list.provinces",
-                         lookup_field="_id",
+                         lookup_field="Code",
                          display_field="Name")
 
                 ]

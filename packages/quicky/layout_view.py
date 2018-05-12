@@ -4,6 +4,8 @@ import threading
 global lock
 lock=threading.Lock()
 _caching={}
+_cache_lookup={}
+_cache_lookup_fields={}
 
 
 def get_form_col(fields,index):
@@ -49,6 +51,8 @@ class view():
     def create(self,config):
         self._data[self._layout_name]=config
         return self
+    def get_lookups(self):
+        return self._data[self._layout_name].get("lookups", [])
     def get_table_columns(self):
         ret = self._data[self._layout_name].get("columns", [])
         ret = sorted(ret, key=lambda item: item.get("display_index", 0))
@@ -95,5 +99,52 @@ class view():
                     })
 
         return ret
+    def get_lookup_by_source(self,source):
+        global _cache_lookup
+        if _cache_lookup.has_key(source):
+            return _cache_lookup[source]
+        else:
+            lock.acquire()
+            try:
+                lookup_list=self.get_config().get("lookups",[])
+                items=[x for x in lookup_list if x["source"]==source]
+                if items.__len__()>0:
+                    _cache_lookup.update({
+                        source:items[0]
+                    })
+                lock.release()
+                return _cache_lookup[source]
+            except Exception as ex:
+                lock.release()
+                raise (ex)
+    def get_lookup_config_by_source(self,source):
+        global _cache_lookup_fields
+        key= self._layout_name+"/"+source
+        if _cache_lookup_fields.has_key(key):
+            return _cache_lookup_fields[key]
+        else:
+            lock.acquire()
+            try:
+                rows = self.get_config()["form"]["rows"]
+                find_item=None
+                for row in rows:
+                    for field in row.get("fields",[]):
+                        if field.has_key("source") and field["source"]==source:
+                            find_item=field
+                            break
+
+                lock.release()
+                if find_item!=None:
+                    _cache_lookup_fields.update({
+                        key:find_item
+                    })
+                    return _cache_lookup_fields[key]
+                else:
+                    return None
+            except Exception as ex:
+                lock.release()
+                raise (ex)
+
+
 
 

@@ -47,6 +47,7 @@ def load_category(request,path):
         "get_col": form.layout.get_form_col,
         "api_get_item": config.get("action_item", "hrm.api.categories/get_item"),
         "api_save_item": config.get("action_save_item", "hrm.api.categories/save_item"),
+        "api_get_dictionary":config.get("action_get_distionary", "hrm.api.categories/get_dictionary"),
         "keys":config.get("keys", ["_id"]),
     })
 

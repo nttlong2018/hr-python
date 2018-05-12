@@ -38,7 +38,7 @@
 			<thead ng-if="data.items && data.items.length>0">
 		<tr>
             %for col in model["columns"]:
-                <th style="${col.get('style','')}">${get_res(col["caption"])}</th>
+                <th style="${col.get('style','')}">&nbsp;</th>
             %endfor
 				<th style="width:80px">
 					 <button type="button" class="btn btn-primary btn-sm" ng-click="doAddNew()">

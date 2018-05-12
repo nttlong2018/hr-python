@@ -1,3 +1,6 @@
+<%
+    import hash_data
+%>
 <div title="Edit" class="container-fluid">
     <div class="form-group">
         %for row in model["form"]["rows"]:
@@ -27,16 +30,13 @@
                                     {{p.text}}
                                 </option>
                             </select>
-                        %elif col["type"]=="html-editor":
-                            <div b-html-editor></div>
-                        <script>
+                              <script>
                             (function(scope){
-                                    debugger
-                                    scope.$parent.$ws.api('${get_api_key(model["api_get_item"])}')
+                                    scope.$parent.$ws.api('${get_api_key(model["api_get_dictionary"])}')
                                               .data({
-                                                    source:"${col['source']}",
-                                                    "lookup-field":"${col['lookup_field']}",
-                                                    "display-field":"${col['display_field']}"
+                                                    source:"${hash_data.to_hash(col['source'])}",
+                                                    "lookupField":"value",
+                                                    "displayField":"text"
                                               }).done(function(err,res){
                                                    scope.source_${col['source'].replace('.','_')}=res;
                                                    console.log(scope.source_${col['source'].replace('.','_')})
@@ -46,6 +46,9 @@
 
                             });
                         </script>
+                        %elif col["type"]=="html-editor":
+                            <div b-html-editor></div>
+
                         %endif
 
                     </div>
