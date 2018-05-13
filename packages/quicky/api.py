@@ -52,7 +52,8 @@ def call(request):
             mdl = importlib.import_module(module_path.replace("/","."))
         except ImportError as ex:
             logger.debug(Exception("import {0} is error or not found".format(module_path)))
-            raise Exception("import {0} is error or not found".format(module_path))
+            logger.debug(ex)
+            raise Exception("import {0} is error or not found.Error description {1}".format(module_path,ex.message))
 
         except Exception as ex:
             if type(ex) is str:

@@ -1,4 +1,4 @@
-
+import models.hrm.categories
 login_url="../admin/login"
 def authenticate(request):
     if not request.user.is_anonymous() and \
@@ -15,3 +15,4 @@ Database=dict(
     password="123456",
     name="hrm"
 )
+models.hrm.categories.connect(Database)

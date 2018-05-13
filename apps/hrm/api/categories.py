@@ -2,6 +2,7 @@ import quicky
 import hrm.forms as forms
 from qmongo import helpers
 from qmongo import database
+import models.hrm.categories
 import hash_data
 from bson import *
 app=quicky.applications.get_app_by_file(__file__)
@@ -14,6 +15,8 @@ def get_list(params):
     coll=db.collection(coll_name).aggregate()
     project={}
     lookup_cols=frm.layout.get_lookups()
+    page_index=params["data"].get("pageIndex",0)
+    page_size = params["data"].get("pageSize", 20)
     for item in lookup_cols:
         coll.lookup(
             source=item["source"],
@@ -38,7 +41,7 @@ def get_list(params):
     else:
         total_items=total_items["totalItems"]
 
-    coll.project(project)
+        coll.project(project).skip(page_index * page_size).limit(page_size)
     items= coll.get_list()
     return dict(
         items=items,

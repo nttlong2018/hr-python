@@ -2,6 +2,7 @@
 import static_configs
 from quicky import layout_view
 import quicky
+import models.hrm.categories
 app=quicky.applications.get_app_by_file(__file__)
 basic_columns=[
     dict(

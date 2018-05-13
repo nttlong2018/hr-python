@@ -432,7 +432,7 @@ class COLL():
                     }
                 })
             coll=self.qr.db.get_collection(self.name)
-            collation=pymongo.collation.Collation(locale="en_US")
+            collation=pymongo.collation.Collation(locale="en_US",strength= 2)
             coll.create_index(keys,
                               unique=True,
                               collation=collation,

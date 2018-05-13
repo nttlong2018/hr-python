@@ -52,17 +52,6 @@ def positions():
         ]
     )
     return ret
-def provinces():
-    ret = _db.collection(get_name("hrm.Provinces"))
-    ret.create_unique_index(
-        [
-            dict(
-                field="Code",
-                type="string"
-            )
-        ]
-    )
-    return ret
 def employee_types():
     ret = _db.collection(get_name("hrm.EmployeeTypes"))
     ret.create_unique_index(

@@ -1,11 +1,14 @@
 # -*- coding: utf-8 -*-
 from quicky import layout_view
-from . import category
+
 import quicky
+import models.hrm.categories
+import category
 app=quicky.applications.get_app_by_file(__file__)
+
 layout=layout_view.create(app.name,"provinces")
 layout.create(dict(
-    collection="list.provinces",
+    collection=models.hrm.categories.provinces().name,
     columns=layout_view.extend_columns(
         category.basic_columns,
         [dict(
