@@ -1,2 +1,2 @@
-import settings
-import forms
+from . import settings
+from . import forms
