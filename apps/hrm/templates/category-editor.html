@@ -86,7 +86,11 @@
             scope.$parent.$ws.api('${get_api_key(model["api_save_item"])}')
             .data(scope.data)
             .done(function(error,res){
-                scope.data=res;
+                console.log(res);
+                if(res.error){
+                    alert("lỗi");
+                }
+                scope.data=res.data;
                 scope.$applyAsync();
             });
         }

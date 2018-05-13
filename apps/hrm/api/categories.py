@@ -63,8 +63,9 @@ def save_item(params):
     coll_name = frm.layout.get_config()["collection"]
     data = params["data"]
     coll = db.collection(coll_name)
+    ret=None
     if data.get("_id",None)==None:
-        coll.insert(data)
+        ret=coll.insert(data)
     else:
         update_fields=frm.layout.get_all_fields_of_form()
         update_data={}
@@ -73,8 +74,18 @@ def save_item(params):
                 update_data.update({
                     key:data[key]
                 })
-        coll.update(update_data,"_id==@id",id=ObjectId(data["_id"]))
-    return data
+        ret=coll.update(update_data,"_id==@id",id=ObjectId(data["_id"]))
+        if ret.get("error",None)!=None:
+            ret=dict(
+                error=ret["error"],
+                data=data
+            )
+        else:
+            ret = dict(
+                data=data
+            )
+
+    return ret
 def get_dictionary(params):
     category_name = params["view"].split('/')[1]
     frm = getattr(forms, category_name)
