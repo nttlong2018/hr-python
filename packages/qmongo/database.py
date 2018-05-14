@@ -1,6 +1,6 @@
 from sqlalchemy.sql.functions import count
 
-from helpers import expr
+from helpers import expr,validators
 
 from pymongo import MongoClient
 from pymongo.errors import OperationFailure
@@ -153,11 +153,18 @@ class ENTITY():
                 code="duplicate"
             )
         )
-
     def commit(self):
         if self._action=="insert_one":
             ret_data={}
             try:
+                ret_validate_require=validators.validate_require_data(self.name,self._data)
+                if ret_validate_require.__len__()>0:
+                    return dict(
+                        error=dict(
+                            fields=ret_validate_require,
+                            code="missing"
+                        )
+                    )
                 ret = self.qr.db.get_collection(self.name).insert_one(self._data)
                 ret_data = self._data.copy()
                 ret_data.update({
@@ -227,6 +234,14 @@ class ENTITY():
                             key:self._data[key]
                         })
                 try:
+                    ret_validate_require = validators.validate_require_data(self.name, updater,partial=True)
+                    if ret_validate_require.__len__() > 0:
+                        return dict(
+                            error=dict(
+                                fields=ret_validate_require,
+                                code="missing"
+                            )
+                        )
                     ret = self.qr.db.get_collection(self.name).update_many(self._expr,updater)
                     self._expr = None
                     self._action = None
@@ -250,10 +265,6 @@ class ENTITY():
                 self._action = None
                 self._data = {}
                 return ret
-
-
-
-
 class WHERE():
     name = ""
     _coll = None

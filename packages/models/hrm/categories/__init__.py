@@ -43,4 +43,8 @@ def districts():
     )
     return ret
 
-helpers.validators.set_require_fields(get_name("hrm.provinces"),["Code","Name"])
+helpers.validators.set_require_fields(get_name("hrm.provinces"),["Code","Name","A.B"])
+ret=helpers.validators.validate_require_data(get_name("hrm.provinces"),{
+    "A.B":None
+})
+print ret
