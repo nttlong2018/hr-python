@@ -1,5 +1,5 @@
 /*--how to use:
-    <div b-select source="<dropdown datasource>"  on-change=.. ng-model=../>
+    <div b-select source="<dropdown datasource>" field-text="<Dispaly Field>" field-value="return value field when user select"  on-change=.. ng-model=../>
 */
 var libs_directives;
 (function (libs_directives) {

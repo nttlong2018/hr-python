@@ -25,11 +25,8 @@
 
                             </textarea>
                         %elif col["type"]=="select":
-                            <select class="form-control input-small" ng-model="data.${col['field']}">
-                                <option ng-repeat="p in source_${col['source'].replace('.','_')}" value="{{p.value}}">
-                                    {{p.text}}
-                                </option>
-                            </select>
+                            <div b-select source="source_${col['source'].replace('.','_')}" field-text="text" field-value="value" ng-model="data.${col['field']}"></div>
+
                               <script>
                             (function(scope){
                                     scope.$parent.$ws.api('${get_api_key(model["api_get_dictionary"])}')
@@ -47,7 +44,9 @@
                             });
                         </script>
                         %elif col["type"]=="html-editor":
-                            <div b-html-editor></div>
+                            <div b-html-editor ng-model="data.${col['field']}"></div>
+                        %elif col["type"]=="date-picker":
+                            <div b-date-picker ng-model="data.${col['field']}"></div>
 
                         %endif
 

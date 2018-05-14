@@ -4,6 +4,7 @@ import sqlalchemy
 import json
 import re
 from datetime import datetime
+from datetime import timedelta
 datetime_format = "%Y-%m-%dT%H:%M:%S.%f"
 datetime_format_javascript = "%Y-%m-%dT%H:%M:%S.%fZ"
 datetime_format_regex = re.compile(r'^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}.\d{6}$')
@@ -26,7 +27,7 @@ def datetime_parser(dct):
             if (isinstance(v, str) or type(v) is unicode) and datetime_format_regex.match(v):
                 dct[k] = datetime.strptime(v, datetime_format)
             elif (isinstance(v, str) or type(v) is unicode) and datetime_format_regex_from_javascript.match(v):
-                dct[k] = datetime.strptime(v, datetime_format_javascript)
+                dct[k] = datetime.strptime(v, datetime_format_javascript)+timedelta(hours=7)
             else:
                 dct[k]=datetime_parser(v)
     else:
