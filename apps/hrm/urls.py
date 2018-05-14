@@ -8,10 +8,10 @@ app=quicky.applications.get_app_by_file(__file__)
 urlpatterns = [
     url(r'^$', views.index, name='index'),
     # url(r'^login$',views.login,name='logn'),
-    url(r'^pages/(?P<path>.*)$', views.load_page, name='singleshop'),
-    url(r'^categories/(?P<path>.*)$', views.load_categories, name='singleshop'),
-    url(r'^category/(?P<path>.*)$', views.load_category),
-    url(r'^api$', "quicky.api.call"),
+    url(r'^(?i)pages/(?P<path>.*)$', views.load_page, name='singleshop'),
+    url(r'^(?i)categories/(?P<path>.*)$', views.load_categories, name='singleshop'),
+    url(r'^(?i)category/(?P<path>.*)$', views.load_category),
+    url(r'^(?i)api$', "quicky.api.call"),
     app.get_static_urls()
     # url(r'^sign_out',views.sign_out)
 ]

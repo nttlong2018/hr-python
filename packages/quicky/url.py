@@ -20,9 +20,9 @@ def build_urls(module_name,*args,**kwargs):
         ret=applications.load_app(app)
         try:
             if ret.host_dir == "":
-                _apps_.urlpatterns.append(url(r"^", include(ret.mdl.__name__ + ".urls")))
+                _apps_.urlpatterns.append(url(r"^(?i)", include(ret.mdl.__name__ + ".urls")))
             else:
-                _apps_.urlpatterns.append(url(r"^" + ret.host_dir + "/", include(ret.mdl.__name__ + ".urls")))
+                _apps_.urlpatterns.append(url(r"^(?i)" + ret.host_dir + "/", include(ret.mdl.__name__ + ".urls")))
         except Exception as ex:
             logger.debug(ex)
             raise ex

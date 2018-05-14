@@ -19,7 +19,7 @@
                                 ${get_app_res(col["caption"])}
                             </span>
                         %elif col["type"]=="text":
-                            <input type="text" class="form-control input-sm" ng-model="data.${col['field']}">
+                            <input type="text" b-textbox ng-model="data.${col['field']}"/>
                         %elif col["type"]=="text-area":
                             <textarea class="form-control input-small" ng-model="data.${col['field']}">
 

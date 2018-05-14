@@ -1517,3 +1517,331 @@ django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_d
 auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
 django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 14, 4, 2, 26, 467624, tzinfo=<UTC>)}}
 auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 14, 4, 9, 56, 777784, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 14, 4, 9, 56, 983314, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 14, 4, 9, 57, 66336, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 14, 4, 10, 38, 198045, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 14, 4, 10, 38, 350470, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 14, 4, 10, 38, 401711, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 14, 4, 10, 39, 593490, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 14, 4, 10, 40, 973671, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 14, 4, 11, 10, 57304, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 14, 4, 11, 22, 37757, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+Not Found: /hrm/static/js/angular.min.js.map
+Not Found: /polyfills/promise-6.1.0.js.map
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 14, 4, 17, 50, 860510, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+Not Found: /admin/static/angular.min.js.map
+Not Found: /polyfills/promise-6.1.0.js.map
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 14, 4, 17, 56, 886026, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 14, 4, 17, 56, 921902, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+Internal Server Error: /admin/api
+Traceback (most recent call last):
+  File "/home/hcsadmin/argo/packages/django/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/hcsadmin/argo/packages/django/django/views/decorators/http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "/home/hcsadmin/argo/packages/django/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/hcsadmin/argo/packages/quicky/api.py", line 95, in call
+    raise ex
+Exception: import 'admin.api.categories' encountered 'localhost:27017: [Errno 111] Connection refused'
+Not Found: /admin/static/angular.min.js.map
+django_session.find (0.03) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 14, 4, 18, 27, 107805, tzinfo=<UTC>)}}
+Not Found: /polyfills/promise-6.1.0.js.map
+auth_user.find (0.01) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+Not Found: /admin/static/angular.min.js.map
+Not Found: /polyfills/promise-6.1.0.js.map
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 14, 4, 18, 28, 342578, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 14, 4, 18, 28, 377632, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+Internal Server Error: /admin/api
+Traceback (most recent call last):
+  File "/home/hcsadmin/argo/packages/django/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/hcsadmin/argo/packages/django/django/views/decorators/http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "/home/hcsadmin/argo/packages/django/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/hcsadmin/argo/packages/quicky/api.py", line 95, in call
+    raise ex
+Exception: import 'admin.api.categories' encountered 'localhost:27017: [Errno 111] Connection refused'
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 14, 4, 23, 9, 268593, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+Not Found: /admin/static/angular.min.js.map
+Not Found: /polyfills/promise-6.1.0.js.map
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 14, 4, 23, 9, 786999, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.01) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 14, 4, 23, 9, 872311, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+Internal Server Error: /admin/api
+Traceback (most recent call last):
+  File "/home/hcsadmin/argo/packages/django/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/hcsadmin/argo/packages/django/django/views/decorators/http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "/home/hcsadmin/argo/packages/django/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/hcsadmin/argo/packages/quicky/api.py", line 95, in call
+    raise ex
+Exception: import 'admin.api.categories' encountered 'localhost:27017: [Errno 111] Connection refused'
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 14, 4, 24, 4, 57208, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+Not Found: /admin/static/angular.min.js.map
+Not Found: /polyfills/promise-6.1.0.js.map
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 14, 4, 24, 4, 581123, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 14, 4, 24, 4, 643936, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 14, 4, 24, 8, 72519, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 14, 4, 24, 8, 130088, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+auth_user.find (0.00) {}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 14, 4, 24, 15, 233564, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 14, 4, 24, 15, 298653, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+auth_user.find (0.00) {'username': u'sys'}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 14, 4, 24, 18, 58397, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 14, 4, 24, 18, 107035, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+auth_user.find (0.00) {'username': u'HR0002'}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 14, 4, 24, 21, 4648, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 14, 4, 24, 21, 41298, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+auth_user.find (0.00) {'username': u'HR0004'}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 14, 4, 24, 23, 684352, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 14, 4, 24, 23, 722390, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+auth_user.find (0.00) {'username': u'test'}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 14, 4, 24, 28, 912903, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 14, 4, 24, 28, 950791, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+auth_user.find (0.00) {'username': u'CN0002'}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 14, 4, 24, 34, 622708, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 14, 4, 24, 34, 691167, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+auth_user.find (0.00) {'username': u'CN0001'}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 14, 4, 24, 37, 751661, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 14, 4, 24, 37, 851733, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+auth_user.find (0.00) {'username': u'CN0004'}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 14, 4, 24, 42, 151528, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 14, 4, 24, 45, 239377, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 14, 4, 24, 45, 285108, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+auth_user.find (0.00) {'username': u'CN0004'}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 14, 4, 24, 47, 429096, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 14, 4, 24, 47, 483755, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+auth_user.find (0.00) {'username': u'CN0003'}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 14, 4, 25, 5, 821341, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 14, 4, 25, 5, 877415, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+auth_user.find (0.00) {'username': u'CN0002'}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 14, 4, 25, 30, 535535, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 14, 4, 25, 30, 767175, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 14, 4, 25, 30, 806622, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+auth_user.find (0.01) {}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 14, 4, 34, 51, 819422, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+Not Found: /hrm/static/js/directives/dr-select.js
+Not Found: /hrm/static/js/directives/dr-select.js
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 14, 4, 34, 52, 914184, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 14, 4, 34, 55, 222781, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 14, 4, 34, 55, 277198, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 14, 4, 34, 56, 620726, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+Not Found: /polyfills/promise-6.1.0.js.map
+Not Found: /hrm/static/js/angular.min.js.map
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 14, 4, 39, 15, 729587, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+Not Found: /hrm/static/js/directives/dr-textbox.js
+Not Found: /hrm/static/js/directives/dr-select.js
+Not Found: /hrm/static/js/directives/dr-select.js
+Not Found: /hrm/static/js/directives/dr-textbox.js
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 14, 4, 39, 15, 938345, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 14, 4, 39, 15, 996198, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 14, 4, 39, 17, 181847, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+Not Found: /hrm/static/js/angular.min.js.map
+Not Found: /polyfills/promise-6.1.0.js.map
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 14, 4, 39, 53, 13763, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+Not Found: /hrm/static/js/directives/dr-select.js
+Not Found: /hrm/static/js/angular.min.js.map
+Not Found: /hrm/static/js/directives/dr-textbox.js
+Not Found: /polyfills/promise-6.1.0.js.map
+Not Found: /hrm/static/js/directives/dr-select.js
+Not Found: /hrm/static/js/directives/dr-textbox.js
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 14, 4, 39, 53, 492476, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 14, 4, 39, 53, 569411, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 14, 4, 39, 54, 724737, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+Not Found: /hrm/static/js/directives/dr-textbox.js
+Not Found: /hrm/static/js/directives/dr-textbox.js
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 14, 4, 43, 38, 548498, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+Not Found: /hrm/static/js/directives/dr-select.js
+Not Found: /hrm/static/js/directives/dr-textbox.js
+Not Found: /hrm/static/js/angular.min.js.map
+Not Found: /polyfills/promise-6.1.0.js.map
+Not Found: /hrm/static/js/directives/dr-select.js
+Not Found: /hrm/static/js/directives/dr-textbox.js
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 14, 4, 43, 39, 37296, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.01) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 14, 4, 43, 39, 155666, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 14, 4, 44, 26, 492239, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+Not Found: /hrm/static/js/directives/dr-select.js
+Not Found: /hrm/static/js/directives/dr-textbox.js
+Not Found: /hrm/static/js/angular.min.js.map
+Not Found: /hrm/static/js/directives/dr-select.js
+Not Found: /polyfills/promise-6.1.0.js.map
+Not Found: /hrm/static/js/directives/dr-textbox.js
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 14, 4, 44, 26, 964899, tzinfo=<UTC>)}}
+auth_user.find (0.01) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 14, 4, 44, 27, 99746, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+Not Found: /hrm/static/js/directives/dr-textbox.js
+Not Found: /hrm/static/js/directives/dr-textbox.js
+Not Found: /hrm/static/js/directives/dr-textbox.js
+Not Found: /hrm/static/js/directives/dr-textbox.js
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 14, 4, 46, 3, 727298, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+Not Found: /hrm/static/js/directives/dr-select.js
+Not Found: /hrm/static/js/directives/dr-textbox.js
+Not Found: /polyfills/promise-6.1.0.js.map
+Not Found: /hrm/static/js/angular.min.js.map
+Not Found: /hrm/static/js/directives/dr-select.js
+Not Found: /hrm/static/js/directives/dr-textbox.js
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 14, 4, 46, 4, 225888, tzinfo=<UTC>)}}
+auth_user.find (0.01) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 14, 4, 46, 4, 330332, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 14, 4, 46, 8, 126937, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+Not Found: /hrm/static/js/directives/dr-textbox.js
+Not Found: /hrm/static/js/directives/dr-textbox.js
+Not Found: /hrm/static/js/directives/dr-textbox.js
+Not Found: /hrm/static/js/directives/dr-textbox.js
+Not Found: /hrm/static/js/directives/dr-textbox.js
+Not Found: /hrm/static/js/directives/dr-textbox.js
+Not Found: /hrm/static/js/directives/dr-textbox.js
+Not Found: /hrm/static/js/directives/dr-textbox.js
+Not Found: /hrm/static/js/directives/dr-extBox.js
+Not Found: /hrm/static/js/directives/dr-dasdasda.js
+Not Found: /hrm/static/js/directives/DR.js
+Not Found: /hrm/static/js/directives/drjs
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 14, 4, 53, 22, 741181, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 14, 4, 53, 28, 594040, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+Internal Server Error: /hrm/categories/PROVINCES
+Traceback (most recent call last):
+  File "/home/hcsadmin/argo/packages/django/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/hcsadmin/argo/packages/quicky/view.py", line 76, in exec_request
+    raise (ex)
+ImportError: No module named PROVINCES
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 14, 4, 55, 20, 890444, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+Not Found: /hrm/static/js/directives/dr-textbox.js
+Not Found: /hrm/static/js/directives/dr-textbox.js
+Not Found: /hrm/static/js/directives/dr-textbox.js
+Not Found: /hrm/static/js/directives/dr-textbox.js
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 14, 5, 1, 34, 422231, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+Not Found: /hrm/static/js/angular.min.js.map
+Not Found: /hrm/static/js/directives/dr-select.js
+Not Found: /polyfills/promise-6.1.0.js.map
+Not Found: /hrm/static/js/directives/dr-select.js
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 14, 5, 1, 35, 20187, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 14, 5, 1, 35, 94273, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 14, 5, 1, 36, 476438, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 14, 5, 2, 35, 13251, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+Not Found: /polyfills/promise-6.1.0.js.map
+Not Found: /hrm/static/js/angular.min.js.map
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 14, 5, 2, 35, 411015, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 14, 5, 2, 35, 481540, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 14, 5, 2, 37, 227549, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 14, 5, 3, 18, 303678, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+Not Found: /hrm/static/js/angular.min.js.map
+Not Found: /polyfills/promise-6.1.0.js.map
+django_session.find (0.01) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 14, 5, 3, 18, 668772, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 14, 5, 3, 18, 736924, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 14, 5, 3, 19, 648410, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 14, 5, 3, 23, 494320, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+Not Found: /hrm/static/js/angular.min.js.map
+Not Found: /polyfills/promise-6.1.0.js.map
+django_session.find (0.01) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 14, 5, 3, 23, 898925, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.01) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 14, 5, 3, 23, 985829, tzinfo=<UTC>)}}
+auth_user.find (0.01) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 14, 5, 3, 31, 536178, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+Not Found: /hrm/static/js/angular.min.js.map
+Not Found: /polyfills/promise-6.1.0.js.map
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 14, 5, 3, 31, 929117, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 14, 5, 3, 31, 977819, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 14, 5, 3, 34, 914303, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 14, 5, 4, 11, 258663, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+Not Found: /hrm/static/js/angular.min.js.map
+Not Found: /polyfills/promise-6.1.0.js.map
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 14, 5, 4, 11, 623549, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 14, 5, 4, 11, 685373, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 14, 5, 4, 12, 559135, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
