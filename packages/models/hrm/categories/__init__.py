@@ -1,4 +1,5 @@
 from qmongo import database
+from qmongo import helpers
 _db=None
 _prefix=None
 def connect(*args,**kwargs):
@@ -41,3 +42,5 @@ def districts():
         ]
     )
     return ret
+
+helpers.validators.set_require_fields(get_name("hrm.provinces"),["Code","Name"])

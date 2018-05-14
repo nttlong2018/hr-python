@@ -6,6 +6,8 @@ def set_config(*args,**kwargs):
     settings=kwargs
     if type(args) is dict:
         settings=args
+    elif type(args) is tuple and args.__len__()>0:
+        settings=args[0]
     if _coll==None:
         cnn=MongoClient(
             host=settings["host"],

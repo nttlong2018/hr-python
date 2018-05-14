@@ -7,8 +7,11 @@ from pymongo.errors import OperationFailure
 import logging
 import copy
 import pymongo
+
+
 logger = logging.getLogger(__name__)
 _db={}
+
 class QR():
     db=None
     _entity=None
@@ -150,6 +153,7 @@ class ENTITY():
                 code="duplicate"
             )
         )
+
     def commit(self):
         if self._action=="insert_one":
             ret_data={}
@@ -246,6 +250,10 @@ class ENTITY():
                 self._action = None
                 self._data = {}
                 return ret
+
+
+
+
 class WHERE():
     name = ""
     _coll = None

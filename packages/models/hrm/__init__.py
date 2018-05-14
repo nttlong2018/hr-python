@@ -15,8 +15,13 @@ def get_name(name):
         return name
     else:
         return _prefix+"."+name
+def create_coll(name):
+    global _db
+    if _db==None:
+        raise (Exception("The database was not init"))
+    return _db.collection(get_name(name))
 def employees():
-    ret=_db.collection(get_name("hrm.Employees"))
+    ret=create_coll("hrm.employees")
     ret.create_unique_index(
         [
             dict(
@@ -31,7 +36,7 @@ def employees():
     )
     return ret
 def departments():
-    ret = _db.collection(get_name("hrm.Departments"))
+    ret = create_coll("hrm.departments")
     ret.create_unique_index(
         [
             dict(
@@ -42,7 +47,7 @@ def departments():
     )
     return ret
 def positions():
-    ret = _db.collection(get_name("hrm.Positions"))
+    ret = create_coll("hrm.positions")
     ret.create_unique_index(
         [
             dict(
@@ -53,7 +58,7 @@ def positions():
     )
     return ret
 def employee_types():
-    ret = _db.collection(get_name("hrm.EmployeeTypes"))
+    ret =create_coll("hrm.EmployeeTypes")
     ret.create_unique_index(
         [
             dict(
