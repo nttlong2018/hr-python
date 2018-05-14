@@ -25,6 +25,8 @@ function ws_call(api_path,view_path,data,cb,owner){
             owner.sender=_wsOnBeforeCall();
             console.log(owner)
         }
+          var now = new Date()
+          var offset_minutes = now.getTimezoneOffset()
           $.ajax({
             url: ws_get_url(),
             type: "post",
@@ -32,7 +34,10 @@ function ws_call(api_path,view_path,data,cb,owner){
             data: JSON.stringify({
                    path:api_path,
                    view:view_path,
-                   data:data
+                   data:data,
+                   offset_minutes:offset_minutes
+
+
             }) ,
             success: function (res) {
                 console.log("after")

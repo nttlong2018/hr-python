@@ -60,6 +60,15 @@ layout.create(dict(
                     dict(name="Description",
                          type="text-area")
                 ]
+            ),
+            dict(
+                col_md=[2,10],
+                col_sm=[4, 8],
+                col_xs=[4, 8],
+                fields=[
+                    dict(name="CreatedOn",
+                         type="date-picker")
+                ]
             )
         ]
     )
