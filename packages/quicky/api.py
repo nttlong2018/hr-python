@@ -39,7 +39,7 @@ def call(request):
         if not post_data.has_key("offset_minutes"):
             raise (Exception("It look like you forget post 'offset_minutes' from client."
                              "Remember that before ajax post please set 'offset_minutes' from browser."
-                             "How to calculate 'offset_minutes':"
+                             "How to calculate 'offset_minutes'?:"
                              "var now = new Date();"
                              "var offset_minutes = now.getTimezoneOffset();"))
         offset_minutes=post_data["offset_minutes"]
@@ -85,7 +85,8 @@ def call(request):
                             "data": post_data.get("data", {}),
                             "user": user,
                             "request": request,
-                            "view":view
+                            "view":view,
+                            "offset_minutes":offset_minutes
                         })
                 else:
                     ret = getattr(mdl, method_path)(
@@ -93,12 +94,13 @@ def call(request):
                             "privileges": view_privileges,
                             "user": user,
                             "request": request,
-                            "view":view
+                            "view":view,
+                            "offset_minutes":offset_minutes
                         })
 
             except Exception as ex:
                 raise Exception("Call  '{0}' in '{1}' encountered '{2}'".format(method_path, module_path, ex))
-        ret_data = JSON.to_json(ret,offset_minutes)
+        ret_data = JSON.to_json(ret,0)
 
         return HttpResponse(ret_data)
     except Exception as ex:

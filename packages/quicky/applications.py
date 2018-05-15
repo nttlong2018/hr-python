@@ -18,7 +18,7 @@ def load_app(*args,**kwargs):
     except Exception as ex:
         logger.debug(ex)
         logger.debug("quicky.applications.load_app error {0} in '{1}'".format(ex,args[0]["path"]))
-        raise (Exception("quicky.applications.load_app error {0} in '{1}'".format(ex,args[0]["path"])))
+        raise (Exception("quicky.applications.load_app error in '{1}'.\n Detail information is:\n\t\t ""{0}"" ".format(ex,args[0]["path"])))
 
 def get_app_by_file(file_name):
     """get application info by path of file

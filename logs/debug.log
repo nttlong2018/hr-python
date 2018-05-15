@@ -2773,3 +2773,808 @@ django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_d
 auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
 django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 14, 10, 37, 59, 439569, tzinfo=<UTC>)}}
 auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 14, 10, 38, 31, 545472, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 14, 10, 38, 31, 761455, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 14, 10, 38, 31, 817778, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 14, 10, 38, 33, 223206, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 14, 10, 38, 33, 276697, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 14, 10, 53, 19, 688190, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 14, 10, 53, 19, 850303, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 14, 10, 53, 19, 908107, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 14, 10, 53, 21, 555332, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 14, 10, 53, 21, 595347, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 14, 10, 53, 24, 258664, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 14, 10, 53, 51, 936668, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 14, 10, 53, 52, 107664, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 14, 10, 53, 52, 171293, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 14, 10, 54, 3, 389662, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 14, 10, 54, 3, 450012, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 14, 10, 54, 5, 873951, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 14, 10, 54, 15, 269398, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 14, 10, 54, 15, 415323, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 14, 10, 54, 15, 483782, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 14, 10, 58, 16, 77510, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 14, 10, 58, 16, 369017, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 14, 10, 58, 16, 422275, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 14, 10, 58, 24, 346310, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 14, 10, 58, 24, 380448, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 14, 10, 58, 36, 676786, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+Not Found: /favicon.ico
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 15, 1, 32, 21, 258526, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 15, 1, 32, 21, 350709, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 15, 1, 32, 26, 348891, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 15, 1, 32, 26, 400146, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 15, 1, 32, 28, 207782, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 15, 1, 33, 9, 630172, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 15, 1, 53, 32, 779322, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 15, 1, 53, 33, 72721, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 15, 1, 53, 36, 892840, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 15, 1, 56, 30, 810222, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 15, 2, 1, 26, 698249, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 15, 9, 3, 42, 747464)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 15, 2, 5, 49, 57563, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 15, 2, 31, 0, 102655, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 15, 3, 19, 35, 659503, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 15, 3, 19, 35, 862935, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+Internal Server Error: /hrm/categories/provinces
+Traceback (most recent call last):
+  File "/home/hcsadmin/argo/packages/django/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/hcsadmin/argo/packages/quicky/view.py", line 76, in exec_request
+    raise (ex)
+AttributeError: COLL instance has no attribute 'with_options'
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 15, 3, 19, 38, 288117, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+Internal Server Error: /hrm/categories/districts
+Traceback (most recent call last):
+  File "/home/hcsadmin/argo/packages/django/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/hcsadmin/argo/packages/quicky/view.py", line 76, in exec_request
+    raise (ex)
+AttributeError: COLL instance has no attribute 'with_options'
+Not Found: /hrm/static/js/angular.min.js.map
+Not Found: /polyfills/promise-6.1.0.js.map
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 15, 3, 32, 27, 876568, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+Not Found: /hrm/static/js/angular.min.js.map
+Not Found: /polyfills/promise-6.1.0.js.map
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 15, 3, 32, 28, 306645, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+Internal Server Error: /hrm/categories/districts
+Traceback (most recent call last):
+  File "/home/hcsadmin/argo/packages/django/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/hcsadmin/argo/packages/quicky/view.py", line 76, in exec_request
+    raise (ex)
+AttributeError: COLL instance has no attribute 'with_options'
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 15, 3, 32, 33, 33130, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+Internal Server Error: /hrm/categories/districts
+Traceback (most recent call last):
+  File "/home/hcsadmin/argo/packages/django/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/hcsadmin/argo/packages/quicky/view.py", line 76, in exec_request
+    raise (ex)
+AttributeError: COLL instance has no attribute 'with_options'
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 15, 3, 33, 20, 417438, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+Internal Server Error: /hrm/categories/districts
+Traceback (most recent call last):
+  File "/home/hcsadmin/argo/packages/django/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/hcsadmin/argo/packages/quicky/view.py", line 76, in exec_request
+    raise (ex)
+AttributeError: COLL instance has no attribute 'with_options'
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 15, 3, 33, 24, 440933, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+Not Found: /hrm/static/js/angular.min.js.map
+Not Found: /polyfills/promise-6.1.0.js.map
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 15, 3, 33, 24, 873567, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+Internal Server Error: /hrm/categories/districts
+Traceback (most recent call last):
+  File "/home/hcsadmin/argo/packages/django/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/hcsadmin/argo/packages/quicky/view.py", line 76, in exec_request
+    raise (ex)
+AttributeError: COLL instance has no attribute 'with_options'
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 15, 3, 35, 8, 948586, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+Not Found: /hrm/static/js/angular.min.js.map
+Not Found: /polyfills/promise-6.1.0.js.map
+django_session.find (0.01) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 15, 3, 35, 9, 427901, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 15, 3, 39, 29, 83745, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+Not Found: /hrm/static/js/angular.min.js.map
+Not Found: /polyfills/promise-6.1.0.js.map
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 15, 3, 39, 29, 542142, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+Internal Server Error: /hrm/categories/districts
+Traceback (most recent call last):
+  File "/home/hcsadmin/argo/packages/django/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/hcsadmin/argo/packages/quicky/view.py", line 76, in exec_request
+    raise (ex)
+AttributeError: QR instance has no attribute 'codec_options'
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 15, 3, 39, 39, 276485, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+Internal Server Error: /hrm/categories/districts
+Traceback (most recent call last):
+  File "/home/hcsadmin/argo/packages/django/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/hcsadmin/argo/packages/quicky/view.py", line 76, in exec_request
+    raise (ex)
+AttributeError: QR instance has no attribute 'codec_options'
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 15, 3, 41, 28, 525143, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+Not Found: /polyfills/promise-6.1.0.js.map
+Not Found: /hrm/static/js/angular.min.js.map
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 15, 3, 41, 29, 56539, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+Internal Server Error: /hrm/categories/districts
+Traceback (most recent call last):
+  File "/home/hcsadmin/argo/packages/django/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/hcsadmin/argo/packages/quicky/view.py", line 76, in exec_request
+    raise (ex)
+TypeError: 'Collection' object is not callable. If you meant to call the 'collection' method on a 'Database' object it is failing because no such method exists.
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 15, 3, 41, 32, 317000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+Internal Server Error: /hrm/categories/districts
+Traceback (most recent call last):
+  File "/home/hcsadmin/argo/packages/django/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/hcsadmin/argo/packages/quicky/view.py", line 76, in exec_request
+    raise (ex)
+TypeError: 'Collection' object is not callable. If you meant to call the 'collection' method on a 'Database' object it is failing because no such method exists.
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 15, 3, 42, 41, 12983, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+Internal Server Error: /hrm/categories/districts
+Traceback (most recent call last):
+  File "/home/hcsadmin/argo/packages/django/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/hcsadmin/argo/packages/quicky/view.py", line 76, in exec_request
+    raise (ex)
+TypeError: 'Collection' object is not callable. If you meant to call the 'collection' method on a 'Database' object it is failing because no such method exists.
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 15, 3, 42, 55, 135892, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+Internal Server Error: /hrm/categories/districts
+Traceback (most recent call last):
+  File "/home/hcsadmin/argo/packages/django/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/hcsadmin/argo/packages/quicky/view.py", line 76, in exec_request
+    raise (ex)
+TypeError: 'Collection' object is not callable. If you meant to call the 'collection' method on a 'Database' object it is failing because no such method exists.
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 15, 3, 43, 7, 668858, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+Internal Server Error: /hrm/categories/districts
+Traceback (most recent call last):
+  File "/home/hcsadmin/argo/packages/django/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/hcsadmin/argo/packages/quicky/view.py", line 76, in exec_request
+    raise (ex)
+TypeError: 'Collection' object is not callable. If you meant to call the 'collection' method on a 'Database' object it is failing because no such method exists.
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 15, 3, 45, 12, 682923, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+Internal Server Error: /hrm/categories/districts
+Traceback (most recent call last):
+  File "/home/hcsadmin/argo/packages/django/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/hcsadmin/argo/packages/quicky/view.py", line 76, in exec_request
+    raise (ex)
+TypeError: 'Collection' object is not callable. If you meant to call the 'collection' method on a 'Database' object it is failing because no such method exists.
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 15, 3, 46, 44, 257744, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+Internal Server Error: /hrm/categories/districts
+Traceback (most recent call last):
+  File "/home/hcsadmin/argo/packages/django/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/hcsadmin/argo/packages/quicky/view.py", line 76, in exec_request
+    raise (ex)
+TypeError: 'Collection' object is not callable. If you meant to call the 'collection' method on a 'Database' object it is failing because no such method exists.
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 15, 3, 46, 55, 58831, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 15, 3, 47, 9, 357609, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+Internal Server Error: /hrm/categories/districts
+Traceback (most recent call last):
+  File "/home/hcsadmin/argo/packages/django/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/hcsadmin/argo/packages/quicky/view.py", line 76, in exec_request
+    raise (ex)
+AttributeError: QR instance has no attribute 'codec_options'
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 15, 3, 48, 26, 474801, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+Internal Server Error: /hrm/categories/districts
+Traceback (most recent call last):
+  File "/home/hcsadmin/argo/packages/django/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/hcsadmin/argo/packages/quicky/view.py", line 76, in exec_request
+    raise (ex)
+AttributeError: QR instance has no attribute 'codec_options'
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 15, 3, 48, 41, 183274, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 15, 3, 48, 46, 735170, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+Internal Server Error: /hrm/categories/districts
+Traceback (most recent call last):
+  File "/home/hcsadmin/argo/packages/django/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/hcsadmin/argo/packages/quicky/view.py", line 76, in exec_request
+    raise (ex)
+TypeError: 'Collection' object is not callable. If you meant to call the 'create_unique_index' method on a 'Collection' object it is failing because no such method exists.
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 15, 3, 49, 7, 81227, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+Internal Server Error: /hrm/categories/districts
+Traceback (most recent call last):
+  File "/home/hcsadmin/argo/packages/django/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/hcsadmin/argo/packages/quicky/view.py", line 76, in exec_request
+    raise (ex)
+TypeError: 'Collection' object is not callable. If you meant to call the 'create_unique_index' method on a 'Collection' object it is failing because no such method exists.
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 15, 3, 49, 29, 696260, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+Internal Server Error: /hrm/categories/districts
+Traceback (most recent call last):
+  File "/home/hcsadmin/argo/packages/django/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/hcsadmin/argo/packages/quicky/view.py", line 76, in exec_request
+    raise (ex)
+TypeError: 'Collection' object is not callable. If you meant to call the 'create_unique_index' method on a 'Collection' object it is failing because no such method exists.
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 15, 3, 50, 46, 720016, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+Internal Server Error: /hrm/categories/districts
+Traceback (most recent call last):
+  File "/home/hcsadmin/argo/packages/django/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/hcsadmin/argo/packages/quicky/view.py", line 76, in exec_request
+    raise (ex)
+TypeError: 'Collection' object is not callable. If you meant to call the 'create_unique_index' method on a 'Collection' object it is failing because no such method exists.
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 15, 3, 50, 59, 838899, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+Internal Server Error: /hrm/categories/districts
+Traceback (most recent call last):
+  File "/home/hcsadmin/argo/packages/django/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/hcsadmin/argo/packages/quicky/view.py", line 76, in exec_request
+    raise (ex)
+TypeError: 'Collection' object is not callable. If you meant to call the 'create_unique_index' method on a 'Collection' object it is failing because no such method exists.
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 15, 3, 51, 39, 783680, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+Internal Server Error: /hrm/categories/districts
+Traceback (most recent call last):
+  File "/home/hcsadmin/argo/packages/django/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/hcsadmin/argo/packages/quicky/view.py", line 76, in exec_request
+    raise (ex)
+TypeError: 'Collection' object is not callable. If you meant to call the 'create_unique_index' method on a 'Collection' object it is failing because no such method exists.
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 15, 3, 52, 7, 665020, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 15, 3, 52, 22, 751885, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+Not Found: /hrm/static/js/angular.min.js.map
+Not Found: /polyfills/promise-6.1.0.js.map
+django_session.find (0.01) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 15, 3, 52, 27, 623824, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 15, 3, 52, 32, 463796, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+Internal Server Error: /hrm/api
+Traceback (most recent call last):
+  File "/home/hcsadmin/argo/packages/django/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/hcsadmin/argo/packages/django/django/views/decorators/http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "/home/hcsadmin/argo/packages/django/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/hcsadmin/argo/packages/quicky/api.py", line 106, in call
+    raise ex
+Exception: Call  'get_list' in 'hrm.api.categories' encountered 'AGGREGATE instance has no attribute 'get_collection''
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 15, 3, 53, 30, 151022, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+Not Found: /hrm/static/js/angular.min.js.map
+Not Found: /polyfills/promise-6.1.0.js.map
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 15, 3, 53, 30, 602639, tzinfo=<UTC>)}}
+auth_user.find (0.01) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.01) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 15, 3, 53, 30, 692495, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+Internal Server Error: /hrm/api
+Traceback (most recent call last):
+  File "/home/hcsadmin/argo/packages/django/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/hcsadmin/argo/packages/django/django/views/decorators/http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "/home/hcsadmin/argo/packages/django/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/hcsadmin/argo/packages/quicky/api.py", line 106, in call
+    raise ex
+Exception: Call  'get_list' in 'hrm.api.categories' encountered 'AGGREGATE instance has no attribute 'get_collection''
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 15, 3, 54, 38, 421534, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+Not Found: /hrm/static/js/angular.min.js.map
+Not Found: /polyfills/promise-6.1.0.js.map
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 15, 3, 54, 38, 890026, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 15, 3, 54, 38, 952033, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+Internal Server Error: /hrm/api
+Traceback (most recent call last):
+  File "/home/hcsadmin/argo/packages/django/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/hcsadmin/argo/packages/django/django/views/decorators/http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "/home/hcsadmin/argo/packages/django/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/hcsadmin/argo/packages/quicky/api.py", line 106, in call
+    raise ex
+Exception: Call  'get_list' in 'hrm.api.categories' encountered 'AGGREGATE instance has no attribute 'get_collection''
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 15, 3, 57, 41, 464171, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+Not Found: /hrm/static/js/angular.min.js.map
+Not Found: /polyfills/promise-6.1.0.js.map
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 15, 3, 57, 41, 977154, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 15, 3, 57, 51, 777254, tzinfo=<UTC>)}}
+auth_user.find (0.01) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+Internal Server Error: /hrm/api
+Traceback (most recent call last):
+  File "/home/hcsadmin/argo/packages/django/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/hcsadmin/argo/packages/django/django/views/decorators/http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "/home/hcsadmin/argo/packages/django/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/hcsadmin/argo/packages/quicky/api.py", line 106, in call
+    raise ex
+Exception: Call  'get_list' in 'hrm.api.categories' encountered 'with_options() got an unexpected keyword argument '_codec_options''
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 15, 3, 59, 55, 45627, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+Not Found: /polyfills/promise-6.1.0.js.map
+Not Found: /hrm/static/js/angular.min.js.map
+django_session.find (0.01) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 15, 3, 59, 55, 529532, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 15, 4, 0, 4, 178040, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+Internal Server Error: /hrm/api
+Traceback (most recent call last):
+  File "/home/hcsadmin/argo/packages/django/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/hcsadmin/argo/packages/django/django/views/decorators/http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "/home/hcsadmin/argo/packages/django/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/hcsadmin/argo/packages/quicky/api.py", line 106, in call
+    raise ex
+Exception: Call  'get_list' in 'hrm.api.categories' encountered 'with_options() got an unexpected keyword argument '_codec_options''
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 15, 4, 0, 43, 610257, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+Not Found: /hrm/static/js/angular.min.js.map
+Not Found: /polyfills/promise-6.1.0.js.map
+django_session.find (0.01) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 15, 4, 0, 44, 183320, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.01) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 15, 4, 0, 44, 260590, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+Internal Server Error: /hrm/api
+Traceback (most recent call last):
+  File "/home/hcsadmin/argo/packages/django/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/hcsadmin/argo/packages/django/django/views/decorators/http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "/home/hcsadmin/argo/packages/django/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/hcsadmin/argo/packages/quicky/api.py", line 106, in call
+    raise ex
+Exception: Call  'get_list' in 'hrm.api.categories' encountered 'with_options() got an unexpected keyword argument '_codec_options''
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 15, 4, 0, 59, 137074, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+Not Found: /polyfills/promise-6.1.0.js.map
+Not Found: /hrm/static/js/angular.min.js.map
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 15, 4, 0, 59, 549328, tzinfo=<UTC>)}}
+auth_user.find (0.01) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 15, 4, 0, 59, 660799, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+Internal Server Error: /hrm/api
+Traceback (most recent call last):
+  File "/home/hcsadmin/argo/packages/django/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/hcsadmin/argo/packages/django/django/views/decorators/http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "/home/hcsadmin/argo/packages/django/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/hcsadmin/argo/packages/quicky/api.py", line 106, in call
+    raise ex
+Exception: Call  'get_list' in 'hrm.api.categories' encountered 'with_options() got an unexpected keyword argument '_codec_options''
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 15, 4, 1, 9, 294992, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+Not Found: /hrm/static/js/angular.min.js.map
+Not Found: /polyfills/promise-6.1.0.js.map
+django_session.find (0.01) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 15, 4, 1, 9, 808263, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 15, 4, 1, 9, 894134, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+Internal Server Error: /hrm/api
+Traceback (most recent call last):
+  File "/home/hcsadmin/argo/packages/django/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/hcsadmin/argo/packages/django/django/views/decorators/http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "/home/hcsadmin/argo/packages/django/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/hcsadmin/argo/packages/quicky/api.py", line 106, in call
+    raise ex
+Exception: Call  'get_list' in 'hrm.api.categories' encountered 'with_options() got an unexpected keyword argument '_codec_options''
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 15, 4, 1, 19, 478055, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+Not Found: /polyfills/promise-6.1.0.js.map
+Not Found: /hrm/static/js/angular.min.js.map
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 15, 4, 1, 19, 991239, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 15, 4, 1, 20, 46012, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+Internal Server Error: /hrm/api
+Traceback (most recent call last):
+  File "/home/hcsadmin/argo/packages/django/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/hcsadmin/argo/packages/django/django/views/decorators/http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "/home/hcsadmin/argo/packages/django/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/hcsadmin/argo/packages/quicky/api.py", line 106, in call
+    raise ex
+Exception: Call  'get_list' in 'hrm.api.categories' encountered 'with_options() got an unexpected keyword argument '_codec_options''
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 15, 4, 1, 50, 289679, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+Not Found: /hrm/static/js/angular.min.js.map
+Not Found: /polyfills/promise-6.1.0.js.map
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 15, 4, 1, 50, 788186, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 15, 4, 2, 3, 960909, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 15, 4, 2, 17, 556237, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 15, 4, 2, 17, 770447, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 15, 4, 2, 17, 805352, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 15, 4, 3, 30, 550582, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 15, 4, 3, 34, 658554, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 15, 4, 3, 49, 303729, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 15, 4, 3, 49, 348993, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 15, 4, 3, 58, 264479, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 15, 4, 3, 58, 352106, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 15, 4, 4, 2, 474570, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 15, 4, 4, 5, 724664, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 15, 4, 4, 5, 869892, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 15, 4, 4, 5, 908956, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 15, 4, 5, 10, 814308, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 15, 4, 5, 10, 931045, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 15, 4, 5, 10, 965081, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 15, 4, 5, 13, 571819, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 15, 4, 5, 13, 608344, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 15, 4, 5, 18, 990375, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 15, 4, 5, 21, 466768, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 15, 4, 5, 21, 600113, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 15, 4, 5, 21, 657832, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 15, 4, 6, 8, 169074, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 15, 4, 6, 8, 202976, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 15, 4, 6, 12, 515507, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 15, 4, 8, 41, 644753, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 15, 4, 8, 49, 979739, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 15, 4, 8, 55, 252469, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+Internal Server Error: /hrm/api
+Traceback (most recent call last):
+  File "/home/hcsadmin/argo/packages/django/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/hcsadmin/argo/packages/django/django/views/decorators/http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "/home/hcsadmin/argo/packages/django/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/hcsadmin/argo/packages/quicky/api.py", line 106, in call
+    raise ex
+Exception: Call  'save_item' in 'hrm.api.categories' encountered 'COLL instance has no attribute 'update_many''
+django_session.find (0.01) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 15, 4, 9, 27, 429461, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+Internal Server Error: /hrm/api
+Traceback (most recent call last):
+  File "/home/hcsadmin/argo/packages/django/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/hcsadmin/argo/packages/django/django/views/decorators/http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "/home/hcsadmin/argo/packages/django/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/hcsadmin/argo/packages/quicky/api.py", line 106, in call
+    raise ex
+Exception: Call  'save_item' in 'hrm.api.categories' encountered 'COLL instance has no attribute 'update_many''
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 15, 4, 9, 36, 454625, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+Internal Server Error: /hrm/api
+Traceback (most recent call last):
+  File "/home/hcsadmin/argo/packages/django/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/hcsadmin/argo/packages/django/django/views/decorators/http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "/home/hcsadmin/argo/packages/django/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/hcsadmin/argo/packages/quicky/api.py", line 106, in call
+    raise ex
+Exception: Call  'save_item' in 'hrm.api.categories' encountered 'COLL instance has no attribute 'update_many''
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 15, 4, 12, 22, 399898, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 15, 4, 12, 22, 467117, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 15, 4, 12, 27, 982603, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+Internal Server Error: /hrm/api
+Traceback (most recent call last):
+  File "/home/hcsadmin/argo/packages/django/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/hcsadmin/argo/packages/django/django/views/decorators/http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "/home/hcsadmin/argo/packages/django/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/hcsadmin/argo/packages/quicky/api.py", line 106, in call
+    raise ex
+Exception: Call  'save_item' in 'hrm.api.categories' encountered 'with_options() got an unexpected keyword argument 'codec_option''
+django_session.find (0.01) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 15, 4, 12, 50, 433158, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+Internal Server Error: /hrm/api
+Traceback (most recent call last):
+  File "/home/hcsadmin/argo/packages/django/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/hcsadmin/argo/packages/django/django/views/decorators/http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "/home/hcsadmin/argo/packages/django/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/hcsadmin/argo/packages/quicky/api.py", line 106, in call
+    raise ex
+Exception: Call  'save_item' in 'hrm.api.categories' encountered 'with_options() got an unexpected keyword argument 'codec_option''
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 15, 4, 13, 50, 444936, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 15, 4, 13, 50, 602683, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 15, 4, 13, 51, 897048, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 15, 4, 14, 5, 185748, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 15, 4, 14, 14, 962843, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 15, 4, 14, 15, 150573, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 15, 4, 14, 15, 224732, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 15, 4, 16, 10, 94424, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 15, 4, 16, 10, 270250, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 15, 4, 16, 10, 344916, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 15, 4, 16, 40, 989889, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 15, 4, 16, 41, 135045, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 15, 4, 16, 41, 181134, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 15, 4, 16, 55, 459201, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 15, 4, 16, 55, 693288, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 15, 4, 16, 55, 764933, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 15, 4, 17, 2, 428564, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 15, 4, 17, 2, 480106, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 15, 4, 17, 12, 514618, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 15, 4, 17, 27, 916932, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 15, 4, 17, 28, 145205, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 15, 4, 17, 28, 209525, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 15, 4, 17, 31, 877341, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 15, 4, 17, 31, 937898, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 15, 4, 17, 35, 763635, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 15, 4, 17, 57, 697904, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 15, 4, 17, 57, 836918, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 15, 4, 17, 57, 889050, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 15, 4, 21, 3, 38, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 15, 4, 21, 3, 49021, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 15, 4, 21, 7, 771067, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 15, 4, 26, 7, 613120, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 15, 4, 26, 8, 218647, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 15, 4, 26, 8, 251149, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 15, 4, 26, 12, 381934, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 15, 4, 26, 12, 426890, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 15, 4, 26, 16, 516083, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 15, 4, 34, 48, 778458, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 15, 4, 34, 49, 843, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 15, 4, 34, 49, 67279, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+Internal Server Error: /hrm/api
+Traceback (most recent call last):
+  File "/home/hcsadmin/argo/packages/django/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/hcsadmin/argo/packages/django/django/views/decorators/http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "/home/hcsadmin/argo/packages/django/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/hcsadmin/argo/packages/quicky/api.py", line 108, in call
+    raise ex
+AttributeError: type object 'datetime.datetime' has no attribute 'datetime'
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 15, 4, 36, 2, 811865, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 15, 4, 36, 3, 21663, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 15, 4, 36, 3, 103977, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 15, 4, 36, 7, 901371, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 15, 4, 36, 8, 30300, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 15, 4, 36, 16, 27951, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+Internal Server Error: /hrm/api
+Traceback (most recent call last):
+  File "/home/hcsadmin/argo/packages/django/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/hcsadmin/argo/packages/django/django/views/decorators/http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "/home/hcsadmin/argo/packages/django/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/hcsadmin/argo/packages/quicky/api.py", line 108, in call
+    raise ex
+TypeError: unsupported type for timedelta minutes component: datetime.timedelta
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 15, 4, 36, 35, 56290, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+Internal Server Error: /hrm/api
+Traceback (most recent call last):
+  File "/home/hcsadmin/argo/packages/django/django/core/handlers/base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/hcsadmin/argo/packages/django/django/views/decorators/http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "/home/hcsadmin/argo/packages/django/django/views/decorators/csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/home/hcsadmin/argo/packages/quicky/api.py", line 108, in call
+    raise ex
+TypeError: unsupported type for timedelta minutes component: datetime.timedelta
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 15, 4, 37, 45, 517404, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 15, 4, 37, 45, 597764, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 15, 4, 37, 49, 69566, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 15, 4, 38, 34, 963698, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 15, 4, 38, 35, 125013, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 15, 4, 38, 35, 188387, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 15, 4, 44, 47, 784168, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.01) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 15, 4, 44, 47, 996594, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 15, 4, 44, 48, 66734, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 15, 4, 44, 51, 443165, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 15, 4, 44, 51, 500777, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 15, 4, 44, 55, 501997, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 15, 4, 45, 16, 616578, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 15, 4, 45, 16, 767480, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 15, 4, 45, 16, 811111, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 15, 4, 46, 46, 372566, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 15, 4, 46, 46, 572293, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 15, 4, 46, 46, 642872, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 15, 4, 46, 49, 91806, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 15, 4, 46, 49, 160888, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 15, 4, 46, 52, 93827, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 15, 4, 47, 9, 269428, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 15, 4, 47, 9, 399080, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 15, 4, 47, 9, 456250, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 15, 4, 47, 12, 10837, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 15, 4, 47, 12, 62865, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 15, 4, 47, 16, 120158, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': 'ynpgj2k234wluu0a5hafl0fd40uebyr0', 'expire_date': {'$gt': datetime.datetime(2018, 5, 15, 4, 54, 41, 233985, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}

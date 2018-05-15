@@ -7,7 +7,8 @@ from pymongo.errors import OperationFailure
 import logging
 import copy
 import pymongo
-
+import pytz
+from bson.codec_options import CodecOptions
 
 logger = logging.getLogger(__name__)
 _db={}
@@ -15,8 +16,10 @@ _db={}
 class QR():
     db=None
     _entity=None
-    def __init__(self,_db):
-        self.db=_db
+    _codec_options=None
+    def __init__(self,config):
+        self.db=config["database"]
+        self._codec_options=config["codec_options"]
     def collection(self,name):
         "get collection from database. including methods: find_one,find,get_list,get_item,where,entity,aggregate "
         if name==None or name=="":
@@ -154,6 +157,7 @@ class ENTITY():
             )
         )
     def commit(self):
+        _coll=self.qr.db.get_collection(self.name).with_options(codec_options=self.qr._codec_options)
         if self._action=="insert_one":
             ret_data={}
             try:
@@ -165,7 +169,7 @@ class ENTITY():
                             code="missing"
                         )
                     )
-                ret = self.qr.db.get_collection(self.name).insert_one(self._data)
+                ret = _coll.insert_one(self._data)
                 ret_data = self._data.copy()
                 ret_data.update({
                     "_id": ret.inserted_id
@@ -188,7 +192,7 @@ class ENTITY():
 
 
         elif self._action=="insert_many":
-            ret = self.qr.db.get_collection(self.name).insert_many(self._data)
+            ret = _coll.insert_many(self._data)
             self._action = None
             self._data = {}
             return ret
@@ -196,7 +200,7 @@ class ENTITY():
             if self._expr==None:
                 raise Exception("Can not modified data without using filter")
             if self._action=="update_one":
-                ret = self.qr.db.get_collection(self.name).update_one(self._expr,self._data)
+                ret = _coll.update_one(self._expr,self._data)
                 self._expr=None
                 self._action = None
                 self._data = {}
@@ -242,7 +246,7 @@ class ENTITY():
                                 code="missing"
                             )
                         )
-                    ret = self.qr.db.get_collection(self.name).update_many(self._expr,updater)
+                    ret = _coll.update_many(self._expr,updater)
                     self._expr = None
                     self._action = None
                     self._data = {}
@@ -260,7 +264,7 @@ class ENTITY():
                     raise ex
 
             if self._action=="delete":
-                ret = self.qr.db.get_collection(self.name).delete_many(self._expr)
+                ret = _coll.delete_many(self._expr)
                 self._expr = None
                 self._action = None
                 self._data = {}
@@ -367,22 +371,24 @@ class COLL():
     def __init__(self,qr,name):
         self.qr=qr
         self.name=name
+    def get_collection(self):
+        return self.qr.db.get_collection(self.name).with_options(codec_options=self.qr._codec_options)
     def find_one(self,exprression,*args,**kwargs):
         """find one item with conditional ex: find_one("Username={0}","admin"),
             find_one("Username='admin'"),
             find_one("Username=@username",username="admin")
          """
         if type(exprression) is dict:
-            ret = self.qr.db.get_collection(self.name).find_one(exprression)
+            ret = self.get_collection().find_one(exprression)
             return ret
         elif type(exprression) is tuple:
-            ret = self.qr.db.get_collection(self.name).find_one(exprression[0])
+            ret = self.get_collection().find_one(exprression[0])
             return ret
         else:
             if type(args) is tuple and args.__len__()>0 and kwargs=={}:
                 kwargs=args[0]
             filter = expr.parse_expression_to_json_expression(exprression, kwargs)
-            ret=self.qr.db.get_collection(self.name).find_one(filter)
+            ret=self.get_collection().find_one(filter)
             return ret
     def find(self,exprression,*params):
         """find and get a list of items item with conditional ex: find("Username={0}","admin"),
@@ -390,21 +396,21 @@ class COLL():
                     find("Username=@username",username="admin")
                  """
         if type(exprression) is dict:
-            ret = self.qr.db.get_collection(self.name).find(exprression)
+            ret = self.get_collection().find(exprression)
             return list(ret)
         elif type(exprression) is tuple:
-            ret = self.qr.db.get_collection(self.name).find(exprression[0])
+            ret = self.get_collection().find(exprression[0])
             return list(ret)
         else:
             x=expr.get_tree(exprression,params)
             y=expr.get_expr(x,params)
-            ret=self.qr.db.get_collection(self.name).find(y)
+            ret=self.get_collection().find(y)
             return list(ret)
     def get_list(self):
-        ret = self.qr.db.get_collection(self.name).find()
+        ret = self.get_collection().find()
         return list(ret)
     def get_item(self):
-        ret = self.qr.db.get_collection(self.name).find_one()
+        ret = self.get_collection().find_one()
         return ret
     def where(self,exprression,*params):
         """Create filter expression before get data from mongo
@@ -450,7 +456,7 @@ class COLL():
                         "$type":x["type"]
                     }
                 })
-            coll=self.qr.db.get_collection(self.name)
+            coll=self.get_collection()
             collation=pymongo.collation.Collation(locale="en_US",strength= 2)
             coll.create_index(keys,
                               unique=True,
@@ -665,7 +671,8 @@ class AGGREGATE():
         #     return self.qr.db.get_collection(self.name).aggregate(self._pipe,explain=False)["cursor"]["firstBatch"]
         # except Exception as ex:
         #     return list(self.qr.db.get_collection(self.name).aggregate(self._pipe))
-        ret=list(self.qr.db.get_collection(self.name).aggregate(self._pipe))
+        coll=self.qr.db.get_collection(self.name).with_options(codec_options=self.qr._codec_options)
+        ret=list(coll.aggregate(self._pipe))
         self._pipe=[]
         return ret
     def get_page(self,page_index,page_size):
@@ -688,7 +695,7 @@ class AGGREGATE():
 def connect(*args,**kwargs):
     """
     Create db instance <br/>
-    Ex:query.get_query(host="ip address", name="database name",port=,user=,password=)
+    Ex:query.get_query(host="ip address", name="database name",port=,user=,password=,tz_aware=True/False,timezone='refer to link https://en.wikipedia.org/wiki/List_of_tz_database_time_zones')
     """
     try:
         global _db
@@ -696,12 +703,31 @@ def connect(*args,**kwargs):
             args=kwargs
         else:
             args=args[0]
+        if not args.has_key("host"):
+            raise (Exception("This look like you forgot set 'host' params.\n Where is your mongodb hosting?"))
+        if not args.has_key("port"):
+            raise (Exception("This look like you forgot set 'port' params.\n What is your mongodb port? Is it '27017'"))
+
+        if args.has_key("user") and args.get("user",None)!=None:
+            if not args.has_key("password") or args.get("password", "") == "":
+                raise (Exception("This look like you forgot set 'user' and 'password' params.\n How is your mongodb authorization?"))
+        if not args.has_key("tz_aware"):
+            raise (Exception("This look like you forgot set 'tz_aware' params.\n Why 'tz_aware' is the most important for your mongodb connection?\n "
+                             "Please refer to http://api.mongodb.com/python/current/examples/datetimes.html\n "
+                             ". If you are using Django framwork this information maybe in 'USE_TZ' of setting.py\n"))
+        if not args.has_key("timezone"):
+            raise (Exception(
+                "This look like you forgot set 'timezone' params.\n Why 'timezone' is the most important for your mongodb connection?\n "
+                "Please refer to http://api.mongodb.com/python/current/examples/datetimes.html\n "
+                ". If you are using Django framwork this information maybe in 'TIME_ZONE' of setting.py\n"))
         key="host={0};port={1};user={2};pass={3};name={4}".format(
             args["host"],
             args["port"],
             args["user"],
             args["password"],
-            args["name"]
+            args["name"],
+            args["tz_aware"],
+            args["timezone"]
         )
         if not _db.has_key(key):
             cnn=MongoClient(
@@ -711,7 +737,15 @@ def connect(*args,**kwargs):
             db=cnn.get_database(args["name"])
             if args["user"]!="":
                 db.authenticate(args["user"],args["password"])
-            _db[key]=db
+            codec_options = CodecOptions(
+                tz_aware=args["tz_aware"],
+                tzinfo=pytz.timezone(args["timezone"])
+            )
+
+            _db[key]={
+                "database":db,
+                "codec_options":codec_options
+            }
         return QR(_db[key])
     except OperationFailure as ex:
         logger.debug(ex)

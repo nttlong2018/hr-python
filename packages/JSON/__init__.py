@@ -12,6 +12,7 @@ datetime_format_regex_from_javascript = re.compile(r'^\d{4}-\d{2}-\d{2}T\d{2}:\d
 
 class json_serilizer():
     time_offset_minutes=None
+
     def __init__(self,time_offset_minutes):
         self.time_offset_minutes=time_offset_minutes
     def json_serial(self,obj):

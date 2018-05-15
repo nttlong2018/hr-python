@@ -1,4 +1,5 @@
 import models.hrm.categories
+import quicky
 login_url="../admin/login"
 def authenticate(request):
     if not request.user.is_anonymous() and \
@@ -20,6 +21,9 @@ Database=dict(
     port=27017,
     user="sys",
     password="123456",
-    name="lv01_lms"
+    name="lv01_lms",
+    tz_aware=quicky.get_django_settings_module().USE_TZ,
+    timezone= "UTC"#quicky.get_django_settings_module().TIME_ZONE
+
 )
 models.hrm.categories.connect(Database)
