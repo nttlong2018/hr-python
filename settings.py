@@ -34,7 +34,7 @@ SECRET_KEY = 'bw(lu4t*o&*ot4&gf^&74ksjz3r+ji6bxr_9$y0sacg*ks0m0w'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost','172.16.11.127']
 # Application definition
 
 INSTALLED_APPS = (
@@ -110,7 +110,7 @@ DATABASES_ = {
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = "Asia/Ho_Chi_Minh" #'UTC'
+TIME_ZONE = 'UTC'
 
 USE_I18N = False
 

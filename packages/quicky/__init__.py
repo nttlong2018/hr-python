@@ -9,6 +9,7 @@ import os
 import layout_view #use for boostrap layout definition
 import url
 import datetime
+import threading
 def get_static_server_path(file,path):
     return os.getcwd() + os.sep + os.path.dirname(file) + os.sep +path
 def get_django_settings_module():
@@ -24,3 +25,7 @@ def get_django_settings_module():
 
 def to_server_local_time(val):
      return val+(datetime.datetime.utcnow() - datetime.datetime.now())
+def to_client_time(val):
+    return val - datetime.timedelta(minutes=threading.current_thread().client_offset_minutes)
+def get_client_offset_minutes():
+    return threading.current_thread().client_offset_minutes
