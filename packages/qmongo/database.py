@@ -695,7 +695,21 @@ class AGGREGATE():
 def connect(*args,**kwargs):
     """
     Create db instance <br/>
-    Ex:query.get_query(host="ip address", name="database name",port=,user=,password=,tz_aware=True/False,timezone='refer to link https://en.wikipedia.org/wiki/List_of_tz_database_time_zones')
+    Ex:query.get_query(host="ip address",\n
+                        name="database name",\n
+                        port=,\n
+                        user=,\n
+                        password=,\n
+                        tz_aware=True/False,\n
+                        timezone='refer to link https://en.wikipedia.org/wiki/List_of_tz_database_time_zones'\n
+                        )\n
+     \n Why 'tz_aware' is the most important for your mongodb connection?\n
+     Please refer to http://api.mongodb.com/python/current/examples/datetimes.html\n
+     If you are using Django framwork this information maybe in 'USE_TZ' of setting.py\n
+      Why 'timezone' is the most important for your mongodb connection?\n
+      Please refer to http://api.mongodb.com/python/current/examples/datetimes.html\n
+       If you are using Django framwork this information maybe in 'USE_TZ' of setting.py\n
+
     """
     try:
         global _db
@@ -711,23 +725,14 @@ def connect(*args,**kwargs):
         if args.has_key("user") and args.get("user",None)!=None:
             if not args.has_key("password") or args.get("password", "") == "":
                 raise (Exception("This look like you forgot set 'user' and 'password' params.\n How is your mongodb authorization?"))
-        if not args.has_key("tz_aware"):
-            raise (Exception("This look like you forgot set 'tz_aware' params.\n Why 'tz_aware' is the most important for your mongodb connection?\n "
-                             "Please refer to http://api.mongodb.com/python/current/examples/datetimes.html\n "
-                             ". If you are using Django framwork this information maybe in 'USE_TZ' of setting.py\n"))
-        if not args.has_key("timezone"):
-            raise (Exception(
-                "This look like you forgot set 'timezone' params.\n Why 'timezone' is the most important for your mongodb connection?\n "
-                "Please refer to http://api.mongodb.com/python/current/examples/datetimes.html\n "
-                ". If you are using Django framwork this information maybe in 'TIME_ZONE' of setting.py\n"))
         key="host={0};port={1};user={2};pass={3};name={4}".format(
             args["host"],
             args["port"],
             args["user"],
             args["password"],
             args["name"],
-            args["tz_aware"],
-            args["timezone"]
+            args.get("tz_aware",False),
+            args.get("timezone",None)
         )
         if not _db.has_key(key):
             cnn=MongoClient(
@@ -737,10 +742,15 @@ def connect(*args,**kwargs):
             db=cnn.get_database(args["name"])
             if args["user"]!="":
                 db.authenticate(args["user"],args["password"])
-            codec_options = CodecOptions(
-                tz_aware=args["tz_aware"],
-                tzinfo=pytz.timezone(args["timezone"])
-            )
+            if args.get("tz_aware",False):
+                codec_options = CodecOptions(
+                    tz_aware=True,
+                    tzinfo=pytz.timezone(args["timezone"])
+                )
+            else:
+                codec_options = CodecOptions(
+                    tz_aware=False
+                )
 
             _db[key]={
                 "database":db,
