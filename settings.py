@@ -198,6 +198,11 @@ LOGGING = {
     },
 }
 import static_configs
+
+static_configs.get_data()["Performance_Settings"]["DateTimeFormat"].update({
+    "Short_Date_Format":"mm-DD-yyyy"
+})
+static_configs.save() #Cap nhat vao database
 static_configs_db=dict(
     host="172.16.7.63",
     port=27017,
@@ -208,6 +213,20 @@ static_configs_db=dict(
 )
 static_configs.set_config(static_configs_db)
 static_configs.set_data(
-    short_date_format="dd/MM/yyyy"
+    Performance_Settings=dict(
+        DateTimeFormat=dict(
+            Short_Date_Format="dd/MM/yyyy",
+            Date_Format_With_Time="dd/MM/yyyy hh:mm:dd",
+            Long_Date_Format="dd MMM yyyy"
+        ),
+        NumericFormat=dict(
+            Group_Seperator=",",
+            Decimal_Seperator="."
+        )
+    ),
+    Lms_Settings=dict(
+
+    )
+
 )
 STATIC_ROOT = os.path.join(*(BASE_DIR.split(os.path.sep) + ['apps/static','apps/app_main/static']))
