@@ -206,6 +206,14 @@ class ENTITY():
                 self._data = {}
                 return ret
             if self._action=="update_many":
+                ret_validate_require = validators.validate_require_data(self.name, self._data["$set"], partial=True)
+                if ret_validate_require.__len__() > 0:
+                    return dict(
+                        error=dict(
+                            fields=ret_validate_require,
+                            code="missing"
+                        )
+                    )
                 updater={}
                 for key in self._data.keys():
                     if key=="$pull":
@@ -238,14 +246,7 @@ class ENTITY():
                             key:self._data[key]
                         })
                 try:
-                    ret_validate_require = validators.validate_require_data(self.name, updater,partial=True)
-                    if ret_validate_require.__len__() > 0:
-                        return dict(
-                            error=dict(
-                                fields=ret_validate_require,
-                                code="missing"
-                            )
-                        )
+
                     ret = _coll.update_many(self._expr,updater)
                     self._expr = None
                     self._action = None
@@ -449,6 +450,7 @@ class COLL():
         for item in args:
             keys=[]
             partialFilterExpression={}
+            coll = self.get_collection()
             for x in item:
                 keys.append((x["field"],pymongo.ASCENDING))
                 partialFilterExpression.update({
@@ -456,11 +458,11 @@ class COLL():
                         "$type":x["type"]
                     }
                 })
-            coll=self.get_collection()
-            collation=pymongo.collation.Collation(locale="en_US",strength= 2)
+
+            # collation = pymongo.collation.Collation(locale=x["locale"], strength=2)
             coll.create_index(keys,
                               unique=True,
-                              collation=collation,
+
                               partialFilterExpression=partialFilterExpression)
 
         return self
@@ -683,7 +685,7 @@ class AGGREGATE():
         return dict(
             page_size=page_size,
             page_index=page_index,
-            total_items=total_items,
+            total_items=total_items["total_items"],
             items=items
         )
     def __copy__(self):
@@ -728,8 +730,8 @@ def connect(*args,**kwargs):
         key="host={0};port={1};user={2};pass={3};name={4}".format(
             args["host"],
             args["port"],
-            args["user"],
-            args["password"],
+            args.get("user","none"),
+            args.get("password","none"),
             args["name"],
             args.get("tz_aware",False),
             args.get("timezone",None)
@@ -740,7 +742,7 @@ def connect(*args,**kwargs):
                 port=args["port"]
             )
             db=cnn.get_database(args["name"])
-            if args["user"]!="":
+            if args["user"]!=None:
                 db.authenticate(args["user"],args["password"])
             if args.get("tz_aware",False):
                 codec_options = CodecOptions(
