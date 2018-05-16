@@ -199,10 +199,8 @@ LOGGING = {
 }
 import static_configs
 
-static_configs.get_data()["Performance_Settings"]["DateTimeFormat"].update({
-    "Short_Date_Format":"mm-DD-yyyy"
-})
-static_configs.save() #Cap nhat vao database
+
+
 static_configs_db=dict(
     host="172.16.7.63",
     port=27017,
