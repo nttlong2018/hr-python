@@ -8,6 +8,8 @@ _model_cache_={
     "type_fields":{}
 }
 def get_value_by_path(path,data):
+    if data.has_key(path):
+        return data[path]
     items=path.split(".")
     if items.__len__()==1:
         return data.get(items[0],None)
@@ -19,7 +21,6 @@ def get_value_by_path(path,data):
             else:
                 val=val.get(x,None)
         return val
-
 def validate_require_data(name,data,partial=False):
     if not partial:
         ret=[]

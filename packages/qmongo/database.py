@@ -12,7 +12,31 @@ from bson.codec_options import CodecOptions
 
 logger = logging.getLogger(__name__)
 _db={}
+def extract_data(data):
+    ret={}
+    for key in data.keys():
+        if key.find(".")>-1:
+            items=key.split('.')
+            if not ret.has_key(items[0]):
+                ret.update({
+                    items[0]:{}
+                })
+            val=ret[items[0]]
+            for x in items[1:items.__len__()-1]:
+                if not val.has_key(x):
+                    val.update({
+                        x:{}
+                    })
+                val=val[x]
+            val.update({
+                items[items.__len__() - 1]:data[key]
+            })
 
+        else:
+            ret.update({
+                key:data[key]
+            })
+    return ret
 class QR():
     db=None
     _entity=None
@@ -161,12 +185,21 @@ class ENTITY():
         if self._action=="insert_one":
             ret_data={}
             try:
+                self._data=extract_data(self._data)
                 ret_validate_require=validators.validate_require_data(self.name,self._data)
                 if ret_validate_require.__len__()>0:
                     return dict(
                         error=dict(
                             fields=ret_validate_require,
                             code="missing"
+                        )
+                    )
+                ret_validate_data_type=validators.validate_type_of_data(self.name,self._data)
+                if ret_validate_data_type.__len__()>0:
+                    return dict(
+                        error=dict(
+                            fields=ret_validate_data_type,
+                            code="invalid_data"
                         )
                     )
                 ret = _coll.insert_one(self._data)
@@ -212,6 +245,14 @@ class ENTITY():
                         error=dict(
                             fields=ret_validate_require,
                             code="missing"
+                        )
+                    )
+                ret_validate_data_type = validators.validate_type_of_data(self.name, self._data["$set"])
+                if ret_validate_data_type.__len__() > 0:
+                    return dict(
+                        error=dict(
+                            fields=ret_validate_data_type,
+                            code="invalid_data"
                         )
                     )
                 updater={}
@@ -720,9 +761,11 @@ def connect(*args,**kwargs):
         else:
             args=args[0]
         if not args.has_key("host"):
-            raise (Exception("This look like you forgot set 'host' params.\n Where is your mongodb hosting?"))
+            raise (Exception("This look like you forgot set 'host' param.\n Where is your mongodb hosting?"))
         if not args.has_key("port"):
-            raise (Exception("This look like you forgot set 'port' params.\n What is your mongodb port? Is it '27017'"))
+            raise (Exception("This look like you forgot set 'port' param.\n What is your mongodb port? Is it '27017'"))
+        if not args.has_key("name"):
+            raise (Exception("This look like you forgot set 'name' (The name of database) param.\n Which is your mongodb database?"))
 
         if args.has_key("user") and args.get("user",None)!=None:
             if not args.has_key("password") or args.get("password", "") == "":
