@@ -1,0 +1,52 @@
+<!--<%inherit file="base.html"/>-->
+<div class="container-fluid small">
+	<div class="row">
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+				<div class="pull-right">
+					<a class="btn-small dropdown-toggle" type="button" id="dropdownMenu1"
+							data-toggle="dropdown">
+						${model.language}
+						<span class="caret"></span>
+					</a>
+					<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+						<li role="presentation" class="dropdown-header">
+							<a role="menuitem" tabindex="-1" href="?language=vn">Tiếng Việt</a>
+						</li>
+						<li role="presentation" class="dropdown-header">
+							<a role="menuitem" tabindex="-1" href="?language=en">English</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+    <div class="container"  style="max-width:300px">
+
+ <form action="./login?next=${model.url_next}" method="POST" role="form" style="max-width:400px" >
+    <input type="hidden" name="csrfmiddlewaretoken" value="${get_csrftoken()}"/>
+    	<legend>${get_global_res("Login")}</legend>
+    	<div class="form-group small">
+    		<label >${get_global_res("Username")}</label>
+    		<input type="text" class="form-control input-sm" name="username"  placeholder="${get_global_res('Enter username')}" value="${model.username}">
+    	</div>
+       <div class="form-group">
+    		<label >${get_global_res("Password")}</label>
+    		<input type="password" class="form-control input-sm" name="password"  placeholder="${get_global_res('Enter password')}" value="${model.password}">
+    	</div>
+
+    	<button type="submit" class="btn btn-primary btn-sm">${get_global_res("Login")}</button>
+	 	<input type="hidden" value="${model.url_next}" name="url_next">
+    </form>
+		% if model.is_error:
+		<div class="alert alert-danger">
+			<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+			<strong>${get_global_res("Login fail")}</strong> ${model.error_message}
+		</div>
+		% endif
+
+    </div>
+
+
+</div>
+
+
+

@@ -1,0 +1,23 @@
+(function () {
+  'use strict';
+
+  angular.module('ZebraApp.components.inputs')
+      .directive('inputText', inputText);
+
+  /** @ngInject */
+  function inputText() {
+    return {
+      restrict: 'E',
+      replace: true,
+      transclude: true,
+      //template: function(el, attrs) {
+      //  return '<div class="switch-container ' + (attrs.color || '') + '"><input type="checkbox" ng-model="ngModel"></div>';
+      //}
+      template: '<input type="text" class="form-control zb-form-input"/>',
+      //templateUrl: "app/components/input/text/text.html",
+      link: function( $scope, elem, attr) {
+          var input = $(elem.find("input")[0]);
+      }
+    };
+  }
+})();

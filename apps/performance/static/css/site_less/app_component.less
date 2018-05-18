@@ -1,0 +1,277 @@
+@border_color: #cbcbcb;
+@border_color_hover: #009de1;
+@caption_color: #666;
+@value_color: #333;
+@height:25px;
+/*Boostrap color*/
+@boostrap_primary_color: #337ab7;
+@boostrap_primary_border_color: #2e6da4;
+@boostrap_primary_color_hover_focus: #204d74;
+@boostrap_primary_border_color_hover_focus: #122b40;
+@boostrap_warning_color: #f0ad4e;
+@boostrap_warning_border_color: #eea236;
+@boostrap_warning_color_hover_focus: #ec971f;
+@boostrap_warning_border_color_hover_focus: #d58512;
+@boostrap_danger_color: #d9534f;
+@boostrap_danger_border_color: #d43f3a;
+@boostrap_danger_color_hover_focus: #ac2925;
+@boostrap_danger_border_color_hover_focus: #761c19;
+/*Boostrap color*/
+html {
+    font-size: 16px !important;
+}
+
+.zb-form-input {
+    color: @value_color;
+    border: 0;
+    border-radius: 0;
+    border-bottom: 1px solid @border_color!important;
+    background: transparent;
+    font-size: 0.875rem;
+    padding-bottom: 0;
+}
+
+.zb-form-input:focus {
+    border-bottom: 1px solid @border_color_hover !important;
+    background: transparent;
+}
+
+.zb-form-label {
+    font-size: 0.875rem !important;
+    margin: unset !important;
+    text-align: left;
+    padding-right: 6px;
+    min-height: 25px;
+    vertical-align: middle;
+    padding-top: 5px;
+}
+
+.zb-form-label:after {
+    content: ':';
+}
+
+.zb-form-select,
+.zb-form-select * {
+    background: transparent;
+}
+
+.zb-form-select span.form-control {
+    color: #333;
+    border: 0;
+    border-radius: 0;
+    font-size: 0.875rem;
+    padding-bottom: 0;
+}
+
+.zb-form-select div.ui-select-match {
+    border-bottom: 1px solid @border_color;
+}
+
+.zb-form-select span.form-control:hover {
+    background: transparent;
+}
+
+
+.btn-group.bootstrap-select.form-control.open {
+    background: transparent;
+}
+
+.btn-group.bootstrap-select.form-control.open input[type=search] {
+    color: #333;
+    border: 0;
+    border-radius: 0;
+    border-bottom: 1px solid @border_color_hover;
+    background: transparent;
+    padding-bottom: 0;
+}
+
+.btn-group.bootstrap-select.form-control.open ul.ui-select-choices {
+    border-radius: 0px;
+    border-top: 0;
+}
+
+.zb-form-select {
+    .btn-default-focus {
+        outline: none !important;
+        -webkit-box-shadow: none !important;
+        box-shadow: none !important;
+        box-sizing: unset;
+        border-bottom: 1px solid @border_color_hover !important;
+        color: red;
+    }
+
+    .caret {
+        width: 14px !important;
+        height: 14px !important;
+        margin-left: 2px;
+        border: none !important;
+        font-family: Ionicons;
+        speak: none;
+        font-style: normal;
+        font-weight: 400;
+        font-variant: normal;
+        text-transform: none;
+        text-rendering: auto;
+        line-height: 1;
+        -webkit-font-smoothing: antialiased;
+    }
+
+    .caret:after {
+        content: "\f123";
+    }
+
+    .ui-select-match,
+    .ui-select-match > span {
+        height: @height;
+        background: transparent !important;
+        padding-top: 0 !important;
+    }
+
+    .ui-select-match > span {
+        padding: 0;
+    }
+
+    .ui-select-match > span > span {
+        position: absolute;
+        bottom: 0px;
+        left: 2px;
+        right: 12px;
+    }
+
+    .ui-select-match > span > span.ui-select-placeholder {
+        color: #999;
+    }
+}
+
+.zb-form-date-picker {
+    margin: unset !important;
+
+    > input,
+    > span > button.btn-default {
+        color: #333;
+        border: 0;
+        border-radius: 0;
+        border-bottom: 1px solid @border_color !important;
+        background: transparent;
+        font-size: 0.875rem;
+        padding-bottom: 0;
+        padding-right: 9px;
+    }
+
+    .zb-form-date-picker-focus {
+        background: transparent;
+        border-bottom: 1px solid @border_color_hover !important;
+    }
+
+    > span > button.btn-default {
+        padding-top: 4px;
+        border-bottom: 1px solid @border_color !important;
+    }
+
+    > span > button.btn-default:active {
+        border: none !important;
+    }
+
+    > span > button.btn-default:hover,
+    > span > button.btn-default:focus {
+        background: transparent;
+        border-bottom: 1px solid @border_color_hover !important;
+        height: @height !important;
+        padding: 4px 9px 0px 12px !important;
+        margin: 0 !important;
+        transform: scale(1) !important;
+    }
+
+    .uib-datepicker {
+        table {
+            button {
+                border-radius: 0;
+            }
+
+            button.active {
+                border-color: @border_color_hover;
+                /*>span {
+                    color: #ffffff;
+                }*/
+            }
+
+            button:hover {
+                transform: scale(1);
+                border-color: @border_color_hover;
+            }
+        }
+    }
+
+    ul.uib-datepicker-popup {
+        border-radius: 0;
+        padding: 10px;
+    }
+
+    li.uib-button-bar button {
+        border-radius: 0;
+    }
+}
+
+.zb-form-checkbox {
+    .custom-checkbox {
+        color: @caption_color;
+
+        span:hover:before {
+            cursor: pointer;
+            font-family: fontAwesome;
+            font-weight: 300;
+            font-size: 12px;
+            color: @caption_color;
+            content: "\a0";
+            background-color: transparent;
+            border: 1px solid @border_color_hover;
+            border-radius: 0;
+            display: inline-block;
+            text-align: center;
+            height: 16px;
+            line-height: 14px;
+            min-width: 16px;
+            margin-right: 6px;
+            position: relative;
+            top: 0;
+            margin-left: -22px;
+            float: left;
+        }
+
+        > input:checked + span:before,
+        label.custom-radio > input:checked + span:before {
+            content: "\f00c";
+            font-weight: 300;
+        }
+    }
+}
+
+.form-group {
+    margin-bottom: unset;
+}
+
+.form-control {
+    height: 25px;
+    padding: 6px 2px;
+}
+
+.ui-select-bootstrap {
+    .ui-select-choices-row > span,
+    .ui-select-choices-row.active > span {
+        padding: 3px 5px;
+    }
+}
+
+.checkbox
+, .radio{
+    margin:unset;
+}
+
+.hcs-selected-row {
+    background-color: @border_color;
+}
+
+.btn:hover {
+    -webkit-transform: unset!important;
+    transform: unset!important;
+}

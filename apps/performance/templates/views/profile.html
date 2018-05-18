@@ -1,0 +1,628 @@
+﻿<div class="hcs-container">
+    <div class="row" style="margin:unset;">
+        <hcs-breadcumb data="mapName" function="currentFunction"></hcs-breadcumb>
+        <div class="col-md-12" id="hcs-admin-system-container">
+            <hcs-left-menu data="mapName" avatar="true" src="'https://orig00.deviantart.net/01b9/f/2015/331/1/4/doraemon___nobita_duck_face_vector_by_jewel_chanxoxo-d9i99ov.png'"></hcs-left-menu>
+            <div class="hcs-system-admin-content" style="padding:30px 15px 30px 15px;">
+                    <div class="tab-content col-md-12" id="hcs-admin-system-panel-content">
+                    <div id="function1" class="tab-pane fade in active">
+                        <div class="row">
+                            <div class="col-md-8">
+                                <div class="row">
+                                    <p class="hcs-group-collapse-heading">
+                                        <a class="hcs-profile-group-title" onclick="$('#collapseCurriculumVitae').slideToggle();" href="javascript:void(0)">
+                                            <span>
+                                                <i class="la la-angle-down"></i>
+                                            </span>
+                                            Lý lịch cá nhân
+                                        </a>
+                                    </p>
+                                </div>
+                                <div class="row" id="collapseCurriculumVitae">
+                                    <div class="col-md-6">
+                                        <div class="form-group row hcs-group-form-group">
+                                            <!--Mã nhân viên-->
+                                            <label for="inputEmployeeId" class="col-sm-4 zb-form-label">Mã nhân viên<span style="color:red">*</span></label>
+                                            <div class="col-sm-8">
+                                                <input-text id="inputEmployeeId" required="Mã nhân viên"
+                                                            oninvalid="this.setCustomValidity('Mã nhân viên không được để trống')"
+                                                            oninput="setCustomValidity('')"
+                                                            onmousemove="this.setCustomValidity('Mã nhân viên bắt buộc nhập')">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row hcs-group-form-group">
+                                            <!--Họ-->
+                                            <label for="inputLastName" class="col-sm-4 zb-form-label">Họ<span style="color:red">*</span></label>
+                                            <div class="col-sm-8">
+                                                <input-text id="inputFirstName">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row hcs-group-form-group">
+                                            <!--Tên-->
+                                            <label for="inputFirstName" class="col-sm-4 zb-form-label">Tên<span style="color:red">*</span></label>
+                                            <div class="col-sm-8">
+                                                <input-text id="inputEmployeeId">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row hcs-group-form-group">
+                                            <!--Giới tính-->
+                                            <label for="inputGender" class="col-sm-4 zb-form-label">Giới tính</label>
+                                            <div class="col-sm-8">
+                                                <input-select data-list="gender" ng-model="gendervalue" placeholder="Chọn giới tính" data-value="value" data-caption="caption"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group row hcs-group-form-group">
+                                            <!--Quốc gia-->
+                                            <label for="inputNational" class="col-sm-4 zb-form-label">Quốc gia</label>
+                                            <div class="col-sm-8">
+                                                <input-select data-list="gender" ng-model="cbbValue" placeholder="Tìm kiếm quốc gia" data-value="value" data-caption="caption"/>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row hcs-group-form-group">
+                                            <!--Dân tộc-->
+                                            <label for="inputNational" class="col-sm-4 zb-form-label">Dân tộc</label>
+                                            <div class="col-sm-8">
+                                                <input-select data-list="gender" ng-model="cbbValue" placeholder="Tìm kiếm dân tộc" data-value="value" data-caption="caption"/>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row hcs-group-form-group">
+                                            <!--Tôn giáo-->
+                                            <label for="inputNational" class="col-sm-4 zb-form-label">Tôn giáo</label>
+                                            <div class="col-sm-8">
+                                                <input-select data-list="gender" ng-model="cbbValue" placeholder="Tìm kiếm tôn giáo" data-value="value" data-caption="caption"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="row">
+                                    <p class="hcs-group-collapse-heading">
+                                        <a class="hcs-profile-group-title" onclick="$('#collapseOther').slideToggle();" href="javascript:void(0)">
+                                            <span>
+                                                <i class="la la-angle-down"></i>
+                                            </span>
+                                            Khác
+                                        </a>
+                                    </p>
+                                </div>
+                                <div id="collapseOther">
+                                    <form>
+                                        <!--Trình độ học vấn-->
+                                        <div class="form-group row hcs-group-form-group">
+                                            <label for="inputCulture" class="col-sm-4 zb-form-label">Trình độ học vấn</label>
+                                            <div class="col-sm-8">
+                                                <input-select data-list="gender" ng-model="cbbValue" placeholder="Tìm kiếm trình độ học vấn" data-value="value" data-caption="caption"/>
+                                            </div>
+                                        </div>
+                                        <!--Hình thức đào tạo-->
+                                        <div class="form-group row hcs-group-form-group">
+                                            <label for="inputExercitatione" class="col-sm-4 zb-form-label">Hình thức đào tạo</label>
+                                            <div class="col-sm-8">
+                                                <input-select data-list="gender" ng-model="cbbValue" placeholder="Tìm kiếm hình thức đào tạo" data-value="value" data-caption="caption"/>
+                                            </div>
+                                        </div>
+                                        <!--Trình độ văn hóa-->
+                                        <div class="form-group row hcs-group-form-group">
+                                            <label for="inputEducationem" class="col-sm-4 zb-form-label">Trình độ văn hóa</label>
+                                            <div class="col-sm-8">
+                                                <input-select data-list="gender" ng-model="cbbValue" placeholder="Tìm kiếm trình độ văn hóa" data-value="value" data-caption="caption"/>
+                                            </div>
+                                        </div>
+                                        <!--Tình trạng hôn nhân-->
+                                        <div class="form-group row hcs-group-form-group">
+                                            <label for="inputEducationem" class="col-sm-4 zb-form-label">Tình trạng hôn nhân</label>
+                                            <div class="col-sm-8">
+                                                <input-select data-list="gender" ng-model="cbbValue" placeholder="Tìm kiếm tình trạng hôn nhân" data-value="value" data-caption="caption"/>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row" style="padding-top:30px;">
+                            <div class="col-md-4">
+                                <div class="row">
+                                    <p class="hcs-group-collapse-heading">
+                                        <a class="hcs-profile-group-title" onclick="$('#collapseIdentity').slideToggle();" href="javascript:void(0)">
+                                            <span>
+                                                <i class="la la-angle-down"></i>
+                                            </span>
+                                            Chứng minh nhân dân
+                                        </a>
+                                    </p>
+                                </div>
+                                <div id="collapseIdentity">
+                                    <form>
+                                        <!--Số CMND-->
+                                        <div class="form-group row hcs-group-form-group">
+                                            <label for="inputIdentityNumber" class="col-sm-4 zb-form-label">Số</label>
+                                            <div class="col-sm-8">
+                                                <input-text id="inputIdentityNumber">
+                                            </div>
+                                        </div>
+                                        <!--Ngày cấp-->
+                                        <div class="form-group row hcs-group-form-group">
+                                            <label for="inputBeginningDate" class="col-sm-4 zb-form-label">Ngày cấp</label>
+                                            <div class="col-sm-8">
+                                                <!--<input type="date" class="form-control hcs-input-textbox" id="inputBeginningDate"/>-->
+                                                <date-picker ng-model="testDate1" data-format="yyyy-MM-dd"/>
+                                            </div>
+                                        </div>
+                                        <!--Nơi cấp-->
+                                        <div class="form-group row hcs-group-form-group">
+                                            <label for="inputRegion" class="col-sm-4 zb-form-label">Nơi cấp</label>
+                                            <div class="col-sm-8">
+                                                <input-select data-list="gender" ng-model="cbbValue" placeholder="Tìm kiếm nơi cấp" data-value="value" data-caption="caption"/>
+                                            </div>
+                                        </div>
+                                        <!--Dấu vết đặc biệt-->
+                                        <div class="form-group row hcs-group-form-group">
+                                            <label for="inputVestigeSpecial" class="col-sm-4 zb-form-label">Dấu vết đặc biệt</label>
+                                            <div class="col-sm-8">
+                                                <!--<input type="date" class="form-control hcs-input-textbox" id="inputVestigeSpecial"/>-->
+                                                <date-picker ng-model="testDate2" data-format="yyyy-MM-dd"/>
+                                            </div>
+                                        </div>
+                                        <!--Mã số thuế-->
+                                        <div class="form-group row hcs-group-form-group">
+                                            <label for="inputTaxNumber" class="col-sm-4 zb-form-label">Mã số thuế</label>
+                                            <div class="col-sm-8">
+                                                <input-text id="inputTaxNumber"/>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="row">
+                                    <p class="hcs-group-collapse-heading">
+                                        <a class="hcs-profile-group-title" onclick="$('#collapsePaperBirth').slideToggle();" href="javascript:void(0)">
+                                            <span>
+                                                <i class="la la-angle-down"></i>
+                                            </span>
+                                            Giấy khai sinh
+                                        </a>
+                                    </p>
+                                </div>
+                                <div id="collapsePaperBirth">
+                                    <form>
+                                        <!--Ngày sinh-->
+                                        <div class="form-group row hcs-group-form-group">
+                                            <label for="inputIdentityNumber" class="col-sm-4 zb-form-label">Ngày sinh</label>
+                                            <div class="col-sm-8">
+                                                <date-picker ng-model="testDate3" data-format="yyyy-MM-dd"/>
+                                                <!--<input type="date" class="form-control hcs-input-textbox" id="inputBirthday">-->
+                                            </div>
+                                        </div>
+                                        <!--Ngày đăng ký-->
+                                        <div class="form-group row hcs-group-form-group">
+                                            <label for="inputRegisteredDate" class="col-sm-4 zb-form-label">Ngày cấp</label>
+                                            <div class="col-sm-8">
+                                                <date-picker ng-model="testDate4" data-format="yyyy-MM-dd"/>
+                                                <!--<input type="date" class="form-control hcs-input-textbox" id="inputRegisteredDate"/>-->
+                                            </div>
+                                        </div>
+                                        <!--Nơi đăng ký-->
+                                        <div class="form-group row hcs-group-form-group">
+                                            <label for="inputRegisteredPlace" class="col-sm-4 zb-form-label">Nơi đăng ký</label>
+                                            <div class="col-sm-8">
+                                                <input-select data-list="gender" ng-model="cbbValue" placeholder="Tìm kiếm nơi đăng ký" data-value="value" data-caption="caption"/>
+                                            </div>
+                                        </div>
+                                        <!--Quận huyện-->
+                                        <div class="form-group row hcs-group-form-group">
+                                            <label for="inputCounty" class="col-sm-4 zb-form-label">Quận/huyện</label>
+                                            <div class="col-sm-8">
+                                                <input-select data-list="gender" ng-model="cbbValue" placeholder="Tìm kiếm quận huyện" data-value="value" data-caption="caption"/>
+                                            </div>
+                                        </div>
+                                        <!--Xã phường-->
+                                        <div class="form-group row hcs-group-form-group">
+                                            <label for="inputDistrict" class="col-sm-4 zb-form-label">Xã/phường</label>
+                                            <div class="col-sm-8">
+                                                <input-select data-list="gender" ng-model="cbbValue" placeholder="Tìm kiếm xã phường" data-value="value" data-caption="caption"/>
+                                            </div>
+                                        </div>
+                                        <!--Thôn xóm-->
+                                        <div class="form-group row hcs-group-form-group">
+                                            <label for="inputVillage" class="col-sm-4 zb-form-label">Thôn/xóm</label>
+                                            <div class="col-sm-8">
+                                                <input-select data-list="gender" ng-model="cbbValue" placeholder="Tìm kiếm thôn xóm" data-value="value" data-caption="caption"/>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="row">
+                                    <p class="hcs-group-collapse-heading">
+                                        <a class="hcs-profile-group-title" onclick="$('#collapseContactInfo').slideToggle();" href="javascript:void(0)">
+                                            <span>
+                                                <i class="la la-angle-down"></i>
+                                            </span>
+                                            Thông tin liên hệ
+                                        </a>
+                                    </p>
+                                </div>
+                                <div id="collapseContactInfo">
+                                    <form>
+                                        <!--Địa chỉ tạm chú-->
+                                        <div class="form-group row hcs-group-form-group">
+                                            <label for="inputIdentityNumber" class="col-sm-4 zb-form-label">Địa chỉ tạm chú</label>
+                                            <div class="col-sm-8">
+                                                <input-text id="inputIdentityNumber">
+                                            </div>
+                                        </div>
+                                        <!--Địa chỉ thường chú-->
+                                        <div class="form-group row hcs-group-form-group">
+                                            <label for="inputRegion" class="col-sm-4 zb-form-label">Địa chỉ thường chú</label>
+                                            <div class="col-sm-8">
+                                                <input-text id="inputIdentityNumber">
+                                            </div>
+                                        </div>
+                                        <!--Tỉnh thành-->
+                                        <div class="form-group row hcs-group-form-group">
+                                            <label for="inputBeginningDate" class="col-sm-4 zb-form-label">Tỉnh/thành</label>
+                                            <div class="col-sm-8">
+                                                <input-select data-list="gender" ng-model="cbbValue" placeholder="Tìm kiếm tỉnh thành" data-value="value" data-caption="caption"/>
+                                            </div>
+                                        </div>
+                                        <!--Quận huyện-->
+                                        <div class="form-group row hcs-group-form-group">
+                                            <label for="inputBeginningDate" class="col-sm-4 zb-form-label">Quận/huyện</label>
+                                            <div class="col-sm-8">
+                                                <input-select data-list="gender" ng-model="cbbValue" placeholder="Tìm kiếm quận huyện" data-value="value" data-caption="caption"/>
+                                            </div>
+                                        </div>
+                                        <!--Xã phường-->
+                                        <div class="form-group row hcs-group-form-group">
+                                            <label for="inputTaxNumber" class="col-sm-4 zb-form-label">Xã/phường</label>
+                                            <div class="col-sm-8">
+                                                <input-select data-list="gender" ng-model="cbbValue" placeholder="Tìm kiếm xã phường" data-value="value" data-caption="caption"/>
+                                            </div>
+                                        </div>
+                                        <!--Thôn xóm-->
+                                        <div class="form-group row hcs-group-form-group">
+                                            <label for="inputTaxNumber" class="col-sm-4 zb-form-label">Thôn/xóm</label>
+                                            <div class="col-sm-8">
+                                                <input-select data-list="gender" ng-model="cbbValue" placeholder="Tìm kiếm thôn xóm" data-value="value" data-caption="caption"/>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row" style="padding-top:30px;">
+                            <div class="col-md-12">
+                                <div class="row" style="padding-right:15px;">
+                                    <div class="hcs-profile-background-group-table">
+                                        <div class="pull-left hcs-profile-icon-heading-on-table" style="height: 100%;padding-right: 3px;background: white;padding-top: 4px;margin-left: unset;">
+                                            <a class="hcs-profile-group-title" onclick="$('#collapseTableInfo').slideToggle();" href="javascript:void(0)">
+                                                <span>
+                                                    <i class="la la-angle-down" style="font-size:0.7rem;"></i>
+                                                </span>
+                                            </a>
+                                        </div>
+                                        <div class="pull-left hcs-profile-icon-heading-on-table" style="padding-top: 7px;margin-left: unset;">
+                                            <a class="hcs-profile-group-title" onclick="$('#collapseTableInfo').slideToggle();" href="javascript:void(0)">
+                                            Thông tin thân nhân
+                                            </a>
+                                        </div>
+                                        <div class="pull-right hcs-profile-icon-heading-on-table">
+                                            <a href="#">
+                                                <span>
+                                                    <i class="la la-close"></i>
+                                                </span>
+                                            </a>
+                                        </div>
+                                        <div class="pull-right hcs-profile-icon-heading-on-table">
+                                            <a href="#">
+                                                <span>
+                                                    <i class="la la-copy"></i>
+                                                </span>
+                                            </a>
+                                        </div>
+                                        <div class="pull-right hcs-profile-icon-heading-on-table">
+                                            <a href="#">
+                                                <span>
+                                                    <i class="la la-plus"></i>
+                                                </span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div id="collapseTableInfo">
+                                    <table class="table table-hover">
+                                      <thead>
+                                        <tr>
+                                          <th></th>
+                                          <th>Tên thân nhân</th>
+                                          <th>Quan hệ</th>
+                                          <th>Giới tính</th>
+                                          <th>Ngày sinh</th>
+                                          <th>Giảm trừ phụ thuộc</th>
+                                          <th>Là chủ hộ</th>
+                                          <th>Thời điểm tạo</th>
+                                        </tr>
+                                      </thead>
+                                      <tbody>
+                                        <tr ng-repeat="data in tableData">
+                                          <td>
+                                            <div class="checkbox">
+                                                <label class="custom-checkbox">
+                                                    <input type="checkbox"> <span></span>
+                                                </label>
+                                            </div>
+                                          </td>
+                                          <td>{{data.name}}</td>
+                                          <td>{{data.relation}}</td>
+                                          <td>{{data.gender}}</td>
+                                          <td>{{data.birthday}}</td>
+                                          <td>
+                                              <div class="checkbox">
+                                                <label class="custom-checkbox">
+                                                    <input type="checkbox" checked="{{data.dependent}}"> <span></span>
+                                                </label>
+                                              </div>
+                                          </td>
+                                          <td>
+                                              <div class="checkbox">
+                                                <label class="custom-checkbox">
+                                                    <input type="checkbox" checked="{{data.host}}"> <span></span>
+                                                </label>
+                                              </div>
+                                          </td>
+                                          <td>{{data.createddate}}</td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="function2" class="tab-pane fade">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="hcs-profile-background-group-table">
+                                    <a class="hcs-profile-group-title" onclick="$('#collapseTableBaseSalary').slideToggle();" href="javascript:void(0)">
+                                        <span>
+                                            <i class="la la-angle-down" style="font-size:unset;"></i>
+                                        </span>
+                                        Lương cơ bản
+                                    </a>
+                                    <div class="pull-right hcs-profile-icon-heading-on-table">
+                                        <a href="#">
+                                            <span>
+                                                <i class="la la-close"></i>
+                                            </span>
+                                        </a>
+                                    </div>
+                                    <div class="pull-right hcs-profile-icon-heading-on-table">
+                                        <a href="#">
+                                            <span>
+                                                <i class="la la-copy"></i>
+                                            </span>
+                                        </a>
+                                    </div>
+                                    <div class="pull-right hcs-profile-icon-heading-on-table">
+                                        <a href="#">
+                                            <span>
+                                                <i class="la la-plus"></i>
+                                            </span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div id="collapseTableBaseSalary">
+                                    <table class="table table-sm table-hover">
+                                      <thead>
+                                        <tr>
+                                          <th></th>
+                                          <th>Số quyết định</th>
+                                          <th>Ngày hiệu lực</th>
+                                          <th>Lương cơ bản</th>
+                                          <th>Lương đóng bảo hiểm xã hội</th>
+                                          <th>Ngày hết hạn</th>
+                                        </tr>
+                                      </thead>
+                                      <tbody>
+                                        <tr ng-repeat="data in tableData">
+                                          <td><input type="checkbox" checked="true"/></td>
+                                          <td>{{'QD0' + $index + 1}}</td>
+                                          <td>{{data.createddate}}</td>
+                                          <td>{{'10000' + $index}}</td>
+                                          <td>{{'10000' + $index}}</td>
+                                          <td>{{data.createddate}}</td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="hcs-profile-background-group-table">
+                                    <a class="hcs-profile-group-title" onclick="$('#collapseTablePaySacle').slideToggle();" href="javascript:void(0)">
+                                        <span>
+                                            <i class="la la-angle-down" style="font-size:unset;"></i>
+                                        </span>
+                                        Lương chức danh
+                                    </a>
+                                    <div class="pull-right hcs-profile-icon-heading-on-table">
+                                        <a href="#">
+                                            <span>
+                                                <i class="la la-close"></i>
+                                            </span>
+                                        </a>
+                                    </div>
+                                    <div class="pull-right hcs-profile-icon-heading-on-table">
+                                        <a href="#">
+                                            <span>
+                                                <i class="la la-copy"></i>
+                                            </span>
+                                        </a>
+                                    </div>
+                                    <div class="pull-right hcs-profile-icon-heading-on-table">
+                                        <a href="#">
+                                            <span>
+                                                <i class="la la-plus"></i>
+                                            </span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div id="collapseTablePaySacle">
+                                    <table class="table table-sm table-hover">
+                                      <thead>
+                                        <tr>
+                                          <th></th>
+                                          <th>Số quyết định</th>
+                                          <th>Ngày hiệu lực</th>
+                                          <th>Lương chức danh</th>
+                                          <th>Hệ số phân bổ</th>
+                                          <th>Ngày hết hạn</th>
+                                        </tr>
+                                      </thead>
+                                      <tbody>
+                                        <tr ng-repeat="data in tableData">
+                                          <td><input type="checkbox" checked="true"/></td>
+                                          <td>{{'QD0' + $index + 1}}</td>
+                                          <td>{{data.createddate}}</td>
+                                          <td>{{'10000' + $index}}</td>
+                                          <td>{{'10000' + $index}}</td>
+                                          <td>{{data.createddate}}</td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="hcs-profile-background-group-table">
+                                    <a class="hcs-profile-group-title" onclick="$('#collapseTableAllowance').slideToggle();" href="javascript:void(0)">
+                                        <span>
+                                            <i class="la la-angle-down" style="font-size:unset;"></i>
+                                        </span>
+                                        Phụ cấp
+                                    </a>
+                                    <div class="pull-right hcs-profile-icon-heading-on-table">
+                                        <a href="#">
+                                            <span>
+                                                <i class="la la-close"></i>
+                                            </span>
+                                        </a>
+                                    </div>
+                                    <div class="pull-right hcs-profile-icon-heading-on-table">
+                                        <a href="#">
+                                            <span>
+                                                <i class="la la-copy"></i>
+                                            </span>
+                                        </a>
+                                    </div>
+                                    <div class="pull-right hcs-profile-icon-heading-on-table">
+                                        <a href="#">
+                                            <span>
+                                                <i class="la la-plus"></i>
+                                            </span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div id="collapseTableAllowance">
+                                    <table class="table table-sm table-hover">
+                                      <thead>
+                                        <tr>
+                                          <th></th>
+                                          <th>Số quyết định</th>
+                                          <th>Ngày hiệu lực</th>
+                                          <th>Loại phụ cấp</th>
+                                          <th>Số tiền</th>
+                                          <th>Ngày hết hạn</th>
+                                        </tr>
+                                      </thead>
+                                      <tbody>
+                                        <tr ng-repeat="data in tableData">
+                                          <td><input type="checkbox" checked="true"/></td>
+                                          <td>{{'QD0' + $index + 1}}</td>
+                                          <td>{{data.createddate}}</td>
+                                          <td>{{'10000' + $index}}</td>
+                                          <td>{{'10000' + $index}}</td>
+                                          <td>{{data.createddate}}</td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="hcs-profile-background-group-table">
+                                    <a class="hcs-profile-group-title" onclick="$('#collapseTableOtherIncome').slideToggle();" href="javascript:void(0)">
+                                        <span>
+                                            <i class="la la-angle-down" style="font-size:unset;"></i>
+                                        </span>
+                                        Thu nhập khác
+                                    </a>
+                                    <div class="pull-right hcs-profile-icon-heading-on-table">
+                                        <a href="#">
+                                            <span>
+                                                <i class="la la-close"></i>
+                                            </span>
+                                        </a>
+                                    </div>
+                                    <div class="pull-right hcs-profile-icon-heading-on-table">
+                                        <a href="#">
+                                            <span>
+                                                <i class="la la-copy"></i>
+                                            </span>
+                                        </a>
+                                    </div>
+                                    <div class="pull-right hcs-profile-icon-heading-on-table">
+                                        <a href="#">
+                                            <span>
+                                                <i class="la la-plus"></i>
+                                            </span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div id="collapseTableOtherIncome">
+                                    <table class="table table-sm table-hover">
+                                      <thead>
+                                        <tr>
+                                          <th></th>
+                                          <th>Số quyết định</th>
+                                          <th>Ngày hiệu lực</th>
+                                          <th>Loại thu nhập</th>
+                                          <th>Số tiền</th>
+                                          <th>Ngày hết hạn</th>
+                                        </tr>
+                                      </thead>
+                                      <tbody>
+                                        <tr ng-repeat="data in tableData">
+                                          <td><input type="checkbox" checked="true"/></td>
+                                          <td>{{'QD0' + $index + 1}}</td>
+                                          <td>{{data.createddate}}</td>
+                                          <td>{{'10000' + $index}}</td>
+                                          <td>{{'10000' + $index}}</td>
+                                          <td>{{data.createddate}}</td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="function3" class="tab-pane fade">
+
+                    </div>
+                    <div id="function4" class="tab-pane face">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="clearfix"></div>
+<script>
+    <%include file="../scripts/profile.js"/>
+</script>

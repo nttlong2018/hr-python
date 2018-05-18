@@ -103,7 +103,11 @@ def apply(request,template_file,app):
     def get_app_name():
         return app.name
     def get_api_key(path):
-        return api.get_api_key(path)
+
+        items=path.split('.')
+        path=path[items[0].__len__():path.__len__()]
+
+        return api.get_api_key(app.mdl.__name__+path)
     def get_api_path(id):
         return api.get_api_path(id)
     def register_view():
