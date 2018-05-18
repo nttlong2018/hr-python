@@ -5059,3 +5059,26 @@ auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
 auth_user.find (0.00) {'username': 'sys'}
 django_session.find (0.01) {'_id': '6gbdp79lyewy4qh2xvag5g5wcp1cp95m', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 7, 1, 12, 624046, tzinfo=<UTC>)}}
 auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': '6gbdp79lyewy4qh2xvag5g5wcp1cp95m', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 7, 15, 8, 667212, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+auth_user.find (0.00) {'username': 'sys'}
+django_session.find (0.01) {'_id': '6gbdp79lyewy4qh2xvag5g5wcp1cp95m', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 7, 15, 9, 27714, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': '6gbdp79lyewy4qh2xvag5g5wcp1cp95m', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 8, 12, 56, 270040, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+auth_user.find (0.00) {'username': 'sys'}
+django_session.find (0.00) {'_id': '6gbdp79lyewy4qh2xvag5g5wcp1cp95m', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 8, 12, 56, 727240, tzinfo=<UTC>)}}
+auth_user.find (0.02) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+django_session.find (0.00) {'_id': '6gbdp79lyewy4qh2xvag5g5wcp1cp95m', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 8, 45, 36, 695332, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+auth_user.find (0.00) {'username': 'sys'}
+django_session.find (0.00) {'_id': '6gbdp79lyewy4qh2xvag5g5wcp1cp95m', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 8, 45, 37, 120952, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae93eda927e0076396dae43')}
+Not Found: /argo/static/app/directives/breadcumb/breadcumb.html
+Not Found: /argo/static/app/directives/leftmenu/leftmenu.html
+Not Found: /argo/static/app/directives/breadcumb/breadcumb.html
+Not Found: /argo/static/app/directives/leftmenu/leftmenu.html
+Not Found: /argo/static/app/directives/leftmenu/leftmenu.html
+Not Found: /argo/static/app/directives/breadcumb/breadcumb.html
+Not Found: /argo/static/app/directives/leftmenu/leftmenu.html
+Not Found: /argo/static/app/directives/breadcumb/breadcumb.html

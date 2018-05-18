@@ -1,4 +1,4 @@
-
+import os
 import datetime
 def authenticate(request):
     if not request.user.is_anonymous() and \
@@ -34,3 +34,12 @@ Database=dict(
     password="123456"
 )
 login_url="login"
+import json_db_sync
+json_db_sync.set_connect(Database)
+json_db_sync.sync_json_data_from_file(
+    os.path.dirname(__file__)+os.sep+"functionlist.json",
+    "SYS_FunctionList",
+    keys=[
+        "function_id"
+    ]
+)
