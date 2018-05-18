@@ -5,7 +5,7 @@ from django.http import HttpResponse
 import json
 import importlib
 import logging
-
+from . import view as view_template
 import JSON
 import applications
 import sys
@@ -20,8 +20,9 @@ _cache_id={}
 _cache_id_revert={}
 
 
-@require_http_methods(["POST"])
+@require_http_methods(["POST","GET"])
 @csrf_exempt
+@view_template.template("call_api.html")
 def call(request):
     try:
         user = request.user
@@ -29,8 +30,6 @@ def call(request):
             return HttpResponse('401 Unauthorized', status=401)
         if not user.is_staff and not user.is_superuser:
             return HttpResponse('401 Unauthorized', status=401)
-
-
         post_data = JSON.from_json(request.body)
         if not post_data.has_key("path"):
             raise Exception("Api post without using path")

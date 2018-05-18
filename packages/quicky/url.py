@@ -1,4 +1,4 @@
-
+import re
 from . import applications
 import imp
 import importlib
@@ -27,7 +27,8 @@ def build_urls(module_name,*args,**kwargs):
                     if ret.host_dir == "":
                         _apps_.urlpatterns.append(url(r"^(?i)", include(ret.mdl.__name__ + ".urls")))
                     else:
-                        _apps_.urlpatterns.append(url(r"/^(?i)" + ret.host_dir + "/", include(ret.mdl.__name__ + ".urls")))
+                        _apps_.urlpatterns.append(
+                            url(r"^(?i)" + ret.host_dir + "/", include(ret.mdl.__name__ + ".urls")))
                 except Exception as ex:
                     raise (Exception("error in '{0}', detail\n {1}".format(ret.mdl.__name__ + ".urls",ex)))
         else:
@@ -35,44 +36,71 @@ def build_urls(module_name,*args,**kwargs):
             for app in args[0]:
                 ret = applications.load_app(app)
                 url_items=importlib.import_module(ret.mdl.__name__ + ".urls").urlpatterns
-                dynamic_urls=[x for x in url_items if not x.default_args.has_key("document_root") ]
                 static_urls=[x for x in url_items if x.default_args.has_key("document_root") ]
-
-                # for url_item in url_items:
-                #     if ret.host_dir == "":
-                #         lst_urls.append(url_item)
                 if ret.host_dir == "":
-                    _apps_.urlpatterns.append(url(r"^(?i)", include(static_urls)))
-                    _apps_.urlpatterns.append(url(r"^(?i)(?P<tenancy_code>.*)/", include(dynamic_urls)))
-                else:
-                    _apps_.urlpatterns.append(url(r"/^(?i)" + ret.host_dir + "/", include(static_urls)))
+                    root_doc = static_urls[0].default_args["document_root"]
+                    reg_ex = static_urls[0].regex.pattern
                     _apps_.urlpatterns.append(
-                        url(r"^(?i)(?P<tenancy_code>.*)/" + ret.host_dir + "/", include(dynamic_urls)))
+                        url(
+                            reg_ex,
+                            'django.views.static.serve',
+                            {
+                                'document_root': root_doc,
+                                "show_indexes": static_urls[0].default_args.get("show_indexes", False)
+                            }
+                        )
 
-            x=_apps_.urlpatterns
+                    )
+                else:
+                    root_doc=static_urls[0].default_args["document_root"]
+                    reg_ex=static_urls[0].regex.pattern
+                    _apps_.urlpatterns.append(
+                        url(
+                            reg_ex.replace("^","^"+ret.host_dir+"/"),
+                            'django.views.static.serve',
+                            {
+                                'document_root': root_doc,
+                                "show_indexes": static_urls[0].default_args.get("show_indexes", False)
+                            }
+                        )
+
+                    )
+            for app in args[0]:
+                ret = applications.load_app(app)
+                url_items=importlib.import_module(ret.mdl.__name__ + ".urls").urlpatterns
+                for url_item in url_items:
+                    if hasattr(url_item,"default_args"):
+                        if not url_item.default_args.has_key("document_root"):
+                            if ret.host_dir == "":
+                                url_regex=url_item.regex.pattern
+                                url_regex=url_regex.replace("^","^(?i)(?P<tenancy_code>.*)/")
+                                if url_item.callback!=None:
+                                    map_url=url(
+                                        url_regex,
+                                        url_item.callback
+                                    )
+                                    _apps_.urlpatterns.append(map_url)
+                                else:
+                                    map_url = url(
+                                        url_regex,
+                                        url_item._callback_str
+                                    )
+                                    _apps_.urlpatterns.append(map_url)
+                            else:
+                                url_regex = url_item.regex.pattern
+                                url_regex = url_regex.replace("^",
+                                                              "^(?i)(?P<tenancy_code>.*)/" + ret.host_dir + "/")
+                                print url_regex
+                                map_url = url(
+                                    url_regex,
+                                    url_item.callback
+                                )
+                                _apps_.urlpatterns.append(map_url)
+                    else:
+                        f=url_item
 
 
-
-    # for app in args[0]:
-    #
-    #     try:
-    #         if ret.host_dir == "":
-    #             _apps_.urlpatterns.append(url(r"^(?i)", include(ret.mdl.__name__ + ".urls")))
-    #             # if not is_multi_tenancy:
-    #             #     _apps_.urlpatterns.append(url(r"^(?i)", include(ret.mdl.__name__ + ".urls")))
-    #             # else:
-    #             #     _apps_.urlpatterns.append(url(r"^(?i)(?P<tenancy_code>.*)/", include(ret.mdl.__name__ + ".urls")))
-    #
-    #
-    #         else:
-    #             if not is_multi_tenancy:
-    #                 _apps_.urlpatterns.append(url(r"/^(?i)" + ret.host_dir + "/", include(ret.mdl.__name__ + ".urls")))
-    #             else:
-    #                 _apps_.urlpatterns.append(url(r"^(?i)(?P<tenancy_code>.*)/" + ret.host_dir + "/", include(ret.mdl.__name__ + ".urls")))
-    #         x=_apps_.urlpatterns
-    #     except Exception as ex:
-    #         logger.debug(ex)
-    #         raise ex
+    x=_apps_.urlpatterns
 
 
 

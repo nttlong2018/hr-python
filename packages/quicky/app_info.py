@@ -59,9 +59,9 @@ class app_config():
         self.static=config.get("static_dir",os.path.join(path, "static"))
     def get_static_urls(self):
         if self.host_dir == "":
-            return url(r'^(?i)'+self.name+'/static/(?P<path>.*)$', 'django.views.static.serve',{'document_root':self.get_server_static(), 'show_indexes': True})
+            return url(r'^'+self.name+'/static/(?P<path>.*)$', 'django.views.static.serve',{'document_root':self.get_server_static(), 'show_indexes': True})
         else:
-            return url(r'^(?i)static/(?P<path>.*)$', 'django.views.static.serve',{'document_root':self.get_server_static(), 'show_indexes': True})
+            return url(r'^static/(?P<path>.*)$', 'django.views.static.serve',{'document_root':self.get_server_static(), 'show_indexes': True})
     def get_urls(self):
         if self.urls==None:
             self.urls=[]

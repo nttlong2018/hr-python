@@ -26,14 +26,24 @@ def template(fn,*_path,**kwargs):
 
 
     app=applications.get_app_by_file(fn.func_code.co_filename)
+    setattr(fn,"__application__",app)
     from . import get_django_settings_module
     is_multi_tenancy = get_django_settings_module().__dict__.get("USE_MULTI_TENANCY", False)
     def exec_request(request, **kwargs):
+        app=fn.__application__
+
         try:
             from django.shortcuts import redirect
             is_allow = True
             is_public = False
             authenticate = None
+            if app==None and request.path[request.path.__len__() - 4:request.path.__len__()]=="/api":
+                app_name=request.path.split('/')[request.path.split('/').__len__()-2]
+                from . import applications
+                app=applications.get_app_by_name(app_name)
+
+
+
 
             if not hasattr(app, "settings") or app.settings==None:
                 raise (Exception("'settings.py' was not found in '{0}' at '{1}' or look like you forgot to place 'import settings' in '{1}/__init__.py'".format(app.name, os.getcwd()+os.sep+app.path)))

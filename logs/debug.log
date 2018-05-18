@@ -7455,3 +7455,1606 @@ auth_user.find (0.00) {'username': 'sys'}
 django_session.find (0.00) {'_id': 'fj9km88htu39twizrfvtd7qx6sj973pq', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 12, 37, 8, 999000, tzinfo=<UTC>)}}
 auth_user.find (0.00) {'username': 'sys'}
 django_session.find (0.00) {'_id': 'fj9km88htu39twizrfvtd7qx6sj973pq', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 12, 37, 9, 42000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'username': 'sys'}
+django_session.find (0.00) {'_id': 'fj9km88htu39twizrfvtd7qx6sj973pq', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 12, 38, 9, 111000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'username': 'sys'}
+django_session.find (0.00) {'_id': 'fj9km88htu39twizrfvtd7qx6sj973pq', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 12, 38, 9, 153000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'username': 'sys'}
+django_session.find (0.00) {'_id': 'fj9km88htu39twizrfvtd7qx6sj973pq', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 12, 38, 9, 196000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'username': 'sys'}
+django_session.find (0.00) {'_id': 'fj9km88htu39twizrfvtd7qx6sj973pq', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 12, 38, 9, 242000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'username': 'sys'}
+django_session.find (0.00) {'_id': 'fj9km88htu39twizrfvtd7qx6sj973pq', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 12, 38, 9, 286000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'username': 'sys'}
+django_session.find (0.00) {'_id': 'fj9km88htu39twizrfvtd7qx6sj973pq', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 12, 38, 9, 329000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'username': 'sys'}
+django_session.find (0.00) {'_id': 'fj9km88htu39twizrfvtd7qx6sj973pq', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 12, 38, 9, 372000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'username': 'sys'}
+django_session.find (0.00) {'_id': 'fj9km88htu39twizrfvtd7qx6sj973pq', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 12, 38, 9, 412000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'username': 'sys'}
+django_session.find (0.00) {'_id': 'fj9km88htu39twizrfvtd7qx6sj973pq', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 12, 38, 9, 454000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'username': 'sys'}
+django_session.find (0.00) {'_id': 'fj9km88htu39twizrfvtd7qx6sj973pq', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 12, 38, 9, 496000, tzinfo=<UTC>)}}
+django_session.find (0.00) {'_id': 'fj9km88htu39twizrfvtd7qx6sj973pq', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 12, 38, 55, 310000, tzinfo=<UTC>)}}
+django_session.save (0.00) {'_id': 'fj9km88htu39twizrfvtd7qx6sj973pq', 'expire_date': datetime.datetime(2018, 6, 1, 12, 38, 55, 423000, tzinfo=<UTC>), 'session_data': u'YjAwMTViM2E0OTNjMDE0N2NjMTFiZjIxNzYzNmNkYTg5OGRiZGZjMzp7Imxhbmd1YWdlIjoiZW4ifQ=='}
+auth_user.find (0.00) {'username': 'sys'}
+django_session.find (0.00) {'_id': 'fj9km88htu39twizrfvtd7qx6sj973pq', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 13, 35, 44, 201000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'username': 'sys'}
+django_session.find (0.00) {'_id': 'fj9km88htu39twizrfvtd7qx6sj973pq', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 13, 35, 44, 274000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'username': 'sys'}
+django_session.find (0.00) {'_id': 'fj9km88htu39twizrfvtd7qx6sj973pq', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 13, 35, 44, 314000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'username': 'sys'}
+django_session.find (0.00) {'_id': 'fj9km88htu39twizrfvtd7qx6sj973pq', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 13, 35, 44, 358000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'username': 'sys'}
+django_session.find (0.00) {'_id': 'fj9km88htu39twizrfvtd7qx6sj973pq', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 13, 35, 44, 405000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'username': 'sys'}
+django_session.find (0.00) {'_id': 'fj9km88htu39twizrfvtd7qx6sj973pq', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 13, 35, 44, 452000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'username': 'sys'}
+django_session.find (0.00) {'_id': 'fj9km88htu39twizrfvtd7qx6sj973pq', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 13, 35, 44, 503000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'username': 'sys'}
+django_session.find (0.00) {'_id': 'fj9km88htu39twizrfvtd7qx6sj973pq', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 13, 35, 44, 555000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'username': 'sys'}
+django_session.find (0.00) {'_id': 'fj9km88htu39twizrfvtd7qx6sj973pq', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 13, 35, 44, 598000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'username': 'sys'}
+django_session.find (0.00) {'_id': 'fj9km88htu39twizrfvtd7qx6sj973pq', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 13, 35, 44, 638000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'username': 'sys'}
+django_session.find (0.00) {'_id': 'fj9km88htu39twizrfvtd7qx6sj973pq', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 13, 35, 44, 757000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'username': 'sys'}
+django_session.find (0.00) {'_id': 'fj9km88htu39twizrfvtd7qx6sj973pq', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 13, 35, 44, 816000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'username': 'sys'}
+django_session.find (0.00) {'_id': 'fj9km88htu39twizrfvtd7qx6sj973pq', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 13, 35, 44, 857000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'username': 'sys'}
+django_session.find (0.00) {'_id': 'fj9km88htu39twizrfvtd7qx6sj973pq', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 13, 35, 44, 898000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'username': 'sys'}
+django_session.find (0.00) {'_id': 'fj9km88htu39twizrfvtd7qx6sj973pq', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 13, 35, 44, 938000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'username': 'sys'}
+django_session.find (0.00) {'_id': 'fj9km88htu39twizrfvtd7qx6sj973pq', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 13, 35, 44, 980000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'username': 'sys'}
+django_session.find (0.00) {'_id': 'fj9km88htu39twizrfvtd7qx6sj973pq', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 13, 35, 45, 20000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'username': 'sys'}
+django_session.find (0.00) {'_id': 'fj9km88htu39twizrfvtd7qx6sj973pq', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 13, 35, 45, 62000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'username': 'sys'}
+django_session.find (0.00) {'_id': 'fj9km88htu39twizrfvtd7qx6sj973pq', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 13, 35, 45, 103000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'username': 'sys'}
+django_session.find (0.00) {'_id': 'fj9km88htu39twizrfvtd7qx6sj973pq', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 13, 35, 45, 145000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'username': 'sys'}
+django_session.find (0.00) {'_id': 'fj9km88htu39twizrfvtd7qx6sj973pq', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 13, 35, 50, 215000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'username': 'sys'}
+django_session.find (0.00) {'_id': 'fj9km88htu39twizrfvtd7qx6sj973pq', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 13, 35, 50, 264000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'username': 'sys'}
+django_session.find (0.00) {'_id': 'fj9km88htu39twizrfvtd7qx6sj973pq', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 13, 35, 50, 309000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'username': 'sys'}
+django_session.find (0.00) {'_id': 'fj9km88htu39twizrfvtd7qx6sj973pq', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 13, 35, 50, 362000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'username': 'sys'}
+django_session.find (0.00) {'_id': 'fj9km88htu39twizrfvtd7qx6sj973pq', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 13, 35, 50, 409000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'username': 'sys'}
+django_session.find (0.00) {'_id': 'fj9km88htu39twizrfvtd7qx6sj973pq', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 13, 35, 50, 457000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'username': 'sys'}
+django_session.find (0.00) {'_id': 'fj9km88htu39twizrfvtd7qx6sj973pq', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 13, 35, 50, 500000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'username': 'sys'}
+django_session.find (0.00) {'_id': 'fj9km88htu39twizrfvtd7qx6sj973pq', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 13, 35, 50, 551000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'username': 'sys'}
+django_session.find (0.00) {'_id': 'fj9km88htu39twizrfvtd7qx6sj973pq', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 13, 35, 50, 603000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'username': 'sys'}
+django_session.find (0.00) {'_id': 'fj9km88htu39twizrfvtd7qx6sj973pq', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 13, 35, 50, 651000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'username': 'sys'}
+django_session.find (0.00) {'_id': 'fj9km88htu39twizrfvtd7qx6sj973pq', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 13, 36, 7, 699000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'username': 'sys'}
+django_session.find (0.00) {'_id': 'fj9km88htu39twizrfvtd7qx6sj973pq', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 13, 36, 7, 740000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'username': 'sys'}
+django_session.find (0.00) {'_id': 'fj9km88htu39twizrfvtd7qx6sj973pq', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 13, 36, 7, 788000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'username': 'sys'}
+django_session.find (0.00) {'_id': 'fj9km88htu39twizrfvtd7qx6sj973pq', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 13, 36, 7, 829000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'username': 'sys'}
+django_session.find (0.00) {'_id': 'fj9km88htu39twizrfvtd7qx6sj973pq', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 13, 36, 7, 877000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'username': 'sys'}
+django_session.find (0.00) {'_id': 'fj9km88htu39twizrfvtd7qx6sj973pq', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 13, 36, 7, 917000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'username': 'sys'}
+django_session.find (0.00) {'_id': 'fj9km88htu39twizrfvtd7qx6sj973pq', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 13, 36, 7, 969000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'username': 'sys'}
+django_session.find (0.00) {'_id': 'fj9km88htu39twizrfvtd7qx6sj973pq', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 13, 36, 8, 13000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'username': 'sys'}
+django_session.find (0.00) {'_id': 'fj9km88htu39twizrfvtd7qx6sj973pq', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 13, 36, 8, 55000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'username': 'sys'}
+django_session.find (0.00) {'_id': 'fj9km88htu39twizrfvtd7qx6sj973pq', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 13, 36, 8, 100000, tzinfo=<UTC>)}}
+django_session.find (0.00) {'_id': 'fj9km88htu39twizrfvtd7qx6sj973pq', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 13, 36, 24, 799000, tzinfo=<UTC>)}}
+django_session.save (0.00) {'_id': 'fj9km88htu39twizrfvtd7qx6sj973pq', 'expire_date': datetime.datetime(2018, 6, 1, 13, 36, 25, 29000, tzinfo=<UTC>), 'session_data': u'YjAwMTViM2E0OTNjMDE0N2NjMTFiZjIxNzYzNmNkYTg5OGRiZGZjMzp7Imxhbmd1YWdlIjoiZW4ifQ=='}
+auth_user.find (0.00) {'username': 'sys'}
+django_session.find (0.00) {'_id': 'fj9km88htu39twizrfvtd7qx6sj973pq', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 13, 36, 42, 255000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'username': 'sys'}
+django_session.find (0.00) {'_id': 'fj9km88htu39twizrfvtd7qx6sj973pq', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 13, 36, 42, 285000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'username': 'sys'}
+django_session.find (0.00) {'_id': 'fj9km88htu39twizrfvtd7qx6sj973pq', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 13, 36, 42, 316000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'username': 'sys'}
+django_session.find (0.00) {'_id': 'fj9km88htu39twizrfvtd7qx6sj973pq', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 13, 36, 42, 352000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'username': 'sys'}
+django_session.find (0.00) {'_id': 'fj9km88htu39twizrfvtd7qx6sj973pq', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 13, 36, 42, 381000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'username': 'sys'}
+django_session.find (0.00) {'_id': 'fj9km88htu39twizrfvtd7qx6sj973pq', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 13, 36, 42, 410000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'username': 'sys'}
+django_session.find (0.00) {'_id': 'fj9km88htu39twizrfvtd7qx6sj973pq', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 13, 36, 42, 438000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'username': 'sys'}
+django_session.find (0.00) {'_id': 'fj9km88htu39twizrfvtd7qx6sj973pq', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 13, 36, 42, 466000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'username': 'sys'}
+django_session.find (0.00) {'_id': 'fj9km88htu39twizrfvtd7qx6sj973pq', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 13, 36, 42, 488000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'username': 'sys'}
+django_session.find (0.00) {'_id': 'fj9km88htu39twizrfvtd7qx6sj973pq', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 13, 36, 42, 512000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'username': 'sys'}
+django_session.find (0.00) {'_id': 'fj9km88htu39twizrfvtd7qx6sj973pq', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 13, 36, 42, 595000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'username': 'sys'}
+django_session.find (0.00) {'_id': 'fj9km88htu39twizrfvtd7qx6sj973pq', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 13, 36, 42, 651000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'username': 'sys'}
+django_session.find (0.00) {'_id': 'fj9km88htu39twizrfvtd7qx6sj973pq', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 13, 36, 42, 700000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'username': 'sys'}
+django_session.find (0.00) {'_id': 'fj9km88htu39twizrfvtd7qx6sj973pq', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 13, 36, 42, 750000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'username': 'sys'}
+django_session.find (0.00) {'_id': 'fj9km88htu39twizrfvtd7qx6sj973pq', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 13, 36, 42, 791000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'username': 'sys'}
+django_session.find (0.00) {'_id': 'fj9km88htu39twizrfvtd7qx6sj973pq', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 13, 36, 42, 833000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'username': 'sys'}
+django_session.find (0.00) {'_id': 'fj9km88htu39twizrfvtd7qx6sj973pq', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 13, 36, 42, 890000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'username': 'sys'}
+django_session.find (0.00) {'_id': 'fj9km88htu39twizrfvtd7qx6sj973pq', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 13, 36, 42, 936000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'username': 'sys'}
+django_session.find (0.00) {'_id': 'fj9km88htu39twizrfvtd7qx6sj973pq', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 13, 36, 42, 998000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'username': 'sys'}
+django_session.find (0.00) {'_id': 'fj9km88htu39twizrfvtd7qx6sj973pq', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 13, 36, 43, 45000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'username': 'sys'}
+django_session.find (0.00) {'_id': 'fj9km88htu39twizrfvtd7qx6sj973pq', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 13, 36, 48, 115000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'username': 'sys'}
+django_session.find (0.00) {'_id': 'fj9km88htu39twizrfvtd7qx6sj973pq', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 13, 36, 48, 164000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'username': 'sys'}
+django_session.find (0.00) {'_id': 'fj9km88htu39twizrfvtd7qx6sj973pq', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 13, 36, 48, 210000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'username': 'sys'}
+django_session.find (0.00) {'_id': 'fj9km88htu39twizrfvtd7qx6sj973pq', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 13, 36, 48, 253000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'username': 'sys'}
+django_session.find (0.00) {'_id': 'fj9km88htu39twizrfvtd7qx6sj973pq', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 13, 36, 48, 305000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'username': 'sys'}
+django_session.find (0.00) {'_id': 'fj9km88htu39twizrfvtd7qx6sj973pq', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 13, 36, 48, 345000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'username': 'sys'}
+django_session.find (0.00) {'_id': 'fj9km88htu39twizrfvtd7qx6sj973pq', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 13, 36, 48, 391000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'username': 'sys'}
+django_session.find (0.00) {'_id': 'fj9km88htu39twizrfvtd7qx6sj973pq', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 13, 36, 48, 447000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'username': 'sys'}
+django_session.find (0.00) {'_id': 'fj9km88htu39twizrfvtd7qx6sj973pq', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 13, 36, 48, 499000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'username': 'sys'}
+django_session.find (0.00) {'_id': 'fj9km88htu39twizrfvtd7qx6sj973pq', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 13, 36, 48, 545000, tzinfo=<UTC>)}}
+django_session.find (0.00) {'_id': 'fj9km88htu39twizrfvtd7qx6sj973pq', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 13, 36, 52, 779000, tzinfo=<UTC>)}}
+django_session.save (0.00) {'_id': 'fj9km88htu39twizrfvtd7qx6sj973pq', 'expire_date': datetime.datetime(2018, 6, 1, 13, 36, 52, 816000, tzinfo=<UTC>), 'session_data': u'YjAwMTViM2E0OTNjMDE0N2NjMTFiZjIxNzYzNmNkYTg5OGRiZGZjMzp7Imxhbmd1YWdlIjoiZW4ifQ=='}
+django_session.find (0.00) {'_id': 'fj9km88htu39twizrfvtd7qx6sj973pq', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 13, 36, 59, 676000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'username': u'sys'}
+django_session.save (0.00) {'_id': u'8spuyey7cunnbxn4z3x3gsvgfgt2yiha', 'expire_date': datetime.datetime(2018, 6, 1, 13, 36, 59, 868000, tzinfo=<UTC>), 'session_data': u'YjAwMTViM2E0OTNjMDE0N2NjMTFiZjIxNzYzNmNkYTg5OGRiZGZjMzp7Imxhbmd1YWdlIjoiZW4ifQ=='}
+django_session.find (0.00) {'_id': 'fj9km88htu39twizrfvtd7qx6sj973pq'}
+django_session.remove (0.00) {'_id': {'$in': [u'fj9km88htu39twizrfvtd7qx6sj973pq']}}
+auth_user.save (0.00) {'username': u'sys', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5ae5cb53cddcb0354c11cf6a'), 'is_active': True, 'email': u'', 'is_superuser': True, 'is_staff': False, 'last_login': datetime.datetime(2018, 5, 18, 13, 36, 59, 875000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$RM3mR6ar66t8$SRS3qPBkBP7FldCNOuunX0f1RK/YppeImlg2lVhOJZo=', 'date_joined': datetime.datetime(2018, 4, 29, 13, 40, 35, 764000, tzinfo=<UTC>)}
+django_session.save (0.00) {'_id': u'8spuyey7cunnbxn4z3x3gsvgfgt2yiha', 'expire_date': datetime.datetime(2018, 6, 1, 13, 36, 59, 939000, tzinfo=<UTC>), 'session_data': u'MmU5YzEwYjExYTI3YTY2YmIwMGM0YmYwZWUwYmFkNmZjYzQyMzQ1OTp7Il9hdXRoX3VzZXJfYmFja2VuZCI6InBlcm1pc3Npb25fYmFja2VuZF9ub25yZWwuYmFja2VuZHMuTm9ucmVsUGVybWlzc2lvbkJhY2tlbmQiLCJfYXV0aF91c2VyX2lkIjoiNWFlNWNiNTNjZGRjYjAzNTRjMTFjZjZhIiwibGFuZ3VhZ2UiOiJlbiJ9'}
+Not Found: /
+auth_user.find (0.00) {'username': 'sys'}
+django_session.find (0.00) {'_id': '8spuyey7cunnbxn4z3x3gsvgfgt2yiha', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 13, 37, 8, 255000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+auth_user.find (0.00) {'username': 'sys'}
+django_session.find (0.00) {'_id': '8spuyey7cunnbxn4z3x3gsvgfgt2yiha', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 13, 37, 29, 150000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+auth_user.find (0.00) {'username': 'sys'}
+django_session.find (0.00) {'_id': '8spuyey7cunnbxn4z3x3gsvgfgt2yiha', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 13, 37, 31, 100000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+auth_user.find (0.00) {'username': 'sys'}
+django_session.find (0.00) {'_id': '8spuyey7cunnbxn4z3x3gsvgfgt2yiha', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 13, 37, 31, 940000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+auth_user.find (0.00) {'username': 'sys'}
+django_session.find (0.00) {'_id': '8spuyey7cunnbxn4z3x3gsvgfgt2yiha', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 13, 37, 39, 197000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+auth_user.find (0.00) {'username': 'sys'}
+django_session.find (0.00) {'_id': '8spuyey7cunnbxn4z3x3gsvgfgt2yiha', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 13, 39, 31, 317000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '8spuyey7cunnbxn4z3x3gsvgfgt2yiha', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 13, 39, 48, 647000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+auth_user.find (0.00) {'username': 'sys'}
+auth_user.find (0.01) {'username': 'sys'}
+auth_user.find (0.01) {'username': 'sys'}
+auth_user.find (0.01) {'username': 'sys'}
+auth_user.find (0.01) {'username': 'sys'}
+auth_user.find (0.01) {'username': 'sys'}
+auth_user.find (0.01) {'username': 'sys'}
+django_session.find (0.01) {'_id': '8spuyey7cunnbxn4z3x3gsvgfgt2yiha', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 13, 39, 49, 995000, tzinfo=<UTC>)}}
+django_session.find (0.01) {'_id': '8spuyey7cunnbxn4z3x3gsvgfgt2yiha', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 13, 39, 49, 999000, tzinfo=<UTC>)}}
+django_session.find (0.01) {'_id': '8spuyey7cunnbxn4z3x3gsvgfgt2yiha', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 13, 39, 50, 6000, tzinfo=<UTC>)}}
+django_session.find (0.01) {'_id': '8spuyey7cunnbxn4z3x3gsvgfgt2yiha', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 13, 39, 50, 9000, tzinfo=<UTC>)}}
+django_session.find (0.01) {'_id': '8spuyey7cunnbxn4z3x3gsvgfgt2yiha', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 13, 39, 50, 12000, tzinfo=<UTC>)}}
+django_session.find (0.01) {'_id': '8spuyey7cunnbxn4z3x3gsvgfgt2yiha', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 13, 39, 50, 13000, tzinfo=<UTC>)}}
+auth_user.find (0.01) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+auth_user.find (0.01) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+auth_user.find (0.01) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+auth_user.find (0.01) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+auth_user.find (0.01) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+auth_user.find (0.01) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+auth_user.find (0.01) {'username': 'sys'}
+auth_user.find (0.01) {'username': 'sys'}
+auth_user.find (0.01) {'username': 'sys'}
+auth_user.find (0.01) {'username': 'sys'}
+django_session.find (0.01) {'_id': '8spuyey7cunnbxn4z3x3gsvgfgt2yiha', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 13, 39, 52, 424000, tzinfo=<UTC>)}}
+django_session.find (0.00) {'_id': '8spuyey7cunnbxn4z3x3gsvgfgt2yiha', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 13, 39, 52, 429000, tzinfo=<UTC>)}}
+django_session.find (0.00) {'_id': '8spuyey7cunnbxn4z3x3gsvgfgt2yiha', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 13, 39, 52, 429000, tzinfo=<UTC>)}}
+django_session.find (0.00) {'_id': '8spuyey7cunnbxn4z3x3gsvgfgt2yiha', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 13, 39, 52, 430000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+auth_user.find (0.01) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+auth_user.find (0.00) {'username': 'sys'}
+auth_user.find (0.01) {'username': 'sys'}
+django_session.find (0.01) {'_id': '8spuyey7cunnbxn4z3x3gsvgfgt2yiha', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 13, 39, 52, 788000, tzinfo=<UTC>)}}
+auth_user.find (0.01) {'username': 'sys'}
+auth_user.find (0.01) {'username': 'sys'}
+auth_user.find (0.01) {'username': 'sys'}
+django_session.find (0.01) {'_id': '8spuyey7cunnbxn4z3x3gsvgfgt2yiha', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 13, 39, 52, 803000, tzinfo=<UTC>)}}
+auth_user.find (0.01) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+auth_user.find (0.01) {'username': 'sys'}
+django_session.find (0.01) {'_id': '8spuyey7cunnbxn4z3x3gsvgfgt2yiha', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 13, 39, 52, 819000, tzinfo=<UTC>)}}
+django_session.find (0.01) {'_id': '8spuyey7cunnbxn4z3x3gsvgfgt2yiha', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 13, 39, 52, 817000, tzinfo=<UTC>)}}
+django_session.find (0.01) {'_id': '8spuyey7cunnbxn4z3x3gsvgfgt2yiha', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 13, 39, 52, 820000, tzinfo=<UTC>)}}
+auth_user.find (0.01) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.01) {'_id': '8spuyey7cunnbxn4z3x3gsvgfgt2yiha', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 13, 39, 52, 830000, tzinfo=<UTC>)}}
+auth_user.find (0.01) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+auth_user.find (0.01) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+auth_user.find (0.01) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+auth_user.find (0.01) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+auth_user.find (0.00) {'username': 'sys'}
+django_session.find (0.01) {'_id': '8spuyey7cunnbxn4z3x3gsvgfgt2yiha', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 13, 39, 53, 157000, tzinfo=<UTC>)}}
+auth_user.find (0.01) {'username': 'sys'}
+auth_user.find (0.01) {'username': 'sys'}
+auth_user.find (0.01) {'username': 'sys'}
+auth_user.find (0.01) {'username': 'sys'}
+auth_user.find (0.01) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.01) {'_id': '8spuyey7cunnbxn4z3x3gsvgfgt2yiha', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 13, 39, 53, 193000, tzinfo=<UTC>)}}
+django_session.find (0.01) {'_id': '8spuyey7cunnbxn4z3x3gsvgfgt2yiha', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 13, 39, 53, 200000, tzinfo=<UTC>)}}
+django_session.find (0.01) {'_id': '8spuyey7cunnbxn4z3x3gsvgfgt2yiha', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 13, 39, 53, 202000, tzinfo=<UTC>)}}
+django_session.find (0.01) {'_id': '8spuyey7cunnbxn4z3x3gsvgfgt2yiha', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 13, 39, 53, 205000, tzinfo=<UTC>)}}
+auth_user.find (0.01) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+auth_user.find (0.01) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+auth_user.find (0.01) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+auth_user.find (0.01) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+auth_user.find (0.01) {'username': 'sys'}
+django_session.find (0.01) {'_id': '8spuyey7cunnbxn4z3x3gsvgfgt2yiha', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 13, 39, 53, 273000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+auth_user.find (0.00) {'username': 'sys'}
+auth_user.find (0.00) {'username': 'sys'}
+django_session.find (0.00) {'_id': '8spuyey7cunnbxn4z3x3gsvgfgt2yiha', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 13, 39, 53, 476000, tzinfo=<UTC>)}}
+django_session.find (0.00) {'_id': '8spuyey7cunnbxn4z3x3gsvgfgt2yiha', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 13, 39, 53, 476000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+auth_user.find (0.00) {'username': 'sys'}
+django_session.find (0.00) {'_id': '8spuyey7cunnbxn4z3x3gsvgfgt2yiha', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 13, 39, 53, 947000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+auth_user.find (0.00) {'username': 'sys'}
+django_session.find (0.00) {'_id': '8spuyey7cunnbxn4z3x3gsvgfgt2yiha', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 13, 40, 2, 834000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+auth_user.find (0.00) {'username': 'sys'}
+django_session.find (0.00) {'_id': '8spuyey7cunnbxn4z3x3gsvgfgt2yiha', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 13, 42, 30, 343000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Not Found: /performance/static/js/jquery-3.2.1.min.js/
+Not Found: /performance/static/js/jquery-3.2.1.min.js/
+Not Found: /performance/static/js/jquery-3.2.1.min.js/
+Not Found: /performance/static/js/jquery-3.2.1.min.js/
+Not Found: /argo/static/js/jquery-3.2.1.min.js/
+Internal Server Error: /performance/static/js/jquery-3.2.1.min.js/
+Traceback (most recent call last):
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\handlers\base.py", line 99, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\urlresolvers.py", line 339, in resolve
+    sub_match = pattern.resolve(new_path)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\urlresolvers.py", line 223, in resolve
+    return ResolverMatch(self.callback, args, kwargs, self.name)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\urlresolvers.py", line 230, in callback
+    self._callback = get_callable(self._callback_str)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\utils\functional.py", line 32, in wrapper
+    result = func(*args)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\urlresolvers.py", line 92, in get_callable
+    mod_name, func_name = get_mod_func(lookup_view)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\urlresolvers.py", line 142, in get_mod_func
+    dot = callback.rindex('.')
+AttributeError: 'RegexURLPattern' object has no attribute 'rindex'
+Not Found: /performance/static/js/jquery-3.2.1.min.js/
+auth_user.find (0.00) {'username': 'sys'}
+django_session.find (0.00) {'_id': '8spuyey7cunnbxn4z3x3gsvgfgt2yiha', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 14, 4, 10, 333000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+auth_user.find (0.00) {'username': 'sys'}
+django_session.find (0.00) {'_id': '8spuyey7cunnbxn4z3x3gsvgfgt2yiha', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 14, 4, 12, 237000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+auth_user.find (0.00) {'username': 'sys'}
+django_session.find (0.00) {'_id': '8spuyey7cunnbxn4z3x3gsvgfgt2yiha', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 14, 4, 13, 805000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+auth_user.find (0.00) {'username': 'sys'}
+django_session.find (0.00) {'_id': '8spuyey7cunnbxn4z3x3gsvgfgt2yiha', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 14, 4, 24, 946000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Internal Server Error: /performance1111/static/js/jquery-3.2.1.min.js/
+Traceback (most recent call last):
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\handlers\base.py", line 99, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\urlresolvers.py", line 339, in resolve
+    sub_match = pattern.resolve(new_path)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\urlresolvers.py", line 337, in resolve
+    for pattern in self.url_patterns:
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\urlresolvers.py", line 369, in url_patterns
+    raise ImproperlyConfigured("The included urlconf %s doesn't have any patterns in it" % self.urlconf_name)
+ImproperlyConfigured: The included urlconf <RegexURLPattern None ^(?i)argo/static/(?P<path>.*)$> doesn't have any patterns in it
+Internal Server Error: /performance1111/static/js/jquery-3.2.1.min.js/
+Traceback (most recent call last):
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\handlers\base.py", line 99, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\urlresolvers.py", line 339, in resolve
+    sub_match = pattern.resolve(new_path)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\urlresolvers.py", line 337, in resolve
+    for pattern in self.url_patterns:
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\urlresolvers.py", line 369, in url_patterns
+    raise ImproperlyConfigured("The included urlconf %s doesn't have any patterns in it" % self.urlconf_name)
+ImproperlyConfigured: The included urlconf <RegexURLPattern None ^argo/static/(?P<path>.*)$> doesn't have any patterns in it
+Not Found: /performance1111/static/js/jquery-3.2.1.min.js/
+Not Found: /performance/
+Not Found: /performance/
+Not Found: /performance1111/static/js/jquery-3.2.1.min.js/
+Not Found: /performance/static/js/jquery-3.2.1.min.js/
+Not Found: /performance/static/js/jquery-3.2.1.min.js/
+Not Found: /performance/static/js/jquery-3.2.1.min.js/
+Not Found: /performance/static/js/jquery-3.2.1.min.js/
+Not Found: /performance/static/js/jquery-3.2.1.min.js/
+Not Found: /performance/static/js/jquery-3.2.1.min.js/
+Not Found: /performance/static/js/jquery-3.2.1.min.js/
+Not Found: /performance/static/js/jquery-3.2.1.min.js/
+Not Found: /performance/static/js/jquery-3.2.1.min.js/
+Not Found: /performance/static/js/jquery-3.2.1.min.js/
+Not Found: /performance/static/js/jquery-3.2.1.min.js/
+Not Found: /performance/static/js/jquery-3.2.1.min.js/
+Not Found: /performance/static/js/jquery-3.2.1.min.js/
+Not Found: /performance/static/js/jquery-3.2.1.min.js/
+Not Found: /performance/static/js/jquery-3.2.1.min.js/
+Not Found: /performance/static/js/jquery-3.2.1.min.js/
+Not Found: /performance/static/js/jquery-3.2.1.min.js/
+Not Found: /performance/static/js/jquery-3.2.1.min.js/
+Not Found: /performance/static/js/jquery-3.2.1.min.js/
+Not Found: /performance/static/js/jquery-3.2.1.min.js/
+Not Found: /performance/static/js/jquery-3.2.1.min.js/
+Not Found: /performance/static/js/jquery-3.2.1.min.js/
+Not Found: /performance/static/js/jquery-3.2.1.min.js/
+Not Found: /performance/static/js/jquery-3.2.1.min.js/
+Not Found: /performance/static/js/jquery-3.2.1.min.js/
+Not Found: /performance/static/js/jquery-3.2.1.min.js/
+Not Found: /xxxx/static/js/jquery-3.2.1.min.js
+Not Found: /xxxx/static/js/jquery-3.2.1.min.js
+Not Found: /xxxx/static/js/jquery-3.2.1.min.js
+Not Found: /performance/static/js/jquery-3.2.1.min.js/
+Not Found: /performance/static/js/jquery-3.2.1.min.js/
+Not Found: /long/performance/
+django_session.find (0.00) {'_id': '8spuyey7cunnbxn4z3x3gsvgfgt2yiha', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 16, 3, 6, 734000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+auth_user.find (0.00) {'username': 'sys'}
+Internal Server Error: /performance/api
+Traceback (most recent call last):
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\handlers\base.py", line 88, in get_response
+    response = middleware_method(request)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\middleware\common.py", line 81, in process_request
+    "settings.") % (new_url[0], new_url[1]))
+RuntimeError: You called this URL via POST, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining POST data. Change your form to point to 127.0.0.1:8000/performance/api/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+auth_user.find (0.00) {'username': 'sys'}
+django_session.find (0.00) {'_id': '8spuyey7cunnbxn4z3x3gsvgfgt2yiha', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 16, 3, 11, 579000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+auth_user.find (0.00) {'username': 'sys'}
+django_session.find (0.00) {'_id': '8spuyey7cunnbxn4z3x3gsvgfgt2yiha', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 16, 3, 27, 163000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Internal Server Error: /performance/api
+Traceback (most recent call last):
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\handlers\base.py", line 88, in get_response
+    response = middleware_method(request)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\middleware\common.py", line 81, in process_request
+    "settings.") % (new_url[0], new_url[1]))
+RuntimeError: You called this URL via POST, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining POST data. Change your form to point to 127.0.0.1:8000/performance/api/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+auth_user.find (0.00) {'username': 'sys'}
+django_session.find (0.00) {'_id': '8spuyey7cunnbxn4z3x3gsvgfgt2yiha', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 16, 3, 30, 134000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Not Found: /performance/static/js/angular.min.js.map
+django_session.find (0.00) {'_id': '8spuyey7cunnbxn4z3x3gsvgfgt2yiha', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 16, 3, 46, 700000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+auth_user.find (0.00) {'username': 'sys'}
+Not Found: /performance/static/js/angular.min.js.map
+Internal Server Error: /performance/api
+Traceback (most recent call last):
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\handlers\base.py", line 88, in get_response
+    response = middleware_method(request)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\middleware\common.py", line 81, in process_request
+    "settings.") % (new_url[0], new_url[1]))
+RuntimeError: You called this URL via POST, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining POST data. Change your form to point to 127.0.0.1:8000/performance/api/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+auth_user.find (0.00) {'username': 'sys'}
+django_session.find (0.00) {'_id': '8spuyey7cunnbxn4z3x3gsvgfgt2yiha', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 16, 3, 48, 189000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+auth_user.find (0.00) {'username': 'sys'}
+django_session.find (0.00) {'_id': '8spuyey7cunnbxn4z3x3gsvgfgt2yiha', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 16, 3, 55, 397000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+auth_user.find (0.00) {'username': 'sys'}
+django_session.find (0.00) {'_id': '8spuyey7cunnbxn4z3x3gsvgfgt2yiha', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 16, 4, 38, 68000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Method Not Allowed (GET): /long/performance/api
+Method Not Allowed (GET): /long/performance/api
+django_session.find (0.00) {'_id': '8spuyey7cunnbxn4z3x3gsvgfgt2yiha', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 16, 5, 1, 201000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+auth_user.find (0.00) {'username': 'sys'}
+Internal Server Error: /performance/api
+Traceback (most recent call last):
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\handlers\base.py", line 88, in get_response
+    response = middleware_method(request)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\middleware\common.py", line 81, in process_request
+    "settings.") % (new_url[0], new_url[1]))
+RuntimeError: You called this URL via POST, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining POST data. Change your form to point to 127.0.0.1:8000/performance/api/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+auth_user.find (0.00) {'username': 'sys'}
+django_session.find (0.00) {'_id': '8spuyey7cunnbxn4z3x3gsvgfgt2yiha', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 16, 5, 1, 791000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Method Not Allowed (GET): /long/performance/api
+Method Not Allowed (GET): /long/performance/api
+Internal Server Error: /performance/api
+Traceback (most recent call last):
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\handlers\base.py", line 88, in get_response
+    response = middleware_method(request)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\middleware\common.py", line 81, in process_request
+    "settings.") % (new_url[0], new_url[1]))
+RuntimeError: You called this URL via POST, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining POST data. Change your form to point to 127.0.0.1:8000/performance/api/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+auth_user.find (0.00) {'username': 'sys'}
+django_session.find (0.00) {'_id': '8spuyey7cunnbxn4z3x3gsvgfgt2yiha', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 16, 6, 57, 517000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '8spuyey7cunnbxn4z3x3gsvgfgt2yiha', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 16, 7, 4, 839000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+auth_user.find (0.00) {'username': 'sys'}
+Internal Server Error: /performance/api
+Traceback (most recent call last):
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\handlers\base.py", line 88, in get_response
+    response = middleware_method(request)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\middleware\common.py", line 81, in process_request
+    "settings.") % (new_url[0], new_url[1]))
+RuntimeError: You called this URL via POST, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining POST data. Change your form to point to 127.0.0.1:8000/performance/api/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+auth_user.find (0.00) {'username': 'sys'}
+django_session.find (0.00) {'_id': '8spuyey7cunnbxn4z3x3gsvgfgt2yiha', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 16, 7, 5, 190000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '8spuyey7cunnbxn4z3x3gsvgfgt2yiha', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 16, 15, 11, 158000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+auth_user.find (0.00) {'username': 'sys'}
+Internal Server Error: /performance/api
+Traceback (most recent call last):
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\handlers\base.py", line 88, in get_response
+    response = middleware_method(request)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\middleware\common.py", line 81, in process_request
+    "settings.") % (new_url[0], new_url[1]))
+RuntimeError: You called this URL via POST, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining POST data. Change your form to point to 127.0.0.1:8000/performance/api/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+auth_user.find (0.00) {'username': 'sys'}
+django_session.find (0.00) {'_id': '8spuyey7cunnbxn4z3x3gsvgfgt2yiha', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 16, 15, 11, 805000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Internal Server Error: /long/performance/
+Traceback (most recent call last):
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\handlers\base.py", line 99, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\urlresolvers.py", line 339, in resolve
+    sub_match = pattern.resolve(new_path)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\urlresolvers.py", line 210, in resolve
+    match = self.regex.search(path)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\urlresolvers.py", line 178, in regex
+    (regex, six.text_type(e)))
+ImproperlyConfigured: "^(?i)(?P<tenancy_code>.*)^pages/(?P<path>.*)$pages/(?P<path>.*)$" is not a valid regular expression: redefinition of group name 'path' as group 3; was group 2
+Internal Server Error: /long/performance/
+Traceback (most recent call last):
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\handlers\base.py", line 99, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\urlresolvers.py", line 339, in resolve
+    sub_match = pattern.resolve(new_path)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\urlresolvers.py", line 210, in resolve
+    match = self.regex.search(path)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\urlresolvers.py", line 178, in regex
+    (regex, six.text_type(e)))
+ImproperlyConfigured: "^(?i)(?P<tenancy_code>.*)^pages/(?P<path>.*)$pages/(?P<path>.*)$" is not a valid regular expression: redefinition of group name 'path' as group 3; was group 2
+Internal Server Error: /long/performance/
+Traceback (most recent call last):
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\handlers\base.py", line 99, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\urlresolvers.py", line 339, in resolve
+    sub_match = pattern.resolve(new_path)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\urlresolvers.py", line 210, in resolve
+    match = self.regex.search(path)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\urlresolvers.py", line 178, in regex
+    (regex, six.text_type(e)))
+ImproperlyConfigured: "^(?i)(?P<tenancy_code>.*)^argo/static/(?P<path>.*)$argo/static/(?P<path>.*)$" is not a valid regular expression: redefinition of group name 'path' as group 3; was group 2
+Internal Server Error: /long/performance/
+Traceback (most recent call last):
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\handlers\base.py", line 99, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\urlresolvers.py", line 339, in resolve
+    sub_match = pattern.resolve(new_path)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\urlresolvers.py", line 210, in resolve
+    match = self.regex.search(path)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\urlresolvers.py", line 178, in regex
+    (regex, six.text_type(e)))
+ImproperlyConfigured: "^(?i)(?P<tenancy_code>.*)^argo/static/(?P<path>.*)$argo/static/(?P<path>.*)$" is not a valid regular expression: redefinition of group name 'path' as group 3; was group 2
+Internal Server Error: /long/performance/
+Traceback (most recent call last):
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\handlers\base.py", line 99, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\urlresolvers.py", line 339, in resolve
+    sub_match = pattern.resolve(new_path)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\urlresolvers.py", line 210, in resolve
+    match = self.regex.search(path)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\urlresolvers.py", line 178, in regex
+    (regex, six.text_type(e)))
+ImproperlyConfigured: "^(?i)(?P<tenancy_code>.*)/^argo/static/(?P<path>.*)$argo/static/(?P<path>.*)$" is not a valid regular expression: redefinition of group name 'path' as group 3; was group 2
+Internal Server Error: /long/performance/
+Traceback (most recent call last):
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\handlers\base.py", line 99, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\urlresolvers.py", line 339, in resolve
+    sub_match = pattern.resolve(new_path)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\urlresolvers.py", line 210, in resolve
+    match = self.regex.search(path)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\urlresolvers.py", line 178, in regex
+    (regex, six.text_type(e)))
+ImproperlyConfigured: "^(?i)(?P<tenancy_code>.*)/^argo/static/(?P<path>.*)$argo/static/(?P<path>.*)$" is not a valid regular expression: redefinition of group name 'path' as group 3; was group 2
+Internal Server Error: /long/performance/
+Traceback (most recent call last):
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\handlers\base.py", line 99, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\urlresolvers.py", line 339, in resolve
+    sub_match = pattern.resolve(new_path)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\urlresolvers.py", line 210, in resolve
+    match = self.regex.search(path)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\urlresolvers.py", line 178, in regex
+    (regex, six.text_type(e)))
+ImproperlyConfigured: "^(?i)(?P<tenancy_code>.*)/^argo/static/(?P<path>.*)$argo/static/(?P<path>.*)$" is not a valid regular expression: redefinition of group name 'path' as group 3; was group 2
+Internal Server Error: /long/performance/
+Traceback (most recent call last):
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\handlers\base.py", line 99, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\urlresolvers.py", line 339, in resolve
+    sub_match = pattern.resolve(new_path)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\urlresolvers.py", line 210, in resolve
+    match = self.regex.search(path)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\urlresolvers.py", line 178, in regex
+    (regex, six.text_type(e)))
+ImproperlyConfigured: "^(?i)(?P<tenancy_code>.*)/^pages/(?P<path>.*)$pages/(?P<path>.*)$" is not a valid regular expression: redefinition of group name 'path' as group 3; was group 2
+django_session.find (0.00) {'_id': '8spuyey7cunnbxn4z3x3gsvgfgt2yiha', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 16, 24, 33, 122000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+auth_user.find (0.00) {'username': 'sys'}
+Internal Server Error: /performance/api
+Traceback (most recent call last):
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\handlers\base.py", line 88, in get_response
+    response = middleware_method(request)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\middleware\common.py", line 71, in process_request
+    if (not urlresolvers.is_valid_path(request.path_info, urlconf) and
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\urlresolvers.py", line 600, in is_valid_path
+    resolve(path, urlconf)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\urlresolvers.py", line 480, in resolve
+    return get_resolver(urlconf).resolve(path)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\urlresolvers.py", line 339, in resolve
+    sub_match = pattern.resolve(new_path)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\urlresolvers.py", line 210, in resolve
+    match = self.regex.search(path)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\urlresolvers.py", line 178, in regex
+    (regex, six.text_type(e)))
+ImproperlyConfigured: "^(?i)(?P<tenancy_code>.*)/^pages/(?P<path>.*)$pages/(?P<path>.*)$" is not a valid regular expression: redefinition of group name 'path' as group 3; was group 2
+Internal Server Error: /performance/pages/home/
+Traceback (most recent call last):
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\handlers\base.py", line 99, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\urlresolvers.py", line 339, in resolve
+    sub_match = pattern.resolve(new_path)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\urlresolvers.py", line 210, in resolve
+    match = self.regex.search(path)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\urlresolvers.py", line 178, in regex
+    (regex, six.text_type(e)))
+ImproperlyConfigured: "^(?i)(?P<tenancy_code>.*)/^pages/(?P<path>.*)$pages/(?P<path>.*)$" is not a valid regular expression: redefinition of group name 'path' as group 3; was group 2
+Not Found: /performance/static/js/angular.min.js.map
+django_session.find (0.00) {'_id': '8spuyey7cunnbxn4z3x3gsvgfgt2yiha', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 16, 24, 46, 617000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+auth_user.find (0.00) {'username': 'sys'}
+Not Found: /performance/static/js/angular.min.js.map
+Internal Server Error: /performance/api
+Traceback (most recent call last):
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\handlers\base.py", line 88, in get_response
+    response = middleware_method(request)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\middleware\common.py", line 71, in process_request
+    if (not urlresolvers.is_valid_path(request.path_info, urlconf) and
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\urlresolvers.py", line 600, in is_valid_path
+    resolve(path, urlconf)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\urlresolvers.py", line 480, in resolve
+    return get_resolver(urlconf).resolve(path)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\urlresolvers.py", line 339, in resolve
+    sub_match = pattern.resolve(new_path)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\urlresolvers.py", line 210, in resolve
+    match = self.regex.search(path)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\urlresolvers.py", line 178, in regex
+    (regex, six.text_type(e)))
+ImproperlyConfigured: "^(?i)(?P<tenancy_code>.*)/^pages/(?P<path>.*)$pages/(?P<path>.*)$" is not a valid regular expression: redefinition of group name 'path' as group 3; was group 2
+Internal Server Error: /performance/pages/home
+Traceback (most recent call last):
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\handlers\base.py", line 88, in get_response
+    response = middleware_method(request)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\middleware\common.py", line 71, in process_request
+    if (not urlresolvers.is_valid_path(request.path_info, urlconf) and
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\urlresolvers.py", line 600, in is_valid_path
+    resolve(path, urlconf)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\urlresolvers.py", line 480, in resolve
+    return get_resolver(urlconf).resolve(path)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\urlresolvers.py", line 339, in resolve
+    sub_match = pattern.resolve(new_path)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\urlresolvers.py", line 210, in resolve
+    match = self.regex.search(path)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\urlresolvers.py", line 178, in regex
+    (regex, six.text_type(e)))
+ImproperlyConfigured: "^(?i)(?P<tenancy_code>.*)/^pages/(?P<path>.*)$pages/(?P<path>.*)$" is not a valid regular expression: redefinition of group name 'path' as group 3; was group 2
+Internal Server Error: /performance/api/
+Traceback (most recent call last):
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\handlers\base.py", line 99, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\urlresolvers.py", line 339, in resolve
+    sub_match = pattern.resolve(new_path)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\urlresolvers.py", line 210, in resolve
+    match = self.regex.search(path)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\urlresolvers.py", line 178, in regex
+    (regex, six.text_type(e)))
+ImproperlyConfigured: "^(?i)(?P<tenancy_code>.*)/^pages/(?P<path>.*)$pages/(?P<path>.*)$" is not a valid regular expression: redefinition of group name 'path' as group 3; was group 2
+Internal Server Error: /long/performance/api/
+Traceback (most recent call last):
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\handlers\base.py", line 99, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\urlresolvers.py", line 339, in resolve
+    sub_match = pattern.resolve(new_path)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\urlresolvers.py", line 210, in resolve
+    match = self.regex.search(path)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\urlresolvers.py", line 178, in regex
+    (regex, six.text_type(e)))
+ImproperlyConfigured: "^(?i)(?P<tenancy_code>.*)/^pages/(?P<path>.*)$pages/(?P<path>.*)$" is not a valid regular expression: redefinition of group name 'path' as group 3; was group 2
+django_session.find (0.00) {'_id': '8spuyey7cunnbxn4z3x3gsvgfgt2yiha', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 16, 26, 4, 293000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+auth_user.find (0.00) {'username': 'sys'}
+Not Found: /performance/static/js/angular.min.js.map
+Internal Server Error: /performance/api
+Traceback (most recent call last):
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\handlers\base.py", line 88, in get_response
+    response = middleware_method(request)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\middleware\common.py", line 71, in process_request
+    if (not urlresolvers.is_valid_path(request.path_info, urlconf) and
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\urlresolvers.py", line 600, in is_valid_path
+    resolve(path, urlconf)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\urlresolvers.py", line 480, in resolve
+    return get_resolver(urlconf).resolve(path)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\urlresolvers.py", line 339, in resolve
+    sub_match = pattern.resolve(new_path)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\urlresolvers.py", line 210, in resolve
+    match = self.regex.search(path)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\urlresolvers.py", line 178, in regex
+    (regex, six.text_type(e)))
+ImproperlyConfigured: "^(?i)(?P<tenancy_code>.*)/^pages/(?P<path>.*)$pages/(?P<path>.*)$" is not a valid regular expression: redefinition of group name 'path' as group 3; was group 2
+Internal Server Error: /performance/pages/home
+Traceback (most recent call last):
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\handlers\base.py", line 88, in get_response
+    response = middleware_method(request)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\middleware\common.py", line 71, in process_request
+    if (not urlresolvers.is_valid_path(request.path_info, urlconf) and
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\urlresolvers.py", line 600, in is_valid_path
+    resolve(path, urlconf)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\urlresolvers.py", line 480, in resolve
+    return get_resolver(urlconf).resolve(path)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\urlresolvers.py", line 339, in resolve
+    sub_match = pattern.resolve(new_path)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\urlresolvers.py", line 210, in resolve
+    match = self.regex.search(path)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\urlresolvers.py", line 178, in regex
+    (regex, six.text_type(e)))
+ImproperlyConfigured: "^(?i)(?P<tenancy_code>.*)/^pages/(?P<path>.*)$pages/(?P<path>.*)$" is not a valid regular expression: redefinition of group name 'path' as group 3; was group 2
+django_session.find (0.00) {'_id': '8spuyey7cunnbxn4z3x3gsvgfgt2yiha', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 16, 26, 45, 64000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+auth_user.find (0.00) {'username': 'sys'}
+Not Found: /performance/static/js/angular.min.js.map
+Internal Server Error: /performance/api
+Traceback (most recent call last):
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\handlers\base.py", line 88, in get_response
+    response = middleware_method(request)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\middleware\common.py", line 71, in process_request
+    if (not urlresolvers.is_valid_path(request.path_info, urlconf) and
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\urlresolvers.py", line 600, in is_valid_path
+    resolve(path, urlconf)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\urlresolvers.py", line 480, in resolve
+    return get_resolver(urlconf).resolve(path)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\urlresolvers.py", line 339, in resolve
+    sub_match = pattern.resolve(new_path)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\urlresolvers.py", line 210, in resolve
+    match = self.regex.search(path)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\urlresolvers.py", line 178, in regex
+    (regex, six.text_type(e)))
+ImproperlyConfigured: "^(?i)(?P<tenancy_code>.*)/^pages/(?P<path>.*)$pages/(?P<path>.*)$" is not a valid regular expression: redefinition of group name 'path' as group 3; was group 2
+Internal Server Error: /performance/pages/home
+Traceback (most recent call last):
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\handlers\base.py", line 88, in get_response
+    response = middleware_method(request)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\middleware\common.py", line 71, in process_request
+    if (not urlresolvers.is_valid_path(request.path_info, urlconf) and
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\urlresolvers.py", line 600, in is_valid_path
+    resolve(path, urlconf)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\urlresolvers.py", line 480, in resolve
+    return get_resolver(urlconf).resolve(path)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\urlresolvers.py", line 339, in resolve
+    sub_match = pattern.resolve(new_path)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\urlresolvers.py", line 210, in resolve
+    match = self.regex.search(path)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\urlresolvers.py", line 178, in regex
+    (regex, six.text_type(e)))
+ImproperlyConfigured: "^(?i)(?P<tenancy_code>.*)/^pages/(?P<path>.*)$pages/(?P<path>.*)$" is not a valid regular expression: redefinition of group name 'path' as group 3; was group 2
+django_session.find (0.00) {'_id': '8spuyey7cunnbxn4z3x3gsvgfgt2yiha', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 16, 30, 0, 128000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+auth_user.find (0.00) {'username': 'sys'}
+Not Found: /performance/static/js/angular.min.js.map
+Internal Server Error: /performance/api
+Traceback (most recent call last):
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\handlers\base.py", line 88, in get_response
+    response = middleware_method(request)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\middleware\common.py", line 71, in process_request
+    if (not urlresolvers.is_valid_path(request.path_info, urlconf) and
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\urlresolvers.py", line 600, in is_valid_path
+    resolve(path, urlconf)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\urlresolvers.py", line 480, in resolve
+    return get_resolver(urlconf).resolve(path)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\urlresolvers.py", line 339, in resolve
+    sub_match = pattern.resolve(new_path)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\urlresolvers.py", line 210, in resolve
+    match = self.regex.search(path)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\urlresolvers.py", line 178, in regex
+    (regex, six.text_type(e)))
+ImproperlyConfigured: "^(?i)(?P<tenancy_code>.*)/^pages/(?P<path>.*)$pages/(?P<path>.*)$" is not a valid regular expression: redefinition of group name 'path' as group 3; was group 2
+Internal Server Error: /performance/pages/home
+Traceback (most recent call last):
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\handlers\base.py", line 88, in get_response
+    response = middleware_method(request)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\middleware\common.py", line 71, in process_request
+    if (not urlresolvers.is_valid_path(request.path_info, urlconf) and
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\urlresolvers.py", line 600, in is_valid_path
+    resolve(path, urlconf)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\urlresolvers.py", line 480, in resolve
+    return get_resolver(urlconf).resolve(path)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\urlresolvers.py", line 339, in resolve
+    sub_match = pattern.resolve(new_path)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\urlresolvers.py", line 210, in resolve
+    match = self.regex.search(path)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\urlresolvers.py", line 178, in regex
+    (regex, six.text_type(e)))
+ImproperlyConfigured: "^(?i)(?P<tenancy_code>.*)/^pages/(?P<path>.*)$pages/(?P<path>.*)$" is not a valid regular expression: redefinition of group name 'path' as group 3; was group 2
+Internal Server Error: /performance/pages/home
+Traceback (most recent call last):
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\handlers\base.py", line 88, in get_response
+    response = middleware_method(request)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\middleware\common.py", line 71, in process_request
+    if (not urlresolvers.is_valid_path(request.path_info, urlconf) and
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\urlresolvers.py", line 600, in is_valid_path
+    resolve(path, urlconf)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\urlresolvers.py", line 480, in resolve
+    return get_resolver(urlconf).resolve(path)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\urlresolvers.py", line 339, in resolve
+    sub_match = pattern.resolve(new_path)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\urlresolvers.py", line 210, in resolve
+    match = self.regex.search(path)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\urlresolvers.py", line 178, in regex
+    (regex, six.text_type(e)))
+ImproperlyConfigured: "^(?i)(?P<tenancy_code>.*)/^pages/(?P<path>.*)$pages/(?P<path>.*)$" is not a valid regular expression: redefinition of group name 'path' as group 3; was group 2
+Method Not Allowed (GET): /long/performance/api
+Method Not Allowed (GET): /long/performance/api
+Internal Server Error: /long/performance/apiss
+Traceback (most recent call last):
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\handlers\base.py", line 88, in get_response
+    response = middleware_method(request)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\middleware\common.py", line 71, in process_request
+    if (not urlresolvers.is_valid_path(request.path_info, urlconf) and
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\urlresolvers.py", line 600, in is_valid_path
+    resolve(path, urlconf)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\urlresolvers.py", line 480, in resolve
+    return get_resolver(urlconf).resolve(path)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\urlresolvers.py", line 339, in resolve
+    sub_match = pattern.resolve(new_path)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\urlresolvers.py", line 210, in resolve
+    match = self.regex.search(path)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\urlresolvers.py", line 178, in regex
+    (regex, six.text_type(e)))
+ImproperlyConfigured: "^(?i)(?P<tenancy_code>.*)/^pages/(?P<path>.*)$pages/(?P<path>.*)$" is not a valid regular expression: redefinition of group name 'path' as group 3; was group 2
+Method Not Allowed (GET): /long/performance/api
+django_session.find (0.00) {'_id': '8spuyey7cunnbxn4z3x3gsvgfgt2yiha', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 16, 35, 32, 369000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+auth_user.find (0.00) {'username': 'sys'}
+Not Found: /performance/static/js/angular.min.js.map
+Internal Server Error: /performance/api
+Traceback (most recent call last):
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\handlers\base.py", line 88, in get_response
+    response = middleware_method(request)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\middleware\common.py", line 71, in process_request
+    if (not urlresolvers.is_valid_path(request.path_info, urlconf) and
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\urlresolvers.py", line 600, in is_valid_path
+    resolve(path, urlconf)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\urlresolvers.py", line 480, in resolve
+    return get_resolver(urlconf).resolve(path)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\urlresolvers.py", line 339, in resolve
+    sub_match = pattern.resolve(new_path)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\urlresolvers.py", line 210, in resolve
+    match = self.regex.search(path)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\urlresolvers.py", line 178, in regex
+    (regex, six.text_type(e)))
+ImproperlyConfigured: "^(?i)(?P<tenancy_code>.*)/^pages/(?P<path>.*)$pages/(?P<path>.*)$" is not a valid regular expression: redefinition of group name 'path' as group 3; was group 2
+Internal Server Error: /performance/pages/home
+Traceback (most recent call last):
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\handlers\base.py", line 88, in get_response
+    response = middleware_method(request)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\middleware\common.py", line 71, in process_request
+    if (not urlresolvers.is_valid_path(request.path_info, urlconf) and
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\urlresolvers.py", line 600, in is_valid_path
+    resolve(path, urlconf)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\urlresolvers.py", line 480, in resolve
+    return get_resolver(urlconf).resolve(path)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\urlresolvers.py", line 339, in resolve
+    sub_match = pattern.resolve(new_path)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\urlresolvers.py", line 210, in resolve
+    match = self.regex.search(path)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\urlresolvers.py", line 178, in regex
+    (regex, six.text_type(e)))
+ImproperlyConfigured: "^(?i)(?P<tenancy_code>.*)/^pages/(?P<path>.*)$pages/(?P<path>.*)$" is not a valid regular expression: redefinition of group name 'path' as group 3; was group 2
+django_session.find (0.00) {'_id': '8spuyey7cunnbxn4z3x3gsvgfgt2yiha', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 16, 36, 7, 914000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+auth_user.find (0.00) {'username': 'sys'}
+Internal Server Error: /performance/api
+Traceback (most recent call last):
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\handlers\base.py", line 88, in get_response
+    response = middleware_method(request)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\middleware\common.py", line 71, in process_request
+    if (not urlresolvers.is_valid_path(request.path_info, urlconf) and
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\urlresolvers.py", line 600, in is_valid_path
+    resolve(path, urlconf)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\urlresolvers.py", line 480, in resolve
+    return get_resolver(urlconf).resolve(path)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\urlresolvers.py", line 339, in resolve
+    sub_match = pattern.resolve(new_path)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\urlresolvers.py", line 210, in resolve
+    match = self.regex.search(path)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\urlresolvers.py", line 178, in regex
+    (regex, six.text_type(e)))
+ImproperlyConfigured: "^(?i)(?P<tenancy_code>.*)/^pages/(?P<path>.*)$pages/(?P<path>.*)$" is not a valid regular expression: redefinition of group name 'path' as group 3; was group 2
+Internal Server Error: /performance/pages/home
+Traceback (most recent call last):
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\handlers\base.py", line 88, in get_response
+    response = middleware_method(request)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\middleware\common.py", line 71, in process_request
+    if (not urlresolvers.is_valid_path(request.path_info, urlconf) and
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\urlresolvers.py", line 600, in is_valid_path
+    resolve(path, urlconf)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\urlresolvers.py", line 480, in resolve
+    return get_resolver(urlconf).resolve(path)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\urlresolvers.py", line 339, in resolve
+    sub_match = pattern.resolve(new_path)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\urlresolvers.py", line 210, in resolve
+    match = self.regex.search(path)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\urlresolvers.py", line 178, in regex
+    (regex, six.text_type(e)))
+ImproperlyConfigured: "^(?i)(?P<tenancy_code>.*)/^pages/(?P<path>.*)$pages/(?P<path>.*)$" is not a valid regular expression: redefinition of group name 'path' as group 3; was group 2
+Method Not Allowed (GET): /long/performance/api
+Internal Server Error: /xx/argo/static/js/jquery-3.3.1.min.js
+Traceback (most recent call last):
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\handlers\base.py", line 88, in get_response
+    response = middleware_method(request)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\middleware\common.py", line 71, in process_request
+    if (not urlresolvers.is_valid_path(request.path_info, urlconf) and
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\urlresolvers.py", line 600, in is_valid_path
+    resolve(path, urlconf)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\urlresolvers.py", line 480, in resolve
+    return get_resolver(urlconf).resolve(path)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\urlresolvers.py", line 339, in resolve
+    sub_match = pattern.resolve(new_path)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\urlresolvers.py", line 210, in resolve
+    match = self.regex.search(path)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\urlresolvers.py", line 178, in regex
+    (regex, six.text_type(e)))
+ImproperlyConfigured: "^(?i)(?P<tenancy_code>.*)/^pages/(?P<path>.*)$pages/(?P<path>.*)$" is not a valid regular expression: redefinition of group name 'path' as group 3; was group 2
+Internal Server Error: /xx/argo/static/bs/css/bootstrap.min.css
+Traceback (most recent call last):
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\handlers\base.py", line 88, in get_response
+    response = middleware_method(request)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\middleware\common.py", line 71, in process_request
+    if (not urlresolvers.is_valid_path(request.path_info, urlconf) and
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\urlresolvers.py", line 600, in is_valid_path
+    resolve(path, urlconf)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\urlresolvers.py", line 480, in resolve
+    return get_resolver(urlconf).resolve(path)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\urlresolvers.py", line 339, in resolve
+    sub_match = pattern.resolve(new_path)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\urlresolvers.py", line 210, in resolve
+    match = self.regex.search(path)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\urlresolvers.py", line 178, in regex
+    (regex, six.text_type(e)))
+ImproperlyConfigured: "^(?i)(?P<tenancy_code>.*)/^pages/(?P<path>.*)$pages/(?P<path>.*)$" is not a valid regular expression: redefinition of group name 'path' as group 3; was group 2
+Internal Server Error: /xx/login
+Traceback (most recent call last):
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\handlers\base.py", line 88, in get_response
+    response = middleware_method(request)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\middleware\common.py", line 71, in process_request
+    if (not urlresolvers.is_valid_path(request.path_info, urlconf) and
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\urlresolvers.py", line 600, in is_valid_path
+    resolve(path, urlconf)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\urlresolvers.py", line 480, in resolve
+    return get_resolver(urlconf).resolve(path)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\urlresolvers.py", line 339, in resolve
+    sub_match = pattern.resolve(new_path)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\urlresolvers.py", line 210, in resolve
+    match = self.regex.search(path)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\urlresolvers.py", line 178, in regex
+    (regex, six.text_type(e)))
+ImproperlyConfigured: "^(?i)(?P<tenancy_code>.*)/^pages/(?P<path>.*)$pages/(?P<path>.*)$" is not a valid regular expression: redefinition of group name 'path' as group 3; was group 2
+Internal Server Error: /xx/perfomance/login
+Traceback (most recent call last):
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\handlers\base.py", line 88, in get_response
+    response = middleware_method(request)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\middleware\common.py", line 71, in process_request
+    if (not urlresolvers.is_valid_path(request.path_info, urlconf) and
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\urlresolvers.py", line 600, in is_valid_path
+    resolve(path, urlconf)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\urlresolvers.py", line 480, in resolve
+    return get_resolver(urlconf).resolve(path)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\urlresolvers.py", line 339, in resolve
+    sub_match = pattern.resolve(new_path)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\urlresolvers.py", line 210, in resolve
+    match = self.regex.search(path)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\urlresolvers.py", line 178, in regex
+    (regex, six.text_type(e)))
+ImproperlyConfigured: "^(?i)(?P<tenancy_code>.*)/^pages/(?P<path>.*)$pages/(?P<path>.*)$" is not a valid regular expression: redefinition of group name 'path' as group 3; was group 2
+Internal Server Error: /dsadsadsad/perfomance/login
+Traceback (most recent call last):
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\handlers\base.py", line 88, in get_response
+    response = middleware_method(request)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\middleware\common.py", line 71, in process_request
+    if (not urlresolvers.is_valid_path(request.path_info, urlconf) and
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\urlresolvers.py", line 600, in is_valid_path
+    resolve(path, urlconf)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\urlresolvers.py", line 480, in resolve
+    return get_resolver(urlconf).resolve(path)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\urlresolvers.py", line 339, in resolve
+    sub_match = pattern.resolve(new_path)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\urlresolvers.py", line 210, in resolve
+    match = self.regex.search(path)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\urlresolvers.py", line 178, in regex
+    (regex, six.text_type(e)))
+ImproperlyConfigured: "^(?i)(?P<tenancy_code>.*)/^pages/(?P<path>.*)$pages/(?P<path>.*)$" is not a valid regular expression: redefinition of group name 'path' as group 3; was group 2
+Internal Server Error: /dsadsadsad/perfomance
+Traceback (most recent call last):
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\handlers\base.py", line 88, in get_response
+    response = middleware_method(request)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\middleware\common.py", line 71, in process_request
+    if (not urlresolvers.is_valid_path(request.path_info, urlconf) and
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\urlresolvers.py", line 600, in is_valid_path
+    resolve(path, urlconf)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\urlresolvers.py", line 480, in resolve
+    return get_resolver(urlconf).resolve(path)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\urlresolvers.py", line 339, in resolve
+    sub_match = pattern.resolve(new_path)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\urlresolvers.py", line 210, in resolve
+    match = self.regex.search(path)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\urlresolvers.py", line 178, in regex
+    (regex, six.text_type(e)))
+ImproperlyConfigured: "^(?i)(?P<tenancy_code>.*)/^pages/(?P<path>.*)$pages/(?P<path>.*)$" is not a valid regular expression: redefinition of group name 'path' as group 3; was group 2
+Internal Server Error: /long/login
+Traceback (most recent call last):
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\handlers\base.py", line 88, in get_response
+    response = middleware_method(request)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\middleware\common.py", line 71, in process_request
+    if (not urlresolvers.is_valid_path(request.path_info, urlconf) and
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\urlresolvers.py", line 600, in is_valid_path
+    resolve(path, urlconf)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\urlresolvers.py", line 480, in resolve
+    return get_resolver(urlconf).resolve(path)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\urlresolvers.py", line 339, in resolve
+    sub_match = pattern.resolve(new_path)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\urlresolvers.py", line 210, in resolve
+    match = self.regex.search(path)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\urlresolvers.py", line 178, in regex
+    (regex, six.text_type(e)))
+ImproperlyConfigured: "^(?i)(?P<tenancy_code>.*)/^pages/(?P<path>.*)$pages/(?P<path>.*)$" is not a valid regular expression: redefinition of group name 'path' as group 3; was group 2
+Internal Server Error: /
+Traceback (most recent call last):
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\handlers\base.py", line 99, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\urlresolvers.py", line 339, in resolve
+    sub_match = pattern.resolve(new_path)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\urlresolvers.py", line 210, in resolve
+    match = self.regex.search(path)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\urlresolvers.py", line 178, in regex
+    (regex, six.text_type(e)))
+ImproperlyConfigured: "^(?i)(?P<tenancy_code>.*)/^pages/(?P<path>.*)$pages/(?P<path>.*)$" is not a valid regular expression: redefinition of group name 'path' as group 3; was group 2
+Internal Server Error: /
+Traceback (most recent call last):
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\handlers\base.py", line 99, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\urlresolvers.py", line 339, in resolve
+    sub_match = pattern.resolve(new_path)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\urlresolvers.py", line 210, in resolve
+    match = self.regex.search(path)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\urlresolvers.py", line 178, in regex
+    (regex, six.text_type(e)))
+ImproperlyConfigured: "^(?i)(?P<tenancy_code>.*)/^pages/(?P<path>.*)$pages/(?P<path>.*)$" is not a valid regular expression: redefinition of group name 'path' as group 3; was group 2
+Internal Server Error: /admin
+Traceback (most recent call last):
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\handlers\base.py", line 88, in get_response
+    response = middleware_method(request)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\middleware\common.py", line 71, in process_request
+    if (not urlresolvers.is_valid_path(request.path_info, urlconf) and
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\urlresolvers.py", line 600, in is_valid_path
+    resolve(path, urlconf)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\urlresolvers.py", line 480, in resolve
+    return get_resolver(urlconf).resolve(path)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\urlresolvers.py", line 339, in resolve
+    sub_match = pattern.resolve(new_path)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\urlresolvers.py", line 210, in resolve
+    match = self.regex.search(path)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\urlresolvers.py", line 178, in regex
+    (regex, six.text_type(e)))
+ImproperlyConfigured: "^(?i)(?P<tenancy_code>.*)/^pages/(?P<path>.*)$pages/(?P<path>.*)$" is not a valid regular expression: redefinition of group name 'path' as group 3; was group 2
+auth_user.find (0.00) {'username': 'sys'}
+django_session.find (0.00) {'_id': '8spuyey7cunnbxn4z3x3gsvgfgt2yiha', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 16, 44, 28, 970000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '8spuyey7cunnbxn4z3x3gsvgfgt2yiha', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 16, 44, 39, 254000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+auth_user.find (0.00) {'username': 'sys'}
+django_session.find (0.00) {'_id': '8spuyey7cunnbxn4z3x3gsvgfgt2yiha', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 16, 44, 45, 278000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '8spuyey7cunnbxn4z3x3gsvgfgt2yiha', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 16, 44, 57, 375000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+auth_user.find (0.00) {'username': 'sys'}
+Internal Server Error: /performance/api
+Traceback (most recent call last):
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\handlers\base.py", line 88, in get_response
+    response = middleware_method(request)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\middleware\common.py", line 81, in process_request
+    "settings.") % (new_url[0], new_url[1]))
+RuntimeError: You called this URL via POST, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining POST data. Change your form to point to 127.0.0.1:8000/performance/api/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+Internal Server Error: /performance/pages/home
+Traceback (most recent call last):
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+TypeError: load_page() got an unexpected keyword argument 'tenancy_code'
+Not Found: /performance/static/js/angular.min.js.map
+django_session.find (0.00) {'_id': '8spuyey7cunnbxn4z3x3gsvgfgt2yiha', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 16, 45, 9, 374000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+auth_user.find (0.00) {'username': 'sys'}
+Not Found: /performance/static/js/angular.min.js.map
+Internal Server Error: /performance/api
+Traceback (most recent call last):
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\handlers\base.py", line 88, in get_response
+    response = middleware_method(request)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\middleware\common.py", line 81, in process_request
+    "settings.") % (new_url[0], new_url[1]))
+RuntimeError: You called this URL via POST, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining POST data. Change your form to point to 127.0.0.1:8000/performance/api/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+Internal Server Error: /performance/pages/home
+Traceback (most recent call last):
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+TypeError: load_page() got an unexpected keyword argument 'tenancy_code'
+django_session.find (0.00) {'_id': '8spuyey7cunnbxn4z3x3gsvgfgt2yiha', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 16, 53, 59, 711000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+auth_user.find (0.00) {'username': 'sys'}
+Not Found: /performance/static/js/angular.min.js.map
+Internal Server Error: /performance/api
+Traceback (most recent call last):
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\handlers\base.py", line 88, in get_response
+    response = middleware_method(request)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\middleware\common.py", line 81, in process_request
+    "settings.") % (new_url[0], new_url[1]))
+RuntimeError: You called this URL via POST, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining POST data. Change your form to point to 127.0.0.1:8000/performance/api/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+Internal Server Error: /performance/pages/home
+Traceback (most recent call last):
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+TypeError: load_page() got an unexpected keyword argument 'tenancy_code'
+django_session.find (0.00) {'_id': '8spuyey7cunnbxn4z3x3gsvgfgt2yiha', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 16, 58, 57, 560000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+auth_user.find (0.00) {'username': 'sys'}
+django_session.find (0.00) {'_id': '8spuyey7cunnbxn4z3x3gsvgfgt2yiha', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 17, 0, 21, 86000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+auth_user.find (0.00) {'username': 'sys'}
+auth_user.find (0.01) {'username': 'sys'}
+auth_user.find (0.01) {'username': 'sys'}
+auth_user.find (0.01) {'username': 'sys'}
+django_session.find (0.01) {'_id': '8spuyey7cunnbxn4z3x3gsvgfgt2yiha', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 17, 0, 21, 740000, tzinfo=<UTC>)}}
+auth_user.find (0.01) {'username': 'sys'}
+auth_user.find (0.01) {'username': 'sys'}
+auth_user.find (0.01) {'username': 'sys'}
+auth_user.find (0.01) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.01) {'_id': '8spuyey7cunnbxn4z3x3gsvgfgt2yiha', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 17, 0, 21, 764000, tzinfo=<UTC>)}}
+django_session.find (0.01) {'_id': '8spuyey7cunnbxn4z3x3gsvgfgt2yiha', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 17, 0, 21, 763000, tzinfo=<UTC>)}}
+django_session.find (0.00) {'_id': '8spuyey7cunnbxn4z3x3gsvgfgt2yiha', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 17, 0, 21, 766000, tzinfo=<UTC>)}}
+django_session.find (0.01) {'_id': '8spuyey7cunnbxn4z3x3gsvgfgt2yiha', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 17, 0, 21, 768000, tzinfo=<UTC>)}}
+django_session.find (0.01) {'_id': '8spuyey7cunnbxn4z3x3gsvgfgt2yiha', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 17, 0, 21, 774000, tzinfo=<UTC>)}}
+auth_user.find (0.01) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+auth_user.find (0.01) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+auth_user.find (0.01) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+auth_user.find (0.01) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+auth_user.find (0.01) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+auth_user.find (0.00) {'username': 'sys'}
+auth_user.find (0.01) {'username': 'sys'}
+auth_user.find (0.01) {'username': 'sys'}
+auth_user.find (0.01) {'username': 'sys'}
+django_session.find (0.01) {'_id': '8spuyey7cunnbxn4z3x3gsvgfgt2yiha', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 17, 0, 22, 119000, tzinfo=<UTC>)}}
+django_session.find (0.00) {'_id': '8spuyey7cunnbxn4z3x3gsvgfgt2yiha', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 17, 0, 22, 120000, tzinfo=<UTC>)}}
+django_session.find (0.00) {'_id': '8spuyey7cunnbxn4z3x3gsvgfgt2yiha', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 17, 0, 22, 129000, tzinfo=<UTC>)}}
+django_session.find (0.00) {'_id': '8spuyey7cunnbxn4z3x3gsvgfgt2yiha', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 17, 0, 22, 131000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+auth_user.find (0.01) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+auth_user.find (0.01) {'username': 'sys'}
+django_session.find (0.01) {'_id': '8spuyey7cunnbxn4z3x3gsvgfgt2yiha', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 17, 0, 22, 477000, tzinfo=<UTC>)}}
+auth_user.find (0.01) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+auth_user.find (0.01) {'username': 'sys'}
+auth_user.find (0.01) {'username': 'sys'}
+auth_user.find (0.01) {'username': 'sys'}
+auth_user.find (0.01) {'username': 'sys'}
+auth_user.find (0.01) {'username': 'sys'}
+django_session.find (0.01) {'_id': '8spuyey7cunnbxn4z3x3gsvgfgt2yiha', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 17, 0, 22, 571000, tzinfo=<UTC>)}}
+django_session.find (0.01) {'_id': '8spuyey7cunnbxn4z3x3gsvgfgt2yiha', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 17, 0, 22, 585000, tzinfo=<UTC>)}}
+django_session.find (0.01) {'_id': '8spuyey7cunnbxn4z3x3gsvgfgt2yiha', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 17, 0, 22, 586000, tzinfo=<UTC>)}}
+django_session.find (0.01) {'_id': '8spuyey7cunnbxn4z3x3gsvgfgt2yiha', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 17, 0, 22, 593000, tzinfo=<UTC>)}}
+django_session.find (0.01) {'_id': '8spuyey7cunnbxn4z3x3gsvgfgt2yiha', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 17, 0, 22, 595000, tzinfo=<UTC>)}}
+auth_user.find (0.01) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+auth_user.find (0.01) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+auth_user.find (0.01) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+auth_user.find (0.01) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+auth_user.find (0.01) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+auth_user.find (0.01) {'username': 'sys'}
+auth_user.find (0.02) {'username': 'sys'}
+auth_user.find (0.01) {'username': 'sys'}
+auth_user.find (0.01) {'username': 'sys'}
+auth_user.find (0.01) {'username': 'sys'}
+django_session.find (0.01) {'_id': '8spuyey7cunnbxn4z3x3gsvgfgt2yiha', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 17, 0, 23, 55000, tzinfo=<UTC>)}}
+django_session.find (0.01) {'_id': '8spuyey7cunnbxn4z3x3gsvgfgt2yiha', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 17, 0, 23, 53000, tzinfo=<UTC>)}}
+django_session.find (0.01) {'_id': '8spuyey7cunnbxn4z3x3gsvgfgt2yiha', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 17, 0, 23, 64000, tzinfo=<UTC>)}}
+django_session.find (0.01) {'_id': '8spuyey7cunnbxn4z3x3gsvgfgt2yiha', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 17, 0, 23, 65000, tzinfo=<UTC>)}}
+django_session.find (0.01) {'_id': '8spuyey7cunnbxn4z3x3gsvgfgt2yiha', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 17, 0, 23, 71000, tzinfo=<UTC>)}}
+auth_user.find (0.01) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+auth_user.find (0.01) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+auth_user.find (0.01) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+auth_user.find (0.01) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+auth_user.find (0.01) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+auth_user.find (0.01) {'username': 'sys'}
+django_session.find (0.01) {'_id': '8spuyey7cunnbxn4z3x3gsvgfgt2yiha', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 17, 0, 23, 160000, tzinfo=<UTC>)}}
+auth_user.find (0.01) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+auth_user.find (0.00) {'username': 'sys'}
+auth_user.find (0.00) {'username': 'sys'}
+django_session.find (0.00) {'_id': '8spuyey7cunnbxn4z3x3gsvgfgt2yiha', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 17, 0, 23, 395000, tzinfo=<UTC>)}}
+django_session.find (0.00) {'_id': '8spuyey7cunnbxn4z3x3gsvgfgt2yiha', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 17, 0, 23, 402000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+auth_user.find (0.00) {'username': 'sys'}
+django_session.find (0.00) {'_id': '8spuyey7cunnbxn4z3x3gsvgfgt2yiha', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 17, 0, 23, 582000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+auth_user.find (0.00) {'username': 'sys'}
+django_session.find (0.00) {'_id': '8spuyey7cunnbxn4z3x3gsvgfgt2yiha', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 17, 0, 28, 192000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+auth_user.find (0.00) {'username': 'sys'}
+django_session.find (0.00) {'_id': '8spuyey7cunnbxn4z3x3gsvgfgt2yiha', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 17, 0, 28, 610000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+auth_user.find (0.00) {'username': 'sys'}
+auth_user.find (0.00) {'username': 'sys'}
+auth_user.find (0.00) {'username': 'sys'}
+django_session.find (0.00) {'_id': '8spuyey7cunnbxn4z3x3gsvgfgt2yiha', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 17, 0, 28, 635000, tzinfo=<UTC>)}}
+django_session.find (0.00) {'_id': '8spuyey7cunnbxn4z3x3gsvgfgt2yiha', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 17, 0, 28, 636000, tzinfo=<UTC>)}}
+django_session.find (0.00) {'_id': '8spuyey7cunnbxn4z3x3gsvgfgt2yiha', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 17, 0, 28, 636000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+auth_user.find (0.00) {'username': 'sys'}
+django_session.find (0.00) {'_id': '8spuyey7cunnbxn4z3x3gsvgfgt2yiha', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 17, 0, 42, 402000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+auth_user.find (0.00) {'username': 'sys'}
+django_session.find (0.00) {'_id': '8spuyey7cunnbxn4z3x3gsvgfgt2yiha', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 17, 0, 42, 591000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'username': 'sys'}
+auth_user.find (0.00) {'username': 'sys'}
+auth_user.find (0.00) {'username': 'sys'}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '8spuyey7cunnbxn4z3x3gsvgfgt2yiha', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 17, 0, 42, 604000, tzinfo=<UTC>)}}
+django_session.find (0.00) {'_id': '8spuyey7cunnbxn4z3x3gsvgfgt2yiha', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 17, 0, 42, 605000, tzinfo=<UTC>)}}
+django_session.find (0.00) {'_id': '8spuyey7cunnbxn4z3x3gsvgfgt2yiha', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 17, 0, 42, 604000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '8spuyey7cunnbxn4z3x3gsvgfgt2yiha', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 17, 1, 49, 27000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+auth_user.find (0.00) {'username': 'sys'}
+auth_user.find (0.00) {'username': 'sys'}
+auth_user.find (0.01) {'username': 'sys'}
+auth_user.find (0.01) {'username': 'sys'}
+auth_user.find (0.01) {'username': 'sys'}
+django_session.find (0.01) {'_id': '8spuyey7cunnbxn4z3x3gsvgfgt2yiha', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 17, 1, 49, 538000, tzinfo=<UTC>)}}
+django_session.find (0.01) {'_id': '8spuyey7cunnbxn4z3x3gsvgfgt2yiha', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 17, 1, 49, 540000, tzinfo=<UTC>)}}
+django_session.find (0.00) {'_id': '8spuyey7cunnbxn4z3x3gsvgfgt2yiha', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 17, 1, 49, 540000, tzinfo=<UTC>)}}
+django_session.find (0.00) {'_id': '8spuyey7cunnbxn4z3x3gsvgfgt2yiha', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 17, 1, 49, 541000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'username': 'sys'}
+auth_user.find (0.00) {'username': 'sys'}
+auth_user.find (0.01) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+auth_user.find (0.01) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+auth_user.find (0.01) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+auth_user.find (0.01) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.01) {'_id': '8spuyey7cunnbxn4z3x3gsvgfgt2yiha', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 17, 1, 49, 558000, tzinfo=<UTC>)}}
+django_session.find (0.01) {'_id': '8spuyey7cunnbxn4z3x3gsvgfgt2yiha', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 17, 1, 49, 562000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+auth_user.find (0.00) {'username': 'sys'}
+auth_user.find (0.00) {'username': 'sys'}
+auth_user.find (0.01) {'username': 'sys'}
+django_session.find (0.00) {'_id': '8spuyey7cunnbxn4z3x3gsvgfgt2yiha', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 17, 1, 49, 748000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'username': 'sys'}
+django_session.find (0.00) {'_id': '8spuyey7cunnbxn4z3x3gsvgfgt2yiha', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 17, 1, 49, 750000, tzinfo=<UTC>)}}
+django_session.find (0.01) {'_id': '8spuyey7cunnbxn4z3x3gsvgfgt2yiha', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 17, 1, 49, 755000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '8spuyey7cunnbxn4z3x3gsvgfgt2yiha', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 17, 1, 49, 762000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+auth_user.find (0.02) {'username': 'sys'}
+django_session.find (0.01) {'_id': '8spuyey7cunnbxn4z3x3gsvgfgt2yiha', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 17, 1, 50, 21000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+auth_user.find (0.01) {'username': 'sys'}
+auth_user.find (0.01) {'username': 'sys'}
+auth_user.find (0.00) {'username': 'sys'}
+django_session.find (0.00) {'_id': '8spuyey7cunnbxn4z3x3gsvgfgt2yiha', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 17, 1, 50, 85000, tzinfo=<UTC>)}}
+auth_user.find (0.01) {'username': 'sys'}
+auth_user.find (0.01) {'username': 'sys'}
+django_session.find (0.01) {'_id': '8spuyey7cunnbxn4z3x3gsvgfgt2yiha', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 17, 1, 50, 101000, tzinfo=<UTC>)}}
+django_session.find (0.01) {'_id': '8spuyey7cunnbxn4z3x3gsvgfgt2yiha', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 17, 1, 50, 101000, tzinfo=<UTC>)}}
+auth_user.find (0.01) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.01) {'_id': '8spuyey7cunnbxn4z3x3gsvgfgt2yiha', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 17, 1, 50, 104000, tzinfo=<UTC>)}}
+django_session.find (0.01) {'_id': '8spuyey7cunnbxn4z3x3gsvgfgt2yiha', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 17, 1, 50, 104000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+auth_user.find (0.01) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+auth_user.find (0.01) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+auth_user.find (0.00) {'username': 'sys'}
+django_session.find (0.00) {'_id': '8spuyey7cunnbxn4z3x3gsvgfgt2yiha', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 17, 1, 50, 406000, tzinfo=<UTC>)}}
+auth_user.find (0.01) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+auth_user.find (0.01) {'username': 'sys'}
+auth_user.find (0.01) {'username': 'sys'}
+auth_user.find (0.01) {'username': 'sys'}
+auth_user.find (0.01) {'username': 'sys'}
+auth_user.find (0.01) {'username': 'sys'}
+django_session.find (0.01) {'_id': '8spuyey7cunnbxn4z3x3gsvgfgt2yiha', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 17, 1, 50, 434000, tzinfo=<UTC>)}}
+django_session.find (0.01) {'_id': '8spuyey7cunnbxn4z3x3gsvgfgt2yiha', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 17, 1, 50, 438000, tzinfo=<UTC>)}}
+django_session.find (0.01) {'_id': '8spuyey7cunnbxn4z3x3gsvgfgt2yiha', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 17, 1, 50, 435000, tzinfo=<UTC>)}}
+django_session.find (0.00) {'_id': '8spuyey7cunnbxn4z3x3gsvgfgt2yiha', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 17, 1, 50, 440000, tzinfo=<UTC>)}}
+django_session.find (0.01) {'_id': '8spuyey7cunnbxn4z3x3gsvgfgt2yiha', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 17, 1, 50, 449000, tzinfo=<UTC>)}}
+auth_user.find (0.01) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+auth_user.find (0.01) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+auth_user.find (0.01) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+auth_user.find (0.01) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+auth_user.find (0.00) {'username': 'sys'}
+django_session.find (0.00) {'_id': '8spuyey7cunnbxn4z3x3gsvgfgt2yiha', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 17, 1, 50, 653000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'username': 'sys'}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '8spuyey7cunnbxn4z3x3gsvgfgt2yiha', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 17, 1, 50, 663000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+auth_user.find (0.00) {'username': 'sys'}
+django_session.find (0.00) {'_id': '8spuyey7cunnbxn4z3x3gsvgfgt2yiha', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 17, 1, 50, 779000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+auth_user.find (0.00) {'username': 'sys'}
+django_session.find (0.00) {'_id': '8spuyey7cunnbxn4z3x3gsvgfgt2yiha', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 17, 2, 0, 163000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+auth_user.find (0.00) {'username': 'sys'}
+auth_user.find (0.00) {'username': 'sys'}
+django_session.find (0.00) {'_id': '8spuyey7cunnbxn4z3x3gsvgfgt2yiha', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 17, 2, 0, 570000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'username': 'sys'}
+auth_user.find (0.00) {'username': 'sys'}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '8spuyey7cunnbxn4z3x3gsvgfgt2yiha', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 17, 2, 0, 580000, tzinfo=<UTC>)}}
+django_session.find (0.00) {'_id': '8spuyey7cunnbxn4z3x3gsvgfgt2yiha', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 17, 2, 0, 586000, tzinfo=<UTC>)}}
+django_session.find (0.00) {'_id': '8spuyey7cunnbxn4z3x3gsvgfgt2yiha', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 17, 2, 0, 587000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '8spuyey7cunnbxn4z3x3gsvgfgt2yiha', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 17, 5, 6, 504000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+auth_user.find (0.00) {'username': 'sys'}
+Internal Server Error: /test/performance/api
+Traceback (most recent call last):
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\views\decorators\http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+TypeError: call() got an unexpected keyword argument 'tenancy_code'
+Not Found: /performance/static/js/angular.min.js.map
+django_session.find (0.00) {'_id': '8spuyey7cunnbxn4z3x3gsvgfgt2yiha', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 17, 6, 3, 408000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+auth_user.find (0.00) {'username': 'sys'}
+Not Found: /performance/static/js/angular.min.js.map
+Internal Server Error: /test/performance/api
+Traceback (most recent call last):
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\views\decorators\http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+TypeError: call() got an unexpected keyword argument 'tenancy_code'
+django_session.find (0.00) {'_id': '8spuyey7cunnbxn4z3x3gsvgfgt2yiha', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 17, 6, 33, 354000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+auth_user.find (0.00) {'username': 'sys'}
+Not Found: /performance/static/js/angular.min.js.map
+Internal Server Error: /test/performance/api
+Traceback (most recent call last):
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\views\decorators\http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+TypeError: call() got an unexpected keyword argument 'tenancy_code'
+Internal Server Error: /test/performance/api
+Traceback (most recent call last):
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\views\decorators\http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+TypeError: call() got an unexpected keyword argument 'tenancy_code'
+Internal Server Error: /test/performance/api
+Traceback (most recent call last):
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\views\decorators\http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+TypeError: call() got an unexpected keyword argument 'tenancy_code'
+auth_user.find (0.00) {'username': 'sys'}
+django_session.find (0.00) {'_id': '8spuyey7cunnbxn4z3x3gsvgfgt2yiha', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 17, 7, 21, 824000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Internal Server Error: /test/performance/api
+Traceback (most recent call last):
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\views\decorators\http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+TypeError: call() got an unexpected keyword argument 'tenancy_code'
+Internal Server Error: /test/performance/api
+Traceback (most recent call last):
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\views\decorators\http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+TypeError: call() got an unexpected keyword argument 'tenancy_code'
+Internal Server Error: /test/admin/api
+Traceback (most recent call last):
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\views\decorators\http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+TypeError: call() got an unexpected keyword argument 'tenancy_code'
+Internal Server Error: /test/performance/api
+Traceback (most recent call last):
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\views\decorators\http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+TypeError: call() got an unexpected keyword argument 'tenancy_code'
+Internal Server Error: /test/performance/api
+Traceback (most recent call last):
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\views\decorators\http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+TypeError: call() got an unexpected keyword argument 'tenancy_code'
+Internal Server Error: /test/performance/api
+Traceback (most recent call last):
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\views\decorators\http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+TypeError: call() got an unexpected keyword argument 'tenancy_code'
+Internal Server Error: /test/performance/api
+Traceback (most recent call last):
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\views\decorators\http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\code\python\p2018\packages\quicky\view.py", line 82, in exec_request_for_multi
+    return exec_request(request,**kwargs)
+  File "E:\code\python\p2018\packages\quicky\view.py", line 79, in exec_request
+    raise (ex)
+AttributeError: 'NoneType' object has no attribute 'name'
+Internal Server Error: /test/performance/api
+Traceback (most recent call last):
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\views\decorators\http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\code\python\p2018\packages\quicky\view.py", line 82, in exec_request_for_multi
+    return exec_request(request,**kwargs)
+  File "E:\code\python\p2018\packages\quicky\view.py", line 79, in exec_request
+    raise (ex)
+AttributeError: 'NoneType' object has no attribute 'name'
+Internal Server Error: /test/performance/api
+Traceback (most recent call last):
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\views\decorators\http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\code\python\p2018\packages\quicky\view.py", line 82, in exec_request_for_multi
+    return exec_request(request,**kwargs)
+  File "E:\code\python\p2018\packages\quicky\view.py", line 79, in exec_request
+    raise (ex)
+AttributeError: 'NoneType' object has no attribute 'name'
+django_session.find (0.00) {'_id': '8spuyey7cunnbxn4z3x3gsvgfgt2yiha', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 17, 14, 55, 264000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Internal Server Error: /test/performance/api
+Traceback (most recent call last):
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\views\decorators\http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\code\python\p2018\packages\quicky\view.py", line 82, in exec_request_for_multi
+    
+  File "E:\code\python\p2018\packages\quicky\view.py", line 79, in exec_request
+    url = request.get_abs_url() + login_url
+AttributeError: 'NoneType' object has no attribute 'name'
+Internal Server Error: /test/performance/api
+Traceback (most recent call last):
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\views\decorators\http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\code\python\p2018\packages\quicky\view.py", line 89, in exec_request_for_multi
+    return exec_request(request,**kwargs)
+  File "E:\code\python\p2018\packages\quicky\view.py", line 86, in exec_request
+    raise (ex)
+AttributeError: 'NoneType' object has no attribute 'name'
+django_session.find (0.00) {'_id': '8spuyey7cunnbxn4z3x3gsvgfgt2yiha', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 17, 28, 44, 446000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Internal Server Error: /test/performance/api
+Traceback (most recent call last):
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\views\decorators\http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\code\python\p2018\packages\quicky\view.py", line 92, in exec_request_for_multi
+    return exec_request(request,**kwargs)
+  File "E:\code\python\p2018\packages\quicky\view.py", line 89, in exec_request
+    raise (ex)
+ValueError: No JSON object could be decoded
+django_session.find (0.00) {'_id': '8spuyey7cunnbxn4z3x3gsvgfgt2yiha', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 17, 28, 59, 217000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+auth_user.find (0.00) {'username': 'sys'}
+Not Found: /performance/static/js/angular.min.js.map
+django_session.find (0.00) {'_id': '8spuyey7cunnbxn4z3x3gsvgfgt2yiha', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 17, 29, 2, 63000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '8spuyey7cunnbxn4z3x3gsvgfgt2yiha', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 17, 29, 12, 331000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+auth_user.find (0.00) {'username': 'sys'}
+django_session.find (0.00) {'_id': '8spuyey7cunnbxn4z3x3gsvgfgt2yiha', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 17, 29, 12, 949000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '8spuyey7cunnbxn4z3x3gsvgfgt2yiha', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 17, 29, 22, 340000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+auth_user.find (0.00) {'username': 'sys'}
+django_session.find (0.00) {'_id': '8spuyey7cunnbxn4z3x3gsvgfgt2yiha', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 17, 29, 22, 922000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '8spuyey7cunnbxn4z3x3gsvgfgt2yiha', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 17, 29, 27, 822000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+auth_user.find (0.00) {'username': 'sys'}
+django_session.find (0.00) {'_id': '8spuyey7cunnbxn4z3x3gsvgfgt2yiha', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 17, 29, 28, 165000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '8spuyey7cunnbxn4z3x3gsvgfgt2yiha', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 17, 30, 55, 652000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+auth_user.find (0.00) {'username': 'sys'}
+django_session.find (0.00) {'_id': '8spuyey7cunnbxn4z3x3gsvgfgt2yiha', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 17, 30, 56, 152000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '8spuyey7cunnbxn4z3x3gsvgfgt2yiha', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 17, 31, 5, 117000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+auth_user.find (0.00) {'username': 'sys'}
+django_session.find (0.00) {'_id': '8spuyey7cunnbxn4z3x3gsvgfgt2yiha', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 17, 31, 5, 556000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '8spuyey7cunnbxn4z3x3gsvgfgt2yiha', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 17, 31, 6, 933000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+auth_user.find (0.00) {'username': 'sys'}
+django_session.find (0.00) {'_id': '8spuyey7cunnbxn4z3x3gsvgfgt2yiha', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 17, 31, 7, 193000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Not Found: /test0009/performance/
+Not Found: /performance/
+Not Found: /performance/
+Not Found: /performance/
+Not Found: /performance/
+Not Found: /performance/
+auth_user.find (0.00) {'username': 'sys'}
+django_session.find (0.00) {'_id': '8spuyey7cunnbxn4z3x3gsvgfgt2yiha', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 17, 33, 0, 323000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Not Found: /admin/
+Not Found: /admin/
+Not Found: /admin/
+Not Found: /admin/
+Not Found: /admin/
+django_session.find (0.00) {'_id': '8spuyey7cunnbxn4z3x3gsvgfgt2yiha', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 17, 39, 39, 849000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '8spuyey7cunnbxn4z3x3gsvgfgt2yiha', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 17, 39, 43, 554000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Internal Server Error: /admin/categories/users/
+Traceback (most recent call last):
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\packages\quicky\view.py", line 89, in exec_request
+    raise (ex)
+ImportError: Import by filename is not supported.
+django_session.find (0.00) {'_id': '8spuyey7cunnbxn4z3x3gsvgfgt2yiha', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 17, 39, 44, 953000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '8spuyey7cunnbxn4z3x3gsvgfgt2yiha', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 17, 39, 45, 124000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Internal Server Error: /admin/api
+Traceback (most recent call last):
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\views\decorators\http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\code\python\p2018\packages\quicky\view.py", line 89, in exec_request
+    raise (ex)
+Exception: It look like you forget post 'offset_minutes' from client.Remember that before ajax post please set 'offset_minutes' from browser.How to calculate 'offset_minutes'?:var now = new Date();var offset_minutes = now.getTimezoneOffset();
+django_session.find (0.00) {'_id': '8spuyey7cunnbxn4z3x3gsvgfgt2yiha', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 17, 39, 54, 900000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+auth_user.find (0.00) {'username': 'sys'}
+django_session.find (0.00) {'_id': '8spuyey7cunnbxn4z3x3gsvgfgt2yiha', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 17, 39, 55, 401000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '8spuyey7cunnbxn4z3x3gsvgfgt2yiha', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 17, 39, 58, 316000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '8spuyey7cunnbxn4z3x3gsvgfgt2yiha', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 17, 39, 58, 359000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Internal Server Error: /admin/api
+Traceback (most recent call last):
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\views\decorators\http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\code\python\p2018\packages\quicky\view.py", line 89, in exec_request
+    raise (ex)
+Exception: It look like you forget post 'offset_minutes' from client.Remember that before ajax post please set 'offset_minutes' from browser.How to calculate 'offset_minutes'?:var now = new Date();var offset_minutes = now.getTimezoneOffset();
+django_session.find (0.00) {'_id': '8spuyey7cunnbxn4z3x3gsvgfgt2yiha', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 17, 40, 1, 539000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '8spuyey7cunnbxn4z3x3gsvgfgt2yiha', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 17, 40, 2, 621000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+django_session.find (0.00) {'_id': '8spuyey7cunnbxn4z3x3gsvgfgt2yiha', 'expire_date': {'$gt': datetime.datetime(2018, 5, 18, 17, 40, 2, 682000, tzinfo=<UTC>)}}
+auth_user.find (0.00) {'_id': ObjectId('5ae5cb53cddcb0354c11cf6a')}
+Internal Server Error: /admin/api
+Traceback (most recent call last):
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\core\handlers\base.py", line 112, in get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\views\decorators\http.py", line 41, in inner
+    return func(request, *args, **kwargs)
+  File "E:\code\python\p2018\venv1\lib\site-packages\django\views\decorators\csrf.py", line 57, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "E:\code\python\p2018\packages\quicky\view.py", line 89, in exec_request
+    raise (ex)
+Exception: It look like you forget post 'offset_minutes' from client.Remember that before ajax post please set 'offset_minutes' from browser.How to calculate 'offset_minutes'?:var now = new Date();var offset_minutes = now.getTimezoneOffset();

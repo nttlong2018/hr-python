@@ -51,10 +51,15 @@ def apply(request,template_file,app):
         else:
             return (get_abs_url() + "/" + get_app_host() + (lambda: "" if path == "" else "/" + path)())
     def get_app_host():
-        if app.name == "default":
-            return ""
-        else:
+        from . import get_django_settings_module
+        is_multi_tenancy = get_django_settings_module().__dict__.get("USE_MULTI_TENANCY", False)
+        if not is_multi_tenancy:
             return app.host_dir
+        else:
+            if app.host_dir == "":
+                return threading.current_thread().tenancy_code
+            else:
+                return threading.current_thread().tenancy_code+"/"+app.host_dir
     def get_view_path():
         ret = request.get_full_path().split("?")[0]
         if app.name == "default":
@@ -84,9 +89,9 @@ def apply(request,template_file,app):
         return get_language_item(get_language(), "-", "-", key, key)
     def get_static(path):
         if app.host_dir=="":
-            return request.get_app_url(app.name+"/static") + "/" + path
+            return get_abs_url()+"/"+app.name+"/static" + "/" + path
         else:
-            return request.get_app_url("static")+"/"+path
+            return get_abs_url()+"/"+app.host_dir+"/"+"static/"+path
     def get_abs_url():
         __root_url__= None
 
