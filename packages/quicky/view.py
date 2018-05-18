@@ -1,17 +1,30 @@
 from . import extens
 from . import applications
+
 from . import authorize
 import threading
 import logging
 import os
+import sys
 logger=logging.getLogger(__name__)
 global lock
 lock=threading.Lock()
 _cache_view={}
+# def get_django_settings_module():
+#     "get all settings of current project"
+#     setting_name=os.environ.get("DJANGO_SETTINGS_MODULE",None)
+#     if setting_name==None:
+#         return None
+#     else:
+#         if not sys.modules.has_key(setting_name):
+#             return None
+#         else:
+#             return sys.modules[setting_name]
 def template_uri(fn):
+
     def layer(*args, **kwargs):
         def repl(f):
-            return fn(f,*args, **kwargs)
+            return fn(f, *args, **kwargs)
         return repl
     return layer
 @template_uri
@@ -23,10 +36,10 @@ def template(fn,*_path,**kwargs):
 
 
     app=applications.get_app_by_file(fn.func_code.co_filename)
+    from . import get_django_settings_module
+    is_multi_tenancy = get_django_settings_module().__dict__.get("USE_MULTI_TENANCY", False)
     def exec_request(request, **kwargs):
         try:
-
-
             from django.shortcuts import redirect
             is_allow = True
             is_public = False
@@ -74,5 +87,10 @@ def template(fn,*_path,**kwargs):
         except Exception as ex:
             logger.debug(ex)
             raise (ex)
-
-    return exec_request
+    def exec_request_for_multi(request,tenancy_code, **kwargs):
+        setattr(threading.current_thread(),"tenancy_code",tenancy_code)
+        return exec_request(request,**kwargs)
+    if is_multi_tenancy:
+        return exec_request_for_multi
+    else:
+        return exec_request

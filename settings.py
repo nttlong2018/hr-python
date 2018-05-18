@@ -118,14 +118,13 @@ USE_L10N = True
 
 USE_TZ = True
 
+USE_MULTI_TENANCY=True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
 STATIC_URL = '/static/'
-APPS=[dict(host="default",
-           name="argo",
-           path="apps/app_main"),
+APPS=[
       dict(host="admin",
            name="admin",
            path="apps/admin"),
@@ -136,7 +135,11 @@ APPS=[dict(host="default",
           host="performance",
           name="performance",
           path="apps/performance"
-      )]
+      ),
+      dict(host="default",
+           name="argo",
+           path="apps/app_main")
+]
 aut_config_local_=dict(
     provider="authorization.auth",
     name="hrm",
