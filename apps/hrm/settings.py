@@ -9,14 +9,14 @@ def authenticate(request):
         return True
     else:
         return False
-Database_=dict(
+Database=dict(
     host="localhost",
     port=27017,
     user="root",
     password="123456",
     name="hrm"
 )
-Database=dict(
+Database_=dict(
     host="172.16.7.63",
     port=27017,
     user="sys",

@@ -83,7 +83,7 @@ WSGI_APPLICATION = 'wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/1.8/ref/settings/#databases
-DATABASES = {
+DATABASES_ = {
    'default' : {
        'ENGINE': 'django_mongodb_engine',
        'NAME': 'lv01_lms',
@@ -93,7 +93,7 @@ DATABASES = {
        'PASSWORD': '123456'
    }
 }
-DATABASES_ = {
+DATABASES = {
    'default' : {
        'ENGINE': 'django_mongodb_engine',
        'NAME': 'hrm',
@@ -140,7 +140,7 @@ APPS=[
            name="argo",
            path="apps/app_main")
 ]
-aut_config_local_=dict(
+aut_config_local=dict(
     provider="authorization.auth",
     name="hrm",
     host="localhost",
@@ -148,7 +148,7 @@ aut_config_local_=dict(
     user="root",
     password="123456"
 )
-aut_config_local=dict(
+aut_config_local_=dict(
     provider="authorization.auth",
     name="lv01_lms",
     host="172.16.7.63",
@@ -158,7 +158,7 @@ aut_config_local=dict(
 )
 quicky.authorize.set_config(aut_config_local)
 
-language_congig_local=dict(
+language_congig_local_=dict(
     provider="language_mongo_engine",
     name="lv01_lms",
     host="172.16.7.63",
@@ -167,7 +167,7 @@ language_congig_local=dict(
     password="123456",
     collection="sys_languages"
 )
-language_congig_local_=dict(
+language_congig_local=dict(
     provider="language_mongo_engine",
     name="hrm",
     host="localhost",
@@ -217,7 +217,15 @@ static_configs_db=dict(
     name="lv01_lms",
     collection="sys_settings"
 )
-static_configs.set_config(static_configs_db)
+static_configs_db_local=dict(
+    host="localhost",
+    port=27017,
+    user="root",
+    password="123456",
+    name="hrm",
+    collection="sys_settings"
+)
+static_configs.set_config(static_configs_db_local)
 static_configs.set_data(
     Performance_Settings=dict(
         DateTimeFormat=dict(

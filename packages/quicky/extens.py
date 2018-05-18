@@ -83,7 +83,6 @@ def apply(request,template_file,app):
     def get_global_res(key):
         return get_language_item(get_language(), "-", "-", key, key)
     def get_static(path):
-        from . import get_django_settings_module
         if app.host_dir=="":
             return request.get_app_url(app.name+"/static") + "/" + path
         else:

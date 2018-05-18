@@ -34,15 +34,20 @@ def build_urls(module_name,*args,**kwargs):
             lst_urls=[]
             for app in args[0]:
                 ret = applications.load_app(app)
-                # url_items=importlib.import_module(ret.mdl.__name__ + ".urls").urlpatterns
+                url_items=importlib.import_module(ret.mdl.__name__ + ".urls").urlpatterns
+                dynamic_urls=[x for x in url_items if not x.default_args.has_key("document_root") ]
+                static_urls=[x for x in url_items if x.default_args.has_key("document_root") ]
+
                 # for url_item in url_items:
                 #     if ret.host_dir == "":
                 #         lst_urls.append(url_item)
                 if ret.host_dir == "":
-                    _apps_.urlpatterns.append(url(r"^(?i)(?P<tenancy_code>.*)/", include(ret.mdl.__name__ + ".urls")))
+                    _apps_.urlpatterns.append(url(r"^(?i)", include(static_urls)))
+                    _apps_.urlpatterns.append(url(r"^(?i)(?P<tenancy_code>.*)/", include(dynamic_urls)))
                 else:
+                    _apps_.urlpatterns.append(url(r"/^(?i)" + ret.host_dir + "/", include(static_urls)))
                     _apps_.urlpatterns.append(
-                        url(r"^(?i)(?P<tenancy_code>.*)/" + ret.host_dir + "/", include(ret.mdl.__name__ + ".urls")))
+                        url(r"^(?i)(?P<tenancy_code>.*)/" + ret.host_dir + "/", include(dynamic_urls)))
 
             x=_apps_.urlpatterns
 

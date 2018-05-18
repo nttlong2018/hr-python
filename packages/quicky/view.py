@@ -10,16 +10,6 @@ logger=logging.getLogger(__name__)
 global lock
 lock=threading.Lock()
 _cache_view={}
-# def get_django_settings_module():
-#     "get all settings of current project"
-#     setting_name=os.environ.get("DJANGO_SETTINGS_MODULE",None)
-#     if setting_name==None:
-#         return None
-#     else:
-#         if not sys.modules.has_key(setting_name):
-#             return None
-#         else:
-#             return sys.modules[setting_name]
 def template_uri(fn):
 
     def layer(*args, **kwargs):
