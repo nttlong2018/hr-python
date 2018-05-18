@@ -136,9 +136,9 @@ APPS=[
           name="performance",
           path="apps/performance"
       ),
-      dict(host="default",
-           name="argo",
-           path="apps/app_main")
+      # dict(host="default",
+      #      name="argo",
+      #      path="apps/app_main")
 ]
 aut_config_local=dict(
     provider="authorization.auth",
