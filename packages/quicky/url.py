@@ -33,6 +33,8 @@ def build_urls(module_name,*args,**kwargs):
                     raise (Exception("error in '{0}', detail\n {1}".format(ret.mdl.__name__ + ".urls",ex)))
         else:
             lst_urls=[]
+            default_app=None
+            default_urls=[]
             for app in args[0]:
                 ret = applications.load_app(app)
                 url_items=importlib.import_module(ret.mdl.__name__ + ".urls").urlpatterns
@@ -72,8 +74,9 @@ def build_urls(module_name,*args,**kwargs):
                     if hasattr(url_item,"default_args"):
                         if not url_item.default_args.has_key("document_root"):
                             if ret.host_dir == "":
+                                default_urls.append(url_item)
                                 url_regex=url_item.regex.pattern
-                                url_regex=url_regex.replace("^","^(?i)(?P<tenancy_code>.*)/")
+                                url_regex=url_regex.replace("^","^(?i)(?P<tenancy_code>\w{1,50})/")
                                 if url_item.callback!=None:
                                     map_url=url(
                                         url_regex,
@@ -89,7 +92,7 @@ def build_urls(module_name,*args,**kwargs):
                             else:
                                 url_regex = url_item.regex.pattern
                                 url_regex = url_regex.replace("^",
-                                                              "^(?i)(?P<tenancy_code>.*)/" + ret.host_dir + "/")
+                                                              "^(?i)(?P<tenancy_code>\w{1,50})/" + ret.host_dir + "/")
                                 print url_regex
                                 map_url = url(
                                     url_regex,
@@ -98,6 +101,31 @@ def build_urls(module_name,*args,**kwargs):
                                 _apps_.urlpatterns.append(map_url)
                     else:
                         f=url_item
+
+
+
+            for url_item in default_urls:
+                url_regex = url_item.regex.pattern
+
+                class obj_exec_request():
+                    url_item=None
+                    def __init__(self,url_item):
+                        self.url_item=url_item
+                    def exec_request(self,request, *args, **kwargs):
+                        return self.url_item.callback(
+                            request,
+                            get_django_settings_module().MULTI_TENANCY_DEFAULT_SCHEMA,
+                            *args,
+                            **kwargs)
+
+                fx=obj_exec_request(url_item)
+                map_url = url(
+                    url_regex,
+                    fx.exec_request
+                )
+                _apps_.urlpatterns.append(map_url)
+
+
 
 
     x=_apps_.urlpatterns

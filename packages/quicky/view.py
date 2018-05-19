@@ -10,6 +10,8 @@ logger=logging.getLogger(__name__)
 global lock
 lock=threading.Lock()
 _cache_view={}
+_db_multi_tenancy=None
+_cache_multi_tenancy={}
 def template_uri(fn):
 
     def layer(*args, **kwargs):
@@ -89,8 +91,53 @@ def template(fn,*_path,**kwargs):
             raise (ex)
     def exec_request_for_multi(request,tenancy_code, **kwargs):
         setattr(threading.current_thread(),"tenancy_code",tenancy_code)
+        setattr(threading.currentThread(), "tenancy_code", tenancy_code)
         return exec_request(request,**kwargs)
     if is_multi_tenancy:
         return exec_request_for_multi
     else:
         return exec_request
+def get_tenancy_schema(code):
+    from . import get_django_settings_module
+    import re
+    cmp=re.compile("[a-zA-Z_0-9-]+\z",re.IGNORECASE)
+    if get_django_settings_module().MULTI_TENANCY_DEFAULT_SCHEMA==code:
+        return code
+    global _db_multi_tenancy
+    global _cache_multi_tenancy
+    if _db_multi_tenancy==None:
+        import pymongo
+
+        config=get_django_settings_module().MULTI_TENANCY_CONFIGURATION
+        cnn=pymongo.MongoClient(
+            host=config["host"],
+            port=config["port"]
+        )
+        db=cnn.get_database(config["name"])
+        if config.get("user","")!="":
+            db.authenticate(config["user"],config["password"])
+        _db_multi_tenancy=db.get_collection(config["collection"])
+    if not _cache_multi_tenancy.has_key(code):
+        lock.acquire()
+        try:
+            item=_db_multi_tenancy.find_one(
+                {
+                    "Code":{
+                        "$regex":re.compile("^"+code+"$",)
+                    }
+                }
+            )
+            if item==None:
+                raise (Exception("'{0}' was not register"))
+            lock.release()
+            _cache_multi_tenancy.update({
+                code: item["schema"]
+            })
+            return _cache_multi_tenancy["code"]
+        except Exception as ex:
+            lock.release()
+            raise (ex)
+
+
+
+

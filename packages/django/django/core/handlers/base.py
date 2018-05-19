@@ -119,7 +119,7 @@ class BaseHandler(object):
                         if response:
                             break
                     if response is None:
-                        raise
+                        raise e
 
             # Complain if the view returned None (a common error).
             if response is None:

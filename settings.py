@@ -119,7 +119,15 @@ USE_L10N = True
 USE_TZ = True
 
 USE_MULTI_TENANCY=True
-
+MULTI_TENANCY_DEFAULT_SCHEMA="root"
+MULTI_TENANCY_CONFIGURATION=dict(
+    host="localhost",
+    port=27017,
+    user="root",
+    password="123456",
+    name="hrm",
+    collection="sys.multi_tenancy"
+)
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
@@ -136,9 +144,9 @@ APPS=[
           name="performance",
           path="apps/performance"
       ),
-      # dict(host="default",
-      #      name="argo",
-      #      path="apps/app_main")
+      dict(host="default",
+           name="argo",
+           path="apps/app_main")
 ]
 aut_config_local=dict(
     provider="authorization.auth",

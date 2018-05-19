@@ -530,9 +530,9 @@ class NonrelCompiler(SQLCompiler):
         else:
             if connections[self.using].force_debug_cursor or (connections[self.using].force_debug_cursor is None and settings.DEBUG):
                 self.connection.queries.append({'sql': repr(query)})
-        # fix muti tenancy
+        # fix multi tenancy
         import threading
-        if hasattr(threading.currentThread(),"tenancy_code"):
+        if hasattr(threading.currentThread(),"tenancy_code") and threading.currentThread().tenancy_code!="":
             query.collection.collection = query.collection.collection.database.get_collection(
                 threading.currentThread().tenancy_code+"."+query.collection.collection.name)
         return query

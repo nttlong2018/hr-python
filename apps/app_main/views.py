@@ -51,7 +51,7 @@ def login(request):
         try:
             ret=authenticate(username=request._get_post().get("username"), password=request._get_post().get("password"))
             form_login(request,ret)
-            return redirect("/")
+            return redirect(request.get_app_url(""))
         except membership.models.exception as ex:
             _login.is_error=True
             _login.error_message=request.get_global_res("Username or Password is incorrect")
@@ -62,8 +62,4 @@ def load_page(request,path):
         return request.render({})
     except:
         return HttpResponse("page was not found")
-@quicky.view.template("sign_out.html")
-def sign_out(request):
-    membership.sign_out(request.session.session_key)
-    request.session.clear()
-    return redirect("/")
+
