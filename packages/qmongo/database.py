@@ -411,8 +411,13 @@ class COLL():
     _entity=None
 
     def __init__(self,qr,name):
+        import threading
+        if hasattr(threading.currentThread(),"tenancy_code") and threading.currentThread().tenancy_code!="":
+            self.name=threading.currentThread().tenancy_code+"."+name
+        else:
+            self.name = name
         self.qr=qr
-        self.name=name
+
     def get_collection(self):
         return self.qr.db.get_collection(self.name).with_options(codec_options=self.qr._codec_options)
     def find_one(self,exprression,*args,**kwargs):
