@@ -76,8 +76,16 @@ class app_config():
         _path= (self.static).replace("/",os.path.sep)
         return os.getcwd()+os.path.sep+_path
     def get_login_url(self):
-        if hasattr(self.mdl.settings,"login_url"):
-            if self.host_dir=="":
-                return "/"+self.mdl.settings.login_url
-            else:
-                return "/"+self.host_dir+"/"+self.mdl.settings.login_url
+        import threading
+        if hasattr(threading.currentThread(),"tenancy_code"):
+            if hasattr(self.mdl.settings,"login_url"):
+                if self.host_dir=="":
+                    return "/"+threading.currentThread().tenancy_code+"/"+self.mdl.settings.login_url
+                else:
+                    return "/"+threading.currentThread().tenancy_code+"/"+self.host_dir+"/"+self.mdl.settings.login_url
+        else:
+            if hasattr(self.mdl.settings,"login_url"):
+                if self.host_dir=="":
+                    return "/"+self.mdl.settings.login_url
+                else:
+                    return "/"+self.host_dir+"/"+self.mdl.settings.login_url

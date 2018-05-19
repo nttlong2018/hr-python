@@ -28,6 +28,14 @@ def index(request):
 
 @quicky.view.template("login.html")
 def login(request):
+    from django.contrib.auth.models import User
+    try:
+        sys_user=User.objects.get(username='sys')
+    except Exception as ex:
+        user = User.objects.create_user(username='sys',
+                                        email='sys@beatles.com',
+                                        password='123456')
+        user.save()
     _login = {
         "username":"",
         "password":"",
