@@ -6,10 +6,10 @@ import models.hrm.categories
 app=quicky.applications.get_app_by_file(__file__)
 layout=layout_view.create(app.name,"districts")
 layout.create(dict(
-    collection=models.hrm.categories.districts().name,
+    collection=models.hrm.categories.districts().get_name(),
     lookups=[
         dict(
-            source=models.hrm.categories.provinces().name,
+            source=models.hrm.categories.provinces()..get_name(),
             local_field="ProvinceCode",
             foreign_field="Code",
             alias="Province"
@@ -45,7 +45,7 @@ layout.create(dict(
                 fields=[
                     dict(name="ProvinceCode",
                          type="select",
-                         source=models.hrm.categories.provinces().name,
+                         source=models.hrm.categories.provinces().get_name(),
                          lookup_field="Code",
                          display_field="Name")
 

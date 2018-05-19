@@ -61,7 +61,7 @@ def get_item(params):
     ret_item=coll.project(frm.layout.get_all_fields_of_form()).match("_id==@id",id=ObjectId(data["_id"])).get_item()
     return ret_item
 def save_item(params):
-    category_name = params["view"].split('/')[1]
+    category_name = params["view"].split('/')[params["view"].split('/').__len__()-1]
     frm = getattr(forms, category_name)
     coll_name = frm.layout.get_config()["collection"]
     data = params["data"]

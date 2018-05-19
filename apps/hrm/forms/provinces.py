@@ -8,7 +8,7 @@ app=quicky.applications.get_app_by_file(__file__)
 
 layout=layout_view.create(app.name,"provinces")
 layout.create(dict(
-    collection=models.hrm.categories.provinces().name,
+    collection=models.hrm.categories.provinces().get_name(),
     columns=layout_view.extend_columns(
         category.basic_columns,
         [dict(

@@ -11264,3 +11264,101 @@ sys.django_session.find (0.00) {'_id': 'cd9cl9ld0o77qc30ju5uvr7d5xmns2b1', 'expi
 sys.auth_user.find (0.00) {'_id': ObjectId('5b003006cddcb01f7c98ddec')}
 sys.django_session.find (0.00) {'_id': 'cd9cl9ld0o77qc30ju5uvr7d5xmns2b1', 'expire_date': {'$gt': datetime.datetime(2018, 5, 19, 15, 35, 27, 695000, tzinfo=<UTC>)}}
 sys.auth_user.find (0.00) {'_id': ObjectId('5b003006cddcb01f7c98ddec')}
+sys.django_session.find (0.00) {'_id': 'cd9cl9ld0o77qc30ju5uvr7d5xmns2b1', 'expire_date': {'$gt': datetime.datetime(2018, 5, 19, 15, 36, 21, 616000, tzinfo=<UTC>)}}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b003006cddcb01f7c98ddec')}
+sys.django_session.find (0.00) {'_id': 'cd9cl9ld0o77qc30ju5uvr7d5xmns2b1', 'expire_date': {'$gt': datetime.datetime(2018, 5, 19, 15, 36, 21, 670000, tzinfo=<UTC>)}}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b003006cddcb01f7c98ddec')}
+sys.django_session.find (0.00) {'_id': 'cd9cl9ld0o77qc30ju5uvr7d5xmns2b1', 'expire_date': {'$gt': datetime.datetime(2018, 5, 19, 15, 36, 27, 444000, tzinfo=<UTC>)}}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b003006cddcb01f7c98ddec')}
+sys.django_session.find (0.00) {'_id': 'cd9cl9ld0o77qc30ju5uvr7d5xmns2b1', 'expire_date': {'$gt': datetime.datetime(2018, 5, 19, 15, 36, 41, 845000, tzinfo=<UTC>)}}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b003006cddcb01f7c98ddec')}
+Internal Server Error: /sys/hrm/api
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 122, in get_response
+    raise e
+Exception: Call  'save_item' in 'hrm.api.categories' encountered ''module' object has no attribute 'categories''
+sys.django_session.find (0.00) {'_id': 'cd9cl9ld0o77qc30ju5uvr7d5xmns2b1', 'expire_date': {'$gt': datetime.datetime(2018, 5, 19, 15, 37, 23, 178000, tzinfo=<UTC>)}}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b003006cddcb01f7c98ddec')}
+Internal Server Error: /sys/hrm/api
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 122, in get_response
+    raise e
+Exception: Call  'save_item' in 'hrm.api.categories' encountered ''module' object has no attribute 'categories''
+sys.django_session.find (0.00) {'_id': 'cd9cl9ld0o77qc30ju5uvr7d5xmns2b1', 'expire_date': {'$gt': datetime.datetime(2018, 5, 19, 15, 37, 46, 208000, tzinfo=<UTC>)}}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b003006cddcb01f7c98ddec')}
+Internal Server Error: /sys/hrm/api
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 122, in get_response
+    raise e
+Exception: Call  'save_item' in 'hrm.api.categories' encountered ''module' object has no attribute 'categories''
+sys.django_session.find (0.00) {'_id': 'cd9cl9ld0o77qc30ju5uvr7d5xmns2b1', 'expire_date': {'$gt': datetime.datetime(2018, 5, 19, 15, 38, 10, 68000, tzinfo=<UTC>)}}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b003006cddcb01f7c98ddec')}
+Internal Server Error: /sys/hrm/api
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 122, in get_response
+    raise e
+Exception: Call  'save_item' in 'hrm.api.categories' encountered ''module' object has no attribute 'categories''
+sys.django_session.find (0.00) {'_id': 'cd9cl9ld0o77qc30ju5uvr7d5xmns2b1', 'expire_date': {'$gt': datetime.datetime(2018, 5, 19, 15, 39, 35, 102000, tzinfo=<UTC>)}}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b003006cddcb01f7c98ddec')}
+Internal Server Error: /sys/hrm/api
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 122, in get_response
+    raise e
+Exception: Call  'save_item' in 'hrm.api.categories' encountered ''module' object has no attribute 'categories''
+sys.django_session.find (0.00) {'_id': 'cd9cl9ld0o77qc30ju5uvr7d5xmns2b1', 'expire_date': {'$gt': datetime.datetime(2018, 5, 19, 15, 42, 6, 484000, tzinfo=<UTC>)}}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b003006cddcb01f7c98ddec')}
+Internal Server Error: /sys/hrm/api
+Traceback (most recent call last):
+  File "E:\code\python\p2018\packages/django\django\core\handlers\base.py", line 122, in get_response
+    raise e
+Exception: 'a8ec1a9e-2421-4a81-9973-50eed597e629' was not found
+sys.django_session.find (0.00) {'_id': 'cd9cl9ld0o77qc30ju5uvr7d5xmns2b1', 'expire_date': {'$gt': datetime.datetime(2018, 5, 19, 15, 42, 9, 787000, tzinfo=<UTC>)}}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b003006cddcb01f7c98ddec')}
+sys.django_session.find (0.00) {'_id': 'cd9cl9ld0o77qc30ju5uvr7d5xmns2b1', 'expire_date': {'$gt': datetime.datetime(2018, 5, 19, 15, 42, 10, 629000, tzinfo=<UTC>)}}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b003006cddcb01f7c98ddec')}
+sys.django_session.find (0.00) {'_id': 'cd9cl9ld0o77qc30ju5uvr7d5xmns2b1', 'expire_date': {'$gt': datetime.datetime(2018, 5, 19, 15, 42, 10, 732000, tzinfo=<UTC>)}}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b003006cddcb01f7c98ddec')}
+sys.django_session.find (0.00) {'_id': 'cd9cl9ld0o77qc30ju5uvr7d5xmns2b1', 'expire_date': {'$gt': datetime.datetime(2018, 5, 19, 15, 42, 12, 463000, tzinfo=<UTC>)}}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b003006cddcb01f7c98ddec')}
+sys.django_session.find (0.00) {'_id': 'cd9cl9ld0o77qc30ju5uvr7d5xmns2b1', 'expire_date': {'$gt': datetime.datetime(2018, 5, 19, 15, 42, 25, 293000, tzinfo=<UTC>)}}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b003006cddcb01f7c98ddec')}
+sys.django_session.find (0.00) {'_id': 'cd9cl9ld0o77qc30ju5uvr7d5xmns2b1', 'expire_date': {'$gt': datetime.datetime(2018, 5, 19, 15, 42, 37, 791000, tzinfo=<UTC>)}}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b003006cddcb01f7c98ddec')}
+sys.django_session.find (0.00) {'_id': 'cd9cl9ld0o77qc30ju5uvr7d5xmns2b1', 'expire_date': {'$gt': datetime.datetime(2018, 5, 19, 15, 42, 38, 217000, tzinfo=<UTC>)}}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b003006cddcb01f7c98ddec')}
+sys.django_session.find (0.00) {'_id': 'cd9cl9ld0o77qc30ju5uvr7d5xmns2b1', 'expire_date': {'$gt': datetime.datetime(2018, 5, 19, 15, 42, 38, 281000, tzinfo=<UTC>)}}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b003006cddcb01f7c98ddec')}
+sys.django_session.find (0.00) {'_id': 'cd9cl9ld0o77qc30ju5uvr7d5xmns2b1', 'expire_date': {'$gt': datetime.datetime(2018, 5, 19, 15, 43, 18, 148000, tzinfo=<UTC>)}}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b003006cddcb01f7c98ddec')}
+sys.django_session.find (0.00) {'_id': 'cd9cl9ld0o77qc30ju5uvr7d5xmns2b1', 'expire_date': {'$gt': datetime.datetime(2018, 5, 19, 15, 43, 18, 561000, tzinfo=<UTC>)}}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b003006cddcb01f7c98ddec')}
+sys.django_session.find (0.00) {'_id': 'cd9cl9ld0o77qc30ju5uvr7d5xmns2b1', 'expire_date': {'$gt': datetime.datetime(2018, 5, 19, 15, 43, 18, 620000, tzinfo=<UTC>)}}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b003006cddcb01f7c98ddec')}
+sys.django_session.find (0.00) {'_id': 'cd9cl9ld0o77qc30ju5uvr7d5xmns2b1', 'expire_date': {'$gt': datetime.datetime(2018, 5, 19, 15, 44, 28, 524000, tzinfo=<UTC>)}}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b003006cddcb01f7c98ddec')}
+sys.django_session.find (0.00) {'_id': 'cd9cl9ld0o77qc30ju5uvr7d5xmns2b1', 'expire_date': {'$gt': datetime.datetime(2018, 5, 19, 15, 45, 54, 438000, tzinfo=<UTC>)}}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b003006cddcb01f7c98ddec')}
+sys.django_session.find (0.00) {'_id': 'cd9cl9ld0o77qc30ju5uvr7d5xmns2b1', 'expire_date': {'$gt': datetime.datetime(2018, 5, 19, 15, 45, 54, 808000, tzinfo=<UTC>)}}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b003006cddcb01f7c98ddec')}
+sys.django_session.find (0.00) {'_id': 'cd9cl9ld0o77qc30ju5uvr7d5xmns2b1', 'expire_date': {'$gt': datetime.datetime(2018, 5, 19, 15, 45, 54, 872000, tzinfo=<UTC>)}}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b003006cddcb01f7c98ddec')}
+sys.django_session.find (0.00) {'_id': 'cd9cl9ld0o77qc30ju5uvr7d5xmns2b1', 'expire_date': {'$gt': datetime.datetime(2018, 5, 19, 15, 47, 56, 254000, tzinfo=<UTC>)}}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b003006cddcb01f7c98ddec')}
+sys.django_session.find (0.00) {'_id': 'cd9cl9ld0o77qc30ju5uvr7d5xmns2b1', 'expire_date': {'$gt': datetime.datetime(2018, 5, 19, 15, 47, 56, 912000, tzinfo=<UTC>)}}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b003006cddcb01f7c98ddec')}
+sys.django_session.find (0.00) {'_id': 'cd9cl9ld0o77qc30ju5uvr7d5xmns2b1', 'expire_date': {'$gt': datetime.datetime(2018, 5, 19, 15, 49, 47, 894000, tzinfo=<UTC>)}}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b003006cddcb01f7c98ddec')}
+sys.django_session.find (0.00) {'_id': 'cd9cl9ld0o77qc30ju5uvr7d5xmns2b1', 'expire_date': {'$gt': datetime.datetime(2018, 5, 19, 15, 49, 48, 569000, tzinfo=<UTC>)}}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b003006cddcb01f7c98ddec')}
+sys.django_session.find (0.00) {'_id': 'cd9cl9ld0o77qc30ju5uvr7d5xmns2b1', 'expire_date': {'$gt': datetime.datetime(2018, 5, 19, 15, 50, 1, 933000, tzinfo=<UTC>)}}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b003006cddcb01f7c98ddec')}
+sys.django_session.find (0.00) {'_id': 'cd9cl9ld0o77qc30ju5uvr7d5xmns2b1', 'expire_date': {'$gt': datetime.datetime(2018, 5, 19, 15, 50, 5, 834000, tzinfo=<UTC>)}}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b003006cddcb01f7c98ddec')}
+sys.django_session.find (0.00) {'_id': 'cd9cl9ld0o77qc30ju5uvr7d5xmns2b1', 'expire_date': {'$gt': datetime.datetime(2018, 5, 19, 15, 50, 20, 978000, tzinfo=<UTC>)}}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b003006cddcb01f7c98ddec')}
+sys.django_session.find (0.00) {'_id': 'cd9cl9ld0o77qc30ju5uvr7d5xmns2b1', 'expire_date': {'$gt': datetime.datetime(2018, 5, 19, 15, 50, 52, 877000, tzinfo=<UTC>)}}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b003006cddcb01f7c98ddec')}
+sys.django_session.find (0.00) {'_id': 'cd9cl9ld0o77qc30ju5uvr7d5xmns2b1', 'expire_date': {'$gt': datetime.datetime(2018, 5, 19, 15, 50, 53, 91000, tzinfo=<UTC>)}}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b003006cddcb01f7c98ddec')}
+sys.django_session.find (0.00) {'_id': 'cd9cl9ld0o77qc30ju5uvr7d5xmns2b1', 'expire_date': {'$gt': datetime.datetime(2018, 5, 19, 15, 50, 53, 147000, tzinfo=<UTC>)}}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b003006cddcb01f7c98ddec')}

@@ -409,15 +409,18 @@ class COLL():
     qr=None
     _where=None
     _entity=None
+    _none_schema_name=None
 
     def __init__(self,qr,name):
+        self._none_schema_name=name
         import threading
         if hasattr(threading.currentThread(),"tenancy_code") and threading.currentThread().tenancy_code!="":
             self.name=threading.currentThread().tenancy_code+"."+name
         else:
             self.name = name
         self.qr=qr
-
+    def get_name(self):
+        return self._none_schema_name
     def get_collection(self):
         return self.qr.db.get_collection(self.name).with_options(codec_options=self.qr._codec_options)
     def find_one(self,exprression,*args,**kwargs):
