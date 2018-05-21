@@ -47,7 +47,12 @@ def make_index_list(indexes):
 class CollectionDebugWrapper(object):
 
     def __init__(self, collection, db_alias):
-        self.collection = collection
+        import threading
+        current_thead=threading.currentThread()
+        if hasattr(current_thead,"tenancy_code") and current_thead.tenancy_code!="":
+            self.collection=collection.database.get_collection(current_thead.tenancy_code+"."+collection.name)
+        else:
+            self.collection = collection
         self.alias = db_alias
 
     def __getattr__(self, attr):

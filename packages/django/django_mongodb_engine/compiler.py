@@ -388,6 +388,8 @@ class SQLInsertCompiler(NonrelInsertCompiler, SQLCompiler):
         options = self.connection.operation_flags.get('save', {})
 
         if return_id:
+
+
             return collection.save(doc, **options)
         else:
             collection.save(doc, **options)
