@@ -49,7 +49,12 @@ def unwind_data(data,prefix=None):
                     }
                 )
     return ret
-def define_model(name,keys=None,*args,**kwargs):
+def define_model(_name,keys=None,*args,**kwargs):
+    import threading
+    name=_name
+    if hasattr(threading.currentThread(),"tenancy_code") and threading.currentThread().tenancy_code!="":
+        name=threading.currentThread().tenancy_code+"."+name
+        
     params=kwargs
     if type(args) is tuple and args.__len__()>0:
         params=args[0]
