@@ -40,9 +40,18 @@ def get_app_by_file(file_name):
     __cache_find_path.update({file_name:matched_app})
     return __cache_find_path[file_name]
 def get_app_by_name(app_name):
+    """
+    Get application by name, if 'app_name' is null or empty return default app
+    .Default app is the app with host_dir is null or empty
+    """
+
     for key in _cache_apps.keys():
-        if _cache_apps[key].name.lower()==app_name.lower():
-            return _cache_apps[key]
+        if app_name == None or app_name == "":
+            if _cache_apps[key].host_dir=="":
+                return _cache_apps[key]
+        else:
+            if _cache_apps[key].name.lower()==app_name.lower():
+                return _cache_apps[key]
 def get_settings():
     global _settings
     if _settings==None:
