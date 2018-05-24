@@ -57,9 +57,9 @@ def apply(request,template_file,app):
             return app.host_dir
         else:
             if app.host_dir == "":
-                return threading.current_thread().tenancy_code
+                return threading.current_thread().request_tenancy_code
             else:
-                return threading.current_thread().tenancy_code+"/"+app.host_dir
+                return threading.current_thread().request_tenancy_code+"/"+app.host_dir
     def get_view_path():
         ret = request.get_full_path().split("?")[0]
         if app.name == "default":

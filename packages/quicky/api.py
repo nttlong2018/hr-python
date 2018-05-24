@@ -26,10 +26,10 @@ _cache_id_revert={}
 def call(request):
     try:
         user = request.user
-        if user.is_anonymous():
-            return HttpResponse('401 Unauthorized', status=401)
-        if not user.is_staff and not user.is_superuser:
-            return HttpResponse('401 Unauthorized', status=401)
+        #if user.is_anonymous():
+        #    return HttpResponse('401 Unauthorized', status=401)
+        #if not user.is_staff and not user.is_superuser:
+        #    return HttpResponse('401 Unauthorized', status=401)
         post_data = JSON.from_json(request.body)
         if not post_data.has_key("path"):
             raise Exception("Api post without using path")

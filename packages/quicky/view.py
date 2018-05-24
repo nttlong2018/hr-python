@@ -33,11 +33,15 @@ def template(fn,*_path,**kwargs):
 
         try:
             from django.shortcuts import redirect
+            import threading
+            
             is_allow = True
             is_public = False
             authenticate = None
             if app==None and request.path[request.path.__len__() - 4:request.path.__len__()]=="/api":
                 app_name=request.path.split('/')[request.path.split('/').__len__()-2]
+                if app_name==threading.currentThread().tenancy_code:
+                    app_name=""
                 from . import applications
                 app=applications.get_app_by_name(app_name)
 
@@ -92,8 +96,12 @@ def template(fn,*_path,**kwargs):
         if code==None:
             from django.http import HttpResponse, HttpResponseNotFound
             return HttpResponseNotFound("Page not found")
-        setattr(threading.current_thread(),"tenancy_code",tenancy_code)
-        setattr(threading.currentThread(), "tenancy_code", tenancy_code)
+        setattr(threading.current_thread(),"tenancy_code",code)
+        setattr(threading.currentThread(), "tenancy_code", code)
+        setattr(threading.current_thread(),"request_tenancy_code",tenancy_code)
+        setattr(threading.currentThread(), "request_tenancy_code", tenancy_code)
+
+
         return exec_request(request,**kwargs)
     if is_multi_tenancy:
         return exec_request_for_multi

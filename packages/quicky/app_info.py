@@ -80,9 +80,9 @@ class app_config():
         if hasattr(threading.currentThread(),"tenancy_code"):
             if hasattr(self.mdl.settings,"login_url"):
                 if self.host_dir=="":
-                    return "/"+threading.currentThread().tenancy_code+"/"+self.mdl.settings.login_url
+                    return "/"+threading.currentThread().request_tenancy_code+"/"+self.mdl.settings.login_url
                 else:
-                    return "/"+threading.currentThread().tenancy_code+"/"+self.host_dir+"/"+self.mdl.settings.login_url
+                    return "/"+threading.currentThread().request_tenancy_code+"/"+self.host_dir+"/"+self.mdl.settings.login_url
         else:
             if hasattr(self.mdl.settings,"login_url"):
                 if self.host_dir=="":
