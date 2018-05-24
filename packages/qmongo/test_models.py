@@ -24,18 +24,22 @@ import database
 #
 # })
 # print(ret)
-# helpers.define_model(
-#     "test",
-#     ["Code","WorkingInfo.DepartmentCode"],
-#     {
-#         "Code":helpers.create_field("text",True),
-#         "Name":helpers.create_field("text",True),
-#         "WorkingInfo":{
-#             "DepartmentCode":helpers.create_field("text",True),
-#             "JoinDate":helpers.create_field("date",True)
-#         }
-#     }
-# )
+m=helpers.define_model(
+    "test",
+    ["Code","WorkingInfo.DepartmentCode"],
+    {
+        "Code":helpers.create_field("text",True),
+        "Name":helpers.create_field("text",True),
+        "WorkingInfo":{
+            "DepartmentCode":helpers.create_field("text",True),
+            "JoinDate":helpers.create_field("date",True)
+        },
+        "History":"list",
+        "History.CreatedOn":"date",
+        "History.CreatedBy":"text",
+    }
+)
+print  m
 # helpers.define_model(
 #     "Employees",
 #     ["Code"],
@@ -67,21 +71,21 @@ import database
 # ret2=validators.validate_type_of_data("test",{
 #     "Code":False
 # })
-db=database.connect(
-    host="172.16.7.63",
-    port=27017,
-    user="sys",
-    password="123456",
-    name="lv01_lms"
-)
+# db=database.connect(
+#     host="172.16.7.63",
+#     port=27017,
+#     user="sys",
+#     password="123456",
+#     name="lv01_lms"
+# )
 
-ret=db.collection("Employees").insert(
-    {
-        "Code":datetime.datetime.now(),
-        "Name":False,
-        "WorkingInfo.JoinDate":datetime.datetime.now(),
-        "WorkingInfo.DepartmentCode":"BP001"
-    }
-)
-print(ret)
+# ret=db.collection("Employees").insert(
+#     {
+#         "Code":datetime.datetime.now(),
+#         "Name":False,
+#         "WorkingInfo.JoinDate":datetime.datetime.now(),
+#         "WorkingInfo.DepartmentCode":"BP001"
+#     }
+# )
+# print(ret)
 # print(ret2)
