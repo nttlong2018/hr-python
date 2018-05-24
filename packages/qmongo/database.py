@@ -1,7 +1,7 @@
 from sqlalchemy.sql.functions import count
 
 from helpers import expr,validators
-
+from helpers import get_model
 from pymongo import MongoClient
 from pymongo.errors import OperationFailure
 import logging
@@ -418,6 +418,7 @@ class COLL():
             self.name=threading.currentThread().tenancy_code+"."+name
         else:
             self.name = name
+        qr._model=get_model(name)
         self.qr=qr
     def get_name(self):
         return self._none_schema_name
@@ -549,11 +550,15 @@ class AGGREGATE():
     name = ""
     qr = None
     _pipe=[]
-
+    _selected_fields=None
     def __init__(self, qr, name):
         self.qr = qr
         self.name = name
         self._pipe=[]
+    def get_selected_fields(self):
+        if self._selected_fields==None:
+            self._selected_fields=self.qr._model.get_fields()
+        return self._selected_fields
     def project(self,*args,**kwargs):
         """
         Create project pipeline
@@ -591,14 +596,28 @@ class AGGREGATE():
             elif type(args) is tuple and args.__len__()==1 and type(args[0]) is dict:
                 params=kwargs
                 kwargs=args[0]
-            # for x in args:
-            #     _project.update({
-            #         x:1
-            #     })
+        _next_step_fields=[]
         for key in kwargs.keys():
-            _project.update({
-                key: expr.get_calc_expr(kwargs[key],params)
-            })
+            if kwargs[key]==1:
+                _project.update({
+                    key: 1
+                })
+                _next_step_fields.append(key)
+            else:
+                unknown_fields = self.qr._model.validate_expression(kwargs[key],self.get_selected_fields())
+                if unknown_fields.__len__()>0:
+                    err_msg=""
+                    for x in unknown_fields:
+                        err_msg+=x+"\n"
+                    err_msg_fields=""
+                    for x in self.qr._model.get_fields():
+                        err_msg_fields+=x+"\n"
+                    raise (Exception("What is bellow list of fields?:\n"+err_msg+" \n Your selected fields now is bellow list: \n"+err_msg_fields))
+                _project.update({
+                    key: expr.get_calc_expr(kwargs[key],params)
+                })
+                _next_step_fields.append(key)
+            self._selected_fields=_next_step_fields
         self._pipe.append({
             "$project":_project
         })
@@ -638,6 +657,11 @@ class AGGREGATE():
         })
         return self
     def unwind(self,field_name):
+        if self.get_selected_fields().count(field_name)==0:
+            msg_detail=""
+            for x in self.get_selected_fields():
+                msg_detail+=x+"\n"
+            raise (Exception("What is '{0}'? \n Your selected fields now are: \n {1}".format(field_name,msg_detail)))
         if field_name[0:1]!="$":
             field_name="$"+field_name
         self._pipe.append({
@@ -650,6 +674,16 @@ class AGGREGATE():
         """Beware! You could not use any Aggregation Pipeline Operators, just use this function with Field Logic comparasion such as:
         and,or, contains,==,!=,>,<,..
         """
+        unknown_fields=self.qr._model.validate_expression(expression,self.get_selected_fields(), *args,**kwargs)
+        if unknown_fields.__len__() > 0:
+            err_msg = ""
+            for x in unknown_fields:
+                err_msg += x + "\n"
+            err_msg_fields = ""
+            for x in self.get_selected_fields():
+                err_msg_fields += x + "\n"
+            raise (Exception(
+                "What is bellow list of fields?:\n" + err_msg + " \n Your selected fields now is bellow list: \n" + err_msg_fields))
         if args==():
             args=kwargs
 
@@ -671,6 +705,13 @@ class AGGREGATE():
                foreign_field=None,
                alias=None,
                *args,**kwargs):
+        if self.get_selected_fields().count(local_field)==0:
+            msm_details=""
+            for x in self.get_selected_fields():
+                msm_details+=x+"\n"
+            raise (Exception("What is '{0}'?, Your selected fields are:\n {1}".format(local_field,msm_details)))
+
+
         if args==() and kwargs=={}:
             _source=source
             if source.__class__ is COLL:
@@ -689,6 +730,17 @@ class AGGREGATE():
                 raise Exception("'foreign_field' was not found")
             if not kwargs.has_key("alias"):
                 raise Exception("'alias' was not found")
+        source_model = get_model(source)
+
+        self._selected_fields = self.get_selected_fields()
+        self._selected_fields.append(alias)
+        if source_model.get_fields().count(foreign_field)==0:
+            msm_details=""
+            for x in source_model.get_fields():
+                msm_details+=x+"\n"
+            raise (Exception("What is '{0}'?\n '{0}'  is not in '{1}'.\n All fields of '{1}' are bellow:\n {2}".format(foreign_field,source,msm_details)))
+        for x in source_model.get_fields():
+            self._selected_fields.append(alias+"."+x)
         self._pipe.append({
             "$lookup":{
                 "from":kwargs["source"],
@@ -699,9 +751,24 @@ class AGGREGATE():
         })
         return self
     def sort(self,*args,**kwargs):
+        if args==() and kwargs=={}:
+            raise (Exception("It look like you forgot set sort fields\nHow to sort?\n"
+                             ".sort(\n"
+                             "\tfield name=1 or -1\n,"
+                             "\t..\n"
+                             "\tfield name n=1 or -1"))
         _sort={
 
         }
+        for key in kwargs.keys():
+            if self.get_selected_fields().count(key)==0:
+                msg_detail=""
+                for x in self.get_selected_fields():
+                    msg_detail+=x+"\n"
+                raise (Exception("\n"
+                                 "What is '{0}'?\n"
+                                 "Your selected fields are:\n"
+                                 "{1}".format(key,msg_detail)))
         self._pipe.append({
             "$sort":kwargs
         })
@@ -723,8 +790,19 @@ class AGGREGATE():
         # except Exception as ex:
         #     return list(self.qr.db.get_collection(self.name).aggregate(self._pipe))
         coll=self.qr.db.get_collection(self.name).with_options(codec_options=self.qr._codec_options)
-        ret=list(coll.aggregate(self._pipe))
+        coll_ret=coll.aggregate(self._pipe)
+        ret=[]
+        for doc in coll_ret:
+            for key in self.get_selected_fields():
+                if not doc.has_key(key):
+                    doc.update({
+                        key:None
+                    })
+            ret.append(doc)
+
+        # ret=list(coll.aggregate(self._pipe))
         self._pipe=[]
+        self._selected_fields=[]
         return ret
     def get_page(self,page_index,page_size):
         _tmp_pipe=copy.copy(self._pipe)
