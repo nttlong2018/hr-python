@@ -1,0 +1,12 @@
+﻿<div id="function1" class="tab-pane fade in active">           
+    <table-data data-source="tableSource" fields="tableFields" type="MultiSelect" 
+                paging="true" page-length="20" server-side="false" 
+                press-enter="onSelectTableRow" selected-items="selectedItems" 
+                current-item="currentItem" search-text="tableSearchText">
+    </table-data>
+    <button class="btn btn-success" ng-click="getTableData()">Get Data</button>
+    <div class="clearfix"></div>
+</div>
+<script>
+    <%include file="scripts/domain.js"/>
+</script>
