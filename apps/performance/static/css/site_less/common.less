@@ -432,7 +432,7 @@ body {
 
 .table > tbody > tr > td {
     padding:unset;
-    line-height:30px;
+    line-height:25px;
 }
 
 .table > tbody > tr > td label{
@@ -441,7 +441,7 @@ body {
 
 .table > thead > tr > th {
     padding: unset;
-    line-height: 30px;
+    line-height: 25px;
     font-size: .875rem;
     font-weight: 700;
     color: #000;
@@ -449,4 +449,37 @@ body {
 
 .table > thead > tr > th label {
     margin: unset;
+}
+
+@media screen and (min-width:601px){
+    #hcs-top-bar-current-module {
+        margin-left: 10px;
+        margin-top: 14px;
+        color: white;
+        border-left: 1px solid white;
+        line-height: 15px;
+        font-size: 17px;
+        padding-left: 8px;
+    }
+}
+
+@media screen and (max-width:600px){
+    #hcs-top-bar-current-module {
+        display: none;
+    }
+}
+
+#hcs-toolbar {
+    position: fixed;
+    right: 0;
+    top: 66px;
+    z-index: 999;
+
+    div {
+        margin-left: 10px;
+    }
+
+    i {
+        color: black;
+    }
 }

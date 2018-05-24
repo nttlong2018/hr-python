@@ -4,13 +4,14 @@
     angular
         .module('hcs-template')
         .factory("templateService", layoutService);
-
+    var fac = {}
     function layoutService() {
 
-        var fac = {}
+        fac.__templatePath = '../performance/static/app/directives/';
         fac.onClickFunctionLeftMenu = onClickFunctionLeftMenu;
         fac.onClickBreadCumbDropdownMenu = onClickBreadCumbDropdownMenu;
         fac.onClickHideLeftMenufunction = onClickHideLeftMenufunction;
+        fac.getTemplatePath = getTemplatePath;
 
         /**
         * Handle when click function button on left side screen
@@ -25,11 +26,11 @@
             $('#hcs-admin-system-panel-content div.active').removeClass('active');
 
             /* Active present tab function*/
-            $('#' + f.function).addClass('in');
-            $('#' + f.function).addClass('active');
+            $('#' + f.function_id).addClass('in');
+            $('#' + f.function_id).addClass('active');
 
             /*Active present function on left menu*/
-            $('#admin-system-' + f.function).addClass('hcs-admin-system-selected');
+            $('#admin-system-' + f.function_id).addClass('hcs-admin-system-selected');
         }
 
         function onClickBreadCumbDropdownMenu() {
@@ -59,6 +60,10 @@
 
         }
 
+        function getTemplatePath(filePath) {
+            /*Example: '../performance/static/app/directives/breadcumb/breadcumb.html'*/
+            return fac.__templatePath + filePath + '/' + filePath + '.html';
+        }
         return fac;
     }
 })();

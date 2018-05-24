@@ -36,28 +36,28 @@ import database
 #         }
 #     }
 # )
-helpers.define_model(
-    "Employees",
-    ["Code"],
-    Code=helpers.create_field("text",True),
-    Name=helpers.create_field("text",True),
-    WorkingInfo=dict(
-        DepartmentCode=helpers.create_field("text",True),
-        JoinDate=helpers.create_field("date",True)
-    )
-)
-import helpers
-helpers.define_model(
-    "Employees",
-    ["Code"],
-    {
-        "Code":helpers.create_field("text",True),
-        "Name":helpers.create_field("text",True),
-        "WorkingInfo.DepartmentCode":helpers.create_field("text",True),
-        "WorkingInfo.JoinDate":helpers.create_field("date",True)
-    }
-)
-import datetime
+# helpers.define_model(
+#     "Employees",
+#     ["Code"],
+#     Code=helpers.create_field("text",True),
+#     Name=helpers.create_field("text",True),
+#     WorkingInfo=dict(
+#         DepartmentCode=helpers.create_field("text",True),
+#         JoinDate=helpers.create_field("date",True)
+#     )
+# )
+# import helpers
+# helpers.define_model(
+#     "Employees",
+#     ["Code"],
+#     {
+#         "Code":helpers.create_field("text",True),
+#         "Name":helpers.create_field("text",True),
+#         "WorkingInfo.DepartmentCode":helpers.create_field("text",True),
+#         "WorkingInfo.JoinDate":helpers.create_field("date",True)
+#     }
+# )
+# import datetime
 # ret=validators.validate_require_data("test",{
 #         "Code":"NV001",
 #         "Name":"Test",

@@ -39,7 +39,7 @@
                 listFunction: '=data',
                 currentFunction: '=function'
             },
-            templateUrl:'static/app/directives/breadcumb/breadcumb.html',
+            templateUrl: templateService.getTemplatePath('breadcumb'),
             restrict: 'EA'
         };
         return directive;

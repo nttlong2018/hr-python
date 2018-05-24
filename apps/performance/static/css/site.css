@@ -366,20 +366,36 @@ body {
 }
 .table > tbody > tr > td {
   padding: unset;
-  line-height: 30px;
+  line-height: 25px;
 }
 .table > tbody > tr > td label {
   margin: unset;
 }
 .table > thead > tr > th {
   padding: unset;
-  line-height: 30px;
+  line-height: 25px;
   font-size: .875rem;
   font-weight: 700;
   color: #000;
 }
 .table > thead > tr > th label {
   margin: unset;
+}
+@media screen and (min-width: 601px) {
+  #hcs-top-bar-current-module {
+    margin-left: 10px;
+    margin-top: 14px;
+    color: white;
+    border-left: 1px solid white;
+    line-height: 15px;
+    font-size: 17px;
+    padding-left: 8px;
+  }
+}
+@media screen and (max-width: 600px) {
+  #hcs-top-bar-current-module {
+    display: none;
+  }
 }
 .hcs-body-item {
   margin-bottom: 3rem;
@@ -573,7 +589,7 @@ body {
     margin: 2px;
     border-radius: 5px;
     -webkit-border-radius: 5px;
-    border-left: 10px solid #d0d5d8;
+    border-left: 5px solid #d0d5d8;
     color: #fff;
     background: rgba(91, 189, 114, 0.95);
   }
@@ -988,7 +1004,7 @@ body {
 }*/
 .hcs-profile-group-title {
   color: black;
-  font-size: .875rem;
+  font-size: .875rem !important;
   line-height: 1rem;
   font-weight: 700;
 }
@@ -1000,12 +1016,11 @@ body {
   text-decoration: none;
   color: black;
 }
-.hcs-profile-group-title span i {
-  font-size: .7rem;
-  color: #27529F !important;
-}
 .hcs-profile-icon-heading-on-table {
   margin-left: 15px;
+}
+.hcs-profile-icon-heading-on-table button {
+  padding-top: 7px;
 }
 .hcs-profile-icon-heading-on-table span i {
   color: black;
@@ -1021,10 +1036,30 @@ body {
 .hcs-group-collapse-heading {
   margin-bottom: 5px;
 }
+.hcs-group-collapse-heading button span i {
+  font-size: 10px;
+  color: #27519D;
+}
 /*Boostrap color*/
 /*Boostrap color*/
 html {
   font-size: 16px !important;
+}
+.zb-icon-button {
+  background: 0 0;
+  border: none;
+  color: #000;
+  text-decoration: inherit;
+  text-rendering: optimizeLegibility;
+  text-transform: none;
+  padding: unset;
+}
+.zb-icon-button span i {
+  font-size: 16px;
+}
+.zb-icon-button:focus,
+.zb-icon-button:hover {
+  outline: none;
 }
 .zb-form-input {
   color: #333;
@@ -1078,6 +1113,7 @@ html {
   border-bottom: 1px solid #009de1;
   background: transparent;
   padding-bottom: 0;
+  width: 100%!important;
 }
 .btn-group.bootstrap-select.form-control.open ul.ui-select-choices {
   border-radius: 0px;
@@ -1231,6 +1267,147 @@ html {
 .btn:hover {
   -webkit-transform: unset!important;
   transform: unset!important;
+}
+/**Dialog*/
+.modal .modal-dialog {
+  margin-top: 6.5vw;
+  width: 70%;
+}
+.modal .modal-dialog .form-control {
+  color: unset;
+  background-color: unset;
+  border: unset;
+}
+.modal .modal-dialog .modal-header {
+  background-color: #48503C;
+  padding: 10px;
+  border-radius: unset;
+}
+.modal .modal-dialog .modal-header .modal-resize {
+  float: right;
+  padding-top: 7px;
+  padding-right: 15px;
+}
+.modal .modal-dialog .modal-header .modal-resize i {
+  color: white;
+  font-size: 20px;
+  padding-top: unset !important;
+}
+.modal .modal-dialog .modal-header h4 {
+  color: white;
+  font-weight: 400;
+}
+.modal .modal-dialog .modal-header h4 button {
+  color: white;
+}
+.modal .modal-dialog .modal-header h4 button i {
+  padding-top: 9px;
+}
+.modal .modal-dialog .modal-header h4 img {
+  display: unset !important;
+  height: 30px;
+}
+.modal .modal-dialog .modal-header h4 #title {
+  display: inline;
+  font-size: 1rem;
+  line-height: 1rem;
+  border-left: 1px solid #fff;
+  margin-left: 0.5rem;
+  padding-left: 0.5rem;
+}
+.modal .modal-dialog .modal-body {
+  padding: 15px 20px;
+}
+.modal .modal-dialog .modal-body span {
+  color: #666;
+  font-weight: 400;
+}
+.modal .modal-dialog .modal-footer {
+  background-color: #3E464A;
+  padding: 10px;
+}
+.modal .modal-dialog .modal-footer button {
+  background: 0 0;
+  border: 1px solid white;
+  color: white;
+  font-size: 16px;
+  padding: 5px 10px;
+  -webkit-appearance: none;
+  margin-left: 10px;
+}
+.modal .modal-dialog .modal-footer button i {
+  padding-right: 5px;
+}
+.modal .resize-width {
+  width: 99% !important;
+}
+.modal:before {
+  vertical-align: top!important;
+}
+table.zb-data-table {
+  font-size: 0.875rem;
+  border-bottom: 2px solid #aaa !important;
+  /*tbody td.select-checkbox:before{
+        border-radius: 0!important;
+        border: 1px solid #666;
+    }*/
+}
+table.zb-data-table thead th:first-child {
+  width: 10px;
+  padding: 0px 10px !important;
+}
+table.zb-data-table thead th,
+table.zb-data-table thead td {
+  padding: 3px 15px !important;
+  border-bottom: 2px solid #aaa !important;
+}
+table.zb-data-table thead th.select-checkbox:before {
+  content: '  ';
+  margin-top: -6px;
+  border: 1px solid #666;
+  border-radius: 0;
+  margin-left: -2px;
+  padding: 0 5px;
+  font-size: 8px;
+}
+table.zb-data-table thead th.select-checkbox.selected:after {
+  content: '\2714';
+  margin-left: -10px;
+  text-align: center;
+  /*text-shadow: 1px 1px #B0BED9, -1px -1px #B0BED9, 1px -1px #B0BED9, -1px 1px #B0BED9;*/
+}
+table.zb-data-table tbody td.select-checkbox:before,
+table.zb-data-table tbody th.select-checkbox:before {
+  border-radius: 0 !important;
+  border: 1px solid #666 !important;
+}
+table.zb-data-table tr.zb-table-row-focus {
+  background: #b4d3f3 !important;
+}
+table.zb-data-table tr.zb-table-row-focus td:not(.select-checkbox) {
+  background-color: #b4d3f3 !important;
+}
+.dataTables_wrapper .dataTables_paginate ul.pagination {
+  margin: 0 !important;
+}
+.dataTables_wrapper .dataTables_paginate .paginate_button {
+  padding: 0 !important;
+}
+.dataTables_wrapper .dataTables_paginate .paginate_button a {
+  border-radius: 0 !important;
+}
+.zb-body .dataTables_filter {
+  display: none !important;
+}
+table.dataTable tbody th,
+table.dataTable tbody td {
+  padding: 4px 10px !important;
+}
+table.dataTable tbody td.select-checkbox:before,
+table.dataTable tbody td.select-checkbox:after,
+table.dataTable tbody th.select-checkbox:before,
+table.dataTable tbody th.select-checkbox:after {
+  top: 1em !important;
 }
 div.mask {
   background-image: url("images/Spinner-1s-68px.svg");

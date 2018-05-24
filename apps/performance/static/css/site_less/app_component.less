@@ -21,6 +21,25 @@ html {
     font-size: 16px !important;
 }
 
+.zb-icon-button {
+    background: 0 0;
+    border: none;
+    color: #000;
+    text-decoration: inherit;
+    text-rendering: optimizeLegibility;
+    text-transform: none;
+    padding:unset;
+}
+
+.zb-icon-button span i{
+    font-size:16px;
+}
+
+.zb-icon-button:focus,
+.zb-icon-button:hover {
+    outline: none;
+}
+
 .zb-form-input {
     color: @value_color;
     border: 0;
@@ -83,6 +102,7 @@ html {
     border-bottom: 1px solid @border_color_hover;
     background: transparent;
     padding-bottom: 0;
+    width: 100%!important;
 }
 
 .btn-group.bootstrap-select.form-control.open ul.ui-select-choices {
@@ -275,3 +295,106 @@ html {
     -webkit-transform: unset!important;
     transform: unset!important;
 }
+
+/**Dialog*/
+.modal {
+
+    .modal-dialog {
+        margin-top: 6.5vw;
+        width: 70%;
+
+        .form-control {
+            color: unset;
+            background-color: unset;
+            border: unset;
+        }
+
+        .modal-header {
+            background-color: #48503C;
+            padding: 10px;
+            border-radius: unset;
+
+            .modal-resize {
+                float: right;
+                padding-top: 7px;
+                padding-right: 15px;
+
+                i {
+                    color: white;
+                    font-size: 20px;
+                    padding-top: unset !important;
+                }
+            }
+
+            h4 {
+                color: white;
+                font-weight: 400;
+
+                button {
+                    color: white;
+
+                    i {
+                        padding-top: 9px;
+                    }
+                }
+
+                img {
+                    display: unset !important;
+                    height: 30px;
+                }
+
+                #title {
+                    display: inline;
+                    font-size: 1rem;
+                    line-height: 1rem;
+                    border-left: 1px solid #fff;
+                    margin-left: 0.5rem;
+                    padding-left: 0.5rem;
+                }
+            }
+        }
+
+        .modal-body {
+            padding: 15px 15px 15px 30px;
+            height: 60vh;
+            overflow: auto;
+
+            span {
+                color: #666;
+                font-weight: 400;
+            }
+        }
+
+        .modal-footer {
+            background-color: #3E464A;
+            padding: 10px;
+
+            button {
+                background: 0 0;
+                border: 1px solid white;
+                color: white;
+                font-size: 16px;
+                padding: 5px 10px;
+                -webkit-appearance: none;
+                margin-left: 10px;
+
+                i {
+                    padding-right: 5px;
+                }
+            }
+        }
+    }
+
+    .resize-width {
+        width: 99% !important;
+        margin-top:1%;
+        .modal-content .modal-body{
+            height:83vh;
+        }
+    }
+}
+
+.modal:before{
+    vertical-align:top!important;
+}
+

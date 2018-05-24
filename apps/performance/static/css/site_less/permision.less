@@ -1,9 +1,3 @@
-#hcs-admin-system-container {
-    padding: unset;
-    padding-left: 5px;
-    overflow: hidden;
-}
-
 #hcs-admin-system-heading a span i {
     color: black;
 }
@@ -203,6 +197,13 @@
 }
 
 @media screen and (min-width:601px) {
+    #hcs-admin-system-container {
+        padding: unset;
+        padding-left: 5px;
+        overflow: hidden;
+        padding-top: 48px;
+    }
+
     .hcs-system-admin-content {
         float: left;
         width: ~"calc(100% - 75px)";
@@ -212,6 +213,9 @@
         background-color: #F2F2F2;
         height: 48px;
         padding: 1rem 0rem;
+        position:fixed;
+        z-index:900;
+        width:100%;
     }
 
     #hcs-system-admin-menu {
@@ -245,6 +249,7 @@
     .hcs-system-admin-menu-contain {
         width: 75px;
         overflow: auto;
+        height: ~"calc(100vh - 120px)";
     }
 
     .hcs-admin-system-selected {
@@ -285,6 +290,12 @@
 }
 
 @media screen and (max-width:600px) {
+    #hcs-admin-system-container {
+        padding: unset;
+        padding-left: 5px;
+        overflow: hidden;
+        padding-top: 75px;
+    }
     .hcs-system-admin-content {
         float: left;
         width: 100%;
@@ -293,6 +304,9 @@
     #hcs-admin-system-heading {
         background-color: #F2F2F2;
         padding: 1rem 0rem;
+        position: fixed;
+        z-index: 900;
+        width:100% !important;
     }
 
     #hcs-system-admin-menu {

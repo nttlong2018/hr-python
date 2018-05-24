@@ -11566,3 +11566,119 @@ Traceback (most recent call last):
   File "/home/hcsadmin/argo/packages/django/django/core/handlers/base.py", line 122, in get_response
     raise e
 Exception: It look like you forget post 'offset_minutes' from client.Remember that before ajax post please set 'offset_minutes' from browser.How to calculate 'offset_minutes'?:var now = new Date();var offset_minutes = now.getTimezoneOffset();
+root.auth_user.find (0.00) {'username': 'sys'}
+root.django_session.find (0.00) {'_id': 'zr4rkmtzlw6w2qva7p19lq8usw7tgeua', 'expire_date': {'$gt': datetime.datetime(2018, 5, 24, 3, 14, 25, 255883, tzinfo=<UTC>)}}
+root.auth_user.find (0.00) {'_id': ObjectId('5b024f1b927e004dce46f114')}
+Not Found: /favicon.ico
+root.django_session.find (0.00) {'_id': 'zr4rkmtzlw6w2qva7p19lq8usw7tgeua', 'expire_date': {'$gt': datetime.datetime(2018, 5, 24, 3, 15, 20, 696634, tzinfo=<UTC>)}}
+root.auth_user.find (0.00) {'_id': ObjectId('5b024f1b927e004dce46f114')}
+Not Found: /root/performance/{{$root.logo}}
+root.django_session.find (0.00) {'_id': 'zr4rkmtzlw6w2qva7p19lq8usw7tgeua', 'expire_date': {'$gt': datetime.datetime(2018, 5, 24, 3, 15, 21, 457285, tzinfo=<UTC>)}}
+root.auth_user.find (0.00) {'_id': ObjectId('5b024f1b927e004dce46f114')}
+root.django_session.find (0.00) {'_id': 'zr4rkmtzlw6w2qva7p19lq8usw7tgeua', 'expire_date': {'$gt': datetime.datetime(2018, 5, 24, 3, 15, 32, 893234, tzinfo=<UTC>)}}
+root.auth_user.find (0.00) {'_id': ObjectId('5b024f1b927e004dce46f114')}
+Not Found: /root/performance/{{$root.logo}}
+root.django_session.find (0.00) {'_id': 'zr4rkmtzlw6w2qva7p19lq8usw7tgeua', 'expire_date': {'$gt': datetime.datetime(2018, 5, 24, 3, 15, 33, 432400, tzinfo=<UTC>)}}
+root.auth_user.find (0.00) {'_id': ObjectId('5b024f1b927e004dce46f114')}
+Not Found: /root/performance/static/app/directives/leftmenu/leftmenu.html
+Not Found: /root/performance/static/app/directives/breadcumb/breadcumb.html
+Not Found: /root/performance/static/app/directives/breadcumb/breadcumb.html
+Not Found: /root/performance/static/app/directives/leftmenu/leftmenu.html
+root.django_session.find (0.00) {'_id': 'zr4rkmtzlw6w2qva7p19lq8usw7tgeua', 'expire_date': {'$gt': datetime.datetime(2018, 5, 24, 3, 15, 37, 382840, tzinfo=<UTC>)}}
+root.auth_user.find (0.00) {'_id': ObjectId('5b024f1b927e004dce46f114')}
+Not Found: /root/performance/static/app/components/table/table-data/table-data.html
+root.django_session.find (0.00) {'_id': 'zr4rkmtzlw6w2qva7p19lq8usw7tgeua', 'expire_date': {'$gt': datetime.datetime(2018, 5, 24, 3, 15, 42, 57086, tzinfo=<UTC>)}}
+root.auth_user.find (0.01) {'_id': ObjectId('5b024f1b927e004dce46f114')}
+root.django_session.find (0.00) {'_id': 'zr4rkmtzlw6w2qva7p19lq8usw7tgeua', 'expire_date': {'$gt': datetime.datetime(2018, 5, 24, 3, 15, 43, 19482, tzinfo=<UTC>)}}
+root.auth_user.find (0.00) {'_id': ObjectId('5b024f1b927e004dce46f114')}
+Not Found: /root/performance/{{$root.logo}}
+root.django_session.find (0.01) {'_id': 'zr4rkmtzlw6w2qva7p19lq8usw7tgeua', 'expire_date': {'$gt': datetime.datetime(2018, 5, 24, 3, 15, 43, 375824, tzinfo=<UTC>)}}
+root.auth_user.find (0.00) {'_id': ObjectId('5b024f1b927e004dce46f114')}
+lv.django_session.find (0.00) {'_id': 'zr4rkmtzlw6w2qva7p19lq8usw7tgeua', 'expire_date': {'$gt': datetime.datetime(2018, 5, 24, 3, 16, 15, 458979, tzinfo=<UTC>)}}
+lv.django_session.save (0.00) {'_id': u'3jp473rfmskublmdl0pyowtjj81ezobr', 'expire_date': datetime.datetime(2018, 6, 7, 3, 16, 15, 475809, tzinfo=<UTC>), 'session_data': u'MjY1MGI5ZjE5YWFjZTM1OTM5NmFkNjA4ODFhYTVmNzUxZDA3ZTkxMjp7fQ=='}
+lv.django_session.save (0.00) {'_id': u'3jp473rfmskublmdl0pyowtjj81ezobr', 'expire_date': datetime.datetime(2018, 6, 7, 3, 16, 15, 483430, tzinfo=<UTC>), 'session_data': u'MjY1MGI5ZjE5YWFjZTM1OTM5NmFkNjA4ODFhYTVmNzUxZDA3ZTkxMjp7fQ=='}
+lv.django_session.find (0.00) {'_id': '3jp473rfmskublmdl0pyowtjj81ezobr', 'expire_date': {'$gt': datetime.datetime(2018, 5, 24, 3, 16, 15, 498298, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'username': 'sys'}
+lv.django_session.save (0.00) {'_id': '3jp473rfmskublmdl0pyowtjj81ezobr', 'expire_date': datetime.datetime(2018, 6, 7, 3, 16, 15, 558341, tzinfo=<UTC>), 'session_data': u'YjAwMTViM2E0OTNjMDE0N2NjMTFiZjIxNzYzNmNkYTg5OGRiZGZjMzp7Imxhbmd1YWdlIjoiZW4ifQ=='}
+lv.django_session.find (0.00) {'_id': '3jp473rfmskublmdl0pyowtjj81ezobr', 'expire_date': {'$gt': datetime.datetime(2018, 5, 24, 3, 16, 18, 519031, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'username': 'sys'}
+lv.auth_user.find (0.00) {'username': u'sys'}
+lv.django_session.save (0.00) {'_id': u'ag1jhkrt86e7a2pikcycvkigrp7t7ibf', 'expire_date': datetime.datetime(2018, 6, 7, 3, 16, 18, 637334, tzinfo=<UTC>), 'session_data': u'YjAwMTViM2E0OTNjMDE0N2NjMTFiZjIxNzYzNmNkYTg5OGRiZGZjMzp7Imxhbmd1YWdlIjoiZW4ifQ=='}
+lv.django_session.find (0.00) {'_id': '3jp473rfmskublmdl0pyowtjj81ezobr'}
+lv.django_session.remove (0.00) {'_id': {'$in': [u'3jp473rfmskublmdl0pyowtjj81ezobr']}}
+lv.auth_user.save (0.00) {'username': u'sys', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b02a1df2320372ba4a49c31'), 'is_active': True, 'email': u'', 'is_superuser': False, 'is_staff': False, 'last_login': datetime.datetime(2018, 5, 24, 3, 16, 18, 649763, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$KW6IwFOfDl12$J8Y4rGgdfA5n/ihfHuUyJLP8ggim72LMBQcQruA4iv8=', 'date_joined': datetime.datetime(2018, 5, 21, 10, 39, 26, 881000, tzinfo=<UTC>)}
+lv.django_session.save (0.00) {'_id': u'ag1jhkrt86e7a2pikcycvkigrp7t7ibf', 'expire_date': datetime.datetime(2018, 6, 7, 3, 16, 18, 653023, tzinfo=<UTC>), 'session_data': u'NjYwNWMyOWVmZjBmYjcyOWRkOGE2YjJlZDJjMGUyMmM3MjY3MjVkZTp7Il9hdXRoX3VzZXJfYmFja2VuZCI6InBlcm1pc3Npb25fYmFja2VuZF9ub25yZWwuYmFja2VuZHMuTm9ucmVsUGVybWlzc2lvbkJhY2tlbmQiLCJfYXV0aF91c2VyX2lkIjoiNWIwMmExZGYyMzIwMzcyYmE0YTQ5YzMxIiwibGFuZ3VhZ2UiOiJlbiJ9'}
+lv.django_session.find (0.00) {'_id': 'ag1jhkrt86e7a2pikcycvkigrp7t7ibf', 'expire_date': {'$gt': datetime.datetime(2018, 5, 24, 3, 16, 18, 682927, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+Not Found: /lv/performance/{{$root.logo}}
+lv.django_session.find (0.01) {'_id': 'ag1jhkrt86e7a2pikcycvkigrp7t7ibf', 'expire_date': {'$gt': datetime.datetime(2018, 5, 24, 3, 16, 18, 968968, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+Not Found: /lv/performance/static/app/directives/leftmenu/leftmenu.html
+Not Found: /lv/performance/static/app/directives/breadcumb/breadcumb.html
+Not Found: /lv/performance/static/app/directives/leftmenu/leftmenu.html
+Not Found: /lv/performance/static/app/directives/breadcumb/breadcumb.html
+lv.django_session.find (0.00) {'_id': 'ag1jhkrt86e7a2pikcycvkigrp7t7ibf', 'expire_date': {'$gt': datetime.datetime(2018, 5, 24, 3, 16, 22, 720879, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+Not Found: /lv/performance/static/app/components/table/table-data/table-data.html
+lv.django_session.find (0.00) {'_id': 'ag1jhkrt86e7a2pikcycvkigrp7t7ibf', 'expire_date': {'$gt': datetime.datetime(2018, 5, 24, 3, 16, 34, 687008, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+Not Found: /lv/performance/{{$root.logo}}
+lv.django_session.find (0.00) {'_id': 'ag1jhkrt86e7a2pikcycvkigrp7t7ibf', 'expire_date': {'$gt': datetime.datetime(2018, 5, 24, 3, 16, 35, 370913, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': 'ag1jhkrt86e7a2pikcycvkigrp7t7ibf', 'expire_date': {'$gt': datetime.datetime(2018, 5, 24, 3, 16, 37, 504662, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+Not Found: /lv/performance/{{$root.logo}}
+lv.django_session.find (0.01) {'_id': 'ag1jhkrt86e7a2pikcycvkigrp7t7ibf', 'expire_date': {'$gt': datetime.datetime(2018, 5, 24, 3, 16, 37, 927570, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': 'ag1jhkrt86e7a2pikcycvkigrp7t7ibf', 'expire_date': {'$gt': datetime.datetime(2018, 5, 24, 3, 16, 38, 962817, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+Not Found: /lv/performance/{{$root.logo}}
+lv.django_session.find (0.00) {'_id': 'ag1jhkrt86e7a2pikcycvkigrp7t7ibf', 'expire_date': {'$gt': datetime.datetime(2018, 5, 24, 3, 16, 39, 325949, tzinfo=<UTC>)}}
+lv.auth_user.find (0.01) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': 'ag1jhkrt86e7a2pikcycvkigrp7t7ibf', 'expire_date': {'$gt': datetime.datetime(2018, 5, 24, 3, 16, 39, 845657, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+Not Found: /lv/performance/{{$root.logo}}
+lv.django_session.find (0.00) {'_id': 'ag1jhkrt86e7a2pikcycvkigrp7t7ibf', 'expire_date': {'$gt': datetime.datetime(2018, 5, 24, 3, 16, 40, 199920, tzinfo=<UTC>)}}
+lv.auth_user.find (0.01) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': 'ag1jhkrt86e7a2pikcycvkigrp7t7ibf', 'expire_date': {'$gt': datetime.datetime(2018, 5, 24, 3, 16, 51, 603572, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+Not Found: /lv/performance/{{$root.logo}}
+lv.django_session.find (0.01) {'_id': 'ag1jhkrt86e7a2pikcycvkigrp7t7ibf', 'expire_date': {'$gt': datetime.datetime(2018, 5, 24, 3, 16, 52, 52752, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': 'ag1jhkrt86e7a2pikcycvkigrp7t7ibf', 'expire_date': {'$gt': datetime.datetime(2018, 5, 24, 3, 16, 54, 228457, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+Not Found: /lv/performance/{{$root.logo}}
+lv.django_session.find (0.01) {'_id': 'ag1jhkrt86e7a2pikcycvkigrp7t7ibf', 'expire_date': {'$gt': datetime.datetime(2018, 5, 24, 3, 16, 54, 709049, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': 'ag1jhkrt86e7a2pikcycvkigrp7t7ibf', 'expire_date': {'$gt': datetime.datetime(2018, 5, 24, 3, 16, 57, 355537, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+Not Found: /lv/performance/{{$root.logo}}
+lv.django_session.find (0.01) {'_id': 'ag1jhkrt86e7a2pikcycvkigrp7t7ibf', 'expire_date': {'$gt': datetime.datetime(2018, 5, 24, 3, 16, 57, 838024, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': 'ag1jhkrt86e7a2pikcycvkigrp7t7ibf', 'expire_date': {'$gt': datetime.datetime(2018, 5, 24, 3, 16, 59, 890176, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+Not Found: /lv/performance/static/app/directives/breadcumb/breadcumb.html
+Not Found: /lv/performance/static/app/directives/leftmenu/leftmenu.html
+Not Found: /lv/performance/static/app/directives/breadcumb/breadcumb.html
+Not Found: /lv/performance/static/app/directives/leftmenu/leftmenu.html
+lv.django_session.find (0.00) {'_id': 'ag1jhkrt86e7a2pikcycvkigrp7t7ibf', 'expire_date': {'$gt': datetime.datetime(2018, 5, 24, 3, 17, 6, 118570, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+Not Found: /lv/performance/static/app/components/table/table-data/table-data.html
+Not Found: /lv/performance/static/app/directives/leftmenu/leftmenu.html
+Not Found: /lv/performance/static/app/directives/breadcumb/breadcumb.html
+lv.django_session.find (0.00) {'_id': 'ag1jhkrt86e7a2pikcycvkigrp7t7ibf', 'expire_date': {'$gt': datetime.datetime(2018, 5, 24, 3, 17, 9, 804898, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+Not Found: /lv/performance/static/app/components/table/table-data/table-data.html
+Not Found: /lv/performance/static/app/directives/breadcumb/breadcumb.html
+Not Found: /lv/performance/static/app/directives/leftmenu/leftmenu.html
+Not Found: /lv/performance/static/app/directives/leftmenu/leftmenu.html
+Not Found: /lv/performance/static/app/directives/breadcumb/breadcumb.html
+Not Found: /lv/performance/static/app/directives/leftmenu/leftmenu.html
+Not Found: /lv/performance/static/app/directives/breadcumb/breadcumb.html
+Not Found: /lv/performance/static/app/components/table/table-data/table-data.html
+lv.django_session.find (0.00) {'_id': 'ag1jhkrt86e7a2pikcycvkigrp7t7ibf', 'expire_date': {'$gt': datetime.datetime(2018, 5, 24, 3, 17, 18, 346731, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+Not Found: /lv/performance/static/app/directives/breadcumb/breadcumb.html
+Not Found: /lv/performance/static/app/directives/leftmenu/leftmenu.html
+Not Found: /lv/performance/static/app/directives/breadcumb/breadcumb.html
+Not Found: /lv/performance/static/app/directives/leftmenu/leftmenu.html

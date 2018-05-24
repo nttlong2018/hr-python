@@ -1,10 +1,7 @@
-import os
+
 import datetime
 def authenticate(request):
-    if not request.user.is_anonymous() and \
-            (request.user.is_superuser or \
-        request.user.is_staff) and \
-        request.user.is_active:
+    if not request.user.is_anonymous() and request.user.is_active:
         return True
     else:
         return False
@@ -33,20 +30,4 @@ Database=dict(
     user="sys",
     password="123456"
 )
-Database_=dict(
-    host="localhost",
-    name="hrm",
-    port=27017,
-    user="root",
-    password="123456"
-)
 login_url="login"
-import json_db_sync
-json_db_sync.set_connect(Database)
-json_db_sync.sync_json_data_from_file(
-    os.path.dirname(__file__)+os.sep+"functionlist.json",
-    "SYS_FunctionList",
-    keys=[
-        "function_id"
-    ]
-)
