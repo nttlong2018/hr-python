@@ -11555,3 +11555,14 @@ Traceback (most recent call last):
   File "/home/hcsadmin/argo/packages/django/django/core/handlers/base.py", line 122, in get_response
     raise e
 Exception: It look like you forget post 'offset_minutes' from client.Remember that before ajax post please set 'offset_minutes' from browser.How to calculate 'offset_minutes'?:var now = new Date();var offset_minutes = now.getTimezoneOffset();
+root.django_session.find (0.00) {'_id': 'zr4rkmtzlw6w2qva7p19lq8usw7tgeua', 'expire_date': {'$gt': datetime.datetime(2018, 5, 21, 6, 56, 39, 752799, tzinfo=<UTC>)}}
+root.auth_user.find (0.00) {'_id': ObjectId('5b024f1b927e004dce46f114')}
+root.django_session.find (0.00) {'_id': 'zr4rkmtzlw6w2qva7p19lq8usw7tgeua', 'expire_date': {'$gt': datetime.datetime(2018, 5, 21, 6, 56, 39, 985697, tzinfo=<UTC>)}}
+root.auth_user.find (0.00) {'_id': ObjectId('5b024f1b927e004dce46f114')}
+root.django_session.find (0.00) {'_id': 'zr4rkmtzlw6w2qva7p19lq8usw7tgeua', 'expire_date': {'$gt': datetime.datetime(2018, 5, 21, 6, 56, 40, 61941, tzinfo=<UTC>)}}
+root.auth_user.find (0.00) {'_id': ObjectId('5b024f1b927e004dce46f114')}
+Internal Server Error: /root/admin/api
+Traceback (most recent call last):
+  File "/home/hcsadmin/argo/packages/django/django/core/handlers/base.py", line 122, in get_response
+    raise e
+Exception: It look like you forget post 'offset_minutes' from client.Remember that before ajax post please set 'offset_minutes' from browser.How to calculate 'offset_minutes'?:var now = new Date();var offset_minutes = now.getTimezoneOffset();
