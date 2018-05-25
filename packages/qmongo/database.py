@@ -617,7 +617,7 @@ class AGGREGATE():
                     key: expr.get_calc_expr(kwargs[key],params)
                 })
                 _next_step_fields.append(key)
-            self._selected_fields=_next_step_fields
+        self._selected_fields=_next_step_fields
         self._pipe.append({
             "$project":_project
         })
@@ -791,6 +791,7 @@ class AGGREGATE():
         #     return list(self.qr.db.get_collection(self.name).aggregate(self._pipe))
         coll=self.qr.db.get_collection(self.name).with_options(codec_options=self.qr._codec_options)
         coll_ret=coll.aggregate(self._pipe)
+
         ret=[]
         for doc in coll_ret:
             for key in self.get_selected_fields():

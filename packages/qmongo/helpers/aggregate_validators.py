@@ -49,15 +49,28 @@ class validator:
         return ret_fields
 def get_field_name(fx):
     if type(fx.value) is _ast.Attribute:
-        return get_field_name(fx.value)+"."+fx.attr
+        if hasattr(fx, "attr"):
+            return get_field_name(fx.value)+"."+fx.attr
+        else:
+            return get_field_name(fx.value)
     else:
-        return fx.value.id+"."+fx.attr
+        if type(fx.value) is _ast.Subscript:
+            return get_field_name(fx.value) + "." + fx.attr
+        else:
+            if hasattr(fx,"attr"):
+                return fx.value.id+"."+fx.attr
+            else:
+                return fx.value.id
+
+
 def get_expression_fields(fx):
     if type(fx) is _ast.Attribute:
         return [get_field_name(fx)]
     if type(fx) is _ast.Name:
         return [fx.id]
     if type(fx) is _ast.Expr:
+        return get_expression_fields(fx.value)
+    if type(fx) is _ast.Subscript:
         return get_expression_fields(fx.value)
     if type(fx) is _ast.Call:
         ret=[]

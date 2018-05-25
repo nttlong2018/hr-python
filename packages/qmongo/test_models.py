@@ -37,21 +37,25 @@ from helpers import get_model
 #         }
 #     }
 # )
-helpers.define_model(
-    "Employees",
-    ["Code"],
-    Code=helpers.create_field("text",True),
-    Name=helpers.create_field("text",True),
-    WorkingInfo=dict(
-        DepartmentCode=helpers.create_field("text",True),
-        JoinDate=helpers.create_field("date",True)
-    )
-)
+# helpers.define_model(
+#     "Employees",
+#     ["Code"],
+#     Code=helpers.create_field("text",True),
+#     Name=helpers.create_field("text",True),
+#     WorkingInfo=dict(
+#         DepartmentCode=helpers.create_field("text",True),
+#         JoinDate=helpers.create_field("date",True)
+#     )
+# )
 helpers.define_model(
     "sys_users",
     [],
     Username=helpers.create_field("text",True),
-    NickName=helpers.create_field("text",True)
+    NickName=helpers.create_field("text",True),
+    LoginHistory=helpers.create_field("list",False,dict(
+        LoginOn=helpers.create_field("date",True),
+        LoginBy=helpers.create_field("text",True)
+    ))
 
 )
 helpers.define_model(
@@ -89,26 +93,29 @@ db=database.connect(
     password="123456",
     name="lv01_lms"
 )
+# unknown_fields = helpers.get_model("sys_users").validate_expression("LoginHistory1[0].Username.Time")
+# print unknown_fields
 #
 ret=db.collection("sys_users").aggregate().project(
-
-    name="(concat(Username,'',NickName))",
-).project(
-    full_name="name+'A'"
+    name="(concat(Username,'','a'))",
+    firrst_login="LoginHistory[0].loginOn"
 )
-ret.lookup(
-    source="test",
-    local_field="full_name",
-    foreign_field="A",
-    alias="X"
-    ).unwind("X").project(
-    m=1
-).match("m>2")
-ret.sort(
-    m=1
-)
+#     .project(
+#     full_name="name+'A'"
+# )
+# ret.lookup(
+#     source="test",
+#     local_field="full_name",
+#     foreign_field="A",
+#     alias="X"
+#     ).unwind("X").project(
+#     m=1
+# ).match("m>2")
+# ret.sort(
+#     m=1
+# )
 # model=get_model("Employees")
 # ret=model.validate_expression("(concat(firstname,'',lastname)+workingInfo.code.fx)=={0}",None,["c"])
-lst=ret.get_list()
-print(lst)
+# lst=ret.get_list()
+# print(lst)
 # print(ret2)

@@ -10,9 +10,12 @@ _model_caching_={}
 class data_field():
     data_type="text"
     is_require = False
-    def __init__(self,data_type="text",is_require=False):
+    details=None
+    def __init__(self,data_type="text",is_require=False,detail=None):
         self.is_require=is_require
         self.data_type=data_type
+        self.details=detail
+
 def filter(expression,*args,**kwargs):
     ret = filter_expression(expression,*args,**kwargs)
     return ret
@@ -50,6 +53,14 @@ def unwind_data(data,prefix=None):
                         }
                     }
                 )
+        if data[key].data_type=="list":
+            if data[key].details!=None:
+                ret_fields=unwind_data(data[key].details,key)
+                for fx in ret_fields.keys():
+                    ret.update({
+                        fx:ret_fields[fx]
+                    })
+
     return ret
 def define_model(_name,keys=None,*args,**kwargs):
     import threading
@@ -89,8 +100,8 @@ def get_model(name):
                          "\tfield name n =helpers.create_field(""text|bool|numeric|date|list"",require or not))".format(name)))
     return _model_caching_[name]
 
-def create_field(data_type="text",is_require=False):
-    return data_field(data_type,is_require)
+def create_field(data_type="text",is_require=False,detail=None):
+    return data_field(data_type,is_require,detail)
 def extract_data(data):
     ret={}
     for key in data.keys():
