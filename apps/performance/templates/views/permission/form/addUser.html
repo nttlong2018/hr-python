@@ -1,0 +1,217 @@
+﻿<div class="row" style="padding-bottom:20px;">
+    <div class="col-md-{{col_group}} col-sm-{{col_group}}">
+        <div class="row">
+            <p class="hcs-group-collapse-heading">
+                <button class="zb-icon-button hcs-profile-group-title" onclick="$('#collapseDialogUserCommonInfo').slideToggle();">
+                    <span>
+                        <i class="la la-angle-down"></i>
+                    </span>Thông tin chung
+                </button>
+            </p>
+        </div>
+        <div class="row" id="collapseDialogUserCommonInfo">
+            <div class="col-md-{{col}}">
+                <div class="form-group row hcs-group-form-group">
+                    <!--Tài khoản đăng nhập-->
+                    <label for="inputUserName" class="col-sm-5 zb-form-label">Tài khoản đăng nhập</label>
+                    <div class="col-sm-7">
+                        <input-text id="inputUserName" ng-model="Item.dd_code">
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-{{col}}">
+                <div class="form-group row hcs-group-form-group">
+                    <!--Tên hiển thị-->
+                    <label for="inputDisplayName" class="col-sm-5 zb-form-label">Tên hiển thị</label>
+                    <div class="col-sm-7">
+                        <input-text id="inputDisplayName" ng-model="Item.dd_name">
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-{{col}}">
+                <div class="form-group row hcs-group-form-group">
+                    <!--Thuộc nhóm người dùng-->
+                    <label for="inputGroupUser" class="col-sm-5 zb-form-label">Thuộc nhóm người dùng</label>
+                    <div class="col-sm-7">
+                        <input-text id="inputGroupUser" ng-model="Item.description">
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-{{col}}">
+                <div class="form-group row hcs-group-form-group">
+                    <!--Email-->
+                    <label for="inputEmail" class="col-sm-5 zb-form-label">Email</label>
+                    <div class="col-sm-7">
+                        <input-text id="inputEmail" ng-model="Item.access_mode">
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-{{col}}">
+                <div class="form-group row hcs-group-form-group">
+                    <!--Số điện thọai-->
+                    <label for="inputPhoneNumber" class="col-sm-5 zb-form-label">Số điện thọai</label>
+                    <div class="col-sm-7">
+                        <input-text id="inputPhoneNumber" ng-model="Item.access_mode">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-{{ 12 - col_group }} col-sm-{{ 12 - col_group }}">
+        <div class="row">
+            <p class="hcs-group-collapse-heading">
+                <button class="zb-icon-button hcs-profile-group-title" onclick="$('#collapseDialogUserNote').slideToggle();">
+                    <span>
+                        <i class="la la-angle-down"></i>
+                    </span>Ghi chú
+                </button>
+            </p>
+        </div>
+        <div class="row" id="collapseDialogUserNote">
+            <div class="col-md-12">
+                <div class="form-group row hcs-group-form-group">
+                    <!--Ghi chú-->
+                    <div class="col-sm-12">
+                    <textarea style="width:100%;"></textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-6 col-sm-6">
+        <div class="row">
+            <p class="hcs-group-collapse-heading">
+                <button class="zb-icon-button hcs-profile-group-title" onclick="$('#collapseDialogUserManager').slideToggle();">
+                    <span>
+                        <i class="la la-angle-down"></i>
+                    </span>Cấp quản lí
+                </button>
+            </p>
+        </div>
+        <div class="row" id="collapseDialogUserManager">
+            <div class="col-md-{{col}}">
+                <div class="form-group row hcs-group-form-group">
+                    <!--Là quản trị hệ thống-->
+                    <div class="col-md-12">
+                        <input-checkbox ng-model="testCheckbox" data-caption="Là quản trị hệ thống"/>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-{{col}}">
+                <div class="form-group row hcs-group-form-group">
+                    <!--Không bao giờ bị khóa-->
+                    <div class="col-md-12">
+                        <input-checkbox ng-model="testCheckbox" data-caption="Không bao giờ bị khóa"/>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-{{col}}">
+                <div class="form-group row hcs-group-form-group">
+                    <!--Mức quản lí từ-->
+                    <label for="inputUserName" class="col-sm-5 zb-form-label">Mức quản lí từ</label>
+                    <div class="col-sm-7">
+                        <input-text id="inputUserName" ng-model="Item.dd_code">
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-{{col}}">
+                <div class="form-group row hcs-group-form-group">
+                    <!--Mức quản lí đến-->
+                    <label for="inputUserName" class="col-sm-5 zb-form-label">Đến</label>
+                    <div class="col-sm-7">
+                        <input-text id="inputUserName" ng-model="Item.dd_code">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6 col-sm-6">
+        <div class="row">
+            <p class="hcs-group-collapse-heading">
+                <button class="zb-icon-button hcs-profile-group-title" onclick="$('#collapseDialogUserPasswordInfo').slideToggle();">
+                    <span>
+                        <i class="la la-angle-down"></i>
+                    </span>Thông tin mật khẩu
+                </button>
+            </p>
+        </div>
+        <div class="row" id="collapseDialogUserPasswordInfo">
+            <div class="col-md-{{col}}">
+                <div class="form-group row hcs-group-form-group">
+                    <!--Mật khẩu-->
+                    <label for="inputUserName" class="col-sm-5 zb-form-label">Mật khẩu</label>
+                    <div class="col-sm-7">
+                        <input-text id="inputUserName" ng-model="Item.dd_code">
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-{{col}}">
+                <div class="form-group row hcs-group-form-group">
+                    <!--Xác nhận mật khẩu-->
+                    <label for="inputDisplayName" class="col-sm-5 zb-form-label">Xác nhận mật khẩu</label>
+                    <div class="col-sm-7">
+                        <input-text id="inputDisplayName" ng-model="Item.dd_name">
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-{{col}}">
+                <div class="form-group row hcs-group-form-group">
+                    <!--Bạn có muốn thay đỗi mật khẩu-->
+                    <div class="col-md-12">
+                        <input-checkbox ng-model="testCheckbox" data-caption="Bạn có muốn thay đỗi mật khẩu"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    (function (scope) {
+        scope.onResizeDialog = onResizeDialog;
+        scope.col = 12;
+        scope.col_group = 6;
+        scope.title = scope.$parent.headerTitle;
+        scope.Item;
+        scope.saveNClose = saveNClose;
+        scope.saveNNext = saveNNext;
+
+        function onResizeDialog() {
+            $('.modal-dialog').toggleClass('resize-width');
+            //scope.col = scope.col == 4 ? 6 : 4;
+            scope.col_group = scope.col_group == 6 ? 8 : 6;
+            scope.col = scope.col == 12 ? 6 : 12;
+        }
+
+        function saveNClose(event) {
+            if (scope.Item != null) {
+                services.api("${get_api_key('app_main.api.HCSSYS_DataDomain/insert')}")
+                    .data(scope.Item)
+                    .done()
+                    .then(function (res) {
+                        if (res.error == null) {
+                            scope.$parent.tableSource.push(res.data);
+                            scope.$parent.$applyAsync();
+                            $('#myModal').modal('hide');
+                        }
+                    })
+            }
+        }
+
+        function saveNNext() {
+            if (scope.Item != null) {
+                services.api("${get_api_key('app_main.api.HCSSYS_DataDomain/insert')}")
+                    .data(scope.Item)
+                    .done()
+                    .then(function (res) {
+                        if (res.error == null) {
+                            scope.$parent.tableSource.push(res.data);
+                            scope.$parent.$applyAsync();
+                            scope.Item = null;
+                        }
+                    })
+            }
+        };
+    });
+</script>

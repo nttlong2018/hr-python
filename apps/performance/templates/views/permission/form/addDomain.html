@@ -1,0 +1,329 @@
+﻿<div class="row">
+    <div class="col-md-{{col_group}} col-sm-{{col_group}}" style="padding-bottom:20px;">
+        <div class="row">
+            <p class="hcs-group-collapse-heading">
+                <button class="zb-icon-button hcs-profile-group-title" onclick="$('#collapseDialogCommonInfoGroup').slideToggle();">
+                    <span>
+                        <i class="la la-angle-down"></i>
+                    </span>Thông tin chung
+                </button>
+            </p>
+        </div>
+        <div class="row" id="collapseDialogCommonInfoGroup">
+            <div class="col-md-{{col}}">
+                <div class="form-group row hcs-group-form-group">
+                    <!--Mã vùng dữ liệu-->
+                    <label for="inputCodeDomain" class="col-sm-5 zb-form-label">Mã vùng dữ liệu truy cập<span style="color:red">*</span></label>
+                    <div class="col-sm-7">
+                        <input-text id="inputCodeDomain" required="Mã vùng dữ liệu" ng-model="Item.dd_code">
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-{{col}}">
+                <div class="form-group row hcs-group-form-group">
+                    <!--Tên vùng dữ liệu-->
+                    <label for="inputDomainName" class="col-sm-5 zb-form-label">Tên vùng dữ liệu truy cập<span style="color:red">*</span></label>
+                    <div class="col-sm-7">
+                        <input-text id="inputDomainName" ng-model="Item.dd_name">
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-{{col}}">
+                <div class="form-group row hcs-group-form-group">
+                    <!--Phạm vi truy cập-->
+                    <label for="inputAccessLimit" class="col-sm-5 zb-form-label">Chế độ truy cập dữ liệu<span style="color:red">*</span></label>
+                    <div class="col-sm-7">
+                        <input-select data-list="cbbAccessMode" ng-model="Item.access_mode" placeholder="Tìm kiếm" data-value="value" data-caption="caption"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-{{ 12 - col_group}} col-sm-{{ 12 - col_group}}" style="padding-bottom:20px;">
+        <div class="row">
+            <p class="hcs-group-collapse-heading">
+                <button class="zb-icon-button hcs-profile-group-title" onclick="$('#collapseDialogNoteGroup').slideToggle();">
+                    <span>
+                        <i class="la la-angle-down"></i>
+                    </span>Ghi chú
+                </button>
+            </p>
+        </div>
+        <div class="row" id="collapseDialogNoteGroup">
+            <div class="col-md-12">
+                <div class="form-group row hcs-group-form-group">
+                    <!--Mô tả chi tiết-->
+                    <div class="col-sm-12">
+                        <textarea id="inputDescription" ng-model="Item.description" style="width:100%;"></textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-12 col-sm-12">
+        <div class="row">
+            <p class="hcs-group-collapse-heading">
+                <button class="zb-icon-button hcs-profile-group-title" onclick="$('#collapseDialogTreeDoamain').slideToggle();">
+                    <span>
+                        <i class="la la-angle-down"></i>
+                    </span>Chọn vùng dữ liệu
+                </button>
+            </p>
+        </div>
+        <div class="row" id="collapseDialogTreeDoamain">
+            <div class="col-md-12">
+                <div class="hcs-profile-background-group-table">
+                    <div class="pull-left hcs-profile-icon-heading-on-table" style="width:3%;margin-left:16px;">
+                        <button class="zb-icon-button hcs-profile-group-title" onclick="$('#collapseTableInfo').slideToggle();">
+                            <span>
+                                <i class="la la-search"></i>
+                            </span>
+                        </button>
+                    </div>
+                    <div class="pull-left" style="width:88%;">
+                        <input-text id="inputSearchTree" ng-model="treeSearchText">
+                    </div>
+                    <div class="pull-left hcs-profile-icon-heading-on-table" style="width:3%;margin-left:1%;">
+                        <button class="zb-icon-button hcs-profile-group-title"
+                                onclick="$('#tree ul li .fancytree-lastsib:first .fancytree-expander').click();">
+                            <span>
+                                <i class="la la-angle-double-down"></i>
+                            </span>
+                        </button>
+                    </div>
+                    <div class="pull-left hcs-profile-icon-heading-on-table" style="width:3%;margin-left:unset;">
+                        <button class="zb-icon-button hcs-profile-group-title"
+                                onclick="$('#tree ul li .fancytree-lastsib:first .fancytree-expander').click();">
+                            <span>
+                                <i class="la la-angle-double-up"></i>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+                <!--Chọn vùng dữ liệu-->
+                <div class="col-md-12">
+                    <tree-data data-source="treeDepartmentsDataSource" display-field="department_name"
+	                            parent-field="parent_code" key-field="department_code" 
+	                            multi-select="true" select-mode="3" 
+                                on-select="selectTreeNode"
+	                            current-node="treeCurrentNode"
+	                            selected-nodes="treeSelectedNodes"
+	                            selected-root-nodes="treeSelectedRootNodes"
+	                            search-text="treeSearchText"
+	                            check-all="treeCheckAll"
+                             checked-field="is_selected"/>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    (function (scope) {
+        var __object = {
+            "_id": null,
+            "dd_code": "",
+            "dd_name": "",
+            "access_mode": 2,
+            "description": "",
+            "created_on": new Date(),
+            "created_by": "",
+            "modified_on": null,
+            "modified_by": null,
+            "detail": []
+        };
+        var __mode = scope.$parent.mode;
+        scope.result = false;
+        scope.onResizeDialog = onResizeDialog;
+        scope.col = 12;
+        scope.col_group = 6;
+        scope.title = scope.$parent.headerTitle;
+        //Mode 1: tạo mới, Mode 2: chỉnh sửa
+        scope.Item = __mode == 2 ? scope.$parent.currentItem : __object;
+
+        //Combobox Datasource
+        scope.cbbAccessMode = [
+            {
+                "caption": "Toàn quyền",
+                "value": "1"
+            },
+            {
+                "caption": "Từ vùng được chọn đén các tập con",
+                "value": "2"
+            },
+            {
+                "caption": "Chỉ trên các vùng được chọn",
+                "value": "3"
+            }
+        ];
+        //Tree dataSource
+        var _treeDepartmentsDataSource = _departments();
+        if (scope.Item.detail && scope.Item.detail.length > 0) {
+            $.each(scope.Item.detail, function (i, v) {
+                var _f = _.filter(_treeDepartmentsDataSource, function (f) {
+                    return f.department_code == v.department_code;
+                });
+
+                if (_f.length > 0) {
+                    _f[0]["is_selected"] = true;
+                }
+            });
+        }
+        console.log(_treeDepartmentsDataSource);
+        scope.treeDepartmentsDataSource = _treeDepartmentsDataSource;
+        scope.$applyAsync();
+
+        scope.saveNClose = saveNClose;
+        scope.saveNNext = saveNNext;
+
+        //Tree
+        scope.treeCurrentNode = {};
+        scope.treeSelectedNodes = [];//scope.Item.detail;
+        console.log('scope.treeSelectedNodes', scope.treeSelectedNodes);
+        scope.treeSelectedRootNodes = [];
+        scope.treeCheckAll = false;
+        scope.treeSearchText = '';
+
+        function setValue(value) {
+            __object._id = value._id
+            __object.dd_code = value.dd_code;
+            __object.dd_name = value.dd_name;
+            __object.access_mode = value.access_mode == null ? 2 : value.access_mode;
+            __object.description = value.description;
+            __object.detail = scope.treeSelectedNodes;
+        }
+
+        function onResizeDialog() {
+            $('.modal-dialog').toggleClass('resize-width');
+            scope.col = scope.col == 12 ? 6 : 12;
+            scope.col_group = scope.col_group == 6 ? 8 : 6;
+        }
+
+        function saveNClose(event) {
+            debugger
+            if (scope.Item != null) {
+                setValue(scope.Item);
+                if (__mode == 1)
+                    delete __object._id;
+                var url = __mode == 1 ? "${get_api_key('app_main.api.HCSSYS_DataDomain/insert')}" /*Mode 1: Tạo mới*/
+                    : "${get_api_key('app_main.api.HCSSYS_DataDomain/update')}" /*Mode 2: Cập nhật*/
+
+                services.api(url)
+                    .data(__object)
+                    .done()
+                    .then(function (res) {
+                        if (res.error == null) {
+                            scope.$parent._tableData();
+                            $('#myModal').modal('hide');
+                            $msg.alert('Thao tác thành công', $type_alert.SUCCESS);
+                            scope.$parent.currentItem = null;
+                        }else{
+                            $msg.alert('Thao tác thất bại', $type_alert.DANGER);
+                        }
+                    })
+            }
+        }
+
+        function saveNNext() {
+            if (scope.Item != null) {
+                setValue(scope.Item);
+                if (__mode == 1)
+                    delete __object._id;
+                var url = __mode == 1 ? "${get_api_key('app_main.api.HCSSYS_DataDomain/insert')}" /*Mode 1: Tạo mới*/
+                    : "${get_api_key('app_main.api.HCSSYS_DataDomain/update')}" /*Mode 2: Cập nhật*/
+
+                services.api(url)
+                    .data(__object)
+                    .done()
+                    .then(function (res) {
+                        if (res.error == null) {
+                            scope.$parent._tableData();
+                            $msg.alert('Thao tác thành công', $type_alert.SUCCESS);
+                            scope.Item = null;
+                        }else{
+                            $msg.alert('Thao tác thất bại', $type_alert.DANGER);
+                        }
+                    })
+            }
+        }
+
+        function editData() {
+            if (scope.Item != null) {
+            setValue(scope.Item);
+            if (__mode == 1)
+                delete __object._id;
+            var url = __mode == 1 ? "${get_api_key('app_main.api.HCSSYS_DataDomain/insert')}" /*Mode 1: Tạo mới*/
+                : "${get_api_key('app_main.api.HCSSYS_DataDomain/update')}" /*Mode 2: Cập nhật*/
+
+            services.api(url)
+                .data(__object)
+                .done()
+                .then(function (res) {
+                    if (res.error == null)
+                        scope.result = true;
+                })
+            }
+        }
+
+        $(document).keyup(function (event) {
+            if (event.keyCode == 27) {
+                if($('#myModal').length ==1)
+                    $('#myModal').modal('hide');
+            }
+        })
+
+        $('#myModal').ready(function () {
+            $('#inputCodeDomain').focus();
+        })
+    
+        //Mock data tree
+        function _departments() {
+            return [
+            {
+                department_code: "lv",
+                department_name: "Công ty cổ phần Tin học lạc Việt",
+                parent_code: null
+            },
+            {
+                department_code: "hcs",
+                department_name: "Trung tâm HCS",
+                parent_code: "lv"
+            },
+            {
+                department_code: "hcs_dev",
+                department_name: "DEV - Trung tâm HCS",
+                parent_code: "hcs"
+            },
+            {
+                department_code: "hcs_ic",
+                department_name: "IC - Trung tâm HCS",
+                parent_code: "hcs"
+            },
+            {
+                department_code: "hcs_cs",
+                department_name: "CS - Trung tâm HCS",
+                parent_code: "hcs"
+            },
+            {
+                department_code: "erp",
+                department_name: "Trung tâm ERP",
+                parent_code: "lv"
+            },
+            {
+                department_code: "erp_dev",
+                department_name: "DEV - Trung tâm ERP",
+                parent_code: "erp"
+            },
+            {
+                department_code: "erp_ic",
+                department_name: "IC - Trung tâm ERP",
+                parent_code: "erp"
+            },
+            {
+                department_code: "erp_cs",
+                department_name: "CS - Trung tâm ERP",
+                parent_code: "erp"
+            },
+        ]
+        }
+    });
+</script>

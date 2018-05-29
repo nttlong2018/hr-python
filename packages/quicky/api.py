@@ -43,6 +43,7 @@ def call(request):
                              "var offset_minutes = now.getTimezoneOffset();"))
         offset_minutes=post_data["offset_minutes"]
         setattr(threading.current_thread(),"client_offset_minutes",offset_minutes)
+        setattr(threading.currentThread(),"client_offset_minutes",offset_minutes)
 
 
         path = get_api_path(path)
@@ -91,6 +92,7 @@ def call(request):
                     ret = getattr(mdl, method_path)(
                         {
                             "privileges": view_privileges,
+                            "data": {},
                             "user": user,
                             "request": request,
                             "view":view

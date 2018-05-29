@@ -11,6 +11,8 @@ import threading
 import logging
 logger=logging.getLogger(__name__)
 global lock
+settings=None
+
 lock=threading.Lock()
 from datetime import date, datetime
 
@@ -94,15 +96,31 @@ def apply(request,template_file,app):
             return get_abs_url()+"/"+app.host_dir+"/"+"static/"+path
     def get_abs_url():
         __root_url__= None
-
-        if request.get_full_path() == "/":
-            __root_url__ = request.build_absolute_uri()
+        host_dir = None
+        from . import get_django_settings_module
+        global settings
+        if settings == None:
+            settings = get_django_settings_module()
+        if hasattr(settings, "HOST_DIR"):
+            host_dir = settings.HOST_DIR
+        if host_dir==None:
+            if request.get_full_path() == "/":
+                __root_url__ = request.build_absolute_uri()
+            else:
+                __root_url__ = request.build_absolute_uri().replace(
+                    request.get_full_path(), "")
+            if __root_url__[__root_url__.__len__() - 1] == "/":
+                __root_url__ = __root_url__[0:__root_url__.__len__() - 1]
+            return __root_url__
         else:
-            __root_url__ = request.build_absolute_uri().replace(
-                request.get_full_path(), "")
-        if __root_url__[__root_url__.__len__() - 1] == "/":
-            __root_url__ = __root_url__[0:__root_url__.__len__() - 1]
-        return __root_url__
+            if request.get_full_path() == "/":
+                __root_url__ = request.build_absolute_uri()
+            else:
+                __root_url__ = request.build_absolute_uri().replace(
+                    request.get_full_path(), "")
+            if __root_url__[__root_url__.__len__() - 1] == "/":
+                __root_url__ = __root_url__[0:__root_url__.__len__() - 1]
+            return __root_url__+"/"+host_dir
     def get_app():
         return app
     def get_app_name():

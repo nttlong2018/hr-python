@@ -310,7 +310,7 @@ class ENTITY():
                 self._expr = None
                 self._action = None
                 self._data = {}
-                return ret
+                return { "deleted":ret.deleted_count}
 class WHERE():
     name = ""
     _coll = None
@@ -517,7 +517,7 @@ class COLL():
 
         return self
     def delete(self,filter,*args,**kwargs):
-        ac=self.entity().filter(filter,kwargs)
+        ac=self.entity().filter(filter,*args,**kwargs)
         ac.delete()
         ret=ac.commit()
         return ret

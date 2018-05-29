@@ -3,7 +3,7 @@ import sys
 import importlib
 from django.conf.urls.static import static
 from django.conf.urls import include,url
-
+settings=None
 class app_config():
     package_name=""
     package_path=""
@@ -59,9 +59,12 @@ class app_config():
         self.static=config.get("static_dir",os.path.join(path, "static"))
     def get_static_urls(self):
         if self.host_dir == "":
-            return url(r'^'+self.name+'/static/(?P<path>.*)$', 'django.views.static.serve',{'document_root':self.get_server_static(), 'show_indexes': True})
+            return url(r'^' + self.name + '/static/(?P<path>.*)$', 'django.views.static.serve',
+                       {'document_root': self.get_server_static(), 'show_indexes': True})
         else:
-            return url(r'^static/(?P<path>.*)$', 'django.views.static.serve',{'document_root':self.get_server_static(), 'show_indexes': True})
+            return url(r'^static/(?P<path>.*)$', 'django.views.static.serve',
+                       {'document_root': self.get_server_static(), 'show_indexes': True})
+
     def get_urls(self):
         if self.urls==None:
             self.urls=[]
@@ -77,15 +80,15 @@ class app_config():
         return os.getcwd()+os.path.sep+_path
     def get_login_url(self):
         import threading
-        if hasattr(threading.currentThread(),"tenancy_code"):
-            if hasattr(self.mdl.settings,"login_url"):
-                if self.host_dir=="":
-                    return "/"+threading.currentThread().request_tenancy_code+"/"+self.mdl.settings.login_url
+        if hasattr(threading.currentThread(), "tenancy_code"):
+            if hasattr(self.mdl.settings, "login_url"):
+                if self.host_dir == "":
+                    return "/" + threading.currentThread().request_tenancy_code + "/" + self.mdl.settings.login_url
                 else:
-                    return "/"+threading.currentThread().request_tenancy_code+"/"+self.host_dir+"/"+self.mdl.settings.login_url
+                    return "/" + threading.currentThread().request_tenancy_code + "/" + self.host_dir + "/" + self.mdl.settings.login_url
         else:
-            if hasattr(self.mdl.settings,"login_url"):
-                if self.host_dir=="":
-                    return "/"+self.mdl.settings.login_url
+            if hasattr(self.mdl.settings, "login_url"):
+                if self.host_dir == "":
+                    return "/" + self.mdl.settings.login_url
                 else:
-                    return "/"+self.host_dir+"/"+self.mdl.settings.login_url
+                    return "/" + self.host_dir + "/" + self.mdl.settings.login_url

@@ -63,10 +63,7 @@ def unwind_data(data,prefix=None):
 
     return ret
 def define_model(_name,keys=None,*args,**kwargs):
-    import threading
     name=_name
-    if hasattr(threading.currentThread(),"tenancy_code") and threading.currentThread().tenancy_code!="":
-        name=threading.currentThread().tenancy_code+"."+name
     if _model_caching_.has_key(name):
         return _model_caching_[name]
     params=kwargs

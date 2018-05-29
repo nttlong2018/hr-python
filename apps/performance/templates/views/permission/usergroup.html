@@ -1,0 +1,113 @@
+﻿<hcs-tool-bar on-edit="onEdit()"
+              on-add="onAdd()"
+              search-common="tableSearchText"></hcs-tool-bar>
+<div id="function1" class="tab-pane fade in active">
+    <table-data data-source="tableSource" fields="tableFields" type="MultiSelect" 
+                paging="true" page-length="20" server-side="false" 
+                press-enter="onSelectTableRow" selected-items="selectedItems" 
+                current-item="currentItem" search-text="tableSearchText">
+    </table-data>
+    {{tableSource}}
+    <div class="clearfix"></div>
+</div>
+<script>
+    <%include file="scripts/user.js"/>
+</script>
+<script>
+    (function (scope) {
+        var obj2 = [
+        {
+        'state': true,
+        'code': 'DD001',
+        'codename': 'Quản trị hệ thống',
+        'groupcode': 'Nhóm quản trị hệ thống',
+        'isAdmin': true,
+        'isLock': '',
+        'managefrom': 0,
+        'manageto': 0,
+        'createdate': '02/05/2018'
+    }, {
+        'state': true,
+        'code': 'DD001',
+        'codename': 'Quản trị hệ thống',
+        'groupcode': 'Nhóm quản trị hệ thống',
+        'isAdmin': true,
+        'isLock': '',
+        'managefrom': 0,
+        'manageto': 0,
+        'createdate': '02/05/2018'
+    }, {
+        'state': true,
+        'code': 'DD001',
+        'codename': 'Quản trị hệ thống',
+        'groupcode': 'Nhóm quản trị hệ thống',
+        'isAdmin': true,
+        'isLock': '',
+        'managefrom': 0,
+        'manageto': 0,
+        'createdate': '02/05/2018'
+    }, {
+        'state': true,
+        'code': 'DD001',
+        'codename': 'Quản trị hệ thống',
+        'groupcode': 'Nhóm quản trị hệ thống',
+        'isAdmin': true,
+        'isLock': '',
+        'managefrom': 0,
+        'manageto': 0,
+        'createdate': '02/05/2018'
+    }, {
+        'state': true,
+        'code': 'DD001',
+        'codename': 'Quản trị hệ thống',
+        'groupcode': 'Nhóm quản trị hệ thống',
+        'isAdmin': true,
+        'isLock': '',
+        'managefrom': 0,
+        'manageto': 0,
+        'createdate': '02/05/2018'
+    }, {
+        'state': true,
+        'code': 'DD001',
+        'codename': 'Quản trị hệ thống',
+        'groupcode': 'Nhóm quản trị hệ thống',
+        'isAdmin': true,
+        'isLock': '',
+        'managefrom': 0,
+        'manageto': 0,
+        'createdate': '02/05/2018'
+    }, {
+        'state': true,
+        'code': 'DD001',
+        'codename': 'Quản trị hệ thống',
+        'groupcode': 'Nhóm quản trị hệ thống',
+        'isAdmin': true,
+        'isLock': '',
+        'managefrom': 0,
+        'manageto': 0,
+        'createdate': '02/05/2018'
+    }, {
+        'state': true,
+        'code': 'DD001',
+        'codename': 'Quản trị hệ thống',
+        'groupcode': 'Nhóm quản trị hệ thống',
+        'isAdmin': true,
+        'isLock': '',
+        'managefrom': 0,
+        'manageto': 0,
+        'createdate': '02/05/2018'
+        }, {
+            'state': true,
+            'code': 'DD001',
+            'codename': 'Quản trị hệ thống',
+            'groupcode': 'Nhóm quản trị hệ thống',
+            'isAdmin': true,
+            'isLock': '',
+            'managefrom': 0,
+            'manageto': 0,
+            'createdate': '02/05/2018'
+        }
+        ];
+        scope.mock2 = obj2;
+    });
+</script>

@@ -61,7 +61,6 @@ def set_require_fields(name,*args,**kwargs):
             except Exception as ex:
                 lock.release()
                 raise(ex)
-
 def create_model(name,*args,**kwargs):
     params=kwargs
     if type(args) is tuple and args.__len__()>0:

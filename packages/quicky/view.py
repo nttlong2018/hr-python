@@ -8,9 +8,9 @@ import os
 import sys
 logger=logging.getLogger(__name__)
 global lock
+settings=None
 lock=threading.Lock()
 _cache_view={}
-
 def template_uri(fn):
 
     def layer(*args, **kwargs):
@@ -29,6 +29,13 @@ def template(fn,*_path,**kwargs):
     from . import get_django_settings_module
     is_multi_tenancy = get_django_settings_module().__dict__.get("USE_MULTI_TENANCY", False)
     def exec_request(request, **kwargs):
+        global  settings
+        if settings==None:
+            from . import get_django_settings_module
+            settings=get_django_settings_module()
+        host_dir=None
+        if hasattr(settings,"HOST_DIR"):
+            host_dir=settings.HOST_DIR
         app=fn.__application__
 
         try:
@@ -40,13 +47,11 @@ def template(fn,*_path,**kwargs):
             authenticate = None
             if app==None and request.path[request.path.__len__() - 4:request.path.__len__()]=="/api":
                 app_name=request.path.split('/')[request.path.split('/').__len__()-2]
-                if app_name==threading.currentThread().tenancy_code:
-                    app_name=""
+                if hasattr(threading.currentThread(),"tenancy_code"):
+                    if app_name==threading.currentThread().tenancy_code:
+                        app_name=""
                 from . import applications
                 app=applications.get_app_by_name(app_name)
-
-
-
 
             if not hasattr(app, "settings") or app.settings==None:
                 raise (Exception("'settings.py' was not found in '{0}' at '{1}' or look like you forgot to place 'import settings' in '{1}/__init__.py'".format(app.name, os.getcwd()+os.sep+app.path)))
@@ -69,8 +74,11 @@ def template(fn,*_path,**kwargs):
                         login_url = "/" + _path["login_url"]
 
             if login_url != None:
+                cmp_url = login_url
+                if host_dir != None:
+                    cmp_url = "/"+host_dir +  login_url
                 if request.user.is_anonymous():
-                    if request.path_info.lower() == login_url.lower():
+                    if request.path_info.lower() == cmp_url.lower():
                         return fn(request, **kwargs)
                     else:
                         url = request.get_abs_url() + login_url
@@ -80,17 +88,20 @@ def template(fn,*_path,**kwargs):
                 if not app.settings.authenticate(request):
                     if login_url==None:
                         raise (Exception("it look like you forgot set 'login_url' in {0}/settings.py".format(app.path)))
-                    if request.path_info.lower() == login_url.lower():
+                    cmp_url=login_url
+                    if host_dir!=None:
+                        cmp_url = "/" + host_dir + login_url
+                    if request.path_info.lower() == cmp_url.lower():
                         return fn(request, **kwargs)
                     url = request.get_abs_url() + login_url
                     url += "?next=" + request.get_abs_url() + request.path
                     return redirect(url)
-
             return fn(request, **kwargs)
         except Exception as ex:
             logger.debug(ex)
             raise (ex)
     def exec_request_for_multi(request,tenancy_code, **kwargs):
+
         from . import get_tenancy_schema
         code=get_tenancy_schema(tenancy_code)
         if code==None:
