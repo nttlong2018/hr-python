@@ -559,6 +559,15 @@ class AGGREGATE():
         if self._selected_fields==None:
             self._selected_fields=self.qr._model.get_fields()
         return self._selected_fields
+    def descibe_fields(self,tabs,fields):
+        _fields = ""
+        for x in fields:
+            _fields += tabs+ x + "\n"
+        return  _fields
+    def check_fields(self,field):
+        ret=[x for x in self.get_selected_fields() if x==field]
+        return ret.__len__()>0
+
     def project(self,*args,**kwargs):
         """
         Create project pipeline
@@ -599,6 +608,10 @@ class AGGREGATE():
         _next_step_fields=[]
         for key in kwargs.keys():
             if kwargs[key]==1:
+                if not self.check_fields(key):
+                    raise (Exception("What is '" + key + "'?:\n" +
+                                     " \n Your selected fields now is bellow list: \n" +
+                                     self.descibe_fields("\t\t\t", self.get_selected_fields())))
                 _project.update({
                     key: 1
                 })
@@ -606,13 +619,9 @@ class AGGREGATE():
             else:
                 unknown_fields = self.qr._model.validate_expression(kwargs[key],self.get_selected_fields())
                 if unknown_fields.__len__()>0:
-                    err_msg=""
-                    for x in unknown_fields:
-                        err_msg+=x+"\n"
-                    err_msg_fields=""
-                    for x in self.qr._model.get_fields():
-                        err_msg_fields+=x+"\n"
-                    raise (Exception("What is bellow list of fields?:\n"+err_msg+" \n Your selected fields now is bellow list: \n"+err_msg_fields))
+                    raise (Exception("What is bellow list of fields?:\n"+self.descibe_fields("\t\t",unknown_fields)+
+                                     " \n Your selected fields now is bellow list: \n"+
+                                     self.descibe_fields("\t\t\t",self.get_selected_fields())))
                 _project.update({
                     key: expr.get_calc_expr(kwargs[key],params)
                 })
@@ -623,27 +632,50 @@ class AGGREGATE():
         })
         return self
     def group(self,_id,selectors,*args,**kwargs):
+        _next_step_fields=[]
         __id={}
         if type(_id) is dict:
             for key in _id.keys():
+                unknown_fields = self.qr._model.validate_expression(_id[key], self.get_selected_fields())
+                if unknown_fields.__len__()>0:
+                    raise (Exception("What is bellow list of fields?:\n"+self.descibe_fields("\t\t",unknown_fields)+
+                                     " \n Your selected fields now is bellow list: \n"+
+                                     self.descibe_fields("\t\t\t",self.get_selected_fields())))
+                _next_step_fields.append("_id")
+                _next_step_fields.append("_id."+key)
                 __id.update({
                     key:expr.get_calc_expr(_id[key],*args,**kwargs)
                 })
         else:
+            if not self.check_fields(_id):
+                raise (Exception("What is '"+_id+"'?:\n"  +
+                                 " \n Your selected fields now is bellow list: \n" +
+                                 self.descibe_fields("\t\t\t", self.get_selected_fields())))
+
             __id="$"+_id
+            _next_step_fields.append("_id")
+            _next_step_fields.append("_id."+_id)
+
         _group = {
             "$group": {
                 "_id": __id
             }
         }
         if not type(selectors) is dict:
-            raise (Exception("'selectot' must be dict type"))
+            raise (Exception("'selectors' must be dict type"))
 
 
         for key in selectors.keys():
+            unknown_fields = self.qr._model.validate_expression(selectors[key], self.get_selected_fields())
+            if unknown_fields.__len__() > 0:
+                raise (Exception("What is bellow list of fields?:\n" + self.descibe_fields("\t\t", unknown_fields) +
+                                 " \n Your selected fields now is bellow list: \n" +
+                                 self.descibe_fields("\t\t\t", self.get_selected_fields())))
             _group["$group"].update({
                 key:expr.get_calc_expr(selectors[key],*args,**kwargs)
             })
+            _next_step_fields.append(key)
+        self._selected_fields = _next_step_fields
         self._pipe.append(_group)
         return self
     def skip(self,len):
@@ -784,6 +816,11 @@ class AGGREGATE():
             return None
         else:
             return ret[0]
+    def get_all_documents(self):
+        coll = self.qr.db.get_collection(self.name).with_options(codec_options=self.qr._codec_options)
+        coll_ret = coll.aggregate(self._pipe)
+        ret=list(coll.aggregate(self._pipe))
+        return ret
     def get_list(self):
         # try:
         #     return self.qr.db.get_collection(self.name).aggregate(self._pipe,explain=False)["cursor"]["firstBatch"]

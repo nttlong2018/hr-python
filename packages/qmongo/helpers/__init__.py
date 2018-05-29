@@ -35,31 +35,54 @@ def unwind_data(data,prefix=None):
             ret_keys=unwind_data(data[key],_prefix)
             ret.update(ret_keys)
         elif isinstance(data[key],data_field):
-            if prefix!=None:
-                ret.update(
-                    {
-                        prefix + "." + key:{
-                            "require":data[key].is_require,
-                            "type":data[key].data_type
+            if data[key].data_type == "list":
+                if prefix!=None:
+                    ret.update({
+                        prefix + "." + key: {
+                            "require": data[key].is_require,
+                            "type":data[key].data_type,
+                            "details":data[key].details
                         }
-                    }
-                )
-            else:
-                ret.update(
-                    {
+                    })
+                else:
+                    ret.update({
                         key: {
                             "require": data[key].is_require,
-                            "type": data[key].data_type
+                            "type":data[key].data_type,
+                            "details":data[key].details
                         }
-                    }
-                )
-        if data[key].data_type=="list":
-            if data[key].details!=None:
-                ret_fields=unwind_data(data[key].details,key)
-                for fx in ret_fields.keys():
-                    ret.update({
-                        fx:ret_fields[fx]
                     })
+                if data[key].details != None:
+                    ret_fields = unwind_data(data[key].details, key)
+                    for fx in ret_fields.keys():
+                        if prefix!=None:
+                            ret.update({
+                                prefix + "."+fx:  ret_fields[fx]
+                            })
+                        else:
+                            ret.update({
+                                fx: ret_fields[fx]
+                            })
+            else:
+                if prefix!=None:
+                    ret.update(
+                        {
+                            prefix + "." + key:{
+                                "require":data[key].is_require,
+                                "type":data[key].data_type
+                            }
+                        }
+                    )
+                else:
+                    ret.update(
+                        {
+                            key: {
+                                "require": data[key].is_require,
+                                "type": data[key].data_type
+                            }
+                        }
+                    )
+
 
     return ret
 def define_model(_name,keys=None,*args,**kwargs):

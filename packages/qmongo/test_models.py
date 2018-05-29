@@ -26,18 +26,22 @@ from helpers import get_model
 # })
 # print(ret)
 
-# helpers.define_model(
-#     "test",
-#     ["Code","WorkingInfo.DepartmentCode"],
-#     {
-#         "Code":helpers.create_field("text",True),
-#         "Name":helpers.create_field("text",True),
-#         "WorkingInfo":{
-#             "DepartmentCode":helpers.create_field("text",True),
-#             "JoinDate":helpers.create_field("date",True)
-#         }
-#     }
-# )
+helpers.define_model(
+    "test",
+    ["Code","WorkingInfo.DepartmentCode"],
+    {
+        "Code":helpers.create_field("text",True),
+        "Name":helpers.create_field("text",True),
+        "WorkingInfo":{
+            "DepartmentCode":helpers.create_field("text",True),
+            "JoinDate":helpers.create_field("date",True),
+            "Salary":helpers.create_field("numeric",True),
+            "Benefit":helpers.create_field("list",False,dict(
+                Amount=helpers.create_field("numeric",True)
+            ))
+        }
+    }
+)
 # helpers.define_model(
 #     "Employees",
 #     ["Code"],
@@ -48,23 +52,23 @@ from helpers import get_model
 #         JoinDate=helpers.create_field("date",True)
 #     )
 # )
-helpers.define_model(
-    "sys_users",
-    [],
-    Username=helpers.create_field("text",True),
-    NickName=helpers.create_field("text",True),
-    LoginHistory=helpers.create_field("list",False,dict(
-        LoginOn=helpers.create_field("date",True),
-        LoginBy=helpers.create_field("text",True)
-    ))
-
-)
-helpers.define_model(
-    "test",
-    [],
-    A=helpers.create_field("text"),
-    B=helpers.create_field("text")
-)
+# helpers.define_model(
+#     "sys_users",
+#     [],
+#     Username=helpers.create_field("text",True),
+#     NickName=helpers.create_field("text",True),
+#     LoginHistory=helpers.create_field("list",False,dict(
+#         LoginOn=helpers.create_field("date",True),
+#         LoginBy=helpers.create_field("text",True)
+#     ))
+#
+# )
+# helpers.define_model(
+#     "test",
+#     [],
+#     A=helpers.create_field("text"),
+#     B=helpers.create_field("text")
+# )
 
 # import helpers
 # helpers.define_model(
@@ -97,10 +101,10 @@ db=database.connect(
 # unknown_fields = helpers.get_model("sys_users").validate_expression("LoginHistory1[0].Username.Time")
 # print unknown_fields
 #
-ret=db.collection("sys_users").aggregate().project(
-    name="(concat(Username,'','a'))",
-    firrst_login="LoginHistory[0].loginOn"
-)
+# ret=db.collection("sys_users").aggregate().project(
+#     name="(concat(Username,'','a'))",
+#     firrst_login="LoginHistory[0].loginOn"
+# )
 #     .project(
 #     full_name="name+'A'"
 # )
@@ -120,3 +124,16 @@ ret=db.collection("sys_users").aggregate().project(
 # lst=ret.get_list()
 # print(lst)
 # print(ret2)
+ret=db.collection("test").aggregate()
+ret.match("WorkingInfo.Benefits[0].Amount>0")
+# ret=ret.group(_id="Code"
+#               ,selectors=dict(
+#         Total="sum(WorkingInfo.Benefit)"
+# )).project(
+#     Total=1
+# )
+
+print ret._pipe
+lst=ret.get_all_documents()
+
+print(lst)

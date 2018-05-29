@@ -754,14 +754,17 @@ def get_calc_get_param(fx,*params):
 def get_calc_get_names(fx):
     return fx.id
 def verify_match(fx):
+    if type(fx["left"]) is str or type(fx["left"]) is unicode:
+        return None
     if fx=={}:
         return "The left side of the expression is not a field of the document. " \
                "It look like your expression is not a logical expression"
     if not fx.has_key("left"):
         return None
-    if fx["left"].has_key("type") and fx["left"]["type"] == "function":
+    if type(fx["left"]) is dict and fx["left"].has_key("type") and fx["left"]["type"] == "function":
         return "The left side of the expression is not a field of the document. " \
                "It look like you use function. function name is '{0}' ".format(fx["left"]["id"])
+
 
     if type(fx["left"]) is list:
         index=0
@@ -772,7 +775,7 @@ def verify_match(fx):
         return msg
 
 
-    if fx["left"].has_key("type") and  fx["left"]["type"] =="const":
+    if type(fx["left"]) is dict and fx["left"].has_key("type") and  fx["left"]["type"] =="const":
         return "The left side of the expression is not a field of the document. " \
                "It look like constant or expression. Actually expression is '{0}'  "\
             .format(fx["left"]["value"])
