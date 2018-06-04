@@ -45,18 +45,11 @@ function dialog($scope) {
             '<div class="modal-header">' +
 
 
-            '<h4 class="modal-title">' +
-            '<img src="{{$root.logo}}"><span id="title">{{title}}</span>' +
-            '<button type="button" class="close" data-dismiss="modal"><i class="la la-close"></i></button>' +
-            '<button type="button" class="close" ng-click="onResizeDialog()"><span class="modal-resize"><i class="la la-expand"></i></span></button>' +
-            '</h4 > ' +
+            '<h4 class="modal-title"><img src=""/ style="height:40px"><span>...</span></h4>' +
+            '<button type="button" class="close" data-dismiss="modal">&times;</button>' +
             '</div>' +
             '<div class="modal-body">' +
 
-            '</div>' +
-            '<div class="modal-footer">' +
-            '<div class="pull-right"><button ng-click="saveNClose()"><i class="la la-save"></i>Lưu & đóng</button></div>' +
-            '<div class="pull-right"><button ng-click="saveNNext()"><i class="la la-save"></i>Lưu & tiếp</button></div>' +
             '</div>' +
             '</div></div>'
         );

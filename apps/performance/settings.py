@@ -1,7 +1,10 @@
 
 import datetime
 def authenticate(request):
-    if not request.user.is_anonymous() and request.user.is_active:
+    if not request.user.is_anonymous() and \
+            (request.user.is_superuser or \
+        request.user.is_staff) and \
+        request.user.is_active:
         return True
     else:
         return False
@@ -24,10 +27,10 @@ def on_end_request(request):
     print("time is :{0} in {1}".format((datetime.datetime.now()-request.begin_time).microseconds,request.path_info))
 
 Database=dict(
-    host="172.16.7.63",
-    name="lv01_lms",
-    port=27017,
-    user="sys",
-    password="123456"
+    host="172.16.0.126",
+    name="HRP2018_Performance",
+    port=2324,
+    user="",
+    password=""
 )
 login_url="login"

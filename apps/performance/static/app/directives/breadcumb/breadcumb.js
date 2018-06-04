@@ -39,7 +39,7 @@
                 listFunction: '=data',
                 currentFunction: '=function'
             },
-            templateUrl: templateService.getTemplatePath('breadcumb'),
+            templateUrl:'../argo/static/app/directives/breadcumb/breadcumb.html',
             restrict: 'EA'
         };
         return directive;

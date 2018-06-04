@@ -14,9 +14,7 @@
         <script src="${get_static('lv/ws.js')}"></script>
         <script src="${get_static('js/underscore-min.js')}"></script>
 
-        <script src="${get_static('js/datatables/datatables.min.js')}"></script>
-        <!--<script src="${get_static('js/datatables/dataTables.colReorder.min.js')}"></script>-->
-        <script src="${get_static('js/datatables/dataTables.responsive.min.js')}"></script>
+        
 
         <link rel="stylesheet" href="${get_static('libs/styles/vendor-2cae343ef1.css')}">
         <link rel="stylesheet" href="${get_static('libs/styles/app-b6796b3788.css')}">
@@ -25,17 +23,10 @@
         <link rel="stylesheet" href="${get_static('assets/line-awesome/css/line-awesome.min.css')}">
         <link rel="stylesheet" href="${get_static('assets/line-awesome/css/line-awesome-font-awesome.min.css')}">
 
-        <link href="${get_static('css/site.min.css')}" rel="stylesheet">
-
-        <link href="${get_static('css/libs/colReorder.dataTables.min.css')}" rel="stylesheet" />
-        <link href="${get_static('css/libs/jquery.dataTables.min.css')}" rel="stylesheet" />
-        <link href="${get_static('css/libs/keyTable.dataTables.min.css')}" rel="stylesheet" />
-        <link href="${get_static('css/libs/responsive.dataTables.min.css')}" rel="stylesheet" />
-        <link href="${get_static('css/libs/select.dataTables.min.css')}" rel="stylesheet" />
-
         <link rel="shortcut icon" href="${get_static('media/favicon.ico')}" />
+        <link href="${get_static('css/site.min.css')}" rel="stylesheet">
     </head>
-    <body class="app zb-body" ng-controller="admin" style="margin: 0;">
+    <body class="app" ng-controller="admin" style="margin: 0;">
         ${self.body()}
 
         <%include file="script.html"/>
@@ -58,10 +49,7 @@
         <script type="text/javascript" src="${get_static('app/directives/layoutService.js')}"></script>
         <script type="text/javascript" src="${get_static('app/directives/breadcumb/breadcumb.js')}"></script>
         <script type="text/javascript" src="${get_static('app/directives/leftmenu/leftmenu.js')}"></script>
-        <script type="text/javascript" src="${get_static('app/directives/toolbar/toolbar.js')}"></script>
         <script type="text/javascript" src="${get_static('app/libs/select.js')}"></script>
-        <script type="text/javascript" src="${get_static('app/components/table/table.module.js')}"></script>
-        <script type="text/javascript" src="${get_static('app/components/table/table-data/table-data.directive.js')}"></script>
         <script type="text/javascript" src="${get_static('app/libs/ui-bootstrap-tpls-2.5.0.min.js')}"></script>
     </body>
 </html>

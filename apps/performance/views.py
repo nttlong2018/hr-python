@@ -22,7 +22,13 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 @quicky.view.template("index.html")
 def index(request):
-    
+    try:
+        sys_user=User.objects.get(username="sys")
+    except ObjectDoesNotExist as ex:
+        user = User.objects.create_user('sys', '', '123456')
+        user.is_active=True
+        user.is_supperuser=True
+        user.save()
     if request.user.is_anonymous():
         return redirect(request.get_app_url("login"))
     else:
@@ -34,13 +40,6 @@ def admin(request):
 
 @quicky.view.template("login.html")
 def login(request):
-    try:
-        sys_user=User.objects.get(username="sys")
-    except ObjectDoesNotExist as ex:
-        user = User.objects.create_user('sys', '', '123456')
-        user.is_active=True
-        user.is_supperuser=True
-        user.save()
     _login=models.Login()
     _login.language=request._get_request().get("language","en")
     if request.GET.has_key("next"):
@@ -52,7 +51,7 @@ def login(request):
         try:
             ret=authenticate(username=request._get_post().get("username"), password=request._get_post().get("password"))
             form_login(request,ret)
-            return redirect(request.get_app_url(""))
+            return redirect("/")
         except Exception as ex:
             _login.is_error=True
             _login.error_message=request.get_global_res("Username or Password is incorrect")

@@ -36,7 +36,6 @@ function controller($dialog, $scope, systemService) {
     function activate() {
         $scope.$root.currentFunction = '';
         $scope.$root.currentModule = '';
-        $scope.$root.logo = 'http://surehcs.lacviet.vn/WS2017/Customers/default/logo.png';
 
         services.api("${get_api_key('app_main.api.functionlist/get_list')}")
             .data({
@@ -67,7 +66,7 @@ function controller($dialog, $scope, systemService) {
                     });
                 });
                 $scope.$root.$functions = fs;
-                $scope.$root.$applyAsync();
+                $scope.$apply();
 
                 $scope.$root.$history.change(function (data) {
                     if (data.page) {

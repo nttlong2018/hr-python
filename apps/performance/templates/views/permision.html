@@ -1,11 +1,143 @@
 ﻿<div class="hcs-container">
     <div class="row" style="margin:unset;">
-        <hcs-breadcumb data="mapName" selected-url="$partialpage" function="currentFunction"></hcs-breadcumb>
+        <hcs-breadcumb data="mapName" function="currentFunction"></hcs-breadcumb>
         <div class="col-md-12" id="hcs-admin-system-container">
             <hcs-left-menu data="mapName" avatar="false"></hcs-left-menu>
             <div class="hcs-system-admin-content">
-                <div class="tab-content col-md-12" id="hcs-admin-system-panel-content">
-                   <div c-template url="${get_app_url('')}/pages/{{$partialpage}}"></div>
+                    <div class="tab-content col-md-12" id="hcs-admin-system-panel-content">
+                    <div id="function1" class="tab-pane fade in active">
+                        <table class="table table-hover" id="tablePermision">
+                            <thead>
+                                <tr>
+                                    <th style="width:2%;">
+                                        <label class="m-checkbox m-checkbox--state-info">
+                                            <input type="checkbox" checked="true">
+                                            <span></span>
+                                        </label>
+                                    </th>
+                                    <th>Mã vùng dữ liệu</th>
+                                    <th>Tên vùng vùng dữ liệu</th>
+                                    <th>Mô tả chi tiết</th>
+                                    <th>Phạm vi truy cập</th>
+                                    <th>Thời điểm tạo</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="m in mock1" ng-model="m"
+                                    ng-click="testFunction(m, $event)">
+                                    <td>
+                                        <label class="m-checkbox m-checkbox--state-info">
+                                            <input type="checkbox" checked="{{m.state}}">
+                                            <span></span>
+                                        </label>
+                                    </td>
+                                    <td>{{m.code}}</td>
+                                    <td>{{m.codename}}</td>
+                                    <td>{{m.description}}</td>
+                                    <td>{{m.permision}}</td>
+                                    <td>{{m.createdate}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <nav aria-label="Page navigation" class="hcs-pagi-navigation">
+                            <ul class="pagination">
+                                <li class="page-item">
+                                    <a class="page-link" href="javascript:void(0)">Previous</a>
+                                </li>
+                                <li class="page-item">
+                                    <a class="page-link" href="javascript:void(0)">1</a>
+                                </li>
+                                <li class="page-item">
+                                    <a class="page-link" href="javascript:void(0)">2</a>
+                                </li>
+                                <li class="page-item">
+                                    <a class="page-link" href="javascript:void(0)">3</a>
+                                </li>
+                                <li class="page-item">
+                                    <a class="page-link" href="javascript:void(0)">Next</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <div id="function2" class="tab-pane fade">
+                        <table class="table table-hover" id="tablePermision">
+                            <thead>
+                                <tr>
+                                    <th style="width:2%;">
+                                        <label class="m-checkbox m-checkbox--state-info">
+                                            <input type="checkbox" checked="true">
+                                            <span></span>
+                                        </label>
+                                    </th>
+                                    <th>Mã người dùng</th>
+                                    <th>Tên hiển thị</th>
+                                    <th>Thuộc nhóm người dùng</th>
+                                    <th>Là quản trị hệ thống</th>
+                                    <th>Không bị khóa</th>
+                                    <th>Mức quản lí từ</th>
+                                    <th>Đến</th>
+                                    <th>Thời điểm tạo</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="m in mock2" ng-model="m"
+                                    ng-click="testFunction(m, $event)">
+                                    <td>
+                                        <div class="checkbox">
+                                                <label class="custom-checkbox">
+                                                    <input type="checkbox" checked="{{state}}"> <span></span>
+                                                </label>
+                                        </div>
+                                    </td>
+                                    <td>{{m.code}}</td>
+                                    <td>{{m.codename}}</td>
+                                    <td>{{m.groupcode}}</td>
+                                    <td>
+                                        <div class="checkbox">
+                                                <label class="custom-checkbox">
+                                                    <input type="checkbox" checked="{{m.isAdmin}}"> <span></span>
+                                                </label>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="checkbox">
+                                                <label class="custom-checkbox">
+                                                    <input type="checkbox" checked="{{m.isLock}}"> <span></span>
+                                                </label>
+                                        </div>
+                                    </td>
+                                    <td>{{m.managefrom}}</td>
+                                    <td>{{m.manageto}}</td>
+                                    <td>{{m.createdate}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <nav aria-label="Page navigation" class="hcs-pagi-navigation">
+                            <ul class="pagination">
+                                <li class="page-item">
+                                    <a class="page-link" href="javascript:void(0)">Previous</a>
+                                </li>
+                                <li class="page-item">
+                                    <a class="page-link" href="javascript:void(0)">1</a>
+                                </li>
+                                <li class="page-item">
+                                    <a class="page-link" href="javascript:void(0)">2</a>
+                                </li>
+                                <li class="page-item">
+                                    <a class="page-link" href="javascript:void(0)">3</a>
+                                </li>
+                                <li class="page-item">
+                                    <a class="page-link" href="javascript:void(0)">Next</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <div id="function3" class="tab-pane fade">
+
+                    </div>
+                    <div id="function4" class="tab-pane face">
+
+                    </div>
                 </div>
             </div>
         </div>
