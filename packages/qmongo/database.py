@@ -1,7 +1,7 @@
 from sqlalchemy.sql.functions import count
 
 from helpers import expr,validators
-from helpers import get_model
+from helpers import get_model,get_keys_of_model
 from pymongo import MongoClient
 from pymongo.errors import OperationFailure
 import logging
@@ -186,7 +186,7 @@ class ENTITY():
             ret_data={}
             try:
                 self._data=extract_data(self._data)
-                ret_validate_require=validators.validate_require_data(self.name,self._data)
+                ret_validate_require=validators.validate_require_data(self.qr._model.name,self._data)
                 if ret_validate_require.__len__()>0:
                     return dict(
                         error=dict(
@@ -194,7 +194,7 @@ class ENTITY():
                             code="missing"
                         )
                     )
-                ret_validate_data_type=validators.validate_type_of_data(self.name,self._data)
+                ret_validate_data_type=validators.validate_type_of_data(self.qr._model.name,self._data)
                 if ret_validate_data_type.__len__()>0:
                     return dict(
                         error=dict(
@@ -239,7 +239,7 @@ class ENTITY():
                 self._data = {}
                 return ret
             if self._action=="update_many":
-                ret_validate_require = validators.validate_require_data(self.name, self._data["$set"], partial=True)
+                ret_validate_require = validators.validate_require_data(self.qr._model.name, self._data["$set"], partial=True)
                 if ret_validate_require.__len__() > 0:
                     return dict(
                         error=dict(
@@ -247,7 +247,7 @@ class ENTITY():
                             code="missing"
                         )
                     )
-                ret_validate_data_type = validators.validate_type_of_data(self.name, self._data["$set"])
+                ret_validate_data_type = validators.validate_type_of_data(self.qr._model.name, self._data["$set"])
                 if ret_validate_data_type.__len__() > 0:
                     return dict(
                         error=dict(
@@ -419,11 +419,33 @@ class COLL():
         else:
             self.name = name
         qr._model=get_model(name)
+       
+
         self.qr=qr
     def get_name(self):
         return self._none_schema_name
     def get_collection(self):
-        return self.qr.db.get_collection(self.name).with_options(codec_options=self.qr._codec_options)
+        ret_coll=self.qr.db.get_collection(self.name).with_options(codec_options=self.qr._codec_options)
+        key_info=get_keys_of_model(self._none_schema_name)
+        if key_info["keys"]!=None  and not key_info["has_created"]:
+            for item in key_info["keys"]:
+                keys=[]
+                partialFilterExpression={}
+                
+                for field_name in item:
+                    
+                    keys.append((field_name,pymongo.ASCENDING))
+                    if(self.qr._model.meta[field_name]=="text"):
+                        partialFilterExpression.update({
+                            field_name:{
+                                "$type":"string"
+                            }
+                        })
+            ret_coll.create_index(keys,
+                              unique=True,
+                              partialFilterExpression=partialFilterExpression)
+            key_info["has_created"]=True
+        return ret_coll
     def find_one(self,exprression,*args,**kwargs):
         """find one item with conditional ex: find_one("Username={0}","admin"),
             find_one("Username='admin'"),
@@ -475,16 +497,13 @@ class COLL():
             self._where.where(exprression,params)
         return self._where
     def entity(self):
+        self.get_collection()
         if self._entity==None:
             self._entity=ENTITY(self.qr,self.name)
         return self._entity
     def aggregate(self):
         """create aggregate before create pipeline"""
         return AGGREGATE(self.qr,self.name)
-    def entity(self):
-        if self._entity==None:
-            self._entity=ENTITY(self.qr,self.name)
-        return self._entity
     def insert(self,*args,**kwargs):
         ac=self.entity().insert_one(*args,**kwargs)
         ret=ac.commit()
@@ -497,6 +516,8 @@ class COLL():
         ret=ac.commit()
         return ret
     def create_unique_index(self,*args,**kwargs):
+        if type(args) is tuple and args.__len__()>0:
+            args=args[0]
         for item in args:
             keys=[]
             partialFilterExpression={}
@@ -801,8 +822,9 @@ class AGGREGATE():
                                  "What is '{0}'?\n"
                                  "Your selected fields are:\n"
                                  "{1}".format(key,msg_detail)))
+        _sort = (lambda x, y: y if y != {} else x[0])(args, kwargs)
         self._pipe.append({
-            "$sort":kwargs
+            "$sort":_sort
         })
         return self
     def count(self,alias):
@@ -850,7 +872,7 @@ class AGGREGATE():
         return dict(
             page_size=page_size,
             page_index=page_index,
-            total_items=total_items["total_items"],
+            total_items= (lambda x: x["total_items"] if x != None else 0) (total_items),
             items=items
         )
     def __copy__(self):

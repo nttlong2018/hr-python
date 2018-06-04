@@ -7,6 +7,7 @@ import aggregate_validators as query_validator
 import validators
 
 _model_caching_={}
+_model_index_={}
 class data_field():
     data_type="text"
     is_require = False
@@ -86,6 +87,7 @@ def unwind_data(data,prefix=None):
 
     return ret
 def define_model(_name,keys=None,*args,**kwargs):
+    global _model_index_
     name=_name
     if _model_caching_.has_key(name):
         return _model_caching_[name]
@@ -107,6 +109,14 @@ def define_model(_name,keys=None,*args,**kwargs):
     _model_caching_.update({
         name:query_validator.validator(name,validate_dict)
     })
+    _model_index_.update({
+        name:{
+                "keys":keys,
+                "has_created":False
+            }
+        })
+def get_keys_of_model(name):
+    return _model_index_[name]
 def get_model(name):
     if not _model_caching_.has_key(name):
         raise (Exception("It look like you forgot create model for '{0}'\n"

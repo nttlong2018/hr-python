@@ -75,27 +75,56 @@ def create_model(name,*args,**kwargs):
         except Exception as ex:
             lock.release()
             raise ex
+def get_data_fields(data):
+    ret={}
+    field_with_typpe_list=[x for x in data.keys() if data[x]=="list"]
+
+    ignore_list=[]
+    for key in field_with_typpe_list:
+        ignore_list.extend([x for x in data.keys() if x.__len__()>key.__len__() and   x[0:key.__len__()+1]==key+"."])
+
+    for key in data.keys():
+        if data[key]=="list" :
+            ret.update({
+                key:"list"
+                })
+        elif ignore_list.count(key)==0:
+            ret.update({
+                key:data[key]
+                })
+    return ret
+
+
+
 def validate_type_of_data(name,data):
     ret = []
-    for key in _model_cache_["type_fields"].get(name, {}):
-        val = get_value_by_path(key, data)
+    data_fields=get_data_fields(_model_cache_["type_fields"].get(name, {}))
+    for key in data_fields:
+        type_of_value = _model_cache_["type_fields"][name][key]
+        if type_of_value =="list":
+            #val = get_value_by_path(key, data)
+            #for item in val:
+            #    val = get_value_by_path(key, item)
+            pass
+        else:
+            val = get_value_by_path(key, data)
 
-        if val != None:
-            type_of_value = _model_cache_["type_fields"][name][key]
-            if type_of_value == "text" and type(val) not in [str, unicode]:
-                ret.append(key)
-            if type_of_value == "numeric" and type(val) not in [
-                type(int),
-                type(float),
-                type(long),
-                type(complex)
-            ]:
-                ret.append(key)
-            if type_of_value == "bool" and type(val) != bool:
-                ret.append(key)
-            if type_of_value == "date" and type(val) != datetime.datetime:
-                ret.append(key)
-            if type_of_value == "list" and type(val) != list:
-                ret.append(key)
+            if val != None:
+                
+                if type_of_value == "text" and type(val) not in [str, unicode]:
+                    ret.append(key)
+                if type_of_value == "numeric" and type(val) not in [
+                    int,
+                    float,
+                    long,
+                    complex
+                ]:
+                    ret.append(key)
+                if type_of_value == "bool" and type(val) != bool:
+                    ret.append(key)
+                if type_of_value == "date" and type(val) != datetime.datetime:
+                    ret.append(key)
+                if type_of_value == "list" and type(val) != list:
+                    ret.append(key)
 
     return ret
