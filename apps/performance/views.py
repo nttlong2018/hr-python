@@ -40,6 +40,7 @@ def admin(request):
 
 @quicky.view.template("login.html")
 def login(request):
+
     _login=models.Login()
     _login.language=request._get_request().get("language","en")
     if request.GET.has_key("next"):

@@ -2,8 +2,6 @@
 import datetime
 def authenticate(request):
     if not request.user.is_anonymous() and \
-            (request.user.is_superuser or \
-        request.user.is_staff) and \
         request.user.is_active:
         return True
     else:
@@ -28,9 +26,9 @@ def on_end_request(request):
 
 Database=dict(
     host="172.16.0.126",
-    name="HRP2018_Performance",
+    name="lv01_lms",
     port=2324,
-    user="",
-    password=""
+    user="sys",
+    password="123456"
 )
 login_url="login"

@@ -136,6 +136,15 @@ MULTI_TENANCY_CONFIGURATION=dict(
     name="lv01_lms",
     collection="sys.multi_tenancy"
 )
+from quicky import api
+api.connect(
+    host="172.16.7.63",
+    port=27017,
+    user="sys",
+    password="123456",
+    name="lv01_lms",
+    collection="sys_api_cache"
+)
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 

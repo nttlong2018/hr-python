@@ -9,7 +9,7 @@ import copy
 import pymongo
 import pytz
 from bson.codec_options import CodecOptions
-
+import helpers
 logger = logging.getLogger(__name__)
 _db={}
 def extract_data(data):
@@ -38,10 +38,11 @@ def extract_data(data):
             })
     return ret
 class QR():
-    db=None
-    _entity=None
-    _codec_options=None
+
     def __init__(self,config):
+        self.db = None
+        self._entity = None
+        self._codec_options = None
         self.db=config["database"]
         self._codec_options=config["codec_options"]
     def collection(self,name):
@@ -52,12 +53,13 @@ class QR():
     def get_collection_names(self):
         return list(self.db.collection_names())
 class ENTITY():
-    name = ""
-    qr = None
-    _data={}
-    _action=None
-    _expr=None
+
     def __init__(self, qr, name):
+        self.name = ""
+        self.qr = None
+        self._data = {}
+        self._action = None
+        self._expr = None
         self.qr = qr
         self.name = name
     def insert_one(self,*args,**kwargs):
@@ -182,10 +184,14 @@ class ENTITY():
         )
     def commit(self):
         _coll=self.qr.db.get_collection(self.name).with_options(codec_options=self.qr._codec_options)
+        model_events = helpers.events(self.qr._model.name)
         if self._action=="insert_one":
             ret_data={}
             try:
                 self._data=extract_data(self._data)
+                if model_events!=None:
+                    for fn in model_events._on_before_insert:
+                        fn(self._data)
                 ret_validate_require=validators.validate_require_data(self.qr._model.name,self._data)
                 if ret_validate_require.__len__()>0:
                     return dict(
@@ -225,6 +231,10 @@ class ENTITY():
 
 
         elif self._action=="insert_many":
+            if model_events:
+                for item in self._data:
+                    for fn in model_events._on_before_insert:
+                        fn(item)
             ret = _coll.insert_many(self._data)
             self._action = None
             self._data = {}
@@ -239,6 +249,9 @@ class ENTITY():
                 self._data = {}
                 return ret
             if self._action=="update_many":
+                if model_events:
+                    for fn in model_events._on_before_update:
+                        fn(self._data["$set"])
                 ret_validate_require = validators.validate_require_data(self.qr._model.name, self._data["$set"], partial=True)
                 if ret_validate_require.__len__() > 0:
                     return dict(
@@ -312,10 +325,7 @@ class ENTITY():
                 self._data = {}
                 return { "deleted":ret.deleted_count}
 class WHERE():
-    name = ""
-    _coll = None
-    _where_list=[]
-    _entity=None
+
 
     def _get_where(self):
         i = 0
@@ -335,6 +345,10 @@ class WHERE():
         return y
 
     def __init__(self, coll):
+        self.name = ""
+        self._coll = None
+        self._where_list = []
+        self._entity = None
         self._coll = coll
         self.name=coll.name
     def get_list(self):
@@ -405,13 +419,14 @@ class WHERE():
     def commit(self):
         return self.to_entity().commit()
 class COLL():
-    name=""
-    qr=None
-    _where=None
-    _entity=None
-    _none_schema_name=None
+
 
     def __init__(self,qr,name):
+        self.name = ""
+        self.qr = None
+        self._where = None
+        self._entity = None
+        self._none_schema_name = None
         self._none_schema_name=name
         import threading
         if hasattr(threading.currentThread(),"tenancy_code") and threading.currentThread().tenancy_code!="":
@@ -422,6 +437,11 @@ class COLL():
        
 
         self.qr=qr
+    def descibe_fields(self,tabs,fields):
+        _fields = ""
+        for x in fields:
+            _fields += tabs+ x + "\n"
+        return  _fields
     def get_name(self):
         return self._none_schema_name
     def get_collection(self):
@@ -451,6 +471,11 @@ class COLL():
             find_one("Username='admin'"),
             find_one("Username=@username",username="admin")
          """
+        unknown_fields = self.qr._model.validate_expression(exprression)
+        if unknown_fields.__len__() > 0:
+            raise (Exception("What is bellow list of fields?:\n" + self.descibe_fields("\t\t", unknown_fields) +
+                             " \n Your selected fields now is bellow list: \n" +
+                             self.descibe_fields("\t\t\t", self.qr._model.get_fields())))
         if type(exprression) is dict:
             ret = self.get_collection().find_one(exprression)
             return ret
@@ -468,6 +493,11 @@ class COLL():
                     find("Username='admin'"),
                     find("Username=@username",username="admin")
                  """
+        unknown_fields = self.qr._model.validate_expression(exprression)
+        if unknown_fields.__len__() > 0:
+            raise (Exception("What is bellow list of fields?:\n" + self.descibe_fields("\t\t", unknown_fields) +
+                             " \n Your selected fields now is bellow list: \n" +
+                             self.descibe_fields("\t\t\t", self.qr._model.get_fields())))
         if type(exprression) is dict:
             ret = self.get_collection().find(exprression)
             return list(ret)
@@ -505,10 +535,16 @@ class COLL():
         """create aggregate before create pipeline"""
         return AGGREGATE(self.qr,self.name)
     def insert(self,*args,**kwargs):
+
         ac=self.entity().insert_one(*args,**kwargs)
         ret=ac.commit()
         return ret
     def update(self,data,filter,*args,**kwargs):
+        unknown_fields = self.qr._model.validate_expression(filter)
+        if unknown_fields.__len__() > 0:
+            raise (Exception("What is bellow list of fields?:\n" + self.descibe_fields("\t\t", unknown_fields) +
+                             " \n Your selected fields now is bellow list: \n" +
+                             self.descibe_fields("\t\t\t", self.qr._model.get_fields())))
         if type(args) is tuple and args.__len__()>0 and kwargs=={}:
             kwargs=args[0]
         ac=self.entity().filter(filter,kwargs)
@@ -538,6 +574,11 @@ class COLL():
 
         return self
     def delete(self,filter,*args,**kwargs):
+        unknown_fields = self.qr._model.validate_expression(filter)
+        if unknown_fields.__len__() > 0:
+            raise (Exception("What is bellow list of fields?:\n" + self.descibe_fields("\t\t", unknown_fields) +
+                             " \n Your selected fields now is bellow list: \n" +
+                             self.descibe_fields("\t\t\t", self.qr._model.get_fields())))
         ac=self.entity().filter(filter,*args,**kwargs)
         ac.delete()
         ret=ac.commit()
@@ -568,11 +609,10 @@ class COLL():
 
         return data_item
 class AGGREGATE():
-    name = ""
-    qr = None
-    _pipe=[]
-    _selected_fields=None
+
     def __init__(self, qr, name):
+
+        self._selected_fields = None
         self.qr = qr
         self.name = name
         self._pipe=[]

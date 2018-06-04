@@ -5,9 +5,11 @@ from filter_expression import filter_expression
 from  aggregate_expression import aggregate_expression
 import aggregate_validators as query_validator
 import validators
-
+from model_events import model_event
 _model_caching_={}
 _model_index_={}
+_model_caching_params={}
+_model_events={}
 class data_field():
     data_type="text"
     is_require = False
@@ -53,7 +55,7 @@ def unwind_data(data,prefix=None):
                             "details":data[key].details
                         }
                     })
-                if data[key].details != None:
+                if data[key].details != None and not type(data[key].details) is str:
                     ret_fields = unwind_data(data[key].details, key)
                     for fx in ret_fields.keys():
                         if prefix!=None:
@@ -88,12 +90,16 @@ def unwind_data(data,prefix=None):
     return ret
 def define_model(_name,keys=None,*args,**kwargs):
     global _model_index_
+    global _model_caching_params
     name=_name
     if _model_caching_.has_key(name):
         return _model_caching_[name]
     params=kwargs
     if type(args) is tuple and args.__len__()>0:
         params=args[0]
+    _model_caching_params.update({
+        name:params
+    })
     list_of_fields=unwind_data(params)
     validators.set_require_fields(name,[
         x for x in list_of_fields.keys() if list_of_fields[x]["require"]
@@ -107,7 +113,8 @@ def define_model(_name,keys=None,*args,**kwargs):
         )
     validators.create_model(name,validate_dict)
     _model_caching_.update({
-        name:query_validator.validator(name,validate_dict)
+        name:query_validator.validator(name,validate_dict),
+
     })
     _model_index_.update({
         name:{
@@ -115,6 +122,37 @@ def define_model(_name,keys=None,*args,**kwargs):
                 "has_created":False
             }
         })
+    return _model_caching_[name]
+def extent_model(name,from_name,keys=None,*args,**kwargs):
+    source_model=get_model(from_name)
+    source_model_params=_model_caching_params[from_name]
+    if type(args) is tuple and args.__len__()>0:
+        for key in source_model_params.keys():
+            args[0].update({
+                key:source_model_params[key]
+            })
+    if keys==None:
+        keys=[]
+    keys.extend(_model_index_[from_name]["keys"])
+    define_model(name,keys,*args,**kwargs)
+    from_event=events(from_name)
+
+    if from_event!=None:
+        model_event = events(name)
+        for f in from_event._on_before_insert:
+            model_event.on_before_insert(f)
+        for f in from_event._on_after_insert:
+            model_event.on_after_insert(f)
+        for f in from_event._on_before_update:
+            model_event.on_before_update(f)
+        for f in from_event._on_after_update:
+            model_event.on_after_update(f)
+
+
+
+
+    model=define_model(name,keys,*args,**kwargs)
+
 def get_keys_of_model(name):
     return _model_index_[name]
 def get_model(name):
@@ -157,3 +195,11 @@ def extract_data(data):
                 key:data[key]
             })
     return ret
+def events(name):
+    if _model_events.has_key(name):
+        return _model_events[name]
+    else:
+        _model_events.update({
+            name:model_event()
+        })
+        return _model_events[name]

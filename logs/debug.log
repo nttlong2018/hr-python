@@ -11742,3 +11742,234 @@ lv.django_session.find (0.00) {'_id': 'ag1jhkrt86e7a2pikcycvkigrp7t7ibf', 'expir
 lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
 lv.auth_user.find (0.00) {'username': u'sys'}
 lv.django_session.save (0.00) {'_id': 'ag1jhkrt86e7a2pikcycvkigrp7t7ibf', 'expire_date': datetime.datetime(2018, 6, 18, 4, 34, 49, 523099, tzinfo=<UTC>), 'session_data': u'NzRiMDI5MjliNGE5OTA5OGU3NWExMGU5N2E1ZWRlZjJkMzI2OTlmMjp7Imxhbmd1YWdlIjoiZW4iLCJfYXV0aF91c2VyX2lkIjoiNWIwMmExZGYyMzIwMzcyYmE0YTQ5YzMxIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoicGVybWlzc2lvbl9iYWNrZW5kX25vbnJlbC5iYWNrZW5kcy5Ob25yZWxQZXJtaXNzaW9uQmFja2VuZCJ9'}
+lv.django_session.find (0.00) {'_id': 'ag1jhkrt86e7a2pikcycvkigrp7t7ibf', 'expire_date': {'$gt': datetime.datetime(2018, 6, 4, 4, 39, 49, 797086, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.auth_user.find (0.00) {'username': u'sys'}
+lv.django_session.save (0.00) {'_id': 'ag1jhkrt86e7a2pikcycvkigrp7t7ibf', 'expire_date': datetime.datetime(2018, 6, 18, 4, 40, 11, 646335, tzinfo=<UTC>), 'session_data': u'NjYwNWMyOWVmZjBmYjcyOWRkOGE2YjJlZDJjMGUyMmM3MjY3MjVkZTp7Il9hdXRoX3VzZXJfYmFja2VuZCI6InBlcm1pc3Npb25fYmFja2VuZF9ub25yZWwuYmFja2VuZHMuTm9ucmVsUGVybWlzc2lvbkJhY2tlbmQiLCJfYXV0aF91c2VyX2lkIjoiNWIwMmExZGYyMzIwMzcyYmE0YTQ5YzMxIiwibGFuZ3VhZ2UiOiJlbiJ9'}
+lv.django_session.find (0.00) {'_id': 'ag1jhkrt86e7a2pikcycvkigrp7t7ibf', 'expire_date': {'$gt': datetime.datetime(2018, 6, 4, 4, 41, 3, 61770, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.auth_user.find (0.00) {'username': u'sys'}
+lv.auth_user.save (0.00) {'username': u'sys', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b02a1df2320372ba4a49c31'), 'is_active': True, 'email': u'', 'is_superuser': False, 'is_staff': False, 'last_login': datetime.datetime(2018, 6, 4, 4, 42, 18, 197872, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$KW6IwFOfDl12$J8Y4rGgdfA5n/ihfHuUyJLP8ggim72LMBQcQruA4iv8=', 'date_joined': datetime.datetime(2018, 5, 20, 13, 39, 26, 881000, tzinfo=<UTC>)}
+lv.django_session.save (0.00) {'_id': 'ag1jhkrt86e7a2pikcycvkigrp7t7ibf', 'expire_date': datetime.datetime(2018, 6, 18, 4, 42, 18, 206622, tzinfo=<UTC>), 'session_data': u'NzRiMDI5MjliNGE5OTA5OGU3NWExMGU5N2E1ZWRlZjJkMzI2OTlmMjp7Imxhbmd1YWdlIjoiZW4iLCJfYXV0aF91c2VyX2lkIjoiNWIwMmExZGYyMzIwMzcyYmE0YTQ5YzMxIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoicGVybWlzc2lvbl9iYWNrZW5kX25vbnJlbC5iYWNrZW5kcy5Ob25yZWxQZXJtaXNzaW9uQmFja2VuZCJ9'}
+lv.auth_user.find (0.00) {'username': 'sys'}
+lv.django_session.find (0.00) {'_id': 'ag1jhkrt86e7a2pikcycvkigrp7t7ibf', 'expire_date': {'$gt': datetime.datetime(2018, 6, 4, 4, 42, 18, 225486, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': 'ag1jhkrt86e7a2pikcycvkigrp7t7ibf', 'expire_date': {'$gt': datetime.datetime(2018, 6, 4, 4, 42, 28, 714670, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': 'ag1jhkrt86e7a2pikcycvkigrp7t7ibf', 'expire_date': {'$gt': datetime.datetime(2018, 6, 4, 4, 42, 28, 752802, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.save (0.00) {'_id': 'ag1jhkrt86e7a2pikcycvkigrp7t7ibf', 'expire_date': datetime.datetime(2018, 6, 18, 4, 42, 37, 411966, tzinfo=<UTC>), 'session_data': u'NjYwNWMyOWVmZjBmYjcyOWRkOGE2YjJlZDJjMGUyMmM3MjY3MjVkZTp7Il9hdXRoX3VzZXJfYmFja2VuZCI6InBlcm1pc3Npb25fYmFja2VuZF9ub25yZWwuYmFja2VuZHMuTm9ucmVsUGVybWlzc2lvbkJhY2tlbmQiLCJfYXV0aF91c2VyX2lkIjoiNWIwMmExZGYyMzIwMzcyYmE0YTQ5YzMxIiwibGFuZ3VhZ2UiOiJlbiJ9'}
+lv.django_session.find (0.00) {'_id': 'ag1jhkrt86e7a2pikcycvkigrp7t7ibf', 'expire_date': {'$gt': datetime.datetime(2018, 6, 4, 4, 42, 40, 761503, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': 'ag1jhkrt86e7a2pikcycvkigrp7t7ibf', 'expire_date': {'$gt': datetime.datetime(2018, 6, 4, 4, 44, 45, 68244, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.auth_user.find (0.00) {'username': u'sys'}
+lv.auth_user.find (0.00) {'username': u'sys'}
+lv.auth_user.save (0.00) {'username': u'sys', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b02a1df2320372ba4a49c31'), 'is_active': True, 'email': u'', 'is_superuser': False, 'is_staff': False, 'last_login': datetime.datetime(2018, 6, 4, 4, 45, 18, 16173, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$KW6IwFOfDl12$J8Y4rGgdfA5n/ihfHuUyJLP8ggim72LMBQcQruA4iv8=', 'date_joined': datetime.datetime(2018, 5, 20, 13, 39, 26, 881000, tzinfo=<UTC>)}
+lv.django_session.save (0.00) {'_id': 'ag1jhkrt86e7a2pikcycvkigrp7t7ibf', 'expire_date': datetime.datetime(2018, 6, 18, 4, 45, 18, 27281, tzinfo=<UTC>), 'session_data': u'NzRiMDI5MjliNGE5OTA5OGU3NWExMGU5N2E1ZWRlZjJkMzI2OTlmMjp7Imxhbmd1YWdlIjoiZW4iLCJfYXV0aF91c2VyX2lkIjoiNWIwMmExZGYyMzIwMzcyYmE0YTQ5YzMxIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoicGVybWlzc2lvbl9iYWNrZW5kX25vbnJlbC5iYWNrZW5kcy5Ob25yZWxQZXJtaXNzaW9uQmFja2VuZCJ9'}
+lv.auth_user.find (0.00) {'username': 'sys'}
+lv.django_session.find (0.00) {'_id': 'ag1jhkrt86e7a2pikcycvkigrp7t7ibf', 'expire_date': {'$gt': datetime.datetime(2018, 6, 4, 4, 45, 18, 80188, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': 'ag1jhkrt86e7a2pikcycvkigrp7t7ibf', 'expire_date': {'$gt': datetime.datetime(2018, 6, 4, 4, 45, 27, 674516, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': 'ag1jhkrt86e7a2pikcycvkigrp7t7ibf', 'expire_date': {'$gt': datetime.datetime(2018, 6, 4, 4, 45, 27, 710535, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.save (0.00) {'_id': 'ag1jhkrt86e7a2pikcycvkigrp7t7ibf', 'expire_date': datetime.datetime(2018, 6, 18, 4, 46, 0, 147588, tzinfo=<UTC>), 'session_data': u'NjYwNWMyOWVmZjBmYjcyOWRkOGE2YjJlZDJjMGUyMmM3MjY3MjVkZTp7Il9hdXRoX3VzZXJfYmFja2VuZCI6InBlcm1pc3Npb25fYmFja2VuZF9ub25yZWwuYmFja2VuZHMuTm9ucmVsUGVybWlzc2lvbkJhY2tlbmQiLCJfYXV0aF91c2VyX2lkIjoiNWIwMmExZGYyMzIwMzcyYmE0YTQ5YzMxIiwibGFuZ3VhZ2UiOiJlbiJ9'}
+lv.django_session.find (0.00) {'_id': 'ag1jhkrt86e7a2pikcycvkigrp7t7ibf', 'expire_date': {'$gt': datetime.datetime(2018, 6, 4, 4, 46, 8, 454566, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': 'ag1jhkrt86e7a2pikcycvkigrp7t7ibf', 'expire_date': {'$gt': datetime.datetime(2018, 6, 4, 4, 46, 8, 478735, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.save (0.00) {'_id': 'ag1jhkrt86e7a2pikcycvkigrp7t7ibf', 'expire_date': datetime.datetime(2018, 6, 18, 4, 46, 16, 827367, tzinfo=<UTC>), 'session_data': u'NzRiMDI5MjliNGE5OTA5OGU3NWExMGU5N2E1ZWRlZjJkMzI2OTlmMjp7Imxhbmd1YWdlIjoiZW4iLCJfYXV0aF91c2VyX2lkIjoiNWIwMmExZGYyMzIwMzcyYmE0YTQ5YzMxIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoicGVybWlzc2lvbl9iYWNrZW5kX25vbnJlbC5iYWNrZW5kcy5Ob25yZWxQZXJtaXNzaW9uQmFja2VuZCJ9'}
+lv.django_session.find (0.00) {'_id': 'ag1jhkrt86e7a2pikcycvkigrp7t7ibf', 'expire_date': {'$gt': datetime.datetime(2018, 6, 4, 4, 46, 38, 780240, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': 'ag1jhkrt86e7a2pikcycvkigrp7t7ibf', 'expire_date': {'$gt': datetime.datetime(2018, 6, 4, 4, 46, 38, 797711, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.save (0.00) {'_id': 'ag1jhkrt86e7a2pikcycvkigrp7t7ibf', 'expire_date': datetime.datetime(2018, 6, 18, 4, 46, 54, 885086, tzinfo=<UTC>), 'session_data': u'NjYwNWMyOWVmZjBmYjcyOWRkOGE2YjJlZDJjMGUyMmM3MjY3MjVkZTp7Il9hdXRoX3VzZXJfYmFja2VuZCI6InBlcm1pc3Npb25fYmFja2VuZF9ub25yZWwuYmFja2VuZHMuTm9ucmVsUGVybWlzc2lvbkJhY2tlbmQiLCJfYXV0aF91c2VyX2lkIjoiNWIwMmExZGYyMzIwMzcyYmE0YTQ5YzMxIiwibGFuZ3VhZ2UiOiJlbiJ9'}
+lv.django_session.find (0.00) {'_id': 'ag1jhkrt86e7a2pikcycvkigrp7t7ibf', 'expire_date': {'$gt': datetime.datetime(2018, 6, 4, 4, 48, 33, 611290, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': 'ag1jhkrt86e7a2pikcycvkigrp7t7ibf', 'expire_date': {'$gt': datetime.datetime(2018, 6, 4, 4, 49, 8, 245347, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.save (0.00) {'_id': 'ag1jhkrt86e7a2pikcycvkigrp7t7ibf', 'expire_date': datetime.datetime(2018, 6, 18, 4, 49, 11, 100609, tzinfo=<UTC>), 'session_data': u'NzRiMDI5MjliNGE5OTA5OGU3NWExMGU5N2E1ZWRlZjJkMzI2OTlmMjp7Imxhbmd1YWdlIjoiZW4iLCJfYXV0aF91c2VyX2lkIjoiNWIwMmExZGYyMzIwMzcyYmE0YTQ5YzMxIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoicGVybWlzc2lvbl9iYWNrZW5kX25vbnJlbC5iYWNrZW5kcy5Ob25yZWxQZXJtaXNzaW9uQmFja2VuZCJ9'}
+lv.django_session.find (0.00) {'_id': 'ag1jhkrt86e7a2pikcycvkigrp7t7ibf', 'expire_date': {'$gt': datetime.datetime(2018, 6, 4, 4, 50, 13, 744256, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.auth_user.find (0.00) {'username': u'sys'}
+lv.auth_user.save (0.00) {'username': u'sys', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b02a1df2320372ba4a49c31'), 'is_active': True, 'email': u'', 'is_superuser': False, 'is_staff': False, 'last_login': datetime.datetime(2018, 6, 4, 4, 50, 14, 527315, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$KW6IwFOfDl12$J8Y4rGgdfA5n/ihfHuUyJLP8ggim72LMBQcQruA4iv8=', 'date_joined': datetime.datetime(2018, 5, 20, 13, 39, 26, 881000, tzinfo=<UTC>)}
+lv.django_session.save (0.00) {'_id': 'ag1jhkrt86e7a2pikcycvkigrp7t7ibf', 'expire_date': datetime.datetime(2018, 6, 18, 4, 50, 14, 540022, tzinfo=<UTC>), 'session_data': u'NjYwNWMyOWVmZjBmYjcyOWRkOGE2YjJlZDJjMGUyMmM3MjY3MjVkZTp7Il9hdXRoX3VzZXJfYmFja2VuZCI6InBlcm1pc3Npb25fYmFja2VuZF9ub25yZWwuYmFja2VuZHMuTm9ucmVsUGVybWlzc2lvbkJhY2tlbmQiLCJfYXV0aF91c2VyX2lkIjoiNWIwMmExZGYyMzIwMzcyYmE0YTQ5YzMxIiwibGFuZ3VhZ2UiOiJlbiJ9'}
+lv.auth_user.find (0.00) {'username': 'sys'}
+lv.django_session.find (0.00) {'_id': 'ag1jhkrt86e7a2pikcycvkigrp7t7ibf', 'expire_date': {'$gt': datetime.datetime(2018, 6, 4, 4, 50, 15, 247776, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': 'ag1jhkrt86e7a2pikcycvkigrp7t7ibf', 'expire_date': {'$gt': datetime.datetime(2018, 6, 4, 4, 50, 27, 449838, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.auth_user.find (0.00) {'username': 'sys'}
+Internal Server Error: /lv/performance/
+Traceback (most recent call last):
+  File "/home/hcsadmin/argo/packages/django/django/core/handlers/base.py", line 122, in get_response
+    raise e
+Exception: 
+
+
+<html>
+<head>
+    <title>Mako Runtime Error</title>
+    <style>
+        body { font-family:verdana; margin:10px 30px 10px 30px;}
+        .stacktrace { margin:5px 5px 5px 5px; }
+        .highlight { padding:0px 10px 0px 10px; background-color:#9F9FDF; }
+        .nonhighlight { padding:0px; background-color:#DFDFDF; }
+        .sample { padding:10px; margin:10px 10px 10px 10px;
+                  font-family:monospace; }
+        .sampleline { padding:0px 10px 0px 10px; }
+        .sourceline { margin:5px 5px 10px 5px; font-family:monospace;}
+        .location { font-size:80%; }
+        .highlight { white-space:pre; }
+        .sampleline { white-space:pre; }
+
+
+    </style>
+</head>
+<body>
+
+<h2>Error !</h2>
+
+<h3>Exception: It look like you forgot call api.connect on settings.py
+		How to use this?:
+			In settings.py:
+					  from quicky import api
+					  api.connect(
+					  host=db host,
+					  port= db port,
+					  name=db name,
+					  user=db user name,
+					  password=db password,
+					  collection=the name of collection storage api)
+</h3>
+
+    <div class="sample">
+    <div class="nonhighlight">
+    
+                $scope.$root.currentFunction = &#39;&#39;;
+    
+                $scope.$root.currentModule = &#39;&#39;;
+    
+        
+    
+    
+                services.api(&#34;${get_api_key(&#39;app_main.api.functionlist/get_list&#39;)}&#34;)
+    
+    
+                    .data({
+    
+                        //parameter at here
+    
+                    })
+    
+                    .done()
+    
+                    .then(function (res) {
+    </div>
+    </div>
+
+<div class="stacktrace">
+    <div class="location">/home/hcsadmin/argo/packages/quicky/api.py, line 139:</div>
+    <div class="nonhighlight">
+    
+      <div class="sourceline">raise (Exception(&#34;It look like you forgot call api.connect on settings.py\n&#34;</div>
+    </div>
+    <div class="location">/home/hcsadmin/argo/packages/quicky/extens.py, line 133:</div>
+    <div class="nonhighlight">
+    
+      <div class="sourceline">return api.get_api_key(app.mdl.__name__+path)</div>
+    </div>
+    <div class="location">/home/hcsadmin/argo/apps/performance/templates/scripts/app.js, line 40:</div>
+    <div class="nonhighlight">
+    
+      <div class="sourceline">        services.api(&#34;${get_api_key(&#39;app_main.api.functionlist/get_list&#39;)}&#34;)</div>
+    </div>
+    <div class="location">/home/hcsadmin/argo/uwsgi-argo/local/lib/python2.7/site-packages/mako/runtime.py, line 761:</div>
+    <div class="nonhighlight">
+    
+      <div class="sourceline">callable_(ctx, **kwargs)</div>
+    </div>
+    <div class="location">/home/hcsadmin/argo/apps/performance/templates/index.html, line 16:</div>
+    <div class="nonhighlight">
+    
+      <div class="sourceline">    &lt;%include file=&#34;/scripts/app.js&#34;/&gt;</div>
+    </div>
+    <div class="location">/home/hcsadmin/argo/apps/performance/templates/base.html, line 30:</div>
+    <div class="nonhighlight">
+    
+      <div class="sourceline">        ${self.body()}</div>
+    </div>
+    <div class="location">/home/hcsadmin/argo/uwsgi-argo/local/lib/python2.7/site-packages/mako/runtime.py, line 899:</div>
+    <div class="nonhighlight">
+    
+      <div class="sourceline">callable_(context, *args, **kwargs)</div>
+    </div>
+    <div class="location">/home/hcsadmin/argo/uwsgi-argo/local/lib/python2.7/site-packages/mako/runtime.py, line 873:</div>
+    <div class="nonhighlight">
+    
+      <div class="sourceline">_exec_template(inherit, lclcontext, args=args, kwargs=kwargs)</div>
+    </div>
+    <div class="location">/home/hcsadmin/argo/uwsgi-argo/local/lib/python2.7/site-packages/mako/runtime.py, line 838:</div>
+    <div class="nonhighlight">
+    
+      <div class="sourceline">**_kwargs_for_callable(callable_, data))</div>
+    </div>
+    <div class="location">/home/hcsadmin/argo/uwsgi-argo/local/lib/python2.7/site-packages/mako/template.py, line 462:</div>
+    <div class="nonhighlight">
+    
+      <div class="sourceline">return runtime._render(self, self.callable_, args, data)</div>
+    </div>
+    <div class="location">/home/hcsadmin/argo/packages/quicky/extens.py, line 185:</div>
+    <div class="nonhighlight">
+    
+      <div class="sourceline">ret_res=mylookup.get_template(fileName).render(**render_model)</div>
+    </div>
+</div>
+
+</body>
+</html>
+
+lv.django_session.find (0.00) {'_id': 'ag1jhkrt86e7a2pikcycvkigrp7t7ibf', 'expire_date': {'$gt': datetime.datetime(2018, 6, 4, 4, 52, 11, 163058, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.auth_user.find (0.00) {'username': 'sys'}
+lv.django_session.find (0.00) {'_id': 'ag1jhkrt86e7a2pikcycvkigrp7t7ibf', 'expire_date': {'$gt': datetime.datetime(2018, 6, 4, 4, 52, 15, 715893, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.auth_user.find (0.00) {'username': 'sys'}
+lv.django_session.find (0.00) {'_id': 'ag1jhkrt86e7a2pikcycvkigrp7t7ibf', 'expire_date': {'$gt': datetime.datetime(2018, 6, 4, 4, 52, 39, 807427, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.auth_user.find (0.00) {'username': 'sys'}
+Not Found: /performance/static/js/angular.min.js.map
+lv.django_session.find (0.00) {'_id': 'ag1jhkrt86e7a2pikcycvkigrp7t7ibf', 'expire_date': {'$gt': datetime.datetime(2018, 6, 4, 4, 52, 40, 396709, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+Internal Server Error: /lv/performance/api
+Traceback (most recent call last):
+  File "/home/hcsadmin/argo/packages/django/django/core/handlers/base.py", line 122, in get_response
+    raise e
+Exception: import 'performance.api.functionlist' encountered 'This look like you forgot set 'user' and 'password' params.
+ How is your mongodb authorization?'
+lv.django_session.find (0.00) {'_id': 'ag1jhkrt86e7a2pikcycvkigrp7t7ibf', 'expire_date': {'$gt': datetime.datetime(2018, 6, 4, 4, 54, 13, 280461, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+Internal Server Error: /lv/performance/api
+Traceback (most recent call last):
+  File "/home/hcsadmin/argo/packages/django/django/core/handlers/base.py", line 122, in get_response
+    raise e
+ValueError: No JSON object could be decoded
+lv.django_session.find (0.00) {'_id': 'ag1jhkrt86e7a2pikcycvkigrp7t7ibf', 'expire_date': {'$gt': datetime.datetime(2018, 6, 4, 4, 55, 18, 179320, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.auth_user.find (0.00) {'username': 'sys'}
+Not Found: /performance/static/js/angular.min.js.map
+lv.django_session.find (0.00) {'_id': 'ag1jhkrt86e7a2pikcycvkigrp7t7ibf', 'expire_date': {'$gt': datetime.datetime(2018, 6, 4, 4, 55, 18, 792679, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+Internal Server Error: /lv/performance/api
+Traceback (most recent call last):
+  File "/home/hcsadmin/argo/packages/django/django/core/handlers/base.py", line 122, in get_response
+    raise e
+Exception: import 'performance.api.functionlist' encountered 'This look like you forgot set 'user' and 'password' params.
+ How is your mongodb authorization?'
+lv.django_session.find (0.00) {'_id': 'ag1jhkrt86e7a2pikcycvkigrp7t7ibf', 'expire_date': {'$gt': datetime.datetime(2018, 6, 4, 4, 56, 17, 872400, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.auth_user.find (0.00) {'username': 'sys'}
+Not Found: /performance/static/js/angular.min.js.map
+lv.django_session.find (0.00) {'_id': 'ag1jhkrt86e7a2pikcycvkigrp7t7ibf', 'expire_date': {'$gt': datetime.datetime(2018, 6, 4, 4, 56, 18, 511449, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}

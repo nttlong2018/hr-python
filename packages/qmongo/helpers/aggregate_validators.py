@@ -3,6 +3,7 @@ class validator:
     meta=None
     name=None
     fields=[]
+    events=None
     def __init__(self,name,meta):
         self.name=name
         self.meta=meta
