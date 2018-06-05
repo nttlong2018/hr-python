@@ -12597,3 +12597,238 @@ lv.django_session.find (0.02) {'_id': 'hyz4b8f2lnbvql9recikr4u5pqhjev5p', 'expir
 lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
 lv.django_session.find (0.00) {'_id': 'hyz4b8f2lnbvql9recikr4u5pqhjev5p', 'expire_date': {'$gt': datetime.datetime(2018, 6, 5, 8, 43, 2, 626690, tzinfo=<UTC>)}}
 lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+Internal Server Error: /lv/pages/permission/form/addDomain
+Traceback (most recent call last):
+  File "/home/hcsadmin/argo/packages/django/django/core/handlers/base.py", line 122, in get_response
+    raise e
+TypeError: load_page() got an unexpected keyword argument 'tenancy_code'
+Internal Server Error: /lv/pages/permission/form/addDomain
+Traceback (most recent call last):
+  File "/home/hcsadmin/argo/packages/django/django/core/handlers/base.py", line 122, in get_response
+    raise e
+TypeError: load_page() got an unexpected keyword argument 'tenancy_code'
+Not Found: /performance/static/js/angular.min.js.map
+Not Found: /performance/static/js/datatables/pdfmake.min.js.map
+Internal Server Error: /lv/pages/permission/form/addDomain
+Traceback (most recent call last):
+  File "/home/hcsadmin/argo/packages/django/django/core/handlers/base.py", line 122, in get_response
+    raise e
+TypeError: load_page() got an unexpected keyword argument 'tenancy_code'
+Internal Server Error: /lv/pages/permission/form/addDomain
+Traceback (most recent call last):
+  File "/home/hcsadmin/argo/packages/django/django/core/handlers/base.py", line 122, in get_response
+    raise e
+TypeError: load_page() got an unexpected keyword argument 'tenancy_code'
+Internal Server Error: /lv/pages/permission/form/adddomain
+Traceback (most recent call last):
+  File "/home/hcsadmin/argo/packages/django/django/core/handlers/base.py", line 122, in get_response
+    raise e
+TypeError: load_page() got an unexpected keyword argument 'tenancy_code'
+Internal Server Error: /lv/pages/permission/form/addDomain
+Traceback (most recent call last):
+  File "/home/hcsadmin/argo/packages/django/django/core/handlers/base.py", line 122, in get_response
+    raise e
+TypeError: load_page() got an unexpected keyword argument 'tenancy_code'
+Internal Server Error: /lv/pages/permission/form/addDomain
+Traceback (most recent call last):
+  File "/home/hcsadmin/argo/packages/django/django/core/handlers/base.py", line 122, in get_response
+    raise e
+TypeError: load_page() got an unexpected keyword argument 'tenancy_code'
+Not Found: /performance/lv/pages/permission/form/addDomain
+lv.auth_user.find (0.00) {'username': 'sys'}
+lv.django_session.find (0.00) {'_id': 'hyz4b8f2lnbvql9recikr4u5pqhjev5p', 'expire_date': {'$gt': datetime.datetime(2018, 6, 5, 8, 45, 48, 964490, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+Not Found: /performance1/dasdasda
+lv.auth_user.find (0.00) {'username': 'sys'}
+lv.django_session.find (0.00) {'_id': 'hyz4b8f2lnbvql9recikr4u5pqhjev5p', 'expire_date': {'$gt': datetime.datetime(2018, 6, 5, 8, 46, 28, 763903, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': 'hyz4b8f2lnbvql9recikr4u5pqhjev5p', 'expire_date': {'$gt': datetime.datetime(2018, 6, 5, 8, 46, 36, 155866, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+Not Found: /lv/performance/{{$root.logo}}
+lv.django_session.find (0.00) {'_id': 'hyz4b8f2lnbvql9recikr4u5pqhjev5p', 'expire_date': {'$gt': datetime.datetime(2018, 6, 5, 8, 46, 36, 691892, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+Not Found: /lv/performance/{{imageSrc}}
+lv.django_session.find (0.00) {'_id': 'hyz4b8f2lnbvql9recikr4u5pqhjev5p', 'expire_date': {'$gt': datetime.datetime(2018, 6, 5, 8, 46, 39, 430301, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': 'hyz4b8f2lnbvql9recikr4u5pqhjev5p', 'expire_date': {'$gt': datetime.datetime(2018, 6, 5, 8, 46, 39, 459985, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+Not Found: /performance/static/js/datatables/pdfmake.min.js.map
+Not Found: /performance/static/js/angular.min.js.map
+Internal Server Error: /lv/pages/permission/form/addDomain
+Traceback (most recent call last):
+  File "/home/hcsadmin/argo/packages/django/django/core/handlers/base.py", line 122, in get_response
+    raise e
+TypeError: load_page() got an unexpected keyword argument 'tenancy_code'
+Internal Server Error: /lv/pages/permission/form/addDomain
+Traceback (most recent call last):
+  File "/home/hcsadmin/argo/packages/django/django/core/handlers/base.py", line 122, in get_response
+    raise e
+TypeError: load_page() got an unexpected keyword argument 'tenancy_code'
+Internal Server Error: /lv/performance/pages/permission/form/addDomain
+Traceback (most recent call last):
+  File "/home/hcsadmin/argo/packages/django/django/core/handlers/base.py", line 122, in get_response
+    raise e
+TemplateLookupException: Cant locate template for uri u'views/permission/form/adddomain.html'
+Internal Server Error: /lv/performance/pages/permission/form/adddomain
+Traceback (most recent call last):
+  File "/home/hcsadmin/argo/packages/django/django/core/handlers/base.py", line 122, in get_response
+    raise e
+TemplateLookupException: Cant locate template for uri u'views/permission/form/adddomain.html'
+Internal Server Error: /lv/performance/pages/
+Traceback (most recent call last):
+  File "/home/hcsadmin/argo/packages/django/django/core/handlers/base.py", line 122, in get_response
+    raise e
+TemplateLookupException: Cant locate template for uri u'views/.html'
+Internal Server Error: /lv/pages/permission/form/addDomain
+Traceback (most recent call last):
+  File "/home/hcsadmin/argo/packages/django/django/core/handlers/base.py", line 122, in get_response
+    raise e
+TypeError: load_page() got an unexpected keyword argument 'tenancy_code'
+Internal Server Error: /lv/pages/permission/form/addDomain
+Traceback (most recent call last):
+  File "/home/hcsadmin/argo/packages/django/django/core/handlers/base.py", line 122, in get_response
+    raise e
+TypeError: load_page() got an unexpected keyword argument 'tenancy_code'
+Internal Server Error: /lv/pages/permission/form/addDomain
+Traceback (most recent call last):
+  File "/home/hcsadmin/argo/packages/django/django/core/handlers/base.py", line 122, in get_response
+    raise e
+TypeError: load_page() got an unexpected keyword argument 'tenancy_code'
+lv.django_session.find (0.00) {'_id': 'hyz4b8f2lnbvql9recikr4u5pqhjev5p', 'expire_date': {'$gt': datetime.datetime(2018, 6, 5, 9, 35, 43, 609142, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': 'hyz4b8f2lnbvql9recikr4u5pqhjev5p', 'expire_date': {'$gt': datetime.datetime(2018, 6, 5, 9, 35, 44, 437854, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': 'hyz4b8f2lnbvql9recikr4u5pqhjev5p', 'expire_date': {'$gt': datetime.datetime(2018, 6, 5, 9, 35, 45, 249457, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': 'hyz4b8f2lnbvql9recikr4u5pqhjev5p', 'expire_date': {'$gt': datetime.datetime(2018, 6, 5, 9, 35, 45, 963266, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': 'hyz4b8f2lnbvql9recikr4u5pqhjev5p', 'expire_date': {'$gt': datetime.datetime(2018, 6, 5, 9, 35, 46, 509411, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': 'hyz4b8f2lnbvql9recikr4u5pqhjev5p', 'expire_date': {'$gt': datetime.datetime(2018, 6, 5, 9, 35, 48, 269992, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': 'hyz4b8f2lnbvql9recikr4u5pqhjev5p', 'expire_date': {'$gt': datetime.datetime(2018, 6, 5, 9, 35, 48, 562716, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': 'hyz4b8f2lnbvql9recikr4u5pqhjev5p', 'expire_date': {'$gt': datetime.datetime(2018, 6, 5, 9, 35, 49, 742741, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': 'hyz4b8f2lnbvql9recikr4u5pqhjev5p', 'expire_date': {'$gt': datetime.datetime(2018, 6, 5, 9, 35, 50, 53723, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.01) {'_id': 'hyz4b8f2lnbvql9recikr4u5pqhjev5p', 'expire_date': {'$gt': datetime.datetime(2018, 6, 5, 9, 35, 50, 530872, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': 'hyz4b8f2lnbvql9recikr4u5pqhjev5p', 'expire_date': {'$gt': datetime.datetime(2018, 6, 5, 9, 35, 50, 994950, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': 'hyz4b8f2lnbvql9recikr4u5pqhjev5p', 'expire_date': {'$gt': datetime.datetime(2018, 6, 5, 9, 35, 52, 989679, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': 'hyz4b8f2lnbvql9recikr4u5pqhjev5p', 'expire_date': {'$gt': datetime.datetime(2018, 6, 5, 9, 35, 54, 314102, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': 'hyz4b8f2lnbvql9recikr4u5pqhjev5p', 'expire_date': {'$gt': datetime.datetime(2018, 6, 5, 9, 35, 55, 717222, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': 'hyz4b8f2lnbvql9recikr4u5pqhjev5p', 'expire_date': {'$gt': datetime.datetime(2018, 6, 5, 9, 35, 56, 535723, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': 'hyz4b8f2lnbvql9recikr4u5pqhjev5p', 'expire_date': {'$gt': datetime.datetime(2018, 6, 5, 9, 35, 57, 257516, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': 'hyz4b8f2lnbvql9recikr4u5pqhjev5p', 'expire_date': {'$gt': datetime.datetime(2018, 6, 5, 9, 35, 57, 688892, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': 'hyz4b8f2lnbvql9recikr4u5pqhjev5p', 'expire_date': {'$gt': datetime.datetime(2018, 6, 5, 9, 36, 14, 4058, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': 'hyz4b8f2lnbvql9recikr4u5pqhjev5p', 'expire_date': {'$gt': datetime.datetime(2018, 6, 5, 9, 36, 14, 535652, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': 'hyz4b8f2lnbvql9recikr4u5pqhjev5p', 'expire_date': {'$gt': datetime.datetime(2018, 6, 5, 9, 36, 15, 143690, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': 'hyz4b8f2lnbvql9recikr4u5pqhjev5p', 'expire_date': {'$gt': datetime.datetime(2018, 6, 5, 9, 36, 16, 146191, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': 'hyz4b8f2lnbvql9recikr4u5pqhjev5p', 'expire_date': {'$gt': datetime.datetime(2018, 6, 5, 9, 36, 16, 865954, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': 'hyz4b8f2lnbvql9recikr4u5pqhjev5p', 'expire_date': {'$gt': datetime.datetime(2018, 6, 5, 9, 36, 18, 44367, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': 'hyz4b8f2lnbvql9recikr4u5pqhjev5p', 'expire_date': {'$gt': datetime.datetime(2018, 6, 5, 9, 36, 19, 388383, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': 'hyz4b8f2lnbvql9recikr4u5pqhjev5p', 'expire_date': {'$gt': datetime.datetime(2018, 6, 5, 9, 36, 20, 702687, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': 'hyz4b8f2lnbvql9recikr4u5pqhjev5p', 'expire_date': {'$gt': datetime.datetime(2018, 6, 5, 9, 36, 21, 654791, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': 'hyz4b8f2lnbvql9recikr4u5pqhjev5p', 'expire_date': {'$gt': datetime.datetime(2018, 6, 5, 9, 36, 22, 171516, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': 'hyz4b8f2lnbvql9recikr4u5pqhjev5p', 'expire_date': {'$gt': datetime.datetime(2018, 6, 5, 9, 36, 22, 657534, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': 'hyz4b8f2lnbvql9recikr4u5pqhjev5p', 'expire_date': {'$gt': datetime.datetime(2018, 6, 5, 9, 36, 23, 145424, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': 'hyz4b8f2lnbvql9recikr4u5pqhjev5p', 'expire_date': {'$gt': datetime.datetime(2018, 6, 5, 9, 36, 23, 886707, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': 'hyz4b8f2lnbvql9recikr4u5pqhjev5p', 'expire_date': {'$gt': datetime.datetime(2018, 6, 5, 9, 36, 25, 784060, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': 'hyz4b8f2lnbvql9recikr4u5pqhjev5p', 'expire_date': {'$gt': datetime.datetime(2018, 6, 5, 9, 36, 26, 469839, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': 'hyz4b8f2lnbvql9recikr4u5pqhjev5p', 'expire_date': {'$gt': datetime.datetime(2018, 6, 5, 9, 36, 26, 934599, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': 'hyz4b8f2lnbvql9recikr4u5pqhjev5p', 'expire_date': {'$gt': datetime.datetime(2018, 6, 5, 9, 36, 27, 412588, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': 'hyz4b8f2lnbvql9recikr4u5pqhjev5p', 'expire_date': {'$gt': datetime.datetime(2018, 6, 5, 9, 36, 28, 255604, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': 'hyz4b8f2lnbvql9recikr4u5pqhjev5p', 'expire_date': {'$gt': datetime.datetime(2018, 6, 5, 9, 36, 28, 932133, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': 'hyz4b8f2lnbvql9recikr4u5pqhjev5p', 'expire_date': {'$gt': datetime.datetime(2018, 6, 5, 9, 36, 30, 325262, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': 'hyz4b8f2lnbvql9recikr4u5pqhjev5p', 'expire_date': {'$gt': datetime.datetime(2018, 6, 5, 9, 36, 33, 618048, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': 'hyz4b8f2lnbvql9recikr4u5pqhjev5p', 'expire_date': {'$gt': datetime.datetime(2018, 6, 5, 9, 36, 34, 127454, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': 'hyz4b8f2lnbvql9recikr4u5pqhjev5p', 'expire_date': {'$gt': datetime.datetime(2018, 6, 5, 9, 36, 56, 424538, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': 'hyz4b8f2lnbvql9recikr4u5pqhjev5p', 'expire_date': {'$gt': datetime.datetime(2018, 6, 5, 9, 36, 57, 581378, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': 'hyz4b8f2lnbvql9recikr4u5pqhjev5p', 'expire_date': {'$gt': datetime.datetime(2018, 6, 5, 9, 36, 58, 371169, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': 'hyz4b8f2lnbvql9recikr4u5pqhjev5p', 'expire_date': {'$gt': datetime.datetime(2018, 6, 5, 9, 36, 58, 997887, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': 'hyz4b8f2lnbvql9recikr4u5pqhjev5p', 'expire_date': {'$gt': datetime.datetime(2018, 6, 5, 9, 37, 1, 630987, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+Internal Server Error: /lv/pages/permission/form/addDomain
+Traceback (most recent call last):
+  File "/home/hcsadmin/argo/packages/django/django/core/handlers/base.py", line 122, in get_response
+    raise e
+TypeError: load_page() got an unexpected keyword argument 'tenancy_code'
+Internal Server Error: /lv/pages/permission/form/addDomain
+Traceback (most recent call last):
+  File "/home/hcsadmin/argo/packages/django/django/core/handlers/base.py", line 122, in get_response
+    raise e
+TypeError: load_page() got an unexpected keyword argument 'tenancy_code'
+Internal Server Error: /lv/pages/permission/form/addDomain
+Traceback (most recent call last):
+  File "/home/hcsadmin/argo/packages/django/django/core/handlers/base.py", line 122, in get_response
+    raise e
+TypeError: load_page() got an unexpected keyword argument 'tenancy_code'
+lv.django_session.find (0.00) {'_id': 'hyz4b8f2lnbvql9recikr4u5pqhjev5p', 'expire_date': {'$gt': datetime.datetime(2018, 6, 5, 9, 37, 40, 432580, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': 'hyz4b8f2lnbvql9recikr4u5pqhjev5p', 'expire_date': {'$gt': datetime.datetime(2018, 6, 5, 9, 37, 52, 233438, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': 'hyz4b8f2lnbvql9recikr4u5pqhjev5p', 'expire_date': {'$gt': datetime.datetime(2018, 6, 5, 9, 37, 52, 985536, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': 'hyz4b8f2lnbvql9recikr4u5pqhjev5p', 'expire_date': {'$gt': datetime.datetime(2018, 6, 5, 9, 37, 53, 976381, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': 'hyz4b8f2lnbvql9recikr4u5pqhjev5p', 'expire_date': {'$gt': datetime.datetime(2018, 6, 5, 9, 37, 54, 646721, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': 'hyz4b8f2lnbvql9recikr4u5pqhjev5p', 'expire_date': {'$gt': datetime.datetime(2018, 6, 5, 9, 37, 55, 513308, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': 'hyz4b8f2lnbvql9recikr4u5pqhjev5p', 'expire_date': {'$gt': datetime.datetime(2018, 6, 5, 9, 37, 56, 159820, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.02) {'_id': 'hyz4b8f2lnbvql9recikr4u5pqhjev5p', 'expire_date': {'$gt': datetime.datetime(2018, 6, 5, 9, 37, 57, 185184, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': 'hyz4b8f2lnbvql9recikr4u5pqhjev5p', 'expire_date': {'$gt': datetime.datetime(2018, 6, 5, 9, 37, 58, 483481, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': 'hyz4b8f2lnbvql9recikr4u5pqhjev5p', 'expire_date': {'$gt': datetime.datetime(2018, 6, 5, 9, 37, 59, 104015, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+Internal Server Error: /lv/pages/permission/form/addDomain
+Traceback (most recent call last):
+  File "/home/hcsadmin/argo/packages/django/django/core/handlers/base.py", line 122, in get_response
+    raise e
+TypeError: load_page() got an unexpected keyword argument 'tenancy_code'
+lv.django_session.find (0.00) {'_id': 'hyz4b8f2lnbvql9recikr4u5pqhjev5p', 'expire_date': {'$gt': datetime.datetime(2018, 6, 5, 9, 38, 39, 752468, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': 'hyz4b8f2lnbvql9recikr4u5pqhjev5p', 'expire_date': {'$gt': datetime.datetime(2018, 6, 5, 9, 38, 44, 489920, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': 'hyz4b8f2lnbvql9recikr4u5pqhjev5p', 'expire_date': {'$gt': datetime.datetime(2018, 6, 5, 9, 38, 47, 539596, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': 'hyz4b8f2lnbvql9recikr4u5pqhjev5p', 'expire_date': {'$gt': datetime.datetime(2018, 6, 5, 9, 38, 50, 580446, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': 'hyz4b8f2lnbvql9recikr4u5pqhjev5p', 'expire_date': {'$gt': datetime.datetime(2018, 6, 5, 9, 38, 51, 632454, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
