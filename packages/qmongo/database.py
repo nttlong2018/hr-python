@@ -183,6 +183,19 @@ class ENTITY():
             )
         )
     def commit(self):
+        _id=None
+        if self._data.has_key("$set"):
+            _id=self._data["$set"].get("_id",None)
+            for key in self._data["$set"].keys():
+                if key[0:1]=="$" or key == "_id":
+                    self._data["$set"].pop(key)
+        else:
+            for key in self._data.keys():
+                if key[0:1]=="$" or key == "_id":
+                    self._data.pop(key)
+                
+
+
         _coll=self.qr.db.get_collection(self.name).with_options(codec_options=self.qr._codec_options)
         model_events = helpers.events(self.qr._model.name)
         if self._action=="insert_one":
@@ -221,6 +234,7 @@ class ENTITY():
                 )
             except pymongo.errors.DuplicateKeyError as ex:
                 ret_data= self.get_duplicate_error(ex)
+
                 ret_data.update({
                     "data":self._data
                 })
@@ -305,6 +319,7 @@ class ENTITY():
                     self._expr = None
                     self._action = None
                     self._data = {}
+                   
                     return dict(
                         error=None,
                         data=ret
@@ -471,7 +486,7 @@ class COLL():
             find_one("Username='admin'"),
             find_one("Username=@username",username="admin")
          """
-        unknown_fields = self.qr._model.validate_expression(exprression)
+        unknown_fields = self.qr._model.validate_expression(exprression,None,*args,**kwargs)
         if unknown_fields.__len__() > 0:
             raise (Exception("What is bellow list of fields?:\n" + self.descibe_fields("\t\t", unknown_fields) +
                              " \n Your selected fields now is bellow list: \n" +
@@ -493,7 +508,7 @@ class COLL():
                     find("Username='admin'"),
                     find("Username=@username",username="admin")
                  """
-        unknown_fields = self.qr._model.validate_expression(exprression)
+        unknown_fields = self.qr._model.validate_expression(exprression,None,*args,**kwargs)
         if unknown_fields.__len__() > 0:
             raise (Exception("What is bellow list of fields?:\n" + self.descibe_fields("\t\t", unknown_fields) +
                              " \n Your selected fields now is bellow list: \n" +
@@ -540,7 +555,7 @@ class COLL():
         ret=ac.commit()
         return ret
     def update(self,data,filter,*args,**kwargs):
-        unknown_fields = self.qr._model.validate_expression(filter)
+        unknown_fields = self.qr._model.validate_expression(filter,None,*args,**kwargs)
         if unknown_fields.__len__() > 0:
             raise (Exception("What is bellow list of fields?:\n" + self.descibe_fields("\t\t", unknown_fields) +
                              " \n Your selected fields now is bellow list: \n" +
@@ -574,7 +589,7 @@ class COLL():
 
         return self
     def delete(self,filter,*args,**kwargs):
-        unknown_fields = self.qr._model.validate_expression(filter)
+        unknown_fields = self.qr._model.validate_expression(filter,None,*args,**kwargs)
         if unknown_fields.__len__() > 0:
             raise (Exception("What is bellow list of fields?:\n" + self.descibe_fields("\t\t", unknown_fields) +
                              " \n Your selected fields now is bellow list: \n" +

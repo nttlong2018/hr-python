@@ -14,21 +14,12 @@
             //template: function(el, attrs) {
             //  return '<div class="switch-container ' + (attrs.color || '') + '"><input type="checkbox" ng-model="ngModel"></div>';
             //}
-            template: `
-<div ng-controller="SelectpickerPanelCtrl as selectpickerVm" class="zb-form-select" >
-    <ui-select ng-model="selectedItem.selected" class="btn-group bootstrap-select form-control" ng-disabled="false" append-to-body="true" search-enabled="true">
-        <ui-select-match placeholder="{{placeholder}}">
-            {{$select.selected.__fieldCaption}}
-        </ui-select-match>
-        <ui-select-choices repeat="searchItem in selectWithSearchItems | filter: $select.search">
-            <span ng-bind-html="searchItem.__fieldCaption"></span>
-        </ui-select-choices>
-    </ui-select>
-</div>
-`,
-            //templateUrl: "app/components/input/select/select.html",
+            templateUrl: "../performance/static/app/components/input/select/select.html",
             link: function ($scope, elem, attr) {
                 var cmp = $(elem);
+                if (attr["required"]) {
+                    cmp.attr("zb-required", '');
+                }
                 //$compile(cmp.contents())($scope);
                 var list = attr["list"];
                 var ngModel = attr["ngModel"];

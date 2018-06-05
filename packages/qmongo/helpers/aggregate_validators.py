@@ -44,8 +44,9 @@ class validator:
         fields_in_expression=get_expression_fields(fx)
         ret_fields=[]
         for x in fields_in_expression:
-            if fields.count(x)==0:
-                ret_fields.append(x)
+            if x!="_id":
+                if fields.count(x)==0:
+                    ret_fields.append(x)
 
         return ret_fields
 def get_field_name(fx):

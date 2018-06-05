@@ -1,8 +1,8 @@
-(function() {
+(function () {
     'use strict';
 
     angular.module('ZebraApp.components.inputs')
-        .directive('inputCheckbox',  ["$parse", inputCheckbox]);
+        .directive('inputCheckbox', ["$parse", inputCheckbox]);
 
     /** @ngInject */
     function inputCheckbox($parse) {
@@ -10,18 +10,12 @@
             restrict: 'E',
             replace: true,
             transclude: true,
+            scope: true,
             //template: function(el, attrs) {
             //  return '<div class="switch-container ' + (attrs.color || '') + '"><input type="checkbox" ng-model="ngModel"></div>';
             //}
-            template: `
-<div class="checkbox zb-form-checkbox">
-    <label class="custom-checkbox">
-        <input type="checkbox" ng-model="model"/><span>{{caption}}</span>
-    </label>
-</div>
-`,
-            //templateUrl: "app/components/input/checkbox/checkbox.html",
-            link: function($scope, elem, attr) {
+            templateUrl: "../performance/static/app/components/input/checkbox/checkbox.html",
+            link: function ($scope, elem, attr) {
                 var input = $(elem.find("input")[0]);
                 var div = $(elem);
                 var ngModel = attr["ngModel"];
@@ -30,7 +24,6 @@
                 var disabled = attr["disabled"];
 
                 if (ngModel) {
-                    console.log($scope.$eval(ngModel))
                     $scope.model = ($scope.$eval(ngModel)) ? $scope.$eval(ngModel) : null;
                 }
                 if (caption) {

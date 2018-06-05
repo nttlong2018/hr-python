@@ -24,6 +24,10 @@
                 var ngModel = attr["ngModel"];
                 var format = attr["format"];
 
+                if (attr["required"]) {
+                    $(elem).attr("zb-required", '');
+                }
+
                 $scope.opened = false;
                 $scope.format = (format) ? format : 'dd-MM-yyyy';
                 $scope.options = {

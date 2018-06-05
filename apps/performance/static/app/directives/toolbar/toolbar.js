@@ -16,6 +16,7 @@
             link: link,
             scope: {
                 searchCommon: '=searchCommon',
+                onSearch: '&',
                 onAdd: '&',
                 onCopy: '&',
                 onDelete: '&',
@@ -23,7 +24,9 @@
                 onSave: '&',
                 onUndo: '&',
                 onPrint: '&',
-                onSetting: '&'
+                onSetting: '&',
+                onExport: '&',
+                onImport: '&',
             },
             templateUrl: templateService.getTemplatePath('toolbar'),
             restrict: 'EA'
@@ -31,6 +34,13 @@
         return directive;
 
         function link(scope, element, attrs) {
+            element.find('#hcs-admin-system-txtSearch').bind('keyup', function (e) {
+                if (e.keyCode === 13) { // 13 is enter key
+                    // Execute code here.
+                    scope.onSearch();
+                }
+            });
+
         }
     }
 

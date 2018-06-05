@@ -1,5 +1,6 @@
 ﻿(function () {
     'use strict';
 
-    angular.module('hcs-template',[]);
+    var mdl = angular.module('hcs-template', []);
+    
 })();

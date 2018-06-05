@@ -111,7 +111,8 @@ def template(fn,*_path,**kwargs):
         setattr(threading.currentThread(), "tenancy_code", code)
         setattr(threading.current_thread(),"request_tenancy_code",tenancy_code)
         setattr(threading.currentThread(), "request_tenancy_code", tenancy_code)
-
+        setattr(threading.current_thread(),"user",request.user)
+        setattr(threading.currentThread(), "user", request.user)
 
         return exec_request(request,**kwargs)
     if is_multi_tenancy:

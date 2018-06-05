@@ -62,7 +62,7 @@ def build_urls(module_name,*args,**kwargs):
 
                     _apps_.urlpatterns.append(
                         url(
-                            reg_ex,
+                            reg_ex.replace("^","^(?i)"),
                             'django.views.static.serve',
                             {
                                 'document_root': root_doc,
@@ -79,7 +79,7 @@ def build_urls(module_name,*args,**kwargs):
                         reg_ex = reg_ex.replace("^", "^" + host_dir + "/")
                     _apps_.urlpatterns.append(
                         url(
-                            reg_ex,
+                            reg_ex.replace("^","^(?i)"),
                             'django.views.static.serve',
                             {
                                 'document_root': root_doc,

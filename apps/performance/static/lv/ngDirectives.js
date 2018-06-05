@@ -10,7 +10,12 @@ var _onAfterLoadContent
 function onAfterLoadContent(callback){
     _onAfterLoadContent=callback
 }
-function dialog($scope) {
+/**
+ * 
+ * @param {object} $scope scope của form Dialog
+ * @param {any} id id của dialog
+ */
+function dialog($scope, id = 'myModal') {
     function getScript(content) {
         if (content.indexOf("<body>") > -1) {
             var x = content.indexOf("<body>") + "<body>".length;
@@ -38,21 +43,28 @@ function dialog($scope) {
             var fn = eval(scripts[i]);
             fn(subScope,_params);
         }
-        var frm = $('<div><div class="modal fade" id="myModal" role="dialog">' +
-            '<div class="modal-dialog">' +
-            '<div class="modal-content">' +
+        var frm = $('<div><div class="modal fade" id="' + id +'" role="dialog">' +
+                '<div class="modal-dialog">' +
+                '<div class="modal-content">' +
 
-            '<div class="modal-header">' +
+                '<div class="modal-header">' +
 
 
-            '<h4 class="modal-title"><img src=""/ style="height:40px"><span>...</span></h4>' +
-            '<button type="button" class="close" data-dismiss="modal">&times;</button>' +
-            '</div>' +
+                '<h4 class="modal-title">' +
+                '<img src="{{$root.logo}}"><span id="title">{{title}}</span>' +
+                '<button type="button" class="close" data-dismiss="modal"><i class="la la-close"></i></button>' +
+                '<button type="button" class="close" ng-click="onResizeDialog()"><span class="modal-resize"><i class="la la-expand"></i></span></button>' +
+                '</h4 > ' +
+                '</div>' +
             '<div class="modal-body">' +
 
-            '</div>' +
-            '</div></div>'
-        );
+                '</div>' +
+                '<div class="modal-footer">' +
+                '<div class="pull-right"><button ng-click="saveNClose($event)"><i class="la la-save"></i>Lưu & đóng</button></div>' +
+                '<div class="pull-right"><button ng-click="saveNNext($event)"><i class="la la-save"></i>Lưu & tiếp</button></div>' +
+                '</div>' +
+                '</div></div>'
+            );
         var $ele = $("<div>" + content + "</div>");
 
         var child = $($ele.children()[0])
@@ -526,8 +538,32 @@ mdl.directive("cHtmlBox", ["$parse", function ($parse) {
             }
             var changeByBind = false;
             var changeByManual = false;
+            var disable = attr["ngDisabled"];
             var $ele = ele.summernote({
-                height: ele.height()
+                height: ele.height(),
+                toolbar: [
+                    // [groupName, [list of button]]
+                    ['style', ['bold', 'italic', 'underline', 'clear']],
+                    ['fontsize', ['fontsize']],
+                    ['para', ['ul', 'ol', 'paragraph']]
+                ],
+                popover: {
+                    image: [
+                        ['imagesize', ['imageSize100', 'imageSize50', 'imageSize25']],
+                        ['float', ['floatLeft', 'floatRight', 'floatNone']],
+                        ['remove', ['removeMedia']]
+                    ],
+                    link: [
+                        ['link', ['linkDialogShow', 'unlink']]
+                    ],
+                    air: [
+                        ['color', ['color']],
+                        ['font', ['bold', 'underline', 'clear']],
+                        ['para', ['ul', 'paragraph']],
+                        ['table', ['table']],
+                        ['insert', ['link', 'picture']]
+                    ]
+                }
             }).on("summernote.change", function (e) {   // callback as jquery custom event 
                 if (changeByBind) return;
                 changeByManual = true;
@@ -535,7 +571,8 @@ mdl.directive("cHtmlBox", ["$parse", function ($parse) {
 
                 $parse(attr.ngModel).assign(scope, content);
                 changeByManual = false;
-            });
+                });
+            console.log('summmer editor',$ele);
             scope.$watch(attr.ngModel, function (val, oldVal) {
                 if (changeByManual) return;
                 changeByBind = true;
@@ -551,6 +588,10 @@ mdl.directive("cHtmlBox", ["$parse", function ($parse) {
                 // }
                 changeByBind = false;
             });
+            if (disable && disable === "true")
+                ele.summernote('disable');
+            else
+                ele.summernote('enable');
 
             if (attr.ngInstance) {
                 $parse(attr.ngInstance).assign(scope, isntance);

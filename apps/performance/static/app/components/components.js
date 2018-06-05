@@ -1,21 +1,9 @@
-(function () {
-  'use strict';
-  
-  angular.module('ZebraApp.components', [
-    'ZebraApp.components.inputs',
+angular.module('ZebraApp.components', [
     'ui.select',
     'ui.bootstrap',
     'ui.bootstrap.tpls',
-    'ui.bootstrap.collapse'
-  ])
-
-  //.config(routeConfig);
-
-  ///** @ngInject */
-  //function routeConfig($urlRouterProvider, baSidebarServiceProvider) {
-  //  $urlRouterProvider.otherwise('/dashboard');
-
-
-  //}
-
-})();
+    'ui.bootstrap.collapse',
+    'ZebraApp.components.inputs',
+    'ZebraApp.components.tables',
+    'ZebraApp.components.trees'
+])
