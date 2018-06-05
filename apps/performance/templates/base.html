@@ -45,9 +45,9 @@
         <link rel="shortcut icon" href="${get_static('media/favicon.ico')}" />
     </head>
     <body class="app zb-body" ng-controller="admin" style="margin: 0;">
-        ${self.body()}
+        
 
-        <%include file="script.html"/>
+        
         <!--<script src="${get_static('assets/vendors/base/vendors.bundle.js')}" type="text/javascript"></script>
         <script src="${get_static('assets/demo/default/base/scripts.bundle.js')}" type="text/javascript"></script>
         <script src="${get_static('assets/vendors/custom/fullcalendar/fullcalendar.bundle.js')}" type="text/javascript"></script>
@@ -68,7 +68,7 @@
         <script type="text/javascript" src="${get_static('app/directives/breadcumb/breadcumb.js')}"></script>
         <script type="text/javascript" src="${get_static('app/directives/leftmenu/leftmenu.js')}"></script>
         <script type="text/javascript" src="${get_static('app/directives/toolbar/toolbar.js')}"></script>
-        <script type="text/javascript" src="${get_static('app/directives/dialog/Dialog.js')}"></script>
+        <script type="text/javascript" src="${get_static('app/directives/dialog/dialog.js')}"></script>
         <script type="text/javascript" src="${get_static('app/libs/select.js')}"></script>
         <script type="text/javascript" src="${get_static('app/components/table/table.module.js')}"></script>
         <script type="text/javascript" src="${get_static('app/components/table/table-data/table-data.directive.js')}"></script>
@@ -77,5 +77,7 @@
         <script type="text/javascript" src="${get_static('libs/scripts/bootstrap.min.js')}"></script>
         <script src="${get_static('app/components/tree/tree.module.js')}"></script>
         <script src="${get_static('app/components/tree/tree/tree.directive.js')}"></script>
+        <%include file="script.html"/>
+        ${self.body()}
     </body>
 </html>

@@ -15,7 +15,7 @@
                     <!--Tài khoản đăng nhập-->
                     <label for="inputUserName" class="col-sm-5 zb-form-label">Tài khoản đăng nhập</label>
                     <div class="col-sm-7">
-                        <input-text id="inputUserName" ng-model="Item.dd_code">
+                        <input-text id="inputUserName" ng-model="Item.dd_code" required>
                     </div>
                 </div>
             </div>
@@ -24,7 +24,7 @@
                     <!--Tên hiển thị-->
                     <label for="inputDisplayName" class="col-sm-5 zb-form-label">Tên hiển thị</label>
                     <div class="col-sm-7">
-                        <input-text id="inputDisplayName" ng-model="Item.dd_name">
+                        <input-text id="inputDisplayName" ng-model="Item.dd_name" required>
                     </div>
                 </div>
             </div>
@@ -33,7 +33,10 @@
                     <!--Thuộc nhóm người dùng-->
                     <label for="inputGroupUser" class="col-sm-5 zb-form-label">Thuộc nhóm người dùng</label>
                     <div class="col-sm-7">
-                        <input-text id="inputGroupUser" ng-model="Item.description">
+                        <input-select data-list="cbbAccessMode" ng-model="Item.access_mode"
+                                      data-value="value" 
+                                      data-caption="caption"
+                                      required/>
                     </div>
                 </div>
             </div>
@@ -72,7 +75,11 @@
                 <div class="form-group row hcs-group-form-group">
                     <!--Ghi chú-->
                     <div class="col-sm-12">
-                    <textarea style="width:100%;"></textarea>
+                        <div data-c-html-box 
+                              ng-model="Item.description"
+                              style="height:49px"
+                              id="inputDescription">
+                         </div>
                     </div>
                 </div>
             </div>
@@ -95,7 +102,11 @@
                 <div class="form-group row hcs-group-form-group">
                     <!--Là quản trị hệ thống-->
                     <div class="col-md-12">
-                        <input-checkbox ng-model="testCheckbox" data-caption="Là quản trị hệ thống"/>
+                        <div class="form-group row hcs-group-form-group">
+                            <div class="col-md-12">
+                                <input-checkbox ng-model="testCheckbox" data-caption="Là quản trị hệ thống"/>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -103,7 +114,11 @@
                 <div class="form-group row hcs-group-form-group">
                     <!--Không bao giờ bị khóa-->
                     <div class="col-md-12">
-                        <input-checkbox ng-model="testCheckbox" data-caption="Không bao giờ bị khóa"/>
+                        <div class="form-group row hcs-group-form-group">
+                            <div class="col-md-12">
+                                <input-checkbox ng-model="testCheckbox" data-caption="Không bao giờ bị khóa"/>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -112,7 +127,7 @@
                     <!--Mức quản lí từ-->
                     <label for="inputUserName" class="col-sm-5 zb-form-label">Mức quản lí từ</label>
                     <div class="col-sm-7">
-                        <input-text id="inputUserName" ng-model="Item.dd_code">
+                        <input-number id="numberbox1"/>
                     </div>
                 </div>
             </div>
@@ -121,7 +136,7 @@
                     <!--Mức quản lí đến-->
                     <label for="inputUserName" class="col-sm-5 zb-form-label">Đến</label>
                     <div class="col-sm-7">
-                        <input-text id="inputUserName" ng-model="Item.dd_code">
+                        <input-number id="numberbox1"/>
                     </div>
                 </div>
             </div>
@@ -160,7 +175,11 @@
                 <div class="form-group row hcs-group-form-group">
                     <!--Bạn có muốn thay đỗi mật khẩu-->
                     <div class="col-md-12">
-                        <input-checkbox ng-model="testCheckbox" data-caption="Bạn có muốn thay đỗi mật khẩu"/>
+                        <div class="form-group row hcs-group-form-group">
+                            <div class="col-md-12">
+                                <input-checkbox ng-model="testCheckbox" data-caption="Bạn có muốn thay đỗi mật khẩu"/>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

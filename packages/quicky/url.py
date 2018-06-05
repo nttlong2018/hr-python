@@ -58,11 +58,11 @@ def build_urls(module_name,*args,**kwargs):
                     root_doc = static_urls[0].default_args["document_root"]
                     reg_ex = static_urls[0].regex.pattern
                     if host_dir!=None:
-                        reg_ex =reg_ex.replace("^","^"+host_dir+"/")
+                        reg_ex ="^(?i)"+host_dir+"/"+reg_ex[1:reg_ex.__len__()]
 
                     _apps_.urlpatterns.append(
                         url(
-                            reg_ex.replace("^","^(?i)"),
+                            reg_ex,
                             'django.views.static.serve',
                             {
                                 'document_root': root_doc,
@@ -73,13 +73,14 @@ def build_urls(module_name,*args,**kwargs):
                     )
                 else:
                     root_doc=static_urls[0].default_args["document_root"]
-                    reg_ex=static_urls[0].regex.pattern
-                    reg_ex=reg_ex.replace("^", "^" + ret.host_dir + "/")
+                    reg_ex=static_urls[0].regex.pattern.replace("^(?i)","").replace("(?P<path>.*)","(?i)(?P<path>.*)")
+                    reg_ex ="^(?i)"+ret.host_dir+"/"+reg_ex
+
                     if host_dir!=None:
-                        reg_ex = reg_ex.replace("^", "^" + host_dir + "/")
+                        reg_ex =reg_ex[1:reg_ex.__len__()]+"^"+host_dir+"/"
                     _apps_.urlpatterns.append(
                         url(
-                            reg_ex.replace("^","^(?i)"),
+                            reg_ex,
                             'django.views.static.serve',
                             {
                                 'document_root': root_doc,

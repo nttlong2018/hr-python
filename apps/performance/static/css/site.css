@@ -401,7 +401,7 @@ body {
 #hcs-toolbar {
   position: fixed;
   right: 0;
-  top: 66px;
+  top: 60px;
   z-index: 999;
 }
 #hcs-toolbar div {
@@ -842,8 +842,8 @@ body {
   }
   #hcs-admin-system-heading {
     background-color: #F2F2F2;
-    height: 48px;
-    padding: 1rem 0rem;
+    height: 40px;
+    padding: 0.7rem 0rem;
     position: fixed;
     z-index: 900;
     width: 100%;
@@ -1030,18 +1030,18 @@ body {
     color: #575962 !important;
 }*/
 .hcs-profile-group-title {
-  color: black;
+  color: #666666 !important;
   font-size: .875rem !important;
   line-height: 1rem;
   font-weight: 700;
 }
 .hcs-profile-group-title:hover {
   text-decoration: none;
-  color: black;
+  color: #666666 !important;
 }
 .hcs-profile-group-title:focus {
   text-decoration: none;
-  color: black;
+  color: #666666 !important;
 }
 .hcs-profile-icon-heading-on-table {
   margin-left: 15px;
@@ -1188,6 +1188,9 @@ html {
 .zb-form-select .ui-select-match > span {
   padding: 0;
 }
+.zb-form-select .ui-select-match > span .caret {
+  right: 0px;
+}
 .zb-form-select .ui-select-match > span > span {
   position: absolute;
   bottom: 0px;
@@ -1196,7 +1199,7 @@ html {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
-  padding-right: 2rem;
+  padding-right: 1.2rem;
 }
 .zb-form-select .ui-select-match > span > span.ui-select-placeholder {
   color: #999;
@@ -1260,6 +1263,9 @@ html {
   height: 25px;
   padding-top: 5px;
 }
+.zb-form-checkbox .custom-checkbox span {
+  color: #666 !important;
+}
 .zb-form-checkbox .custom-checkbox span:hover:before {
   cursor: pointer;
   font-family: fontAwesome;
@@ -1285,6 +1291,9 @@ html {
 .zb-form-checkbox .custom-checkbox label.custom-radio > input:checked + span:before {
   content: "\f00c";
   font-weight: 300;
+}
+.zb-form-checkbox .custom-checkbox label.custom-radio > span {
+  color: #666 !important;
 }
 .form-group {
   margin-bottom: unset;
@@ -1338,7 +1347,7 @@ html {
 }
 .modal .modal-dialog .modal-header {
   background-color: #48503C;
-  padding: 10px;
+  padding: 8px;
   border-radius: unset;
 }
 .modal .modal-dialog .modal-header .modal-resize {
@@ -1385,7 +1394,7 @@ html {
 }
 .modal .modal-dialog .modal-footer {
   background-color: #3E464A;
-  padding: 10px;
+  padding: 8px;
 }
 .modal .modal-dialog .modal-footer button {
   background: 0 0;
@@ -1404,7 +1413,7 @@ html {
   top: 0 !important;
 }
 .modal .resize-width .modal-content .modal-body {
-  height: 86vh;
+  height: calc(100vh - 91px);
 }
 .modal:before {
   vertical-align: top!important;

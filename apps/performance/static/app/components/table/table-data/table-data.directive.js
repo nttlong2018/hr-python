@@ -26,7 +26,7 @@
                 languageResource: "="
             },
             //template: '<table class="display zb-data-table responsive nowrap"></table>',
-            templateUrl: "../performance/static/app/components/table/table-data/table-data.html",
+            templateUrl: window._root__component_template_url +"../../app/components/table/table-data/table-data.html",
             link: function($scope, elem, attr) {
                 var table = null;
 

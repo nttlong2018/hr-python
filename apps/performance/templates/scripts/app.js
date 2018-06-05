@@ -1,4 +1,5 @@
-﻿angular
+﻿window.set_component_template_url('${get_static("app/directives/")}')
+angular
     .module("admin", ["c-ui", 'ZebraApp.components', 'hcs-template'])
     .factory("systemService", service)
     .controller("admin", controller);

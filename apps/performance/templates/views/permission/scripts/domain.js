@@ -51,6 +51,7 @@
     scope.onDelete = onDelete;
     scope.onCopy = onCopy;
     scope.onSearch = onSearch;
+    scope.onExport = onExport;
     scope._tableData = _tableData;
     scope.mapAccess_mode = [];
     scope.getDisplayNameAccessMode = getDisplayNameAccessMode;
@@ -107,6 +108,30 @@
     function onSearch(val) {
         scope.tableSearchText = scope.SearchText;
         scope.$apply();
+    }
+    function onExport() {
+        window.open("/excel_export");
+        //services.api("/excel_export")
+        //    .data({})
+        //    .done()
+        //    .then(function (res) {
+                
+        //    })
+        //$.ajax({
+        //    url: "/excel_export",
+        //    contentType: 'application/json; charset=utf-8',
+        //    type: 'POST',
+        //    // type: 'GET',
+        //    dataType: 'json',
+        //    error: function (xhr, status) {
+        //        alert(status);
+        //    },
+        //    success: function (result) {
+        //        alert("Callback done!");
+        //        // grid.dataBind(result.results);
+        //        // grid.dataBind(result);
+        //    }
+        //});
     }
 
     /**

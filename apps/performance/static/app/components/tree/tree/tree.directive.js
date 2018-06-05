@@ -31,7 +31,7 @@
                 =: function hoặc data trên parent scope (twoway binding)
                 &:function hoặc data trên parent scope (oneway binding)
             */
-            templateUrl: "../performance/static/app/components/tree/tree/tree.html",
+            templateUrl: window._root__component_template_url +"../../app/components/tree/tree/tree.html",
             link: function($scope, elem, attr) {
                 compileTree($scope, elem, attr, $parse);
             }
@@ -86,7 +86,8 @@
 
             var _dataSourceTree = _getDataTree($scope.source, $scope.displayField,
                 $scope.parentField, $scope.keyField, $scope.parentValue, $scope.checkedField);
-
+            debugger;
+            console.log("_dataSourceTree", _dataSourceTree);
             if (_tree) {
                 _tree.reload(_dataSourceTree)
             } else {

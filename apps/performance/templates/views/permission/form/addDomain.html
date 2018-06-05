@@ -69,7 +69,7 @@
         </div>
     </div>
     <div class="col-md-12 col-sm-12">
-        <div class="row">
+        <div class="row" style="padding-bottom:10px;">
             <p class="hcs-group-collapse-heading">
                 <button class="zb-icon-button hcs-profile-group-title" onclick="$('#collapseDialogTreeDoamain').slideToggle();">
                     <span>
@@ -88,10 +88,10 @@
                             </span>
                         </button>
                     </div>
-                    <div class="pull-left" style="width:88%;">
+                    <div class="pull-left" style="width:calc(94% - 50px);">
                         <input-text id="inputSearchTree" ng-model="treeSearchText">
                     </div>
-                    <div class="pull-left hcs-profile-icon-heading-on-table" style="width:3%;margin-left:1%;">
+                    <div class="pull-left hcs-profile-icon-heading-on-table" style="width:25px;margin-left:1%;">
                         <button class="zb-icon-button hcs-profile-group-title"
                                 onclick="$('#tree ul li .fancytree-lastsib:first .fancytree-expander').click();">
                             <span>
@@ -99,7 +99,7 @@
                             </span>
                         </button>
                     </div>
-                    <div class="pull-left hcs-profile-icon-heading-on-table" style="width:3%;margin-left:unset;">
+                    <div class="pull-left hcs-profile-icon-heading-on-table" style="width:25px;margin-left:unset;">
                         <button class="zb-icon-button hcs-profile-group-title"
                                 onclick="$('#tree ul li .fancytree-lastsib:first .fancytree-expander').click();">
                             <span>
@@ -115,12 +115,11 @@
 	                            multi-select="true" select-mode="3" 
                              on-select="selectTreeNode"
 	                            current-node="treeCurrentNode"
-	                            selected-nodes="Item.detail"
+	                            selected-nodes="treeSelectedNodes"
 	                            selected-root-nodes="treeSelectedRootNodes"
 	                            search-text="treeSearchText"
 	                            check-all="treeCheckAll"
                              checked-field="is_selected"
-                             style="height:335px; overflow:auto;"
                              ng-disabled="{{ Item.access_mode === 1 ? 'true' : 'false' }}"/>
                 </div>
             </div>
@@ -159,6 +158,7 @@
 
         //Tree
         scope.treeCurrentNode = {};
+        scope.treeSelectedNodes = [];
         scope.treeSelectedRootNodes = [];
         scope.treeCheckAll = false;
         scope.treeSearchText = '';
@@ -258,6 +258,7 @@
         }
 
         function beforeCallToServer() {
+            debugger
             if (scope.__mode == 1)
                 delete scope.Item._id;
             //Check null, nếu null set default
@@ -266,13 +267,15 @@
             else {
                 switch (scope.Item.access_mode) {
                     //Toàn quyền
-                    case 1: scope.Item.detail = []; break;
+                    //case 1: scope.Item.detail = []; break;
                     //Từ vùng được chọn đến các tập con
-                    case 2: if (!scope.Item.detail & scope.Item.detail.length > 0)
-                                scope.Item.detail = scope.treeSelectedRootNodes; break;
+                    case 2: scope.Item.detail = JSON.parse(JSON.stringify(scope.treeSelectedRootNodes)); break;
                     //Chỉ trên các vùng được chọn
-                    case 3: /* Insert những node được check trên cây */; break;
+                    case 3: scope.Item.detail = JSON.parse(JSON.stringify(scope.treeSelectedNodes)); break;
+                    default: 
+                        scope.Item.detail = []; break;
                 }
+                scope.$applyAsync();
             }
             if (!scope.Item.hasOwnProperty('detail'))
                 scope.Item.detail = null;
@@ -297,6 +300,7 @@
                     });
                 }
             }
+            debugger;
             scope.treeDepartmentsDataSource = _treeDepartmentsDataSource;
             scope.$apply();
         }

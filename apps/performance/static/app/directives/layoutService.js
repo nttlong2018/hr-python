@@ -1,13 +1,16 @@
 ﻿(function () {
     'use strict';
-
+    window._root__component_template_url = ""
+    window.set_component_template_url=function(url) {
+        _root__component_template_url = url
+    }
     angular
         .module('hcs-template')
         .factory("templateService", layoutService);
     var fac = {}
     function layoutService() {
 
-        fac.__templatePath = '../performance/static/app/directives/';
+        fac.__templatePath = window._root__component_template_url;
         fac.onClickFunctionLeftMenu = onClickFunctionLeftMenu;
         fac.onClickBreadCumbDropdownMenu = onClickBreadCumbDropdownMenu;
         fac.onClickHideLeftMenufunction = onClickHideLeftMenufunction;

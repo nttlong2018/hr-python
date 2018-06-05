@@ -158,6 +158,9 @@ html {
 
     .ui-select-match > span {
         padding: 0;
+        .caret{
+            right:0px;
+        }
     }
 
     .ui-select-match > span > span {
@@ -168,7 +171,7 @@ html {
         overflow: hidden;
         white-space: nowrap;
         text-overflow: ellipsis;
-        padding-right: 2rem;
+        padding-right: 1.2rem;
     }
 
     .ui-select-match > span > span.ui-select-placeholder {
@@ -251,6 +254,10 @@ html {
         height: 25px;
         padding-top: 5px;
 
+        span {
+            color: #666 !important;
+        }
+
         span:hover:before {
             cursor: pointer;
             font-family: fontAwesome;
@@ -277,6 +284,10 @@ html {
         label.custom-radio > input:checked + span:before {
             content: "\f00c";
             font-weight: 300;
+        }
+
+        label.custom-radio > span {
+            color: #666 !important;
         }
     }
 }
@@ -350,7 +361,7 @@ html {
 
         .modal-header {
             background-color: #48503C;
-            padding: 10px;
+            padding: 8px;
             border-radius: unset;
 
             .modal-resize {
@@ -407,7 +418,7 @@ html {
 
         .modal-footer {
             background-color: #3E464A;
-            padding: 10px;
+            padding: 8px;
 
             button {
                 background: 0 0;
@@ -430,7 +441,7 @@ html {
         top: 0 !important;
 
         .modal-content .modal-body {
-            height: 86vh;
+            height: ~"calc(100vh - 91px)";
         }
     }
 }

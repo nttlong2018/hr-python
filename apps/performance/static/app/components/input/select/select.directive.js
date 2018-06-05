@@ -14,7 +14,7 @@
             //template: function(el, attrs) {
             //  return '<div class="switch-container ' + (attrs.color || '') + '"><input type="checkbox" ng-model="ngModel"></div>';
             //}
-            templateUrl: "../performance/static/app/components/input/select/select.html",
+            templateUrl: window._root__component_template_url+"../../app/components/input/select/select.html",
             link: function ($scope, elem, attr) {
                 var cmp = $(elem);
                 if (attr["required"]) {

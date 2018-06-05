@@ -11973,3 +11973,627 @@ lv.auth_user.find (0.00) {'username': 'sys'}
 Not Found: /performance/static/js/angular.min.js.map
 lv.django_session.find (0.00) {'_id': 'ag1jhkrt86e7a2pikcycvkigrp7t7ibf', 'expire_date': {'$gt': datetime.datetime(2018, 6, 4, 4, 56, 18, 511449, tzinfo=<UTC>)}}
 lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.auth_user.find (0.00) {'username': 'sys'}
+lv.django_session.save (0.00) {'_id': u'hmpb9lxdyrfmxud25lalixlxn82f81bz', 'expire_date': datetime.datetime(2018, 6, 19, 6, 26, 4, 696182, tzinfo=<UTC>), 'session_data': u'YjAwMTViM2E0OTNjMDE0N2NjMTFiZjIxNzYzNmNkYTg5OGRiZGZjMzp7Imxhbmd1YWdlIjoiZW4ifQ=='}
+Not Found: /favicon.ico
+lv.django_session.find (0.00) {'_id': 'hmpb9lxdyrfmxud25lalixlxn82f81bz', 'expire_date': {'$gt': datetime.datetime(2018, 6, 5, 6, 26, 13, 600863, tzinfo=<UTC>)}}
+lv.django_session.find (0.00) {'_id': 'hmpb9lxdyrfmxud25lalixlxn82f81bz', 'expire_date': {'$gt': datetime.datetime(2018, 6, 5, 6, 26, 13, 617313, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'username': 'sys'}
+lv.django_session.save (0.00) {'_id': 'hmpb9lxdyrfmxud25lalixlxn82f81bz', 'expire_date': datetime.datetime(2018, 6, 19, 6, 26, 13, 669504, tzinfo=<UTC>), 'session_data': u'YjAwMTViM2E0OTNjMDE0N2NjMTFiZjIxNzYzNmNkYTg5OGRiZGZjMzp7Imxhbmd1YWdlIjoiZW4ifQ=='}
+Not Found: /performance/static/app/directives/dialog/Dialog.js
+Not Found: /performance/static/app/directives/dialog/Dialog.js
+lv.django_session.find (0.00) {'_id': 'hmpb9lxdyrfmxud25lalixlxn82f81bz', 'expire_date': {'$gt': datetime.datetime(2018, 6, 5, 6, 26, 15, 590583, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'username': 'sys'}
+lv.auth_user.find (0.00) {'username': u'sys'}
+lv.django_session.save (0.00) {'_id': u'hyz4b8f2lnbvql9recikr4u5pqhjev5p', 'expire_date': datetime.datetime(2018, 6, 19, 6, 26, 15, 657466, tzinfo=<UTC>), 'session_data': u'YjAwMTViM2E0OTNjMDE0N2NjMTFiZjIxNzYzNmNkYTg5OGRiZGZjMzp7Imxhbmd1YWdlIjoiZW4ifQ=='}
+lv.django_session.find (0.00) {'_id': 'hmpb9lxdyrfmxud25lalixlxn82f81bz'}
+lv.django_session.remove (0.00) {'_id': {'$in': [u'hmpb9lxdyrfmxud25lalixlxn82f81bz']}}
+lv.auth_user.save (0.00) {'username': u'sys', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b02a1df2320372ba4a49c31'), 'is_active': True, 'email': u'', 'is_superuser': False, 'is_staff': False, 'last_login': datetime.datetime(2018, 6, 5, 6, 26, 15, 664035, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$KW6IwFOfDl12$J8Y4rGgdfA5n/ihfHuUyJLP8ggim72LMBQcQruA4iv8=', 'date_joined': datetime.datetime(2018, 5, 20, 13, 39, 26, 881000, tzinfo=<UTC>)}
+lv.django_session.save (0.00) {'_id': u'hyz4b8f2lnbvql9recikr4u5pqhjev5p', 'expire_date': datetime.datetime(2018, 6, 19, 6, 26, 15, 669913, tzinfo=<UTC>), 'session_data': u'NjYwNWMyOWVmZjBmYjcyOWRkOGE2YjJlZDJjMGUyMmM3MjY3MjVkZTp7Il9hdXRoX3VzZXJfYmFja2VuZCI6InBlcm1pc3Npb25fYmFja2VuZF9ub25yZWwuYmFja2VuZHMuTm9ucmVsUGVybWlzc2lvbkJhY2tlbmQiLCJfYXV0aF91c2VyX2lkIjoiNWIwMmExZGYyMzIwMzcyYmE0YTQ5YzMxIiwibGFuZ3VhZ2UiOiJlbiJ9'}
+lv.django_session.find (0.00) {'_id': 'hyz4b8f2lnbvql9recikr4u5pqhjev5p', 'expire_date': {'$gt': datetime.datetime(2018, 6, 5, 6, 26, 15, 697776, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+Not Found: /performance/static/app/directives/dialog/Dialog.js
+Not Found: /lv/performance/{{$root.logo}}
+Not Found: /performance/static/app/directives/dialog/Dialog.js
+lv.django_session.find (0.00) {'_id': 'hyz4b8f2lnbvql9recikr4u5pqhjev5p', 'expire_date': {'$gt': datetime.datetime(2018, 6, 5, 6, 26, 16, 210089, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+Not Found: /lv/performance/static/app/directives/breadcumb/breadcumb.html
+Not Found: /lv/performance/static/app/directives/leftmenu/leftmenu.html
+Not Found: /lv/performance/static/app/directives/toolbar/toolbar.html
+lv.django_session.find (0.01) {'_id': 'hyz4b8f2lnbvql9recikr4u5pqhjev5p', 'expire_date': {'$gt': datetime.datetime(2018, 6, 5, 6, 26, 17, 544992, tzinfo=<UTC>)}}
+Not Found: /lv/performance/static/app/components/table/table-data/table-data.html
+lv.auth_user.find (0.01) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': 'hyz4b8f2lnbvql9recikr4u5pqhjev5p', 'expire_date': {'$gt': datetime.datetime(2018, 6, 5, 6, 26, 19, 179699, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+Not Found: /performance/static/app/directives/dialog/Dialog.js
+Not Found: /lv/performance/{{$root.logo}}
+Not Found: /performance/static/app/directives/dialog/Dialog.js
+lv.django_session.find (0.00) {'_id': 'hyz4b8f2lnbvql9recikr4u5pqhjev5p', 'expire_date': {'$gt': datetime.datetime(2018, 6, 5, 6, 26, 19, 536461, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+Not Found: /lv/performance/static/app/directives/breadcumb/breadcumb.html
+Not Found: /lv/performance/static/app/directives/leftmenu/leftmenu.html
+Not Found: /lv/performance/static/app/directives/toolbar/toolbar.html
+lv.django_session.find (0.01) {'_id': 'hyz4b8f2lnbvql9recikr4u5pqhjev5p', 'expire_date': {'$gt': datetime.datetime(2018, 6, 5, 6, 26, 19, 674782, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+Not Found: /lv/performance/static/app/components/table/table-data/table-data.html
+lv.django_session.find (0.00) {'_id': 'hyz4b8f2lnbvql9recikr4u5pqhjev5p', 'expire_date': {'$gt': datetime.datetime(2018, 6, 5, 6, 26, 23, 914384, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+Not Found: /performance/static/js/angular.min.js.map
+Not Found: /performance/static/app/directives/dialog/Dialog.js
+Not Found: /lv/performance/{{$root.logo}}
+Not Found: /performance/static/js/datatables/pdfmake.min.js.map
+Not Found: /performance/static/app/directives/dialog/Dialog.js
+lv.django_session.find (0.01) {'_id': 'hyz4b8f2lnbvql9recikr4u5pqhjev5p', 'expire_date': {'$gt': datetime.datetime(2018, 6, 5, 6, 26, 24, 959445, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+Not Found: /lv/performance/static/app/directives/leftmenu/leftmenu.html
+Not Found: /lv/performance/static/app/directives/breadcumb/breadcumb.html
+Not Found: /lv/performance/static/app/components/table/table-data/table-data.html
+lv.django_session.find (0.00) {'_id': 'hyz4b8f2lnbvql9recikr4u5pqhjev5p', 'expire_date': {'$gt': datetime.datetime(2018, 6, 5, 6, 26, 25, 169456, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+Not Found: /lv/performance/static/app/directives/toolbar/toolbar.html
+Not Found: /lv/performance/static/app/directives/breadcumb/breadcumb.html
+Not Found: /lv/performance/static/app/directives/breadcumb/breadcumb.html
+Not Found: /performance/static/js/datatables/pdfmake.min.js.map
+Not Found: /performance/static/js/angular.min.js.map
+lv.django_session.find (0.00) {'_id': 'hyz4b8f2lnbvql9recikr4u5pqhjev5p', 'expire_date': {'$gt': datetime.datetime(2018, 6, 5, 6, 28, 11, 477555, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+Not Found: /performance/static/js/angular.min.js.map
+Not Found: /performance/static/app/directives/dialog/Dialog.js
+Not Found: /performance/static/js/datatables/pdfmake.min.js.map
+Not Found: /lv/performance/{{$root.logo}}
+Not Found: /performance/static/app/directives/dialog/Dialog.js
+lv.django_session.find (0.00) {'_id': 'hyz4b8f2lnbvql9recikr4u5pqhjev5p', 'expire_date': {'$gt': datetime.datetime(2018, 6, 5, 6, 28, 12, 575471, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+Not Found: /lv/performance/static/app/directives1/leftmenu/leftmenu.html
+Not Found: /lv/performance/static/app/directives1/breadcumb/breadcumb.html
+lv.django_session.find (0.00) {'_id': 'hyz4b8f2lnbvql9recikr4u5pqhjev5p', 'expire_date': {'$gt': datetime.datetime(2018, 6, 5, 6, 28, 12, 785490, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+Not Found: /lv/performance/static/app/directives1/toolbar/toolbar.html
+Not Found: /lv/performance/static/app/components/table/table-data/table-data.html
+lv.django_session.find (0.00) {'_id': 'hyz4b8f2lnbvql9recikr4u5pqhjev5p', 'expire_date': {'$gt': datetime.datetime(2018, 6, 5, 6, 31, 20, 99238, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+Not Found: /performance/static/js/angular.min.js.map
+Not Found: /performance/static/app/directives/dialog/Dialog.js
+Not Found: /lv/performance/{{$root.logo}}
+Not Found: /performance/static/js/datatables/pdfmake.min.js.map
+Not Found: /performance/static/app/directives/dialog/Dialog.js
+Not Found: /performance/static/app/directives/dialog/Dialog.js
+lv.django_session.find (0.00) {'_id': 'hyz4b8f2lnbvql9recikr4u5pqhjev5p', 'expire_date': {'$gt': datetime.datetime(2018, 6, 5, 6, 34, 19, 557990, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+Not Found: /performance/static/js/angular.min.js.map
+Not Found: /performance/static/app/directives/dialog/Dialog.js
+Not Found: /lv/performance/{{$root.logo}}
+Not Found: /performance/static/js/datatables/pdfmake.min.js.map
+Not Found: /performance/static/app/directives/dialog/Dialog.js
+lv.django_session.find (0.01) {'_id': 'hyz4b8f2lnbvql9recikr4u5pqhjev5p', 'expire_date': {'$gt': datetime.datetime(2018, 6, 5, 6, 34, 20, 445563, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+Not Found: /lv/performance/breadcumb/breadcumb.html
+Not Found: /lv/performance/leftmenu/leftmenu.html
+Not Found: /lv/performance/toolbar/toolbar.html
+lv.django_session.find (0.01) {'_id': 'hyz4b8f2lnbvql9recikr4u5pqhjev5p', 'expire_date': {'$gt': datetime.datetime(2018, 6, 5, 6, 34, 20, 637182, tzinfo=<UTC>)}}
+Not Found: /lv/performance/static/app/components/table/table-data/table-data.html
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': 'hyz4b8f2lnbvql9recikr4u5pqhjev5p', 'expire_date': {'$gt': datetime.datetime(2018, 6, 5, 6, 34, 47, 435627, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+Not Found: /performance/static/js/angular.min.js.map
+Not Found: /performance/static/app/directives/dialog/Dialog.js
+Not Found: /lv/performance/{{$root.logo}}
+Not Found: /performance/static/js/datatables/pdfmake.min.js.map
+Not Found: /performance/static/app/directives/dialog/Dialog.js
+Not Found: /performance/static/app/directives/dialog/Dialog.js
+Not Found: /performance1/static/app/directives/dialog/dialog.js
+Not Found: /performance1/static/app/directives/dialog/dialog.js
+Not Found: /performance1/static/app/directives/dialog/dialog.js
+Not Found: /performance1/static/app/directives/dialog/dialog.js
+Not Found: /performance/static/app/directives/dialog/Dialog.js
+Not Found: /performance/static/app/directives/dialog/Dialog.js
+Not Found: /favicon.ico
+Not Found: /favicon.ico
+Not Found: /performance/Static/App/directives/dialog/dialog.js
+Not Found: /performance/static/app/directives/dialog/Dialog.js
+Not Found: /performance/static/app/directives/dialog/Dialog.js
+Not Found: /performance/static/app/directives/dialog/Dialog.js
+Not Found: /performance/static1app/directives/dialog/Dialog.js
+Not Found: /performance/static1app/directives/dialog/Dialog.js
+Not Found: /performance/static1app/directives/dialog/Dialog.js
+Not Found: /performance/static1app/directives/dialog/Dialog.js
+Not Found: /performance/static/app/directives/dialog/dialog.js
+Not Found: /performance/static/app/directives/dialog/dialog.js
+lv.django_session.find (0.00) {'_id': 'hyz4b8f2lnbvql9recikr4u5pqhjev5p', 'expire_date': {'$gt': datetime.datetime(2018, 6, 5, 6, 42, 33, 162733, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+Not Found: /performance/static/js/angular.min.js
+Not Found: /performance/static/lv/ngDirectives.js
+Not Found: /performance/static/js/jquery-3.2.1.min.js
+Not Found: /performance/static/js/underscore-min.js
+Not Found: /performance/static/lv/ws.js
+Not Found: /performance/static/app/libs/jquery-ui.min.js
+Not Found: /performance/static/libs/styles/vendor-2cae343ef1.css
+Not Found: /performance/static/libs/styles/app-b6796b3788.css
+Not Found: /performance/static/assets/line-awesome/css/line-awesome-font-awesome.min.css
+Not Found: /performance/static/assets/line-awesome/css/line-awesome.min.css
+Not Found: /performance/static/assets/summer-note/font/summernote.ttf
+Not Found: /performance/static/assets/summer-note/css/summernote.css
+Not Found: /performance/static/css/site.min.css
+Not Found: /performance/static/css/libs/colReorder.dataTables.min.css
+Not Found: /performance/static/css/libs/jquery.dataTables.min.css
+Not Found: /performance/static/css/libs/keyTable.dataTables.min.css
+Not Found: /performance/static/css/libs/responsive.dataTables.min.css
+Not Found: /performance/static/app/libs/tree/skin-xp/ui.fancytree.css
+Not Found: /performance/static/css/libs/select.dataTables.min.css
+Not Found: /performance/static/js/datatables/dataTables.responsive.min.js
+Not Found: /performance/static/app/libs/tree/jquery.fancytree.js
+Not Found: /performance/static/js/datatables/datatables.min.js
+Not Found: /performance/static/app/libs/tree/jquery.fancytree.filter.js
+Not Found: /performance/static/app/libs/tree/jquery.fancytree.table.js
+Not Found: /performance/static/app/libs/summernote.js
+Not Found: /performance/static/js/angular.min.js
+Not Found: /performance/static/app/components/components.js
+Not Found: /performance/static/lv/ngDirectives.js
+Not Found: /performance/static/app/components/input/input.module.js
+Not Found: /performance/static/lv/ws.js
+Not Found: /performance/static/app/components/input/text/text.directive.js
+Not Found: /performance/static/js/underscore-min.js
+Not Found: /performance/static/app/components/input/number/number.directive.js
+Not Found: /performance/static/app/libs/jquery-ui.min.js
+Not Found: /performance/static/app/components/input/select/select.directive.js
+Not Found: /performance/static/js/datatables/datatables.min.js
+Not Found: /performance/static/app/components/input/datepicker/datepicker.directive.js
+Not Found: /performance/static/js/datatables/dataTables.responsive.min.js
+Not Found: /performance/static/app/components/input/checkbox/checkbox.directive.js
+Not Found: /performance/static/libs/styles/vendor-2cae343ef1.css
+Not Found: /performance/static/libs/styles/app-b6796b3788.css
+Not Found: /performance/static/assets/summer-note/font/summernote.ttf
+Not Found: /performance/static/assets/summer-note/css/summernote.css
+Not Found: /performance/static/assets/line-awesome/css/line-awesome.min.css
+Not Found: /performance/static/assets/line-awesome/css/line-awesome-font-awesome.min.css
+Not Found: /performance/static/css/site.min.css
+Not Found: /performance/static/css/libs/colReorder.dataTables.min.css
+Not Found: /performance/static/css/libs/jquery.dataTables.min.css
+Not Found: /performance/static/css/libs/responsive.dataTables.min.css
+Not Found: /performance/static/css/libs/keyTable.dataTables.min.css
+Not Found: /performance/static/css/libs/select.dataTables.min.css
+Not Found: /performance/static/app/libs/tree/skin-xp/ui.fancytree.css
+Not Found: /performance/static/app/libs/tree/jquery.fancytree.js
+Not Found: /performance/static/app/libs/tree/jquery.fancytree.filter.js
+Not Found: /performance/static/app/directives/component.js
+Not Found: /performance/static/app/libs/tree/jquery.fancytree.table.js
+Not Found: /performance/static/app/directives/layoutService.js
+Not Found: /performance/static/app/libs/summernote.js
+Not Found: /performance/static/app/directives/breadcumb/breadcumb.js
+Not Found: /performance/static/app/directives/leftmenu/leftmenu.js
+Not Found: /performance/static/app/directives/toolbar/toolbar.js
+Not Found: /performance/static/app/directives/dialog/Dialog.js
+Not Found: /performance/static/app/libs/select.js
+Not Found: /performance/static/app/components/table/table.module.js
+Not Found: /performance/static/app/components/table/table-data/table-data.directive.js
+Not Found: /performance/static/app/components/components.js
+Not Found: /lv/performance/{{$root.logo}}
+Not Found: /performance/static/app/libs/ui-bootstrap-tpls-2.5.0.min.js
+Not Found: /performance/static/app/components/tree/tree.module.js
+Not Found: /performance/static/app/components/input/input.module.js
+Not Found: /performance/static/libs/scripts/bootstrap.min.js
+Not Found: /performance/static/app/components/tree/tree/tree.directive.js
+Not Found: /performance/static/app/components/input/text/text.directive.js
+Not Found: /performance/static/app/components/input/number/number.directive.js
+Not Found: /performance/static/app/components/input/select/select.directive.js
+Not Found: /performance/static/app/components/input/datepicker/datepicker.directive.js
+Not Found: /performance/static/app/components/input/checkbox/checkbox.directive.js
+Not Found: /performance/static/app/directives/component.js
+Not Found: /performance/static/app/directives/layoutService.js
+Not Found: /performance/static/app/directives/breadcumb/breadcumb.js
+Not Found: /performance/static/app/directives/leftmenu/leftmenu.js
+Not Found: /performance/static/app/directives/toolbar/toolbar.js
+Not Found: /performance/static/app/directives/dialog/Dialog.js
+Not Found: /performance/static/app/libs/select.js
+Not Found: /performance/static/app/components/table/table.module.js
+Not Found: /performance/static/app/components/table/table-data/table-data.directive.js
+Not Found: /performance/static/app/libs/ui-bootstrap-tpls-2.5.0.min.js
+Not Found: /performance/static/libs/scripts/bootstrap.min.js
+Not Found: /performance/static/app/components/tree/tree.module.js
+Not Found: /performance/static/app/components/tree/tree/tree.directive.js
+Not Found: /performance/static/app/components/tree/tree.module.js
+Not Found: /performance/static/app/components/tree/tree.module.js
+Not Found: /performance/static/app/components/tree/tree.module.js
+Not Found: /performance/static/app/components/tree/tree.module.js
+Not Found: /performance/static/app/components/tree/tree.module.js
+Not Found: /performance/static/app/components/tree/tree.module.js
+Not Found: /performance/static/app/components/tree/tree.module.js
+Not Found: /performance/static/app/components/tree/tree.module.js
+Not Found: /performance/static/app/components/tree/tree.module.js
+Not Found: /performance/static/app/components/tree/tree.module.js
+Not Found: /performance/static/app/components/tree/tree.module.js
+Not Found: /performance/static/app/components/tree/tree.module.js
+Not Found: /performance/static/app/components/tree/tree.module.js
+Not Found: /performance/static/app/components/tree/tree.module.js
+Not Found: /performance/static/app/components/tree/tree.module.js
+Not Found: /performance/static/app/components/tree/tree.module.js
+Not Found: /performance/static/app/components/tree/tree.module.js
+Not Found: /performance/static/app/components/tree/tree.module.js
+Not Found: /performance/static/app/components/tree/tree.module.js
+Not Found: /performance/static/app/components/tree/tree.module.js
+Not Found: /performance/static/app/components/tree/tree.module.js
+Not Found: /performance/static/app/components/tree/tree.module.js
+Not Found: /performance/static/app/components/tree/tree.module.js
+Not Found: /performance/static/app/components/tree/tree.module.js
+Not Found: /performance/static/app/components/tree/tree.module.js
+Not Found: /performance/static/app/components/tree/tree.module.js
+lv.django_session.find (0.00) {'_id': 'hyz4b8f2lnbvql9recikr4u5pqhjev5p', 'expire_date': {'$gt': datetime.datetime(2018, 6, 5, 6, 52, 48, 171522, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+Not Found: /performance/static/js/angular.min.js.map
+Not Found: /performance/static/app/directives/dialog/Dialog.js
+Not Found: /lv/performance/{{$root.logo}}
+Not Found: /performance/static/js/datatables/pdfmake.min.js.map
+Not Found: /performance/static/app/directives/dialog/Dialog.js
+Not Found: /performance/static/app/directives/dialog/Dialog.js
+Not Found: /performance/static/1app/directives/dialog/Dialog.js
+Not Found: /performance/static/1app/directives/dialog/Dialog.js
+Not Found: /performance1/static/1app/directives/dialog/Dialog.js
+Not Found: /performance1/static/1app/directives/dialog/Dialog.js
+Not Found: /performance1/static/1app/directives/dialog/Dialog.js
+Not Found: /performance1/static/1app/directives/dialog/Dialog.js
+Not Found: /performance1/static/1app/directives/dialog/Dialog.js
+Not Found: /performance1/static/1app/directives/dialog/Dialog.js
+Not Found: /performance1/static/1app/directives/dialog/Dialog.js
+Not Found: /performance1/static/1app/directives/dialog/Dialog.js
+Not Found: /performance1/static/1app/directives/dialog/Dialog.js
+Not Found: /performance1/static/1app/directives/dialog/Dialog.js
+Not Found: /performance1/static/1app/directives/dialog/Dialog.js
+Not Found: /performance1/static/1app/directives/dialog/Dialog.js
+Not Found: /performance1/static/1app/directives/dialog/Dialog.js
+Not Found: /performance1/static/1app/directives/dialog/Dialog.js
+Not Found: /performance1/static/1app/directives/dialog/Dialog.js
+Not Found: /performance1/static/1app/directives/dialog/Dialog.js
+Not Found: /performance1/static/1app/directives/dialog/Dialog.js
+Not Found: /performance1/static/1app/directives/dialog/Dialog.js
+Not Found: /performance1/static/1app/directives/dialog/Dialog.js
+Not Found: /performance1/static/1app/directives/dialog/Dialog.js
+Not Found: /performance1/static/1app/directives/dialog/Dialog.js
+Not Found: /performance1/static/1app/directives/dialog/Dialog.js
+Not Found: /performance1/static/1app/directives/dialog/Dialog.js
+Not Found: /performance1/static/1app/directives/dialog/Dialog.js
+Not Found: /performance1/static/1app/directives/dialog/Dialog.js
+Not Found: /performance1/static/1app/directives/dialog/Dialog.js
+Not Found: /performance1/static/1app/directives/dialog/Dialog.js
+Not Found: /performance1/static/1app/directives/dialog/Dialog.js
+Not Found: /performance1/static/1app/directives/dialog/Dialog.js
+Not Found: /performance1/static/1app/directives/dialog/Dialog.js
+Not Found: /performance/static/app/components/tree/tree.module.js
+Not Found: /performance/static/app/components/tree/tree.module.js
+Not Found: /performance/static/app/components/tree/tree.module.js
+Not Found: /performance/static/app/components/tree/tree.module.js
+lv.django_session.find (0.00) {'_id': 'hyz4b8f2lnbvql9recikr4u5pqhjev5p', 'expire_date': {'$gt': datetime.datetime(2018, 6, 5, 7, 10, 29, 798935, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+Not Found: /performance/static/lv/ngDirectives.js
+Not Found: /performance/static/lv/ws.js
+Not Found: /performance/static/js/jquery-3.2.1.min.js
+Not Found: /performance/static/app/libs/jquery-ui.min.js
+Not Found: /performance/static/js/angular.min.js
+Not Found: /performance/static/js/underscore-min.js
+Not Found: /performance/static/libs/styles/vendor-2cae343ef1.css
+Not Found: /performance/static/libs/styles/app-b6796b3788.css
+Not Found: /performance/static/assets/summer-note/css/summernote.css
+Not Found: /performance/static/assets/line-awesome/css/line-awesome.min.css
+Not Found: /performance/static/assets/summer-note/font/summernote.ttf
+Not Found: /performance/static/assets/line-awesome/css/line-awesome-font-awesome.min.css
+Not Found: /performance/static/css/site.min.css
+Not Found: /performance/static/css/libs/colReorder.dataTables.min.css
+Not Found: /performance/static/css/libs/responsive.dataTables.min.css
+Not Found: /performance/static/app/libs/tree/skin-xp/ui.fancytree.css
+Not Found: /performance/static/css/libs/select.dataTables.min.css
+Not Found: /performance/static/css/libs/jquery.dataTables.min.css
+Not Found: /performance/static/css/libs/keyTable.dataTables.min.css
+Not Found: /performance/static/js/datatables/dataTables.responsive.min.js
+Not Found: /performance/static/js/datatables/datatables.min.js
+Not Found: /performance/static/app/libs/tree/jquery.fancytree.js
+Not Found: /performance/static/app/libs/summernote.js
+Not Found: /performance/static/app/libs/tree/jquery.fancytree.filter.js
+Not Found: /performance/static/app/libs/tree/jquery.fancytree.table.js
+Not Found: /performance/static/app/components/components.js
+Not Found: /performance/static/lv/ngDirectives.js
+Not Found: /performance/static/app/components/input/input.module.js
+Not Found: /performance/static/lv/ws.js
+Not Found: /performance/static/js/underscore-min.js
+Not Found: /performance/static/app/components/input/text/text.directive.js
+Not Found: /performance/static/app/libs/jquery-ui.min.js
+Not Found: /performance/static/app/components/input/number/number.directive.js
+Not Found: /performance/static/js/datatables/datatables.min.js
+Not Found: /performance/static/app/components/input/select/select.directive.js
+Not Found: /performance/static/js/datatables/dataTables.responsive.min.js
+Not Found: /performance/static/app/components/input/datepicker/datepicker.directive.js
+Not Found: /performance/static/libs/styles/app-b6796b3788.css
+Not Found: /performance/static/libs/styles/vendor-2cae343ef1.css
+Not Found: /performance/static/assets/line-awesome/css/line-awesome-font-awesome.min.css
+Not Found: /performance/static/assets/line-awesome/css/line-awesome.min.css
+Not Found: /performance/static/assets/summer-note/font/summernote.ttf
+Not Found: /performance/static/assets/summer-note/css/summernote.css
+Not Found: /performance/static/css/libs/colReorder.dataTables.min.css
+Not Found: /performance/static/css/libs/jquery.dataTables.min.css
+Not Found: /performance/static/css/libs/keyTable.dataTables.min.css
+Not Found: /performance/static/css/site.min.css
+Not Found: /performance/static/css/libs/responsive.dataTables.min.css
+Not Found: /performance/static/css/libs/select.dataTables.min.css
+Not Found: /performance/static/app/libs/tree/skin-xp/ui.fancytree.css
+Not Found: /performance/static/app/libs/tree/jquery.fancytree.js
+Not Found: /performance/static/app/components/input/checkbox/checkbox.directive.js
+Not Found: /performance/static/app/libs/tree/jquery.fancytree.filter.js
+Not Found: /performance/static/app/libs/tree/jquery.fancytree.table.js
+Not Found: /performance/static/app/directives/component.js
+Not Found: /performance/static/app/directives/layoutService.js
+Not Found: /performance/static/app/libs/summernote.js
+Not Found: /performance/static/app/directives/breadcumb/breadcumb.js
+Not Found: /performance/static/app/directives/leftmenu/leftmenu.js
+Not Found: /performance/static/app/directives/toolbar/toolbar.js
+Not Found: /performance/static/app/directives/dialog/Dialog.js
+Not Found: /performance/static/app/components/table/table.module.js
+Not Found: /performance/static/app/libs/select.js
+Not Found: /performance/static/app/components/components.js
+Not Found: /lv/performance/{{$root.logo}}
+Not Found: /performance/static/libs/scripts/bootstrap.min.js
+Not Found: /performance/static/app/libs/ui-bootstrap-tpls-2.5.0.min.js
+Not Found: /performance/static/app/components/table/table-data/table-data.directive.js
+Not Found: /performance/static/app/components/tree/tree.module.js
+Not Found: /performance/static/app/components/tree/tree/tree.directive.js
+Not Found: /performance/static/app/components/input/input.module.js
+Not Found: /performance/static/app/components/input/text/text.directive.js
+Not Found: /performance/static/app/components/input/number/number.directive.js
+Not Found: /performance/static/app/components/input/select/select.directive.js
+Not Found: /performance/static/app/components/input/datepicker/datepicker.directive.js
+Not Found: /performance/static/app/components/input/checkbox/checkbox.directive.js
+Not Found: /performance/static/app/directives/component.js
+Not Found: /performance/static/app/directives/layoutService.js
+Not Found: /performance/static/app/directives/breadcumb/breadcumb.js
+Not Found: /performance/static/app/directives/leftmenu/leftmenu.js
+Not Found: /performance/static/app/directives/toolbar/toolbar.js
+Not Found: /performance/static/app/directives/dialog/Dialog.js
+Not Found: /performance/static/app/libs/select.js
+Not Found: /performance/static/app/components/table/table.module.js
+Not Found: /performance/static/app/components/table/table-data/table-data.directive.js
+Not Found: /performance/static/app/libs/ui-bootstrap-tpls-2.5.0.min.js
+Not Found: /performance/static/libs/scripts/bootstrap.min.js
+Not Found: /performance/static/app/components/tree/tree.module.js
+Not Found: /performance/static/app/components/tree/tree/tree.directive.js
+Not Found: /performance/static/libs/scripts/bootstrap.min.js
+lv.django_session.find (0.00) {'_id': 'hyz4b8f2lnbvql9recikr4u5pqhjev5p', 'expire_date': {'$gt': datetime.datetime(2018, 6, 5, 7, 12, 9, 79881, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+Not Found: /performance/static/js/angular.min.js.map
+Not Found: /performance/static/app/directives/dialog/Dialog.js
+Not Found: /performance/static/js/datatables/pdfmake.min.js.map
+Not Found: /lv/performance/{{$root.logo}}
+Not Found: /performance/static/app/directives/dialog/Dialog.js
+Not Found: /performance/static/app/directives/dialog/Dialog.js
+Not Found: /performance1/static/app/directives/dialog/Dialog.js
+Not Found: /performance1/static/app/directives/dialog/Dialog.js
+Not Found: /performance/static/libs/scripts/bootstrap.min.js
+Not Found: /performance1/static/app/directives/dialog/Dialog.js
+Not Found: /performance1/static/app/directives/dialog/dialog.js
+Not Found: /performance1/static/app/directives/dialog/dialog.js
+Not Found: /performance1/static/app/directives/dialog/Dialog.js
+Not Found: /performance1/static/app/directives/dialog/Dialog.js
+Not Found: /performance1/static/app/directives/dialog/Dialog.js
+Not Found: /performance1/static/app/directives/dialog/Dialog.js
+Not Found: /performance1/static/app/directives/dialog/Dialog.js
+Not Found: /performance1/static/app/directives/dialog/Dialog.js
+Not Found: /performance1/static/app/directives/dialog/Dialog.js
+Not Found: /performance1/static/app/directives/dialog/Dialog.js
+Not Found: /performance1/static/app/directives/dialog/Dialog.js
+Not Found: /performance1/static/app/directives/dialog/Dialog.js
+Not Found: /performance/static/libs/scripts/bootstrap.min.js
+Not Found: /performance1/static/app/directives/dialog/Dialog.js
+Not Found: /performance1/static/app/directives/dialog/Dialog.js
+Not Found: /performance1/static/app/directives/dialog/Dialog.js
+Not Found: /performance1/static/app/directives/dialog/Dialog.js
+Not Found: /performance1/static/app/directives/dialog/Dialog.js
+Not Found: /performance/static/libs/scripts/bootstrap.min.js
+Not Found: /performance1/static/app/directives/dialog/Dialog.js
+Not Found: /performance1/static/app/directives/dialog/Dialog.js
+Not Found: /performance1/static/app/directives/dialog/Dialog.js
+Not Found: /performance1/static/app/directives/dialog/Dialog.js
+Not Found: /performance1/static/app/directives/dialog/dialog.js
+lv.django_session.find (0.00) {'_id': 'hyz4b8f2lnbvql9recikr4u5pqhjev5p', 'expire_date': {'$gt': datetime.datetime(2018, 6, 5, 7, 25, 7, 511032, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+Not Found: /performance/static/js/angular.min.js.map
+Not Found: /performance/static/app/directives/dialog/Dialog.js
+Not Found: /performance/static/js/datatables/pdfmake.min.js.map
+Not Found: /lv/performance/{{$root.logo}}
+Not Found: /performance/static/app/directives/dialog/Dialog.js
+Not Found: /performance/static/app/directives/dialog/Dialog.js
+Not Found: /performance1/static/app/directives/dialog/Dialog.js
+Not Found: /performance/static/libs/scripts/bootstrap.min.js
+Not Found: /performance/static/libs/scripts/bootstrap.min.js
+Not Found: /performance/static/libs/scripts/bootstrap.min.js
+Not Found: /performance/static/libs/scripts/bootstrap.min.js
+Not Found: /performance/static/libs/scripts/bootstrap.min.js
+Not Found: /performance/static/libs/scripts/bootstrap.min.js
+Not Found: /performance/static/libs/scripts/bootstrap.min.js
+Not Found: /performance/static/libs/scripts/bootstrap.min.js
+Not Found: /performance/static/libs/scripts/bootstrap.min.js
+Not Found: /performance1/static/app/directives/dialog/Dialog.js
+Internal Server Error: /performance/static/app/directives/dialog/Dialog.js
+Traceback (most recent call last):
+  File "/home/hcsadmin/argo/packages/django/django/core/handlers/base.py", line 88, in get_response
+    response = middleware_method(request)
+  File "/home/hcsadmin/argo/packages/django/django/middleware/common.py", line 71, in process_request
+    if (not urlresolvers.is_valid_path(request.path_info, urlconf) and
+  File "/home/hcsadmin/argo/packages/django/django/core/urlresolvers.py", line 600, in is_valid_path
+    resolve(path, urlconf)
+  File "/home/hcsadmin/argo/packages/django/django/core/urlresolvers.py", line 480, in resolve
+    return get_resolver(urlconf).resolve(path)
+  File "/home/hcsadmin/argo/packages/django/django/core/urlresolvers.py", line 339, in resolve
+    sub_match = pattern.resolve(new_path)
+  File "/home/hcsadmin/argo/packages/django/django/core/urlresolvers.py", line 210, in resolve
+    match = self.regex.search(path)
+  File "/home/hcsadmin/argo/packages/django/django/core/urlresolvers.py", line 178, in regex
+    (regex, six.text_type(e)))
+ImproperlyConfigured: "^(?i)admin/static/(?P<path>.^(?i)*)$" is not a valid regular expression: nothing to repeat
+Not Found: /performance/static/app/directives/dialog/Dialog.js
+Not Found: /performance1/static/app/directives/dialog/Dialog.js
+Not Found: /performance/static/app/directives/dialog/Dialog.js
+Not Found: /performance/static/app/directives/dialog/Dialog.js
+Not Found: /performance/static/app/directives/dialog/Dialog.js
+Not Found: /performance/static/app/directives/dialog/dialog1.js
+Not Found: /performance/Static/App/directives/dialog/dialog.js
+Not Found: /performance/Static/App/directives/dialog/dialog.js
+Not Found: /performance/Static/App/directives/dialog/dialog.js
+Not Found: /performance/Static/App/directives/dialog/dialog.js
+Not Found: /performance/Static/App/directives/dialog/dialog.js
+Not Found: /performance/Static/App/directives/dialog/dialog.js
+Not Found: /performance/Static/App/directives/dialog/dialog.js
+Not Found: /performance/Static/App/directives/dialog/dialog.js
+Not Found: /performance/Static/App/directives/dialog/dialog.js
+Not Found: /performance/static/App/directives/dialog/dialog.js
+lv.django_session.find (0.00) {'_id': 'hyz4b8f2lnbvql9recikr4u5pqhjev5p', 'expire_date': {'$gt': datetime.datetime(2018, 6, 5, 7, 34, 11, 522945, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+Not Found: /performance/static/js/angular.min.js.map
+Not Found: /performance/static/app/directives/dialog/Dialog.js
+Not Found: /lv/performance/{{$root.logo}}
+Not Found: /performance/static/js/datatables/pdfmake.min.js.map
+Not Found: /performance/static/app/directives/dialog/Dialog.js
+Not Found: /performance/static/app/directives/dialog/Dialog.js
+Not Found: /performance/1static/app/directives/dialog/Dialog.js
+Not Found: /performance/1static/app/directives/dialog/Dialog.js
+Not Found: /performance/static/app/directives/dialog/Dialog.js
+Not Found: /performance/static/app/directives/dialog/dialog.js
+Not Found: /performance/static/libs/scripts/bootstrap.min.js
+Not Found: /performance/static/app/directives/dialog/Dialog.js
+Not Found: /performance/static/app/directives/dialog/Dialog.js
+Not Found: /performance/static/app/directives/dialog/Dialog.js
+Not Found: /performance/static/App/directives/dialog/dialog.js
+Not Found: /performanceă/static/App/directives/dialog/dialog.js
+lv.django_session.find (0.00) {'_id': 'hyz4b8f2lnbvql9recikr4u5pqhjev5p', 'expire_date': {'$gt': datetime.datetime(2018, 6, 5, 7, 48, 41, 398212, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+Not Found: /performance/static/js/angular.min.js.map
+Not Found: /performance/static/app/directives/dialog/Dialog.js
+Not Found: /lv/performance/{{$root.logo}}
+Not Found: /performance/static/js/datatables/pdfmake.min.js.map
+Not Found: /performance/static/app/directives/dialog/Dialog.js
+lv.django_session.find (0.00) {'_id': 'hyz4b8f2lnbvql9recikr4u5pqhjev5p', 'expire_date': {'$gt': datetime.datetime(2018, 6, 5, 7, 51, 18, 994355, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+Not Found: /performance/static/js/angular.min.js.map
+Not Found: /lv/performance/{{$root.logo}}
+Not Found: /performance/static/js/datatables/pdfmake.min.js.map
+lv.django_session.find (0.00) {'_id': 'hyz4b8f2lnbvql9recikr4u5pqhjev5p', 'expire_date': {'$gt': datetime.datetime(2018, 6, 5, 7, 51, 31, 931416, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+Not Found: /performance/static/js/angular.min.js.map
+Not Found: /lv/performance/{{$root.logo}}
+Not Found: /performance/static/js/datatables/pdfmake.min.js.map
+lv.django_session.find (0.00) {'_id': 'hyz4b8f2lnbvql9recikr4u5pqhjev5p', 'expire_date': {'$gt': datetime.datetime(2018, 6, 5, 7, 51, 45, 703034, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+Not Found: /performance/static/js/angular.min.js.map
+Not Found: /performance/static/js/datatables/pdfmake.min.js.map
+Not Found: /lv/performance/{{$root.logo}}
+lv.django_session.find (0.00) {'_id': 'hyz4b8f2lnbvql9recikr4u5pqhjev5p', 'expire_date': {'$gt': datetime.datetime(2018, 6, 5, 7, 51, 58, 977036, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+Not Found: /performance/static/js/angular.min.js.map
+Not Found: /lv/performance/{{$root.logo}}
+Not Found: /performance/static/js/datatables/pdfmake.min.js.map
+lv.django_session.find (0.00) {'_id': 'hyz4b8f2lnbvql9recikr4u5pqhjev5p', 'expire_date': {'$gt': datetime.datetime(2018, 6, 5, 7, 53, 19, 346045, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+Not Found: /performance/static/js/angular.min.js.map
+Not Found: /lv/performance/{{$root.logo}}
+Not Found: /performance/static/js/datatables/pdfmake.min.js.map
+lv.django_session.find (0.00) {'_id': 'hyz4b8f2lnbvql9recikr4u5pqhjev5p', 'expire_date': {'$gt': datetime.datetime(2018, 6, 5, 7, 55, 32, 457689, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+Not Found: /performance/static/js/angular.min.js.map
+Not Found: /lv/performance/{{$root.logo}}
+Not Found: /performance/static/js/datatables/pdfmake.min.js.map
+lv.django_session.find (0.00) {'_id': 'hyz4b8f2lnbvql9recikr4u5pqhjev5p', 'expire_date': {'$gt': datetime.datetime(2018, 6, 5, 7, 57, 34, 175720, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+Not Found: /performance/static/js/angular.min.js.map
+Not Found: /lv/performance/{{$root.logo}}
+Not Found: /performance/static/js/datatables/pdfmake.min.js.map
+lv.django_session.find (0.00) {'_id': 'hyz4b8f2lnbvql9recikr4u5pqhjev5p', 'expire_date': {'$gt': datetime.datetime(2018, 6, 5, 7, 57, 39, 660646, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+Not Found: /performance/static/js/angular.min.js.map
+Not Found: /lv/performance/{{$root.logo}}
+Not Found: /performance/static/js/datatables/pdfmake.min.js.map
+lv.django_session.find (0.00) {'_id': 'hyz4b8f2lnbvql9recikr4u5pqhjev5p', 'expire_date': {'$gt': datetime.datetime(2018, 6, 5, 7, 58, 23, 232933, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+Not Found: /performance/static/js/angular.min.js.map
+Not Found: /lv/performance/{{$root.logo}}
+Not Found: /performance/static/js/datatables/pdfmake.min.js.map
+lv.django_session.find (0.00) {'_id': 'hyz4b8f2lnbvql9recikr4u5pqhjev5p', 'expire_date': {'$gt': datetime.datetime(2018, 6, 5, 7, 58, 24, 776937, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+Not Found: /performance/static/static/app/directivesleftmenu/leftmenu.html
+Not Found: /performance/static/static/app/directivesbreadcumb/breadcumb.html
+lv.django_session.find (0.00) {'_id': 'hyz4b8f2lnbvql9recikr4u5pqhjev5p', 'expire_date': {'$gt': datetime.datetime(2018, 6, 5, 7, 58, 25, 978, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+Not Found: /lv/performance/static/app/components/table/table-data/table-data.html
+Not Found: /performance/static/static/app/directivestoolbar/toolbar.html
+lv.django_session.find (0.00) {'_id': 'hyz4b8f2lnbvql9recikr4u5pqhjev5p', 'expire_date': {'$gt': datetime.datetime(2018, 6, 5, 7, 58, 38, 266877, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+Not Found: /performance/static/js/angular.min.js.map
+Not Found: /lv/performance/{{$root.logo}}
+Not Found: /performance/static/js/datatables/pdfmake.min.js.map
+lv.django_session.find (0.00) {'_id': 'hyz4b8f2lnbvql9recikr4u5pqhjev5p', 'expire_date': {'$gt': datetime.datetime(2018, 6, 5, 7, 58, 39, 204770, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+Not Found: /performance/static/static/app/directivesbreadcumb/breadcumb.html
+Not Found: /performance/static/static/app/directivesleftmenu/leftmenu.html
+lv.django_session.find (0.00) {'_id': 'hyz4b8f2lnbvql9recikr4u5pqhjev5p', 'expire_date': {'$gt': datetime.datetime(2018, 6, 5, 7, 58, 39, 372432, tzinfo=<UTC>)}}
+Not Found: /performance/static/static/app/directivestoolbar/toolbar.html
+Not Found: /lv/performance/static/app/components/table/table-data/table-data.html
+lv.auth_user.find (0.01) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': 'hyz4b8f2lnbvql9recikr4u5pqhjev5p', 'expire_date': {'$gt': datetime.datetime(2018, 6, 5, 7, 58, 50, 943069, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+Not Found: /performance/static/js/angular.min.js.map
+Not Found: /lv/performance/{{$root.logo}}
+Not Found: /performance/static/js/datatables/pdfmake.min.js.map
+lv.django_session.find (0.00) {'_id': 'hyz4b8f2lnbvql9recikr4u5pqhjev5p', 'expire_date': {'$gt': datetime.datetime(2018, 6, 5, 7, 59, 29, 410972, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+Not Found: /performance/static/js/angular.min.js.map
+Not Found: /lv/performance/{{$root.logo}}
+Not Found: /performance/static/js/datatables/pdfmake.min.js.map
+lv.django_session.find (0.00) {'_id': 'hyz4b8f2lnbvql9recikr4u5pqhjev5p', 'expire_date': {'$gt': datetime.datetime(2018, 6, 5, 7, 59, 30, 336353, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+Not Found: /performance/static/static/app/directivesleftmenu/leftmenu.html
+Not Found: /performance/static/static/app/directivesbreadcumb/breadcumb.html
+lv.django_session.find (0.00) {'_id': 'hyz4b8f2lnbvql9recikr4u5pqhjev5p', 'expire_date': {'$gt': datetime.datetime(2018, 6, 5, 7, 59, 30, 533355, tzinfo=<UTC>)}}
+Not Found: /performance/static/static/app/directivestoolbar/toolbar.html
+Not Found: /lv/performance/static/app/components/table/table-data/table-data.html
+lv.auth_user.find (0.01) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+Not Found: /performance/static/static/app/directivesbreadcumb/breadcumb.html
+Not Found: /performance/static/static/app/directivesbreadcumb/breadcumb.html
+lv.django_session.find (0.00) {'_id': 'hyz4b8f2lnbvql9recikr4u5pqhjev5p', 'expire_date': {'$gt': datetime.datetime(2018, 6, 5, 8, 0, 37, 582715, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+Not Found: /performance/static/js/angular.min.js.map
+Not Found: /lv/performance/{{$root.logo}}
+Not Found: /performance/static/js/datatables/pdfmake.min.js.map
+lv.django_session.find (0.00) {'_id': 'hyz4b8f2lnbvql9recikr4u5pqhjev5p', 'expire_date': {'$gt': datetime.datetime(2018, 6, 5, 8, 0, 38, 544911, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+Not Found: /performance/static/app/directivesleftmenu/leftmenu.html
+Not Found: /performance/static/app/directivesbreadcumb/breadcumb.html
+lv.django_session.find (0.00) {'_id': 'hyz4b8f2lnbvql9recikr4u5pqhjev5p', 'expire_date': {'$gt': datetime.datetime(2018, 6, 5, 8, 0, 38, 696626, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+Not Found: /lv/performance/static/app/components/table/table-data/table-data.html
+Not Found: /performance/static/app/directivestoolbar/toolbar.html
+Not Found: /performance/static/app/directivesbreadcumb/breadcumb.html
+Not Found: /performance/static/app/directivesbreadcumb/breadcumb.html
+Not Found: /performance/static/app/directivesbreadcumb/breadcumb.html
+Not Found: /performance/static/app/directivesbreadcumb/breadcumb.html
+Not Found: /performance/static/app/directivesbreadcumb/breadcumb.html
+lv.django_session.find (0.00) {'_id': 'hyz4b8f2lnbvql9recikr4u5pqhjev5p', 'expire_date': {'$gt': datetime.datetime(2018, 6, 5, 8, 1, 35, 844422, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+Not Found: /performance/static/js/angular.min.js.map
+Not Found: /lv/performance/{{$root.logo}}
+Not Found: /performance/static/js/datatables/pdfmake.min.js.map
+lv.django_session.find (0.00) {'_id': 'hyz4b8f2lnbvql9recikr4u5pqhjev5p', 'expire_date': {'$gt': datetime.datetime(2018, 6, 5, 8, 1, 37, 101917, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+Not Found: /lv/performance/{{imageSrc}}
+lv.django_session.find (0.00) {'_id': 'hyz4b8f2lnbvql9recikr4u5pqhjev5p', 'expire_date': {'$gt': datetime.datetime(2018, 6, 5, 8, 1, 37, 403667, tzinfo=<UTC>)}}
+Not Found: /lv/performance/static/app/components/table/table-data/table-data.html
+lv.auth_user.find (0.01) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+Not Found: /lv/performance/static/app/components/table/table-data/table-data.html
+Not Found: /lv/performance/static/app/components/table/table-data/table-data.html
+Not Found: /lv/performance/static/app/components/table/table-data/table-data.html
+Not Found: /lv/performance/static/app/components/table/table-data/table-data.html
+lv.django_session.find (0.01) {'_id': 'hyz4b8f2lnbvql9recikr4u5pqhjev5p', 'expire_date': {'$gt': datetime.datetime(2018, 6, 5, 8, 43, 0, 678172, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+Not Found: /performance/static/js/angular.min.js.map
+Not Found: /lv/performance/{{$root.logo}}
+Not Found: /performance/static/js/datatables/pdfmake.min.js.map
+lv.django_session.find (0.01) {'_id': 'hyz4b8f2lnbvql9recikr4u5pqhjev5p', 'expire_date': {'$gt': datetime.datetime(2018, 6, 5, 8, 43, 2, 65492, tzinfo=<UTC>)}}
+lv.auth_user.find (0.01) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+Not Found: /lv/performance/{{imageSrc}}
+lv.django_session.find (0.02) {'_id': 'hyz4b8f2lnbvql9recikr4u5pqhjev5p', 'expire_date': {'$gt': datetime.datetime(2018, 6, 5, 8, 43, 2, 481365, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': 'hyz4b8f2lnbvql9recikr4u5pqhjev5p', 'expire_date': {'$gt': datetime.datetime(2018, 6, 5, 8, 43, 2, 626690, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
