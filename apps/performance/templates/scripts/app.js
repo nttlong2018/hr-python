@@ -5,8 +5,10 @@ angular
     .controller("admin", controller);
 
 controller.$inject = ["$dialog", "$scope", "systemService"];
-
+dialog_root_url('${get_app_url("pages/")}')
 function controller($dialog, $scope, systemService) {
+    $scope.$root.systemConfig = null;/*HCSSYS_SystemConfig*/
+    $scope.$root.language = "${get_language()}";
     $scope.VIEW_ID = "${register_view()}"
     $dialog($scope)
     ws_set_url("${get_app_url('api')}")
@@ -31,6 +33,21 @@ function controller($dialog, $scope, systemService) {
         }
     };
 
+    //Đồng hồ
+    $scope.$root.timer = {
+        clock: Clock(),
+        meridiem: getMeridiem(),
+        date: Calendar()
+    };
+    setInterval(function () {
+        $scope.$root.timer.clock = Clock();
+        if ($scope.$root.timer.clock === "00:00") {
+            $scope.$root.timer.date = Calendar();
+            $scope.$root.timer.meridiem = getMeridiem();
+        }
+        $scope.$root.$applyAsync();
+    }, 10000);
+
     /**
      * Initialize Data
      */
@@ -39,6 +56,7 @@ function controller($dialog, $scope, systemService) {
         $scope.$root.currentModule = '';
         $scope.$root.logo = 'http://surehcs.lacviet.vn/WS2017/Customers/default/logo.png';
 
+        //Get function list
         services.api("${get_api_key('app_main.api.functionlist/get_list')}")
             .data({
                 //parameter at here
@@ -89,6 +107,17 @@ function controller($dialog, $scope, systemService) {
                     $scope.$root.$applyAsync();
                 })
             })
+
+        //Get HCSSYS_SystemConfig
+        services.api("${get_api_key('app_main.api.common/get_config')}")
+            .data({
+                //parameter at here
+            })
+            .done()
+            .then(function (res) {
+                //Set HCSSYS_SystemConfig
+                $scope.$root.systemConfig = res;
+            })
     }
     /**
      * Init
@@ -111,3 +140,25 @@ function service() {
 
     return fac;
 };
+
+function Clock() {
+    return moment().locale("${get_language()}").format("HH:mm");
+}
+
+function toStartCase(str) {
+    return str
+        .toLowerCase()
+        .split(' ')
+        .map(function (word) {
+            return word[0].toUpperCase() + word.substr(1);
+        })
+        .join(' ');
+}
+
+function Calendar() {
+    return toStartCase(moment().locale("${get_language()}").format('dddd, DD MMMM, YYYY'));
+}
+
+function getMeridiem() {
+    return moment().locale("${get_language()}").format("a");
+}

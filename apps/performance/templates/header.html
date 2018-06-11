@@ -61,7 +61,7 @@
             <img style="cursor: pointer; margin: 8px 8px 0px 8px;width:30px;height:30px;-webkit-appearance:unset;" class="img-fluid" src="https://www.surehcs.vn:443/DGP_UI//Content/images/language/vn.png" class="dropdown-toggle" type="button" data-toggle="dropdown">
             <ul class="dropdown-menu hcs-home-button-language-menu">
                 <li class="text-center">
-                    <a>
+                    <a class="active">
                         Tiếng Việt
                     </a>
                 </li>
@@ -84,10 +84,10 @@
         </div>
         <div class="pull-right" role="navigation">
             <div class="hcs-home-header-clock">
-                <span class="hcs-home-header-clock-ampm ng-binding">CH</span>
-                <span class="hcs-home-header-clock-time ng-binding">03:56</span>
+                <span class="hcs-home-header-clock-ampm ng-binding">{{$root.timer.meridiem}}</span>
+                <span class="hcs-home-header-clock-time ng-binding">{{$root.timer.clock}}</span>
                 <br>
-                <span class="hcs-home-header-clock-date ng-binding">Thứ Sáu, 27 Tháng 4, 2018</span>
+                <span class="hcs-home-header-clock-date ng-binding">{{$root.timer.date}}</span>
             </div>
         </div>
         <!--RIGHT - END -->

@@ -136,8 +136,19 @@ body {
         font-family: sans-serif;
     }
 
-    .hcs-home-button-language-menu a:hover {
-        background: transparent !important;
+    .hcs-home-button-language-menu a.active {
+        background-color: #009de1;
+    }
+
+    .hcs-home-button-language-menu a.active:hover,
+    .hcs-home-button-language-menu a.active:focus,
+    .hcs-home-button-language-menu a.active:active{
+        background-color: #009de1 !important;
+    }
+
+    .hcs-home-button-language-menu a:hover,
+    .hcs-home-button-language-menu a:focus {
+        background: inherit !important;
     }
 
     .hcs-home-button-language-menu a.selected {
@@ -478,6 +489,10 @@ body {
 
     div {
         margin-left: 10px;
+    }
+
+    div:first-child{
+        margin-right:1rem;
     }
 
     i {

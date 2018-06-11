@@ -1,0 +1,243 @@
+﻿<hcs-tool-bar on-save="onSave()"></hcs-tool-bar>
+<!--$parent.mapName[0].function_id: function_id chức năng của tab hiện tại index tăng dần theo thứ tự các tab-->
+<div class="tab-pane fade in active" style="padding-right:15px !important; height: 100%; padding-left:30px!important; padding-top:30px !important;" ng-disabled="true">
+    <div class="row">
+        <div class="col-md-8">
+            <div class="row">
+                <p class="hcs-group-collapse-heading">
+                    <button class="zb-icon-button hcs-profile-group-title" onclick="$('#collapsePasswordExpiration').slideToggle();">
+                        <span><i class="la la-angle-down"></i></span> ${get_res('Password_Expiration','Thời hạn mật khẩu')}
+                    </button>
+                </p>
+            </div>
+            <div class="row" id="collapsePasswordExpiration">
+                <form>
+                    <div class="col-md-6">
+                        <!--Mật khẩu hết hạn-->
+                        <div class="form-group row hcs-group-form-group">
+                            <div class="col-md-12">
+                                <input-checkbox ng-model="entity.will_expire" data-caption="${get_res('will_expire','Mật khẩu sẽ hết hạn')}"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <!--Sau khi đổi mật khẩu (ngày)-->
+                        <div class="form-group row hcs-group-form-group">
+                            <label for="inputDayExpire" class="col-sm-6 zb-form-label">${get_res('change_after','Sau khi đổi mật khẩu (ngày)')}</label>
+                            <div class="col-sm-6">
+                                <input-number id="inputDayExpire" ng-model="entity.change_after"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <!--đổi mật khẩu ở lần đăng nhập đầu tiên-->
+                        <div class="form-group row hcs-group-form-group">
+                            <div class="col-md-12">
+                                <input-checkbox ng-model="entity.is_first_change" data-caption="${get_res('is_first_change','đổi mật khẩu ở lần đăng nhập đầu tiên')}"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <!--Thông báo trước (ngày)-->
+                        <div class="form-group row hcs-group-form-group">
+                            <label for="inputAlertBefore" class="col-sm-6 zb-form-label">${get_res('alert_before','Thông báo trước (ngày)')}</label>
+                            <div class="col-sm-6">
+                                <input-number id="inputAlertBefore" ng-model="entity.alert_before"/>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="col-md-8" style="padding-top:30px;">
+            <div class="row">
+                <p class="hcs-group-collapse-heading">
+                    <button class="zb-icon-button hcs-profile-group-title" onclick="$('#collapsePasswordHistory').slideToggle();">
+                        <span><i class="la la-angle-down"></i></span> ${get_res('Password_History','Lịch sử mật khẩu')}
+                    </button>
+                </p>
+            </div>
+            <div class="row" id="collapsePasswordHistory">
+                <form>
+                    <div class="col-md-6">
+                        <!--Áp dụng lịch sử mật khẩu-->
+                        <div class="form-group row hcs-group-form-group">
+                            <div class="col-md-12">
+                                <input-checkbox ng-model="entity.apply_history" data-caption="${get_res('apply_history','Áp dụng lịch sử mật khẩu')}"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <!--Lịch sử mật khẩu-->
+                        <div class="form-group row hcs-group-form-group">
+                            <label for="inputPasswordHistory" class="col-sm-6 zb-form-label">${get_res('history','Lịch sử mật khẩu')}</label>
+                            <div class="col-sm-6">
+                                <input-number id="inputPasswordHistory" ng-model="entity.history"/>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="col-md-8" style="padding-top:30px;">
+            <div class="row">
+                <p class="hcs-group-collapse-heading">
+                    <button class="zb-icon-button hcs-profile-group-title" onclick="$('#collapsePasswordLength').slideToggle();">
+                        <span><i class="la la-angle-down"></i></span> ${get_res('Password_Length','Độ dài mật khẩu')}
+                    </button>
+                </p>
+            </div>
+            <div class="row" id="collapsePasswordLength">
+                <form>
+                    <div class="col-md-6">
+                        <!--Áp dụng độ dài tối thiểu-->
+                        <div class="form-group row hcs-group-form-group">
+                            <div class="col-md-12">
+                                <input-checkbox ng-model="entity.apply_minLength" data-caption="${get_res('apply_minLength','Áp dụng độ dài tối thiểu')}"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <!--Độ dài tối thiểu-->
+                        <div class="form-group row hcs-group-form-group">
+                            <label for="inputDayExpire" class="col-sm-6 zb-form-label">${get_res('min_len','Độ dài tối thiểu')}</label>
+                            <div class="col-sm-6">
+                                <input-number id="inputDayExpire" ng-model="entity.min_len"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <!--Áp dụng độ dài tối đa-->
+                        <div class="form-group row hcs-group-form-group">
+                            <div class="col-md-12">
+                                <input-checkbox ng-model="entity.apply_maxLength" data-caption="${get_res('apply_maxLength','Áp dụng độ dài tối đa')}"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <!--Độ dài tối đa-->
+                        <div class="form-group row hcs-group-form-group">
+                            <label for="inputAlertBefore" class="col-sm-6 zb-form-label">${get_res('max_len','Độ dài tối đa')}</label>
+                            <div class="col-sm-6">
+                                <input-number id="inputAlertBefore" ng-model="entity.max_len"/>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="col-md-8" style="padding-top:30px;">
+            <div class="row">
+                <p class="hcs-group-collapse-heading">
+                    <button class="zb-icon-button hcs-profile-group-title" onclick="$('#collapseCharacterInPassword').slideToggle();">
+                        <span><i class="la la-angle-down"></i></span> ${get_res('Logon_Failed_Login','Kí tự trong mật khẩu')}
+                    </button>
+                </p>
+            </div>
+            <div class="row" id="collapseCharacterInPassword">
+                <div class="col-md-6">
+                    <!--Kí tự viết hoa-->
+                    <div class="form-group row hcs-group-form-group">
+                        <div class="col-md-12">
+                            <input-checkbox ng-model="entity.is_has_upper_char" data-caption="${get_res('is_has_upper_char','Kí tự viết hoa')}"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <!--Số kí tự-->
+                    <div class="form-group row hcs-group-form-group">
+                        <label for="inputAlertBefore" class="col-sm-6 zb-form-label">${get_res('num_of_upper','Số kí tự')}</label>
+                        <div class="col-sm-6">
+                            <input-number id="inputAlertBefore" ng-model="entity.num_of_upper"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <!--Kí tự viết thường-->
+                    <div class="form-group row hcs-group-form-group">
+                        <div class="col-md-12">
+                            <input-checkbox ng-model="entity.is_has_lower_char" data-caption="${get_res('is_has_lower_char','Kí tự viết thường')}"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <!--Số kí tự-->
+                    <div class="form-group row hcs-group-form-group">
+                        <label for="inputAlertBefore" class="col-sm-6 zb-form-label">${get_res('num_of_lower','Số kí tự')}</label>
+                        <div class="col-sm-6">
+                            <input-number id="inputAlertBefore" ng-model="entity.num_of_lower"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <!--Kí tự đặc biệt-->
+                    <div class="form-group row hcs-group-form-group">
+                        <div class="col-md-12">
+                            <input-checkbox ng-model="entity.is_has_symbols" data-caption="${get_res('is_has_symbols','Kí tự đặc biệt')}"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <!--Số kí tự-->
+                    <div class="form-group row hcs-group-form-group">
+                        <label for="inputAlertBefore" class="col-sm-6 zb-form-label">${get_res('num_of_symbol','Số kí tự')}</label>
+                        <div class="col-sm-6">
+                            <input-number id="inputAlertBefore" ng-model="entity.num_of_symbol"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <!--Không cho phép nhập mật khẩu là chuỗi-->
+                    <div class="form-group row hcs-group-form-group">
+                        <div class="col-md-12">
+                            <input-checkbox ng-model="entity.not_user_in_password" data-caption="${get_res('not_user_in_password','Không cho phép nhập mật khẩu là chuỗi')}"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-8" style="padding-top:30px;">
+            <div class="row">
+                <p class="hcs-group-collapse-heading">
+                    <button class="zb-icon-button hcs-profile-group-title" onclick="$('#collapseLogonFailedLogin').slideToggle();">
+                        <span><i class="la la-angle-down"></i></span> ${get_res('Logon_Failed_Login','Khóa đăng nhập thất bại')}
+                    </button>
+                </p>
+            </div>
+            <div class="row" id="collapseLogonFailedLogin">
+                <form>
+                <div class="col-md-12">
+                    <!--Tài khoản sẽ bị khóa khi cố gắng đăng nhập-->
+                    <div class="form-group row hcs-group-form-group">
+                        <div class="col-md-12">
+                            <input-checkbox ng-model="entity.lock_on_failed" data-caption="${get_res('lock_on_failed','Tài khoản sẽ bị khóa khi cố gắng đăng nhập')}"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <div class="form-group row hcs-group-form-group">
+                        <!--Số lần đăng nhập thất bại-->
+                            <label for="inputAlertBefore" class="col-sm-6 zb-form-label">${get_res('threshold_to_lock','Số lần đăng nhập thất bại')}</label>
+                            <div class="col-sm-6">
+                                <input-number id="inputAlertBefore" ng-model="entity.threshold_to_lock"/>
+                            </div>
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <div class="form-group row hcs-group-form-group">
+                        <!--Thời gian khóa-->
+                            <label for="inputAlertBefore" class="col-sm-6 zb-form-label">${get_res('time_lock','Thời gian khóa')}</label>
+                            <div class="col-sm-6">
+                            <input-number id="inputAlertBefore" ng-model="entity.time_lock"/>
+                            </div>
+                    </div>
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="clearfix"></div>
+</div>
+<script>
+    <%include file="scripts/account.js"/>
+</script>

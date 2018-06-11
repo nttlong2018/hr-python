@@ -1,4 +1,4 @@
-(function() {
+(function () {
     'use strict';
 
     angular.module('ZebraApp.components.tables')
@@ -26,8 +26,8 @@
                 languageResource: "="
             },
             //template: '<table class="display zb-data-table responsive nowrap"></table>',
-            templateUrl: window._root__component_template_url +"../../app/components/table/table-data/table-data.html",
-            link: function($scope, elem, attr) {
+            templateUrl: "app/components/table/table-data/table-data.html",
+            link: function ($scope, elem, attr) {
                 var table = null;
 
                 function _initLayout() {
@@ -65,14 +65,14 @@
                     //set data cho danh sách row được chọn
                     function _fnSetSelectedItems($item, $isSelected) {
                         if ($isSelected) {
-                            var notExists = _.filter(_selectedItems, function(f) {
+                            var notExists = _.filter(_selectedItems, function (f) {
                                 return f["$$regKey"] === $item["$$regKey"];
                             }).length === 0;
                             if (notExists) {
                                 _selectedItems.push($item);
                             }
                         } else {
-                            _selectedItems = _.filter(_selectedItems, function(f) {
+                            _selectedItems = _.filter(_selectedItems, function (f) {
                                 return f["$$regKey"] !== $item["$$regKey"];
                             });
                         }
@@ -83,106 +83,185 @@
 
                     if ($scope.type === _tableTypes.MultiSelect) {
                         if (!$scope.serverSide) {
-                            $.each($scope.dataSource, function(i, v) {
+                            $.each($scope.dataSource, function (i, v) {
                                 v["$$selectKey"] = null;
                                 v["$$regKey"] = i;
                             });
                         }
 
-                        var _isExistsSelectedKey = _.filter($scope.fields, function(f) {
+                        var _isExistsSelectedKey = _.filter($scope.fields, function (f) {
                             return f["data"] === "$$selectKey"
                         }).length > 0;
                         if (!_isExistsSelectedKey) {
-                            $scope.fields.unshift({ "data": "$$selectKey", "targets": 0 });
+                            $scope.fields.unshift({ "data": "$$selectKey", "targets": 0, "width": 10 });
                         }
                     }
 
+
                     //format columns
-                    $.each($scope.fields, function(i, v){
-                        if(v.format){
+                    let _columnsDef = [];
+                    //        var columnDefs: [
+                    //    {
+                    //        render: function (data, type, full, meta) {
+                    //            return "<div class='text-wrap width-200'>" + data + "</div>";
+                    //        },
+                    //        targets: 3
+                    //    }
+                    // ]
+                    let _colHasSetWidth = _.filter($scope.fields, function (f) {
+                        return f.hasOwnProperty("width");
+                    });
+                    if (_colHasSetWidth.length < $scope.fields.length) {
+                        $(elem).attr("width", "100%");
+                    }
+
+                    let _columnDefs = [];
+                    $.each($scope.fields, function (i, v) {
+                        let _fnFormatRender = null;
+                        if (v.format) {
                             var $s = v.format.split(":");
-                            if($s[0].toLowerCase() === 'date'){
+                            if ($s[0].toLowerCase() === 'date') {
                                 //Add function render to columns
                                 //$filter('date')(date, format, timezone)
-                                v.render = function(data, type, row) {
+                                _fnFormatRender = function (data, type, row) {
                                     let $r;
-                                    switch($s.length){
+                                    switch ($s.length) {
                                         case 3:
-                                            $r =  $filter('date')(data, $s[1], $s[2]);
+                                            $r = $filter('date')(data, $s[1], $s[2]);
                                             break;
                                         case 2:
-                                            $r =  $filter('date')(data, $s[1]);
+                                            $r = $filter('date')(data, $s[1]);
                                             break;
                                         default:
-                                            $r =  $filter('date')(data);
+                                            $r = $filter('date')(data);
                                     }
                                     return $r;
                                 }
-                            } else if($s[0].toLowerCase() === 'number'){
+                            } else if ($s[0].toLowerCase() === 'number') {
                                 //Add function render to columns
                                 //$filter('number')(number, fractionSize)
-                                v.render = function(data, type, row) {
+                                _fnFormatRender = function (data, type, row) {
                                     let $r;
-                                    switch($s.length){
+                                    switch ($s.length) {
                                         case 2:
-                                            $r =  $filter('number')(data, $s[1]);
+                                            $r = $filter('number')(data, $s[1]);
                                             break;
                                         default:
-                                            $r =  $filter('number')(data);
+                                            $r = $filter('number')(data);
                                     }
                                     return $r;
                                 }
-                            } else if($s[0].toLowerCase() === 'currency'){
+                            } else if ($s[0].toLowerCase() === 'currency') {
                                 //Add function render to columns
                                 //$filter('currency')(amount, symbol, fractionSize)
-                                v.render = function(data, type, row) {
+                                _fnFormatRender = function (data, type, row) {
                                     let $r;
-                                    switch($s.length){
+                                    switch ($s.length) {
                                         case 3:
-                                            $r =  $filter('currency')(data, $s[1], $s[2]);
+                                            $r = $filter('currency')(data, $s[1], $s[2]);
                                             break;
                                         case 2:
-                                            $r =  $filter('currency')(data, $s[1]);
+                                            $r = $filter('currency')(data, $s[1]);
                                             break;
                                         default:
-                                            $r =  $filter('currency')(data);
+                                            $r = $filter('currency')(data);
                                     }
                                     return $r;
                                 }
-                            } else if($s[0].toLowerCase() === 'lowercase'){
+                            } else if ($s[0].toLowerCase() === 'lowercase') {
                                 //Add function render to columns
                                 //$filter('lowercase')()
-                                v.render = function(data, type, row) {
+                                _fnFormatRender = function (data, type, row) {
                                     return $filter('lowercase')(data);
                                 }
-                            } else if($s[0].toLowerCase() === 'uppercase'){
+                            } else if ($s[0].toLowerCase() === 'uppercase') {
                                 //Add function render to columns
                                 //$filter('uppercase')()
-                                v.render = function(data, type, row) {
+                                _fnFormatRender = function (data, type, row) {
                                     return $filter('uppercase')(data);
                                 }
-                            } else if($s[0].toLowerCase() === 'json'){
+                            } else if ($s[0].toLowerCase() === 'json') {
                                 //Add function render to columns
                                 //$filter('json')(object, spacing)
-                                v.render = function(data, type, row) {
+                                _fnFormatRender = function (data, type, row) {
                                     let $r;
-                                    switch($s.length){
+                                    switch ($s.length) {
                                         case 2:
-                                            $r =  $filter('json')(data, $s[1]);
+                                            $r = $filter('json')(data, $s[1]);
                                             break;
                                         default:
-                                            $r =  $filter('json')(data);
+                                            $r = $filter('json')(data);
                                     }
                                     return $r;
                                 }
                             }
                         }
+
+                        // if (i > 0) {
+                        //     _columnDefs.push({
+                        //         render: function(data, type, row, meta) {
+                        //             //console.log(data, type, full, meta)
+                        //             return "<div style='white-space:normal; width:" + v.width + ";text-overflow: ellipsis;overflow: hidden;'>" + data + "</div>";
+                        //         },
+                        //         targets: i
+                        //     });
+                        // } else {
+                        //     if ($scope.type === _tableTypes.MultiSelect) {
+                        //         _columnDefs.push({
+                        //             render: function(data, type, full, meta) {
+                        //                 //console.log(data, type, full, meta)
+                        //                 return "<div style='white-space:normal; width:" + v.width + "';text-overflow: ellipsis;overflow: hidden;>" + ((data) ? data : '') + "</div>";
+                        //             },
+                        //             orderable: false,
+                        //             className: 'select-checkbox',
+                        //             targets: i
+                        //         });
+                        //     }
+                        // }
+
+                        var defItem = {};
+                        if (i == 0) {
+                            if ($scope.type === _tableTypes.MultiSelect) {
+                                defItem.orderable = false;
+                                defItem.className = "select-checkbox";
+                            }
+                        } else {
+                            if (v.width) {
+                                if (v.hasOwnProperty("className")) {
+                                    defItem.render = function (data, type, row, meta) {
+                                        if (_fnFormatRender) {
+                                            data = _fnFormatRender(data, type, row);
+                                        }
+                                        return "<div class='" + v.className + "' style='white-space:normal; width:" + v.width + ";text-overflow: ellipsis;overflow: hidden;'>" + ((data) ? data : '') + "</div>";
+                                    }
+                                } else {
+                                    defItem.render = function (data, type, row, meta) {
+                                        if (_fnFormatRender) {
+                                            data = _fnFormatRender(data, type, row);
+                                        }
+                                        return "<div style='white-space:normal; width:" + v.width + ";text-overflow: ellipsis;overflow: hidden;'>" + ((data) ? data : '') + "</div>";
+                                    }
+                                }
+                            } else {
+                                defItem.render = function (data, type, row, meta) {
+                                    if (_fnFormatRender) {
+                                        data = _fnFormatRender(data, type, row);
+                                    }
+                                    return data;
+                                }
+                            }
+                        }
+                        defItem.targets = i;
+                        _columnDefs.push(defItem);
                     });
 
+                    //console.log($scope.fields, _columnDefs);
+                    let _bindResize = false;
                     // ("Chỉ hiện thanh phân trang nếu số record lớn hơn số giới hạn của 1 trang hoặc có sử dụng phân trang từ server")
                     var _paging = (($scope.serverSide || ($scope.dataSource && $scope.dataSource.length > $scope.pageLength)) && $scope.paging) ? true : false;
                     var dataTableConfigs = {
                         columns: $scope.fields,
+                        columnDefs: _columnDefs,
                         searching: true,
                         lengthChange: false,
                         paging: _paging,
@@ -192,7 +271,30 @@
                         pageLength: $scope.pageLength,
                         pagingType: "numbers",
                         displayStart: 0,
+                        "initComplete": function (settings, json) {
+                            if (!_bindResize) {
+                                $(window).resize(function () {
+                                    _bindResize = true;
+                                    //var _tableWrapper = $(elem).closest("div.dataTables_wrapper");
+                                    var _tableScrollBody = $(elem).closest("div.dataTables_scrollBody");
 
+                                    //32: height of paginator and others
+                                    var _heightTableWrapperParent = _tableWrapper.parent().height();
+                                    var _heightOuterTable = Math.round(_tableWrapper.height() - _tableScrollBody.height());
+
+                                    let _tableScrollBodyWidth = $(elem).width() + 5;
+                                    if (_tableScrollBodyWidth > _tableWrapper.parent().width()) {
+                                        _tableScrollBodyWidth = "100%";
+                                    }
+
+                                    _tableScrollBody.css({
+                                        "height": (Math.round(_heightTableWrapperParent - _heightOuterTable)) + "px",
+                                        "width": _tableScrollBodyWidth
+                                    });
+                                });
+                            }
+                            $(window).trigger("resize");
+                        },
                         // "fnDrawCallback": function(oSettings) {
                         //     alert('DataTables has redrawn the table');
                         // },
@@ -236,6 +338,7 @@
                             [1, 'asc']
                         ],
                     };
+
                     dataTableConfigs.language = ($scope.languageResource) ?
                         $scope.languageResource : {
                             //"sProcessing": "Đang xử lý...",
@@ -274,8 +377,8 @@
                             function _loadDataServerSide(data, callback, settings) {
                                 //Data source của server side bắt buộc là một function
                                 if (angular.isFunction($scope.dataSource)) {
-                                    var _initCallback = function(ret) {
-                                        $.each(ret.data, function(i, v) {
+                                    var _initCallback = function (ret) {
+                                        $.each(ret.data, function (i, v) {
                                             v["$$selectKey"] = null;
                                             v["$$regKey"] = i;
                                         });
@@ -283,7 +386,7 @@
                                     };
                                     var _sort = [];
                                     if (data.order && data.order.length > 0) {
-                                        $.each(data.order, function(i, v) {
+                                        $.each(data.order, function (i, v) {
                                             _sort.push({
                                                 columns: data.columns[v.column].data,
                                                 type: v.dir
@@ -304,24 +407,6 @@
                                         "data": []
                                     })
                                 }
-                                setTimeout(function() {
-                                    var _bindResize = false;
-                                    if (!_bindResize) {
-                                        $(window).resize(function() {
-                                            _bindResize = true;
-                                            var _tableWrapper = $(elem).closest("div.dataTables_wrapper");
-                                            var _tableScrollBody = $(elem).closest("div.dataTables_scrollBody");
-
-                                            //32: height of paginator and others
-                                            var _heightTableWrapperParent = _tableWrapper.parent().height();
-                                            var _heightOuterTable = Math.round(_tableWrapper.height() - _tableScrollBody.height() + 32);
-                                            _tableScrollBody.css({
-                                                "height": (Math.round(_heightTableWrapperParent - _heightOuterTable)) + "px"
-                                            });
-                                        });
-                                    }
-                                    $(window).trigger("resize");
-                                }, 300);
                             };
                         } else {
                             dataTableConfigs.data = $scope.dataSource;
@@ -329,11 +414,6 @@
                     }
 
                     if ($scope.type === _tableTypes.MultiSelect) {
-                        dataTableConfigs.columnDefs = [{
-                            orderable: false,
-                            className: 'select-checkbox',
-                            targets: 0
-                        }];
                         dataTableConfigs.select = {
                             style: 'multi', //os, single
                             selector: 'td:first-child'
@@ -344,11 +424,12 @@
                         dataTableConfigs.select = false;
                     }
                     //setTimeout(function() {
+
                     table = $(elem).DataTable(dataTableConfigs);
                     var _tableWrapper = $(elem).closest("div.dataTables_wrapper");
                     var _tableScrollBody = $(elem).closest("div.dataTables_scrollBody");
                     if (!$scope.serverSide) {
-                        setTimeout(function() {
+                        setTimeout(function () {
                             $(window).trigger("resize");
                         }, 300);
                     }
@@ -357,7 +438,7 @@
                         function _addEventCheckAll() {
                             var _th_checkAll = $(_tableWrapper.find("table.zb-data-table")[0]).find("th.select-checkbox")
                             _th_checkAll.unbind("click");
-                            _th_checkAll.bind("click", function() {
+                            _th_checkAll.bind("click", function () {
                                 if ($(this).hasClass("selected")) {
                                     table.rows().deselect();
                                     _selectedItems = [];
@@ -367,7 +448,7 @@
                                     $(this).addClass("selected");
 
                                     _selectedItems = [];
-                                    $.each(table.data(), function(i, v) {
+                                    $.each(table.data(), function (i, v) {
                                         _selectedItems.push(v);
                                     });
                                 }
@@ -390,7 +471,7 @@
                         //     //$parse(_config.selectedItems).assign($scope.$parent, _selectedItems);
                         //     $scope.$applyAsync();
                         // });
-                        table.on("select deselect", function(e, row) {
+                        table.on("select deselect", function (e, row) {
                             if (row.node) {
                                 _fnSetSelectedItems($scope.currentItem, $(row.node()).hasClass("selected"));
                                 //("Some selection or deselection going on")
@@ -402,19 +483,19 @@
                             }
                         });
                     }
-                    table.on('page.dt', function() {
-                            // ("Sự kiện khi chọn button phân trang")
-                            $(elem).find("tr.zb-table-row-focus").removeClass("zb-table-row-focus");
-                            _curentRowIndex = -1;
-                            _fnSetCurrentItem({});
-                            if ($scope.serverSide) {
-                                $(_tableWrapper).find("th.select-checkbox").removeClass("selected");
-                                _selectedItems = [];
-                                _fnSetSelectedItems({});
-                            }
-                            //var info = table.page.info();
-                        })
-                        .on('key', function(e, datatable, key, cell, originalEvent) {
+                    table.on('page.dt', function () {
+                        // ("Sự kiện khi chọn button phân trang")
+                        $(elem).find("tr.zb-table-row-focus").removeClass("zb-table-row-focus");
+                        _curentRowIndex = -1;
+                        _fnSetCurrentItem({});
+                        if ($scope.serverSide) {
+                            $(_tableWrapper).find("th.select-checkbox").removeClass("selected");
+                            _selectedItems = [];
+                            _fnSetSelectedItems({});
+                        }
+                        //var info = table.page.info();
+                    })
+                        .on('key', function (e, datatable, key, cell, originalEvent) {
                             //("Chạy khi nhấn enter vào checkbox")
                             var rowFocus = cell.row(cell.index().row);
                             // _fnSetCurrentItem(cell.row(cell.index().row).data());
@@ -445,7 +526,13 @@
                                 }
                             }
                         })
-                        .on('key-focus', function(e, datatable, cell) {
+                        .on('dblclick', 'tr', function (e, datatable, cell) {
+                            var data = table.row(this).data();
+                            if (angular.isFunction($scope.pressEnter)) {
+                                $scope.pressEnter(data);
+                            }
+                        })
+                        .on('key-focus', function (e, datatable, cell) {
                             var currRow = $(cell.node()).closest("tr");
                             var tbl = $(cell.node()).closest("table");
 
@@ -458,7 +545,7 @@
                             //     _fnSetCurrentItem(cell.row(cell.index().row).data());
                             // }
                         })
-                        .on('order.dt', function() {
+                        .on('order.dt', function () {
                             //("Sự kiện sắp xếp trên table")
                             $(elem).find("tr.zb-table-row-focus").removeClass("zb-table-row-focus");
                             _curentRowIndex = -1;
@@ -476,7 +563,7 @@
                     //     table.page('previous').draw('page');
                     // });
 
-                    $scope.refreshRow = function() {
+                    $scope.refreshRow = function () {
                         if (_curentRowIndex > -1) {
                             //var rowData = table.row(_curentRowIndex).data(x);
                             table.row(_curentRowIndex).data($scope.currentItem).invalidate()
@@ -485,12 +572,12 @@
 
                     var existsWatchSearch = false;
                     if ($scope.$$watchers && Array.isArray($scope.$$watchers)) {
-                        existsWatchSearch = _.filter($scope.$$watchers, function(f) {
+                        existsWatchSearch = _.filter($scope.$$watchers, function (f) {
                             return f.exp === "searchText"
                         }).length > 0;
                     }
                     if (!existsWatchSearch) {
-                        $scope.$watch("searchText", function(val, old) {
+                        $scope.$watch("searchText", function (val, old) {
                             //("Search trên toàn bộ bảng")
                             $(elem).find("tr.zb-table-row-focus").removeClass("zb-table-row-focus");
                             _curentRowIndex = -1;
@@ -503,13 +590,13 @@
 
                     var existsWatchDataSource = false;
                     if ($scope.$$watchers && Array.isArray($scope.$$watchers) && !angular.isFunction($scope.dataSource)) {
-                        existsWatchDataSource = _.filter($scope.$$watchers, function(f) {
+                        existsWatchDataSource = _.filter($scope.$$watchers, function (f) {
                             return f.exp === "dataSource"
                         }).length > 0;
                     }
                     if (!$scope.serverSide) {
                         if (!existsWatchDataSource) {
-                            $scope.$watch("dataSource", function(val, old) {
+                            $scope.$watch("dataSource", function (val, old) {
                                 _initLayout();
                             });
                         }

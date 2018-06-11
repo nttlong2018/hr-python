@@ -58,11 +58,11 @@ def build_urls(module_name,*args,**kwargs):
                     root_doc = static_urls[0].default_args["document_root"]
                     reg_ex = static_urls[0].regex.pattern
                     if host_dir!=None:
-                        reg_ex ="^(?i)"+host_dir+"/"+reg_ex[1:reg_ex.__len__()]
+                        reg_ex =reg_ex.replace("^","^"+host_dir+"/")
 
                     _apps_.urlpatterns.append(
                         url(
-                            reg_ex,
+                            reg_ex.replace("^","^(?i)"),
                             'django.views.static.serve',
                             {
                                 'document_root': root_doc,
@@ -73,14 +73,13 @@ def build_urls(module_name,*args,**kwargs):
                     )
                 else:
                     root_doc=static_urls[0].default_args["document_root"]
-                    reg_ex=static_urls[0].regex.pattern.replace("^(?i)","").replace("(?P<path>.*)","(?i)(?P<path>.*)")
-                    reg_ex ="^(?i)"+ret.host_dir+"/"+reg_ex
-
+                    reg_ex=static_urls[0].regex.pattern
+                    reg_ex=reg_ex.replace("^", "^" + ret.host_dir + "/")
                     if host_dir!=None:
-                        reg_ex =reg_ex[1:reg_ex.__len__()]+"^"+host_dir+"/"
+                        reg_ex = reg_ex.replace("^", "^" + host_dir + "/")
                     _apps_.urlpatterns.append(
                         url(
-                            reg_ex,
+                            reg_ex.replace("^","^(?i)"),
                             'django.views.static.serve',
                             {
                                 'document_root': root_doc,
@@ -144,6 +143,7 @@ def build_urls(module_name,*args,**kwargs):
                     def __init__(self,url_item):
                         self.url_item=url_item
                     def exec_request(self,request, *args, **kwargs):
+                        setattr(request,"not_inclue_tenancy_code",True)
                         return self.url_item.callback(
                             request,
                             get_django_settings_module().MULTI_TENANCY_DEFAULT_SCHEMA,

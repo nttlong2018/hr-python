@@ -14,12 +14,9 @@
             //template: function(el, attrs) {
             //  return '<div class="switch-container ' + (attrs.color || '') + '"><input type="checkbox" ng-model="ngModel"></div>';
             //}
-            templateUrl: window._root__component_template_url+"../../app/components/input/select/select.html",
+            templateUrl: "app/components/input/select/select.html",
             link: function ($scope, elem, attr) {
                 var cmp = $(elem);
-                if (attr["required"]) {
-                    cmp.attr("zb-required", '');
-                }
                 //$compile(cmp.contents())($scope);
                 var list = attr["list"];
                 var ngModel = attr["ngModel"];
@@ -27,35 +24,46 @@
                 var fieldValue = attr["value"];
                 var fieldCaption = attr["caption"];
 
-                $scope.selectedItem = {};
-
-                $scope.fieldValue = fieldValue;
-                $scope.fieldCaption = fieldCaption;
-                if (placeholder) {
-                    $scope.placeholder = placeholder;
-                }
-                if (list) {
-                    var dataList = $scope.$eval(list);
-                    $.each(dataList, function (i, v) {
-                        v["__fieldCaption"] = $sce.trustAsHtml(v[fieldCaption]);
-                    });
-                    $scope.selectWithSearchItems = dataList;
-                    var ngModelVal = $scope.$eval(ngModel);
-                    if (ngModelVal) {
-                        var $selectedItem = $filter('filter')($scope.selectWithSearchItems, function (f) {
-                            return f[fieldValue] == ngModelVal;
-                        });
-                        if ($selectedItem.length > 0) {
-                            $scope.selectedItem = {
-                                selected: $selectedItem[0]
-                            };
-                        }
+                function compile() {
+                    if (attr["required"]) {
+                        cmp.attr("zb-required", '');
                     }
-                    $scope.$watch("selectedItem.selected", function (val, old) {
-                        var retval = ((val && val[fieldValue]) || val[fieldValue] == false) ? val[fieldValue] : null;
-                        $parse(ngModel).assign($scope.$parent, retval);
-                    });
+
+                    $scope.selectedItem = {};
+
+                    $scope.fieldValue = fieldValue;
+                    $scope.fieldCaption = fieldCaption;
+                    if (placeholder) {
+                        $scope.placeholder = placeholder;
+                    }
+                    if (list) {
+                        var dataList = $scope.$parent.$eval(list);
+                        console.log($scope, dataList)
+                        $.each(dataList, function (i, v) {
+                            v["__fieldCaption"] = $sce.trustAsHtml(v[fieldCaption]);
+                        });
+                        $scope.selectWithSearchItems = dataList;
+                        var ngModelVal = $scope.$eval(ngModel);
+                        if (ngModelVal) {
+                            var $selectedItem = $filter('filter')($scope.selectWithSearchItems, function (f) {
+                                return f[fieldValue] == ngModelVal;
+                            });
+                            if ($selectedItem.length > 0) {
+                                $scope.selectedItem = {
+                                    selected: $selectedItem[0]
+                                };
+                            }
+                        }
+                        $scope.$watch("selectedItem.selected", function (val, old) {
+                            var retval = (val && val[fieldValue]) ? val[fieldValue] : null;
+                            $parse(ngModel).assign($scope.$parent, retval);
+                        });
+                    }
                 }
+
+                $scope.$parent.$watch(list, function (val, old) {
+                    compile();
+                });
             }
         };
     }

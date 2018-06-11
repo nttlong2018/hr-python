@@ -1,4 +1,4 @@
-(function() {
+(function () {
     'use strict';
 
     angular.module('ZebraApp.components.inputs')
@@ -11,16 +11,9 @@
             replace: true,
             scope: true,
             //transclude: true,
-            template: `
-<p class="input-group zb-form-date-picker">
-    <input type="text" class="form-control" uib-datepicker-popup="{{format}}" datepicker-options="options" ng-model="dt" is-open="opened" ng-required="false" close-text="Close" alt-input-formats="altInputFormats" show-button-bar="true" type="date" placeholder="{{placeholder}}" />
-    <span class="input-group-btn">
-      <button type="button" class="btn btn-default"><i class="glyphicon glyphicon-calendar"></i></button>
-    </span>
-</p>
-`,
-            //templateUrl: "app/components/input/datepicker/datepicker.html",
-            link: function($scope, elem, attr) {
+            //template: '<input type="text" class="form-control zb-form-input"/>',
+            templateUrl: "app/components/input/datepicker/datepicker.html",
+            link: function ($scope, elem, attr) {
                 var ngModel = attr["ngModel"];
                 var format = attr["format"];
 
@@ -28,6 +21,7 @@
                     $(elem).attr("zb-required", '');
                 }
 
+                //console.log($scope)
                 $scope.opened = false;
                 $scope.format = (format) ? format : 'dd-MM-yyyy';
                 $scope.options = {
@@ -40,16 +34,16 @@
                     $dt = new Date();
                 }
                 $scope.dt = $dt;
-                $scope.setDate = function(year, month, day) {
+                $scope.setDate = function (year, month, day) {
                     $scope.dt = new Date(year, month, day);
                 };
 
                 $loadLayout($scope, elem, attr);
 
-                $scope.$watch("dt", function(val, old) {
+                $scope.$watch("dt", function (val, old) {
                     $scope.opened = false;
                     $scope.$applyAsync();
-                    $parse(ngModel).assign($scope, val);
+                    $parse(ngModel).assign($scope.$parent, val);
                 });
             }
         };
@@ -70,23 +64,23 @@
         }
 
         btnCalendar.unbind("click");
-        btnCalendar.bind("click", function() {
+        btnCalendar.bind("click", function () {
             $scope.opened = true;
             $scope.$apply();
         });
 
         btnCalendar.unbind("mouseenter");
-        btnCalendar.bind("mouseenter", function() {
+        btnCalendar.bind("mouseenter", function () {
             calendar_in();
         });
 
         btnCalendar.unbind("mouseleave");
-        btnCalendar.bind("mouseleave", function() {
+        btnCalendar.bind("mouseleave", function () {
             calendar_out();
         });
 
         inputDate.unbind("focusin");
-        inputDate.bind("focusin", function() {
+        inputDate.bind("focusin", function () {
             if ($scope.opened) {
                 $scope.opened = false;
                 $scope.$applyAsync();
@@ -100,7 +94,7 @@
         });
 
         inputDate.unbind("focusout");
-        inputDate.bind("focusout", function() {
+        inputDate.bind("focusout", function () {
             calendar_out();
         });
     }

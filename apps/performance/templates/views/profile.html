@@ -150,7 +150,7 @@
                                             <label for="inputBeginningDate" class="col-sm-4 zb-form-label">Ngày cấp</label>
                                             <div class="col-sm-8">
                                                 <!--<input type="date" class="form-control hcs-input-textbox" id="inputBeginningDate"/>-->
-                                                <date-picker ng-model="data.identity.beginning_date" data-format="yyyy-MM-dd"/>
+                                                <date-picker ng-model="data.identity.beginning_date" data-format="{{$root.systemConfig.date_format}}"/>
                                             </div>
                                         </div>
                                         <!--Nơi cấp-->
@@ -194,7 +194,7 @@
                                         <div class="form-group row hcs-group-form-group">
                                             <label for="inputIdentityNumber" class="col-sm-4 zb-form-label">Ngày sinh</label>
                                             <div class="col-sm-8">
-                                                <date-picker ng-model="data.birth_page.birth_date" data-format="yyyy-MM-dd"/>
+                                                <date-picker ng-model="data.birth_page.birth_date" data-format="{{$root.systemConfig.date_format}}"/>
                                                 <!--<input type="date" class="form-control hcs-input-textbox" id="inputBirthday">-->
                                             </div>
                                         </div>
@@ -202,7 +202,7 @@
                                         <div class="form-group row hcs-group-form-group">
                                             <label for="inputRegisteredDate" class="col-sm-4 zb-form-label">Ngày cấp</label>
                                             <div class="col-sm-8">
-                                                <date-picker ng-model="data.birth_page.birth_date1" data-format="yyyy-MM-dd"/>
+                                                <date-picker ng-model="data.birth_page.birth_date1" data-format="{{$root.systemConfig.date_format}}"/>
                                                 <!--<input type="date" class="form-control hcs-input-textbox" id="inputRegisteredDate"/>-->
                                             </div>
                                         </div>

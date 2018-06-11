@@ -13,7 +13,7 @@
       //template: function(el, attrs) {
       //  return '<div class="switch-container ' + (attrs.color || '') + '"><input type="checkbox" ng-model="ngModel"></div>';
       //}
-        template: '<input type="number" class="form-control zb-form-input" dir="rtl" value="0" min="0" />',
+        template: '<input type="number" class="form-control zb-form-input" value="0" min="0" />',
       //templateUrl: "app/components/input/text/text.html",
         link: function ($scope, elem, attr) {
             if (attr["required"]) {

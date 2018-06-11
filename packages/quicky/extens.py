@@ -8,6 +8,7 @@ from mako.template import Template
 from mako.lookup import TemplateLookup
 from . import language as lang_manager
 import threading
+import tenancy
 import logging
 logger=logging.getLogger(__name__)
 global lock
@@ -23,13 +24,13 @@ _language_cache={}
 class render_server():
     def __init__(self):
         pass
-def get_language_item(language,app_name,view,key,value):
+def get_language_item(schema,language,app_name,view,key,value):
     global _language_cache
-    hash_key="language={0};app={1};view={2};key={3}".format(language,app_name,view,key).lower()
+    hash_key="schema={4},language={0};app={1};view={2};key={3}".format(language,app_name,view,key,schema).lower()
     if not _language_cache.has_key(hash_key):
         try:
             lock.acquire()
-            ret=lang_manager.get_language_item(language,app_name,view,key,value)
+            ret=lang_manager.get_language_item(schema,language,app_name,view,key,value)
             _language_cache[hash_key]=ret
             lock.release()
         except Exception as ex:
@@ -59,10 +60,14 @@ def apply(request,template_file,app):
             return app.host_dir
         else:
             if app.host_dir == "":
-                return threading.current_thread().request_tenancy_code
+                return tenancy.get_customer_code()
             else:
-                return threading.current_thread().request_tenancy_code+"/"+app.host_dir
+                return tenancy.get_customer_code()+"/"+app.host_dir
     def get_view_path():
+        code=tenancy.get_schema()
+        not_inclue_tenancy_code=False
+        if hasattr(request,"not_inclue_tenancy_code"):
+            not_inclue_tenancy_code=request.not_inclue_tenancy_code
         ret = request.get_full_path().split("?")[0]
         if app.name == "default":
             if ret[0:1] == "/":
@@ -70,7 +75,10 @@ def apply(request,template_file,app):
             if ret == "":
                 return "index"
             else:
-                return ret
+                if not not_inclue_tenancy_code:
+                    return ret[code.__len__():ret.__len__()]
+                else:
+                    return ret
         else:
             if ret[0:1] == "/":
                 ret = ret[1:ret.__len__()]
@@ -80,15 +88,27 @@ def apply(request,template_file,app):
             if ret == "":
                 return "index"
             else:
-                return ret
+                 if not not_inclue_tenancy_code:
+                    return ret[code.__len__():ret.__len__()]
+                 else:
+                    return ret
     def get_user():
         return request.user
-    def get_res(key):
-        return get_language_item(get_language(),app.name,get_view_path(),key,key)
-    def get_app_res(key):
-        return get_language_item(get_language(), app.name, "-", key, key)
-    def get_global_res(key):
-        return get_language_item(get_language(), "-", "-", key, key)
+    def get_res(key,value=None):
+        if value==None:
+            value=key
+        key=key.lower()
+        return get_language_item(tenancy.get_schema(), get_language(),app.name,get_view_path(),key,value)
+    def get_app_res(key,value=None):
+        if value==None:
+            value=key
+        key=key.lower()
+        return get_language_item(tenancy.get_schema(),get_language(), app.name, "-", key, value)
+    def get_global_res(key,value=None):
+        if value==None:
+            value=key
+        key=key.lower()
+        return get_language_item(tenancy.get_schema(),get_language(), "-", "-", key, value)
     def get_static(path):
         if app.host_dir=="":
             return get_abs_url()+"/"+app.name+"/static" + "/" + path

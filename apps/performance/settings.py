@@ -1,6 +1,8 @@
 
 import datetime
 def authenticate(request):
+    import SystemConfig
+    item=SystemConfig.get()
     if not request.user.is_anonymous() and request.user.is_active:
         return True
     else:

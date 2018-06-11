@@ -1,4 +1,4 @@
-(function() {
+(function () {
     'use strict';
 
     angular.module('ZebraApp.components.trees')
@@ -24,15 +24,11 @@
                 selectedNodes: "=",
                 selectedRootNodes: "=",
                 searchText: "=",
-                checkAll: "="
+                checkAll: "=",
+                disabled: "="
             },
-            /*
-                @: lấy giá trị trên attrs,
-                =: function hoặc data trên parent scope (twoway binding)
-                &:function hoặc data trên parent scope (oneway binding)
-            */
-            templateUrl: window._root__component_template_url +"../../app/components/tree/tree/tree.html",
-            link: function($scope, elem, attr) {
+            templateUrl: "app/components/tree/tree/tree.html",
+            link: function ($scope, elem, attr) {
                 compileTree($scope, elem, attr, $parse);
             }
         };
@@ -40,7 +36,6 @@
 
 
     function compileTree($scope, elem, attr, $parse) {
-        console.log($scope);
         var _tree = null;
 
         function _initLayout() {
@@ -49,7 +44,9 @@
             var _curentNode = {}
             var _dataSource = [];
             var _selectedRootNodes = [];
-            //var $isFirstTime = true;
+
+            if (!$scope.multiSelect) $scope.multiSelect = false;
+            if (!$scope.selectMode) $scope.selectMode = 1;
 
             function _setCurrentNode(nodeData) {
                 _curentNode = nodeData;
@@ -74,20 +71,21 @@
                     return node.data;
                 });
                 _selectedNodes = selDatas;
-
                 // Get a list of all selected TOP nodes
                 var selRootDatas = $.map($tree.getSelectedNodes(true), function (node) {
                     return node.data;
                 });
                 _selectedRootNodes = selRootDatas;
-
                 _setSelectedNodes(_selectedNodes, _selectedRootNodes);
             };
 
-            var _dataSourceTree = _getDataTree($scope.source, $scope.displayField,
-                $scope.parentField, $scope.keyField, $scope.parentValue, $scope.checkedField);
-            debugger;
-            console.log("_dataSourceTree", _dataSourceTree);
+            // 1 (radiobutton: single-selection), 2 (multi-selection) , 3 (hierarchical multi-selection)
+            if (!$scope.selectMode) {
+                $scope.selectMode = 1;
+            }
+
+            var _dataSourceTree = _getDataTree($scope);
+
             if (_tree) {
                 _tree.reload(_dataSourceTree)
             } else {
@@ -98,7 +96,7 @@
                     checkbox: $scope.multiSelect,
                     selectMode: $scope.selectMode, // 1 (radiobutton: single-selection), 2 (multi-selection) , 3 (hierarchical multi-selection)
                     icon: false, //hide icon => hide counter
-                    source: [],
+                    source: _dataSourceTree,
                     filter: {
                         autoApply: true, // Re-apply last filter if lazy data is loaded
                         autoExpand: true, // Expand all branches that contain matches while filtered
@@ -131,14 +129,14 @@
                 });
                 var _tree = elem.find("#tree").fancytree("getTree");
 
-                _setSelectedOnInit(_tree);
-
                 setTimeout(function () {
                     _tree.reload(_dataSourceTree);
+                    _setSelectedOnInit(_tree);
                 }, 100);
 
-                console.log("_DATASOURCETREE", _dataSourceTree, _tree);
-                console.log($scope)
+
+
+                //console.log("_DATASOURCETREE", _dataSourceTree, _tree);
                 var existsWatchSelectAll = false;
                 if ($scope.$$watchers && Array.isArray($scope.$$watchers)) {
                     existsWatchSelectAll = _.filter($scope.$$watchers, function (f) {
@@ -175,7 +173,6 @@
                 }
                 if (!existsWatchSearchText) {
                     $scope.$watch("searchText", function (val, oVal) {
-                        console.log("searchText", val)
                         var n,
                             //tree = $.ui.fancytree.getTree(),
                             filterFunc = _tree.filterNodes, //$("#branchMode").is(":checked") ? tree.filterBranches : tree.filterNodes,
@@ -203,18 +200,37 @@
                         // }
                     })
                 }
+                //Nếu thay đổi chạy lại cây
+                let _watchInits = ["multiSelect", "selectMode", "disabled"];
+                let _isFirstTime = true;
+                $.each(_watchInits, function (i, v) {
+                    var existsWatchInit = false;
+                    if ($scope.$$watchers && Array.isArray($scope.$$watchers)) {
+                        existsWatchInit = _.filter($scope.$$watchers, function (f) {
+                            return f.exp == v
+                        }).length > 0;
+                    }
+                    if (!existsWatchInit) {
+                        $scope.$watch(v, function (val, old) {
+                            //alert(v + "-" + _isFirstTime);
+                            if (!_isFirstTime) {
+                                _initLayout();
+                            }
+                        }, true);
+                    }
+                });
+                _isFirstTime = false;
             }
         }
 
         $scope.$watch("source", function (val, old) {
-            console.log("scope.$watch(source)", val);
             _initLayout();
         }, true);
     }
 
-    function _convertTree(_parentNodes, _dataInput, _displayField, _parentField, _keyField, _checkedField, _dataOutput) {
+    function _convertTree($scope, _parentNode, _treeNodes, _dataInput, _displayField, _parentField, _keyField, _checkedField, _dataOutput) {
         if (!_dataOutput) _dataOutput = [];
-        $.each(_parentNodes, function (i, v) {
+        $.each(_treeNodes, function (i, v) {
             //Xóa item hiện tại khỏi danh sách dataInput
             var currIdx = _dataInput.indexOf(v);
             if (currIdx > -1) {
@@ -226,25 +242,42 @@
                 //key: v[_dataKeyField],
                 title: v[_displayField],
                 expanded: true
-            } //Danh sách node con của item hiện tại
-            if (_checkedField && v[_checkedField] == true) {
-                item.selected = true;
             }
+            if ($scope.multiSelect) {
+                if ($scope.selectMode === 3 && _parentNode && _parentNode.selected) {
+                    item.selected = true;
+                }
+                if (_checkedField && v[_checkedField] == true && !item.selected) {
+                    item.selected = true;
+                }
+            }
+            if ($scope.disabled) {
+                item.unselectable = true;
+            }
+
             var childrens = _.filter(_dataInput, function (f) {
                 return f[_parentField] == v[_keyField];
             });
             if (childrens.length > 0) {
                 item.children = [];
-                _convertTree(childrens, _dataInput, _displayField, _parentField, _keyField, _checkedField, item.children);
+                _convertTree($scope, item, childrens, _dataInput, _displayField, _parentField, _keyField, _checkedField, item.children);
             }
-            console.log(_dataOutput);
             _dataOutput.push(item);
         });
         return _dataOutput;
     }
 
-    function _getDataTree(_dataSource, _displayField, _parentField, _keyField, _parentValue, _checkedField) {
+    function _getDataTree($scope) {
+        let _treeMode = $scope.selectMode,
+            _dataSource = $scope.source,
+            _displayField = $scope.displayField,
+            _parentField = $scope.parentField,
+            _keyField = $scope.keyField,
+            _parentValue = $scope.parentValue,
+            _checkedField = $scope.checkedField;
+
         //Tắt ánh xạ với dữ liệu ban đầu
+        if (!_dataSource) return [];
         var _dataInput = JSON.parse(JSON.stringify(_dataSource));
         if (Array.isArray(_dataInput) && _dataInput.length > 0) {
             var _rootNodes = _.filter(_dataInput, function (f) {
@@ -253,7 +286,6 @@
                     if (_typeParentValue == "string") {
                         return f[_keyField] == _parentValue;
                     } else {
-                        console.log("ARR:", Array.isArray(_parentValue), _parentValue)
                         if (Array.isArray(_parentValue)) {
                             return (_parentValue.indexOf(f[_keyField]) > -1);
                         }
@@ -263,10 +295,8 @@
                     return f[_parentField] == null;
                 }
             });
-            console.log(_rootNodes)
             var _dataOutput = [];
-            _dataOutput = _convertTree(_rootNodes, _dataInput, _displayField, _parentField, _keyField, _checkedField, _dataOutput);
-            console.log("_DATAOUTPUT", _dataOutput);
+            _dataOutput = _convertTree($scope, null, _rootNodes, _dataInput, _displayField, _parentField, _keyField, _checkedField, _dataOutput);
             return _dataOutput;
         } else {
             return [];

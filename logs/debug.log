@@ -12832,3 +12832,361 @@ lv.django_session.find (0.00) {'_id': 'hyz4b8f2lnbvql9recikr4u5pqhjev5p', 'expir
 lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
 lv.django_session.find (0.00) {'_id': 'hyz4b8f2lnbvql9recikr4u5pqhjev5p', 'expire_date': {'$gt': datetime.datetime(2018, 6, 5, 9, 38, 51, 632454, tzinfo=<UTC>)}}
 lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.auth_user.find (0.00) {'username': 'sys'}
+lv.django_session.save (0.00) {'_id': u'sd9uh4oo7hfafrmlxyivvd3hrxtc30zo', 'expire_date': datetime.datetime(2018, 6, 25, 6, 53, 39, 550219, tzinfo=<UTC>), 'session_data': u'YjAwMTViM2E0OTNjMDE0N2NjMTFiZjIxNzYzNmNkYTg5OGRiZGZjMzp7Imxhbmd1YWdlIjoiZW4ifQ=='}
+Not Found: /favicon.ico
+lv.django_session.find (0.00) {'_id': 'sd9uh4oo7hfafrmlxyivvd3hrxtc30zo', 'expire_date': {'$gt': datetime.datetime(2018, 6, 11, 6, 53, 44, 768472, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'username': u'sys'}
+lv.django_session.save (0.00) {'_id': u'5rwitmtd1nivs3ogqxtoj9ldg7wl7834', 'expire_date': datetime.datetime(2018, 6, 25, 6, 53, 44, 821473, tzinfo=<UTC>), 'session_data': u'YjAwMTViM2E0OTNjMDE0N2NjMTFiZjIxNzYzNmNkYTg5OGRiZGZjMzp7Imxhbmd1YWdlIjoiZW4ifQ=='}
+lv.django_session.find (0.00) {'_id': 'sd9uh4oo7hfafrmlxyivvd3hrxtc30zo'}
+lv.django_session.remove (0.00) {'_id': {'$in': [u'sd9uh4oo7hfafrmlxyivvd3hrxtc30zo']}}
+lv.auth_user.save (0.00) {'username': u'sys', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b02a1df2320372ba4a49c31'), 'is_active': True, 'email': u'bhtien@lacviet.com', 'is_superuser': False, 'is_staff': False, 'last_login': datetime.datetime(2018, 6, 11, 6, 53, 44, 826770, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$KW6IwFOfDl12$J8Y4rGgdfA5n/ihfHuUyJLP8ggim72LMBQcQruA4iv8=', 'date_joined': datetime.datetime(2018, 5, 20, 13, 39, 26, 881000, tzinfo=<UTC>)}
+lv.django_session.save (0.00) {'_id': u'5rwitmtd1nivs3ogqxtoj9ldg7wl7834', 'expire_date': datetime.datetime(2018, 6, 25, 6, 53, 44, 829621, tzinfo=<UTC>), 'session_data': u'NjYwNWMyOWVmZjBmYjcyOWRkOGE2YjJlZDJjMGUyMmM3MjY3MjVkZTp7Il9hdXRoX3VzZXJfYmFja2VuZCI6InBlcm1pc3Npb25fYmFja2VuZF9ub25yZWwuYmFja2VuZHMuTm9ucmVsUGVybWlzc2lvbkJhY2tlbmQiLCJfYXV0aF91c2VyX2lkIjoiNWIwMmExZGYyMzIwMzcyYmE0YTQ5YzMxIiwibGFuZ3VhZ2UiOiJlbiJ9'}
+lv.auth_user.find (0.00) {'username': 'sys'}
+lv.django_session.find (0.00) {'_id': '5rwitmtd1nivs3ogqxtoj9ldg7wl7834', 'expire_date': {'$gt': datetime.datetime(2018, 6, 11, 6, 53, 44, 862534, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': '5rwitmtd1nivs3ogqxtoj9ldg7wl7834', 'expire_date': {'$gt': datetime.datetime(2018, 6, 11, 6, 53, 49, 433530, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+Not Found: /lv/performance/{{$root.logo}}
+lv.django_session.find (0.01) {'_id': '5rwitmtd1nivs3ogqxtoj9ldg7wl7834', 'expire_date': {'$gt': datetime.datetime(2018, 6, 11, 6, 53, 50, 286799, tzinfo=<UTC>)}}
+lv.django_session.find (0.01) {'_id': '5rwitmtd1nivs3ogqxtoj9ldg7wl7834', 'expire_date': {'$gt': datetime.datetime(2018, 6, 11, 6, 53, 50, 294208, tzinfo=<UTC>)}}
+lv.auth_user.find (0.01) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.auth_user.find (0.01) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': '5rwitmtd1nivs3ogqxtoj9ldg7wl7834', 'expire_date': {'$gt': datetime.datetime(2018, 6, 11, 6, 53, 52, 463554, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+Not Found: /lv/performance/{{$root.logo}}
+lv.django_session.find (0.00) {'_id': '5rwitmtd1nivs3ogqxtoj9ldg7wl7834', 'expire_date': {'$gt': datetime.datetime(2018, 6, 11, 6, 53, 53, 91082, tzinfo=<UTC>)}}
+lv.django_session.find (0.00) {'_id': '5rwitmtd1nivs3ogqxtoj9ldg7wl7834', 'expire_date': {'$gt': datetime.datetime(2018, 6, 11, 6, 53, 53, 92945, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+Not Found: /performance/static/js/angular.min.js.map
+Not Found: /performance/static/js/datatables/pdfmake.min.js.map
+lv.django_session.find (0.00) {'_id': '5rwitmtd1nivs3ogqxtoj9ldg7wl7834', 'expire_date': {'$gt': datetime.datetime(2018, 6, 11, 6, 53, 57, 982095, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+Not Found: /performance/static/js/angular.min.js.map
+Not Found: /lv/performance/{{$root.logo}}
+Not Found: /performance/static/js/datatables/pdfmake.min.js.map
+lv.django_session.find (0.00) {'_id': '5rwitmtd1nivs3ogqxtoj9ldg7wl7834', 'expire_date': {'$gt': datetime.datetime(2018, 6, 11, 6, 53, 59, 143663, tzinfo=<UTC>)}}
+lv.auth_user.find (0.01) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.01) {'_id': '5rwitmtd1nivs3ogqxtoj9ldg7wl7834', 'expire_date': {'$gt': datetime.datetime(2018, 6, 11, 6, 53, 59, 175812, tzinfo=<UTC>)}}
+lv.auth_user.find (0.01) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': '5rwitmtd1nivs3ogqxtoj9ldg7wl7834', 'expire_date': {'$gt': datetime.datetime(2018, 6, 11, 6, 54, 4, 561202, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+Not Found: /lv/performance/{{$root.logo}}
+lv.django_session.find (0.01) {'_id': '5rwitmtd1nivs3ogqxtoj9ldg7wl7834', 'expire_date': {'$gt': datetime.datetime(2018, 6, 11, 6, 54, 5, 200160, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.03) {'_id': '5rwitmtd1nivs3ogqxtoj9ldg7wl7834', 'expire_date': {'$gt': datetime.datetime(2018, 6, 11, 6, 54, 5, 203067, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': '5rwitmtd1nivs3ogqxtoj9ldg7wl7834', 'expire_date': {'$gt': datetime.datetime(2018, 6, 11, 6, 54, 7, 462130, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+Not Found: /lv/performance/{{$root.logo}}
+lv.django_session.find (0.00) {'_id': '5rwitmtd1nivs3ogqxtoj9ldg7wl7834', 'expire_date': {'$gt': datetime.datetime(2018, 6, 11, 6, 54, 7, 887754, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': '5rwitmtd1nivs3ogqxtoj9ldg7wl7834', 'expire_date': {'$gt': datetime.datetime(2018, 6, 11, 6, 54, 7, 895665, tzinfo=<UTC>)}}
+lv.auth_user.find (0.01) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.01) {'_id': '5rwitmtd1nivs3ogqxtoj9ldg7wl7834', 'expire_date': {'$gt': datetime.datetime(2018, 6, 11, 6, 54, 8, 676017, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+Not Found: /lv/performance/{{$root.logo}}
+lv.django_session.find (0.00) {'_id': '5rwitmtd1nivs3ogqxtoj9ldg7wl7834', 'expire_date': {'$gt': datetime.datetime(2018, 6, 11, 6, 54, 9, 93266, tzinfo=<UTC>)}}
+lv.django_session.find (0.01) {'_id': '5rwitmtd1nivs3ogqxtoj9ldg7wl7834', 'expire_date': {'$gt': datetime.datetime(2018, 6, 11, 6, 54, 9, 95491, tzinfo=<UTC>)}}
+lv.auth_user.find (0.01) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.auth_user.find (0.01) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': '5rwitmtd1nivs3ogqxtoj9ldg7wl7834', 'expire_date': {'$gt': datetime.datetime(2018, 6, 11, 6, 54, 11, 392831, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+Not Found: /performance/static/js/angular.min.js.map
+Not Found: /lv/performance/{{$root.logo}}
+Not Found: /performance/static/js/datatables/pdfmake.min.js.map
+lv.django_session.find (0.02) {'_id': '5rwitmtd1nivs3ogqxtoj9ldg7wl7834', 'expire_date': {'$gt': datetime.datetime(2018, 6, 11, 6, 54, 12, 629552, tzinfo=<UTC>)}}
+lv.auth_user.find (0.01) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.04) {'_id': '5rwitmtd1nivs3ogqxtoj9ldg7wl7834', 'expire_date': {'$gt': datetime.datetime(2018, 6, 11, 6, 54, 12, 652359, tzinfo=<UTC>)}}
+lv.auth_user.find (0.01) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+Not Found: /lv/performance/{{imageSrc}}
+lv.django_session.find (0.00) {'_id': '5rwitmtd1nivs3ogqxtoj9ldg7wl7834', 'expire_date': {'$gt': datetime.datetime(2018, 6, 11, 6, 54, 18, 640092, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': '5rwitmtd1nivs3ogqxtoj9ldg7wl7834', 'expire_date': {'$gt': datetime.datetime(2018, 6, 11, 6, 54, 18, 710609, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': '5rwitmtd1nivs3ogqxtoj9ldg7wl7834', 'expire_date': {'$gt': datetime.datetime(2018, 6, 11, 6, 54, 21, 410759, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': '5rwitmtd1nivs3ogqxtoj9ldg7wl7834', 'expire_date': {'$gt': datetime.datetime(2018, 6, 11, 6, 54, 22, 471814, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': '5rwitmtd1nivs3ogqxtoj9ldg7wl7834', 'expire_date': {'$gt': datetime.datetime(2018, 6, 11, 6, 54, 23, 323188, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': '5rwitmtd1nivs3ogqxtoj9ldg7wl7834', 'expire_date': {'$gt': datetime.datetime(2018, 6, 11, 6, 54, 23, 861929, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': '5rwitmtd1nivs3ogqxtoj9ldg7wl7834', 'expire_date': {'$gt': datetime.datetime(2018, 6, 11, 6, 54, 24, 566071, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': '5rwitmtd1nivs3ogqxtoj9ldg7wl7834', 'expire_date': {'$gt': datetime.datetime(2018, 6, 11, 6, 54, 25, 60124, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': '5rwitmtd1nivs3ogqxtoj9ldg7wl7834', 'expire_date': {'$gt': datetime.datetime(2018, 6, 11, 6, 54, 25, 549451, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': '5rwitmtd1nivs3ogqxtoj9ldg7wl7834', 'expire_date': {'$gt': datetime.datetime(2018, 6, 11, 6, 54, 26, 18507, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': '5rwitmtd1nivs3ogqxtoj9ldg7wl7834', 'expire_date': {'$gt': datetime.datetime(2018, 6, 11, 6, 54, 26, 563170, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': '5rwitmtd1nivs3ogqxtoj9ldg7wl7834', 'expire_date': {'$gt': datetime.datetime(2018, 6, 11, 6, 54, 27, 79493, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': '5rwitmtd1nivs3ogqxtoj9ldg7wl7834', 'expire_date': {'$gt': datetime.datetime(2018, 6, 11, 6, 54, 27, 433000, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': '5rwitmtd1nivs3ogqxtoj9ldg7wl7834', 'expire_date': {'$gt': datetime.datetime(2018, 6, 11, 6, 54, 27, 817370, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': '5rwitmtd1nivs3ogqxtoj9ldg7wl7834', 'expire_date': {'$gt': datetime.datetime(2018, 6, 11, 6, 54, 28, 600038, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': '5rwitmtd1nivs3ogqxtoj9ldg7wl7834', 'expire_date': {'$gt': datetime.datetime(2018, 6, 11, 7, 5, 12, 909682, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': '5rwitmtd1nivs3ogqxtoj9ldg7wl7834', 'expire_date': {'$gt': datetime.datetime(2018, 6, 11, 7, 5, 14, 230578, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': '5rwitmtd1nivs3ogqxtoj9ldg7wl7834', 'expire_date': {'$gt': datetime.datetime(2018, 6, 11, 7, 5, 15, 174720, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': '5rwitmtd1nivs3ogqxtoj9ldg7wl7834', 'expire_date': {'$gt': datetime.datetime(2018, 6, 11, 7, 5, 15, 804884, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': '5rwitmtd1nivs3ogqxtoj9ldg7wl7834', 'expire_date': {'$gt': datetime.datetime(2018, 6, 11, 7, 5, 16, 497122, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': '5rwitmtd1nivs3ogqxtoj9ldg7wl7834', 'expire_date': {'$gt': datetime.datetime(2018, 6, 11, 7, 5, 19, 288644, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+Not Found: /lv/performance/{{$root.logo}}
+lv.django_session.find (0.00) {'_id': '5rwitmtd1nivs3ogqxtoj9ldg7wl7834', 'expire_date': {'$gt': datetime.datetime(2018, 6, 11, 7, 5, 20, 49113, tzinfo=<UTC>)}}
+lv.django_session.find (0.00) {'_id': '5rwitmtd1nivs3ogqxtoj9ldg7wl7834', 'expire_date': {'$gt': datetime.datetime(2018, 6, 11, 7, 5, 20, 51554, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.auth_user.find (0.01) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+Not Found: /lv/performance/{{imageSrc}}
+Not Found: /lv/performance/{{imageSrc}}
+lv.django_session.find (0.00) {'_id': '5rwitmtd1nivs3ogqxtoj9ldg7wl7834', 'expire_date': {'$gt': datetime.datetime(2018, 6, 11, 7, 5, 23, 767313, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': '5rwitmtd1nivs3ogqxtoj9ldg7wl7834', 'expire_date': {'$gt': datetime.datetime(2018, 6, 11, 7, 5, 23, 814831, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+Not Found: /lv/performance/{{imageSrc}}
+lv.django_session.find (0.00) {'_id': '5rwitmtd1nivs3ogqxtoj9ldg7wl7834', 'expire_date': {'$gt': datetime.datetime(2018, 6, 11, 7, 5, 27, 766237, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': '5rwitmtd1nivs3ogqxtoj9ldg7wl7834', 'expire_date': {'$gt': datetime.datetime(2018, 6, 11, 7, 5, 27, 788040, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': '5rwitmtd1nivs3ogqxtoj9ldg7wl7834', 'expire_date': {'$gt': datetime.datetime(2018, 6, 11, 7, 5, 30, 845024, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': '5rwitmtd1nivs3ogqxtoj9ldg7wl7834', 'expire_date': {'$gt': datetime.datetime(2018, 6, 11, 7, 5, 30, 869726, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+Internal Server Error: /lv/performance/pages//permission/form/addUser
+Traceback (most recent call last):
+  File "/home/hcsadmin/argo/packages/django/django/core/handlers/base.py", line 122, in get_response
+    raise e
+TemplateLookupException: Cant locate template for uri u'views//permission/form/adduser.html'
+lv.django_session.find (0.00) {'_id': '5rwitmtd1nivs3ogqxtoj9ldg7wl7834', 'expire_date': {'$gt': datetime.datetime(2018, 6, 11, 7, 5, 38, 451105, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+Internal Server Error: /lv/performance/pages/permission/permission
+Traceback (most recent call last):
+  File "/home/hcsadmin/argo/packages/django/django/core/handlers/base.py", line 122, in get_response
+    raise e
+TemplateLookupException: Cant locate template for uri u'views/permission/permission.html'
+lv.django_session.find (0.00) {'_id': '5rwitmtd1nivs3ogqxtoj9ldg7wl7834', 'expire_date': {'$gt': datetime.datetime(2018, 6, 11, 7, 5, 44, 565175, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': '5rwitmtd1nivs3ogqxtoj9ldg7wl7834', 'expire_date': {'$gt': datetime.datetime(2018, 6, 11, 7, 5, 44, 581899, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+Internal Server Error: /lv/performance/pages//permission/form/addUser
+Traceback (most recent call last):
+  File "/home/hcsadmin/argo/packages/django/django/core/handlers/base.py", line 122, in get_response
+    raise e
+TemplateLookupException: Cant locate template for uri u'views//permission/form/adduser.html'
+lv.django_session.find (0.00) {'_id': '5rwitmtd1nivs3ogqxtoj9ldg7wl7834', 'expire_date': {'$gt': datetime.datetime(2018, 6, 11, 7, 5, 49, 27958, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': '5rwitmtd1nivs3ogqxtoj9ldg7wl7834', 'expire_date': {'$gt': datetime.datetime(2018, 6, 11, 7, 5, 49, 53445, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+Internal Server Error: /lv/performance/pages//permission/form/addDomain
+Traceback (most recent call last):
+  File "/home/hcsadmin/argo/packages/django/django/core/handlers/base.py", line 122, in get_response
+    raise e
+TemplateLookupException: Cant locate template for uri u'views//permission/form/adddomain.html'
+Internal Server Error: /lv/performance/pages//permission/form/addDomain
+Traceback (most recent call last):
+  File "/home/hcsadmin/argo/packages/django/django/core/handlers/base.py", line 122, in get_response
+    raise e
+TemplateLookupException: Cant locate template for uri u'views//permission/form/adddomain.html'
+Internal Server Error: /lv/performance/pages//permission/form/addDomain
+Traceback (most recent call last):
+  File "/home/hcsadmin/argo/packages/django/django/core/handlers/base.py", line 122, in get_response
+    raise e
+TemplateLookupException: Cant locate template for uri u'views//permission/form/adddomain.html'
+Internal Server Error: /lv/performance/pages//permission/form/addDomain
+Traceback (most recent call last):
+  File "/home/hcsadmin/argo/packages/django/django/core/handlers/base.py", line 122, in get_response
+    raise e
+TemplateLookupException: Cant locate template for uri u'views//permission/form/adddomain.html'
+Internal Server Error: /lv/performance/pages//permission/form/addDomain
+Traceback (most recent call last):
+  File "/home/hcsadmin/argo/packages/django/django/core/handlers/base.py", line 122, in get_response
+    raise e
+TemplateLookupException: Cant locate template for uri u'views//permission/form/adddomain.html'
+lv.django_session.find (0.00) {'_id': '5rwitmtd1nivs3ogqxtoj9ldg7wl7834', 'expire_date': {'$gt': datetime.datetime(2018, 6, 11, 7, 6, 14, 501587, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': '5rwitmtd1nivs3ogqxtoj9ldg7wl7834', 'expire_date': {'$gt': datetime.datetime(2018, 6, 11, 7, 6, 15, 24279, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': '5rwitmtd1nivs3ogqxtoj9ldg7wl7834', 'expire_date': {'$gt': datetime.datetime(2018, 6, 11, 7, 6, 15, 757390, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': '5rwitmtd1nivs3ogqxtoj9ldg7wl7834', 'expire_date': {'$gt': datetime.datetime(2018, 6, 11, 7, 6, 16, 315785, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': '5rwitmtd1nivs3ogqxtoj9ldg7wl7834', 'expire_date': {'$gt': datetime.datetime(2018, 6, 11, 7, 6, 17, 14180, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': '5rwitmtd1nivs3ogqxtoj9ldg7wl7834', 'expire_date': {'$gt': datetime.datetime(2018, 6, 11, 7, 6, 17, 572535, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+Internal Server Error: /lv/performance/pages//permission/form/addDomain
+Traceback (most recent call last):
+  File "/home/hcsadmin/argo/packages/django/django/core/handlers/base.py", line 122, in get_response
+    raise e
+TemplateLookupException: Cant locate template for uri u'views//permission/form/adddomain.html'
+lv.django_session.find (0.00) {'_id': '5rwitmtd1nivs3ogqxtoj9ldg7wl7834', 'expire_date': {'$gt': datetime.datetime(2018, 6, 11, 7, 6, 22, 918207, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': '5rwitmtd1nivs3ogqxtoj9ldg7wl7834', 'expire_date': {'$gt': datetime.datetime(2018, 6, 11, 7, 6, 23, 968908, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': '5rwitmtd1nivs3ogqxtoj9ldg7wl7834', 'expire_date': {'$gt': datetime.datetime(2018, 6, 11, 7, 6, 26, 227329, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': '5rwitmtd1nivs3ogqxtoj9ldg7wl7834', 'expire_date': {'$gt': datetime.datetime(2018, 6, 11, 7, 6, 31, 170484, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': '5rwitmtd1nivs3ogqxtoj9ldg7wl7834', 'expire_date': {'$gt': datetime.datetime(2018, 6, 11, 7, 6, 31, 941563, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': '5rwitmtd1nivs3ogqxtoj9ldg7wl7834', 'expire_date': {'$gt': datetime.datetime(2018, 6, 11, 7, 6, 32, 526907, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': '5rwitmtd1nivs3ogqxtoj9ldg7wl7834', 'expire_date': {'$gt': datetime.datetime(2018, 6, 11, 7, 6, 33, 494706, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': '5rwitmtd1nivs3ogqxtoj9ldg7wl7834', 'expire_date': {'$gt': datetime.datetime(2018, 6, 11, 7, 6, 34, 30604, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': '5rwitmtd1nivs3ogqxtoj9ldg7wl7834', 'expire_date': {'$gt': datetime.datetime(2018, 6, 11, 7, 6, 34, 755279, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': '5rwitmtd1nivs3ogqxtoj9ldg7wl7834', 'expire_date': {'$gt': datetime.datetime(2018, 6, 11, 7, 6, 35, 341879, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': '5rwitmtd1nivs3ogqxtoj9ldg7wl7834', 'expire_date': {'$gt': datetime.datetime(2018, 6, 11, 7, 6, 35, 902065, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': '5rwitmtd1nivs3ogqxtoj9ldg7wl7834', 'expire_date': {'$gt': datetime.datetime(2018, 6, 11, 7, 6, 36, 529054, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': '5rwitmtd1nivs3ogqxtoj9ldg7wl7834', 'expire_date': {'$gt': datetime.datetime(2018, 6, 11, 7, 6, 37, 82712, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': '5rwitmtd1nivs3ogqxtoj9ldg7wl7834', 'expire_date': {'$gt': datetime.datetime(2018, 6, 11, 7, 6, 37, 820496, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': '5rwitmtd1nivs3ogqxtoj9ldg7wl7834', 'expire_date': {'$gt': datetime.datetime(2018, 6, 11, 7, 6, 42, 77774, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': '5rwitmtd1nivs3ogqxtoj9ldg7wl7834', 'expire_date': {'$gt': datetime.datetime(2018, 6, 11, 7, 6, 43, 526282, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': '5rwitmtd1nivs3ogqxtoj9ldg7wl7834', 'expire_date': {'$gt': datetime.datetime(2018, 6, 11, 7, 6, 46, 433334, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': '5rwitmtd1nivs3ogqxtoj9ldg7wl7834', 'expire_date': {'$gt': datetime.datetime(2018, 6, 11, 7, 6, 47, 185790, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': '5rwitmtd1nivs3ogqxtoj9ldg7wl7834', 'expire_date': {'$gt': datetime.datetime(2018, 6, 11, 7, 6, 48, 127823, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': '5rwitmtd1nivs3ogqxtoj9ldg7wl7834', 'expire_date': {'$gt': datetime.datetime(2018, 6, 11, 7, 6, 49, 323942, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': '5rwitmtd1nivs3ogqxtoj9ldg7wl7834', 'expire_date': {'$gt': datetime.datetime(2018, 6, 11, 7, 6, 51, 37639, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': '5rwitmtd1nivs3ogqxtoj9ldg7wl7834', 'expire_date': {'$gt': datetime.datetime(2018, 6, 11, 7, 6, 51, 62277, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': '5rwitmtd1nivs3ogqxtoj9ldg7wl7834', 'expire_date': {'$gt': datetime.datetime(2018, 6, 11, 7, 6, 52, 90763, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': '5rwitmtd1nivs3ogqxtoj9ldg7wl7834', 'expire_date': {'$gt': datetime.datetime(2018, 6, 11, 7, 6, 52, 112473, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': '5rwitmtd1nivs3ogqxtoj9ldg7wl7834', 'expire_date': {'$gt': datetime.datetime(2018, 6, 11, 7, 6, 54, 360123, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': '5rwitmtd1nivs3ogqxtoj9ldg7wl7834', 'expire_date': {'$gt': datetime.datetime(2018, 6, 11, 7, 6, 54, 384967, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': '5rwitmtd1nivs3ogqxtoj9ldg7wl7834', 'expire_date': {'$gt': datetime.datetime(2018, 6, 11, 7, 6, 55, 866731, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': '5rwitmtd1nivs3ogqxtoj9ldg7wl7834', 'expire_date': {'$gt': datetime.datetime(2018, 6, 11, 7, 7, 3, 495646, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': '5rwitmtd1nivs3ogqxtoj9ldg7wl7834', 'expire_date': {'$gt': datetime.datetime(2018, 6, 11, 7, 7, 4, 86385, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': '5rwitmtd1nivs3ogqxtoj9ldg7wl7834', 'expire_date': {'$gt': datetime.datetime(2018, 6, 11, 7, 7, 4, 683423, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': '5rwitmtd1nivs3ogqxtoj9ldg7wl7834', 'expire_date': {'$gt': datetime.datetime(2018, 6, 11, 7, 7, 5, 197618, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': '5rwitmtd1nivs3ogqxtoj9ldg7wl7834', 'expire_date': {'$gt': datetime.datetime(2018, 6, 11, 7, 7, 5, 727980, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': '5rwitmtd1nivs3ogqxtoj9ldg7wl7834', 'expire_date': {'$gt': datetime.datetime(2018, 6, 11, 7, 7, 6, 349225, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': '5rwitmtd1nivs3ogqxtoj9ldg7wl7834', 'expire_date': {'$gt': datetime.datetime(2018, 6, 11, 7, 7, 7, 73575, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': '5rwitmtd1nivs3ogqxtoj9ldg7wl7834', 'expire_date': {'$gt': datetime.datetime(2018, 6, 11, 7, 7, 7, 447784, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': '5rwitmtd1nivs3ogqxtoj9ldg7wl7834', 'expire_date': {'$gt': datetime.datetime(2018, 6, 11, 7, 7, 7, 638606, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': '5rwitmtd1nivs3ogqxtoj9ldg7wl7834', 'expire_date': {'$gt': datetime.datetime(2018, 6, 11, 7, 7, 8, 152305, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': '5rwitmtd1nivs3ogqxtoj9ldg7wl7834', 'expire_date': {'$gt': datetime.datetime(2018, 6, 11, 7, 7, 8, 725596, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': '5rwitmtd1nivs3ogqxtoj9ldg7wl7834', 'expire_date': {'$gt': datetime.datetime(2018, 6, 11, 7, 7, 9, 206211, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': '5rwitmtd1nivs3ogqxtoj9ldg7wl7834', 'expire_date': {'$gt': datetime.datetime(2018, 6, 11, 7, 7, 9, 582779, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': '5rwitmtd1nivs3ogqxtoj9ldg7wl7834', 'expire_date': {'$gt': datetime.datetime(2018, 6, 11, 7, 7, 10, 164997, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': '5rwitmtd1nivs3ogqxtoj9ldg7wl7834', 'expire_date': {'$gt': datetime.datetime(2018, 6, 11, 7, 7, 26, 935196, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': '5rwitmtd1nivs3ogqxtoj9ldg7wl7834', 'expire_date': {'$gt': datetime.datetime(2018, 6, 11, 7, 7, 29, 977100, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': '5rwitmtd1nivs3ogqxtoj9ldg7wl7834', 'expire_date': {'$gt': datetime.datetime(2018, 6, 11, 7, 7, 33, 16383, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': '5rwitmtd1nivs3ogqxtoj9ldg7wl7834', 'expire_date': {'$gt': datetime.datetime(2018, 6, 11, 7, 7, 36, 79522, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': '5rwitmtd1nivs3ogqxtoj9ldg7wl7834', 'expire_date': {'$gt': datetime.datetime(2018, 6, 11, 7, 7, 38, 823672, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': '5rwitmtd1nivs3ogqxtoj9ldg7wl7834', 'expire_date': {'$gt': datetime.datetime(2018, 6, 11, 7, 7, 40, 223707, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': '5rwitmtd1nivs3ogqxtoj9ldg7wl7834', 'expire_date': {'$gt': datetime.datetime(2018, 6, 11, 7, 7, 41, 327415, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': '5rwitmtd1nivs3ogqxtoj9ldg7wl7834', 'expire_date': {'$gt': datetime.datetime(2018, 6, 11, 7, 7, 42, 366547, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': '5rwitmtd1nivs3ogqxtoj9ldg7wl7834', 'expire_date': {'$gt': datetime.datetime(2018, 6, 11, 7, 7, 43, 814534, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': '5rwitmtd1nivs3ogqxtoj9ldg7wl7834', 'expire_date': {'$gt': datetime.datetime(2018, 6, 11, 7, 7, 44, 358493, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': '5rwitmtd1nivs3ogqxtoj9ldg7wl7834', 'expire_date': {'$gt': datetime.datetime(2018, 6, 11, 7, 7, 44, 942357, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': '5rwitmtd1nivs3ogqxtoj9ldg7wl7834', 'expire_date': {'$gt': datetime.datetime(2018, 6, 11, 7, 7, 45, 446342, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+Not Found: /lv/performance/{{imageSrc}}
+lv.django_session.find (0.00) {'_id': '5rwitmtd1nivs3ogqxtoj9ldg7wl7834', 'expire_date': {'$gt': datetime.datetime(2018, 6, 11, 7, 7, 52, 532554, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': '5rwitmtd1nivs3ogqxtoj9ldg7wl7834', 'expire_date': {'$gt': datetime.datetime(2018, 6, 11, 7, 7, 52, 557410, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+Not Found: /lv/performance/{{imageSrc}}
+Not Found: /lv/performance/{{imageSrc}}
+Internal Server Error: /lv/performance/pages/undefined
+Traceback (most recent call last):
+  File "/home/hcsadmin/argo/packages/django/django/core/handlers/base.py", line 122, in get_response
+    raise e
+TemplateLookupException: Cant locate template for uri u'views/undefined.html'
+Internal Server Error: /lv/performance/pages/null
+Traceback (most recent call last):
+  File "/home/hcsadmin/argo/packages/django/django/core/handlers/base.py", line 122, in get_response
+    raise e
+TemplateLookupException: Cant locate template for uri u'views/null.html'
+Not Found: /lv/performance/{{imageSrc}}
+lv.django_session.find (0.00) {'_id': '5rwitmtd1nivs3ogqxtoj9ldg7wl7834', 'expire_date': {'$gt': datetime.datetime(2018, 6, 11, 7, 8, 20, 455604, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': '5rwitmtd1nivs3ogqxtoj9ldg7wl7834', 'expire_date': {'$gt': datetime.datetime(2018, 6, 11, 7, 8, 20, 476048, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+Internal Server Error: /lv/performance/pages//permission/form/addDomain
+Traceback (most recent call last):
+  File "/home/hcsadmin/argo/packages/django/django/core/handlers/base.py", line 122, in get_response
+    raise e
+TemplateLookupException: Cant locate template for uri u'views//permission/form/adddomain.html'
+Internal Server Error: /lv/performance/pages//permission/form/addDomain
+Traceback (most recent call last):
+  File "/home/hcsadmin/argo/packages/django/django/core/handlers/base.py", line 122, in get_response
+    raise e
+TemplateLookupException: Cant locate template for uri u'views//permission/form/adddomain.html'
+Not Found: /performance/static/js/datatables/pdfmake.min.js.map
+Not Found: /performance/static/js/angular.min.js.map
+Internal Server Error: /lv/performance/pages//permission/form/addDomain
+Traceback (most recent call last):
+  File "/home/hcsadmin/argo/packages/django/django/core/handlers/base.py", line 122, in get_response
+    raise e
+TemplateLookupException: Cant locate template for uri u'views//permission/form/adddomain.html'
+Internal Server Error: /lv/performance/pages//permission/form/addDomain
+Traceback (most recent call last):
+  File "/home/hcsadmin/argo/packages/django/django/core/handlers/base.py", line 122, in get_response
+    raise e
+TemplateLookupException: Cant locate template for uri u'views//permission/form/adddomain.html'
+Internal Server Error: /lv/performance/pages/permission/form/addDomain
+Traceback (most recent call last):
+  File "/home/hcsadmin/argo/packages/django/django/core/handlers/base.py", line 122, in get_response
+    raise e
+TemplateLookupException: Cant locate template for uri u'views/permission/form/adddomain.html'
+Internal Server Error: /performance/pages/permission/form/addDomain
+Traceback (most recent call last):
+  File "/home/hcsadmin/argo/packages/django/django/core/handlers/base.py", line 122, in get_response
+    raise e
+TypeError: load_page() got an unexpected keyword argument 'tenancy_code'

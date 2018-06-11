@@ -61,6 +61,8 @@
                 $('#hcs-admin-system-breadcrumb').removeClass('hcs-admin-system-breadcrumb-collapse') :
                 $('#hcs-admin-system-breadcrumb').addClass('hcs-admin-system-breadcrumb-collapse');
 
+            $(document).trigger('resize');
+
         }
 
         function getTemplatePath(filePath) {

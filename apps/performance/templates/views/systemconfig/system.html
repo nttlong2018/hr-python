@@ -1,0 +1,77 @@
+﻿<hcs-tool-bar enable-function="enableFunction" on-save="onSave()"></hcs-tool-bar>
+<!--$parent.mapName[0].function_id: function_id chức năng của tab hiện tại index tăng dần theo thứ tự các tab-->
+<div class="tab-pane fade in active" style="padding-right:unset; height: 100%; padding-left:30px!important; padding-top:30px !important;">
+    <div class="row">
+        <div class="col-md-5">
+            <div class="row">
+                <p class="hcs-group-collapse-heading">
+                    <button class="zb-icon-button hcs-profile-group-title" onclick="$('#collapseConfig').slideToggle();">
+                        <span><i class="la la-angle-down"></i></span> ${get_res('Config','Cấu hình')}
+                    </button>
+                </p>
+            </div>
+            <div class="row" id="collapseConfig">
+                <form>
+                    <div class="col-md-12">
+                        <!--Định dạng ngày tháng năm-->
+                        <div class="form-group row hcs-group-form-group">
+                            <label for="inputDayExpire" class="col-sm-6 zb-form-label">${get_res('date_format','Định dạng ngày tháng năm')}</label>
+                            <div class="col-sm-6">
+                                <input-select data-list="cbbDateFormat" ng-model="entity.date_format"
+                                      placeholder="Tìm kiếm" 
+                                      data-value="value" 
+                                      data-caption="caption"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <!--Ngôn ngữ-->
+                        <div class="form-group row hcs-group-form-group">
+                            <label for="inputDayExpire" class="col-sm-6 zb-form-label">${get_res('default_language','Ngôn ngữ')}</label>
+                            <div class="col-sm-6">
+                                <input-select data-list="cbbDefaultLanguage" ng-model="entity.default_language"
+                                      placeholder="Tìm kiếm" 
+                                      data-value="value" 
+                                      data-caption="caption"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <!--Số số lẻ phần thập phân-->
+                        <div class="form-group row hcs-group-form-group">
+                            <label for="inputDayExpire" class="col-sm-6 zb-form-label">${get_res('dec_place_currency','Số số lẻ phần thập phân')}</label>
+                            <div class="col-sm-6">
+                                <input-number id="inputPasswordHistory" ng-model="entity.dec_place_currency"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <!--Kí tự phân cách phần thập phân-->
+                        <div class="form-group row hcs-group-form-group">
+                            <label for="inputDayExpire" class="col-sm-6 zb-form-label">${get_res('dec_place_separator','Kí tự phân cách phần thập phân')}</label>
+                            <div class="col-sm-6">
+                                <input-select data-list="cbbDecPlaceSeparator" ng-model="entity.dec_place_separator"
+                                      placeholder="Tìm kiếm" 
+                                      data-value="value" 
+                                      data-caption="caption"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <!--Kí tự phân cách phần nghìn-->
+                        <div class="form-group row hcs-group-form-group">
+                            <label for="inputDayExpire" class="col-sm-6 zb-form-label">${get_res('hun_place_separator','Kí tự phân cách phần nghìn')}</label>
+                            <div class="col-sm-6">
+                                <input-text id="inputIdentityNumber" value="{{entity.dec_place_separator == ',' ? '.' : ','}}" ng-disabled="true">
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="clearfix"></div>
+</div>
+<script>
+    <%include file="scripts/system.js"/>
+</script>

@@ -6,6 +6,7 @@ import threading
 import logging
 import os
 import sys
+import tenancy
 logger=logging.getLogger(__name__)
 global lock
 settings=None
@@ -41,15 +42,20 @@ def template(fn,*_path,**kwargs):
         try:
             from django.shortcuts import redirect
             import threading
-            
+            not_inclue_tenancy_code=False
+            if hasattr(request,"not_inclue_tenancy_code"):
+                not_inclue_tenancy_code=request.not_inclue_tenancy_code
             is_allow = True
             is_public = False
             authenticate = None
-            if app==None and request.path[request.path.__len__() - 4:request.path.__len__()]=="/api":
-                app_name=request.path.split('/')[request.path.split('/').__len__()-2]
-                if hasattr(threading.currentThread(),"tenancy_code"):
-                    if app_name==threading.currentThread().tenancy_code:
-                        app_name=""
+            request_path=request.path
+            tenancy_code=tenancy.get_customer_code()
+            if not not_inclue_tenancy_code and tenancy_code!=None:
+                request_path=request_path[tenancy_code.__len__()+1:request_path.__len__()]
+            if app==None and request_path[request_path.__len__() - 4:request_path.__len__()]=="/api":
+                app_name=request_path.split('/')[request_path.split('/').__len__()-2]
+                if app_name==tenancy_code:
+                        app_name="" 
                 from . import applications
                 app=applications.get_app_by_name(app_name)
 

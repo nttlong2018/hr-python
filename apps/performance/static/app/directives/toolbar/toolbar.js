@@ -34,6 +34,20 @@
         return directive;
 
         function link(scope, element, attrs) {
+            scope.enableFunction = {
+                Search : attrs['onSearch'],
+                Add : attrs['onAdd'],
+                Copy : attrs['onCopy'],
+                Delete : attrs['onDelete'],
+                Edit : attrs['onEdit'],
+                Save : attrs['onSave'],
+                Undo : attrs['onUndo'],
+                Print : attrs['onPrint'],
+                Setting : attrs['onSetting'],
+                Export : attrs['onExport'],
+                Import : attrs['onImport']
+            };
+            scope.$applyAsync();
             element.find('#hcs-admin-system-txtSearch').bind('keyup', function (e) {
                 if (e.keyCode === 13) { // 13 is enter key
                     // Execute code here.

@@ -168,14 +168,7 @@
             { 'function_id': 'function1', 'name': 'Định nghĩa vùng dữ liệu', 'url': 'permission/domain' },
             { 'function_id': 'function2', 'name': 'Người dùng', 'url': 'permission/user' },
             { 'function_id': 'function3', 'name': 'Nhóm người dùng', 'url': 'permission/usergroup' },
-            { 'function_id': 'function4', 'name': 'Phân quyền tính năng', 'url': 'permission/permission' },
-            { 'function_id': 'function5', 'name': 'Nhóm người dùng 1' },
-            { 'function_id': 'function6', 'name': 'Nhóm người dùng 2' },
-            { 'function_id': 'function7', 'name': 'Nhóm người dùng 3' },
-            { 'function_id': 'function8', 'name': 'Nhóm người dùng 4' },
-            { 'function_id': 'function9', 'name': 'Nhóm người dùng 5' },
-            { 'function_id': 'function10', 'name': 'Nhóm người dùng 6' },
-            { 'function_id': 'function11', 'name': 'Nhóm người dùng 7' }
+            { 'function_id': 'function4', 'name': 'Phân quyền tính năng', 'url': 'permission/permission' }
         ];
 
         this.getElementMapNameByIndex = (index) => {

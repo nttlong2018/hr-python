@@ -121,8 +121,17 @@ body {
   font-size: 15px !important;
   font-family: sans-serif;
 }
-.hcs-home-button-language-menu a:hover {
-  background: transparent !important;
+.hcs-home-button-language-menu a.active {
+  background-color: #009de1;
+}
+.hcs-home-button-language-menu a.active:hover,
+.hcs-home-button-language-menu a.active:focus,
+.hcs-home-button-language-menu a.active:active {
+  background-color: #009de1 !important;
+}
+.hcs-home-button-language-menu a:hover,
+.hcs-home-button-language-menu a:focus {
+  background: inherit !important;
 }
 .hcs-home-button-language-menu a.selected {
   color: #27ba86 !important;
@@ -406,6 +415,9 @@ body {
 }
 #hcs-toolbar div {
   margin-left: 10px;
+}
+#hcs-toolbar div:first-child {
+  margin-right: 1rem;
 }
 #hcs-toolbar i {
   color: black;
@@ -702,7 +714,7 @@ body {
 }
 .hcs-admin-system-control-menu p {
   font-size: .7rem;
-  line-height: .7rem;
+  line-height: .9rem;
   font-weight: 600;
   color: #808080;
 }
@@ -834,7 +846,7 @@ body {
     padding: unset;
     padding-left: 5px;
     overflow: hidden;
-    padding-top: 48px;
+    padding-top: 40px;
   }
   .hcs-system-admin-content {
     float: left;
@@ -894,7 +906,7 @@ body {
     line-height: 1rem;
   }
   #hcs-admin-system-breadcrumb {
-    margin-left: 4%;
+    margin-left: 70px;
   }
   #hcs-admin-system-panel-content {
     min-height: calc(100vh - 96px);
@@ -1265,6 +1277,8 @@ html {
 }
 .zb-form-checkbox .custom-checkbox span {
   color: #666 !important;
+  font-size: .875rem !important;
+  font-weight: 400;
 }
 .zb-form-checkbox .custom-checkbox span:hover:before {
   cursor: pointer;
@@ -1805,6 +1819,7 @@ table.dataTable tbody th.select-checkbox:after {
   border-radius: 0;
   background-image: none;
   vertical-align: super;
+  font-size: .875rem !important;
   /*display: inline-block;
 	    text-align: center;
 	    height: 16px;
@@ -1816,10 +1831,15 @@ table.dataTable tbody th.select-checkbox:after {
 	    margin-left: -22px;
 	    float: left;*/
 }
+.zb-tree span .fancytree-title:hover {
+  padding-bottom: unset !important;
+}
 .zb-tree .fancytree-active span.fancytree-title {
   background-color: unset !important;
   color: #14a4ea !important;
-  border: 1px solid #d0d0d0;
+  border: 1px dotted #d0d0d0;
+  padding-bottom: unset;
+  line-height: 14px;
 }
 div.mask {
   background-image: url("images/Spinner-1s-68px.svg");

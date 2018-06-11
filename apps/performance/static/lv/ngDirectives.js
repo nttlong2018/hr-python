@@ -77,7 +77,7 @@ function dialog($scope, id = 'myModal') {
             return subScope.$element.find(".modal-body").children().attr("title");
         }, function (val) {
             if(angular.isDefined(val)){
-                subScope.$element.find(".modal-title span").html(val);
+                subScope.$element.find(".modal-title span#title").html(val);
             }
         });
         subScope.$watch(function () {

@@ -5,7 +5,7 @@
                 <button class="zb-icon-button hcs-profile-group-title" onclick="$('#collapseDialogCommonInfoGroup').slideToggle();">
                     <span>
                         <i class="la la-angle-down"></i>
-                    </span>Thông tin chung
+                    </span>${get_res('Common_Information','Thông tin chung')}
                 </button>
             </p>
         </div>
@@ -13,7 +13,7 @@
             <div class="col-md-{{col}}">
                 <div class="form-group row hcs-group-form-group">
                     <!--Mã vùng dữ liệu-->
-                    <label for="inputCodeDomain" class="col-sm-5 zb-form-label">Mã vùng dữ liệu truy cập</label>
+                    <label for="inputCodeDomain" class="col-sm-5 zb-form-label">${get_res('dd_code','Mã vùng dữ liệu truy cập')}</label>
                     <div class="col-sm-7">
                         <input-text id="inputCodeDomain" ng-model="Item.dd_code" ng-disabled="{{ __mode === 2 ? 'true' : 'false' }}" required>
                     </div>
@@ -22,7 +22,7 @@
             <div class="col-md-{{col}}">
                 <div class="form-group row hcs-group-form-group">
                     <!--Tên vùng dữ liệu-->
-                    <label for="inputDomainName" class="col-sm-5 zb-form-label">Tên vùng dữ liệu truy cập</label>
+                    <label for="inputDomainName" class="col-sm-5 zb-form-label">${get_res('dd_name','Tên vùng dữ liệu truy cập')}</label>
                     <div class="col-sm-7">
                         <input-text id="inputDomainName" ng-model="Item.dd_name" required>
                     </div>
@@ -31,7 +31,7 @@
             <div class="col-md-{{col}}">
                 <div class="form-group row hcs-group-form-group">
                     <!--Phạm vi truy cập-->
-                    <label for="inputAccessLimit" class="col-sm-5 zb-form-label">Chế độ truy cập dữ liệu</label>
+                    <label for="inputAccessLimit" class="col-sm-5 zb-form-label">${get_res('access_mode','Chế độ truy cập dữ liệu')}</label>
                     <div class="col-sm-7" ng-disabled="true">
                         <input-select data-list="cbbAccessMode" ng-model="Item.access_mode"
                                       placeholder="Tìm kiếm" 
@@ -49,7 +49,7 @@
                 <button class="zb-icon-button hcs-profile-group-title" onclick="$('#collapseDialogNoteGroup').slideToggle();">
                     <span>
                         <i class="la la-angle-down"></i>
-                    </span>Ghi chú
+                    </span>${get_global_res('Note','Ghi chú')}
                 </button>
             </p>
         </div>
@@ -71,18 +71,18 @@
     <div class="col-md-12 col-sm-12">
         <div class="row" style="padding-bottom:10px;">
             <p class="hcs-group-collapse-heading">
-                <button class="zb-icon-button hcs-profile-group-title" onclick="$('#collapseDialogTreeDoamain').slideToggle();">
+                <button class="zb-icon-button hcs-profile-group-title" onclick="$('#collapseDialogTreeDomain').slideToggle();">
                     <span>
                         <i class="la la-angle-down"></i>
-                    </span>Chọn vùng dữ liệu
+                    </span>${get_res('Select_Domain','Chọn vùng dữ liệu')}
                 </button>
             </p>
         </div>
-        <div class="row" id="collapseDialogTreeDoamain">
+        <div class="row" id="collapseDialogTreeDomain">
             <div class="col-md-12">
                 <div class="hcs-profile-background-group-table">
                     <div class="pull-left hcs-profile-icon-heading-on-table" style="width:3%;margin-left:16px;">
-                        <button class="zb-icon-button hcs-profile-group-title" onclick="$('#collapseTableInfo').slideToggle();">
+                        <button class="zb-icon-button hcs-profile-group-title">
                             <span>
                                 <i class="la la-search"></i>
                             </span>
@@ -112,7 +112,7 @@
                 <div class="col-md-12" style="padding-right:unset;">
                     <tree-data data-source="treeDepartmentsDataSource" display-field="department_name"
 	                            parent-field="parent_code" key-field="department_code" 
-	                            multi-select="true" select-mode="3" 
+	                            multi-select="treeMultiSelect" select-mode="treeMode" 
                              on-select="selectTreeNode"
 	                            current-node="treeCurrentNode"
 	                            selected-nodes="treeSelectedNodes"
@@ -120,7 +120,7 @@
 	                            search-text="treeSearchText"
 	                            check-all="treeCheckAll"
                              checked-field="is_selected"
-                             ng-disabled="{{ Item.access_mode === 1 ? 'true' : 'false' }}"/>
+                             disabled="treeDisable"/>
                 </div>
             </div>
         </div>
@@ -162,6 +162,9 @@
         scope.treeSelectedRootNodes = [];
         scope.treeCheckAll = false;
         scope.treeSearchText = '';
+        scope.treeDisable = false;
+        scope.treeMultiSelect = true;
+        scope.treeMode = 3; // Value in (1, 3) combobox toàn quyền set 1 ngược lại set 3
         var _treeDepartmentsDataSource = null;
         var _treeDefault = null;
 
@@ -181,14 +184,14 @@
             if (scope.Item != null) {
                 var rsCheck = checkError();//Kết quả check input
                 if (!rsCheck.result) {
-                    $msg.message('Nhập liệu sai', rsCheck.errorMsg, function () { });
+                    $msg.message("${get_global_res('Input_Error','Nhập liệu sai')}", rsCheck.errorMsg, function () { });
                     return;
                 }
                 beforeCallToServer();
                 editData(function (res) {
                     if (res.error == null) {
                         $('#myModal').modal('hide');//Đóng form input
-                        $msg.alert('Thao tác thành công', $type_alert.SUCCESS);//Xuất thông báo thành cônng
+                        $msg.alert("${get_global_res('Handle_Success','Thao tác thành công')}", $type_alert.SUCCESS);//Xuất thông báo thành cônng
                         if (scope.__mode == 1 || scope.__mode == 3) {
                             //Reload table data
                             reloadData();
@@ -201,7 +204,7 @@
                             scope.$parent.refreshDataRow();
                         }
                     } else {
-                        $msg.message('Có lỗi từ phía máy chủ', "Xin thử vui lòng thử lại", function () { });
+                        $msg.message("${get_global_res('Internal_Server_Error','Có lỗi từ phía máy chủ')}", "${get_global_res('Please_Try_Again','Xin thử vui lòng thử lại')}", function () { });
                     }
                 });
             }
@@ -213,7 +216,7 @@
                 var rsCheck = checkError();//Kết quả check input
                 if (!rsCheck.result) {
                     //Nhập sai: break khỏi hàm
-                    $msg.message('Nhập liệu sai', rsCheck.errorMsg, function () { });
+                    $msg.message("${get_global_res('Input_Error','Nhập liệu sai')}", rsCheck.errorMsg, function () { });
                     return;
                 }
                 beforeCallToServer();
@@ -228,13 +231,13 @@
                             scope.$parent.$apply();
                             scope.$parent.refreshDataRow();
                         }
-                        $msg.alert('Thao tác thành công', $type_alert.SUCCESS);
+                        $msg.alert("${get_global_res('Handle_Success','Thao tác thành công')}", $type_alert.SUCCESS);
                         scope.Item = null;
                         scope.__mode = 1;
                         //Bỏ chọn các nút đã chọn trên cây
                         unSelectedNode();
                     } else {
-                        $msg.message('Thông báo', 'Có lỗi từ phía máy chủ ', function () { });
+                        $msg.message("${get_global_res('Notification','Thông báo')}", "${get_global_res('Internal_Server_Error','Có lỗi từ phía máy chủ')}", function () { });
                     }
                 })
             }
@@ -279,6 +282,8 @@
             }
             if (!scope.Item.hasOwnProperty('detail'))
                 scope.Item.detail = null;
+            if (scope.Item.hasOwnProperty('display_access_mode'))
+                delete scope.Item.display_access_mode;
         }
 
         function getUrl() {
@@ -329,11 +334,11 @@
             };
             if (!scope.Item.dd_code) {
                 rs.result = false;
-                rs.errorMsg += 'Mã vùng dữ liệu không được để trống\n';
+                rs.errorMsg += "${get_res('Domain_Code_Empty','Mã vùng dữ liệu không được để trống')}" + '\n';
             }
             if (!scope.Item.dd_name) {
                 rs.result = false;
-                rs.errorMsg += 'Tên vùng dữ liệu không được để trống\n';
+                rs.errorMsg += "${get_res('Domain_Name_Empty','Tên vùng dữ liệu không được để trống')}" + '\n';
             }
             return rs;
         }
@@ -362,8 +367,19 @@
 
         scope.$watch("Item.access_mode", function (val, old) {
             //1. toàn quyền bỏ check và readonly cây
-            if (val === 1)
+            scope.treeMultiSelect = true;
+            if (val === 1) {
                 scope.treeDepartmentsDataSource = _treeDefault;
+                scope.treeDisable = true;
+                scope.treeMode = 1;
+                scope.treeMultiSelect = false;
+            } else if (val === 2) {
+                scope.treeDisable = false;
+                scope.treeMode = 3;
+            } else if (val === 3) {
+                scope.treeDisable = false;
+                scope.treeMode = 2;
+            }
         });
     });
 </script>
