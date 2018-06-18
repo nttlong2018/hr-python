@@ -10,6 +10,7 @@ import pymongo
 import pytz
 from bson.codec_options import CodecOptions
 import helpers
+from quicky import tenancy
 logger = logging.getLogger(__name__)
 _db={}
 def extract_data(data):
@@ -54,7 +55,7 @@ class QR():
         return list(self.db.collection_names())
 class ENTITY():
 
-    def __init__(self, qr, name):
+    def __init__(self, qr,coll, name):
         self.name = ""
         self.qr = None
         self._data = {}
@@ -62,6 +63,7 @@ class ENTITY():
         self._expr = None
         self.qr = qr
         self.name = name
+        self._coll=coll
     def insert_one(self,*args,**kwargs):
         if args==():
             self._data=kwargs
@@ -197,7 +199,7 @@ class ENTITY():
 
 
         _coll=self.qr.db.get_collection(self.name).with_options(codec_options=self.qr._codec_options)
-        model_events = helpers.events(self.qr._model.name)
+        model_events = helpers.events(self._coll._model.name)
         if self._action=="insert_one":
             ret_data={}
             try:
@@ -205,7 +207,7 @@ class ENTITY():
                 if model_events!=None:
                     for fn in model_events._on_before_insert:
                         fn(self._data)
-                ret_validate_require=validators.validate_require_data(self.qr._model.name,self._data)
+                ret_validate_require=validators.validate_require_data(self._coll._model.name,self._data)
                 if ret_validate_require.__len__()>0:
                     return dict(
                         error=dict(
@@ -213,7 +215,7 @@ class ENTITY():
                             code="missing"
                         )
                     )
-                ret_validate_data_type=validators.validate_type_of_data(self.qr._model.name,self._data)
+                ret_validate_data_type=validators.validate_type_of_data(self._coll._model.name,self._data)
                 if ret_validate_data_type.__len__()>0:
                     return dict(
                         error=dict(
@@ -266,7 +268,7 @@ class ENTITY():
                 if model_events:
                     for fn in model_events._on_before_update:
                         fn(self._data["$set"])
-                ret_validate_require = validators.validate_require_data(self.qr._model.name, self._data["$set"], partial=True)
+                ret_validate_require = validators.validate_require_data(self._coll._model.name, self._data["$set"], partial=True)
                 if ret_validate_require.__len__() > 0:
                     return dict(
                         error=dict(
@@ -274,7 +276,7 @@ class ENTITY():
                             code="missing"
                         )
                     )
-                ret_validate_data_type = validators.validate_type_of_data(self.qr._model.name, self._data["$set"])
+                ret_validate_data_type = validators.validate_type_of_data(self._coll._model.name, self._data["$set"])
                 if ret_validate_data_type.__len__() > 0:
                     return dict(
                         error=dict(
@@ -378,7 +380,7 @@ class WHERE():
             return self._coll.find_one(self._get_where())
     def to_entity(self):
         if self._entity==None:
-            self._entity=ENTITY(self._coll.qr,self.name)
+            self._entity=ENTITY(self._coll.qr,self._coll,self.name)
         return self._entity
     def where(self,expression,*params):
         self._where_list.append(dict(
@@ -444,11 +446,11 @@ class COLL():
         self._none_schema_name = None
         self._none_schema_name=name
         import threading
-        if hasattr(threading.currentThread(),"tenancy_code") and threading.currentThread().tenancy_code!="":
-            self.name=threading.currentThread().tenancy_code+"."+name
+        if hasattr(threading.currentThread(),"tenancy_code") and tenancy.get_schema()!="":
+            self.name=tenancy.get_schema()+"."+name
         else:
             self.name = name
-        qr._model=get_model(name)
+        self._model=get_model(name)
        
 
         self.qr=qr
@@ -470,15 +472,16 @@ class COLL():
                 for field_name in item:
                     
                     keys.append((field_name,pymongo.ASCENDING))
-                    if(self.qr._model.meta[field_name]=="text"):
+                    if(self._model.meta[field_name]=="text"):
                         partialFilterExpression.update({
                             field_name:{
                                 "$type":"string"
                             }
                         })
-            ret_coll.create_index(keys,
-                              unique=True,
-                              partialFilterExpression=partialFilterExpression)
+                if keys.__len__() > 0:
+                    ret_coll.create_index(keys,
+                                      unique=True,
+                                      partialFilterExpression=partialFilterExpression)
             key_info["has_created"]=True
         return ret_coll
     def find_one(self,exprression,*args,**kwargs):
@@ -544,18 +547,18 @@ class COLL():
     def entity(self):
         self.get_collection()
         if self._entity==None:
-            self._entity=ENTITY(self.qr,self.name)
+            self._entity=ENTITY(self.qr,self,self.name)
         return self._entity
     def aggregate(self):
         """create aggregate before create pipeline"""
-        return AGGREGATE(self.qr,self.name)
+        return AGGREGATE(self,self.qr,self.name)
     def insert(self,*args,**kwargs):
 
         ac=self.entity().insert_one(*args,**kwargs)
         ret=ac.commit()
         return ret
     def update(self,data,filter,*args,**kwargs):
-        unknown_fields = self.qr._model.validate_expression(filter,None,*args,**kwargs)
+        unknown_fields = self._model.validate_expression(filter,None,*args,**kwargs)
         if unknown_fields.__len__() > 0:
             raise (Exception("What is bellow list of fields?:\n" + self.descibe_fields("\t\t", unknown_fields) +
                              " \n Your selected fields now is bellow list: \n" +
@@ -625,15 +628,16 @@ class COLL():
         return data_item
 class AGGREGATE():
 
-    def __init__(self, qr, name):
+    def __init__(self,coll, qr, name):
 
+        self._coll=coll
         self._selected_fields = None
         self.qr = qr
         self.name = name
         self._pipe=[]
     def get_selected_fields(self):
         if self._selected_fields==None:
-            self._selected_fields=self.qr._model.get_fields()
+            self._selected_fields=self._coll._model.get_fields()
         return self._selected_fields
     def descibe_fields(self,tabs,fields):
         _fields = ""
@@ -693,7 +697,7 @@ class AGGREGATE():
                 })
                 _next_step_fields.append(key)
             else:
-                unknown_fields = self.qr._model.validate_expression(kwargs[key],self.get_selected_fields())
+                unknown_fields = self._coll._model.validate_expression(kwargs[key],self.get_selected_fields())
                 if unknown_fields.__len__()>0:
                     raise (Exception("What is bellow list of fields?:\n"+self.descibe_fields("\t\t",unknown_fields)+
                                      " \n Your selected fields now is bellow list: \n"+
@@ -712,7 +716,7 @@ class AGGREGATE():
         __id={}
         if type(_id) is dict:
             for key in _id.keys():
-                unknown_fields = self.qr._model.validate_expression(_id[key], self.get_selected_fields())
+                unknown_fields = self._coll._model.validate_expression(_id[key], self.get_selected_fields())
                 if unknown_fields.__len__()>0:
                     raise (Exception("What is bellow list of fields?:\n"+self.descibe_fields("\t\t",unknown_fields)+
                                      " \n Your selected fields now is bellow list: \n"+
@@ -742,7 +746,7 @@ class AGGREGATE():
 
 
         for key in selectors.keys():
-            unknown_fields = self.qr._model.validate_expression(selectors[key], self.get_selected_fields())
+            unknown_fields = self._coll._model.validate_expression(selectors[key], self.get_selected_fields())
             if unknown_fields.__len__() > 0:
                 raise (Exception("What is bellow list of fields?:\n" + self.descibe_fields("\t\t", unknown_fields) +
                                  " \n Your selected fields now is bellow list: \n" +
@@ -782,7 +786,7 @@ class AGGREGATE():
         """Beware! You could not use any Aggregation Pipeline Operators, just use this function with Field Logic comparasion such as:
         and,or, contains,==,!=,>,<,..
         """
-        unknown_fields=self.qr._model.validate_expression(expression,self.get_selected_fields(), *args,**kwargs)
+        unknown_fields=self._coll._model.validate_expression(expression,self.get_selected_fields(), *args,**kwargs)
         if unknown_fields.__len__() > 0:
             err_msg = ""
             for x in unknown_fields:
@@ -792,17 +796,20 @@ class AGGREGATE():
                 err_msg_fields += x + "\n"
             raise (Exception(
                 "What is bellow list of fields?:\n" + err_msg + " \n Your selected fields now is bellow list: \n" + err_msg_fields))
+        by_params=False
         if args==():
             args=kwargs
+            by_params=True
 
         if type(expression) is dict:
             self._pipe.append({
                 "$match":expression
             })
             return self
-        if type(expression) is str:
+        if type(expression) in [str,unicode]:
+            import helpers
             self._pipe.append({
-                "$match": expr.parse_expression_to_json_expression(expression,args)
+                "$match": (lambda :  helpers.filter(expression, args)._pipe if by_params else helpers.filter(expression, *args,**kwargs)._pipe)()
             })
             return self
 
@@ -838,7 +845,11 @@ class AGGREGATE():
                 raise Exception("'foreign_field' was not found")
             if not kwargs.has_key("alias"):
                 raise Exception("'alias' was not found")
-        source_model = get_model(source)
+        source_model=None
+        if isinstance(source,COLL):
+            source_model =source._model
+        else:
+            source_model = get_model(source)
 
         self._selected_fields = self.get_selected_fields()
         self._selected_fields.append(alias)
@@ -920,7 +931,9 @@ class AGGREGATE():
         self._selected_fields=[]
         return ret
     def get_page(self,page_index,page_size):
-        _tmp_pipe=copy.copy(self._pipe)
+        _tmp_pipe = [x for x in self._pipe]
+        _count_pipe=[x for x in self._pipe if self._pipe.index(x)<self._pipe.__len__() and x.keys()[0]!="$sort"]
+        self._pipe = _count_pipe
         total_items=self.count("total_items").get_item()
         self._pipe=_tmp_pipe
         items=self.skip(page_index*page_size).limit(page_size).get_list()
