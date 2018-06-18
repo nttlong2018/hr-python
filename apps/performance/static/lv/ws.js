@@ -1,4 +1,4 @@
-var _ws_url_
+﻿var _ws_url_
 var _wsOnBeforeCall;
 var _wsOnAfterCall;
 function ws_set_url(url) {
@@ -53,30 +53,12 @@ function ws_call(api_path, view_path, data, cb, owner) {
                 if (_wsOnAfterCall) {
                     _wsOnAfterCall(owner.sender)
                 }
-                var newWindow = window.open();
                 var txt = jqXHR.responseText
                 while (txt.indexOf(String.fromCharCode(10)) > -1) {
                     txt = txt.replace(String.fromCharCode(10), "<br/>")
                 }
-                newWindow.document.write(txt);
-                if (cb) {
-                    cb({
-                        error: {
-                            type: "server"
-                        }
-                    })
-                }
-                else {
-                    reject({
-                        error: {
-                            type: "server"
-                        }
-                    })
-                }
-
+                $msg.error("Có lỗi từ máy chủ", "Xin vui lòng thử lại hoặc liện hệ với bộ phận kỹ thuật", txt, function () { });
             }
-
-
         });
 
     })

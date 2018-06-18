@@ -15,7 +15,7 @@
         var directive = {
             link: link,
             scope: {
-                searchCommon: '=searchCommon',
+                searchCommon: '=',
                 onSearch: '&',
                 onAdd: '&',
                 onCopy: '&',
@@ -34,6 +34,13 @@
         return directive;
 
         function link(scope, element, attrs) {
+            element.find('#hcs-admin-system-txtSearch').bind('keyup', function (e) {
+                if (e.keyCode === 13) { // 13 is enter key
+                    // Execute code here.
+                    scope.onSearch();
+                }
+            });
+
             scope.enableFunction = {
                 Search : attrs['onSearch'],
                 Add : attrs['onAdd'],
@@ -48,13 +55,6 @@
                 Import : attrs['onImport']
             };
             scope.$applyAsync();
-            element.find('#hcs-admin-system-txtSearch').bind('keyup', function (e) {
-                if (e.keyCode === 13) { // 13 is enter key
-                    // Execute code here.
-                    scope.onSearch();
-                }
-            });
-
         }
     }
 

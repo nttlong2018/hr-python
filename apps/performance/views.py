@@ -11,6 +11,7 @@ from . import models
 
 from quicky import applications
 from models import Login
+from api.models import auth_user_info
 
 from django.contrib.auth.models import User
 from django.core.exceptions import ObjectDoesNotExist
@@ -34,23 +35,25 @@ def admin(request):
 
 @quicky.view.template("login.html")
 def login(request):
-    try:
-        sys_user=User.objects.get(username="sys")
-    except ObjectDoesNotExist as ex:
-        user = User.objects.create_user('sys', '', '123456')
-        user.is_active=True
-        user.is_supperuser=True
-        user.save()
+    #try:
+    #    sys_user=User.objects.get(username="sys")
+    #except ObjectDoesNotExist as ex:
+    #    user = User.objects.create_user('sys', '', '123456')
+    #    user.is_active=True
+    #    user.is_supperuser=True
+    #    user.save()
     _login=models.Login()
     _login.language=request._get_request().get("language","en")
     if request.GET.has_key("next"):
         _login.url_next=request.GET["next"]
     request.session["language"] = _login.language
     if request._get_post().keys().__len__()>0:
-        username=request._get_post().get("username")
-        password=request._get_post().get("password")
+        username_request=request._get_post().get("username")
+        password_request=request._get_post().get("password")
         try:
-            ret=authenticate(username=request._get_post().get("username"), password=request._get_post().get("password"))
+            user_login = auth_user_info().aggregate().project(username=1, login_account=1)\
+                .match("login_account == @account", account = username_request).get_item()['username']
+            ret=authenticate(username=user_login, password=password_request)
             form_login(request,ret)
             return redirect(request.get_app_url(""))
         except Exception as ex:

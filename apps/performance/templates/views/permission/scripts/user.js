@@ -2,11 +2,18 @@
     //("===============BEGIN TABLE==================")
     //Cấu hình tên field và caption hiển thị trên UI
     scope.tableFields = [
-        { "data": "dd_code", "title": "Mã vùng dữ liệu" },
-        { "data": "dd_name", "title": "Tên vùng vùng dữ liệu" },
-        { "data": "description", "title": "Mô tả chi tiết" },
-        { "data": "display_access_mode", "title": "Phạm vi truy cập"},
-        { "data": "created_on", "title": "Thời điểm tạo", "format": "date:" + scope.$root.systemConfig.date_format }
+        { "data": "login_account", "title": "${ get_res('login_account_table_title', 'Mã người dùng') }"},
+        { "data": "display_name", "title": "${ get_res('display_name_table_title', 'Tên hiển thị') }"},
+        { "data": "role_code", "title": "${ get_res('role_code_table_title', 'Thuộc nhóm người dùng') }"},
+        { "data": "is_system", "title": "${ get_res('is_system_table_title', 'Là quản trị hệ thống') }"},
+        { "data": "never_expire", "title": "${ get_res('never_expire_table_title', 'Không bị khóa') }"},
+        { "data": "manlevel_from", "title": "${ get_res('manlevel_from_table_title', 'Mức quản lí từ') }"},
+        { "data": "manlevel_to", "title": "${ get_res('manlevel_to_table_title', 'Mức quản lí đến') }"},
+        {
+            "data": "created_on",
+            "title": "${ get_res('created_on_table_title', 'Thời điểm tạo') }",
+            "format": "date: " + scope.$root.systemConfig.date_format
+        }
     ];
     //
     scope.$$tableConfig = {};
@@ -39,7 +46,6 @@
     scope.selectedItems = [];
     //Dòng hiện tại đang được focus (nếu table là SingleSelect hoặc MultiSelect)
     scope.currentItem = null;
-    scope.getTableData = getTableData;
     scope.tableSearchText = '';
     scope.SearchText = '';
     //Refesh table
@@ -53,16 +59,14 @@
     scope.onSearch = onSearch;
     scope.onExport = onExport;
     scope._tableData = _tableData;
-    scope.mapAccess_mode = [];
-    scope.getDisplayNameAccessMode = getDisplayNameAccessMode;
-
+    scope.$applyAsync();
     /**
      * Hàm mở form chỉnh sửa
      */
     function onEdit() {
         if (scope.currentItem) {
             scope.mode = 2; // set mode chỉnh sửa
-            openDialog("${get_res('Edit_User','Chỉnh sửa người dùng')}", 'permission/form/editUser', function () { });
+            openDialog("${get_res('Edit_User','Chỉnh sửa người dùng')}", 'permission/form/addUser', function () { });
         } else {
             $msg.message("${get_global_res('Notification','Thông báo')}", "${get_app_res('No_Row_Selected','Không có dòng được chọn')}", function () { });
         }
@@ -81,7 +85,7 @@
             $msg.message("${get_global_res('Notification','Thông báo')}", "${get_global_res('No_Row_Selected','Không có dòng được chọn')}", function () { });
         } else {
             $msg.confirm("${get_global_res('Notification','Thông báo')}", "${get_global_res('Do_You_Want_Delete','Bạn có muốn xóa không?')}", function () {
-                services.api("${get_api_key('app_main.api.HCSSYS_DataDomain/delete')}")
+                services.api("${get_api_key('app_main.api.auth_user/delete')}")
                     .data(scope.selectedItems)
                     .done()
                     .then(function (res) {
@@ -99,15 +103,15 @@
     function onCopy() {
         if (scope.currentItem) {
             scope.mode = 3; // set mode chỉnh sửa
-            openDialog("${get_res('Add_New_Domain','Thêm mới vùng truy cập')}", 'permission/form/addDomain', function () { });
+            openDialog("${get_res('Add_New_User','Thêm mới người dùng')}", 'permission/form/addUser', function () { });
         } else {
             $msg.message("${get_global_res('Notification','Thông báo')}", "${get_global_res('No_Row_Selected','Không có dòng được chọn')}", function () { });
         }
     }
 
-    function onSearch(val) {
+    function onSearch() {
         scope.tableSearchText = scope.SearchText;
-        scope.$apply();
+        scope.$applyAsync();
     }
     function onExport() {
         window.open("/excel_export");
@@ -161,24 +165,8 @@
         }
     }
 
-    function getTableData() {
-        console.log("currentItem", scope.currentItem);
-        console.log("selectedItems", scope.selectedItems);
-    }
-    console.log("CUrrent Scope", scope);
     function pressEnter($row) {
         scope.onEdit();
-    }
-
-    function getDisplayNameAccessMode(code) {
-        var name = '';
-        _.each(scope.mapAccess_mode, function (val) {
-            if (val.value == code) {
-                name = val.caption;
-                return;
-            }
-        })
-        return name;
     }
 
     function _tableData(iPage, iPageLength, orderBy, searchText, callback) {
@@ -187,7 +175,7 @@
             sort[v.columns] = (v.type === "asc") ? 1 : -1;
         });
         sort[orderBy[0].columns] =
-            services.api("${get_api_key('app_main.api.HCSSYS_DataDomain/get_list_with_searchtext')}")
+            services.api("${get_api_key('app_main.api.auth_user/get_list_with_searchtext')}")
                 .data({
                     //parameter at here
                     "pageIndex": iPage - 1,
@@ -196,40 +184,16 @@
                     "sort": sort
                 })
                 .done()
-                .then(function (res) {
+            .then(function (res) {
                     var data = {
                         recordsTotal: res.total_items,
                         recordsFiltered: res.total_items,
                         data: res.items
                     };
-                    _.each(res.items, function (val) {
-                        val.display_access_mode = getDisplayNameAccessMode(val.access_mode);
-                    });
                     callback(data);
-                    //scope.tableSource = res;
                     scope.currentItem = null;
                     scope.$apply();
                 })
     }
-
-    function _comboboxData() {
-        services.api("${get_api_key('app_main.api.SYS_ValueList/get_list')}")
-            .data({
-                //parameter at here
-                "name": "AccessDomain"
-            })
-            .done()
-            .then(function (res) {
-                delete res.language;
-                delete res.list_name;
-                scope.mapAccess_mode = res.values;
-                console.log(res);
-                scope.$applyAsync();
-            })
-    }
-    _comboboxData();
-
-    //("===============INIT==================")
-    //_tableData();
     //("===============END TABLE==================")
 });

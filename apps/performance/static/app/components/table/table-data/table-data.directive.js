@@ -275,7 +275,7 @@
                             if (!_bindResize) {
                                 $(window).resize(function () {
                                     _bindResize = true;
-                                    //var _tableWrapper = $(elem).closest("div.dataTables_wrapper");
+                                    var _tableWrapper = $(elem).closest("div.dataTables_wrapper");
                                     var _tableScrollBody = $(elem).closest("div.dataTables_scrollBody");
 
                                     //32: height of paginator and others

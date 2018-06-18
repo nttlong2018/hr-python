@@ -208,6 +208,131 @@ function _Dialog() {
             setTimeout(function () { ele.remove(); }, 3000);
         }
 
+        /**
+         * Dialog message lỗi từ server
+         * @param {string} title
+         * @param {string} content
+         * @param {string} detail
+         * @param {function} callback
+         */
+        me.error = function(title, content, detailMsg, callback) {
+            var me = this;
+
+            //UI form dialog
+            me._form = $('<div class="modal fade" id="myErrorModal" role="dialog">' +
+                '<div class="modal-dialog">' +
+                '<div class="modal-content">' +
+                '<div class="modal-header">' +
+                '<h4 class="modal-title"><i class="la la-info-circle"></i><span id="title"></span>' +
+                '<button type="button" class="close" data-dismiss="modal">&times;</button>' +
+                '</div>' +
+                '<div class="modal-body">' +
+                '</div>' +
+                '<div class="modal-footer">' +
+                '<button type="button"><i class="la la-info-circle" style="padding-right:unset;"></i></button>' +
+                '</div>' +
+                '</div>'
+            );
+
+            //Render form dialog
+            me._form.appendTo('body');
+            //Set title
+            $('#myErrorModal #title').text(title);
+            //Set content
+            $('#myErrorModal .modal-body').text(content);
+            //Set Event nhấn phím ESC để thoát dialog
+            $(document).keyup(function (event) {
+                if (event.keyCode == 27) {
+                    if ($('#myErrorModal').length == 1)
+                        closeDialog();
+                }
+            })
+            //Show form dialog
+            $('#myErrorModal').modal('show');
+
+            //Draggble Dialog
+            $('#myErrorModal').ready(function () {
+                $('#myErrorModal .modal-dialog .modal-content .modal-header').on('mousedown touchstart', function (e) {
+                    $('#myErrorModal .modal-dialog').draggable();
+                }).bind('mouseup touchend', function () {
+                    $('#myErrorModal .modal-dialog').draggable('destroy');
+                });
+            })
+
+            var btnDetail = $('#myErrorModal .modal-footer button:first');
+            btnDetail.click(function () {
+                detail(detailMsg);
+            })
+
+            //Event nhấn phím thoát dialog
+            var btnClose = $('#myErrorModal .close');
+            btnClose.click(function () {
+                closeDialog();
+            })
+
+            //Hàm thoát dialog
+            function closeDialog() {
+                $('#myErrorModal').remove();
+                $('.modal-backdrop:last').remove();
+            }
+
+            function detail(content) {
+                var me = this;
+
+                //UI form dialog
+                me._form = $('<div class="modal fade" id="myErrorDetailModal" role="dialog">' +
+                    '<div class="modal-dialog" style="width:85%; top:1.5vh;">' +
+                    '<div class="modal-content">' +
+                    '<div class="modal-header">' +
+                    '<h4 class="modal-title"><i class="la la-info-circle"></i>' +
+                    '<button type="button" class="close" data-dismiss="modal">&times;</button>' +
+                    '</div>' +
+                    '<div class="modal-body" style="padding: 15px;height: 85vh;overflow: auto;">' +
+                    '</div>' +
+                    '<div class="modal-footer">' +
+                    '</div>' +
+                    '</div>'
+                );
+
+                //Render form dialog
+                me._form.appendTo('body');
+                //Set content
+                $('#myErrorDetailModal .modal-body').append(content);
+                //Set Event nhấn phím ESC để thoát dialog
+                $(document).keyup(function (event) {
+                    if (event.keyCode == 27) {
+                        if ($('#myErrorDetailModal').length == 1)
+                            closeDialog();
+                    }
+                })
+                //Show form dialog
+                $('#myErrorDetailModal').modal('show');
+
+                //Draggble Dialog
+                $('#myErrorDetailModal').ready(function () {
+                    $('#myErrorDetailModal .modal-dialog .modal-content .modal-header').on('mousedown touchstart', function (e) {
+                        $('#myErrorDetailModal .modal-dialog').draggable();
+                    }).bind('mouseup touchend', function () {
+                        $('#myErrorDetailModal .modal-dialog').draggable('destroy');
+                    });
+                })
+
+                //Event nhấn phím thoát dialog
+                var btnClose = $('#myErrorDetailModal .close');
+                btnClose.click(function () {
+                    closeDialog();
+                })
+
+                //Hàm thoát dialog
+                function closeDialog() {
+                    $('#myErrorDetailModal').remove();
+                    $('.modal-backdrop:last').remove();
+                }
+            }
+
+            return me;
+        }
+
         return me;
     }
     return new ret();

@@ -2,11 +2,11 @@
     //("===============BEGIN TABLE==================")
     //Cấu hình tên field và caption hiển thị trên UI
     scope.tableFields = [
-        { "data": "dd_code", "title": "Mã vùng dữ liệu"},
-        { "data": "dd_name", "title": "Tên vùng vùng dữ liệu" },
-        { "data": "description", "title": "Mô tả chi tiết"},
-        { "data": "display_access_mode", "title": "Phạm vi truy cập" },
-        { "data": "created_on", "title": "Thời điểm tạo", "format": "date:" + scope.$root.systemConfig.date_format }
+        { "data": "dd_code", "title": "${get_res('dd_code_table_title','Mã vùng dữ liệu')}"},
+        { "data": "dd_name", "title": "${get_res('dd_name_table_title','Tên vùng vùng dữ liệu')}"},
+        { "data": "description", "title": "${get_res('description_table_title','Mô tả chi tiết')}"},
+        { "data": "display_access_mode", "title": "${get_res('display_access_mode_table_title','Phạm vi truy cập')}" },
+        { "data": "created_on", "title": "${get_res('created_on_table_title','Thời điểm tạo')}", "format": "date:" + scope.$root.systemConfig.date_format }
     ];
     //
     scope.$$tableConfig = {};
@@ -52,6 +52,7 @@
     scope.onCopy = onCopy;
     scope.onSearch = onSearch;
     scope.onExport = onExport;
+    scope.onImport = onImport;
     scope._tableData = _tableData;
     scope.mapAccess_mode = [];
     scope.getDisplayNameAccessMode = getDisplayNameAccessMode;
@@ -73,9 +74,8 @@
      */
     function onAdd() {
         scope.mode = 1;// set mode tạo mới
-        openDialog("${get_res('Add_New_Domain','Thêm mới vùng truy cập')}",'permission/form/addDomain', function () { });
+        openDialog("${get_res('Add_New_Domain','Thêm mới vùng truy cập')}", 'permission/form/addDomain', function () { });
     }
-
     function onDelete() {
         if (!scope.selectedItems || scope.selectedItems.length === 0) {
             $msg.message("${get_global_res('Notification','Thông báo')}", "${get_global_res('No_Row_Selected','Không có dòng được chọn')}", function () { });
@@ -95,7 +95,6 @@
             });
         }
     }
-
     function onCopy() {
         if (scope.currentItem) {
             scope.mode = 3; // set mode chỉnh sửa
@@ -104,7 +103,6 @@
             $msg.message("${get_global_res('Notification','Thông báo')}", "${get_global_res('No_Row_Selected','Không có dòng được chọn')}", function () { });
         }
     }
-
     function onSearch(val) {
         scope.tableSearchText = scope.SearchText;
         scope.$apply();
@@ -115,7 +113,7 @@
         //    .data({})
         //    .done()
         //    .then(function (res) {
-                
+
         //    })
         //$.ajax({
         //    url: "/excel_export",
@@ -133,7 +131,13 @@
         //    }
         //});
     }
-
+    function onImport() {
+        lv.ImportFile("${get_api_key('app_main.excel.import/call')}")
+            //.setFunctionID("aaaaa")
+            .done(function (res) {
+                console.log("lv.UploadService", res);
+            });
+    }
     /**
      * Hàm mở dialog
      * @param {string} title Tittle của dialog
@@ -146,7 +150,7 @@
         if ($('#myModal').length === 0) {
             scope.headerTitle = title;
             //Đặt ID cho form dialog
-            
+
             dialog(scope, 'myModal').url(path).done(function () {
                 callback();
                 //Set resizable cho form dialog theo id
@@ -160,16 +164,13 @@
             });
         }
     }
-
     function getTableData() {
         console.log("currentItem", scope.currentItem);
         console.log("selectedItems", scope.selectedItems);
     }
-    console.log("CUrrent Scope", scope);
     function pressEnter($row) {
         scope.onEdit();
     }
-
     function getDisplayNameAccessMode(code) {
         var name = '';
         _.each(scope.mapAccess_mode, function (val) {
@@ -180,7 +181,6 @@
         })
         return name;
     }
-
     function _tableData(iPage, iPageLength, orderBy, searchText, callback) {
         var sort = {};
         $.each(orderBy, function (i, v) {
@@ -211,7 +211,6 @@
                     scope.$apply();
                 })
     }
-
     function _comboboxData() {
         services.api("${get_api_key('app_main.api.SYS_ValueList/get_list')}")
             .data({
@@ -228,7 +227,6 @@
             })
     }
     _comboboxData();
-
     //("===============INIT==================")
     //_tableData();
     //("===============END TABLE==================")

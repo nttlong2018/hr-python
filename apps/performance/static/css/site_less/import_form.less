@@ -1,0 +1,57 @@
+@backgroundTitle: rgba(54,62,67,0.96);
+
+.lv-form-import {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 2000;
+
+    .form-container {
+        position: absolute;
+        height: 250px;
+        width: 500px;
+        margin: -100px 0 0 -200px;
+        top: 50%;
+        left: 50%;
+        background: #fff;
+        border: 1px solid #666;
+
+        .form-header {
+            height: 48px;
+            background: @backgroundTitle;
+            padding: 0 16px;
+            line-height: 48px;
+            font-size: 14px;
+            color: #fff;
+        }
+
+        .form-content {
+            height: calc(~'100% - 48px - 48px');
+            padding: 16px;
+        }
+
+        .form-footer {
+            height: 48px;
+            background: @backgroundTitle;
+            padding: 2px;
+            font-size: 14px;
+            color: #fff;
+            text-align: right;
+
+            button {
+                height: 100%;
+                padding: 0 10px;
+                background: transparent;
+                border: 1px solid transparent;
+                outline: none;
+            }
+
+            button:hover {
+                border: 1px dotted #fff;
+            }
+        }
+    }
+}

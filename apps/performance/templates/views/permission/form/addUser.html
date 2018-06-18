@@ -13,7 +13,7 @@
             <div class="col-md-{{col}}">
                 <div class="form-group row hcs-group-form-group">
                     <!--Tài khoản đăng nhập-->
-                    <label for="inputUserName" class="col-sm-5 zb-form-label">${get_res('Common_Info','Tài khoản đăng nhập')}</label>
+                    <label for="inputUserName" class="col-sm-5 zb-form-label">${get_res('login_account','Tài khoản đăng nhập')}</label>
                     <div class="col-sm-7">
                         <input-text id="inputUserName" ng-model="entity.login_account" required>
                     </div>
@@ -33,7 +33,7 @@
                     <!--Thuộc nhóm người dùng-->
                     <label for="inputGroupUser" class="col-sm-5 zb-form-label">Thuộc nhóm người dùng</label>
                     <div class="col-sm-7">
-                        <input-select data-list="cbbAccessMode" ng-model="entity.user_group"
+                        <input-select data-list="cbbAd_Roles" ng-model="entity.role_code"
                                       data-value="value" 
                                       data-caption="caption"
                                       required/>
@@ -158,7 +158,7 @@
                     <!--Mật khẩu-->
                     <label for="inputUserName" class="col-sm-5 zb-form-label">Mật khẩu</label>
                     <div class="col-sm-7">
-                        <input-text id="inputUserName" ng-model="entity.password">
+                        <input-password id="inputPassword" ng-model="entity.password">
                     </div>
                 </div>
             </div>
@@ -167,7 +167,7 @@
                     <!--Xác nhận mật khẩu-->
                     <label for="inputDisplayName" class="col-sm-5 zb-form-label">Xác nhận mật khẩu</label>
                     <div class="col-sm-7">
-                        <input-text id="inputDisplayName" ng-model="entity.repassword">
+                        <input-password id="inputRePassword" ng-model="entity.repassword">
                     </div>
                 </div>
             </div>
@@ -189,9 +189,11 @@
 <script>
     (function (scope) {
         scope.onResizeDialog = onResizeDialog;
+        scope.__mode = scope.$parent.mode;
         scope.col = 12;
         scope.col_group = 6;
-        scope.entity;
+        scope.entity = scope.__mode != 1 ? scope.$parent.currentItem : null;
+        scope.cbbAd_Roles = [];
         scope.saveNClose = saveNClose;
         scope.saveNNext = saveNNext;
 
@@ -203,33 +205,275 @@
         }
 
         function saveNClose(event) {
-            if (scope.Item != null) {
-                services.api("${get_api_key('app_main.api.HCSSYS_DataDomain/insert')}")
-                    .data(scope.Item)
-                    .done()
-                    .then(function (res) {
-                        if (res.error == null) {
-                            scope.$parent.tableSource.push(res.data);
-                            scope.$parent.$applyAsync();
-                            $('#myModal').modal('hide');
+            if (scope.entity != null) {
+                var rsCheck = checkError();//Kết quả check input
+                if (rsCheck.result) {
+                    $msg.message("${get_global_res('Input_Error','Nhập liệu sai')}", rsCheck.errorMsg, function () { });
+                    return;
+                }
+                beforeCallToServer();
+                editData(scope.entity, function (res) {
+                    if (res.error == null) {
+                        $('#myModal').modal('hide');//Đóng form input
+                        $msg.alert("${get_global_res('Handle_Success','Thao tác thành công')}", $type_alert.SUCCESS);//Xuất thông báo thành cônng
+                        if (scope.__mode == 1 || scope.__mode == 3) {
+                            //Reload table data
+                            reloadData();
+                        } else if (scope.__mode == 2) {
+                            delete scope.entity.repassword;
+                            delete scope.entity.password;
+                            delete scope.entity.change_password;
+                            scope.$parent.currentItem = scope.entity;
+                            scope.$parent.$apply();
+                            //Refesh datatable
+                            scope.$parent.refreshDataRow();
                         }
-                    })
-            }
-        }
-
-        function saveNNext() {
-            if (scope.Item != null) {
-                services.api("${get_api_key('app_main.api.HCSSYS_DataDomain/insert')}")
-                    .data(scope.Item)
-                    .done()
-                    .then(function (res) {
-                        if (res.error == null) {
-                            scope.$parent.tableSource.push(res.data);
-                            scope.$parent.$applyAsync();
-                            scope.Item = null;
+                    } else {
+                        if (res.error == "existing login account")
+                            $msg.message("${get_res('Internal_Server_Error','Có lỗi từ phía máy chủ')}", "${get_global_res('existing_login_account','Tài khoản đăng nhập đã tồn tại')}", function () { });
+                        else if(res.error.code == 'duplicate'){
+                            var msg = '';
+                            _.each(res.error.fields, function(val){
+                                if(val == "login_account")
+                                    msg += "${get_res('login_account','Tài khoản đăng nhập')}" + " " + "${get_global_res('exists','đã tồn tại')}" + "\n";
+                                if(val == "email")
+                                    msg += "${get_res('email','Email')}" + " " + "${get_global_res('exists','đã tồn tại')}" + "\n";
+                            });
+                            $msg.message("${get_global_res('Internal_Server_Error','Có lỗi từ phía máy chủ')}", msg, function () { });
                         }
-                    })
+                    }
+                });
             }
         };
+
+        function saveNNext() {
+            if (scope.entity != null) {
+                var rsCheck = checkError();//Kết quả check input
+                if (rsCheck.result) {
+                    $msg.message("${get_global_res('Input_Error','Nhập liệu sai')}", rsCheck.errorMsg, function () { });
+                    return;
+                }
+                beforeCallToServer();
+                editData(scope.entity, function (res) {
+                    if (res.error == null) {
+                        if (scope.__mode == 1 || scope.__mode == 3) {
+                            //Reload table data
+                            reloadData();
+                        } else if (scope.__mode == 2) {
+                             var entity = JSON.parse(JSON.stringify(scope.entity));
+                            scope.$parent.currentItem = entity;
+                            afterCallToServer();
+                            scope.$applyAsync();
+                            scope.$parent.$apply();
+                            //Refesh datatable
+                            scope.$parent.refreshDataRow();
+                        }
+                        $msg.alert("${get_global_res('Handle_Success','Thao tác thành công')}", $type_alert.SUCCESS);
+                        scope.entity = null;
+                        scope.__mode = 1;
+                    } else {
+                        $msg.message("${get_global_res('Internal_Server_Error','Có lỗi từ phía máy chủ')}", "${get_global_res('Please_Try_Again','Xin thử vui lòng thử lại')}", function () { });
+                    }
+                });
+            }
+        };
+
+        function editData(param, callback) {
+            var url = getUrl();
+            var parameter = JSON.parse(JSON.stringify(param));
+            if (scope.__mode == 3) {
+                //Loại bỏ các propery của angular ra khỏi object
+                delete currentItem.$$regKey;
+                delete currentItem._id;
+                delete currentItem.$$selectKey;
+            }
+            services.api(url)
+                .data(parameter)
+                .done()
+                .then(function (res) {
+                    callback(res);
+                })
+        }
+
+        /**
+         * Function check input
+         */
+        function checkError() {
+            var errMsg;
+            var valid = null;
+            var rs = {
+                "result": false,
+                "errorMsg": ''
+            };
+            //Check login account
+            valid = lv.Validate(scope.entity.login_account);
+            rs.result = valid.isLoginAccount();
+            rs.errorMsg = rs.result === false ? "" : "${get_res('error_account_login_null_or_whitespace','Tài khoản đăng nhập không được để trống')}" + "\n";
+            if(rs.result === true)
+                return rs;
+            //Check display name
+            valid = lv.Validate(scope.entity.display_name);
+            rs.result = valid.isNullOrWhiteSpace();
+            rs.errorMsg = rs.result === false ? "" : "${get_res('error_display_name_null_or_whitespace','Tên hiển thị không được để trống')}" + "\n";
+            if(rs.result === true)
+                return rs;
+            //Check nhóm người dùng
+            valid = lv.Validate(scope.entity.role_code);
+            rs.result = valid.isNullOrWhiteSpace();
+            rs.errorMsg = rs.result === false ? "" : "${get_res('error_role_code_null_or_whitespace','Nhóm người dùng không được để trống')}" + "\n";
+            if(rs.result === true)
+                return rs;
+            //Check email
+            valid = lv.Validate(scope.entity.email);
+            rs.result = valid.isEmail();
+            rs.errorMsg = rs.result === true ? "" : "${get_res('error_email_null_or_whitespace','Email không hợp lệ')}" + "\n";
+            if(rs.result === false){
+                rs.result = true;
+                return rs;
+            }else{
+                rs.result = false;
+            }
+            //Check password
+            if(scope.__mode == 1 || (scope.__mode != 1 && scope.entity.change_password == true)){
+                if(scope.entity.password && scope.entity.repassword){
+                    if(scope.entity.password == scope.entity.repassword){
+                        var rsCheckPass = checkPassword(scope.entity.password);
+                        rs.result = rsCheckPass.result;
+                        rs.errorMsg = rsCheckPass.errorMsg;
+                    }else{
+                        rs.result = true;
+                        rs.errorMsg = "${get_res('not_match_password','Mật khẩu nhập lại chưa khớp')}" + "\n";
+                    }
+                }
+                else{
+                    rs.result = true;
+                    rs.errorMsg = "${get_res('error_password_null_or_whitespace','Mật khẩu không hợp lệ')}" + "\n";
+                }
+            }
+            
+            return rs;
+        }
+
+        function checkPassword(password) {
+            var accountConfig = scope.$root.systemConfig;
+            var rs = {
+                "result": false,
+                "errorMsg": ''
+            };
+
+            //Check min_len
+            if (accountConfig.apply_minLength === true) {
+                if (password.length < accountConfig.min_len) {
+                    rs.result = true;
+                    rs.errorMsg += "${get_res('error_password_min_len','Độ dài tối thiểu của mật khẩu là')}" + " " + accountConfig.min_len + '\n';
+                    return rs;
+                }
+            }
+
+            //Check max_len
+            if (accountConfig.apply_maxLength === true) {
+                if (password.length > accountConfig.max_len) {
+                    rs.result = true;
+                    rs.errorMsg += "${get_res('error_password_max_len','Độ dài tối đa của mật khẩu là')}" + " " + accountConfig.max_len + '\n';
+                    return rs;
+                }
+            }
+
+            //Check cho phép password chứa user login
+            if (accountConfig.not_user_in_password === true) {
+                if (password.toLowerCase().includes(scope.entity.login_account.toLowerCase())) {
+                    rs.result = true;
+                    rs.errorMsg += "${get_res('error_password_least','Mật khẩu chỉ có thể là số')}" + '\n';
+                    return rs;
+                }
+            }
+            //Check uppercase
+            if (accountConfig.is_has_upper_char === true) {
+                if ((password.match(/[A-Z]/g) || []).length < accountConfig.num_of_upper) {
+                    rs.result = true;
+                    rs.errorMsg += "${get_res('error_password_max_len','Mật khẩu phải ít nhất')}" + " " + accountConfig.num_of_upper + " kí tự viết thường" + '\n';
+                    return rs;
+                }
+            }
+
+            //Check lower
+            if (accountConfig.is_has_lower_char === true) {
+                if ((password.match(/[A-Z]/g) || []).length < accountConfig.num_of_lower) {
+                    rs.result = true;
+                    rs.errorMsg += "${get_res('error_password_max_len','Mật khẩu phải ít nhất')}" + " " + accountConfig.num_of_lower + " kí tự viết thường" + '\n';
+                    return rs;
+                }
+            }
+
+            //Check symbol
+            if (accountConfig.is_has_symbols === true) {
+                var numNormalCharacter = (password.match(/[A-Z-a-z-0-9]/g) || []).length;
+                var numSymbols = password.length - numNormalCharacter;
+                if (numSymbols < accountConfig.num_of_symbol) {
+                    rs.result = true;
+                    rs.errorMsg += "${get_res('error_password_least','Mật khẩu phải ít nhất')}" + " " + accountConfig.num_of_symbol + "kí tự đặc biệt" + '\n';
+                    return rs;
+                }
+            }
+
+                return rs;
+        }
+
+        function reloadData() {
+            var tableConfig = scope.$parent.$$tableConfig;
+            scope.$parent._tableData(tableConfig.iPage,
+            tableConfig.iPageLength, tableConfig.orderBy,
+            tableConfig.searchText, tableConfig.fnReloadData);
+        }
+
+        function beforeCallToServer() {
+            if (!scope.entity.hasOwnProperty("manlevel_from"))
+                scope.entity.manlevel_from = null;
+            if (!scope.entity.hasOwnProperty("manlevel_to"))
+                scope.entity.manlevel_to = null;
+            if (!scope.entity.hasOwnProperty("is_system") || !scope.entity.is_system)
+                scope.entity.is_system = false;
+            if (!scope.entity.hasOwnProperty("never_expire") || !scope.entity.is_system)
+                scope.entity.never_expire = false;
+            if (!scope.entity.hasOwnProperty("change_password") || !scope.entity.is_system)
+                scope.entity.change_password = false;
+            scope.$applyAsync();
+        }
+
+        function afterCallToServer() {
+            scope.entity.is_system = false;
+            scope.entity.never_expire = false;
+            scope.entity.change_password = false;
+        }
+
+        function getUrl() {
+            return scope.__mode == 1 || scope.__mode == 3 ? "${get_api_key('app_main.api.auth_user/insert')}" /*Mode 1: Tạo mới*/
+                    : "${get_api_key('app_main.api.auth_user/update')}" /*Mode 2: Cập nhật*/
+        }
+
+        function _comboboxData() {
+            services.api("${get_api_key('app_main.api.common/get_dropdown_list')}")
+                .data({
+                    ////parameter at here
+                    //"collection": "AD_Roles", //Tên collection
+                    //"column": ["role_code", "role_name"], //cột 1 value, cột 2 caption
+                    //"where": {
+                    //    "column": ["role_code", "stop"],
+                    //    "operator": "role_code == @role_code and stop == @stop",
+                    //    "value": {"@role_code": "nnd1", "@stop" : true}
+                    //}, //điều kiện where vd: "where": "dd_code = 1"
+                    //"sort": { "role_name": 1 }, //Sort trị 1 hoặc -1
+                    //"key":"AC"
+                    cbb: "817623876128376-123-123y1823"
+                })
+                .done()
+                .then(function (res) {
+                    scope.cbbAd_Roles = res.data;
+                    scope.$applyAsync();
+                })
+        }
+        _comboboxData();
+    
+        function __init__() { };
     });
 </script>

@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from bson import ObjectId
 import models
+from Query import DataAccessDomain
 import datetime
 
 def get_list(args):
@@ -23,7 +24,7 @@ def get_list_with_searchtext(args):
 
     pageIndex = (lambda pIndex: pIndex if pIndex != None else 0)(pageIndex)
     pageSize = (lambda pSize: pSize if pSize != None else 20)(pageSize)
-
+    ret=DataAccessDomain.data_access_domain().get_list()
     items = models.HCSSYS_DataDomain().aggregate().project(
             dd_code = 1,
             dd_name = 1,

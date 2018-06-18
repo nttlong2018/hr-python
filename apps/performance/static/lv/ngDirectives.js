@@ -434,7 +434,6 @@ mdl.directive("cTemplate", ["$compile", function ($compile) {
         if (scripts && (scripts.length > 0)) {
             for (var i = 0; i < scripts.length; i++) {
                 try {
-                    //debugger;
                     var fn = Function("var ret=" + scripts[i] + ";return ret")();
                     fn(subScope);
                 }

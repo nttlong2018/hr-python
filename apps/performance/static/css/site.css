@@ -1434,39 +1434,46 @@ html {
 }
 /*Confirm Dialog*/
 #myConfirmModal .modal-dialog,
-#myMessageModal .modal-dialog {
+#myMessageModal .modal-dialog,
+#myErrorModal .modal-dialog {
   width: 35%;
   min-width: 30%;
   top: 25vh;
 }
 #myConfirmModal .modal-dialog .modal-header,
-#myMessageModal .modal-dialog .modal-header {
+#myMessageModal .modal-dialog .modal-header,
+#myErrorModal .modal-dialog .modal-header {
   background-color: #48503C;
   padding: 10px;
   border-radius: unset;
 }
 #myConfirmModal .modal-dialog .modal-header h4,
-#myMessageModal .modal-dialog .modal-header h4 {
+#myMessageModal .modal-dialog .modal-header h4,
+#myErrorModal .modal-dialog .modal-header h4 {
   color: white;
   font-weight: 400;
   text-align: center;
 }
 #myConfirmModal .modal-dialog .modal-header h4 button,
-#myMessageModal .modal-dialog .modal-header h4 button {
+#myMessageModal .modal-dialog .modal-header h4 button,
+#myErrorModal .modal-dialog .modal-header h4 button {
   color: white;
   padding-top: 5px;
 }
 #myConfirmModal .modal-dialog .modal-header h4 button i,
-#myMessageModal .modal-dialog .modal-header h4 button i {
+#myMessageModal .modal-dialog .modal-header h4 button i,
+#myErrorModal .modal-dialog .modal-header h4 button i {
   padding-top: 9px;
 }
 #myConfirmModal .modal-dialog .modal-header h4 img,
-#myMessageModal .modal-dialog .modal-header h4 img {
+#myMessageModal .modal-dialog .modal-header h4 img,
+#myErrorModal .modal-dialog .modal-header h4 img {
   display: unset !important;
   height: 30px;
 }
 #myConfirmModal .modal-dialog .modal-header h4 #title,
-#myMessageModal .modal-dialog .modal-header h4 #title {
+#myMessageModal .modal-dialog .modal-header h4 #title,
+#myErrorModal .modal-dialog .modal-header h4 #title {
   display: inline;
   font-size: 1rem;
   line-height: 1rem;
@@ -1475,19 +1482,22 @@ html {
   border-left: unset;
 }
 #myConfirmModal .modal-dialog .modal-body,
-#myMessageModal .modal-dialog .modal-body {
+#myMessageModal .modal-dialog .modal-body,
+#myErrorModal .modal-dialog .modal-body {
   padding: 15px 15px 15px 15px;
   min-height: 100px;
   height: unset;
   white-space: pre-line;
 }
 #myConfirmModal .modal-dialog .modal-body span,
-#myMessageModal .modal-dialog .modal-body span {
+#myMessageModal .modal-dialog .modal-body span,
+#myErrorModal .modal-dialog .modal-body span {
   color: #666;
   font-weight: 400;
 }
 #myConfirmModal .modal-dialog .modal-footer,
-#myMessageModal .modal-dialog .modal-footer {
+#myMessageModal .modal-dialog .modal-footer,
+#myErrorModal .modal-dialog .modal-footer {
   background-color: #3E464A;
 }
 #myConfirmModal:before {
@@ -1840,6 +1850,55 @@ table.dataTable tbody th.select-checkbox:after {
   border: 1px dotted #d0d0d0;
   padding-bottom: unset;
   line-height: 14px;
+}
+.lv-form-import {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 2000;
+}
+.lv-form-import .form-container {
+  position: absolute;
+  height: 250px;
+  width: 500px;
+  margin: -100px 0 0 -200px;
+  top: 50%;
+  left: 50%;
+  background: #fff;
+  border: 1px solid #666;
+}
+.lv-form-import .form-container .form-header {
+  height: 48px;
+  background: rgba(54, 62, 67, 0.96);
+  padding: 0 16px;
+  line-height: 48px;
+  font-size: 14px;
+  color: #fff;
+}
+.lv-form-import .form-container .form-content {
+  height: calc(100% - 48px - 48px);
+  padding: 16px;
+}
+.lv-form-import .form-container .form-footer {
+  height: 48px;
+  background: rgba(54, 62, 67, 0.96);
+  padding: 2px;
+  font-size: 14px;
+  color: #fff;
+  text-align: right;
+}
+.lv-form-import .form-container .form-footer button {
+  height: 100%;
+  padding: 0 10px;
+  background: transparent;
+  border: 1px solid transparent;
+  outline: none;
+}
+.lv-form-import .form-container .form-footer button:hover {
+  border: 1px dotted #fff;
 }
 div.mask {
   background-image: url("images/Spinner-1s-68px.svg");

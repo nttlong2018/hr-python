@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from bson import ObjectId
 import models
 import datetime
@@ -46,3 +47,69 @@ def get_config(args):
     except Exception as ex:
         logger.debug(ex)
         raise(ex)
+
+def get_dropdown_list(args):
+    #Hàm get dropdown list theo tên collection và tên cột
+    try:
+        global __collectionName 
+        global __collection 
+
+        ret = {}
+        ret_list = []
+
+        if('collection' in args['data'].keys()):
+
+            __collectionName = args['data']['collection']
+            try:
+                __collection= getattr(models, __collectionName)()
+            except Exception as ex:
+                return {"error":"Not found collection name"}
+
+            column = (lambda data: data["column"] if data.has_key("column") else {})(args['data'])
+            where = (lambda data: data["where"] if data.has_key("where") else "")(args['data'])
+            sort = (lambda data: data["sort"] if data.has_key("where") else {})(args['data'])
+
+            if(len(column) != 2):
+                raise(Exception("too much columns are declared"))
+
+            if column != {}:
+                try:
+                    dict_column = dict()
+                    for x in column:
+                        dict_column.update({x:1})
+                    ret = __collection.aggregate().project(dict_column)
+                except Exception as ex:
+                    raise(Exception("column not exist in collection"))
+            else:
+                raise(Exception("Not found column name"))
+
+            if where != "":
+                try:
+                    ret.where(where)
+                except Exception as ex:
+                    raise(Exception("syntax where error"))
+
+            if sort != {}:
+                try:
+                    ret.sort(sort)
+                except Exception as ex:
+                    raise(Exception("syntax sort error"))
+
+            data = ret.get_list()
+
+            for x in data:
+                ret_list.append(
+                    dict(
+                        value = x[column[0]],
+                        caption = x[column[1]],
+                        custom = x[column[1]]
+                        )
+                    )
+
+
+            return {"data" : ret_list, "error": None}
+        raise(Exception("Not found collection name"))
+
+    except Exception as ex:
+        logger.debug(ex)
+        return {"data": None, "error": ex.message}
