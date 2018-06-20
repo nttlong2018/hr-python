@@ -1222,8 +1222,10 @@ class AGGREGATE():
         _tmp_pipe = [x for x in self._pipe]
         _count_pipe=[x for x in self._pipe if self._pipe.index(x)<self._pipe.__len__() and x.keys()[0]!="$sort"]
         self._pipe = _count_pipe
+        _sel_fields= self._selected_fields
         total_items=self.count("total_items").get_item()
         self._pipe=_tmp_pipe
+        self._selected_fields=_sel_fields
         items=self.skip(page_index*page_size).limit(page_size).get_list()
         return dict(
             page_size=page_size,
