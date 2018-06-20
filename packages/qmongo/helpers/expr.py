@@ -1,6 +1,13 @@
+"""
+Before review this document, please refer below tearm:
+1- mongodb tree expression: The object that mongodb can understan see this link:https://docs.mongodb.com/manual/reference/operator/query/
+2- mongodb aggregate pipeline: the list of operator in which instruct mongodb process and get data, see: https://docs.mongodb.com/manual/core/aggregation-pipeline/
+
+"""
 import _ast
 import re
 import inspect
+from datetime import  datetime
 _operators=[
     dict(op="$eq",fn=_ast.Eq),
     dict(op="$ne",fn=_ast.NotEq),
@@ -17,10 +24,18 @@ _operators=[
     dict(op="$or",fn=_ast.Or),
     dict(op="$not",fn=_ast.Not),
     dict(op="$in",fn=_ast.In),
-    dict(op="$notin",fn=_ast.NotIn)
+    dict(op="$notin",fn=_ast.NotIn)# lis of operator will compile
+    #this is  a mapping list from python operator and mongodb operator
+
 ]
-_avg_funcs="sum,avg,first,last,floor,min,max,push,addToSet,meta"
+_avg_funcs="sum,avg,first,last,floor,min,max,push,addToSet,meta" #aggregate function will be compile
+
 def get_comparators(cp):
+    """
+    convert comparator into dict
+    :param cp:
+    :return:
+    """
     if cp._fields.count("elts")>0:
         if type(cp.elts[0]) is _ast.Num:
             return {
@@ -37,6 +52,12 @@ def get_comparators(cp):
 
     raise Exception("Invalid comparators {0}".format(cp))
 def get_left(cp,*params):
+    """
+    get left branc of expression tree
+    :param cp:
+    :param params:
+    :return:
+    """
     ret={}
     if type(cp) is _ast.Name:
         return {
@@ -139,6 +160,12 @@ def get_left(cp,*params):
 
     return ret;
 def get_right(cp,*params):
+    """
+    Get right brance of expression tree
+    :param cp:
+    :param params:
+    :return:
+    """
     if type(cp) is list:
         return "_"
     ret={}
@@ -252,11 +279,22 @@ def get_right(cp,*params):
 
     return ret
 def find_operator(op):
+    """
+    Find is python operator in map at _operators on the top this file
+    :param op:
+    :return:
+    """
     for x in _operators:
         if type(op) is x["fn"]:
             return x["op"]
     raise Exception("Invalid comparators {0}".format(op))
 def vert_expr(str,*params):
+    """
+    Parameterize expression
+    :param str:
+    :param params:
+    :return:
+    """
     ret=str
     index=0
     for p in params:
@@ -264,6 +302,13 @@ def vert_expr(str,*params):
         index=index+1
     return ret
 def get_tree(expr,*params,**kwargs):
+    """
+    get full tree of expression
+    :param expr:
+    :param params:
+    :param kwargs:
+    :return:dict of tree expression including {op:<operator>, left:<left branch>, right:<right branch>}
+    """
     while type(params) is tuple and params.__len__()>0 and type(params[0]) is dict:
         params=params[0]
     if type(params) is tuple and params.__len__()>0 and type(params[0]) is dict:
@@ -375,6 +420,12 @@ def get_tree(expr,*params,**kwargs):
 
     return ret
 def get_expr(fx,*params):
+    """
+    Convert tree of expression into mongodb aggregate pipe
+    :param fx:
+    :param params:
+    :return:
+    """
     while type(params) is tuple and params.__len__()>0 and type(params[0]) is tuple:
         params=params[0]
     while type(params) is tuple and params.__len__()>0 and type(params[0]) is dict:
@@ -574,6 +625,12 @@ def get_expr(fx,*params):
             fx["id"]:[fx["params"]]
         }
 def get_calc_exprt_boolean_expression(fx,*params):
+    """
+    Convert python tree expression into mongodb filter expression
+    :param fx:
+    :param params:
+    :return:
+    """
     p=get_right(fx,*params)
     if fx._fields.count("left")>0 and type(fx.left) is _ast.Call:
         field = get_left(fx.left.args[0])
@@ -610,6 +667,12 @@ def get_calc_exprt_boolean_expression(fx,*params):
     if type(fx) is _ast.Name:
         return get_left(fx,*params)
 def extract_json(fx,*params):
+    """
+    Convert pythong tree expression into mongodb selector in $project of mongodb aggregate
+    :param fx:
+    :param params:
+    :return:
+    """
     if type(fx) is _ast.Attribute:
         return "$"+get_left(fx)
     if type(fx) is _ast.Name:
@@ -705,12 +768,31 @@ def extract_json(fx,*params):
 
         }
 def get_calc_expr_boolean_expression_result(fx,*params):
+    """Apply parameters in expression to real value
+    Why this is important?
+    the fx parameter is a dict of tree expression include operator, left and right but the right brance maybe contains parameter
+    This function will fetch parameters in to fx
+    """
     p = get_left(fx,*params)
     if p["type"]=="const":
         return p["value"]
     if p["type"]=="function" and p["id"]=="get_params":
         return params[p["value"]]
 def get_calc_expr(expr,*params,**kwargs):
+    # type: (str,bool) -> dict
+    # type: (str,str) -> dict
+    # type: (str,unicode) -> dict
+    # type: (str,datetime) -> dict
+    # type: (str,list) -> dict
+    # type: (str,tuple) -> dict
+    # type: (str,dict) -> dict
+    """
+    Conver text expression with parameters into mongodb json expression
+    :param expr:
+    :param params:
+    :param kwargs:
+    :return:mongodb json experession
+    """
     if expr==1:
         return expr
     if type(params) is tuple and params.__len__() > 0 and type(params[0]) is dict:
@@ -742,6 +824,12 @@ def get_calc_expr(expr,*params,**kwargs):
     cmp = compile(expr, '<unknown>', 'exec', 1024).body.pop()
     return extract_json(cmp.value,*params)
 def get_calc_get_param(fx,*params):
+    """
+    Convert python tree expression into mongodb tree expression
+    :param fx:
+    :param params:
+    :return:
+    """
     if type(fx) is _ast.Name:
         return "$"+get_calc_get_names(fx)
     if type(fx) is _ast.Str:
@@ -754,6 +842,11 @@ def get_calc_get_param(fx,*params):
 def get_calc_get_names(fx):
     return fx.id
 def verify_match(fx):
+    """
+    Check is fx a logical expresion
+    :param fx:
+    :return:
+    """
     if fx=={}:
         return "The left side of the expression is not a field of the document. " \
                "It look like your expression is not a logical expression"
@@ -779,6 +872,13 @@ def verify_match(fx):
     else:
         return verify_match(fx["left"])
 def parse_expression_to_json_expression(expression,*params,**kwargs):
+    """
+    Convert text expression into mongodb tree expression
+    :param expression:
+    :param params:
+    :param kwargs:
+    :return:
+    """
     expr_tree=get_tree(expression,*params,**kwargs)
     #msg=verify_match(expr_tree)
     #if msg!=None:

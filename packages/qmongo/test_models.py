@@ -7,9 +7,11 @@ helpers.define_model(
     "base",
     [["Code"]],
     dict(
-        Code=helpers.create_field("text",True),
+        Code=helpers.create_field("b"),
+        F=helpers.create_field("X",False)
     )
 )
+helpers.filter()
 def on_before_insert(data):
 
     data["ParentCode"]=None
@@ -39,6 +41,8 @@ db=database.connect(
 #     Code="A01"
 # )
 ret=db.collection("departments")
+x=ret.aggregate()
+
 ret=ret.update({
     "Code":"C1"
 },"paths=={0}","a01")

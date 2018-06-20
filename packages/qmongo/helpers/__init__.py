@@ -11,23 +11,52 @@ _model_index_={}
 _model_caching_params={}
 _model_events={}
 class data_field():
+    """
+    Create data field for modle
+    """
     data_type="text"
     is_require = False
     details=None
     def __init__(self,data_type="text",is_require=False,detail=None):
+        # type: (str, bool, dict) -> object
+        """
+        Create data field for model
+        :param data_type:field type default value is 'text'. The orther value must be 'bool','number','list' or 'object'
+        :param is_require:
+        :param detail:
+        """
         self.is_require=is_require
         self.data_type=data_type
         self.details=detail
 
 def filter(expression,*args,**kwargs):
+    # type: (str, tuple, dict) -> filter()
+    # type: (str,str) -> filter_expression
+    # type: (str,bool) -> filter_expression
+    # type: (str,int) -> filter_expression
+    """
+    Create a filter for mongodb from expression
+    :param expression: Filter expression
+    :param args: primitive value or dict or tuple
+    :param kwargs:
+    :return:filter_expression will call by get_filter
+    """
+
     ret = filter_expression(expression,*args,**kwargs)
     return ret
-def aggregate():
-    ret=aggregate_expression()
-    return ret
-def find(*args,**kwargs):
-    pass
+# def aggregate():
+#     ret=aggregate_expression()
+#     return ret
+# def find(*args,**kwargs):
+#     pass
 def unwind_data(data,prefix=None):
+    # type: (dict,str)->dict
+    """
+    convert dict with nested field into none nested filed
+    :param data:dict to convert
+    :param prefix:
+    :return:dict
+    """
     ret={}
     for key in data.keys():
         if type(data[key]) is dict:
@@ -89,6 +118,15 @@ def unwind_data(data,prefix=None):
 
     return ret
 def define_model(_name,keys=None,*args,**kwargs):
+    # type: (str,list,tuple)->query_validator.validator
+    """
+    Create model
+    :param _name: model name
+    :param keys: list of unique key of model exp:[['a','b'],['c','d']]
+    :param args: dict descride model example: dict(code=helpers.create_field("code",True),..)
+    :param kwargs:
+    :return:
+    """
     global _model_index_
     global _model_caching_params
     name=_name
@@ -124,6 +162,16 @@ def define_model(_name,keys=None,*args,**kwargs):
         })
     return _model_caching_[name]
 def extent_model(name,from_name,keys=None,*args,**kwargs):
+    # type: (str,str,list,dict)->query_validator.validator
+    """
+    Create a new model by extent an existing model
+    :param name:new model name
+    :param from_name:the name of existing model that this model will be extend
+    :param keys:the unique key, this model will inherit unique key of base model
+    :param args:dict describe of extent fields
+    :param kwargs:
+    :return:
+    """
     source_model=get_model(from_name)
     source_model_params=_model_caching_params[from_name]
     if type(args) is tuple and args.__len__()>0:
@@ -154,8 +202,19 @@ def extent_model(name,from_name,keys=None,*args,**kwargs):
     model=define_model(name,keys,*args,**kwargs)
 
 def get_keys_of_model(name):
+    """
+    get list of key field of model
+    :param name:
+    :return:
+    """
     return _model_index_[name]
 def get_model(name):
+    # type: (str)->query_validator.validator
+    """
+    get model by model name
+    :param name:
+    :return:
+    """
     if not _model_caching_.has_key(name):
         raise (Exception("It look like you forgot create model for '{0}'\n"
                          "How to define a model?\n"
@@ -167,10 +226,22 @@ def get_model(name):
                          "\tor field name =dict(neasted field),..,\n"
                          "\tfield name n =helpers.create_field(""text|bool|numeric|date|list"",require or not))".format(name)))
     return _model_caching_[name]
-
 def create_field(data_type="text",is_require=False,detail=None):
+    # type: (str, bool, dict) -> data_field
+    """
+    :param=data_type: type of model field default value is 'text'. The orther value must be 'bool','number','list' or 'object'
+    :param=is_require: is model field require? default value is 'False'
+    :param=detail: detail definition of this feild if it is a list type model field
+    :return= data_field object
+    """
     return data_field(data_type,is_require,detail)
 def extract_data(data):
+    # type: (dict) -> dict
+    """
+    convert data dict into a dict including key and value with primitive value, example: {a:{b:1,c:{d:1}}}=>{{'a.b':1},{'a.b.c.d';1}}
+    :param data:
+    :return:
+    """
     ret={}
     for key in data.keys():
         if key.find(".")>-1:
@@ -196,6 +267,12 @@ def extract_data(data):
             })
     return ret
 def events(name):
+    # type: (str) -> list
+    """
+    Get list of events of model by model name
+    :param name: Model name
+    :return: list of function has been declare in model
+    """
     if _model_events.has_key(name):
         return _model_events[name]
     else:

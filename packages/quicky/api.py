@@ -1,3 +1,6 @@
+"""
+This module create api http request handler
+"""
 from django.views.decorators.http import require_http_methods
 from django.views.decorators.csrf import csrf_exempt
 import uuid
@@ -25,6 +28,11 @@ _coll=None
 @csrf_exempt
 @view_template.template("call_api.html")
 def call(request):
+    """
+    Call request handler
+    :param request:
+    :return:
+    """
     try:
         user = request.user
         #if user.is_anonymous():

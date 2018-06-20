@@ -1,0 +1,372 @@
+lv.auth_user.find (0.00) {'username': 'sys'}
+lv.django_session.find (0.00) {'_id': 'b6gsgj1ca9l5f999nzb4p1v36mvzapl6', 'expire_date': {'$gt': datetime.datetime(2018, 6, 18, 9, 6, 53, 987991, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+Not Found: /favicon.ico
+lv.django_session.find (0.00) {'_id': 'b6gsgj1ca9l5f999nzb4p1v36mvzapl6', 'expire_date': {'$gt': datetime.datetime(2018, 6, 18, 9, 7, 0, 985747, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+Not Found: /lv/performance/{{$root.logo}}
+lv.django_session.find (0.00) {'_id': 'b6gsgj1ca9l5f999nzb4p1v36mvzapl6', 'expire_date': {'$gt': datetime.datetime(2018, 6, 18, 9, 7, 1, 600345, tzinfo=<UTC>)}}
+lv.django_session.find (0.00) {'_id': 'b6gsgj1ca9l5f999nzb4p1v36mvzapl6', 'expire_date': {'$gt': datetime.datetime(2018, 6, 18, 9, 7, 1, 603609, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.auth_user.find (0.01) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+Not Found: /lv/performance/{{imageSrc}}
+lv.django_session.find (0.00) {'_id': 'b6gsgj1ca9l5f999nzb4p1v36mvzapl6', 'expire_date': {'$gt': datetime.datetime(2018, 6, 18, 9, 7, 3, 853484, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': 'b6gsgj1ca9l5f999nzb4p1v36mvzapl6', 'expire_date': {'$gt': datetime.datetime(2018, 6, 18, 9, 7, 3, 897791, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+Not Found: /lv/resource/images/write-gray.d619ac68f24dadc56c7bba86f25030f9.svg
+Not Found: /lv/resource/images/grid.76b8bdf2ca2dcc816dddde728d670fa6.svg
+Not Found: /sites/all/themes/jasperforge/images/search_sprite.png
+Not Found: /sites/all/themes/jasperforge/images/community_social_sprite.png
+Not Found: /lv/performance/{{imageSrc}}
+lv.django_session.find (0.00) {'_id': 'b6gsgj1ca9l5f999nzb4p1v36mvzapl6', 'expire_date': {'$gt': datetime.datetime(2018, 6, 18, 9, 7, 15, 259035, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': 'b6gsgj1ca9l5f999nzb4p1v36mvzapl6', 'expire_date': {'$gt': datetime.datetime(2018, 6, 18, 9, 7, 15, 279050, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+Not Found: /lv/resource/images/grid.76b8bdf2ca2dcc816dddde728d670fa6.svg
+Not Found: /lv/resource/images/write-gray.d619ac68f24dadc56c7bba86f25030f9.svg
+Not Found: /sites/all/themes/jasperforge/images/search_sprite.png
+Not Found: /sites/all/themes/jasperforge/images/community_social_sprite.png
+Not Found: /lv/performance/{{imageSrc}}
+lv.django_session.find (0.00) {'_id': 'b6gsgj1ca9l5f999nzb4p1v36mvzapl6', 'expire_date': {'$gt': datetime.datetime(2018, 6, 18, 9, 7, 19, 289211, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': 'b6gsgj1ca9l5f999nzb4p1v36mvzapl6', 'expire_date': {'$gt': datetime.datetime(2018, 6, 18, 9, 7, 19, 305980, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+Not Found: /lv/resource/images/grid.76b8bdf2ca2dcc816dddde728d670fa6.svg
+Not Found: /lv/resource/images/write-gray.d619ac68f24dadc56c7bba86f25030f9.svg
+Not Found: /sites/all/themes/jasperforge/images/community_social_sprite.png
+Not Found: /sites/all/themes/jasperforge/images/search_sprite.png
+lv.auth_user.find (0.00) {'username': 'sys'}
+lv.django_session.find (0.00) {'_id': 'b6gsgj1ca9l5f999nzb4p1v36mvzapl6', 'expire_date': {'$gt': datetime.datetime(2018, 6, 18, 10, 3, 3, 400403, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': 'b6gsgj1ca9l5f999nzb4p1v36mvzapl6', 'expire_date': {'$gt': datetime.datetime(2018, 6, 18, 10, 3, 8, 247735, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+Not Found: /lv/performance/{{$root.logo}}
+lv.django_session.find (0.00) {'_id': 'b6gsgj1ca9l5f999nzb4p1v36mvzapl6', 'expire_date': {'$gt': datetime.datetime(2018, 6, 18, 10, 3, 8, 772368, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': 'b6gsgj1ca9l5f999nzb4p1v36mvzapl6', 'expire_date': {'$gt': datetime.datetime(2018, 6, 18, 10, 3, 8, 774645, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+Not Found: /lv/performance/{{imageSrc}}
+lv.django_session.find (0.00) {'_id': 'b6gsgj1ca9l5f999nzb4p1v36mvzapl6', 'expire_date': {'$gt': datetime.datetime(2018, 6, 18, 10, 3, 11, 484364, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': 'b6gsgj1ca9l5f999nzb4p1v36mvzapl6', 'expire_date': {'$gt': datetime.datetime(2018, 6, 18, 10, 3, 11, 531468, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+Not Found: /lv/resource/images/grid.76b8bdf2ca2dcc816dddde728d670fa6.svg
+Not Found: /lv/resource/images/write-gray.d619ac68f24dadc56c7bba86f25030f9.svg
+Not Found: /sites/all/themes/jasperforge/images/search_sprite.png
+Not Found: /sites/all/themes/jasperforge/images/community_social_sprite.png
+lv.django_session.find (0.00) {'_id': 'b6gsgj1ca9l5f999nzb4p1v36mvzapl6', 'expire_date': {'$gt': datetime.datetime(2018, 6, 18, 10, 3, 15, 530810, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+Not Found: /lv/performance/{{$root.logo}}
+lv.django_session.find (0.00) {'_id': 'b6gsgj1ca9l5f999nzb4p1v36mvzapl6', 'expire_date': {'$gt': datetime.datetime(2018, 6, 18, 10, 3, 15, 911780, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': 'b6gsgj1ca9l5f999nzb4p1v36mvzapl6', 'expire_date': {'$gt': datetime.datetime(2018, 6, 18, 10, 3, 15, 928923, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+Not Found: /lv/performance/{{imageSrc}}
+lv.django_session.find (0.00) {'_id': 'b6gsgj1ca9l5f999nzb4p1v36mvzapl6', 'expire_date': {'$gt': datetime.datetime(2018, 6, 18, 10, 3, 17, 826736, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': 'b6gsgj1ca9l5f999nzb4p1v36mvzapl6', 'expire_date': {'$gt': datetime.datetime(2018, 6, 18, 10, 3, 17, 855722, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+Not Found: /lv/resource/images/grid.76b8bdf2ca2dcc816dddde728d670fa6.svg
+Not Found: /lv/resource/images/write-gray.d619ac68f24dadc56c7bba86f25030f9.svg
+Not Found: /sites/all/themes/jasperforge/images/search_sprite.png
+Not Found: /sites/all/themes/jasperforge/images/community_social_sprite.png
+lv.django_session.find (0.00) {'_id': 'b6gsgj1ca9l5f999nzb4p1v36mvzapl6', 'expire_date': {'$gt': datetime.datetime(2018, 6, 18, 10, 3, 22, 762123, tzinfo=<UTC>)}}
+lv.django_session.find (0.00) {'_id': 'b6gsgj1ca9l5f999nzb4p1v36mvzapl6', 'expire_date': {'$gt': datetime.datetime(2018, 6, 18, 10, 3, 22, 766497, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': 'b6gsgj1ca9l5f999nzb4p1v36mvzapl6', 'expire_date': {'$gt': datetime.datetime(2018, 6, 18, 10, 3, 25, 38225, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+Not Found: /lv/performance/{{$root.logo}}
+lv.django_session.find (0.01) {'_id': 'b6gsgj1ca9l5f999nzb4p1v36mvzapl6', 'expire_date': {'$gt': datetime.datetime(2018, 6, 18, 10, 3, 25, 367369, tzinfo=<UTC>)}}
+lv.django_session.find (0.01) {'_id': 'b6gsgj1ca9l5f999nzb4p1v36mvzapl6', 'expire_date': {'$gt': datetime.datetime(2018, 6, 18, 10, 3, 25, 373899, tzinfo=<UTC>)}}
+lv.auth_user.find (0.01) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': 'b6gsgj1ca9l5f999nzb4p1v36mvzapl6', 'expire_date': {'$gt': datetime.datetime(2018, 6, 18, 10, 3, 26, 304403, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+Not Found: /lv/performance/{{$root.logo}}
+lv.django_session.find (0.00) {'_id': 'b6gsgj1ca9l5f999nzb4p1v36mvzapl6', 'expire_date': {'$gt': datetime.datetime(2018, 6, 18, 10, 3, 26, 625996, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.01) {'_id': 'b6gsgj1ca9l5f999nzb4p1v36mvzapl6', 'expire_date': {'$gt': datetime.datetime(2018, 6, 18, 10, 3, 26, 637231, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': 'b6gsgj1ca9l5f999nzb4p1v36mvzapl6', 'expire_date': {'$gt': datetime.datetime(2018, 6, 18, 10, 3, 27, 132776, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+Not Found: /lv/performance/{{$root.logo}}
+lv.django_session.find (0.00) {'_id': 'b6gsgj1ca9l5f999nzb4p1v36mvzapl6', 'expire_date': {'$gt': datetime.datetime(2018, 6, 18, 10, 3, 27, 486287, tzinfo=<UTC>)}}
+lv.django_session.find (0.00) {'_id': 'b6gsgj1ca9l5f999nzb4p1v36mvzapl6', 'expire_date': {'$gt': datetime.datetime(2018, 6, 18, 10, 3, 27, 487958, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': 'b6gsgj1ca9l5f999nzb4p1v36mvzapl6', 'expire_date': {'$gt': datetime.datetime(2018, 6, 18, 10, 3, 27, 967193, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+Not Found: /lv/performance/{{$root.logo}}
+lv.django_session.find (0.00) {'_id': 'b6gsgj1ca9l5f999nzb4p1v36mvzapl6', 'expire_date': {'$gt': datetime.datetime(2018, 6, 18, 10, 3, 28, 353760, tzinfo=<UTC>)}}
+lv.auth_user.find (0.01) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.01) {'_id': 'b6gsgj1ca9l5f999nzb4p1v36mvzapl6', 'expire_date': {'$gt': datetime.datetime(2018, 6, 18, 10, 3, 28, 356666, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': 'b6gsgj1ca9l5f999nzb4p1v36mvzapl6', 'expire_date': {'$gt': datetime.datetime(2018, 6, 18, 10, 3, 30, 463678, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+Not Found: /lv/performance/{{$root.logo}}
+lv.django_session.find (0.01) {'_id': 'b6gsgj1ca9l5f999nzb4p1v36mvzapl6', 'expire_date': {'$gt': datetime.datetime(2018, 6, 18, 10, 3, 30, 954234, tzinfo=<UTC>)}}
+lv.django_session.find (0.01) {'_id': 'b6gsgj1ca9l5f999nzb4p1v36mvzapl6', 'expire_date': {'$gt': datetime.datetime(2018, 6, 18, 10, 3, 30, 958213, tzinfo=<UTC>)}}
+lv.auth_user.find (0.01) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.auth_user.find (0.01) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+Not Found: /lv/performance/{{imageSrc}}
+Not Found: /lv/performance/{{imageSrc}}
+lv.django_session.find (0.00) {'_id': 'b6gsgj1ca9l5f999nzb4p1v36mvzapl6', 'expire_date': {'$gt': datetime.datetime(2018, 6, 18, 10, 3, 38, 374837, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': 'b6gsgj1ca9l5f999nzb4p1v36mvzapl6', 'expire_date': {'$gt': datetime.datetime(2018, 6, 18, 10, 3, 38, 400959, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+Not Found: /lv/resource/images/grid.76b8bdf2ca2dcc816dddde728d670fa6.svg
+Not Found: /lv/resource/images/write-gray.d619ac68f24dadc56c7bba86f25030f9.svg
+Not Found: /sites/all/themes/jasperforge/images/search_sprite.png
+Not Found: /sites/all/themes/jasperforge/images/community_social_sprite.png
+lv.django_session.find (0.00) {'_id': 'b6gsgj1ca9l5f999nzb4p1v36mvzapl6', 'expire_date': {'$gt': datetime.datetime(2018, 6, 18, 10, 4, 25, 715263, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+Internal Server Error: /lv/performance/pages/permission/permission
+Traceback (most recent call last):
+  File "/home/hcsadmin/argo/packages/django/django/core/handlers/base.py", line 122, in get_response
+    raise e
+TemplateLookupException: Cant locate template for uri u'views/permission/permission.html'
+lv.django_session.find (0.00) {'_id': 'b6gsgj1ca9l5f999nzb4p1v36mvzapl6', 'expire_date': {'$gt': datetime.datetime(2018, 6, 18, 10, 4, 28, 308007, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': 'b6gsgj1ca9l5f999nzb4p1v36mvzapl6', 'expire_date': {'$gt': datetime.datetime(2018, 6, 18, 10, 4, 29, 946410, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': 'b6gsgj1ca9l5f999nzb4p1v36mvzapl6', 'expire_date': {'$gt': datetime.datetime(2018, 6, 18, 10, 4, 31, 166720, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+Internal Server Error: /lv/performance/pages/permission/permission
+Traceback (most recent call last):
+  File "/home/hcsadmin/argo/packages/django/django/core/handlers/base.py", line 122, in get_response
+    raise e
+TemplateLookupException: Cant locate template for uri u'views/permission/permission.html'
+lv.django_session.find (0.00) {'_id': 'b6gsgj1ca9l5f999nzb4p1v36mvzapl6', 'expire_date': {'$gt': datetime.datetime(2018, 6, 18, 10, 4, 33, 922282, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': 'b6gsgj1ca9l5f999nzb4p1v36mvzapl6', 'expire_date': {'$gt': datetime.datetime(2018, 6, 18, 10, 4, 33, 939284, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+Not Found: /lv/resource/images/grid.76b8bdf2ca2dcc816dddde728d670fa6.svg
+Not Found: /lv/resource/images/write-gray.d619ac68f24dadc56c7bba86f25030f9.svg
+Not Found: /sites/all/themes/jasperforge/images/search_sprite.png
+Not Found: /sites/all/themes/jasperforge/images/community_social_sprite.png
+lv.django_session.find (0.00) {'_id': 'b6gsgj1ca9l5f999nzb4p1v36mvzapl6', 'expire_date': {'$gt': datetime.datetime(2018, 6, 18, 10, 4, 36, 404451, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+Not Found: /lv/performance/{{$root.logo}}
+lv.django_session.find (0.00) {'_id': 'b6gsgj1ca9l5f999nzb4p1v36mvzapl6', 'expire_date': {'$gt': datetime.datetime(2018, 6, 18, 10, 4, 36, 853699, tzinfo=<UTC>)}}
+lv.django_session.find (0.01) {'_id': 'b6gsgj1ca9l5f999nzb4p1v36mvzapl6', 'expire_date': {'$gt': datetime.datetime(2018, 6, 18, 10, 4, 36, 850405, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+Not Found: /lv/performance/{{imageSrc}}
+lv.django_session.find (0.00) {'_id': 'b6gsgj1ca9l5f999nzb4p1v36mvzapl6', 'expire_date': {'$gt': datetime.datetime(2018, 6, 18, 10, 4, 36, 988731, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': 'b6gsgj1ca9l5f999nzb4p1v36mvzapl6', 'expire_date': {'$gt': datetime.datetime(2018, 6, 18, 10, 4, 37, 40871, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+Not Found: /lv/resource/images/write-gray.d619ac68f24dadc56c7bba86f25030f9.svg
+Not Found: /lv/resource/images/grid.76b8bdf2ca2dcc816dddde728d670fa6.svg
+Not Found: /sites/all/themes/jasperforge/images/search_sprite.png
+Not Found: /sites/all/themes/jasperforge/images/community_social_sprite.png
+lv.django_session.find (0.00) {'_id': 'b6gsgj1ca9l5f999nzb4p1v36mvzapl6', 'expire_date': {'$gt': datetime.datetime(2018, 6, 18, 10, 4, 38, 131071, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+Not Found: /lv/performance/{{$root.logo}}
+lv.django_session.find (0.00) {'_id': 'b6gsgj1ca9l5f999nzb4p1v36mvzapl6', 'expire_date': {'$gt': datetime.datetime(2018, 6, 18, 10, 4, 38, 503069, tzinfo=<UTC>)}}
+lv.django_session.find (0.02) {'_id': 'b6gsgj1ca9l5f999nzb4p1v36mvzapl6', 'expire_date': {'$gt': datetime.datetime(2018, 6, 18, 10, 4, 38, 508126, tzinfo=<UTC>)}}
+lv.auth_user.find (0.01) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+Not Found: /lv/performance/{{imageSrc}}
+lv.django_session.find (0.00) {'_id': 'b6gsgj1ca9l5f999nzb4p1v36mvzapl6', 'expire_date': {'$gt': datetime.datetime(2018, 6, 18, 10, 4, 38, 669795, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': 'b6gsgj1ca9l5f999nzb4p1v36mvzapl6', 'expire_date': {'$gt': datetime.datetime(2018, 6, 18, 10, 4, 38, 694937, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+Not Found: /lv/resource/images/grid.76b8bdf2ca2dcc816dddde728d670fa6.svg
+Not Found: /lv/resource/images/write-gray.d619ac68f24dadc56c7bba86f25030f9.svg
+Not Found: /sites/all/themes/jasperforge/images/search_sprite.png
+Not Found: /sites/all/themes/jasperforge/images/community_social_sprite.png
+lv.django_session.find (0.00) {'_id': 'b6gsgj1ca9l5f999nzb4p1v36mvzapl6', 'expire_date': {'$gt': datetime.datetime(2018, 6, 18, 10, 4, 39, 323052, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+Not Found: /lv/performance/{{$root.logo}}
+lv.django_session.find (0.00) {'_id': 'b6gsgj1ca9l5f999nzb4p1v36mvzapl6', 'expire_date': {'$gt': datetime.datetime(2018, 6, 18, 10, 4, 39, 739096, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': 'b6gsgj1ca9l5f999nzb4p1v36mvzapl6', 'expire_date': {'$gt': datetime.datetime(2018, 6, 18, 10, 4, 39, 742919, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+Not Found: /lv/performance/{{imageSrc}}
+lv.django_session.find (0.00) {'_id': 'b6gsgj1ca9l5f999nzb4p1v36mvzapl6', 'expire_date': {'$gt': datetime.datetime(2018, 6, 18, 10, 4, 39, 862020, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': 'b6gsgj1ca9l5f999nzb4p1v36mvzapl6', 'expire_date': {'$gt': datetime.datetime(2018, 6, 18, 10, 4, 39, 882503, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+Not Found: /lv/resource/images/grid.76b8bdf2ca2dcc816dddde728d670fa6.svg
+Not Found: /lv/resource/images/write-gray.d619ac68f24dadc56c7bba86f25030f9.svg
+Not Found: /sites/all/themes/jasperforge/images/search_sprite.png
+Not Found: /sites/all/themes/jasperforge/images/community_social_sprite.png
+lv.django_session.find (0.00) {'_id': 'b6gsgj1ca9l5f999nzb4p1v36mvzapl6', 'expire_date': {'$gt': datetime.datetime(2018, 6, 18, 10, 4, 40, 950633, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+Not Found: /lv/performance/{{$root.logo}}
+lv.django_session.find (0.00) {'_id': 'b6gsgj1ca9l5f999nzb4p1v36mvzapl6', 'expire_date': {'$gt': datetime.datetime(2018, 6, 18, 10, 4, 41, 313017, tzinfo=<UTC>)}}
+lv.django_session.find (0.01) {'_id': 'b6gsgj1ca9l5f999nzb4p1v36mvzapl6', 'expire_date': {'$gt': datetime.datetime(2018, 6, 18, 10, 4, 41, 314735, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.auth_user.find (0.01) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+Not Found: /lv/performance/{{imageSrc}}
+lv.django_session.find (0.00) {'_id': 'b6gsgj1ca9l5f999nzb4p1v36mvzapl6', 'expire_date': {'$gt': datetime.datetime(2018, 6, 18, 10, 4, 41, 480253, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': 'b6gsgj1ca9l5f999nzb4p1v36mvzapl6', 'expire_date': {'$gt': datetime.datetime(2018, 6, 18, 10, 4, 41, 507684, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+Not Found: /lv/resource/images/write-gray.d619ac68f24dadc56c7bba86f25030f9.svg
+Not Found: /lv/resource/images/grid.76b8bdf2ca2dcc816dddde728d670fa6.svg
+Not Found: /sites/all/themes/jasperforge/images/search_sprite.png
+Not Found: /sites/all/themes/jasperforge/images/community_social_sprite.png
+lv.django_session.find (0.00) {'_id': 'b6gsgj1ca9l5f999nzb4p1v36mvzapl6', 'expire_date': {'$gt': datetime.datetime(2018, 6, 18, 10, 4, 42, 335410, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+Not Found: /lv/performance/{{$root.logo}}
+lv.django_session.find (0.00) {'_id': 'b6gsgj1ca9l5f999nzb4p1v36mvzapl6', 'expire_date': {'$gt': datetime.datetime(2018, 6, 18, 10, 4, 42, 650321, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.01) {'_id': 'b6gsgj1ca9l5f999nzb4p1v36mvzapl6', 'expire_date': {'$gt': datetime.datetime(2018, 6, 18, 10, 4, 42, 660215, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+Not Found: /lv/performance/{{imageSrc}}
+lv.django_session.find (0.00) {'_id': 'b6gsgj1ca9l5f999nzb4p1v36mvzapl6', 'expire_date': {'$gt': datetime.datetime(2018, 6, 18, 10, 4, 42, 824228, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': 'b6gsgj1ca9l5f999nzb4p1v36mvzapl6', 'expire_date': {'$gt': datetime.datetime(2018, 6, 18, 10, 4, 42, 855827, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+Not Found: /lv/resource/images/write-gray.d619ac68f24dadc56c7bba86f25030f9.svg
+Not Found: /lv/resource/images/grid.76b8bdf2ca2dcc816dddde728d670fa6.svg
+Not Found: /sites/all/themes/jasperforge/images/search_sprite.png
+Not Found: /sites/all/themes/jasperforge/images/community_social_sprite.png
+lv.django_session.find (0.00) {'_id': 'b6gsgj1ca9l5f999nzb4p1v36mvzapl6', 'expire_date': {'$gt': datetime.datetime(2018, 6, 18, 10, 4, 43, 821799, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+Not Found: /lv/performance/{{$root.logo}}
+lv.django_session.find (0.00) {'_id': 'b6gsgj1ca9l5f999nzb4p1v36mvzapl6', 'expire_date': {'$gt': datetime.datetime(2018, 6, 18, 10, 4, 44, 125411, tzinfo=<UTC>)}}
+lv.django_session.find (0.00) {'_id': 'b6gsgj1ca9l5f999nzb4p1v36mvzapl6', 'expire_date': {'$gt': datetime.datetime(2018, 6, 18, 10, 4, 44, 129286, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+Not Found: /lv/performance/{{imageSrc}}
+lv.django_session.find (0.00) {'_id': 'b6gsgj1ca9l5f999nzb4p1v36mvzapl6', 'expire_date': {'$gt': datetime.datetime(2018, 6, 18, 10, 4, 44, 275520, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': 'b6gsgj1ca9l5f999nzb4p1v36mvzapl6', 'expire_date': {'$gt': datetime.datetime(2018, 6, 18, 10, 4, 44, 302261, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+Not Found: /lv/resource/images/grid.76b8bdf2ca2dcc816dddde728d670fa6.svg
+Not Found: /lv/resource/images/write-gray.d619ac68f24dadc56c7bba86f25030f9.svg
+Not Found: /sites/all/themes/jasperforge/images/search_sprite.png
+Not Found: /sites/all/themes/jasperforge/images/community_social_sprite.png
+lv.django_session.find (0.00) {'_id': 'b6gsgj1ca9l5f999nzb4p1v36mvzapl6', 'expire_date': {'$gt': datetime.datetime(2018, 6, 18, 10, 4, 45, 891942, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': 'b6gsgj1ca9l5f999nzb4p1v36mvzapl6', 'expire_date': {'$gt': datetime.datetime(2018, 6, 18, 10, 4, 47, 195760, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': 'b6gsgj1ca9l5f999nzb4p1v36mvzapl6', 'expire_date': {'$gt': datetime.datetime(2018, 6, 18, 10, 4, 47, 214684, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': 'b6gsgj1ca9l5f999nzb4p1v36mvzapl6', 'expire_date': {'$gt': datetime.datetime(2018, 6, 18, 10, 4, 48, 54584, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': 'b6gsgj1ca9l5f999nzb4p1v36mvzapl6', 'expire_date': {'$gt': datetime.datetime(2018, 6, 18, 10, 4, 48, 501307, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+Internal Server Error: /lv/performance/pages/permission/permission
+Traceback (most recent call last):
+  File "/home/hcsadmin/argo/packages/django/django/core/handlers/base.py", line 122, in get_response
+    raise e
+TemplateLookupException: Cant locate template for uri u'views/permission/permission.html'
+lv.django_session.find (0.00) {'_id': 'b6gsgj1ca9l5f999nzb4p1v36mvzapl6', 'expire_date': {'$gt': datetime.datetime(2018, 6, 18, 10, 4, 49, 409812, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': 'b6gsgj1ca9l5f999nzb4p1v36mvzapl6', 'expire_date': {'$gt': datetime.datetime(2018, 6, 18, 10, 4, 49, 844866, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': 'b6gsgj1ca9l5f999nzb4p1v36mvzapl6', 'expire_date': {'$gt': datetime.datetime(2018, 6, 18, 10, 4, 50, 371961, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': 'b6gsgj1ca9l5f999nzb4p1v36mvzapl6', 'expire_date': {'$gt': datetime.datetime(2018, 6, 18, 10, 4, 50, 391547, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': 'b6gsgj1ca9l5f999nzb4p1v36mvzapl6', 'expire_date': {'$gt': datetime.datetime(2018, 6, 18, 10, 7, 38, 37676, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+Not Found: /lv/performance/{{$root.logo}}
+lv.django_session.find (0.00) {'_id': 'b6gsgj1ca9l5f999nzb4p1v36mvzapl6', 'expire_date': {'$gt': datetime.datetime(2018, 6, 18, 10, 7, 38, 511784, tzinfo=<UTC>)}}
+lv.django_session.find (0.00) {'_id': 'b6gsgj1ca9l5f999nzb4p1v36mvzapl6', 'expire_date': {'$gt': datetime.datetime(2018, 6, 18, 10, 7, 38, 510050, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.auth_user.find (0.01) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+Not Found: /lv/performance/{{imageSrc}}
+Not Found: /lv/performance/{{imageSrc}}
+lv.django_session.find (0.00) {'_id': 'b6gsgj1ca9l5f999nzb4p1v36mvzapl6', 'expire_date': {'$gt': datetime.datetime(2018, 6, 18, 10, 7, 45, 626773, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': 'b6gsgj1ca9l5f999nzb4p1v36mvzapl6', 'expire_date': {'$gt': datetime.datetime(2018, 6, 18, 10, 7, 45, 660710, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+Not Found: /lv/resource/images/grid.76b8bdf2ca2dcc816dddde728d670fa6.svg
+Not Found: /lv/resource/images/write-gray.d619ac68f24dadc56c7bba86f25030f9.svg
+Not Found: /sites/all/themes/jasperforge/images/search_sprite.png
+Not Found: /sites/all/themes/jasperforge/images/community_social_sprite.png
+lv.django_session.find (0.00) {'_id': 'b6gsgj1ca9l5f999nzb4p1v36mvzapl6', 'expire_date': {'$gt': datetime.datetime(2018, 6, 18, 10, 7, 47, 433581, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+Not Found: /lv/performance/{{$root.logo}}
+lv.django_session.find (0.01) {'_id': 'b6gsgj1ca9l5f999nzb4p1v36mvzapl6', 'expire_date': {'$gt': datetime.datetime(2018, 6, 18, 10, 7, 48, 378035, tzinfo=<UTC>)}}
+lv.django_session.find (0.00) {'_id': 'b6gsgj1ca9l5f999nzb4p1v36mvzapl6', 'expire_date': {'$gt': datetime.datetime(2018, 6, 18, 10, 7, 48, 384679, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+Not Found: /lv/performance/{{imageSrc}}
+lv.django_session.find (0.00) {'_id': 'b6gsgj1ca9l5f999nzb4p1v36mvzapl6', 'expire_date': {'$gt': datetime.datetime(2018, 6, 18, 10, 7, 48, 546885, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': 'b6gsgj1ca9l5f999nzb4p1v36mvzapl6', 'expire_date': {'$gt': datetime.datetime(2018, 6, 18, 10, 7, 48, 578767, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+Not Found: /lv/resource/images/grid.76b8bdf2ca2dcc816dddde728d670fa6.svg
+Not Found: /lv/resource/images/write-gray.d619ac68f24dadc56c7bba86f25030f9.svg
+Not Found: /sites/all/themes/jasperforge/images/search_sprite.png
+Not Found: /sites/all/themes/jasperforge/images/community_social_sprite.png
+lv.django_session.find (0.00) {'_id': 'b6gsgj1ca9l5f999nzb4p1v36mvzapl6', 'expire_date': {'$gt': datetime.datetime(2018, 6, 18, 10, 7, 49, 718145, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+Not Found: /lv/performance/{{$root.logo}}
+lv.django_session.find (0.00) {'_id': 'b6gsgj1ca9l5f999nzb4p1v36mvzapl6', 'expire_date': {'$gt': datetime.datetime(2018, 6, 18, 10, 7, 50, 295070, tzinfo=<UTC>)}}
+lv.django_session.find (0.00) {'_id': 'b6gsgj1ca9l5f999nzb4p1v36mvzapl6', 'expire_date': {'$gt': datetime.datetime(2018, 6, 18, 10, 7, 50, 296696, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+Not Found: /lv/performance/{{imageSrc}}
+lv.django_session.find (0.00) {'_id': 'b6gsgj1ca9l5f999nzb4p1v36mvzapl6', 'expire_date': {'$gt': datetime.datetime(2018, 6, 18, 10, 7, 50, 463434, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': 'b6gsgj1ca9l5f999nzb4p1v36mvzapl6', 'expire_date': {'$gt': datetime.datetime(2018, 6, 18, 10, 7, 50, 494870, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+Not Found: /lv/resource/images/write-gray.d619ac68f24dadc56c7bba86f25030f9.svg
+Not Found: /lv/resource/images/grid.76b8bdf2ca2dcc816dddde728d670fa6.svg
+Not Found: /sites/all/themes/jasperforge/images/search_sprite.png
+Not Found: /sites/all/themes/jasperforge/images/community_social_sprite.png
+Not Found: /performance/static/js/datatables/pdfmake.min.js.map
+Not Found: /performance/static/js/angular.min.js.map
+lv.django_session.find (0.00) {'_id': 'b6gsgj1ca9l5f999nzb4p1v36mvzapl6', 'expire_date': {'$gt': datetime.datetime(2018, 6, 18, 10, 7, 55, 610687, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+Not Found: /performance/static/js/angular.min.js.map
+Not Found: /lv/performance/{{$root.logo}}
+Not Found: /performance/static/js/datatables/pdfmake.min.js.map
+lv.django_session.find (0.00) {'_id': 'b6gsgj1ca9l5f999nzb4p1v36mvzapl6', 'expire_date': {'$gt': datetime.datetime(2018, 6, 18, 10, 7, 56, 417402, tzinfo=<UTC>)}}
+lv.django_session.find (0.01) {'_id': 'b6gsgj1ca9l5f999nzb4p1v36mvzapl6', 'expire_date': {'$gt': datetime.datetime(2018, 6, 18, 10, 7, 56, 419729, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.auth_user.find (0.01) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+Not Found: /lv/performance/{{imageSrc}}
+lv.django_session.find (0.00) {'_id': 'b6gsgj1ca9l5f999nzb4p1v36mvzapl6', 'expire_date': {'$gt': datetime.datetime(2018, 6, 18, 10, 7, 56, 661294, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': 'b6gsgj1ca9l5f999nzb4p1v36mvzapl6', 'expire_date': {'$gt': datetime.datetime(2018, 6, 18, 10, 7, 56, 725189, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+Not Found: /lv/resource/images/write-gray.d619ac68f24dadc56c7bba86f25030f9.svg
+Not Found: /lv/resource/images/grid.76b8bdf2ca2dcc816dddde728d670fa6.svg
+Not Found: /sites/all/themes/jasperforge/images/search_sprite.png
+Not Found: /sites/all/themes/jasperforge/images/community_social_sprite.png
+lv.django_session.find (0.00) {'_id': 'b6gsgj1ca9l5f999nzb4p1v36mvzapl6', 'expire_date': {'$gt': datetime.datetime(2018, 6, 18, 10, 8, 23, 301488, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+Not Found: /performance/static/js/angular.min.js.map
+Not Found: /lv/performance/{{$root.logo}}
+Not Found: /performance/static/js/datatables/pdfmake.min.js.map
+lv.django_session.find (0.00) {'_id': 'b6gsgj1ca9l5f999nzb4p1v36mvzapl6', 'expire_date': {'$gt': datetime.datetime(2018, 6, 18, 10, 8, 24, 92080, tzinfo=<UTC>)}}
+lv.auth_user.find (0.01) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': 'b6gsgj1ca9l5f999nzb4p1v36mvzapl6', 'expire_date': {'$gt': datetime.datetime(2018, 6, 18, 10, 8, 24, 108488, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+Not Found: /lv/performance/{{imageSrc}}
+lv.django_session.find (0.00) {'_id': 'b6gsgj1ca9l5f999nzb4p1v36mvzapl6', 'expire_date': {'$gt': datetime.datetime(2018, 6, 18, 10, 8, 24, 290521, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': 'b6gsgj1ca9l5f999nzb4p1v36mvzapl6', 'expire_date': {'$gt': datetime.datetime(2018, 6, 18, 10, 8, 24, 338429, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+Not Found: /lv/resource/images/write-gray.d619ac68f24dadc56c7bba86f25030f9.svg
+Not Found: /lv/resource/images/grid.76b8bdf2ca2dcc816dddde728d670fa6.svg
+Not Found: /sites/all/themes/jasperforge/images/search_sprite.png
+Not Found: /sites/all/themes/jasperforge/images/community_social_sprite.png
+lv.django_session.find (0.00) {'_id': 'b6gsgj1ca9l5f999nzb4p1v36mvzapl6', 'expire_date': {'$gt': datetime.datetime(2018, 6, 18, 10, 9, 37, 822539, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+Not Found: /performance/static/js/angular.min.js.map
+Not Found: /lv/performance/{{$root.logo}}
+Not Found: /performance/static/js/datatables/pdfmake.min.js.map
+lv.django_session.find (0.00) {'_id': 'b6gsgj1ca9l5f999nzb4p1v36mvzapl6', 'expire_date': {'$gt': datetime.datetime(2018, 6, 18, 10, 9, 38, 686848, tzinfo=<UTC>)}}
+lv.django_session.find (0.01) {'_id': 'b6gsgj1ca9l5f999nzb4p1v36mvzapl6', 'expire_date': {'$gt': datetime.datetime(2018, 6, 18, 10, 9, 38, 688502, tzinfo=<UTC>)}}
+lv.auth_user.find (0.01) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.auth_user.find (0.01) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+Not Found: /lv/performance/{{imageSrc}}
+lv.django_session.find (0.00) {'_id': 'b6gsgj1ca9l5f999nzb4p1v36mvzapl6', 'expire_date': {'$gt': datetime.datetime(2018, 6, 18, 10, 9, 38, 939264, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+lv.django_session.find (0.00) {'_id': 'b6gsgj1ca9l5f999nzb4p1v36mvzapl6', 'expire_date': {'$gt': datetime.datetime(2018, 6, 18, 10, 9, 38, 996300, tzinfo=<UTC>)}}
+lv.auth_user.find (0.00) {'_id': ObjectId('5b02a1df2320372ba4a49c31')}
+Not Found: /lv/resource/images/grid.76b8bdf2ca2dcc816dddde728d670fa6.svg
+Not Found: /lv/resource/images/write-gray.d619ac68f24dadc56c7bba86f25030f9.svg
+Not Found: /sites/all/themes/jasperforge/images/search_sprite.png
+Not Found: /sites/all/themes/jasperforge/images/community_social_sprite.png

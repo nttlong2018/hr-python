@@ -1,3 +1,6 @@
+"""
+This package is the core package support for multi purpose in project
+"""
 import view
 import applications
 import authorize
@@ -16,8 +19,20 @@ _cache_multi_tenancy={}
 global lock
 lock=threading.Lock()
 def get_static_server_path(file,path):
+    # type: (str,str) -> str
+    """
+    create full phisical static path from relative path
+    :param file:
+    :param path:
+    :return:
+    """
     return os.getcwd() + os.sep + os.path.dirname(file) + os.sep +path
 def get_django_settings_module():
+    """
+    Get django setting module in project
+
+    :return:
+    """
     global system_settings
     if system_settings!=None:
         return system_settings
@@ -56,12 +71,35 @@ def get_django_settings_module():
                     )))
     return system_settings
 def to_server_local_time(val):
-     return val+(datetime.datetime.utcnow() - datetime.datetime.now())
+    # type: (datetime) -> datetime
+    """
+    convert datetime val into datetime with server local time zone
+    :param val:
+    :return:
+    """
+    return val+(datetime.datetime.utcnow() - datetime.datetime.now())
 def to_client_time(val):
+    # type: (datetime) -> datetime
+    """
+    convert datetime value into datetime with client time zone
+    Caution: this method need to be call in thread with http request
+    :param val:
+    :return:
+    """
     return val - datetime.timedelta(minutes=threading.current_thread().client_offset_minutes)
 def get_client_offset_minutes():
+    # type: () -> int
+    """
+    get client offset minutes from UTC
+    :return:
+    """
     return threading.current_thread().client_offset_minutes
 def get_tenancy_collection():
+    # type: () -> pymongo.MongoClient.Collection
+    """
+    Get tenancy collection refer 'MULTI_TENANCY_CONFIGURATION' in settings.py
+    :return:
+    """
     global _db_multi_tenancy
     if _db_multi_tenancy==None:
         import pymongo
@@ -77,6 +115,12 @@ def get_tenancy_collection():
         _db_multi_tenancy=db.get_collection(config["collection"])
     return _db_multi_tenancy
 def get_tenancy_schema(code):
+    # type: (str) -> str
+    """
+    get schema from tenancy code
+    :param code:
+    :return:
+    """
     from . import get_django_settings_module
     import re
     cmp=re.compile("[a-zA-Z_0-9-]+\z",re.IGNORECASE)
@@ -108,6 +152,13 @@ def get_tenancy_schema(code):
             raise (ex)
     return _cache_multi_tenancy[code]
 def register_tenancy_schema(code,schema=None):
+
+    """
+    Register new tenancy
+    :param code:
+    :param schema:
+    :return:
+    """
     if schema==None:
         schema=code
     import re

@@ -1,7 +1,10 @@
+"""
+This module support extent django http request
+"""
 import  os
 import json
 import applications
-
+import encryptor
 import sys
 from django.http import HttpResponse
 from mako.template import Template
@@ -190,7 +193,8 @@ def apply(request,template_file,app):
             "get_api_key":get_api_key,
             "get_api_path":get_api_path,
             "register_view":register_view,
-            "request":request
+            "request":request,
+            "encryptor":encryptor
         }
         # mylookup = TemplateLookup(directories=config._default_settings["TEMPLATES_DIRS"])
         if fileName != None:

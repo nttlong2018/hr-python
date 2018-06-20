@@ -8,6 +8,12 @@ _model_cache_={
     "type_fields":{}
 }
 def get_value_by_path(path,data):
+    """
+    get value of dict by path to property, example: get_value_by_path("a.b",{a:b:"hello"}} -> "hello"
+    :param path:
+    :param data:
+    :return:
+    """
     if data.has_key(path):
         return data[path]
     items=path.split(".")
@@ -22,6 +28,13 @@ def get_value_by_path(path,data):
                 val=val.get(x,None)
         return val
 def validate_require_data(name,data,partial=False):
+    """
+    This function will check where is missing data in "data" according to model in "name"
+    :param name:model name
+    :param data:data will be verified
+    :param partial:False will check full from model, True will check only fields in data
+    :return: list of missing fields
+    """
     if not partial:
         ret=[]
         for key in _model_cache_["require_fields"].get(name,[]):
@@ -45,23 +58,38 @@ def validate_require_data(name,data,partial=False):
 
         return ret
 def set_require_fields(name,*args,**kwargs):
-        if _model_cache_["require_fields"].has_key(name):
-            pass
-        else:
-            lock.acquire()
-            try:
-                params = kwargs
-                if type(args) is tuple and args.__len__() > 0:
-                    params = args[0]
-                _model_cache_["require_fields"].update({
-                    name:params
-                })
-                lock.release()
+    """
+    set require field name for model
+    :param name:model name
+    :param args:
+    :param kwargs:
+    :return:
+    """
 
-            except Exception as ex:
-                lock.release()
-                raise(ex)
+    if _model_cache_["require_fields"].has_key(name):
+        pass
+    else:
+        lock.acquire()
+        try:
+            params = kwargs
+            if type(args) is tuple and args.__len__() > 0:
+                params = args[0]
+            _model_cache_["require_fields"].update({
+                name:params
+            })
+            lock.release()
+
+        except Exception as ex:
+            lock.release()
+            raise(ex)
 def create_model(name,*args,**kwargs):
+    """
+    Create model
+    :param name: model name
+    :param args: dic describe model fields
+    :param kwargs:
+    :return:
+    """
     params=kwargs
     if type(args) is tuple and args.__len__()>0:
         params=args[0]
@@ -76,6 +104,11 @@ def create_model(name,*args,**kwargs):
             lock.release()
             raise ex
 def get_data_fields(data):
+    """
+    get all fields of data it serve for this file
+    :param data:
+    :return:
+    """
     ret={}
     field_with_typpe_list=[x for x in data.keys() if data[x]=="list"]
 
@@ -97,6 +130,12 @@ def get_data_fields(data):
 
 
 def validate_type_of_data(name,data):
+    """
+    Check data type of each field in data is compatible
+    :param name:
+    :param data:
+    :return:
+    """
     ret = []
     data_fields=get_data_fields(_model_cache_["type_fields"].get(name, {}))
     for key in data_fields:

@@ -10,8 +10,19 @@ def get_param_kw(*args,**kwargs):
        return list(args)
 
 class filter_expression():
-    _pipe={}
+    """
+    this class will create a filter. From expression with parameters
+    """
+
     def __init__(self,expression,*args,**kwargs):
+
+        """
+
+        :param expression:
+        :param args:
+        :param kwargs:
+        """
+        self._pipe = {}
         params = get_param_kw(*args,**kwargs)
         if type(params) is list:
             self._pipe=expr.parse_expression_to_json_expression(expression, *params)
@@ -41,5 +52,9 @@ class filter_expression():
         })
         return self
     def get_filter(self):
+        """
+        Get filter as dict for mongodb example: 
+        filter('a==1')=> {"a":{"$eq":1}}
+        """
         return self._pipe
 

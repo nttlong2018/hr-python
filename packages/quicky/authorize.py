@@ -8,6 +8,19 @@ _view_cache={}
 import datetime
 _db=None
 def set_config(*args,**kwargs):
+
+    """
+    Set database config for authorization
+    Example: set_config(
+                        host=...,
+                        port=...,
+                        name=..database name,
+                        user=....
+                        password=...)
+    :param args:
+    :param kwargs:
+    :return:
+    """
     try:
         global _db
         if type(args) is tuple and args.__len__() > 0:
@@ -31,6 +44,15 @@ def set_config(*args,**kwargs):
 
 
 def register_view(*args,**kwargs):
+    # type: (dict) -> dict
+    """
+    Regist a new view example register_view(
+                        view=...view name,
+                        app= ... appname)
+    :param args:
+    :param kwargs:
+    :return:
+    """
     try:
         if type(args) is tuple and args.__len__() > 0:
             args = args[0]

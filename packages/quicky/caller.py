@@ -1,3 +1,6 @@
+"""
+this module support call api protocol
+"""
 import json
 import importlib
 import JSON
@@ -14,6 +17,11 @@ class caller_param():
 
 
 def call(request):
+    """
+    Process request
+    :param request:
+    :return:
+    """
     ret_data=None
     data=json.loads(request.body)
     if not data.has_key("path"):

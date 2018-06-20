@@ -12,6 +12,13 @@ logger=logging.getLogger(__name__)
 _apps_=None
 settings=None
 def build_urls(module_name,*args,**kwargs):
+    """
+    buil full url
+    :param module_name:
+    :param args:
+    :param kwargs:
+    :return:
+    """
     host_dir=None
     from . import get_django_settings_module
     global settings

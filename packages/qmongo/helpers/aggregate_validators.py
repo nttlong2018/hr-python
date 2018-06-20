@@ -1,16 +1,38 @@
 import _ast
 class validator:
+    """
+    This class is support for qmongo.database.COLL and qmongo.database.AGGREGATE
+    """
     meta=None
     name=None
     fields=[]
     events=None
     def __init__(self,name,meta):
+        """
+        Init class
+        :param name: the name of model
+        :param meta: model fields describe
+        """
         self.name=name
         self.meta=meta
         self.fields=[x for x in meta.keys()]
     def get_fields(self):
+        #type: ()->list
+        """
+        Get list of field of model
+        :return:
+        """
         return self.fields
     def validate_expression(self,expr,fields=None,*params,**kwargs):
+        # type: (str,list) -> list
+        """
+        Check if all fields in the expression is match with fields list
+        :param expr:Expression for checking example "username=={0} and password== {1}
+        :param fields: List of fields for checking, exanple; ["username","password"]
+        :param params:
+        :param kwargs:
+        :return:list of unknown fields is collecion of fields where is not in fields param
+        """
         _expr=expr
         if type(params) is tuple and params.__len__() > 0 :
             if type(params[0]) is dict:
@@ -50,6 +72,9 @@ class validator:
 
         return ret_fields
 def get_field_name(fx):
+    """This function will get full expression of field.
+    The function just serve for package self
+    """
     if type(fx.value) is _ast.Attribute:
         if hasattr(fx, "attr"):
             return get_field_name(fx.value)+"."+fx.attr
@@ -66,6 +91,12 @@ def get_field_name(fx):
 
 
 def get_expression_fields(fx):
+    """
+    This method will extract all fields in fx,
+    Example: the fx parse from "username=={0} and password== {1} this method will return ["username","password"]
+    :param fx:
+    :return: list of fields
+    """
     if type(fx) is _ast.Attribute:
         return [get_field_name(fx)]
     if type(fx) is _ast.Name:
