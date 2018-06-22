@@ -1,0 +1,131 @@
+﻿<div title="{{$parent.headerTitle}}" style="height:100%;">
+    <table-data data-source="tableSource" fields="tableFields" type="MultiSelect" 
+                    paging="true" page-length="table_info.page_size" server-side="true" 
+                    press-enter="onSelectTableRow" selected-items="selectedItems" 
+                    current-item="currentItem" search-text="tableSearchText"
+                    refresh-row="refreshDataRow">
+    </table-data>
+</div>
+<script>
+    (function (scope) {
+        scope.tableFields = [
+            { "data": "login_account", "title": "${ get_res('login_account_table_title', 'Mã người dùng') }"},
+            { "data": "display_name", "title": "${ get_res('display_name_table_title', 'Tên hiển thị') }"},
+            { "data": "manlevel_from", "title": "${ get_res('manlevel_from_table_title', 'Mức quản lí từ') }"},
+            { "data": "manlevel_to", "title": "${ get_res('manlevel_to_table_title', 'Mức quản lí đến') }"},
+            {
+                "data": "created_on",
+                "title": "${ get_res('created_on_table_title', 'Thời điểm tạo') }",
+                "format": "date: " + scope.$root.systemConfig.date_format
+            }
+        ];
+        scope.tableSource = _loadDataServerSide;
+        function _loadDataServerSide(fnReloadData, iPage, iPageLength, orderBy, searchText) {
+            scope.$$tableConfig = {
+                fnReloadData: fnReloadData,
+                iPage: iPage,
+                iPageLength: iPageLength,
+                orderBy: orderBy,
+                searchText: searchText
+            };
+            //setTimeout(function () {
+            if (fnReloadData) {
+                if (searchText) {
+                    _tableData(iPage, iPageLength, orderBy, searchText, function (data) {
+                        fnReloadData(data);
+                    });
+                } else {
+                    _tableData(iPage, iPageLength, orderBy, null, function (data) {
+                        fnReloadData(data);
+                    });
+                }
+            }
+            //}, 1000);
+        };
+        scope.onSelectTableRow = pressEnter;
+        //Danh sách các dòng đc chọn (nếu là table MultiSelect)
+        scope.selectedItems = [];
+        //Dòng hiện tại đang được focus (nếu table là SingleSelect hoặc MultiSelect)
+        scope.currentItem = null;
+        scope.tableSearchText = '';
+        scope.SearchText = '';
+        //Refesh table
+        scope.refreshDataRow = function () { /*Do nothing*/ };
+
+        scope.onResizeDialog = onResizeDialog;
+        scope.saveNClose = saveNClose;
+
+        function pressEnter($row) {
+
+        }
+
+        function onResizeDialog() {
+            $('#myComboboxDialog .modal-dialog').toggleClass('resize-width');
+            setTimeout(function () {
+                $(window).trigger('resize');
+            }, 100);
+        }
+
+        function saveNClose() {
+            if (scope.selectedItems) {
+                scope.$parent.entity.users = scope.selectedItems;
+                services.api("${get_api_key('app_main.api.auth_user/update_role_code')}")
+                    .data({
+                        //parameter at here
+                        "role_code": scope.$parent.entity.role_code,
+                        "users": scope.selectedItems
+                    })
+                    .done()
+                    .then(function (res) {
+                        if (res.error == null) {
+                            $('#myComboboxDialog').remove();
+                            $('.modal-backdrop:last').remove();
+                            $msg.alert("${get_global_res('Handle_Success','Thao tác thành công')}", $type_alert.SUCCESS);
+                            reloadData();
+                        } else {
+                            $msg.message("${get_global_res('Notification','Thông báo')}", "${get_global_res('Internal_Server_Error','Có lỗi từ phía máy chủ')}", function () { });
+                        }
+                    })
+            }
+        }
+
+        function reloadData() {
+            var tableConfig = scope.$parent.$$table_List_User_Config;
+            scope.$parent._tableData("${get_api_key('app_main.api.auth_user/get_list_with_searchtext')}",
+                tableConfig.iPage, tableConfig.iPageLength, tableConfig.orderBy,
+                tableConfig.searchText, tableConfig.fnReloadData);
+        }
+
+        function _tableData(iPage, iPageLength, orderBy, searchText, callback) {
+            var sort = {};
+            $.each(orderBy, function (i, v) {
+                sort[v.columns] = (v.type === "asc") ? 1 : -1;
+            });
+            sort[orderBy[0].columns] =
+                services.api("${get_api_key('app_main.api.auth_user/get_list_with_searchtext')}")
+                .data({
+                    //parameter at here
+                        "pageIndex": iPage - 1,
+                        "pageSize": iPageLength,
+                        "search": searchText,
+                        "where": {
+                            "filter": "role_code == @role_code",
+                            "value": {"role_code":null}
+                        },
+                        "sort": sort
+                    })
+                    .done()
+                .then(function (res) {
+                        var data = {
+                            recordsTotal: res.total_items,
+                            recordsFiltered: res.total_items,
+                            data: res.items
+                        };
+                        callback(data);
+                        scope.currentItem = null;
+                        scope.$apply();
+                    })
+        }
+
+});
+</script>

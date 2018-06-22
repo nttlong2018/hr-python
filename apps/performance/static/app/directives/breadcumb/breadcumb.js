@@ -37,7 +37,9 @@
             link: link,
             scope: {
                 listFunction: '=data',
-                currentFunction: '=function'
+                currentFunction: '=function',
+                previousPage: '&',
+                formPage: '@'
             },
             templateUrl: templateService.getTemplatePath('breadcumb'),
             restrict: 'EA'
@@ -67,7 +69,6 @@
             }
 
             function onClickFunctionLeftMenu(f, event) {
-                debugger
                 _selectedMenu(f.function_id)
                 if ($scope["selectedUrl"]) {
                     $scope["selectedUrl"] = f.url;

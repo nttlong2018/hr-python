@@ -422,6 +422,48 @@ body {
 #hcs-toolbar i {
   color: black;
 }
+.hcs-page-department-tree {
+  width: 280px;
+  float: left;
+  border-right: 1px solid #cbcbcb;
+}
+.hcs-page-department-tree .panel-tool {
+  width: 100%;
+  border-bottom: 2px solid #aaa;
+  padding-bottom: 5px;
+  height: 34px;
+}
+.hcs-page-department-tree .panel-tool .hcs-profile-icon-heading-on-table {
+  margin-left: 5px;
+}
+.hcs-page-department-tree .panel-tool .search-tree {
+  width: 125px;
+}
+.hcs-page-department-tree .tree {
+  width: 100%;
+  height: calc(100vh - 122px);
+  overflow: auto;
+}
+.hcs-page-department-table {
+  width: calc(100% - 280px);
+  float: left;
+}
+.hcs-page-department-table .panel-tool {
+  width: 100%;
+  border-bottom: 1px solid #cbcbcb;
+  padding-bottom: 5px;
+  height: 30px;
+}
+.hcs-page-department-table .panel-tool .hcs-profile-icon-heading-on-table {
+  margin-left: 5px;
+}
+.hcs-page-department-table .panel-tool .search-table {
+  width: 210px;
+}
+.hcs-page-department-table .department-table {
+  width: 100%;
+  height: calc(100vh - 100px);
+}
 .hcs-body-item {
   margin-bottom: 3rem;
 }
@@ -1427,7 +1469,7 @@ html {
   top: 0 !important;
 }
 .modal .resize-width .modal-content .modal-body {
-  height: calc(100vh - 91px);
+  height: calc(100vh - 91px) !important;
 }
 .modal:before {
   vertical-align: top!important;
@@ -1502,6 +1544,13 @@ html {
 }
 #myConfirmModal:before {
   vertical-align: top !important;
+}
+#myComboboxDialog .modal-dialog {
+  width: 40%;
+  top: 10vh;
+}
+#myComboboxDialog .modal-dialog .modal-content .modal-body {
+  height: 60vh;
 }
 /*Toast*/
 #hcs-toast-alert {

@@ -24,23 +24,23 @@ def get_list_with_searchtext(args):
 
     pageIndex = (lambda pIndex: pIndex if pIndex != None else 0)(pageIndex)
     pageSize = (lambda pSize: pSize if pSize != None else 20)(pageSize)
-    ret=DataAccessDomain.data_access_domain().get_list()
-    items = models.HCSSYS_DataDomain().aggregate().project(
-            dd_code = 1,
-            dd_name = 1,
-            access_mode = 1,
-            description = 1,
-            created_on = 1,
-            detail = 1
-            )
+    ret=DataAccessDomain.data_access_domain()
+    #items = models.HCSSYS_DataDomain().aggregate().project(
+    #        dd_code = 1,
+    #        dd_name = 1,
+    #        access_mode = 1,
+    #        description = 1,
+    #        created_on = 1,
+    #        detail = 1
+    #        )
 
     if(searchText != None):
-        items.match("contains(dd_name, @name)",name=searchText)
+        ret.match("contains(dd_name, @name)",name=searchText)
 
     if(sort != None):
-        items.sort(sort)
+        ret.sort(sort)
         
-    return items.get_page(pageIndex, pageSize)
+    return ret.get_page(pageIndex, pageSize)
 
 
 def insert(args):

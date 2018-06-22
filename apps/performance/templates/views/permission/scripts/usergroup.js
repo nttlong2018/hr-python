@@ -137,19 +137,22 @@
     }
 
     /**
-     * Hàm mở dialog
-     * @param {string} title Tittle của dialog
-     * @param {string} path Đường dẫn file template
-     * @param {function} callback Xử lí sau khi gọi dialog
-     * @param {string} id Id của form dialog, default = 'myModal'
-     */
+         * Hàm mở dialog
+         * @param {string} title Tittle của dialog
+         * @param {string} path Đường dẫn file template
+         * @param {function} callback Xử lí sau khi gọi dialog
+         * @param {string} id Id của form dialog, default = 'myModal'
+         */
     function openDialog(title, path, callback, id = 'myModal') {
+        var fn = {
+            "button": [{ "func_name": "saveNClose", "icon": "la la-save", "name": "${get_global_res('save_and_close','Lưu & đóng')}" },
+                { "func_name": "saveNNext", "icon": "la la-save", "name": "${get_global_res('save_and_next','Lưu & tiếp')}" }]
+        };
         //check tồn tại của form dialog theo id
-        if ($('#myModal').length === 0) {
+        if ($('#' + id).length === 0) {
             scope.headerTitle = title;
             //Đặt ID cho form dialog
-
-            dialog(scope, 'myModal').url(path).done(function () {
+            dialog(scope, id, fn).url(path).done(function () {
                 callback();
                 //Set resizable cho form dialog theo id
                 $('#myModal').ready(function () {

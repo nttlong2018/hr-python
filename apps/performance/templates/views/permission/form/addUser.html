@@ -35,8 +35,7 @@
                     <div class="col-sm-7">
                         <input-select data-list="cbbAd_Roles" ng-model="entity.role_code"
                                       data-value="value" 
-                                      data-caption="caption"
-                                      required/>
+                                      data-caption="caption"/>
                     </div>
                 </div>
             </div>
@@ -231,15 +230,17 @@
                     } else {
                         if (res.error == "existing login account")
                             $msg.message("${get_res('Internal_Server_Error','Có lỗi từ phía máy chủ')}", "${get_global_res('existing_login_account','Tài khoản đăng nhập đã tồn tại')}", function () { });
-                        else if(res.error.code == 'duplicate'){
+                        else if (res.error.code == 'duplicate') {
                             var msg = '';
-                            _.each(res.error.fields, function(val){
-                                if(val == "login_account")
+                            _.each(res.error.fields, function (val) {
+                                if (val == "login_account")
                                     msg += "${get_res('login_account','Tài khoản đăng nhập')}" + " " + "${get_global_res('exists','đã tồn tại')}" + "\n";
-                                if(val == "email")
+                                if (val == "email")
                                     msg += "${get_res('email','Email')}" + " " + "${get_global_res('exists','đã tồn tại')}" + "\n";
                             });
                             $msg.message("${get_global_res('Internal_Server_Error','Có lỗi từ phía máy chủ')}", msg, function () { });
+                        } else {
+                            $msg.message("${get_global_res('Internal_Server_Error','Có lỗi từ phía máy chủ')}", "${get_global_res('Please_try_again','Vui lòng thử lại')}", function () { });
                         }
                     }
                 });
@@ -318,11 +319,11 @@
             if(rs.result === true)
                 return rs;
             //Check nhóm người dùng
-            valid = lv.Validate(scope.entity.role_code);
-            rs.result = valid.isNullOrWhiteSpace();
-            rs.errorMsg = rs.result === false ? "" : "${get_res('error_role_code_null_or_whitespace','Nhóm người dùng không được để trống')}" + "\n";
-            if(rs.result === true)
-                return rs;
+            //valid = lv.Validate(scope.entity.role_code);
+            //rs.result = valid.isNullOrWhiteSpace();
+            //rs.errorMsg = rs.result === false ? "" : "${get_res('error_role_code_null_or_whitespace','Nhóm người dùng không được để trống')}" + "\n";
+            //if(rs.result === true)
+            //    return rs;
             //Check email
             valid = lv.Validate(scope.entity.email);
             rs.result = valid.isEmail();

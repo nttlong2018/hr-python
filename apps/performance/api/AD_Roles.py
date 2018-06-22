@@ -1,6 +1,9 @@
 # -*- coding: utf-8 -*-
 from bson import ObjectId
 import models
+import auth_user
+import tmp_transactions
+import common
 import datetime
 import logging
 import threading
@@ -32,21 +35,70 @@ def insert(args):
         lock.release()
         raise(ex)
 
-def updare(args):
+def update(args):
     try:
         lock.acquire()
+        ret = {}
+        if args['data'] != None:
+            data = dict(
+                _id = ObjectId(args['data']['_id']),
+                role_name = args['data']['role_name'],
+                dd_code = args['data']['dd_code'],
+                stop = (lambda data: data["stop"] if data.has_key("stop") else False)(args['data']),
+                description = (lambda data: data["description"] if data.has_key("description") else None)(args['data'])
+                )
 
-        return None
+            #data_lock = models.common()
+
+            #data_trans = tmp_transactions.create(common.generate_guid(), "api_path", dat, ord = 1)
+
+            ret = models.AD_Roles().update(
+                    data,
+                    "_id == {0}",
+                    data['_id'])
+
+            #ret_user = {}
+            #if args['data'].has_key('users'):
+            #    usernames = [x["username"]for x in args['data']['users']]
+            #    ret_user =  auth_user.update_role_code(usernames, args['data'][role_code])
+            ##Update cột role code vào bảng auth_user_info
+            #user_names = [x["username"]for x in (lambda data: data["users"] if data.has_key("users") else [])(args['data'])]
+            #if len(user_names) > 0:
+            #    try:
+            #        auth_user.update_role_code(user_names, args['data']['role_code'])
+            #    except Exception as ex:
+            #        #rollback update AD_Roles
+            #        raise(ex)
+            lock.release()
+            return ret
+
         lock.release()
+        return dict(
+            error = "request parameter is not exist"
+        )
     except Exception as ex:
         lock.release()
-        pass
+        raise(ex)
 
 def delete(args):
     try:
-        return None
+        lock.acquire()
+        ret = {}
+        if args['data'] != None:
+            role_codes = [x["role_code"]for x in  args['data']] 
+            ret =  models.AD_Roles().delete("role_code in {0}", role_codes)
+            #Remove role_code các user có trị tương ứng
+            auth_user.remove_role_code_by_role(role_codes)
+            lock.release()
+            return ret
+
+        lock.release()
+        return dict(
+            error = "request parameter is not exist"
+        )
     except Exception as ex:
-        pass
+        lock.release()
+        raise(ex)
 
 def get_list_with_searchtext(args):
     try:

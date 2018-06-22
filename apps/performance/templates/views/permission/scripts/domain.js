@@ -55,7 +55,7 @@
     scope.onImport = onImport;
     scope._tableData = _tableData;
     scope.mapAccess_mode = [];
-    scope.getDisplayNameAccessMode = getDisplayNameAccessMode;
+    //scope.getDisplayNameAccessMode = getDisplayNameAccessMode;
 
     /**
      * Hàm mở form chỉnh sửa
@@ -108,28 +108,10 @@
         scope.$apply();
     }
     function onExport() {
-        window.open("/excel_export");
-        //services.api("/excel_export")
-        //    .data({})
-        //    .done()
-        //    .then(function (res) {
-
-        //    })
-        //$.ajax({
-        //    url: "/excel_export",
-        //    contentType: 'application/json; charset=utf-8',
-        //    type: 'POST',
-        //    // type: 'GET',
-        //    dataType: 'json',
-        //    error: function (xhr, status) {
-        //        alert(status);
-        //    },
-        //    success: function (result) {
-        //        alert("Callback done!");
-        //        // grid.dataBind(result.results);
-        //        // grid.dataBind(result);
-        //    }
-        //});
+        lv.ExportFile("/excel_export")
+            .data({
+                'collection_name': 'HCSSYS_DataDomain'
+            }).done();
     }
     function onImport() {
         lv.ImportFile("${get_api_key('app_main.excel.import/call')}")
@@ -146,12 +128,15 @@
      * @param {string} id Id của form dialog, default = 'myModal'
      */
     function openDialog(title, path, callback, id = 'myModal') {
+        var fn = {
+            "button": [{ "func_name": "saveNClose", "icon": "la la-save", "name": "${get_global_res('save_and_close','Lưu & đóng')}" },
+            { "func_name": "saveNNext", "icon": "la la-save", "name": "${get_global_res('save_and_next','Lưu & tiếp')}" }]
+        };
         //check tồn tại của form dialog theo id
-        if ($('#myModal').length === 0) {
+        if ($('#' + id).length === 0) {
             scope.headerTitle = title;
             //Đặt ID cho form dialog
-
-            dialog(scope, 'myModal').url(path).done(function () {
+            dialog(scope, id, fn).url(path).done(function () {
                 callback();
                 //Set resizable cho form dialog theo id
                 $('#myModal').ready(function () {
@@ -171,16 +156,16 @@
     function pressEnter($row) {
         scope.onEdit();
     }
-    function getDisplayNameAccessMode(code) {
-        var name = '';
-        _.each(scope.mapAccess_mode, function (val) {
-            if (val.value == code) {
-                name = val.caption;
-                return;
-            }
-        })
-        return name;
-    }
+    //function getDisplayNameAccessMode(code) {
+    //    var name = '';
+    //    _.each(scope.mapAccess_mode, function (val) {
+    //        if (val.value == code) {
+    //            name = val.caption;
+    //            return;
+    //        }
+    //    })
+    //    return name;
+    //}
     function _tableData(iPage, iPageLength, orderBy, searchText, callback) {
         var sort = {};
         $.each(orderBy, function (i, v) {
@@ -202,11 +187,7 @@
                         recordsFiltered: res.total_items,
                         data: res.items
                     };
-                    _.each(res.items, function (val) {
-                        val.display_access_mode = getDisplayNameAccessMode(val.access_mode);
-                    });
                     callback(data);
-                    //scope.tableSource = res;
                     scope.currentItem = null;
                     scope.$apply();
                 })

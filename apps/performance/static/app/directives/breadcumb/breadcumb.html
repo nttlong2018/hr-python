@@ -1,15 +1,15 @@
 ﻿<div class="col-md-12" id="hcs-admin-system-heading">
     <div class="pull-left" id="hcs-admin-system-breadcrumb">
-        <a href="javascript:void(0)" ng-click="onClickHideLeftMenufunction()" id="toggleMenuFucntion">
+        <a href="javascript:void(0)" ng-click="onClickHideLeftMenufunction()" id="toggleMenuFucntion" ng-show="formPage != 'single'">
             <span>
                 <i class="la la-angle-left"></i>
             </span>
         </a>
-        <a href="" class="hcs-admin-system-breadcrumb">
-            <span>{{$root.currentFunction}} |</span>
+        <a href="javascript:void(0)" class="hcs-admin-system-breadcrumb" ng-click="previousPage()">
+            <span>{{$root.currentFunction}}</span>
         </a>
-        <a href="javascript:void(0)" class="hcs-admin-system-breadcrumb-active">
-            {{currentFunction.name}}
+        <a href="javascript:void(0)" class="hcs-admin-system-breadcrumb-active" ng-show="formPage != 'single'">
+            | {{currentFunction.name}}
             <div id="dropdownFunction" class="dropdown-content">
                 <div class="filter">
                     <input type="text" placeholder="Tìm kiếm" id="myInput" ng-model="search" class="form-control zb-form-input">
@@ -19,7 +19,7 @@
                 </div>
             </div>
         </a>
-        <a href="javascript:void(0)" class="hcs-admin-system-function-active" ng-click="onClickBreadCumbDropdownMenu()">
+        <a href="javascript:void(0)" class="hcs-admin-system-function-active" ng-click="onClickBreadCumbDropdownMenu()" ng-show="formPage != 'single'">
             <span style="margin-left:3px;" ><i class="hcs-admin-system-function-active la la-angle-down"></i></span>
         </a>
     </div>

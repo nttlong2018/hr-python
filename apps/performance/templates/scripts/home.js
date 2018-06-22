@@ -55,6 +55,7 @@
                 scope.$root.currentModule = _.filter(scope.$root.$functions, function (d) {
                     return d["function_id"] == child.parent_id;
                 })[0].custom_name.replace("/", " ");
+                set_function_id(child.function_id);
                 scope.$root.currentFunction = child.custom_name;
             }
             location.href = '#page=' + child.url;

@@ -1,0 +1,263 @@
+﻿<div class="hcs-container">
+    <div class="row" style="margin:unset;">
+        <hcs-breadcumb data="mapName" selected-url="$partialpage" function="currentFunction" form-page="single"></hcs-breadcumb>
+        <hcs-tool-bar on-edit="onEdit()"
+              on-add="onAdd()"
+              on-delete="onDelete()"
+              on-copy="onCopy()"
+              on-export="onExport()"
+              on-import="onImport()"
+              search-common="SearchText"
+              on-search="onSearch()"></hcs-tool-bar>
+        <div style="margin-top:40px;">
+            <div class="hcs-page-department-tree">
+                <div class="hcs-page-department-tree panel-tool">
+                    <div class="pull-left hcs-profile-icon-heading-on-table">
+                            <button class="zb-icon-button hcs-profile-group-title">
+                                <span>
+                                    <i class="la la-plus"></i>
+                                </span>
+                            </button>
+                    </div>
+                    <div class="pull-left hcs-profile-icon-heading-on-table">
+                            <button class="zb-icon-button hcs-profile-group-title">
+                                <span>
+                                    <i class="la la-trash"></i>
+                                </span>
+                            </button>
+                    </div>
+                    <div class="pull-left hcs-profile-icon-heading-on-table">
+                            <button class="zb-icon-button hcs-profile-group-title">
+                                <span>
+                                    <i class="la la-download"></i>
+                                </span>
+                            </button>
+                    </div>
+                    <div class="pull-left hcs-profile-icon-heading-on-table">
+                            <button class="zb-icon-button hcs-profile-group-title">
+                                <span>
+                                    <i class="la la-upload"></i>
+                                </span>
+                            </button>
+                    </div>
+                    <div class="pull-left hcs-profile-icon-heading-on-table">
+                            <button class="zb-icon-button hcs-profile-group-title">
+                                <span>
+                                    <i class="la la-search"></i>
+                                </span>
+                            </button>
+                    </div>
+                    <div class="pull-left search-tree">
+                        <input-text id="inputSearchTree" ng-model="treeSearchText">
+                    </div>
+                    <div class="pull-left hcs-profile-icon-heading-on-table">
+                        <button class="zb-icon-button hcs-profile-group-title">
+                            <span>
+                                <i class="la la-angle-double-down"></i>
+                            </span>
+                        </button>
+                    </div>
+                    <div class="pull-left hcs-profile-icon-heading-on-table">
+                        <button class="zb-icon-button hcs-profile-group-title">
+                            <span>
+                                <i class="la la-angle-double-up"></i>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+                <div class="hcs-page-department-tree tree">
+                    <tree-data data-source="treeDepartmentsDataSource" display-field="default_name"
+                                parent-field="parent_id" key-field="function_id" 
+                                multi-select="treeMultiSelect" select-mode="treeMode" 
+                                on-select="selectTreeNode"
+                                current-node="treeCurrentNode"
+                                selected-nodes="treeSelectedNodes"
+                                selected-root-nodes="treeSelectedRootNodes"
+                                search-text="treeSearchText"
+                                check-all="treeCheckAll"
+                                checked-field="is_selected"
+                                disabled="false"/>
+                </div>
+            </div>
+            <div class="hcs-page-department-table">
+                <!--<div class="hcs-page-department-table panel-tool">
+                    <div class="pull-left hcs-profile-icon-heading-on-table">
+                            <button class="zb-icon-button hcs-profile-group-title">
+                                <span>
+                                    <i class="la la-search"></i>
+                                </span>
+                            </button>
+                    </div>
+                    <div class="pull-left search-tree">
+                        <input-text id="inputSearchTree" ng-model="treeSearchText">
+                    </div>
+                    <div class="pull-left hcs-profile-icon-heading-on-table">
+                        <button class="zb-icon-button hcs-profile-group-title">
+                            <span>
+                                <i class="la la-angle-double-down"></i>
+                            </span>
+                        </button>
+                    </div>
+                    <div class="pull-left hcs-profile-icon-heading-on-table">
+                        <button class="zb-icon-button hcs-profile-group-title">
+                            <span>
+                                <i class="la la-angle-double-up"></i>
+                            </span>
+                        </button>
+                    </div>
+                </div>-->
+                <div class="hcs-page-department-table department-table">
+                    <table-data data-source="tableSource" fields="tableFields" type="MultiSelect" 
+                    paging="true" page-length="100" server-side="true" 
+                    press-enter="onSelectTableRow" selected-items="selectedItems" 
+                    current-item="currentItem" search-text="tableSearchText"
+                    refresh-row="refreshDataRow">
+                    </table-data>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="clearfix"></div>
+<script>
+    (function (scope) {
+    /* Table */
+    //Cấu hình tên field và caption hiển thị trên UI
+    scope.tableFields = [
+        { "data": "template_code", "title": "${get_res('template_code_table_title','Mã template')}" },
+        { "data": "template_name", "title": "${get_res('template_name_table_title','Tên template')}" },
+        { "data": "view_name", "title": "${get_res('view_name_table_title','Tên bảng')}" },
+        { "data": "is_default", "title": "${get_res('is_default_table_title','Là template mặc định')}" }
+    ];
+    //
+    scope.$$tableConfig = {};
+    //Dữ liệu cho table
+    scope.tableSource = _loadDataServerSide;
+    function _loadDataServerSide(fnReloadData, iPage, iPageLength, orderBy, searchText) {
+        scope.$$tableConfig = {
+            fnReloadData: fnReloadData,
+            iPage: iPage,
+            iPageLength: iPageLength,
+            orderBy: orderBy,
+            searchText: searchText
+        };
+        //setTimeout(function () {
+        if (fnReloadData) {
+            if (searchText) {
+                _tableData(iPage, iPageLength, orderBy, searchText, function (data) {
+                    fnReloadData(data);
+                });
+            } else {
+                _tableData(iPage, iPageLength, orderBy, null, function (data) {
+                    fnReloadData(data);
+                });
+            }
+        }
+        //}, 1000);
+    };
+
+        function _tableData(iPage, iPageLength, orderBy, searchText, callback) {
+            if (scope.treeCurrentNode.hasOwnProperty('function_id')) {
+                var sort = {};
+                $.each(orderBy, function (i, v) {
+                    sort[v.columns] = (v.type === "asc") ? 1 : -1;
+                });
+                sort[orderBy[0].columns] =
+                    services.api("${get_api_key('app_main.api.HCSSYS_ExcelTemplate/get_list_with_searchtext')}")
+                        .data({
+                            //parameter at here
+                            "pageIndex": iPage - 1,
+                            "pageSize": iPageLength,
+                            "search": searchText,
+                            "where": scope.treeCurrentNode.function_id,
+                            "sort": sort
+                        })
+                        .done()
+                        .then(function (res) {
+                            var data = {
+                                recordsTotal: res.total_items,
+                                recordsFiltered: res.total_items,
+                                data: res.items
+                            };
+                            callback(data);
+                            scope.currentItem = null;
+                            scope.$apply();
+                                })
+            }
+    }
+
+    scope.onSelectTableRow = pressEnter;
+    //Danh sách các dòng đc chọn (nếu là table MultiSelect)
+    scope.selectedItems = [];
+    //Dòng hiện tại đang được focus (nếu table là SingleSelect hoặc MultiSelect)
+    scope.currentItem = null;
+    scope.tableSearchText = '';
+    scope.SearchText = '';
+    //Refesh table
+    scope.refreshDataRow = function () { /*Do nothing*/ };
+    function pressEnter($row) {}
+
+    /* Tree */
+    scope.treeCurrentNode = {};
+    scope.treeSelectedNodes = [];
+    scope.treeSelectedRootNodes = [];
+    scope.treeCheckAll = false;
+    scope.treeSearchText = '';
+    scope.treeDisable = false;
+    scope.treeMultiSelect = true;
+    scope.treeMode = 3; // Value in (1, 3) combobox toàn quyền set 1 ngược lại set 3
+    var _treeDepartmentsDataSource = null;
+    //var _treeDefault = null;
+    scope.treeDepartmentsDataSource = null;
+    scope.mapName = [
+        { 'function_id': 'HCSSYS1000', 'name': 'Sơ đồ tổ chức', 'url': 'exceltemplate' },
+    ];
+    scope.currentFunction = scope.mapName[0];
+
+    _departments();
+    function _departments() {
+        services.api("${get_api_key('app_main.api.functionlist/get_tree')}")
+            .data()
+            .done()
+            .then(function (res) {
+                console.log("XXXXXXXXXXXXXXXXX", res);
+                _treeDepartmentsDataSource = res;
+                scope.treeDepartmentsDataSource = _treeDepartmentsDataSource;
+                //Tạo biến local dùng để lưu cây trạng thái chưa được chọn
+                //_treeDefault = JSON.parse(JSON.stringify(res));
+                scope.$applyAsync();
+            })
+    }
+
+    scope.$root.$history.onChange(scope, function (data) {
+        if (scope.mapName.length > 0) {
+            if (data.f) {
+                scope.$partialpage = data.f;
+                var func = _.filter(scope.mapName, function (f) {
+                    return f["function_id"] == data.f;
+                });
+                if (func.length > 0) {
+                    set_function_id(func[0].function_id);
+                    scope.$partialpage = func[0].url;
+                } else {
+                    set_function_id(HOMEPAGE_ID);
+                    window.location.href = "#";
+                }
+            } else {
+                set_function_id(scope.mapName[0].function_id);
+                scope.$partialpage = scope.mapName[0].url;
+            }
+            scope.$apply();
+        } else {
+            set_function_id(HOMEPAGE_ID);
+            window.location.href = "#";
+        }
+    });
+
+    scope.$watch('treeCurrentNode', function (val) {
+        _loadDataServerSide(scope.$$tableConfig.fnReloadData,
+            scope.$$tableConfig.iPage, scope.$$tableConfig.iPageLength,
+            scope.$$tableConfig.orderBy, scope.$$tableConfig.searchText)
+    })
+});
+</script>

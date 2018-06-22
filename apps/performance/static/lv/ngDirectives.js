@@ -1,4 +1,21 @@
 ﻿var _dialog_root_url;
+/**
+This function allow search any angular scope by scope id
+*/
+function findScopeById(id){
+    var eles=$(".ng-scope");
+    var ret=undefined;
+    for(var i=0;i<eles.length;i++){
+        ret=angular.element(eles[i]).scope();
+        if(ret.$id===id){
+            break;
+        }
+        else {
+            ret=undefined;
+        }
+    }
+    return ret;
+}
 function dialog_root_url(value) {
     _dialog_root_url = value;
 }
@@ -14,8 +31,12 @@ function onAfterLoadContent(callback){
  * 
  * @param {object} $scope scope của form Dialog
  * @param {any} id id của dialog
+ * @param {array} button danh sách button
  */
-function dialog($scope, id = 'myModal') {
+function dialog($scope, id = 'myModal', button) {
+    if(angular.isNumber($scope)){
+        $scope=findScopeById($scope);
+    }
     function getScript(content) {
         if (content.indexOf("<body>") > -1) {
             var x = content.indexOf("<body>") + "<body>".length;
@@ -43,6 +64,29 @@ function dialog($scope, id = 'myModal') {
             var fn = eval(scripts[i]);
             fn(subScope,_params);
         }
+
+        /*
+         * paramer button với giá trị là mảng dùng để khai báo các button được render khi bât dialog
+         * cấu trúc của array. Ví dụ:
+         * [
+         *      {"func_name":"saveNClose", "icon":"la la-save", "name":"Lưu & đóng"},
+         *      {"func_name":"saveNNext", "icon":"la la-save", "name":"Lưu & tiếp"}
+         * ]
+         */
+
+        var template_button = '<div class="pull-right"><button ng-click="XXXXX($event)"><i class="XXXXXX"></i>XXXXXXX</button></div>';
+        var frm_button = '';
+
+        if (button.close && button.close === true) {
+            frm_button += '<div class="pull-right"><button data-dismiss="modal"><i class="la la-close" style="padding-right:unset;"></i></button></div>';
+        }
+
+        if (button["button"] && button["button"].length > 0) {
+            for (var i = 0; i < button["button"].length; i++) {
+                frm_button += template_button.replace("XXXXX", button["button"][i]["func_name"]).replace("XXXXXX", button["button"][i]["icon"]).replace("XXXXXXX", button["button"][i]["name"]);
+            }
+        }
+
         var frm = $('<div><div class="modal fade" id="' + id +'" role="dialog">' +
                 '<div class="modal-dialog">' +
                 '<div class="modal-content">' +
@@ -56,12 +100,11 @@ function dialog($scope, id = 'myModal') {
                 '<button type="button" class="close" ng-click="onResizeDialog()"><span class="modal-resize"><i class="la la-expand"></i></span></button>' +
                 '</h4 > ' +
                 '</div>' +
-            '<div class="modal-body">' +
+                '<div class="modal-body">' +
 
                 '</div>' +
                 '<div class="modal-footer">' +
-                '<div class="pull-right"><button ng-click="saveNClose($event)"><i class="la la-save"></i>Lưu & đóng</button></div>' +
-                '<div class="pull-right"><button ng-click="saveNNext($event)"><i class="la la-save"></i>Lưu & tiếp</button></div>' +
+                frm_button + 
                 '</div>' +
                 '</div></div>'
             );
@@ -279,7 +322,9 @@ function history_navigator($scope) {
                 var _data = scope.$history.data();
                 callback(_data);
                 scope.$$$$historyCallback = callback;
-                historyChangeCallback.push(callback);
+                //if (historyChangeCallback.length > 1)
+                //    historyChangeCallback = [historyChangeCallback[0]];
+                    historyChangeCallback.push(callback);
 
             },
             redirectTo: function (bm) {
@@ -457,6 +502,7 @@ mdl.directive("cTemplate", ["$compile", function ($compile) {
         restrict: "ACE",
         link: function (scope, ele, attr) {
             attr.$observe("url", function (value) {
+                if (value === "" || value === null || value === undefined) return;
                 loadUrl(value, function (err, content) {
                     var ret = getScript(content);
                     var sScope = compile(scope, ret.scripts, ret.content,ret.url);
@@ -1798,4 +1844,95 @@ mdl.directive('cEnter', ["$parse", function ($parse) {
             });
         }
     };
+}]);
+/**
+in order to use this directive add script tag with src point to 'file_reading.js'
+File upload: How to use this directive:
+<div c-upload-file api='<server api map key>'
+                    chunk='<size of buffer data for upload>'
+                    on-sync='<function declare in scope>'
+                    on-finish='<function declare in scope>'
+></div>
+<script>
+    scope.uploadFinish=function(err,result){
+
+            if(err){
+                console.log(err);
+            }
+        };
+        scope.onSync=function(apiName,data,cb){
+            console.log("before",data);
+            ws(scope).api(apiName)
+            .data(data)
+            .done()
+            .then(function(result){
+                console.log("after",result);
+                cb(undefined,result.result);
+            }).catch(function(ex){
+                cb(ex);
+
+            });
+        }
+</script>
+*/
+mdl.directive('cUploadFile', ["$parse", function ($parse) {
+    return {
+        restrict: "CAE",
+        template: "<input type='file'/>",
+        link: function (s, e, a) {
+            var _onPost = undefined;
+            var htmlFileInput = e[0];
+            var fileUploader = new fileUpload(htmlFileInput);
+            // Set api path for upload callback
+            fileUploader.setApiPath(value);
+            // default chunk size is 500kB
+            fileUploader.setChunkSize(1024 * 1024 / 2);
+            a.$observe("chunk", function (value) {
+                if (value !== "" && value !== undefined && value !== null) {
+                    fileUploader.setChunkSize(1 * value);
+                }
+                
+            });
+            a.$observe("api", function (value) {
+               
+                
+                fileUploader.onPost(function (data, cb) {
+                    if (a.onSync) {
+                        var fn = s.$eval(a.onSync);
+                        if (angular.isFunction(fn)) {
+                            fn(fileUploader.getApiPath(), data, cb);
+                        }
+                        return;
+                    }
+                    throw ("'on-sync' was not found\r\n" +
+                        "'on-sync' must be bind with tree params function look like that:\r\n" +
+                        "scope.onSync=function(apiPath,data,callback){\r\n" +
+                        "callback(error,result)"
+                        + "}"
+                    );
+
+                }).done(function (ex, result) {
+                    if (ex) {
+                        throw (ex);
+                    }
+                    if (a.onFinish) {
+                        var fn = s.$eval(a.onFinish);
+                        if (angular.isFunction(fn)) {
+                            fn(ex, result.result);
+                        }
+                        return;
+                    }
+                    throw ("'on-finish' was not found\r\n" +
+                        "'on-finish' must be bind with tree params function look like that:\r\n" +
+                        "scope.onFinish=function(ex,result){\r\n" +
+
+                        +"}"
+                    );
+                });
+            });
+
+
+
+        }
+    }
 }]);

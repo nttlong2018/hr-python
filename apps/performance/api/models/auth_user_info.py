@@ -12,7 +12,7 @@ def auth_user_info():
             login_account = helpers.create_field("text",True),
             username=helpers.create_field("text",True),
             display_name=helpers.create_field("text",True),
-            role_code=helpers.create_field("text",True),
+            role_code=helpers.create_field("text"),
             email=helpers.create_field("text"),
             is_system=helpers.create_field("bool"),
             never_expire=helpers.create_field("bool"),

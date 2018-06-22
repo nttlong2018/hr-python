@@ -443,7 +443,7 @@ html {
         top: 0 !important;
 
         .modal-content .modal-body {
-            height: ~"calc(100vh - 91px)";
+            height: ~"calc(100vh - 91px)" !important;
         }
     }
 }
@@ -519,6 +519,13 @@ html {
     vertical-align: top !important;
 }
 
+#myComboboxDialog .modal-dialog {
+    width: 40%;
+    top:10vh;
+}
+#myComboboxDialog .modal-dialog .modal-content .modal-body {
+    height: 60vh;
+}
 
 /*Toast*/
 #hcs-toast-alert {

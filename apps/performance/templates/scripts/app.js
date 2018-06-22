@@ -12,6 +12,7 @@ function controller($dialog, $scope, systemService) {
     $scope.VIEW_ID = "${register_view()}"
     $dialog($scope)
     ws_set_url("${get_app_url('api')}")
+    ws_set_export_token_url("${get_api_key('app_main.excel.manager/generate_token')}");
     ws_onBeforeCall(function () {
         mask = $("<div class='mask'></div>")
         mask.appendTo("body");
@@ -86,24 +87,35 @@ function controller($dialog, $scope, systemService) {
                     });
                 });
                 $scope.$root.$functions = fs;
-                $scope.$root.$applyAsync();
-
+                $scope.$applyAsync();
+                $scope.$root.getPage = function () {
+                    if (angular.isDefined($scope.$root.page)) return "${get_app_url('')}/pages/" + $scope.$root.page
+                    return "${get_app_url('')}/pages/home"
+                }
                 $scope.$root.$history.change(function (data) {
+                    console.log("$history.change app.js", data);
+                    if (data.hasOwnProperty("")) {
+                        set_function_id(HOMEPAGE_ID);
+                    }
                     if (data.page) {
                         var currentFunction = _.filter(functions, function (d) {
                             return d["url"] == data.page;
                         });
                         if (currentFunction.length > 0) {
                             $scope.$root.currentFunction = currentFunction[0].custom_name.replace("/", " ");
-
+                            set_function_id(currentFunction[0].function_id);
                             $scope.$root.currentModule = _.filter(functions, function (d) {
                                 return d["function_id"] == currentFunction[0].parent_id;
                             })[0].custom_name.replace("/", " ");
+                        } else {
+                            set_function_id(HOMEPAGE_ID);
                         }
                     } else {
                         $scope.$root.currentFunction = $scope.$root.currentModule = null;
+                        set_function_id(HOMEPAGE_ID);
                     }
-                    $scope.$root.page = data.page
+                    $scope.$root.page = data.page;
+                    $scope.$root.page_data = data;
                     $scope.$root.$applyAsync();
                 })
             })

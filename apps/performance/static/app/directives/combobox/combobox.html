@@ -1,0 +1,50 @@
+﻿<div>
+<div class="form-control ui-select-container ui-select-multiple ui-select-bootstrap dropdown form-control ng-valid ng-not-empty ng-dirty ng-touched" ng-class="{open: $select.open}" ng-model="selectpickerVm.multipleItem.selected" ng-disabled="false" search-enabled="true" append-to-body="true" 
+     style="min-height: 25px;
+    padding: unset;
+    border: none;
+    border-bottom: 1px solid #cbcbcb !important;
+    width: calc(100% - 25px);
+    float: left;
+    border-radius: unset !important;">
+    <div>
+        <span class="ui-select-match ng-scope" placeholder="Multiple Select">
+            <span ng-repeat="$item in items" class="ng-scope" style="" ng-if="multiSelect">
+                <span class="ui-select-match-item btn btn-default btn-xs" tabindex="-1" 
+                      type="button"
+                      style="margin-bottom:unset;padding: 0px 5px 0px 5px;">
+                    <span class="close ui-select-match-close" 
+                          ng-click="removeChoice($item.value)">&nbsp;×
+                    </span>
+                    <span>
+                        <span class="ng-binding ng-scope">{{$item.caption}}</span>
+                    </span>
+                </span>
+            </span>
+            <span ng-show="currentItem">
+                <span class="ui-select-match-item btn btn-default btn-xs" tabindex="-1" 
+                      type="button"
+                      style="margin-bottom:unset;padding: 0px 5px 0px 5px;">
+                    <span class="close ui-select-match-close" 
+                          ng-click="removeItem()">&nbsp;×
+                    </span>
+                    <span>
+                        <span class="ng-binding ng-scope">{{item.caption}}</span>
+                    </span>
+                </span>
+            </span>
+        </span>
+    </div>
+</div>
+<div style="float:left;">
+<button class="btn btn-default" type="button" style="
+                    padding: unset;
+                    border-radius: unset;
+                    height: 25px;
+                    width: 25px;
+                    border: unset;">
+                    <i class="la la-external-link-square" style="
+                 font-size: 25px;"></i>
+                </button>
+</div>
+</div>

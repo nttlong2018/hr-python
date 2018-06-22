@@ -30,8 +30,6 @@
                 var $dt = null;
                 if (ngModel && $scope.$eval(ngModel)) {
                     $dt = new Date($scope.$eval(ngModel));
-                } else {
-                    $dt = new Date();
                 }
                 $scope.dt = $dt;
                 $scope.setDate = function (year, month, day) {

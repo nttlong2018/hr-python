@@ -28,7 +28,7 @@ def insert(args):
                     username         = args['data']['username'],
                     login_account    = args['data']['login_account'],
                     display_name     = args['data']['display_name'],
-                    role_code        = args['data']['role_code'],
+                    role_code        = (lambda data: data["role_code"] if data.has_key("role_code") else None)(args['data']),
                     email            = args['data']['email'],
                     is_system        = (lambda data: data["is_system"] if data.has_key("is_system") else False)(args['data']),
                     never_expire     = (lambda data: data["never_expire"] if data.has_key("never_expire") else False)(args['data']),
@@ -69,7 +69,7 @@ def update(args):
                     _id              = args['data']['_id'],
                     login_account    = args['data']['login_account'],
                     display_name     = args['data']['display_name'],
-                    role_code        = args['data']['role_code'],
+                    role_code        = (lambda data: data["role_code"] if data.has_key("role_code") else None)(args['data']),
                     email            = args['data']['email'],
                     is_system        = (lambda data: data["is_system"] if data.has_key("is_system") else False)(args['data']),
                     never_expire     = (lambda data: data["never_expire"] if data.has_key("never_expire") else False)(args['data']),
@@ -124,7 +124,7 @@ def get_list_with_searchtext(args):
             pageSize        = args['data'].get('pageSize', 0)
             pageIndex       = args['data'].get('pageIndex', 20)
             sort            = args['data'].get('sort', 20)
-            where           = (lambda data: data["where"] if data.has_key("where") else "")(args['data'])
+            where           = (lambda data: data["where"] if data.has_key("where") else {})(args['data'])
 
             pageIndex       = (lambda pIndex: pIndex if pIndex != None else 0)(pageIndex)
             pageSize        = (lambda pSize: pSize if pSize != None else 20)(pageSize)
@@ -147,9 +147,10 @@ def get_list_with_searchtext(args):
             if(searchText != None):
                 items.match("contains(login_account, @name)",name=searchText)
 
-            if(where != None and where != ""):
+            if(where != None and where != {}):
                 try:
-                    items.match(where)
+                    if where.has_key('filter') and  where.has_key('value') and len(where['filter']) and len(where['value']):
+                        items.match(where["filter"],where["value"])
                 except Exception as ex:
                     raise(Exception("syntax where error"))
 
@@ -163,3 +164,68 @@ def get_list_with_searchtext(args):
     return dict(
             error = "request parameter is not exist"
         )
+
+def update_role_code(args):
+    try:
+        if args['data'] != None:
+            lock.acquire()
+
+            if args['data'].has_key('role_code') and args['data'].has_key('users'):
+                user_names = [x["username"]for x in args['data']['users']]
+                ret = models.auth_user_info().update(
+                    dict(
+                        role_code = args['data']['role_code']
+                        ),
+                    "username in {0}",
+                    user_names)
+
+                lock.release()
+                return ret
+
+        return dict(
+            error = "request parameter is not exist"
+        )
+
+    except Exception as ex:
+        logger.debug(ex)
+        lock.release()
+        raise(ex)
+
+def remove_role_code_by_user(args):
+    try:
+        lock.acquire()
+        if args['data'].has_key('users'):
+            user_names = [x["username"]for x in args['data']['users']]
+            ret = models.auth_user_info().update(
+                dict(
+                    role_code = None
+                    ),
+                "username in {0}",
+                user_names)
+
+            lock.release()
+            return ret
+        return dict(
+            error = "request parameter is not exist"
+        )
+    except Exception as ex:
+        logger.debug(ex)
+        lock.release()
+        raise(ex)
+
+def remove_role_code_by_role(roles):
+    try:
+        lock.acquire()
+        ret = models.auth_user_info().update(
+            dict(
+                role_code = None
+                ),
+            "role_code in {0}",
+            roles)
+
+        lock.release()
+        return ret
+    except Exception as ex:
+        logger.debug(ex)
+        lock.release()
+        raise(ex)

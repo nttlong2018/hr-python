@@ -1,6 +1,23 @@
 ﻿var _ws_url_
 var _wsOnBeforeCall;
 var _wsOnAfterCall;
+var _ws_export_url_;
+
+var HOMEPAGE_ID = "HOMEPAGE";
+var _funtion_id_ = HOMEPAGE_ID;
+
+function set_function_id(id) {
+    _funtion_id_ = id;
+}
+function get_function_id() {
+    return _funtion_id_;
+}
+function ws_set_export_token_url(url) {
+    _ws_export_token_url_ = url;
+}
+function ws_get_export_token_url() {
+    return _ws_export_token_url_;
+}
 function ws_set_url(url) {
     _ws_url_ = url;
 }

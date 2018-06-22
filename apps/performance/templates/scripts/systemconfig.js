@@ -7,7 +7,7 @@
 
     scope.currentFunction = scope.mapName[0];
 
-    scope.$root.$history.change(function (data) {
+    scope.$root.$history.onChange(scope, function (data) {
         if (scope.mapName.length > 0) {
             if (data.f) {
                 scope.$partialpage = data.f;

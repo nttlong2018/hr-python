@@ -4,19 +4,20 @@ _hasCreated=False
 def HCSSYS_Departments():
     global _hasCreated
     if not _hasCreated:
-        helpers.define_model(
+        helpers.extent_model(
             "HCSSYS_Departments",
+            "base",
             [["department_code"]],
             #id=helpers.create_field("numeric",True),
             department_code=helpers.create_field("text", True),
-            department_name=helpers.create_field("text"),
+            department_name=helpers.create_field("text", True),
             department_name2=helpers.create_field("text"),
             department_alias=helpers.create_field("text"),
             #parent_id=helpers.create_field("numeric"),
             parent_code=helpers.create_field("text"),
             level=helpers.create_field("numeric"),
-            level_code=helpers.create_field("text"),
-            level_code2=helpers.create_field("text"),
+            level_code=helpers.create_field("list"),
+            #level_code2=helpers.create_field("text"),
             department_tel=helpers.create_field("text"),
             department_fax=helpers.create_field("text"),
             department_email=helpers.create_field("text"),

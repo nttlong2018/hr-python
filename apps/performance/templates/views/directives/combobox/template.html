@@ -1,0 +1,115 @@
+﻿<div title="{{$parent.headerTitle}}" style="height:100%;">
+    <table-data data-source="tableSource" fields="tableFields" type="$parent.multiSelect === true ? MultiSelect : SingleSelect" 
+                    paging="true" page-length="table_info.page_size" server-side="true" 
+                    press-enter="onSelectTableRow" selected-items="selectedItems" 
+                    current-item="currentItem" search-text="tableSearchText"
+                    refresh-row="refreshDataRow">
+    </table-data>
+</div>
+<script>
+    (function (scope) {
+        scope.table_info = scope.$parent.combobox_info;
+        scope.tableFields = scope.table_info.display_fields;
+        scope.tableSource = _loadDataServerSide;
+        function _loadDataServerSide(fnReloadData, iPage, iPageLength, orderBy, searchText) {
+            scope.$$tableConfig = {
+                fnReloadData: fnReloadData,
+                iPage: iPage,
+                iPageLength: iPageLength,
+                orderBy: orderBy,
+                searchText: searchText
+            };
+            //setTimeout(function () {
+            if (fnReloadData) {
+                if (searchText) {
+                    _tableData(iPage, iPageLength, orderBy, searchText, function (data) {
+                        fnReloadData(data);
+                    });
+                } else {
+                    _tableData(iPage, iPageLength, orderBy, null, function (data) {
+                        fnReloadData(data);
+                    });
+                }
+            }
+            //}, 1000);
+        };
+        scope.onSelectTableRow = pressEnter;
+        //Danh sách các dòng đc chọn (nếu là table MultiSelect)
+        scope.selectedItems = [];
+        //Dòng hiện tại đang được focus (nếu table là SingleSelect hoặc MultiSelect)
+        scope.currentItem = null;
+        scope.tableSearchText = '';
+        scope.SearchText = '';
+        //Refesh table
+        scope.refreshDataRow = function () { /*Do nothing*/ };
+
+        scope.onResizeDialog = onResizeDialog;
+        scope.saveNClose = saveNClose;
+
+        function pressEnter($row) {
+
+        }
+
+        function onResizeDialog() {
+            $('.modal-dialog').toggleClass('resize-width');
+            setTimeout(function () {
+                $(window).trigger('resize');
+            }, 100);
+        }
+
+        function saveNClose() {
+            $('#myComboboxDialog').remove();
+            $('.modal-backdrop:last').remove();
+            if (scope.currentItem) {
+                scope.$parent.item = {
+                    "value": scope.currentItem[scope.table_info["value_field"]],
+                    "caption": scope.currentItem[scope.table_info["caption_field"]]
+                }
+            }
+        }
+
+        function _tableData(iPage, iPageLength, orderBy, searchText, callback) {
+            var sort = {};
+            $.each(orderBy, function (i, v) {
+                sort[v.columns] = (v.type === "asc") ? 1 : -1;
+            });
+            sort[orderBy[0].columns] =
+                services.api(scope.$parent.apiUrl)
+                    .data({
+                        //parameter at here
+                        "key": scope.$parent.listCode,
+                        "value": scope.$parent.listValue,
+                        "pageIndex": iPage - 1,
+                        "search": searchText,
+                    })
+                    .done()
+                    .then(function (res) {
+                        var data = {
+                            recordsTotal: res.data.total_items,
+                            recordsFiltered: res.data.total_items,
+                            data: res.data.items
+                        };
+                        callback(data);
+                        //scope.tableSource = res;
+                        scope.currentItem = null;
+                        scope.$apply();
+                    })
+        }
+
+        scope.$watch('selectedItems', function (val) {
+            if (val && val.length) {
+                var items = [];
+                _.each(val, function (ele) {
+                    items.push(
+                        {
+                            "value": ele[scope.table_info["value_field"]],
+                            "caption": ele[scope.table_info["caption_field"]]
+                        }
+                    );
+                });
+                scope.$parent.items = items;
+            }
+        }, true);
+
+});
+</script>

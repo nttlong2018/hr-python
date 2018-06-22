@@ -15,7 +15,7 @@
                     <!--Mã nhóm người dùng-->
                     <label for="inputUserName" class="col-sm-5 zb-form-label">${get_res('role_code','Mã nhóm người dùng')}</label>
                     <div class="col-sm-7">
-                        <input-text id="inputUserName" ng-model="entity.role_code" required>
+                        <input-text id="inputUserName" ng-model="entity.role_code" ng-disabled="{{ __mode === 2 ? 'true' : 'false' }}" required>
                     </div>
                 </div>
             </div>
@@ -33,10 +33,12 @@
                     <!--Vùng dữ liệu truy cập-->
                     <label for="inputGroupUser" class="col-sm-5 zb-form-label">${get_res('dd_code','Vùng dữ liệu truy cập')}</label>
                     <div class="col-sm-7">
-                        <input-select data-list="cbbDataDomain" ng-model="entity.dd_code"
-                                      data-value="value" 
-                                      data-caption="caption"
-                                      required/>
+                        <input-combobox id="inputEmployeeId" required
+                            api-url="${get_api_key('app_main.api.common/get_dropdown_list')}"
+                            list-code="${encryptor.get_key('cbb_AD_Roles')}"
+                            list-value="[{ '@dd_code': '' }]"
+                            current-item="entity.dd_code"
+                            multi-select="false">
                     </div>
                 </div>
             </div>
@@ -82,7 +84,7 @@
 </div>
 <div class="row">
     <div class="col-md-12">
-        <div class="row">
+        <div class="row" ng-if="__mode != 1">
             <div class="hcs-profile-background-group-table" style="margin-right:15px;">
                 <div class="pull-left hcs-profile-icon-heading-on-table" style="height: 100%;padding-right: 3px;background: white;margin-left: unset;">
                     <button class="zb-icon-button hcs-profile-group-title" onclick="$('#collapseDialogUserGroupListUser').slideToggle();">
@@ -97,7 +99,7 @@
                     </button>
                 </div>
                 <div class="pull-right hcs-profile-icon-heading-on-table">
-                    <button class="zb-icon-button hcs-profile-group-title">
+                    <button class="zb-icon-button hcs-profile-group-title" ng-click="deleteUser()">
                         <span>
                             <i class="la la-close"></i>
                         </span>
@@ -111,7 +113,7 @@
                     </button>
                 </div>
                 <div class="pull-right hcs-profile-icon-heading-on-table">
-                    <button class="zb-icon-button hcs-profile-group-title">
+                    <button class="zb-icon-button hcs-profile-group-title" ng-click="addNewUser()">
                         <span>
                             <i class="la la-plus"></i>
                         </span>
@@ -119,12 +121,12 @@
                 </div>
             </div>
         </div>
-        <div id="collapseDialogUserGroupListUser" class="row" ng-if="__mode != 1">
+        <div id="collapseDialogUserGroupListUser" class="row">
             <div class="col-md-12" style="height: 300px;">
                 <!--Table user-->
                 <table-data data-source="tableListUserSource" fields="tableListUserFields" type="MultiSelect" 
                 paging="true" page-length="100" server-side="true" 
-                selected-items="selectedListUserItems"
+                press-enter="onSelectTableRow" selected-items="selectedListUserItems"
                 current-item="ListUserCurrentItem" search-text="tableSearchText"
                 refresh-row="refreshDataListUserRow">
                 </table-data>
@@ -132,7 +134,7 @@
         </div>
     </div>
         <div class="col-md-12">
-        <div class="row">
+        <div class="row" ng-if="__mode != 1">
             <div class="hcs-profile-background-group-table" style="margin-right:15px;">
                 <div class="pull-left hcs-profile-icon-heading-on-table" style="height: 100%;padding-right: 3px;background: white;margin-left: unset;">
                     <button class="zb-icon-button hcs-profile-group-title" onclick="$('#collapseDialogUserGroupFunction').slideToggle();">
@@ -169,7 +171,7 @@
                 </div>
             </div>
         </div>
-        <div id="collapseDialogUserGroupFunction" class="row" ng-if="__mode != 1">
+        <div id="collapseDialogUserGroupFunction" class="row">
             <div class="col-md-12">
                 <!--Table function-->
                 <!--
@@ -189,9 +191,6 @@
         scope.tableListUserFields = [
             { "data": "login_account", "title": "${ get_res('table_user_login_account_table_title', 'Mã người dùng') }"},
             { "data": "display_name", "title": "${ get_res('table_user_display_name_table_title', 'Tên hiển thị') }"},
-            { "data": "user_group", "title": "${ get_res('table_user_user_group_table_title', 'Thuộc nhóm người dùng') }"},
-            { "data": "is_system", "title": "${ get_res('table_user_is_system_table_title', 'Là quản trị hệ thống') }"},
-            { "data": "never_expire", "title": "${ get_res('table_user_never_expire_table_title', 'Không bị khóa') }"},
             { "data": "manlevel_from", "title": "${ get_res('table_user_manlevel_from_table_title', 'Mức quản lí từ') }"},
             { "data": "manlevel_to", "title": "${ get_res('table_user_manlevel_to_table_title', 'Mức quản lí đến') }"},
             {
@@ -202,8 +201,9 @@
         ];
         scope.tableListUserSource = _loadDataListUserServerSide;
         scope.refreshDataListUserRow = function () { /*Do nothing*/ };
-        scope.selectedListUserItems;
-        scope.ListUserCurrentItem;
+        scope.selectedListUserItems = [];
+        scope.ListUserCurrentItem = null;
+        scope.onSelectTableRow = pressEnter;
         function _loadDataListUserServerSide(fnReloadData, iPage, iPageLength, orderBy, searchText) {
             scope.$$table_List_User_Config = {
                 fnReloadData: fnReloadData,
@@ -217,6 +217,7 @@
                 if (searchText) {
                     _tableData("${get_api_key('app_main.api.auth_user/get_list_with_searchtext')}",iPage, iPageLength, orderBy, searchText, function (data) {
                         fnReloadData(data);
+                        scope.entity.users = data.data;
                     });
                 } else {
                     _tableData("${get_api_key('app_main.api.auth_user/get_list_with_searchtext')}",iPage, iPageLength, orderBy, null, function (data) {
@@ -226,6 +227,10 @@
             }
             //}, 1000);
         };
+
+        function pressEnter($row) {
+        
+        }
 
         //Table danh sách người dùng - END
 
@@ -293,14 +298,17 @@
                 });
                 sort[orderBy[0].columns] =
                     services.api(url)
-                        .data({
+                    .data({
                             //parameter at here
                             "pageIndex": iPage - 1,
                             "pageSize": iPageLength,
                             "search": searchText,
                             "sort": sort,
-                            "where": "role_code =='" + scope.entity.role_code + "'"
-                        })
+                            "where": {
+                                "filter": "role_code == @role_code",
+                                "value": {"role_code":scope.entity.role_code}
+                                }
+                            })
                         .done()
                         .then(function (res) {
                             _.each(res.items, function (val) { val.user_group = 1; })
@@ -325,10 +333,19 @@
         scope.col_group = 6;
 
         scope.entity = scope.__mode != 1 ? scope.$parent.currentItem : null;
+        if (scope.__mode === 2 && scope.entity.users === []) {
+            scope.entity.users = [];
+        }
         scope.cbbDataDomain = [];
 
         scope.saveNClose = saveNClose;
         scope.saveNNext = saveNNext;
+
+        scope.addNewUser = addNewUser;
+        scope.deleteUser = deleteUser;
+
+        //Scope select vùng dữ liệu
+        scope.selectedItems = [];
 
         scope.$applyAsync();
 
@@ -337,6 +354,9 @@
             //scope.col = scope.col == 4 ? 6 : 4;
             scope.col_group = scope.col_group == 6 ? 8 : 6;
             scope.col = scope.col == 12 ? 6 : 12;
+            setTimeout(function () {
+                $(window).trigger('resize');
+            }, 100);
         }
 
         function saveNClose(event) {
@@ -348,7 +368,6 @@
                 }
                 beforeCallToServer();
                 editData(scope.entity, function (res) {
-                    debugger
                     if (res.error == null) {
                         $('#myModal').modal('hide');//Đóng form input
                         $msg.alert("${get_global_res('Handle_Success','Thao tác thành công')}", $type_alert.SUCCESS);//Xuất thông báo thành cônng
@@ -359,7 +378,7 @@
                             scope.$parent.currentItem = scope.entity;
                             scope.$parent.$apply();
                             //Refesh datatable
-                            scope.refreshDataListUserRow();
+                            scope.$parent.refreshDataRow();
                         }
                     } else {
                         if (res.error.code == 'duplicate') {
@@ -373,9 +392,6 @@
                                     msg += "${get_res('dd_code','Vùng dữ liệu truy cập')}" + " " + "${get_global_res('exists','đã tồn tại')}" + "\n";
                             });
                             $msg.message("${get_global_res('Internal_Server_Error','Có lỗi từ phía máy chủ')}", msg, function () { });
-                        }
-                        else {
-
                         }
                     }
                 });
@@ -396,7 +412,7 @@
                             //Reload table data
                             reloadData();
                         } else if (scope.__mode == 2) {
-                             var entity = JSON.parse(JSON.stringify(scope.entity));
+                            var entity = JSON.parse(JSON.stringify(scope.entity));
                             scope.$parent.currentItem = entity;
                             afterCallToServer();
                             scope.$applyAsync();
@@ -408,11 +424,82 @@
                         scope.entity = null;
                         scope.__mode = 1;
                     } else {
-                        $msg.message("${get_global_res('Internal_Server_Error','Có lỗi từ phía máy chủ')}", "${get_global_res('Please_Try_Again','Xin thử vui lòng thử lại')}", function () { });
+                        if (res.error.code == 'duplicate') {
+                            var msg = '';
+                            _.each(res.error.fields, function (val) {
+                                if (val == "role_code")
+                                    msg += "${get_res('role_code','Mã nhóm người dùng')}" + " " + "${get_global_res('exists','đã tồn tại')}" + "\n";
+                                if (val == "role_name")
+                                    msg += "${get_res('role_name','Tên nhóm người dùng')}" + " " + "${get_global_res('exists','đã tồn tại')}" + "\n";
+                                if (val == "dd_code")
+                                    msg += "${get_res('dd_code','Vùng dữ liệu truy cập')}" + " " + "${get_global_res('exists','đã tồn tại')}" + "\n";
+                            });
+                            $msg.message("${get_global_res('Internal_Server_Error','Có lỗi từ phía máy chủ')}", msg, function () { });
+                        }
                     }
                 });
             }
         };
+
+        function addNewUser() {
+            openDialog("${ get_res('add_new_user', 'Thêm người dùng') }", "permission/form/dialog/addUserGroup/addUser", function () { }, "myComboboxDialog");
+        }
+
+        function deleteUser() {
+            if (!scope.selectedListUserItems || scope.selectedListUserItems.length === 0) {
+            $msg.message("${get_global_res('Notification','Thông báo')}", "${get_global_res('No_Row_Selected','Không có dòng được chọn')}", function () { });
+            } else {
+                $msg.confirm("${get_global_res('Notification','Thông báo')}", "${get_global_res('Do_You_Want_Delete','Bạn có muốn xóa không?')}", function () {
+                    services.api("${get_api_key('app_main.api.auth_user/remove_role_code_by_user')}")
+                        .data({
+                            "users":scope.selectedListUserItems
+                        })
+                        .done()
+                        .then(function (res) {
+                            if (res.error == null) {
+                                _tableData("${get_api_key('app_main.api.auth_user/get_list_with_searchtext')}", scope.$$table_List_User_Config.iPage,
+                                    scope.$$table_List_User_Config.iPageLength, scope.$$table_List_User_Config.orderBy,
+                                    scope.$$table_List_User_Config.SearchText, scope.$$table_List_User_Config.fnReloadData);
+                                $msg.alert("${get_global_res('Handle_Success','Thao tác thành công')}", $type_alert.SUCCESS);
+                                scope.selectedListUserItems = null;
+                                scope.ListUserCurrentItem = [];
+                            } else {
+                                $msg.message("${get_global_res('Internal_Server_Error','Có lỗi từ phía máy chủ')}", "${get_global_res('Please_Try_Again','Xin thử vui lòng thử lại')}", function () { });
+                            }
+                        })
+                });
+            }
+        }
+
+        /**
+        * Hàm mở dialog
+        * @param {string} title Tittle của dialog
+        * @param {string} path Đường dẫn file template
+        * @param {function} callback Xử lí sau khi gọi dialog
+        * @param {string} id Id của form dialog, default = 'myModal'
+        */
+        function openDialog(title, path, callback, id = "myModal") {
+            var fn = {
+                "button": [{ "func_name": "saveNClose", "icon": "la la-check", "name": "" }],
+                "close":true
+            };
+            //check tồn tại của form dialog theo id
+            if ($('#' + id).length === 0) {
+                scope.headerTitle = title;
+                //Đặt ID cho form dialog
+                dialog(scope, id, fn).url(path).done(function () {
+                    callback();
+                    //Set resizable cho form dialog theo id
+                    //$('#myModal').ready(function () {
+                    //    $('#myModal .modal-dialog .modal-content .modal-header').on('mousedown touchstart', function (e) {
+                    //        $('#myModal .modal-dialog').draggable();
+                    //    }).bind('mouseup touchend', function () {
+                    //        $('#myModal .modal-dialog').draggable('destroy');
+                    //    });
+                    //})
+                });
+            }
+        }
 
         function editData(param, callback) {
             var url = getUrl();
@@ -484,24 +571,8 @@
             return scope.__mode == 1 || scope.__mode == 3 ? "${get_api_key('app_main.api.AD_Roles/insert')}" /*Mode 1: Tạo mới*/
                     : "${get_api_key('app_main.api.AD_Roles/update')}" /*Mode 2: Cập nhật*/
         }
-
-        function _comboboxData() {
-        services.api("${get_api_key('app_main.api.common/get_dropdown_list')}")
-            .data({
-                //parameter at here
-                "collection": "HCSSYS_DataDomain", //Tên collection
-                "column": ["dd_code", "dd_name"], //cột 1 value, cột 2 caption
-                "where": "", //điều kiện where vd: "where": "dd_code = 1"
-                "sort": {"dd_code":1}, //Sort trị 1 hoặc -1
-            })
-            .done()
-            .then(function (res) {
-                scope.cbbDataDomain = res.data;
-                scope.$applyAsync();
-            })
-        }
-        _comboboxData();
     
         function __init__() { };
+
     });
 </script>

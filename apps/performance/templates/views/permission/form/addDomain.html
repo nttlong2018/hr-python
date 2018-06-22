@@ -211,7 +211,6 @@
         }
 
         function saveNNext() {
-            debugger
             if (scope.Item != null) {
                 var rsCheck = checkError();//Kết quả check input
                 if (!rsCheck.result) {
@@ -261,7 +260,6 @@
         }
 
         function beforeCallToServer() {
-            debugger
             if (scope.__mode == 1)
                 delete scope.Item._id;
             //Check null, nếu null set default
@@ -305,7 +303,6 @@
                     });
                 }
             }
-            debugger;
             scope.treeDepartmentsDataSource = _treeDepartmentsDataSource;
             scope.$apply();
         }

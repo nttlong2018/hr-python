@@ -51,17 +51,6 @@
                 var $his = $scope.$root.$history.data();
                 window.location.href = "#page=" + $his.page + "&f=" + f.function_id;
             }
-
-            $scope.$root.$history.change(function () {
-                window.setTimeout(function () {
-                    var $his = $scope.$root.$history.data();
-                    if ($his.page && $his.f) {
-                        _selectedMenu($his.f);
-                    } else {
-                        _selectedMenu($scope.listFunction[0].function_id);
-                    }
-                }, 100);
-            });
         }
     }
 

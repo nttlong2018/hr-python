@@ -1,5 +1,8 @@
 var lv;
 (function (lv) {
+    /**
+     * Import
+     */
     var UploadService = (function () {
         function UploadService() { }
         //function UploadService(controller) {
@@ -17,7 +20,7 @@ var lv;
             for (var i = 0; i < len; i++) {
                 binary += String.fromCharCode(bytes[i]);
             }
-            this._content =  window.btoa(binary);
+            this._content = window.btoa(binary);
             return this;
         };
         UploadService.prototype.setFileName = function (fileName) {
@@ -66,21 +69,6 @@ var lv;
         return UploadService;
     }());
     lv.UploadService = UploadService;
-
-    //function getResultUpload(controller, path, fnCallback) {
-    //    controller.call("LV.HCS.Uploader/LV.HCS.Uploader.APIs/GetUploadResult")
-    //        .noMask()
-    //        .data({
-    //            Path: path
-    //        })
-    //        .done(function (evt) {
-    //            if (fnCallback) {
-    //                fnCallback(evt.data);
-    //            }
-    //        });
-    //}
-    //lv.getResultUpload = getResultUpload;
-
     function readFile(callback) {
         var _template = ""
             + "<div class='lv-form-import'>"
@@ -153,10 +141,8 @@ var lv;
         _form.appendTo("body");
         _form_container.show("fast");
     }
-
     var ImportFile = (function () {
         function ImportFile(api) {
-            console.log(api);
             this._api = api;
         }
         //ImportFile.prototype.setLanguage = function (language) {
@@ -183,49 +169,17 @@ var lv;
                         offset_minutes: offset_minutes
                     }),
                     success: function (res) {
-                        console.log("after")
-                        //console.log(owner)
-                        debugger;
                         if (callback) {
                             callback(res)
                         }
-                        //if (_wsOnAfterCall) {
-                        //    _wsOnAfterCall(owner.sender)
-                        //}
-                        //if (cb) {
-                        //    cb(undefined, res)
-                        //}
-                        //else {
-                        //    resolve(res)
-                        //}
-
                     },
                     error: function (jqXHR, textStatus, errorThrown) {
-                        console.log(jqXHR, textStatus, errorThrown)
-                        //if (_wsOnAfterCall) {
-                        //    _wsOnAfterCall(owner.sender)
-                        //}
                         var newWindow = window.open();
                         var txt = jqXHR.responseText
                         while (txt.indexOf(String.fromCharCode(10)) > -1) {
                             txt = txt.replace(String.fromCharCode(10), "<br/>")
                         }
                         newWindow.document.write(txt);
-                        //if (cb) {
-                        //    cb({
-                        //        error: {
-                        //            type: "server"
-                        //        }
-                        //    })
-                        //}
-                        //else {
-                        //    reject({
-                        //        error: {
-                        //            type: "server"
-                        //        }
-                        //    })
-                        //}
-
                     }
                 });
             });
@@ -234,5 +188,60 @@ var lv;
     }());
     lv.ImportFile = function (api) {
         return new ImportFile(api);
+    };
+
+    /**
+     * Export
+     */
+    var ExportFile = (function () {
+        function ExportFile(path) {
+            this._path = path;
+        }
+        ExportFile.prototype.data = function (data) {
+            this._data = data
+            return this;
+        }
+        ExportFile.prototype.done = function () {
+            var me = this;
+            var now = new Date();
+            var offset_minutes = now.getTimezoneOffset();
+            $.ajax({
+                url: ws_get_url(),
+                type: "post",
+                dataType: "json",
+                data: JSON.stringify({
+                    path: ws_get_export_token_url(),
+                    view: angular.element(".ng-scope").scope().$root.page,
+                    data: {
+                        path: me._path,
+                        function: get_function_id(),
+                        params: me._data
+                    },
+                    offset_minutes: offset_minutes
+                }),
+                success: function (res) {
+                    console.log(res);
+                    if (res.link) {
+                        window.open(res.link);
+                    } else {
+                        var newWindow = window.open();
+                        newWindow.document.write("<h3>File not found!</h3>");
+                    }
+                },
+                error: function (jqXHR, textStatus, errorThrown) {
+                    var newWindow = window.open();
+                    var txt = jqXHR.responseText
+                    while (txt.indexOf(String.fromCharCode(10)) > -1) {
+                        txt = txt.replace(String.fromCharCode(10), "<br/>")
+                    }
+                    newWindow.document.write(txt);
+                }
+            });
+        };
+        return ExportFile;
+    }());
+
+    lv.ExportFile = function (path) {
+        return new ExportFile(path);
     };
 })(lv || (lv = {}));

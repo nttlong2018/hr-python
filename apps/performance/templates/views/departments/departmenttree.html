@@ -1,0 +1,194 @@
+﻿<div class="hcs-container">
+    <div class="row" style="margin:unset;">
+        <hcs-breadcumb data="mapName" selected-url="$partialpage" function="currentFunction" form-page="single"></hcs-breadcumb>
+        <div style="margin-top:40px;">
+            <div class="hcs-page-department-tree">
+                <div class="hcs-page-department-tree panel-tool">
+                    <div class="pull-left hcs-profile-icon-heading-on-table">
+                            <button class="zb-icon-button hcs-profile-group-title">
+                                <span>
+                                    <i class="la la-search"></i>
+                                </span>
+                            </button>
+                    </div>
+                    <div class="pull-left search-tree">
+                        <input-text id="inputSearchTree" ng-model="treeSearchText">
+                    </div>
+                    <div class="pull-left hcs-profile-icon-heading-on-table">
+                        <button class="zb-icon-button hcs-profile-group-title">
+                            <span>
+                                <i class="la la-angle-double-down"></i>
+                            </span>
+                        </button>
+                    </div>
+                    <div class="pull-left hcs-profile-icon-heading-on-table">
+                        <button class="zb-icon-button hcs-profile-group-title">
+                            <span>
+                                <i class="la la-angle-double-up"></i>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+                <div class="hcs-page-department-tree tree">
+                    <tree-data data-source="treeDepartmentsDataSource" display-field="department_name"
+                                parent-field="parent_code" key-field="department_code" 
+                                multi-select="treeMultiSelect" select-mode="treeMode" 
+                                on-select="selectTreeNode"
+                                current-node="treeCurrentNode"
+                                selected-nodes="treeSelectedNodes"
+                                selected-root-nodes="treeSelectedRootNodes"
+                                search-text="treeSearchText"
+                                check-all="treeCheckAll"
+                                checked-field="is_selected"
+                                disabled="true"/>
+                </div>
+            </div>
+            <div class="hcs-page-department-table">
+                <div class="hcs-page-department-table panel-tool">
+                    <div class="pull-left hcs-profile-icon-heading-on-table">
+                            <button class="zb-icon-button hcs-profile-group-title">
+                                <span>
+                                    <i class="la la-search"></i>
+                                </span>
+                            </button>
+                    </div>
+                    <div class="pull-left search-tree">
+                        <input-text id="inputSearchTree" ng-model="treeSearchText">
+                    </div>
+                    <div class="pull-left hcs-profile-icon-heading-on-table">
+                        <button class="zb-icon-button hcs-profile-group-title">
+                            <span>
+                                <i class="la la-angle-double-down"></i>
+                            </span>
+                        </button>
+                    </div>
+                    <div class="pull-left hcs-profile-icon-heading-on-table">
+                        <button class="zb-icon-button hcs-profile-group-title">
+                            <span>
+                                <i class="la la-angle-double-up"></i>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+                <div class="hcs-page-department-table department-table">
+                    Table here
+                    <table-data data-source="tableSource" fields="tableFields" type="MultiSelect" 
+                    paging="true" page-length="100" server-side="true" 
+                    press-enter="onSelectTableRow" selected-items="selectedItems" 
+                    current-item="currentItem" search-text="tableSearchText"
+                    refresh-row="refreshDataRow">
+                    </table-data>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="clearfix"></div>
+<script>
+    (function (scope) {
+    /* Table */
+    //Cấu hình tên field và caption hiển thị trên UI
+    scope.tableFields = [
+        { "data": "department_code", "title": "${get_res('department_code_table_title','Mã')}" },
+        { "data": "department_name", "title": "${get_res('department_name_table_title','Tên')}" },
+        { "data": "department_alias", "title": "${get_res('department_alias_table_title','Bí danh')}" },
+        { "data": "department_tel", "title": "${get_res('department_tel_table_title','Số điện thoại')}" }
+    ];
+    //
+    scope.$$tableConfig = {};
+    //Dữ liệu cho table
+    scope.tableSource = _loadDataServerSide;
+    function _loadDataServerSide(fnReloadData, iPage, iPageLength, orderBy, searchText) {
+        scope.$$tableConfig = {
+            fnReloadData: fnReloadData,
+            iPage: iPage,
+            iPageLength: iPageLength,
+            orderBy: orderBy,
+            searchText: searchText
+        };
+        //setTimeout(function () {
+        if (fnReloadData) {
+            if (searchText) {
+                _tableData(iPage, iPageLength, orderBy, searchText, function (data) {
+                    fnReloadData(data);
+                });
+            } else {
+                _tableData(iPage, iPageLength, orderBy, null, function (data) {
+                    fnReloadData(data);
+                });
+            }
+        }
+        //}, 1000);
+    };
+
+    function _tableData(iPage, iPageLength, orderBy, searchText, callback) {
+        var sort = {};
+        $.each(orderBy, function (i, v) {
+            sort[v.columns] = (v.type === "asc") ? 1 : -1;
+        });
+        sort[orderBy[0].columns] =
+            services.api("${get_api_key('app_main.api.HCSSYS_DataDomain/get_list_with_searchtext')}")
+                .data({
+                    //parameter at here
+                    "pageIndex": iPage - 1,
+                    "pageSize": iPageLength,
+                    "search": searchText,
+                    "sort": sort
+                })
+                .done()
+                .then(function (res) {
+                    var data = {
+                        recordsTotal: res.total_items,
+                        recordsFiltered: res.total_items,
+                        data: res.items
+                    };
+                    callback(data);
+                    scope.currentItem = null;
+                    scope.$apply();
+                })
+    }
+
+    scope.onSelectTableRow = pressEnter;
+    //Danh sách các dòng đc chọn (nếu là table MultiSelect)
+    scope.selectedItems = [];
+    //Dòng hiện tại đang được focus (nếu table là SingleSelect hoặc MultiSelect)
+    scope.currentItem = null;
+    scope.tableSearchText = '';
+    scope.SearchText = '';
+    //Refesh table
+    scope.refreshDataRow = function () { /*Do nothing*/ };
+    function pressEnter($row) {}
+
+    /* Tree */
+    scope.treeCurrentNode = {};
+    scope.treeSelectedNodes = [];
+    scope.treeSelectedRootNodes = [];
+    scope.treeCheckAll = false;
+    scope.treeSearchText = '';
+    scope.treeDisable = false;
+    scope.treeMultiSelect = true;
+    scope.treeMode = 3; // Value in (1, 3) combobox toàn quyền set 1 ngược lại set 3
+    var _treeDepartmentsDataSource = null;
+    //var _treeDefault = null;
+    scope.treeDepartmentsDataSource = null;
+    scope.mapName = [
+        { 'function_id': 'function1', 'name': 'Sơ đồ tổ chức', 'url': 'permission/domain' },
+    ];
+    scope.currentFunction = scope.mapName[0];
+
+    _departments();
+    function _departments() {
+        services.api("${get_api_key('app_main.api.HCSSYS_Departments/get_list')}")
+            .data()
+            .done()
+            .then(function (res) {
+                console.log("XXXXXXXXXXXXXXXXX", res);
+                _treeDepartmentsDataSource = res;
+                scope.treeDepartmentsDataSource = _treeDepartmentsDataSource;
+                //Tạo biến local dùng để lưu cây trạng thái chưa được chọn
+                //_treeDefault = JSON.parse(JSON.stringify(res));
+                scope.$applyAsync();
+            })
+    }
+});
+</script>

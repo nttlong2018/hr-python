@@ -15,6 +15,7 @@
         fac.onClickBreadCumbDropdownMenu = onClickBreadCumbDropdownMenu;
         fac.onClickHideLeftMenufunction = onClickHideLeftMenufunction;
         fac.getTemplatePath = getTemplatePath;
+        fac.getCurrentPath = getCurrentPath;
 
         /**
         * Handle when click function button on left side screen
@@ -68,6 +69,10 @@
         function getTemplatePath(filePath) {
             /*Example: '../performance/static/app/directives/breadcumb/breadcumb.html'*/
             return fac.__templatePath + filePath + '/' + filePath + '.html';
+        }
+
+        function getCurrentPath() {
+            return fac.__templatePath;
         }
         return fac;
     }
