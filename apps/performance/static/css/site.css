@@ -21,7 +21,7 @@ body {
   bottom: 0;
   height: 20px;
   width: 100%;
-  background-color: #48503c;
+  background-color: #48503C;
   color: white;
 }
 @media screen and (min-width: 401px) {
@@ -54,7 +54,7 @@ body {
   border: none;
 }
 .hcs-home-page-top-bar {
-  background-color: #48503c;
+  background-color: #48503C;
   height: 48px;
   -webkit-animation-duration: 10ms;
   -webkit-animation-delay: 0s;
@@ -803,7 +803,7 @@ body {
   line-height: initial;
   border-width: 1px 1px 20px;
   border-style: solid;
-  border-color: #dddddd #dddddd #48503c;
+  border-color: #dddddd #dddddd #48503C;
   border-image: initial;
   background-color: white;
   z-index: 20;
@@ -1544,13 +1544,6 @@ html {
 }
 #myConfirmModal:before {
   vertical-align: top !important;
-}
-#myComboboxDialog .modal-dialog {
-  width: 40%;
-  top: 10vh;
-}
-#myComboboxDialog .modal-dialog .modal-content .modal-body {
-  height: 60vh;
 }
 /*Toast*/
 #hcs-toast-alert {

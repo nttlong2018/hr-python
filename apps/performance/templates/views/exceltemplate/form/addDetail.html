@@ -1,0 +1,104 @@
+﻿<div class="modal-dialog" style="width:30%;">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h4 class="modal-title">
+                <img src="{{$root.logo}}"><span id="title">{{title}}</span>
+                <button type="button" class="close" data-dismiss="modal"><i class="la la-close"></i></button>
+                <button type="button" class="close" ng-click="onResizeDialog()"><span class="modal-resize"><i class="la la-expand"></i></span></button>
+            </h4 > 
+        </div>
+        <div class="modal-body">
+            <div title="{{$parent.headerTitle}}" style="height:100%;">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="form-group row hcs-group-form-group">
+                <!--Mô tả-->
+                <label class="col-sm-5 zb-form-label">${get_res('header_text','Mô tả')}</label>
+                <div class="col-sm-7">
+                    <input-text ng-model="entity.header_text">
+                </div>
+            </div>
+            <div class="form-group row hcs-group-form-group">
+                <!--Sử dụng value list-->
+                <div class="form-group hcs-group-form-group">
+                    <label class="col-sm-5 zb-form-label">${get_res('use_value_list','Sử dụng value list')}</label>
+                    <div class="col-md-7">
+                        <input-checkbox/>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group row hcs-group-form-group">
+                <!--Dữ liệu tra cứu-->
+                <label class="col-sm-5 zb-form-label">${get_res('lookup_data','Dữ liệu tra cứu')}</label>
+                <div class="col-sm-7">
+                    <input-text ng-model="entity.lookup_data">
+                </div>
+            </div>
+            <div class="form-group row hcs-group-form-group">
+                <!--Khóa tra cứu-->
+                <label class="col-sm-5 zb-form-label">${get_res('lookup_key_field','Khóa tra cứu')}</label>
+                <div class="col-sm-7">
+                    <input-text ng-model="entity.lookup_key_field">
+                </div>
+            </div>
+            <div class="form-group row hcs-group-form-group">
+                <!--Kết quả tra cứu-->
+                <label class="col-sm-5 zb-form-label">${get_res('lookup_result','Kết quả tra cứu')}</label>
+                <div class="col-sm-7">
+                    <input-text ng-model="entity.lookup_result">
+                </div>
+            </div>
+            <div class="form-group row hcs-group-form-group">
+                <!--Hiển thị-->
+                <div class="form-group hcs-group-form-group">
+                    <label class="col-sm-5 zb-form-label">${get_res('is_visible','Hiển thị')}</label>
+                    <div class="col-md-7">
+                        <input-checkbox ng-model="entity.is_visible"/>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group row hcs-group-form-group">
+                <!--Khóa chính-->
+                <div class="form-group hcs-group-form-group">
+                    <label class="col-sm-5 zb-form-label">${get_res('is_key','Khóa chính')}</label>
+                    <div class="col-md-7">
+                        <input-checkbox ng-model="entity.is_key"/>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group row hcs-group-form-group">
+                <!--Không được để trống-->
+                <div class="form-group hcs-group-form-group">
+                    <label class="col-sm-5 zb-form-label">${get_res('allow_null','Không được để trống')}</label>
+                    <div class="col-md-7">
+                        <input-checkbox ng-model="entity.allow_null"/>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group row hcs-group-form-group">
+                <!--Thứ tự-->
+                <label class="col-sm-5 zb-form-label">${get_res('ordinal','Thứ tự')}</label>
+                <div class="col-sm-7">
+                    <input-number ng-model="entity.ordinal">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+        </div>
+        <div class="modal-footer">
+            <div class="pull-right"><button ng-click="close($event)"><i class="la la-close"></i></button></div>
+            <div class="pull-right"><button ng-click="check($event)"><i class="la la-check"></i></button></div>
+        </div>
+    </div>
+</div>
+<script>
+    (function (scope) {
+        scope.close = close;
+        scope.check = check;
+
+        function close() { }
+
+        function check() { }
+    })
+</script>

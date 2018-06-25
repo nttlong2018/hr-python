@@ -1,3 +1,5 @@
+@site_color: #48503C;
+@footer_dialog: #3E464A;
 @border_color: #cbcbcb;
 @border_color_hover: #009de1;
 @caption_color: #666;
@@ -362,7 +364,7 @@ html {
         }
 
         .modal-header {
-            background-color: #48503C;
+            background-color: @site_color;
             padding: 8px;
             border-radius: unset;
 
@@ -419,7 +421,7 @@ html {
         }
 
         .modal-footer {
-            background-color: #3E464A;
+            background-color: @footer_dialog;
             padding: 8px;
 
             button {
@@ -456,7 +458,7 @@ html {
 
 #myConfirmModal,
 #myMessageModal,
-#myErrorModal{
+#myErrorModal {
 
     .modal-dialog {
         width: 35%;
@@ -464,7 +466,7 @@ html {
         top: 25vh;
 
         .modal-header {
-            background-color: #48503C;
+            background-color: @site_color;
             padding: 10px;
             border-radius: unset;
 
@@ -511,20 +513,12 @@ html {
         }
 
         .modal-footer {
-            background-color: #3E464A;
+            background-color: @footer_dialog;
         }
     }
 }
 #myConfirmModal:before {
     vertical-align: top !important;
-}
-
-#myComboboxDialog .modal-dialog {
-    width: 40%;
-    top:10vh;
-}
-#myComboboxDialog .modal-dialog .modal-content .modal-body {
-    height: 60vh;
 }
 
 /*Toast*/

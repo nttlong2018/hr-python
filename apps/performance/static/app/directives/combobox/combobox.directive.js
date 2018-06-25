@@ -51,24 +51,18 @@
             * @param {string} id Id của form dialog, default = 'myModal'
             */
             function openDialog(title, path, callback, id = "myComboboxDialog") {
-                //if (typeof (id) === 'undefined')
-                //    id = "myModal";
-                var fn = {
-                    "button": [{ "func_name": "saveNClose", "icon": "la la-check", "name": "" }],
-                    "close":true
-                };
                 //check tồn tại của form dialog theo id
                 if ($('#' + id).length === 0) {
                     scope.headerTitle = title;
                     //Đặt ID cho form dialog
-                    dialog(scope, id, fn).url(path).done(function () {
+                    dialog(scope, id).url(path).done(function () {
                         callback();
                         //Set resizable cho form dialog theo id
-                        $('#myModal').ready(function () {
-                            $('#myModal .modal-dialog .modal-content .modal-header').on('mousedown touchstart', function (e) {
-                                $('#myModal .modal-dialog').draggable();
+                        $('#' + id).ready(function () {
+                            $('#' + id + ' .modal-dialog .modal-content .modal-header').on('mousedown touchstart', function (e) {
+                                $('#' + id + ' .modal-dialog').draggable();
                             }).bind('mouseup touchend', function () {
-                                $('#myModal .modal-dialog').draggable('destroy');
+                                $('#' + id + ' .modal-dialog').draggable('destroy');
                             });
                         })
                     });

@@ -6,10 +6,9 @@ from openpyxl.worksheet.datavalidation import DataValidation
 #from openpyxl.workbook import defined_name
 import datetime
 import quicky
-import performance.api.models as models
 from format_worksheet import worksheet_style, format_style 
 import constant as KEY 
-import database as db 
+from performance.lv_core import db
 import manager
 
 

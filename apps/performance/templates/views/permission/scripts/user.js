@@ -2,16 +2,16 @@
     //("===============BEGIN TABLE==================")
     //Cấu hình tên field và caption hiển thị trên UI
     scope.tableFields = [
-        { "data": "login_account", "title": "${ get_res('login_account_table_title', 'Mã người dùng') }"},
-        { "data": "display_name", "title": "${ get_res('display_name_table_title', 'Tên hiển thị') }"},
-        { "data": "role_code", "title": "${ get_res('role_code_table_title', 'Thuộc nhóm người dùng') }"},
-        { "data": "is_system", "title": "${ get_res('is_system_table_title', 'Là quản trị hệ thống') }"},
-        { "data": "never_expire", "title": "${ get_res('never_expire_table_title', 'Không bị khóa') }"},
-        { "data": "manlevel_from", "title": "${ get_res('manlevel_from_table_title', 'Mức quản lí từ') }"},
-        { "data": "manlevel_to", "title": "${ get_res('manlevel_to_table_title', 'Mức quản lí đến') }"},
+        { "data": "login_account", "title": "${ get_res('login_account_table_header', 'Mã người dùng') }"},
+        { "data": "display_name", "title": "${ get_res('display_name_table_header', 'Tên hiển thị') }"},
+        { "data": "role_code", "title": "${ get_res('role_code_table_header', 'Thuộc nhóm người dùng') }"},
+        { "data": "is_system", "title": "${ get_res('is_system_table_header', 'Là quản trị hệ thống') }", "format" : "checkbox"},
+        { "data": "never_expire", "title": "${ get_res('never_expire_table_header', 'Không bị khóa') }", "format": "checkbox"},
+        { "data": "manlevel_from", "title": "${ get_res('manlevel_from_table_header', 'Mức quản lí từ') }"},
+        { "data": "manlevel_to", "title": "${ get_res('manlevel_to_table_header', 'Mức quản lí đến') }"},
         {
             "data": "created_on",
-            "title": "${ get_res('created_on_table_title', 'Thời điểm tạo') }",
+            "title": "${ get_res('created_on_table_header', 'Thời điểm tạo') }",
             "format": "date: " + scope.$root.systemConfig.date_format
         }
     ];
@@ -146,22 +146,18 @@
      * @param {string} id Id của form dialog, default = 'myModal'
      */
     function openDialog(title, path, callback, id = 'myModal') {
-        var fn = {
-            "button": [{ "func_name": "saveNClose", "icon": "la la-save", "name": "${get_global_res('save_and_close','Lưu & đóng')}" },
-            { "func_name": "saveNNext", "icon": "la la-save", "name": "${get_global_res('save_and_next','Lưu & tiếp')}" }]
-        };
         //check tồn tại của form dialog theo id
         if ($('#' + id).length === 0) {
             scope.headerTitle = title;
             //Đặt ID cho form dialog
-            dialog(scope, id, fn).url(path).done(function () {
+            dialog(scope).url(path).done(function () {
                 callback();
                 //Set resizable cho form dialog theo id
-                $('#myModal').ready(function () {
-                    $('#myModal .modal-dialog .modal-content .modal-header').on('mousedown touchstart', function (e) {
-                        $('#myModal .modal-dialog').draggable();
+                $('#' + id).ready(function () {
+                    $('#' + id + ' .modal-dialog .modal-content .modal-header').on('mousedown touchstart', function (e) {
+                        $('#' + id + ' .modal-dialog').draggable();
                     }).bind('mouseup touchend', function () {
-                        $('#myModal .modal-dialog').draggable('destroy');
+                        $('#' + id + ' .modal-dialog').draggable('destroy');
                     });
                 })
             });

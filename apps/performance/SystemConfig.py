@@ -50,7 +50,7 @@ class Config():
     def __init__(self):
         for key in _data.keys():
             setattr(self,key,_data[key])
-        coll=HCSSYS_SystemConfig().qr.db.get_collection(HCSSYS_SystemConfig().name)
+        coll=HCSSYS_SystemConfig()
         data_item=coll.find_one()
         if data_item==None:
             data={}

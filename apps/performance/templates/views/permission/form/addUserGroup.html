@@ -1,4 +1,14 @@
-﻿<div class="row" style="padding-bottom:20px;" title="${get_res('Add_New_UserGroup','Thêm mới nhóm người người dùng')}">
+﻿<div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h4 class="modal-title">
+                <img src="{{$root.logo}}"><span id="title">{{title}}</span>
+                <button type="button" class="close" data-dismiss="modal"><i class="la la-close"></i></button>
+                <button type="button" class="close" ng-click="onResizeDialog()"><span class="modal-resize"><i class="la la-expand"></i></span></button>
+            </h4 > 
+        </div>
+        <div class="modal-body">
+            <div class="row" style="padding-bottom:20px;" title="${get_res('Add_New_UserGroup','Thêm mới nhóm người người dùng')}">
     <div class="col-md-{{col_group}} col-sm-{{col_group}}">
         <div class="row">
             <p class="hcs-group-collapse-heading">
@@ -128,7 +138,8 @@
                 paging="true" page-length="100" server-side="true" 
                 press-enter="onSelectTableRow" selected-items="selectedListUserItems"
                 current-item="ListUserCurrentItem" search-text="tableSearchText"
-                refresh-row="refreshDataListUserRow">
+                refresh-row="refreshDataListUserRow"
+                ng-if="__mode != 1">
                 </table-data>
             </div>
         </div>
@@ -185,14 +196,21 @@
         </div>
     </div>
 </div>
+        </div>
+        <div class="modal-footer">
+            <div class="pull-right"><button ng-click="saveNClose($event)"><i class="la la-save"></i>${get_global_res('save_and_close','Lưu & đóng')}</button></div>
+            <div class="pull-right"><button ng-click="saveNNext($event)"><i class="la la-save"></i>${get_global_res('save_and_next','Lưu & tiếp')}</button></div>
+        </div>
+    </div>
+</div>
 <script>
     (function (scope) {
         //Table danh sách người dùng - START
         scope.tableListUserFields = [
-            { "data": "login_account", "title": "${ get_res('table_user_login_account_table_title', 'Mã người dùng') }"},
-            { "data": "display_name", "title": "${ get_res('table_user_display_name_table_title', 'Tên hiển thị') }"},
-            { "data": "manlevel_from", "title": "${ get_res('table_user_manlevel_from_table_title', 'Mức quản lí từ') }"},
-            { "data": "manlevel_to", "title": "${ get_res('table_user_manlevel_to_table_title', 'Mức quản lí đến') }"},
+            { "data": "login_account", "title": "${ get_res('table_user_login_account_table_header', 'Mã người dùng') }"},
+            { "data": "display_name", "title": "${ get_res('table_user_display_name_table_header', 'Tên hiển thị') }"},
+            { "data": "manlevel_from", "title": "${ get_res('table_user_manlevel_from_table_header', 'Mức quản lí từ') }"},
+            { "data": "manlevel_to", "title": "${ get_res('table_user_manlevel_to_table_header', 'Mức quản lí đến') }"},
             {
                 "data": "created_on",
                 "title": "${ get_res('table_user_created_on_table_title', 'Thời điểm tạo') }",
@@ -237,15 +255,15 @@
 
         //Table danh sách chức năng - START
         scope.tableListFunctionFields = [
-            { "data": "[[unknown1]]", "title": "${ get_res('table_function_[[unknown1]]_table_title', 'Tên tính năng') }"},
-            { "data": "[[unknown2]]", "title": "${ get_res('table_function_[[unknown2]]_table_title', 'Xem') }"},
-            { "data": "[[unknown3]]", "title": "${ get_res('table_function_[[unknown3]]_table_title', 'Thêm') }"},
-            { "data": "[[unknown4]]", "title": "${ get_res('table_function_[[unknown4]]_table_title', 'Sửa') }"},
-            { "data": "[[unknown5]]", "title": "${ get_res('table_function_[[unknown5]]_table_title', 'Xóa') }"},
-            { "data": "[[unknown6]]", "title": "${ get_res('table_function_[[unknown6]]_table_title', 'Nhập khẩu') }"},
-            { "data": "[[unknown7]]", "title": "${ get_res('table_function_[[unknown7]]_table_title', 'Sao chép') }" },
-            { "data": "[[unknown8]]", "title": "${ get_res('table_function_[[unknown8]]_table_title', 'Đính kèm file') }" },
-            { "data": "[[unknown9]]", "title": "${ get_res('table_function_[[unknown9]]_table_title', 'Tải file') }"},
+            { "data": "[[unknown1]]", "title": "${ get_res('table_function_[[unknown1]]_table_header', 'Tên tính năng') }"},
+            { "data": "[[unknown2]]", "title": "${ get_res('table_function_[[unknown2]]_table_header', 'Xem') }"},
+            { "data": "[[unknown3]]", "title": "${ get_res('table_function_[[unknown3]]_table_header', 'Thêm') }"},
+            { "data": "[[unknown4]]", "title": "${ get_res('table_function_[[unknown4]]_table_header', 'Sửa') }"},
+            { "data": "[[unknown5]]", "title": "${ get_res('table_function_[[unknown5]]_table_header', 'Xóa') }"},
+            { "data": "[[unknown6]]", "title": "${ get_res('table_function_[[unknown6]]_table_header', 'Nhập khẩu') }"},
+            { "data": "[[unknown7]]", "title": "${ get_res('table_function_[[unknown7]]_table_header', 'Sao chép') }" },
+            { "data": "[[unknown8]]", "title": "${ get_res('table_function_[[unknown8]]_table_header', 'Đính kèm file') }" },
+            { "data": "[[unknown9]]", "title": "${ get_res('table_function_[[unknown9]]_table_header', 'Tải file') }"},
             {
                 "data": "created_on",
                 "title": "${ get_res('table_function_created_on_table_title', 'Thời điểm tạo') }",
@@ -326,9 +344,9 @@
 
         //Hàm load data table - END
         scope._tableData = _tableData;
-
         scope.onResizeDialog = onResizeDialog;
         scope.__mode = scope.$parent.mode;
+        scope.title = scope.$parent.headerTitle;
         scope.col = 12;
         scope.col_group = 6;
 
@@ -350,7 +368,9 @@
         scope.$applyAsync();
 
         function onResizeDialog() {
-            $('.modal-dialog').toggleClass('resize-width');
+            var ele = $('#myModal .modal-dialog');
+            ele.toggleClass('resize-width');
+            ele.removeAttr("style");
             //scope.col = scope.col == 4 ? 6 : 4;
             scope.col_group = scope.col_group == 6 ? 8 : 6;
             scope.col = scope.col == 12 ? 6 : 12;
@@ -479,15 +499,11 @@
         * @param {string} id Id của form dialog, default = 'myModal'
         */
         function openDialog(title, path, callback, id = "myModal") {
-            var fn = {
-                "button": [{ "func_name": "saveNClose", "icon": "la la-check", "name": "" }],
-                "close":true
-            };
             //check tồn tại của form dialog theo id
             if ($('#' + id).length === 0) {
                 scope.headerTitle = title;
                 //Đặt ID cho form dialog
-                dialog(scope, id, fn).url(path).done(function () {
+                dialog(scope).url(path).done(function () {
                     callback();
                     //Set resizable cho form dialog theo id
                     //$('#myModal').ready(function () {

@@ -228,26 +228,52 @@
                         } else {
                             if (v.width) {
                                 if (v.hasOwnProperty("className")) {
-                                    defItem.render = function (data, type, row, meta) {
-                                        if (_fnFormatRender) {
-                                            data = _fnFormatRender(data, type, row);
+                                    if (v.format && v.format.toLowerCase() === "checkbox") {
+                                        defItem.render = function (data, type, row, meta) {
+                                            return "" +
+                                                "<div class='" + v.className + "' style='white-space:normal; width:" + v.width + ";text-overflow: ellipsis;overflow: hidden;'>" +
+                                                ((data) ? "<span class='zb-checkbox-symbol'>&#9745;</span>" : "<span class='zb-checkbox-symbol'>&#9744;</span>") +
+                                                "</div>";
                                         }
-                                        return "<div class='" + v.className + "' style='white-space:normal; width:" + v.width + ";text-overflow: ellipsis;overflow: hidden;'>" + ((data) ? data : '') + "</div>";
+                                    } else {
+                                        defItem.render = function (data, type, row, meta) {
+                                            if (_fnFormatRender) {
+                                                data = _fnFormatRender(data, type, row);
+                                            }
+                                            return "<div class='" + v.className + "' style='white-space:normal; width:" + v.width + ";text-overflow: ellipsis;overflow: hidden;'>" + ((data) ? data : '') + "</div>";
+                                        }
+                                    }
+                                } else {
+                                    if (v.format && v.format.toLowerCase() === "checkbox") {
+                                        defItem.render = function (data, type, row, meta) {
+                                            return "" +
+                                                "<div style='white-space:normal; width:" + v.width + ";text-overflow: ellipsis;overflow: hidden;'>" +
+                                                ((data) ? "<span class='zb-checkbox-symbol'>&#9745;</span>" : "<span class='zb-checkbox-symbol'>&#9744;</span>") +
+                                                "</div>";
+                                        }
+                                    } else {
+                                        defItem.render = function (data, type, row, meta) {
+                                            if (_fnFormatRender) {
+                                                data = _fnFormatRender(data, type, row);
+                                            }
+                                            return "<div style='white-space:normal; width:" + v.width + ";text-overflow: ellipsis;overflow: hidden;'>" + ((data) ? data : '') + "</div>";
+                                        }
+                                    }
+                                }
+                            } else {
+                                if (v.format && v.format.toLowerCase() === "checkbox") {
+                                    defItem.render = function (data, type, row, meta) {
+                                        return ((data) ?
+                                            "<span class='zb-checkbox-symbol'>&#9745;</span>" :
+                                            "<span class='zb-checkbox-symbol'>&#9744;</span>");
                                     }
                                 } else {
                                     defItem.render = function (data, type, row, meta) {
                                         if (_fnFormatRender) {
                                             data = _fnFormatRender(data, type, row);
                                         }
-                                        return "<div style='white-space:normal; width:" + v.width + ";text-overflow: ellipsis;overflow: hidden;'>" + ((data) ? data : '') + "</div>";
+                                        return data;
                                     }
-                                }
-                            } else {
-                                defItem.render = function (data, type, row, meta) {
-                                    if (_fnFormatRender) {
-                                        data = _fnFormatRender(data, type, row);
-                                    }
-                                    return data;
                                 }
                             }
                         }

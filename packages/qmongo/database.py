@@ -4,13 +4,25 @@ from helpers import expr,validators
 from helpers import get_model,get_keys_of_model
 from pymongo import MongoClient
 from pymongo.errors import OperationFailure
+import threading
 import logging
 import copy
 import pymongo
 import pytz
 from bson.codec_options import CodecOptions
 import helpers
-from quicky import tenancy
+
+_cache_create_key_for_collection=None
+def get_current_schema():
+    # type: () -> str
+    """
+    get current schema in theading
+    :return:
+    """
+    if hasattr(threading.currentThread(),"tenancy_code"):
+        return threading.currentThread().tenancy_code
+    else:
+        return None
 logger = logging.getLogger(__name__)
 _db={}
 def extract_data(data):
@@ -252,7 +264,7 @@ class ENTITY():
                 
 
 
-        _coll=self.qr.db.get_collection(self.name).with_options(codec_options=self.qr._codec_options)
+        _coll=self._coll.get_collection()
         model_events = helpers.events(self._coll._model.name)
         if self._action=="insert_one":
             ret_data={}
@@ -507,17 +519,31 @@ class COLL():
         self.qr = None
         self._where = None
         self._entity = None
-        self._none_schema_name = None
+
         self._none_schema_name=name
-        import threading
-        if hasattr(threading.currentThread(),"tenancy_code") and tenancy.get_schema()!="":
-            self.name=tenancy.get_schema()+"."+name
-        else:
-            self.name = name
+        self._never_use_schema=False #do not use schema whenever extract database from mongodb
+
         self._model=get_model(name)
+        self.schema=get_current_schema()
        
 
         self.qr=qr
+    def turn_never_use_schema_on(self):
+        """
+        This method will tell to database in qmongo never use schema whenever excute mongodb query
+        :return:
+        """
+        self._never_use_schema=True
+
+    def switch_schema(self,schema_name):
+        # type: (str) -> COLL
+        """
+        Change schema name before use any data operation
+        :param schema_name:
+        :return:
+        """
+        self.schema=schema_name
+        return  self
     def descibe_fields(self,tabs,fields):
         """
         Return list of fields
@@ -536,15 +562,28 @@ class COLL():
         :return:
         """
         return self._none_schema_name
+
+    def get_collection_name(self):
+        if not self._never_use_schema:
+            return self.schema+"."+self._none_schema_name
+        else:
+            return self._none_schema_name
     def get_collection(self):
         # type: () -> pymongo.collection.Collection
         """
         get mongodb collection, before get this method will run create unique key script according to 'key' in model
         :return:
         """
-        ret_coll=self.qr.db.get_collection(self.name).with_options(codec_options=self.qr._codec_options)
+        global _cache_create_key_for_collection
+        if _cache_create_key_for_collection==None:
+            _cache_create_key_for_collection={}
+        ret_coll=None
+        if self._never_use_schema:
+            ret_coll = self.qr.db.get_collection(self._none_schema_name).with_options(codec_options=self.qr._codec_options)
+        else:
+            ret_coll=self.qr.db.get_collection(self.schema+"."+ self._none_schema_name).with_options(codec_options=self.qr._codec_options)
         key_info=get_keys_of_model(self._none_schema_name)
-        if key_info["keys"]!=None  and not key_info["has_created"]:
+        if key_info["keys"]!=None  and not _cache_create_key_for_collection.has_key(self.get_collection_name()):
             for item in key_info["keys"]:
                 keys=[]
                 partialFilterExpression={}
@@ -559,12 +598,28 @@ class COLL():
                             }
                         })
                 if keys.__len__() > 0:
-                    ret_coll.create_index(keys,
-                                      unique=True,
-                                      partialFilterExpression=partialFilterExpression)
-            key_info["has_created"]=True
+
+                    try:
+                        # ret_coll.create_index(keys,
+                        #                   unique=True,
+                        #                   partialFilterExpression=partialFilterExpression)
+                        # has_create_index=True
+                        ret_coll.create_index(keys,
+                                              unique=True)
+                        _cache_create_key_for_collection.update({
+                            self.get_collection_name():True
+                        })
+                    except Exception as ex:
+                        if ex.code==85:
+                            _cache_create_key_for_collection.update({
+                                self.get_collection_name(): True
+                            })
+                        print ex
+                        logger.error(ex)
+
         return ret_coll
-    def find_one(self,exprression,*args,**kwargs):
+    def find_one(self,exprression=None,*args,**kwargs):
+
         # type: (str,dict) -> dict
         # type: (str,tuple) -> dict
         # type: (str,int) -> dict
@@ -576,6 +631,8 @@ class COLL():
             find_one("Username='admin'"),
             find_one("Username=@username",username="admin")
          """
+        if exprression==None:
+            return self.get_collection().find_one()
 
         unknown_fields = self._model.validate_expression(exprression,None,*args,**kwargs)
         if unknown_fields.__len__() > 0:
@@ -991,7 +1048,8 @@ class AGGREGATE():
             "$limit": num
         })
         return self
-    def unwind(self,field_name):
+     
+    def unwind(self,field_name,preserve_null_and_empty_arrays=True):
         # type: (str) -> AGGREGATE
         """
         Unwin aggregate
@@ -1007,7 +1065,7 @@ class AGGREGATE():
             field_name="$"+field_name
         self._pipe.append({
             "$unwind":{"path":field_name,
-                        "preserveNullAndEmptyArrays":True
+                        "preserveNullAndEmptyArrays":preserve_null_and_empty_arrays
                     }
         })
         return self
@@ -1061,6 +1119,14 @@ class AGGREGATE():
             return self
 
         pass
+    def join(self,source,local_field,foreign_field,alias):
+        self.lookup(source,local_field,foreign_field,alias)
+        self.unwind(alias,False)
+        return self
+    def left_join(self,source,local_field,foreign_field,alias):
+        self.lookup(source,local_field,foreign_field,alias)
+        self.unwind(alias)
+        return self
     def lookup(self,
                source=None,
                local_field=None,
@@ -1089,7 +1155,7 @@ class AGGREGATE():
         if args==() and kwargs=={}:
             _source=source
             if source.__class__ is COLL:
-                _source=source.name
+                _source=source.get_collection_name()
 
             kwargs.update(source=_source,
                           local_field=local_field,
@@ -1179,7 +1245,8 @@ class AGGREGATE():
         Caution: this method will return what is collection store. For example the collection maybe store different schema in each doc
         :return:
         """
-        coll = self.qr.db.get_collection(self.name).with_options(codec_options=self.qr._codec_options)
+        # coll = self.qr.db.get_collection(self.name).with_options(codec_options=self.qr._codec_options)
+        coll = self._coll.get_collection()
         coll_ret = coll.aggregate(self._pipe)
         ret=list(coll.aggregate(self._pipe))
         return ret
@@ -1194,7 +1261,8 @@ class AGGREGATE():
         #     return self.qr.db.get_collection(self.name).aggregate(self._pipe,explain=False)["cursor"]["firstBatch"]
         # except Exception as ex:
         #     return list(self.qr.db.get_collection(self.name).aggregate(self._pipe))
-        coll=self.qr.db.get_collection(self.name).with_options(codec_options=self.qr._codec_options)
+        # coll=self.qr.db.get_collection(self.name).with_options(codec_options=self.qr._codec_options)
+        coll = self._coll.get_collection()
         coll_ret=coll.aggregate(self._pipe)
 
         ret=[]
@@ -1223,7 +1291,8 @@ class AGGREGATE():
         _count_pipe=[x for x in self._pipe if self._pipe.index(x)<self._pipe.__len__() and x.keys()[0]!="$sort"]
         self._pipe = _count_pipe
         _sel_fields=self._selected_fields
-        total_items=self.count("total_items").get_item()
+        total_items_agg=self.count("total_items")
+        total_items=total_items_agg.get_item()
         self._selected_fields=_sel_fields
         self._pipe=_tmp_pipe
         items=self.skip(page_index*page_size).limit(page_size).get_list()

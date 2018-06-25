@@ -2,7 +2,7 @@ from django.http import HttpResponse
 import quicky
 from datetime import datetime;
 import uuid
-import database as db 
+from performance.lv_core import db 
 
 
 def generate_token(args):

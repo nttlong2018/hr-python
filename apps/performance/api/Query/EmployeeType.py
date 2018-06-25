@@ -1,6 +1,6 @@
 from .. import models
 def data_access_domain():
-    ret=models.SYS_ValueList().aggregate().match("list_name == {0}", "LAccessDomain")
+    ret=models.SYS_ValueList().aggregate()
     ret.unwind("values")
     ret.join(models.HCSSYS_DataDomain(),"values.value","access_mode","dd")
     ret.project(

@@ -2,16 +2,16 @@
 /**
 This function allow search any angular scope by scope id
 */
-function findScopeById(id){
-    var eles=$(".ng-scope");
-    var ret=undefined;
-    for(var i=0;i<eles.length;i++){
-        ret=angular.element(eles[i]).scope();
-        if(ret.$id===id){
+function findScopeById(id) {
+    var eles = $(".ng-scope");
+    var ret = undefined;
+    for (var i = 0; i < eles.length; i++) {
+        ret = angular.element(eles[i]).scope();
+        if (ret.$id === id) {
             break;
         }
         else {
-            ret=undefined;
+            ret = undefined;
         }
     }
     return ret;
@@ -31,11 +31,10 @@ function onAfterLoadContent(callback){
  * 
  * @param {object} $scope scope của form Dialog
  * @param {any} id id của dialog
- * @param {array} button danh sách button
  */
-function dialog($scope, id = 'myModal', button) {
-    if(angular.isNumber($scope)){
-        $scope=findScopeById($scope);
+function dialog($scope, id = 'myModal') {
+    if (angular.isNumber($scope)) {
+        $scope = findScopeById($scope);
     }
     function getScript(content) {
         if (content.indexOf("<body>") > -1) {
@@ -65,75 +64,16 @@ function dialog($scope, id = 'myModal', button) {
             fn(subScope,_params);
         }
 
-        /*
-         * paramer button với giá trị là mảng dùng để khai báo các button được render khi bât dialog
-         * cấu trúc của array. Ví dụ:
-         * [
-         *      {"func_name":"saveNClose", "icon":"la la-save", "name":"Lưu & đóng"},
-         *      {"func_name":"saveNNext", "icon":"la la-save", "name":"Lưu & tiếp"}
-         * ]
-         */
-
-        var template_button = '<div class="pull-right"><button ng-click="XXXXX($event)"><i class="XXXXXX"></i>XXXXXXX</button></div>';
-        var frm_button = '';
-
-        if (button.close && button.close === true) {
-            frm_button += '<div class="pull-right"><button data-dismiss="modal"><i class="la la-close" style="padding-right:unset;"></i></button></div>';
-        }
-
-        if (button["button"] && button["button"].length > 0) {
-            for (var i = 0; i < button["button"].length; i++) {
-                frm_button += template_button.replace("XXXXX", button["button"][i]["func_name"]).replace("XXXXXX", button["button"][i]["icon"]).replace("XXXXXXX", button["button"][i]["name"]);
-            }
-        }
-
         var frm = $('<div><div class="modal fade" id="' + id +'" role="dialog">' +
-                '<div class="modal-dialog">' +
-                '<div class="modal-content">' +
-
-                '<div class="modal-header">' +
-
-
-                '<h4 class="modal-title">' +
-                '<img src="{{$root.logo}}"><span id="title">{{title}}</span>' +
-                '<button type="button" class="close" data-dismiss="modal"><i class="la la-close"></i></button>' +
-                '<button type="button" class="close" ng-click="onResizeDialog()"><span class="modal-resize"><i class="la la-expand"></i></span></button>' +
-                '</h4 > ' +
-                '</div>' +
-                '<div class="modal-body">' +
-
-                '</div>' +
-                '<div class="modal-footer">' +
-                frm_button + 
-                '</div>' +
                 '</div></div>'
             );
         var $ele = $("<div>" + content + "</div>");
 
         var child = $($ele.children()[0])
-        frm.attr("title",child.attr("title"))
-        frm.attr("icon",child.attr("icon"))
-        $ele.children().appendTo(frm.find(".modal-body")[0]);
+
+        $ele.children().appendTo(frm.find(".modal")[0]);
         subScope.$element=frm
 
-        subScope.$watch(function () {
-            return subScope.$element.find(".modal-body").children().attr("title");
-        }, function (val) {
-            if(angular.isDefined(val)){
-                subScope.$element.find(".modal-title span#title").html(val);
-            }
-        });
-        subScope.$watch(function () {
-            return subScope.$element.find(".modal-body").children().attr("icon");
-        }, function (val) {
-            if(angular.isDefined(val)){
-                subScope.$element.find(".modal-title img").attr("src", val);
-            }
-            else{
-                subScope.$element.find(".modal-title img").hide()
-            }
-
-        });
         if(!$scope.$root.$compile){
             throw("Please use '$compile' at controller then set '$scope.$root.$compile=$compile'")
         }
@@ -1891,11 +1831,11 @@ mdl.directive('cUploadFile', ["$parse", function ($parse) {
                 if (value !== "" && value !== undefined && value !== null) {
                     fileUploader.setChunkSize(1 * value);
                 }
-                
+
             });
             a.$observe("api", function (value) {
-               
-                
+
+
                 fileUploader.onPost(function (data, cb) {
                     if (a.onSync) {
                         var fn = s.$eval(a.onSync);

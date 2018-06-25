@@ -17,4 +17,5 @@ from HCSSYS_ComboboxList import HCSSYS_ComboboxList
 from HCSLANG_CollectionInfo import HCSLANG_CollectionInfo
 from HCSSYS_CollectionInfo import HCSSYS_CollectionInfo
 from HCSSYS_ExcelTemplate import HCSSYS_ExcelTemplate
+from HCSLS_EmployeeType import HCSLS_EmployeeType
 from tmp_transactions import tmp_transactions

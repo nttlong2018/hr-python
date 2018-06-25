@@ -13,3 +13,5 @@ END_MAPPING = "__END"
 #prefix header file
 PREFIX_INIT = "__init_"
 PREFIX_REF = "__ref_"
+
+KEY_FIELD = "__key__"

@@ -21,6 +21,7 @@ def template_uri(fn):
     return layer
 @template_uri
 def template(fn,*_path,**kwargs):
+
     if _path.__len__()==1:
         _path=_path[00]
     if _path.__len__()==0:

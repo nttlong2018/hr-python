@@ -7,12 +7,12 @@ def HCSSYS_ExcelTemplate():
         helpers.extent_model(
             "HCSSYS_ExcelTemplate",
             "base",
-            [["function_id"], ["template_code"]],
+            [["function_id"], ["template_code"], ["detail.field_name", "template_code"]],
             function_id=helpers.create_field("text", True),
             template_code=helpers.create_field("text", True),
-            template_name=helpers.create_field("text"),
+            template_name=helpers.create_field("text", True),
             is_default=helpers.create_field("bool"),
-            view_name=helpers.create_field("text"),
+            view_name=helpers.create_field("text", True),
             detail=helpers.create_field("list",False,dict(
                 field_name = helpers.create_field("text"),
                 lookup_data = helpers.create_field("text"),
