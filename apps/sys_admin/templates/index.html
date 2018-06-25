@@ -1,0 +1,92 @@
+<%inherit file="base.html"/>
+
+    <%include file="header.html"/>
+    <!-- Sidebar menu-->
+    <div class="app-sidebar__overlay" data-toggle="sidebar"></div>
+    <%include file="sidebar.html"/>
+
+
+    <main class="app-content" style="margin-left:0 !important;overflow-y:auto">
+
+        <div c-template c-template url="${get_app_url('')}/{{$root.page}}" ng-if="$root.page">
+
+        </div>
+
+
+    </main>
+ <script>
+      var app=angular.module("admin",["c-ui"]);
+      app.controller("admin",["$dialog","$scope",function($dialog,$scope){
+            $scope.VIEW_ID="${register_view()}"
+          $dialog($scope)
+        $scope.$root.error=function(msg){
+            bootoast.toast({
+                message: msg,
+                 position: 'top',
+                 type:"error"
+            });
+        }
+        $scope.$root.success=function(msg){
+            bootoast.toast({
+                 message: msg,
+                 position: 'top',
+                 type:"success"
+            });
+        }
+        ws_set_url("${get_app_url('api')}")
+        ws_onBeforeCall(function(){
+            mask=$("<div class='mask'></div>")
+            mask.appendTo("body");
+            return mask
+        });
+        ws_onAfterCall(function(mask){
+            mask.remove();
+        })
+          history_navigator($scope.$root);
+          $scope.$root.$history.change(function(data){
+             $scope._onSearch=undefined;
+             $scope.$root.page=data.page
+             $scope.$root.$applyAsync();
+
+          })
+          $scope.$root.onSearch=function(callback){
+            $scope._onSearch=callback
+          }
+          $scope.$root.doSearch=function(txt){
+            if($scope._onSearch){
+                $scope._onSearch(txt);
+            }
+          }
+          $(window).resize(function(){
+              $(".app-content").css({
+                "width":$(window).width()-$(".app-sidebar").width(),
+                "position":"fixed",
+                "left":($(".app-sidebar").position().left<0)?0: $(".app-sidebar").width(),
+                "right":0,
+                "bottom":0,
+                "top":5
+              });
+              console.log($(".app-sidebar"));
+          });
+          $(".app-content").css({
+                "width":$(window).width()-$(".app-sidebar").width(),
+                "position":"fixed",
+                "left":($(".app-sidebar").position().left<0)?0: $(".app-sidebar").width(),
+                "right":0,
+                "bottom":0,
+                "top":5
+              });
+
+          $(".app-sidebar__toggle").bind("click",function(){
+
+                    $(".app-content").css({
+                "width":$(window).width()-$(".app-sidebar").width(),
+                "position":"fixed",
+                "left":($(".app-sidebar").position().left<0)?0: $(".app-sidebar").width(),
+                "right":0,
+                "bottom":0,
+                "top":5
+              });
+          });
+      }]);
+    </script>

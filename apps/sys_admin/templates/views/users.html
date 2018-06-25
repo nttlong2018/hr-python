@@ -1,0 +1,118 @@
+<div class="tile">
+<div class="row">
+    <div class="col-md-12">
+
+
+            <h3>${get_app_res("List of users")}</h3>
+            <div class="table-responsive">
+                <table class="table table-bordered">
+                <thead>
+                <tr>
+                    <th>${get_app_res("Username")}</th>
+                    <th>${get_app_res("Email")}</th>
+
+                    <th>${get_app_res("Full name")}</th>
+                     <th>${get_app_res("Description")}</th>
+                    <th>${get_app_res("Is Active")}</th>
+                    <th>${get_app_res("Is Supper User")}</th>
+                    <th>${get_app_res("Is Staff")}</th>
+                    <th>
+                        <button class="btn btn-primary" ng-click="$root.$dialog($id).url('pages/users.new').done()">
+                            ${get_global_res("New")}
+                        </button>
+                    </th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="p in data.items">
+                    <td>
+                        {{p.username}}
+                    </td>
+                    <td>
+                        {{p.email}}
+                    </td>
+                     <td>
+                        {{p.displayName}}
+                    </td>
+                     <td>
+                        {{p.description}}
+                    </td>
+                    <td>
+                        {{p.is_active}}
+                    </td>
+                    <td>
+                        {{p.is_superuser}}
+                    </td>
+                    <td>
+                        {{p.is_staff}}
+                    </td>
+                    <td>
+                        <button class="btn btn-primary " ng-click="$root.$dialog($id).params(p).url('pages/users.new').done()">
+                            ${get_global_res("Edit")}
+                        </button>
+                    </td>
+                </tr>
+
+                </tbody>
+                  <thead>
+                    <tr>
+                    <th colspan="7"></th>
+                    <th>
+                        <button class="btn btn-primary " ng-click="$root.$dialog($id).url('pages/users.new').done()">
+                            ${get_global_res("New")}
+                        </button>
+                    </th>
+                </tr>
+                  </thead>
+            </table>
+                </div>
+
+
+
+        </div>
+
+
+    </div>
+</div>
+
+
+<script>
+    (function(scope){
+        scope.view_path="${get_view_path()}";
+        scope.services=services=ws(scope);
+        console.log(services);
+        scope.$root.onSearch(function(txt){
+            scope.load_data(txt);
+        })
+        scope.load_data=function(txt){
+            services.api("admin.api.users/get_list")
+                    .data({
+                        searchText:txt,
+                        pageSize:50,
+                        pageIndex:0
+
+                    }).done().then(function(res){
+                        scope.data=res;
+                        console.log(res);
+                        scope.$applyAsync();
+                    })
+
+            /*ws_call("admin.api.users/get_list",{
+                view:scope.view_path,
+                data:{
+                    search_text:txt
+                }
+            }).then(function(res){
+
+            }).catch(function(ex){
+                console.log(ex);
+            })*/
+
+        }
+        scope.doDelete=function(item){
+         console.log(item);
+        }
+        scope.load_data("");
+
+    });
+</script>

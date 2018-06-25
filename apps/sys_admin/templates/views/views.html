@@ -1,0 +1,68 @@
+<div class="row">
+    <div class="col-md-12">
+        <div class="tile">
+            <table class="table table-bodered">
+                <thead>
+                <tr>
+                    <th>
+                        ${get_global_res("App name")}
+                    </th>
+                    <th>
+                        ${get_global_res("Name")}
+                    </th>
+                    <th>
+                        ${get_global_res("Path")}
+                    </th>
+                    <th>
+                        ${get_global_res("Description")}
+                    </th>
+                    <th>
+
+                    </th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="p in data">
+                    <td>
+                        {{p.app}}
+                    </td>
+                    <td>
+                        {{p.name}}
+                    </td>
+                    <td>
+                        {{p.path}}
+                    </td>
+                    <td>
+                        {{p.description}}
+                    </td>
+                    <td>
+                        <button type="button" class="btn btn-primary" ng-click="$root.$dialog($id).params(p).url('pages/users.new').done()">
+                            ${get_global_res("Add to role ...")}
+                        </button>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+
+
+        </div>
+    </div>
+</div>
+
+<script>
+(function(scope){
+    scope.view_path="${get_view_path()}";
+    services=ws(scope);
+    scope.doLoadData=function(){
+        services.api("admin.api.views/get_list")
+        .data({
+            search_text:""
+        }).done()
+        .then(function(res){
+            scope.data=res;
+            scope.$applyAsync();
+        });
+    }
+    scope.doLoadData();
+})
+</script>

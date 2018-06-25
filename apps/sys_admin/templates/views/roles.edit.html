@@ -1,0 +1,54 @@
+<div title="{{get_title()}}">
+
+    <div class="container">
+        <form>
+            <div class="form-group row">
+                <label for="inputName" class="col-sm-1-12 col-form-label"></label>
+                <div class="col-sm-1-12">
+                    <input type="text|password|email|number|submit|date|datetime|datetime-local|month|color|range|search|tel|time|url|week"
+                           class="form-control" name="inputName" id="inputName" placeholder="">
+                </div>
+            </div>
+            <fieldset class="form-group row">
+                <legend class="col-form-legend col-sm-1-12">Group name</legend>
+                <div class="col-sm-">
+                    
+                </div>
+            </fieldset>
+            <div class="form-group row">
+                <div class="offset-sm-2 col-sm-10">
+                    <button type="submit" class="btn btn-primary">Action</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <input type="text" ng-model="model.code">
+<input type="text" ng-model="model.name">
+<input type="text" ng-model="model.description">
+<input type="button" value="submit" ng-click="doSave()">
+</div>
+
+<script>
+    (function(scope,params){
+        scope.get_title=function(){
+            if(params){
+                return "${get_global_res('Edit role')}"
+            }
+            else{
+                return '${get_global_res("New role")}'
+            }
+        }
+        scope.model={};
+        scope.doSave=function(txt){
+            ws(scope.$parent).api("admin.api.roles/create")
+            .data(scope.model)
+            .done()
+            .then(function(res){
+
+            })
+
+        }
+
+    });
+</script>

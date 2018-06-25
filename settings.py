@@ -153,6 +153,10 @@ APPS=[
       dict(host="admin",
            name="admin",
            path="apps/admin"),
+      dict(host="sys-admin",
+           name="sys-admin",
+           path="apps/sys_admin"),
+
       dict(host="hrm",
            name="hrm",
            path="apps/hrm"),
@@ -211,6 +215,23 @@ LANGUAGE_CODE="en-us"
 
 ROOT_URLCONF = 'apps'
 quicky.url.build_urls(ROOT_URLCONF,APPS)
+
+"""
+setting database config for whole project.
+use this syntax to get connection at any package:
+from quicky import applications
+then call applications.get_settings().database  
+"""
+from qmongo import  database as DB
+database=DB.connect(
+    name="lv01_lms",
+    host="172.16.7.63",
+    port=27017,
+    user="sys",
+    password="123456"
+)
+
+
 import os
 LOGGING = {
     'version': 1,

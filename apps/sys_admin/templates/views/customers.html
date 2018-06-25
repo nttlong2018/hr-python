@@ -1,0 +1,76 @@
+﻿<div class="row">
+    <div class="col-md-12">
+        <div class="tile">
+            <table class="table table-bodered">
+                <thead>
+                <tr>
+                    <th>
+                        ${get_app_res("Code")}
+                    </th>
+                    <th>
+                        ${get_app_res("Name")}
+                    </th>
+                    <th>
+                        ${get_app_res("Description")}
+                    </th>
+                    <th>
+                        <button class="btn btn-primary" ng-click="$root.$dialog($id).url('pages/roles.edit').done()">
+                            ${get_global_res("New")}
+                        </button>
+                    </th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="p in data.items">
+                    <td>
+                        {{p.code}}
+                    </td>
+                    <td>
+                        {{p.name}}
+                    </td>
+                    <td>
+                        {{p.description}}
+                    </td>
+                    <td>
+                        <button class="btn btn-primary" ng-click="$root.$dialog($id).params(p).url('pages/roles.edit').done()">
+                            ${get_global_res("Edit")}
+                        </button>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+    
+
+</div>
+
+    </div>
+</div>
+
+<script>
+    (function(scope){
+        scope.view_path="${get_view_path()}";
+        service=ws(scope);
+        scope.$root.onSearch(function(txt){
+            scope.load_data(txt);
+        })
+        scope.load_data=function(txt){
+            service.api('${get_api_key("admin.api.customers/get_list")}')
+            .data({
+                search_text:txt
+                }).done().then(function (res) {
+                    debugger
+                scope.data=res;
+                console.log(res);
+                scope.$applyAsync();
+            }).catch(function(ex){
+                console.log(ex);
+            })
+
+        }
+        scope.doDelete=function(item){
+         console.log(item);
+        }
+        scope.load_data("");
+
+    });
+</script>

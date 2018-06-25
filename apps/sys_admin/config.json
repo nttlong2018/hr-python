@@ -1,0 +1,28 @@
+{
+  "NAME":"admin",
+  "LOGIN":"./login",
+  "AUTH":"admin.auth.verify_user",
+  "ROUTES":[
+    {
+      "url":"^$",
+      "view":"views.index",
+      "name":"admin_index"
+    },{
+      "url":"^login$",
+      "view":"views.login",
+      "name":"login"
+    },{
+        "url":"^login_to_template$",
+        "view":"views.login_to_template",
+        "name":"login"
+    },{
+      "url":"^pages/(?P<path>.*)$",
+      "view":"views.load_page",
+      "name":"page"
+    },{
+      "url":"^api$",
+      "view":"views.api"
+    }
+
+  ]
+}

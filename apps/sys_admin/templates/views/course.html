@@ -1,0 +1,70 @@
+
+<dicv class="row">
+
+        <div class="col-md-12">
+          <div class="tile">
+            <h3 class="tile-title">List of courseware</h3>
+              <input type="tel" ng-model="txt_filter">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Code</th>
+                    <th>Modified on</th>
+                    <th>Created on</th>
+                    <th></th>
+                </tr>
+                </thead>
+        <tbody>
+        <tr ng-repeat="p in data|filter:txt_filter">
+            <td>
+                {{p.display_name}}
+            </td>
+            <td>
+                {{p.id}}
+            </td>
+            <td>
+                {{p.modified|date:"dd-MM-yyyy hh:mm:ss"}}
+            </td>
+            <td>
+                {{p.created|date:"dd-MM-yyyy hh:mm:ss"}}
+            </td>
+            <td>
+                <button class="btn btn-danger" ng-click="doDelete(p)">Delete</button>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+          </div>
+        </div>
+
+</dicv>
+
+<script>
+    (function(scope){
+        scope.view_path="${get_view_path()}";
+        service=ws(scope)
+
+        service.api("admin.api.course/get_list").done().then(function(res){
+            scope.data=res;
+            console.log(res);
+            scope.$applyAsync();
+        })
+        .catch(function(ex){
+         console.log(ex);
+        })
+        scope.doDelete=function(item){
+            ws_call("admin.api.course/delete_item",{
+                id:item.id
+            }).then(function(res){
+                scope.data=res;
+                console.log(res);
+                scope.$applyAsync();
+            })
+            .catch(function(ex){
+             console.log(ex);
+            })
+        }
+
+    });
+</script>
