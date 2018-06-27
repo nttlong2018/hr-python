@@ -194,7 +194,6 @@ class Query(object):
 
     def get_compiler(self, using=None, connection=None, schema = None):
         if schema == None:  # add schema
-            return # fix loi
             raise (
                 Exception("can not call ''{1}'' without schema in '{0}'".format(__file__, "Query.get_compiler")))
         if using is None and connection is None:

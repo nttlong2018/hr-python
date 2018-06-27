@@ -30,7 +30,6 @@ class DeleteQuery(Query):
 
     def do_query(self, table, where, using,schema = None):
         if schema == None:
-            return # fix loi
             raise (Exception("Can not call 'DeleteQuery.do_query' without schema in '{0}'".format(__file__)))
         self.tables = [table]
         self.where = where

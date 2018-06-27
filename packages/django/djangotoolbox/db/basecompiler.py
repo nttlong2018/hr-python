@@ -531,7 +531,6 @@ class NonrelCompiler(SQLCompiler):
         Distributer nttlong: add schema param
         """
         if schema == None:
-            return # fix loi
             raise (Exception("Can not 'build_query' without schema in {0}".format(__file__)))
         self.check_query()
         if fields is None:

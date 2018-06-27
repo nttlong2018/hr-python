@@ -8,12 +8,16 @@ class ModelBackend(object):
     Authenticates against settings.AUTH_USER_MODEL.
     """
 
-    def authenticate(self, username=None, password=None, **kwargs):
+    def authenticate(self, username=None, password=None,schema =None, **kwargs):
+        if schema == None or type(schema) != str:  # add schema
+            return # fix loi
+            raise (
+                Exception("can not call ''{1}'' without schema in '{0}'".format(__file__, "ModelBackend.authenticate")))
         UserModel = get_user_model()
         if username is None:
             username = kwargs.get(UserModel.USERNAME_FIELD)
         try:
-            user = UserModel._default_manager.get_by_natural_key(username)
+            user = UserModel._default_manager.get_by_natural_key(username,schema = schema)
             if user.check_password(password):
                 return user
         except UserModel.DoesNotExist:

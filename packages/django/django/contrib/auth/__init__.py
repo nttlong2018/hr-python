@@ -60,8 +60,12 @@ def authenticate(**credentials):
         return user
 
     # The credentials supplied are invalid to all backends, fire signal
-    user_login_failed.send(sender=__name__,
-            credentials=_clean_credentials(credentials))
+    user_login_failed.send(
+        sender=__name__,
+        credentials=_clean_credentials(credentials),
+        schema =settings.DB_SCHEMA_FOR_SESSION_CACHE
+    )
+
 
 
 def login(request, user,schema = None):

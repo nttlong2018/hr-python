@@ -271,7 +271,6 @@ class ModelBase(type):
         Creates some methods once self._meta has been populated.
         """
         if schema == None:  # add schema
-            return # fix loi
             raise (
                 Exception("can not call ''{1}'' without schema in '{0}'".format(__file__, "ModelBase._prepare")))
         opts = cls._meta
@@ -507,7 +506,6 @@ class Model(six.with_metaclass(ModelBase)):
         non-SQL backends), respectively. Normally, they should not be set.
         """
         if schema == None:  # add schema
-            return # fix loi
             raise (
                 Exception("can not call ''{1}'' without schema in '{0}'".format(__file__, "base.save")))
         using = using or router.db_for_write(self.__class__, instance=self)
@@ -577,7 +575,6 @@ class Model(six.with_metaclass(ModelBase)):
         is used by fixture loading.
         """
         if schema == None:  # add schema
-            return # fix loi
             raise (
                 Exception("can not call ''{1}'' without schema in '{0}'".format(__file__, "base.save_base")))
         using = using or router.db_for_write(self.__class__, instance=self)

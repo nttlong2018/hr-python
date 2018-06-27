@@ -39,8 +39,6 @@ class SessionStore(SessionBase):
 
     def create(self, schema = None):
         if schema == None:  # add schema
-
-            return # fix loi
             raise (
                 Exception("can not call '{1}' without schema in '{0}'".format(__file__, "SessionStore.create")))
 

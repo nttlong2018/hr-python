@@ -27,7 +27,6 @@ def update_last_login(sender, user,schema = None, **kwargs):
     the user logging in.
     """
     if schema == None:  # add schema
-        return # fix loi
         raise (Exception("can not call ''{1}'' without schema in '{0}'".format(__file__, "update_last_login")))
     user.last_login = timezone.now()
     user.save(
@@ -168,8 +167,12 @@ class BaseUserManager(models.Manager):
         """
         return get_random_string(length, allowed_chars)
 
-    def get_by_natural_key(self, username):
-        return self.get(**{self.model.USERNAME_FIELD: username})
+    def get_by_natural_key(self, username, schema = None):
+        if schema == None or type(schema) != str:  # add schema
+            return # fix loi
+            raise (
+                Exception("can not call ''{1}'' without schema in '{0}'".format(__file__, "BaseUserManager.get_by_natural_key")))
+        return self.get(**{self.model.USERNAME_FIELD: username,"schema":schema})
 
 
 class UserManager(BaseUserManager):

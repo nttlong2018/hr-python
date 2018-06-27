@@ -51,9 +51,13 @@ def login(request):
         username_request=request._get_post().get("username")
         password_request=request._get_post().get("password")
         try:
-            user_login = auth_user_info().aggregate().project(username=1, login_account=1)\
-                .match("login_account == @account", account = username_request).get_item()['username']
-            ret=authenticate(username=user_login, password=password_request)
+            # user_login = auth_user_info().aggregate().project(username=1, login_account=1)\
+            #     .match("login_account == @account", account = username_request).get_item()['username']
+            ret = authenticate(
+                username=username_request,
+                password=password_request,
+                schema = "lv"
+            )
             form_login(request,ret)
             return redirect(request.get_app_url(""))
         except Exception as ex:

@@ -571,7 +571,6 @@ class Model(six.with_metaclass(ModelBase)):
         is used by fixture loading.
         """
         if schema == None:
-            return # fix loi
             raise (Exception("Can not call 'base.save_base' without schema in '{0}'".format(__file__)))
         using = using or router.db_for_write(self.__class__, instance=self)
         assert not (force_insert and (force_update or update_fields))
