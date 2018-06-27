@@ -1,0 +1,3 @@
+ if schema == None or type(schema)!= str : #add schema
+            return
+            raise (Exception("can not call ''{1}'' without schema in '{0}'".format(__file__,"ManagerDescriptor.__get__")))

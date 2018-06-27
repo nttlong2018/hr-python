@@ -34,6 +34,7 @@ class QuerySet(object):
     def __init__(self, model=None, query=None, using=None):
         self.model = model
         self._db = using
+        self._db_schema=model.objects.get_db_schema()
         self.query = query or sql.Query(self.model)
         self._result_cache = None
         self._sticky_filter = False
@@ -42,6 +43,10 @@ class QuerySet(object):
         self._prefetch_done = False
         self._known_related_objects = {}        # {rel_field, {pk: rel_obj}}
 
+    def get_db_schema(self):
+        return self._db_schema
+    def set_db_schema(self,name):
+        self._db_schema=name
     ########################
     # PYTHON MAGIC METHODS #
     ########################
@@ -73,8 +78,12 @@ class QuerySet(object):
             data[-1] = "...(remaining elements truncated)..."
         return repr(data)
 
-    def __len__(self):
-        self._fetch_all()
+    def __len__(self,schema = None):
+        # if schema == None:  # add schema
+        #     return
+        #     raise (
+        #         Exception("can not call ''{1}'' without schema in '{0}'".format(__file__, "QuerySet.__len__")))
+        self._fetch_all(schema=self.get_db_schema())
         return len(self._result_cache)
 
     def __iter__(self):
@@ -157,11 +166,12 @@ class QuerySet(object):
     # METHODS THAT DO DATABASE QUERIES #
     ####################################
 
-    def iterator(self):
+    def iterator(self,schema):
         """
         An iterator over the results from applying this QuerySet to the
         database.
         """
+
         fill_cache = False
         if connections[self.db].features.supports_select_related:
             fill_cache = self.query.select_related
@@ -213,11 +223,12 @@ class QuerySet(object):
         # Cache db and model outside the loop
         db = self.db
         model = self.model
-        compiler = self.query.get_compiler(using=db)
+        compiler = self.query.get_compiler(using=db, schema=schema)
         if fill_cache:
             klass_info = get_klass_info(model, max_depth=max_depth,
                                         requested=requested, only_load=only_load)
-        for row in compiler.results_iter():
+        rows =compiler.results_iter(results=None,schema=schema)
+        for row in rows:
             if fill_cache:
                 obj, _ = get_cached_row(row, index_start, db, klass_info,
                                         offset=len(aggregate_select))
@@ -298,9 +309,23 @@ class QuerySet(object):
         Performs the query and returns a single object matching the given
         keyword arguments.
         """
+        if kwargs.get("schema",None)==None:
+            # if not hasattr(settings,"DB_SCHEMA_FOR_SESSION_CACHE"):
+            #     raise (Exception("It look like you forgot declare 'DB_SCHEMA_FOR_SESSION_CACHE' in settings.py\n"
+            #                      "What is 'DB_SCHEMA_FOR_SESSION_CACHE'?\n"
+            #                      "This django version (the version serve for multi tenancy) can not determine where is the schema in which the "
+            #                      "system will storage session cache and de fault user"
+            #                      ""))
+            # else:
+            #     kwargs["schema"]=settings.DB_SCHEMA_FOR_SESSION_CACHE
+
+            # return
+            raise (
+                Exception("can not call ''{1}'' without schema in '{0}'".format(__file__, "QuerySet.get")))
         clone = self.filter(*args, **kwargs)
         if self.query.can_filter():
             clone = clone.order_by()
+        clone.set_db_schema(kwargs["schema"])
         num = len(clone)
         if num == 1:
             return clone._result_cache[0]
@@ -512,7 +537,7 @@ class QuerySet(object):
 
     def exists(self):
         if self._result_cache is None:
-            return self.query.has_results(using=self.db)
+            return self.query.has_results(using=self.db,schema = self.get_db_schema())
         return bool(self._result_cache)
 
     def _prefetch_related_objects(self):
@@ -599,7 +624,7 @@ class QuerySet(object):
         """
         return self._filter_or_exclude(True, *args, **kwargs)
 
-    def _filter_or_exclude(self, negate, *args, **kwargs):
+    def _filter_or_exclude(self, negate,schema = None, *args, **kwargs):
         if args or kwargs:
             assert self.query.can_filter(), \
                     "Cannot filter a query once a slice has been taken."
@@ -787,12 +812,13 @@ class QuerySet(object):
         clone.query.add_immediate_loading(fields)
         return clone
 
-    def using(self, alias):
+    def using(self, alias,schema):
         """
         Selects which database this QuerySet should excecute its query against.
         """
         clone = self._clone()
         clone._db = alias
+        clone._db_schema=schema
         return clone
 
     ###################################
@@ -852,9 +878,15 @@ class QuerySet(object):
             c._setup_query()
         return c
 
-    def _fetch_all(self):
+    def _fetch_all(self, schema = None):
+        if schema == None:
+            raise (Exception("can not call '_fetch_all' without schema '{0}'".format(__file__)))
+            # return
+
+        # self._result_cache=None #long test
         if self._result_cache is None:
-            self._result_cache = list(self.iterator())
+            iter_with_schema=self.iterator(schema)
+            self._result_cache = list(iter_with_schema)
         if self._prefetch_related_lookups and not self._prefetch_done:
             self._prefetch_related_objects()
 
@@ -1503,15 +1535,18 @@ class RawQuerySet(object):
         return self._model_fields
 
 
-def insert_query(model, objs, fields, return_id=False, raw=False, using=None):
+def insert_query(model, objs, fields, return_id=False, raw=False, using=None, schema = None):
     """
     Inserts a new record for the given model. This provides an interface to
     the InsertQuery class and is how Model.save() is implemented. It is not
     part of the public API.
     """
+    if schema == None:
+        # return
+        raise (Exception("can not call 'insert_query' without schema in '{0}'".format(__file__)))
     query = sql.InsertQuery(model)
-    query.insert_values(fields, objs, raw=raw)
-    return query.get_compiler(using=using).execute_sql(return_id)
+    query.insert_values(fields, objs, raw=raw, schema=schema)
+    return query.get_compiler(using=using,schema=schema).execute_sql(return_id,schema)
 
 
 def prefetch_related_objects(result_cache, related_lookups):

@@ -64,12 +64,16 @@ def authenticate(**credentials):
             credentials=_clean_credentials(credentials))
 
 
-def login(request, user):
+def login(request, user,schema = None):
     """
     Persist a user id and a backend in the request. This way a user doesn't
     have to reauthenticate on every request. Note that data set during
     the anonymous session is retained when the user logs in.
     """
+    if schema == None:
+        import threading
+        schema = threading.currentThread().tenancy_code
+
     if user is None:
         user = request.user
     # TODO: It would be nice to support different login methods, like signed cookies.
@@ -80,13 +84,18 @@ def login(request, user):
             # authenticated user.
             request.session.flush()
     else:
-        request.session.cycle_key()
+        request.session.cycle_key(schema=schema)
     request.session[SESSION_KEY] = user.pk
     request.session[BACKEND_SESSION_KEY] = user.backend
     if hasattr(request, 'user'):
         request.user = user
     rotate_token(request)
-    user_logged_in.send(sender=user.__class__, request=request, user=user)
+    user_logged_in.send(
+        sender=user.__class__,
+        request=request,
+        user=user,
+        schema=schema
+    )
 
 
 def logout(request):

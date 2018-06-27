@@ -159,7 +159,7 @@ class Signal(object):
     def has_listeners(self, sender=None):
         return bool(self._live_receivers(sender))
 
-    def send(self, sender, **named):
+    def send(self, sender, schema= None,**named):
         """
         Send signal from sender to all connected receivers.
 
@@ -177,12 +177,16 @@ class Signal(object):
 
         Returns a list of tuple pairs [(receiver, response), ... ].
         """
+        if schema == None:  # add schema
+            return #fix loi
+            raise (
+                Exception("can not call ''{1}'' without schema in '{0}'".format(__file__, "Signal.send")))
         responses = []
         if not self.receivers or self.sender_receivers_cache.get(sender) is NO_RECEIVERS:
             return responses
 
         for receiver in self._live_receivers(sender):
-            response = receiver(signal=self, sender=sender, **named)
+            response = receiver(signal=self, sender=sender,schema=schema, **named)
             responses.append((receiver, response))
         return responses
 

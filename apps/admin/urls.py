@@ -1,6 +1,6 @@
 
 from django.conf.urls import include, url
-from django.contrib import admin
+# from django.contrib import admin
 from . import views
 import quicky
 app=quicky.applications.get_app_by_file(__file__)

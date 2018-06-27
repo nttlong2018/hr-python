@@ -56,6 +56,7 @@ class ModelBase(type):
     Metaclass for all models.
     """
     def __new__(cls, name, bases, attrs):
+
         super_new = super(ModelBase, cls).__new__
 
         # six.with_metaclass() inserts an extra class called 'NewBase' in the
@@ -239,8 +240,7 @@ class ModelBase(type):
             attr_meta.abstract = False
             new_class.Meta = attr_meta
             return new_class
-
-        new_class._prepare()
+        new_class._prepare(schema=settings.DB_SCHEMA_FOR_SESSION_CACHE)
         register_models(new_class._meta.app_label, new_class)
 
         # Because of the way imports happen (recursively), we may or may not be
@@ -265,10 +265,15 @@ class ModelBase(type):
         else:
             setattr(cls, name, value)
 
-    def _prepare(cls):
+    def _prepare(cls, schema = None):
+
         """
         Creates some methods once self._meta has been populated.
         """
+        if schema == None:  # add schema
+            return # fix loi
+            raise (
+                Exception("can not call ''{1}'' without schema in '{0}'".format(__file__, "ModelBase._prepare")))
         opts = cls._meta
         opts._prepare(cls)
 
@@ -304,7 +309,7 @@ class ModelBase(type):
             cls.get_absolute_url = update_wrapper(curry(get_absolute_url, opts, cls.get_absolute_url),
                                                   cls.get_absolute_url)
 
-        signals.class_prepared.send(sender=cls)
+        signals.class_prepared.send(sender=cls,schema=schema)
 
 
 class ModelState(object):
@@ -324,7 +329,9 @@ class Model(six.with_metaclass(ModelBase)):
     _deferred = False
 
     def __init__(self, *args, **kwargs):
-        signals.pre_init.send(sender=self.__class__, args=args, kwargs=kwargs)
+        if not hasattr(settings,"DB_SCHEMA_FOR_SESSION_CACHE"):
+            raise (Exception("It look like you forgot declare 'DB_SCHEMA_FOR_SESSION_CACHE' in settings.py"))
+        signals.pre_init.send(sender=self.__class__, args=args, kwargs=kwargs,schema=settings.DB_SCHEMA_FOR_SESSION_CACHE)
 
         # Set up the storage for instance state
         self._state = ModelState()
@@ -418,7 +425,7 @@ class Model(six.with_metaclass(ModelBase)):
                 raise TypeError("'%s' is an invalid keyword argument for this function" % list(kwargs)[0])
         self._original_pk = self._get_pk_val()
         super(Model, self).__init__()
-        signals.post_init.send(sender=self.__class__, instance=self)
+        signals.post_init.send(sender=self.__class__, instance=self,schema=settings.DB_SCHEMA_FOR_SESSION_CACHE)
 
     def __repr__(self):
         try:
@@ -489,7 +496,8 @@ class Model(six.with_metaclass(ModelBase)):
         return getattr(self, field.attname)
 
     def save(self, force_insert=False, force_update=False, using=None,
-             update_fields=None):
+             update_fields=None,
+             schema = None):
         """
         Saves the current instance. Override this in a subclass if you want to
         control the saving process.
@@ -498,6 +506,10 @@ class Model(six.with_metaclass(ModelBase)):
         that the "save" must be an SQL insert or update (or equivalent for
         non-SQL backends), respectively. Normally, they should not be set.
         """
+        if schema == None:  # add schema
+            return # fix loi
+            raise (
+                Exception("can not call ''{1}'' without schema in '{0}'".format(__file__, "base.save")))
         using = using or router.db_for_write(self.__class__, instance=self)
         if force_insert and (force_update or update_fields):
             raise ValueError("Cannot force both insert and updating in model saving.")
@@ -543,12 +555,18 @@ class Model(six.with_metaclass(ModelBase)):
             if loaded_fields:
                 update_fields = frozenset(loaded_fields)
 
-        self.save_base(using=using, force_insert=force_insert,
-                       force_update=force_update, update_fields=update_fields)
+        self.save_base(
+            using=using,
+            force_insert=force_insert,
+            force_update=force_update,
+            update_fields=update_fields,
+            schema=schema
+        )
     save.alters_data = True
 
     def save_base(self, raw=False, force_insert=False,
-                  force_update=False, using=None, update_fields=None):
+                  force_update=False, using=None, update_fields=None,
+                  schema = None):
         """
         Handles the parts of saving which should be done only once per save,
         yet need to be done in raw saves, too. This includes some sanity
@@ -558,6 +576,10 @@ class Model(six.with_metaclass(ModelBase)):
         models and not to do any changes to the values before save. This
         is used by fixture loading.
         """
+        if schema == None:  # add schema
+            return # fix loi
+            raise (
+                Exception("can not call ''{1}'' without schema in '{0}'".format(__file__, "base.save_base")))
         using = using or router.db_for_write(self.__class__, instance=self)
         assert not (force_insert and (force_update or update_fields))
         assert update_fields is None or len(update_fields) > 0
@@ -568,11 +590,12 @@ class Model(six.with_metaclass(ModelBase)):
         meta = cls._meta
         if not meta.auto_created:
             signals.pre_save.send(sender=origin, instance=self, raw=raw, using=using,
-                                  update_fields=update_fields)
+                                  update_fields=update_fields,
+                                  schema=schema)
         with transaction.commit_on_success_unless_managed(using=using, savepoint=False):
             if not raw:
                 self._save_parents(cls, using, update_fields)
-            updated = self._save_table(raw, cls, force_insert, force_update, using, update_fields)
+            updated = self._save_table(raw, cls, force_insert, force_update, using, update_fields,schema=schema)
         # Store the database on which the object was saved
         self._state.db = using
         # Once saved, this is no longer a to-be-added instance.
@@ -581,8 +604,14 @@ class Model(six.with_metaclass(ModelBase)):
 
         # Signal that the save is complete
         if not meta.auto_created:
-            signals.post_save.send(sender=origin, instance=self, created=(not updated),
-                                   update_fields=update_fields, raw=raw, using=using)
+            signals.post_save.send(
+                sender=origin,
+                instance=self,
+                created=(not updated),
+                update_fields=update_fields,
+                raw=raw, using=using,
+                schema=schema
+            )
 
     save_base.alters_data = True
 
@@ -610,12 +639,24 @@ class Model(six.with_metaclass(ModelBase)):
                 if hasattr(self, cache_name):
                     delattr(self, cache_name)
 
-    def _save_table(self, raw=False, cls=None, force_insert=False,
-                    force_update=False, using=None, update_fields=None):
+    def _save_table(
+            self,
+            raw=False,
+            cls=None,
+            force_insert=False,
+            force_update=False,
+            using=None,
+            update_fields=None,
+            schema = None
+    ):
         """
         Does the heavy-lifting involved in saving. Updates or inserts the data
         for a single table.
         """
+        if schema == None:  # add schema
+            # return
+            raise (
+                Exception("can not call ''{1}'' without schema in '{0}'".format(__file__, "base._save_table")))
         meta = cls._meta
         non_pks = [f for f in meta.local_concrete_fields if not f.primary_key]
 
@@ -667,7 +708,7 @@ class Model(six.with_metaclass(ModelBase)):
                 fields = [f for f in fields if not isinstance(f, AutoField)]
 
             update_pk = bool(meta.has_auto_field and not pk_set)
-            result = self._do_insert(cls._base_manager, using, fields, update_pk, raw)
+            result = self._do_insert(cls._base_manager, using, fields, update_pk, raw,schema=schema)
             if update_pk:
                 setattr(self, meta.pk.attname, result)
 
@@ -697,21 +738,35 @@ class Model(six.with_metaclass(ModelBase)):
                 return False
         return filtered._update(values) > 0
 
-    def _do_insert(self, manager, using, fields, update_pk, raw):
+    def _do_insert(self, manager, using, fields, update_pk, raw,schema = None):
         """
         Do an INSERT. If update_pk is defined then this method should return
         the new pk for the model.
         """
-        return manager._insert([self], fields=fields, return_id=update_pk,
-                               using=using, raw=raw)
+        if schema == None:  # add schema
+            # return
+            raise (
+                Exception("can not call ''{1}'' without schema in '{0}'".format(__file__, "ManagerDescriptor._do_insert")))
+        return manager._insert(
+            [self],
+            fields=fields,
+            return_id=update_pk,
+            using=using,
+            raw=raw,
+            schema=schema
+        )
 
-    def delete(self, using=None):
+    def delete(self, using=None,schema = None):
+        if schema == None:
+            # return
+            raise (Exception("Can not call 'Model.delete' wihthout schema in '{0}'".format(__file__)))
         using = using or router.db_for_write(self.__class__, instance=self)
         assert self._get_pk_val() is not None, "%s object can't be deleted because its %s attribute is set to None." % (self._meta.object_name, self._meta.pk.attname)
 
         collector = Collector(using=using)
         collector.collect([self])
-        collector.delete()
+        collector.delete(schema=schema)
+        # collector.delete(using=using,schema=schema)
 
         self._state.adding = False
         self._original_pk = None

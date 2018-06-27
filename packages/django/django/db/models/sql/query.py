@@ -103,6 +103,8 @@ class Query(object):
     compiler = 'SQLCompiler'
 
     def __init__(self, model, where=WhereNode):
+        if type(model) == str:
+            return
         self.model = model
         self.alias_refcount = {}
         # alias_map is the most important data structure regarding joins.
@@ -190,7 +192,11 @@ class Query(object):
     def prepare(self):
         return self
 
-    def get_compiler(self, using=None, connection=None):
+    def get_compiler(self, using=None, connection=None, schema = None):
+        if schema == None:  # add schema
+            return # fix loi
+            raise (
+                Exception("can not call ''{1}'' without schema in '{0}'".format(__file__, "Query.get_compiler")))
         if using is None and connection is None:
             raise ValueError("Need either using or connection")
         if using:
@@ -200,7 +206,7 @@ class Query(object):
         for alias, aggregate in self.aggregate_select.items():
             connection.ops.check_aggregate_support(aggregate)
 
-        return connection.ops.compiler(self.compiler)(self, connection, using)
+        return connection.ops.compiler(self.compiler,schema=schema)(self, connection, using)
 
     def get_meta(self):
         """
@@ -398,13 +404,16 @@ class Query(object):
 
         return number
 
-    def has_results(self, using):
+    def has_results(self, using, schema = None ):
+        if schema == None:
+            # return;
+            raise (Exception("Can not call 'has_results' without schema in '{0}'".format(__file__)))
         q = self.clone()
         q.clear_select_clause()
         q.clear_ordering(True)
         q.set_limits(high=1)
-        compiler = q.get_compiler(using=using)
-        return compiler.has_results()
+        compiler = q.get_compiler(using=using, schema=schema)
+        return compiler.has_results(schema)
 
     def combine(self, rhs, connector):
         """

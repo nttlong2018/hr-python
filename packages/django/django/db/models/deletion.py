@@ -237,7 +237,10 @@ class Collector(object):
         self.data = SortedDict([(model, self.data[model])
                                 for model in sorted_models])
 
-    def delete(self):
+    def delete(self,schema):
+        if schema == None:
+            # return
+            raise (Exception("Can not call Collector.delete' without schema in '{0}'".format(__file__)))
         # sort instance collections
         for model, instances in self.data.items():
             self.data[model] = sorted(instances, key=attrgetter("pk"))
@@ -252,7 +255,10 @@ class Collector(object):
             for model, obj in self.instances_with_model():
                 if not model._meta.auto_created:
                     signals.pre_delete.send(
-                        sender=model, instance=obj, using=self.using
+                        sender=model,
+                        instance=obj,
+                        using=self.using,
+                        schema=schema
                     )
 
             # fast deletes
@@ -274,12 +280,15 @@ class Collector(object):
             for model, instances in six.iteritems(self.data):
                 query = sql.DeleteQuery(model)
                 pk_list = [obj.pk for obj in instances]
-                query.delete_batch(pk_list, self.using)
+                query.delete_batch(pk_list, self.using,schema=schema)
 
                 if not model._meta.auto_created:
                     for obj in instances:
                         signals.post_delete.send(
-                            sender=model, instance=obj, using=self.using
+                            sender=model,
+                            instance=obj,
+                            using=self.using,
+                            schema =schema
                         )
 
         # update collected instances

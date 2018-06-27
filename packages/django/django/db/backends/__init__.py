@@ -938,12 +938,16 @@ class BaseDatabaseOperations(object):
         """
         pass
 
-    def compiler(self, compiler_name):
+    def compiler(self, compiler_name, schema = None):
         """
         Returns the SQLCompiler class corresponding to the given name,
         in the namespace corresponding to the `compiler_module` attribute
         on this backend.
         """
+        if schema == None:  # add schema
+            # return
+            raise (
+                Exception("can not call ''{1}'' without schema in '{0}'".format(__file__, "BaseDatabaseOperations.compiler")))
         if self._cache is None:
             self._cache = import_module(self.compiler_module)
         return getattr(self._cache, compiler_name)

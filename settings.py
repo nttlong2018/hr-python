@@ -119,6 +119,7 @@ USE_L10N = True
 USE_TZ = True
 
 USE_MULTI_TENANCY=True
+DB_SCHEMA_FOR_SESSION_CACHE="sys"
 MULTI_TENANCY_DEFAULT_SCHEMA="lv"
 MULTI_TENANCY_CONFIGURATION_=dict(
     host="localhost",
@@ -150,9 +151,9 @@ api.connect(
 
 STATIC_URL = '/static/'
 APPS=[
-      dict(host="admin",
-           name="admin",
-           path="apps/admin"),
+      # dict(host="admin",
+      #      name="admin",
+      #      path="apps/admin"),
       dict(host="sys-admin",
            name="sys-admin",
            path="apps/sys_admin"),

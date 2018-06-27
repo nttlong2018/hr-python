@@ -170,6 +170,7 @@ def fields_for_model(model, fields=None, exclude=None, widgets=None,
     ``formfield_callback`` is a callable that takes a model field and returns
     a form field.
     """
+
     field_list = []
     ignored = []
     opts = model._meta
@@ -229,7 +230,7 @@ class ModelFormOptions(object):
 
 
 class ModelFormMetaclass(type):
-    def __new__(cls, name, bases, attrs):
+    def __new__(cls, name, bases, attrs,schema = None):
         formfield_callback = attrs.pop('formfield_callback', None)
         try:
             parents = [b for b in bases if issubclass(b, ModelForm)]

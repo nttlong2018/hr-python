@@ -302,7 +302,7 @@ class HttpResponseBase(six.Iterator):
                 closable.close()
             except Exception:
                 pass
-        signals.request_finished.send(sender=self._handler_class)
+        signals.request_finished.send(sender=self._handler_class, schema =settings.DB_SCHEMA_FOR_SESSION_CACHE)
 
     def write(self, content):
         raise Exception("This %s instance is not writable" % self.__class__.__name__)

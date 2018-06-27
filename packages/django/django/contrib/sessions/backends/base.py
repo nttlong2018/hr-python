@@ -268,15 +268,18 @@ class SessionBase(object):
         self.delete()
         self.create()
 
-    def cycle_key(self):
+    def cycle_key(self,schema = None):
         """
         Creates a new session key, whilst retaining the current session data.
         """
+        if schema == None:
+            # return
+            raise (Exception("Can not call 'SessionBase.cycle_key' without schema in {0}".format(__file__)))
         data = self._session_cache
         key = self.session_key
-        self.create()
+        self.create(schema=schema)
         self._session_cache = data
-        self.delete(key)
+        self.delete(key,schema)
 
     # Methods that child classes must implement.
 

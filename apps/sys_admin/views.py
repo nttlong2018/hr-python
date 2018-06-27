@@ -34,6 +34,10 @@ def login(request):
         "language":"en",
         "next":""
     }
+    from . import create_sys_admin_user
+
+    create_sys_admin_user.create_sys_admin_user()
+
     _login["language"] = request._get_request().get("language", "en")
     if request.GET.has_key("next"):
         _login["next"] = request.GET.get("next",request.get_app_url(""))
@@ -44,7 +48,8 @@ def login(request):
         _login["password"] = request._get_post().get("password","")
         _login["language"] = request._get_post().get("language", "en")
         user=authenticate(username=request._get_post().get("username",""),
-                          password=request._get_post().get("password",""))
+                          password=request._get_post().get("password",""),
+                          schema="sys")
         if user==None:
             _login.update(dict(
                 error=dict(

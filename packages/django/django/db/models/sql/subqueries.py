@@ -28,25 +28,32 @@ class DeleteQuery(Query):
 
     compiler = 'SQLDeleteCompiler'
 
-    def do_query(self, table, where, using):
+    def do_query(self, table, where, using,schema = None):
+        if schema == None:
+            return # fix loi
+            raise (Exception("Can not call 'DeleteQuery.do_query' without schema in '{0}'".format(__file__)))
         self.tables = [table]
         self.where = where
-        self.get_compiler(using).execute_sql(None)
+        #self, result_type=MULTI,schema = None
+        self.get_compiler(using=using,schema=schema).execute_sql(result_type=None,schema=schema)
 
-    def delete_batch(self, pk_list, using, field=None):
+    def delete_batch(self, pk_list, using, field=None, schema = None):
         """
         Set up and execute delete queries for all the objects in pk_list.
 
         More than one physical query may be executed if there are a
         lot of values in pk_list.
         """
+        if schema == None:
+            return
+            raise (Exception("Can not call 'DeleteQuery.delete_batch' without schema in '{0}'".format(__file__)))
         if not field:
             field = self.get_meta().pk
         for offset in range(0, len(pk_list), GET_ITERATOR_CHUNK_SIZE):
             where = self.where_class()
             where.add((Constraint(None, field.column, field), 'in',
                        pk_list[offset:offset + GET_ITERATOR_CHUNK_SIZE]), AND)
-            self.do_query(self.get_meta().db_table, where, using=using)
+            self.do_query(self.get_meta().db_table, where, using, schema=schema)
 
     def delete_qs(self, query, using):
         """
@@ -181,7 +188,18 @@ class UpdateQuery(Query):
 class InsertQuery(Query):
     compiler = 'SQLInsertCompiler'
 
-    def __init__(self, *args, **kwargs):
+    def __init__(self,*args, **kwargs):
+        # if type(schema)!= str:
+        #     return
+        #
+        #     raise (Exception("'schema' param must be 'str'"))
+        #
+        #
+        #
+        # if schema == None:  # add schema
+        #     # return
+        #     raise (
+        #         Exception("can not call ''{1}'' without schema in '{0}'".format(__file__, "InsertQuery.__init__")))
         super(InsertQuery, self).__init__(*args, **kwargs)
         self.fields = []
         self.objs = []
@@ -195,7 +213,7 @@ class InsertQuery(Query):
         extras.update(kwargs)
         return super(InsertQuery, self).clone(klass, **extras)
 
-    def insert_values(self, fields, objs, raw=False):
+    def insert_values(self, fields, objs, raw=False,schema = None):
         """
         Set up the insert query from the 'insert_values' dictionary. The
         dictionary gives the model field names and their target values.
@@ -205,6 +223,9 @@ class InsertQuery(Query):
         parameters. This provides a way to insert NULL and DEFAULT keywords
         into the query, for example.
         """
+        if schema == None:
+            # return
+            raise (Exception("Can not call 'insert_values' without schema in '{0}'".format(__file__)))
         self.fields = fields
         # Check that no Promise object reaches the DB. Refs #10498.
         for field in fields:

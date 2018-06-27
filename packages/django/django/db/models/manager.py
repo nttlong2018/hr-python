@@ -65,6 +65,28 @@ class Manager(six.with_metaclass(RenameManagerMethods)):
         self.model = None
         self._inherited = False
         self._db = None
+        self._db_schema=None
+    def set_db_schema(self,name):
+        """
+        Set schema for multi tenancy
+        :param name:
+        :return:
+        """
+        self._db_schema=name
+        return self
+    def get_db_schema(self):
+        """
+        get db schema name, default value in tenancy_code of threading
+        :return:
+        """
+        if self._db_schema!=None:
+            return self._db_schema
+        else:
+            import threading
+            if hasattr(threading.currentThread(),"tenancy_code"):
+                return threading.currentThread().tenancy_code
+            else:
+                return ""
 
     def contribute_to_class(self, model, name):
         # TODO: Use weakref because of possible memory leak / circular reference.
@@ -148,8 +170,40 @@ class Manager(six.with_metaclass(RenameManagerMethods)):
         return self.get_queryset().extra(*args, **kwargs)
 
     def get(self, *args, **kwargs):
-        return self.get_queryset().get(*args, **kwargs)
-
+        qr = self.get_queryset()
+        if kwargs.get("schema",None)== None or kwargs["schema"] == "":
+            _schema=None
+            import threading
+            if not hasattr(threading.currentThread(),"tenancy_code"):
+                _schema=threading.currentThread().tenancy_code
+            else:
+                import sys
+                settings = sys.modules["settings"]
+                if not hasattr(settings,"MULTI_TENANCY_DEFAULT_SCHEMA"):
+                    if not hasattr(settings,"DB_SCHEMA_FOR_SESSION_CACHE"):
+                        raise (Exception("It look like you forgot decalre 'DB_SCHEMA_FOR_SESSION_CACHE' in settings.py\n"
+                                         "Why 'DB_SCHEMA_FOR_SESSION_CACHE' is important?\n"
+                                         "For multi tenancy every session will be cache in the same mongo collection "
+                                         "with one schema where is determine in 'DB_SCHEMA_FOR_SESSION_CACHE',"
+                                         "even seperated schema"))
+                    else:
+                        _schema=settings.DB_SCHEMA_FOR_SESSION_CACHE
+                else:
+                    _schema = settings.MULTI_TENANCY_DEFAULT_SCHEMA
+            # old_schema = self.get_db_schema()
+            kwargs["schema"]=_schema
+            # self.set_db_schema(_schema)
+            ret = qr.get(*args, **kwargs)
+            # self.set_db_schema(old_schema)
+            return ret
+            # return qr.get(*args, **kwargs)
+        else:
+            # old_schema=self.get_db_schema()
+            # self.set_db_schema(kwargs["schema"])
+            # kwargs.__delitem__("schema")
+            ret= qr.get(*args, **kwargs)
+            # self.set_db_schema(old_schema)
+            return ret
     def get_or_create(self, **kwargs):
         return self.get_queryset().get_or_create(**kwargs)
 
@@ -190,48 +244,66 @@ class Manager(six.with_metaclass(RenameManagerMethods)):
         return self.get_queryset().first()
 
     def last(self):
+
         return self.get_queryset().last()
 
     def order_by(self, *args, **kwargs):
+        kwargs.update({"schema": self.get_db_schema()})
         return self.get_queryset().order_by(*args, **kwargs)
 
     def select_for_update(self, *args, **kwargs):
+        kwargs.update({"schema": self.get_db_schema()})
         return self.get_queryset().select_for_update(*args, **kwargs)
 
     def select_related(self, *args, **kwargs):
+        kwargs.update({"schema": self.get_db_schema()})
         return self.get_queryset().select_related(*args, **kwargs)
 
     def prefetch_related(self, *args, **kwargs):
+        kwargs.update({"schema": self.get_db_schema()})
         return self.get_queryset().prefetch_related(*args, **kwargs)
 
     def values(self, *args, **kwargs):
+        kwargs.update({"schema": self.get_db_schema()})
         return self.get_queryset().values(*args, **kwargs)
 
     def values_list(self, *args, **kwargs):
         return self.get_queryset().values_list(*args, **kwargs)
 
     def update(self, *args, **kwargs):
+        kwargs.update({"schema": self.get_db_schema()})
         return self.get_queryset().update(*args, **kwargs)
 
     def reverse(self, *args, **kwargs):
+        kwargs.update({"schema": self.get_db_schema()})
         return self.get_queryset().reverse(*args, **kwargs)
 
     def defer(self, *args, **kwargs):
         return self.get_queryset().defer(*args, **kwargs)
 
     def only(self, *args, **kwargs):
+        kwargs.update({"schema": self.get_db_schema()})
         return self.get_queryset().only(*args, **kwargs)
 
     def using(self, *args, **kwargs):
+        kwargs.update({"schema": self.get_db_schema()})
         return self.get_queryset().using(*args, **kwargs)
 
     def exists(self, *args, **kwargs):
+        kwargs.update({"schema": self.get_db_schema()})
         return self.get_queryset().exists(*args, **kwargs)
 
-    def _insert(self, objs, fields, **kwargs):
-        return insert_query(self.model, objs, fields, **kwargs)
+    def _insert(self, objs, fields,schema = None, **kwargs):
+        if schema == None:  # add schema
+            # return
+            raise (
+                Exception("can not call ''{1}'' without schema in '{0}'".format(__file__, "Manager._insert")))
+        #model, objs, fields, return_id=False, raw=False, using=None, schema = None
+        # kwargs.update({"schema": self.get_db_schema()})
+        return insert_query(self.model, objs, fields,schema=schema, **kwargs)
 
     def _update(self, values, **kwargs):
+        kwargs.update({"schema": self.get_db_schema()})
         return self.get_queryset()._update(values, **kwargs)
 
     def raw(self, raw_query, params=None, *args, **kwargs):
@@ -243,8 +315,12 @@ class ManagerDescriptor(object):
     # For example, Poll.objects works, but poll_obj.objects raises AttributeError.
     def __init__(self, manager):
         self.manager = manager
-
+    def set_schema_name(self,name):
+        self.schema=name
+        self.manager._schema_name=name;
+        return self
     def __get__(self, instance, type=None):
+
         if instance != None:
             raise AttributeError("Manager isn't accessible via %s instances" % type.__name__)
         return self.manager

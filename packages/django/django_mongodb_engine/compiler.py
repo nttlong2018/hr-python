@@ -86,15 +86,22 @@ def safe_call(func):
             raise IntegrityError, IntegrityError(smart_str(e)), sys.exc_info()[2]
         except PyMongoError, e:
             raise DatabaseError, DatabaseError(smart_str(e)), sys.exc_info()[2]
+        except Exception as ex:
+            raise ex
+
     return wrapper
 
 
 class MongoQuery(NonrelQuery):
 
-    def __init__(self, compiler, fields):
+    def __init__(self, compiler, fields,schema=None):
+        if schema == None:
+            # return
+            raise (Exception("Can not init 'MongoQuery' without schema"))
+
         super(MongoQuery, self).__init__(compiler, fields)
         self.ordering = []
-        self.collection = self.compiler.get_collection()
+        self.collection = self.compiler.get_collection(schema)
         self.mongo_query = getattr(compiler.query, 'raw_query', {})
 
     def __repr__(self):
@@ -108,7 +115,10 @@ class MongoQuery(NonrelQuery):
             yield entity
 
     @safe_call
-    def count(self, limit=None):
+    def count(self, limit=None,schema = None):
+        if schema == None:
+            # return
+            raise (Exception("can not call MongoQuery.count without schema in {0}".format(__file__)))
         results = self.get_cursor()
         if limit is not None:
             results.limit(limit)
@@ -292,8 +302,27 @@ class SQLCompiler(NonrelCompiler):
     """
     query_class = MongoQuery
 
-    def get_collection(self):
-        return self.connection.get_collection(self.query.get_meta().db_table)
+    def get_collection(self,schema):
+        """
+        get collection with schema
+        :param schema:
+        :return:
+        """
+        if self.query.get_meta().db_table=="django_session":
+            print "prepare query for {0}".format("django_session")
+            return self.connection.get_collection("django_session")
+        if schema == None:
+            # return
+            raise (Exception("can not 'get_collection' without using none schema"))
+
+        coll_name=""
+        if schema=="" or schema==None:
+            coll_name=self.query.get_meta().db_table
+        else:
+            coll_name = schema+"."+self.query.get_meta().db_table
+        print "prepare query for {0}".format(coll_name)
+        return self.connection.get_collection(coll_name)
+
 
     def execute_sql(self, result_type=MULTI):
         """
@@ -363,7 +392,7 @@ class SQLCompiler(NonrelCompiler):
 class SQLInsertCompiler(NonrelInsertCompiler, SQLCompiler):
 
     @safe_call
-    def insert(self, docs, return_id=False):
+    def insert(self, docs, return_id=False,schema=None):
         """
         Stores a document using field columns as element names, except
         for the primary key field for which "_id" is used.
@@ -372,6 +401,9 @@ class SQLInsertCompiler(NonrelInsertCompiler, SQLCompiler):
         document is created, otherwise value for a primary key may not
         be None.
         """
+        if schema == None:
+            # return
+            raise (Exception("can not call 'SQLInsertCompiler.insert' without schema in '{0}'".format(__file__)))
         for doc in docs:
             try:
                 doc['_id'] = doc.pop(self.query.get_meta().pk.column)
@@ -384,7 +416,7 @@ class SQLInsertCompiler(NonrelInsertCompiler, SQLCompiler):
                 else:
                     raise DatabaseError("Can't save entity with _id set to None")
 
-        collection = self.get_collection()
+        collection = self.get_collection(schema)
         options = self.connection.operation_flags.get('save', {})
 
         if return_id:

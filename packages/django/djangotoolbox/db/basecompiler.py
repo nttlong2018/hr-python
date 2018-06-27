@@ -1,4 +1,5 @@
 import datetime
+from runpy import _get_filename
 
 import django
 from django.conf import settings
@@ -394,16 +395,20 @@ class NonrelCompiler(SQLCompiler):
     # Public API
     # ----------------------------------------------
 
-    def results_iter(self, results=None):
+    def results_iter(self, results=None,schema=None):
         """
         Returns an iterator over the results from executing query given
         to this compiler. Called by QuerySet methods.
+        Distributer nttlong: add schema param
         """
+        if schema == None:
+            # return
+            raise (Exception("can not call 'results_iter' without schema in '{0}'".format(__file__)))
 
         if results is None:
             fields = self.get_fields()
             try:
-                results = self.build_query(fields).fetch(
+                results = self.build_query(fields,schema).fetch(
                     self.query.low_mark, self.query.high_mark)
             except EmptyResultSet:
                 results = []
@@ -411,8 +416,11 @@ class NonrelCompiler(SQLCompiler):
         for entity in results:
             yield self._make_result(entity, fields)
 
-    def has_results(self):
-        return self.get_count(check_exists=True)
+    def has_results(self, schema = None):
+        if schema == None:
+            # return
+            raise (Exception("Can not call 'has_results' without schema in '{0}'".format(__file__)))
+        return self.get_count(check_exists=True,schema = schema)
 
     def execute_sql(self, result_type=MULTI):
         """
@@ -496,30 +504,39 @@ class NonrelCompiler(SQLCompiler):
                 or self.query.distinct or self.query.extra or self.query.having):
             raise DatabaseError("This query is not supported by the database.")
 
-    def get_count(self, check_exists=False):
+    def get_count(self, check_exists=False, schema = None):
         """
         Counts objects matching the current filters / constraints.
 
         :param check_exists: Only check if any object matches
         """
+        if schema == None:
+            # return
+            raise (Exception("Can not call 'get_count' in '{0} ".format(__file__)))
         if check_exists:
             high_mark = 1
         else:
             high_mark = self.query.high_mark
         try:
-            return self.build_query().count(high_mark)
+            ret = self.build_query(None,schema)
+            ret=ret.count(high_mark,schema)
+            return  ret
         except EmptyResultSet:
             return 0
 
-    def build_query(self, fields=None):
+    def build_query(self, fields=None,schema=None):
         """
         Checks if the underlying SQL query is supported and prepares
         a NonrelQuery to be executed on the database.
+        Distributer nttlong: add schema param
         """
+        if schema == None:
+            return # fix loi
+            raise (Exception("Can not 'build_query' without schema in {0}".format(__file__)))
         self.check_query()
         if fields is None:
             fields = self.get_fields()
-        query = self.query_class(self, fields)
+        query = self.query_class(self, fields,schema)
         query.add_filters(self.query.where)
         query.order_by(self._get_ordering())
 
@@ -619,7 +636,10 @@ class NonrelInsertCompiler(NonrelCompiler):
           below ever fails).
     """
 
-    def execute_sql(self, return_id=False):
+    def execute_sql(self, return_id=False,schema=None):
+        if schema == None:
+            # return
+            raise (Exception("can not call 'NonerelInsertCompiler.execute_sql' without schema in {0}".format(__file__)))
         self.pre_sql_setup()
 
         to_insert = []
@@ -642,7 +662,7 @@ class NonrelInsertCompiler(NonrelCompiler):
                 field_values[field.column] = value
             to_insert.append(field_values)
 
-        key = self.insert(to_insert, return_id=return_id)
+        key = self.insert(to_insert, return_id=return_id,schema=schema)
 
         # Pass the key value through normal database deconversion.
         return self.ops.convert_values(self.ops.value_from_db(key, pk_field), pk_field)
@@ -691,9 +711,12 @@ class NonrelUpdateCompiler(NonrelCompiler):
 
 class NonrelDeleteCompiler(NonrelCompiler):
 
-    def execute_sql(self, result_type=MULTI):
+    def execute_sql(self, result_type=MULTI,schema = None ):
+        if schema == None:
+            # return
+            raise (Exception("Can not call 'NonrelDeleteCompiler.execute_sql' without schema in '{0}'".format(__file__)))
         try:
-            self.build_query([self.query.get_meta().pk]).delete()
+            self.build_query([self.query.get_meta().pk],schema=schema).delete()
         except EmptyResultSet:
             pass
 

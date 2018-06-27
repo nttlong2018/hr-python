@@ -25,19 +25,31 @@ class SessionStore(SessionBase):
                 logger = logging.getLogger('django.security.%s' %
                         e.__class__.__name__)
                 logger.warning(force_text(e))
-            self.create()
+
+            import sys
+            settings=sys.modules["settings"]
+            if not hasattr(settings,"DB_SCHEMA_FOR_SESSION_CACHE"):
+                raise (Exception("It look like you forgot declare 'DB_SCHEMA_FOR_SESSION_CACHE' in settings.py"))
+
+            self.create(schema=settings.DB_SCHEMA_FOR_SESSION_CACHE)
             return {}
 
     def exists(self, session_key):
         return Session.objects.filter(session_key=session_key).exists()
 
-    def create(self):
+    def create(self, schema = None):
+        if schema == None:  # add schema
+
+            return # fix loi
+            raise (
+                Exception("can not call '{1}' without schema in '{0}'".format(__file__, "SessionStore.create")))
+
         while True:
             self._session_key = self._get_new_session_key()
             try:
                 # Save immediately to ensure we have a unique entry in the
                 # database.
-                self.save(must_create=True)
+                self.save(must_create=True,schema=schema)
             except CreateError:
                 # Key wasn't unique. Try again.
                 continue
@@ -45,13 +57,17 @@ class SessionStore(SessionBase):
             self._session_cache = {}
             return
 
-    def save(self, must_create=False):
+    def save(self, must_create=False,schema = None):
         """
         Saves the current session data to the database. If 'must_create' is
         True, a database error will be raised if the saving operation doesn't
         create a *new* entry (as opposed to possibly updating an existing
         entry).
         """
+        if schema == None:  # add schema
+            return
+            raise (
+                Exception("can not call '{1}' without schema in '{0}'".format(__file__, "db.save")))
         obj = Session(
             session_key=self._get_or_create_session_key(),
             session_data=self.encode(self._get_session(no_load=must_create)),
@@ -60,19 +76,24 @@ class SessionStore(SessionBase):
         using = router.db_for_write(Session, instance=obj)
         try:
             with transaction.atomic(using=using):
-                obj.save(force_insert=must_create, using=using)
+                obj.save(force_insert=must_create, using=using, schema = schema)
         except IntegrityError:
             if must_create:
                 raise CreateError
             raise
 
-    def delete(self, session_key=None):
+    def delete(self, session_key=None,schema = None):
+        if schema == None:
+            # return
+            raise (Exception("Can not call 'SessionStore.delete' without schema in '{0}'".format(__file__)))
+
         if session_key is None:
             if self.session_key is None:
                 return
             session_key = self.session_key
         try:
-            Session.objects.get(session_key=session_key).delete()
+            session_obj=Session.objects.get(session_key=session_key)
+            session_obj.delete(using=None,schema=schema)
         except Session.DoesNotExist:
             pass
 

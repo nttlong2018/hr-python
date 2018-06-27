@@ -3,6 +3,7 @@ import datetime
 import decimal
 import sys
 import warnings
+from _curses import has_key
 
 from django.conf import settings
 from django.core.exceptions import ImproperlyConfigured
@@ -276,7 +277,11 @@ class DatabaseWrapper(NonrelDatabaseWrapper):
                 raise ImproperlyConfigured("Invalid username or password.")
 
         self.connected = True
-        connection_created.send(sender=self.__class__, connection=self)
+        import sys
+        st = sys.modules["settings"]
+        if not hasattr(st,"DB_SCHEMA_FOR_SESSION_CACHE"):
+            raise (Exception("It look like you forgot declare 'DB_SCHEMA_FOR_SESSION_CACHE' in 'settings.py'"))
+        connection_created.send(sender=self.__class__, connection=self,schema = st.DB_SCHEMA_FOR_SESSION_CACHE)
 
     def _reconnect(self):
         if self.connected:

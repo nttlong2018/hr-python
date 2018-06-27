@@ -1528,11 +1528,12 @@ class ManyToManyField(RelatedField):
     def save_form_data(self, instance, data):
         setattr(instance, self.attname, data)
 
-    def formfield(self, **kwargs):
+    def formfield(self,schema = None, **kwargs):
         db = kwargs.pop('using', None)
+        def_mng=self.rel.to._default_manager.using(db)
         defaults = {
             'form_class': forms.ModelMultipleChoiceField,
-            'queryset': self.rel.to._default_manager.using(db).complex_filter(self.rel.limit_choices_to)
+            'queryset': def_mng.complex_filter(self.rel.limit_choices_to)
         }
         defaults.update(kwargs)
         # If initial is passed in, it's a list of related objects, but the

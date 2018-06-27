@@ -21,13 +21,19 @@ from django.contrib.contenttypes.models import ContentType
 from django.utils.encoding import python_2_unicode_compatible
 
 
-def update_last_login(sender, user, **kwargs):
+def update_last_login(sender, user,schema = None, **kwargs):
     """
     A signal receiver which updates the last_login date for
     the user logging in.
     """
+    if schema == None:  # add schema
+        return # fix loi
+        raise (Exception("can not call ''{1}'' without schema in '{0}'".format(__file__, "update_last_login")))
     user.last_login = timezone.now()
-    user.save(update_fields=['last_login'])
+    user.save(
+        update_fields=['last_login'],
+        schema=schema
+    )
 user_logged_in.connect(update_last_login)
 
 

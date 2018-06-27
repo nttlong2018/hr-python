@@ -8,16 +8,21 @@ def create_sys_admin_user():
     :return:
     """
     try:
-        user = User.objects.get(username="root")
+        # User.objects.set_db_schema("sys")
+        obj_users=User.objects
+        user = obj_users.get(username="root",schema = "sys")
         user.is_staff = True
         user.is_admin = True
-        user.save()
+        user.save(schema="sys")
+        # User.objects.set_db_schema(None)
     except ObjectDoesNotExist as ex:
+        User.objects.set_db_schema("sys")
         user = User.objects.create_user(username='root',
                                         email='root@root.com',
-                                        password='root')
+                                        password='root',
+                                        schema="sys")
         user.is_staff = True
         user.is_admin = True
-        user.save()
-        user.save()
+        user.save(schema="sys")
+        User.objects.set_db_schema(None)
 
