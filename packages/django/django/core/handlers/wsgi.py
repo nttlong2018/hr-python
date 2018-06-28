@@ -193,9 +193,9 @@ class WSGIHandler(base.BaseHandler):
         set_script_prefix(base.get_script_name(environ))
         import sys
         settings = sys.modules["settings"]
-        if not hasattr(settings,"DB_SCHEMA_FOR_SESSION_CACHE"):
-            raise (Exception("It look like you forgot delcare 'DB_SCHEMA_FOR_SESSION_CACHE' in settings.py"))
-        signals.request_started.send(sender=self.__class__,schema =settings.DB_SCHEMA_FOR_SESSION_CACHE )
+        if not hasattr(settings,"MULTI_TENANCY_DEFAULT_SCHEMA"):
+            raise (Exception("It look like you forgot delcare 'MULTI_TENANCY_DEFAULT_SCHEMA' in settings.py"))
+        signals.request_started.send(sender=self.__class__,schema =settings.MULTI_TENANCY_DEFAULT_SCHEMA )
         try:
             request = self.request_class(environ)
         except UnicodeDecodeError:

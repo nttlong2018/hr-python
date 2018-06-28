@@ -238,9 +238,19 @@ class Collector(object):
                                 for model in sorted_models])
 
     def delete(self,schema):
-        if schema == None:
-            # return
-            raise (Exception("Can not call Collector.delete' without schema in '{0}'".format(__file__)))
+        if schema == None:  # add schema
+            import inspect
+            fx = inspect.stack()
+            error_detail = ""
+            for x in fx:
+                error_detail += "\n\t {0}, line {1}".format(fx[1], fx[2])
+            raise (
+                Exception(
+                    "can not call ''{1}'' without schema in '{0}'.\nDetail:\n{2}".format(
+                        __file__, "Collector.delete",
+                        error_detail
+                    )))
+
         # sort instance collections
         for model, instances in self.data.items():
             self.data[model] = sorted(instances, key=attrgetter("pk"))

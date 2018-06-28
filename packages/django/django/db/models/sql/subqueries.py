@@ -29,8 +29,18 @@ class DeleteQuery(Query):
     compiler = 'SQLDeleteCompiler'
 
     def do_query(self, table, where, using,schema = None):
-        if schema == None:
-            raise (Exception("Can not call 'DeleteQuery.do_query' without schema in '{0}'".format(__file__)))
+        if schema == None:  # add schema
+            import inspect
+            fx = inspect.stack()
+            error_detail = ""
+            for x in fx:
+                error_detail += "\n\t {0}, line {1}".format(fx[1], fx[2])
+            raise (
+                Exception(
+                    "can not call ''{1}'' without schema in '{0}'.\nDetail:\n{2}".format(
+                        __file__, "DeleteQuery.do_query",
+                        error_detail
+                    )))
         self.tables = [table]
         self.where = where
         #self, result_type=MULTI,schema = None
@@ -43,9 +53,19 @@ class DeleteQuery(Query):
         More than one physical query may be executed if there are a
         lot of values in pk_list.
         """
-        if schema == None:
-            return
-            raise (Exception("Can not call 'DeleteQuery.delete_batch' without schema in '{0}'".format(__file__)))
+        if schema == None:  # add schema
+            import inspect
+            fx = inspect.stack()
+            error_detail = ""
+            for x in fx:
+                error_detail += "\n\t {0}, line {1}".format(fx[1], fx[2])
+            raise (
+                Exception(
+                    "can not call ''{1}'' without schema in '{0}'.\nDetail:\n{2}".format(
+                        __file__, "DeleteQuery.delete_batch",
+                        error_detail
+                    )))
+
         if not field:
             field = self.get_meta().pk
         for offset in range(0, len(pk_list), GET_ITERATOR_CHUNK_SIZE):
@@ -222,9 +242,18 @@ class InsertQuery(Query):
         parameters. This provides a way to insert NULL and DEFAULT keywords
         into the query, for example.
         """
-        if schema == None:
-            # return
-            raise (Exception("Can not call 'insert_values' without schema in '{0}'".format(__file__)))
+        if schema == None:  # add schema
+            import inspect
+            fx = inspect.stack()
+            error_detail = ""
+            for x in fx:
+                error_detail += "\n\t {0}, line {1}".format(fx[1], fx[2])
+            raise (
+                Exception(
+                    "can not call ''{1}'' without schema in '{0}'.\nDetail:\n{2}".format(
+                        __file__, "insert_values",
+                        error_detail
+                    )))
         self.fields = fields
         # Check that no Promise object reaches the DB. Refs #10498.
         for field in fields:

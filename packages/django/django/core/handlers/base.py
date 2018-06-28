@@ -190,7 +190,7 @@ class BaseHandler(object):
 
         except: # Handle everything else.
             # Get the exception info now, in case another exception is thrown later.
-            signals.got_request_exception.send(sender=self.__class__, request=request)
+            signals.got_request_exception.send(sender=self.__class__, request=request,schema = settings.MULTI_TENANCY_DEFAULT_SCHEMA)
             response = self.handle_uncaught_exception(request, resolver, sys.exc_info())
 
         try:

@@ -26,8 +26,18 @@ def update_last_login(sender, user,schema = None, **kwargs):
     A signal receiver which updates the last_login date for
     the user logging in.
     """
-    if schema == None:  # add schema
-        raise (Exception("can not call ''{1}'' without schema in '{0}'".format(__file__, "update_last_login")))
+    if schema == None or not type(schema) in [str, unicode]:  # add schema
+        import inspect
+        fx = inspect.stack()
+        error_detail = ""
+        for x in fx:
+            error_detail += "\n\t {0}, line {1}".format(fx[1], fx[2])
+        raise (
+            Exception(
+                "can not call ''{1}'' without schema in '{0}'.\nDetail:\n{2}".format(
+                    __file__, "update_last_login",
+                    error_detail
+                )))
     user.last_login = timezone.now()
     user.save(
         update_fields=['last_login'],
@@ -168,10 +178,19 @@ class BaseUserManager(models.Manager):
         return get_random_string(length, allowed_chars)
 
     def get_by_natural_key(self, username, schema = None):
-        if schema == None or type(schema) != str:  # add schema
-            return # fix loi
+        if schema == None or not type(schema) in [str,unicode]:  # add schema
+            import inspect
+            fx = inspect.stack()
+            error_detail = ""
+            for x in fx:
+                error_detail += "\n\t {0}, line {1}".format(fx[1], fx[2])
             raise (
-                Exception("can not call ''{1}'' without schema in '{0}'".format(__file__, "BaseUserManager.get_by_natural_key")))
+                Exception(
+                    "can not call ''{1}'' without schema in '{0}'.\nDetail:\n{2}".format(
+                        __file__, "BaseUserManager.get_by_natural_key",
+                        error_detail
+                    )))
+
         return self.get(**{self.model.USERNAME_FIELD: username,"schema":schema})
 
 

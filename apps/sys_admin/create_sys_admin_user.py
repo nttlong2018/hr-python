@@ -16,7 +16,7 @@ def create_sys_admin_user():
         user.save(schema="sys")
         # User.objects.set_db_schema(None)
     except ObjectDoesNotExist as ex:
-        User.objects.set_db_schema("sys")
+        # User.objects.set_db_schema("sys")
         user = User.objects.create_user(username='root',
                                         email='root@root.com',
                                         password='root',

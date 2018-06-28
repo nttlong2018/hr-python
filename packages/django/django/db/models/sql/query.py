@@ -194,8 +194,17 @@ class Query(object):
 
     def get_compiler(self, using=None, connection=None, schema = None):
         if schema == None:  # add schema
+            import inspect
+            fx = inspect.stack()
+            error_detail = ""
+            for x in fx:
+                error_detail += "\n\t {0}, line {1}".format(fx[1], fx[2])
             raise (
-                Exception("can not call ''{1}'' without schema in '{0}'".format(__file__, "Query.get_compiler")))
+                Exception(
+                    "can not call ''{1}'' without schema in '{0}'.\nDetail:\n{2}".format(
+                        __file__, "Query.get_compiler",
+                        error_detail
+                    )))
         if using is None and connection is None:
             raise ValueError("Need either using or connection")
         if using:
@@ -404,9 +413,19 @@ class Query(object):
         return number
 
     def has_results(self, using, schema = None ):
-        if schema == None:
-            # return;
-            raise (Exception("Can not call 'has_results' without schema in '{0}'".format(__file__)))
+        if schema == None:  # add schema
+            import inspect
+            fx = inspect.stack()
+            error_detail = ""
+            for x in fx:
+                error_detail += "\n\t {0}, line {1}".format(fx[1], fx[2])
+            raise (
+                Exception(
+                    "can not call ''{1}'' without schema in '{0}'.\nDetail:\n{2}".format(
+                        __file__, "has_results",
+                        error_detail
+                    )))
+
         q = self.clone()
         q.clear_select_clause()
         q.clear_ordering(True)

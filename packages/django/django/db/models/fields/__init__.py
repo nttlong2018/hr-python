@@ -872,18 +872,21 @@ class DateTimeField(DateField):
     # get_prep_lookup is inherited from DateField
 
     def get_prep_value(self, value):
-        value = self.to_python(value)
-        if value is not None and settings.USE_TZ and timezone.is_naive(value):
-            # For backwards compatibility, interpret naive datetimes in local
-            # time. This won't work during DST change, but we can't do much
-            # about it, so we let the exceptions percolate up the call stack.
-            warnings.warn("DateTimeField %s.%s received a naive datetime (%s)"
-                          " while time zone support is active." %
-                          (self.model.__name__, self.name, value),
-                          RuntimeWarning)
-            default_timezone = timezone.get_default_timezone()
-            value = timezone.make_aware(value, default_timezone)
-        return value
+        try:
+            value = self.to_python(value)
+            if value is not None and settings.USE_TZ and timezone.is_naive(value):
+                # For backwards compatibility, interpret naive datetimes in local
+                # time. This won't work during DST change, but we can't do much
+                # about it, so we let the exceptions percolate up the call stack.
+                warnings.warn("DateTimeField %s.%s received a naive datetime (%s)"
+                              " while time zone support is active." %
+                              (self.model.__name__, self.name, value),
+                              RuntimeWarning)
+                default_timezone = timezone.get_default_timezone()
+                value = timezone.make_aware(value, default_timezone)
+            return value
+        except Exception as ex:
+            raise ex
 
     def get_db_prep_value(self, value, connection, prepared=False):
         # Casts datetimes into the format expected by the backend

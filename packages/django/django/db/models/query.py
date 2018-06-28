@@ -310,14 +310,14 @@ class QuerySet(object):
         keyword arguments.
         """
         if kwargs.get("schema",None)==None:
-            # if not hasattr(settings,"DB_SCHEMA_FOR_SESSION_CACHE"):
-            #     raise (Exception("It look like you forgot declare 'DB_SCHEMA_FOR_SESSION_CACHE' in settings.py\n"
-            #                      "What is 'DB_SCHEMA_FOR_SESSION_CACHE'?\n"
+            # if not hasattr(settings,"MULTI_TENANCY_DEFAULT_SCHEMA"):
+            #     raise (Exception("It look like you forgot declare 'MULTI_TENANCY_DEFAULT_SCHEMA' in settings.py\n"
+            #                      "What is 'MULTI_TENANCY_DEFAULT_SCHEMA'?\n"
             #                      "This django version (the version serve for multi tenancy) can not determine where is the schema in which the "
             #                      "system will storage session cache and de fault user"
             #                      ""))
             # else:
-            #     kwargs["schema"]=settings.DB_SCHEMA_FOR_SESSION_CACHE
+            #     kwargs["schema"]=settings.MULTI_TENANCY_DEFAULT_SCHEMA
 
             # return
             raise (
@@ -879,9 +879,19 @@ class QuerySet(object):
         return c
 
     def _fetch_all(self, schema = None):
-        if schema == None:
-            raise (Exception("can not call '_fetch_all' without schema '{0}'".format(__file__)))
-            # return
+        if schema == None:  # add schema
+            import inspect
+            fx = inspect.stack()
+            error_detail = ""
+            for x in fx:
+                error_detail += "\n\t {0}, line {1}".format(fx[1], fx[2])
+            raise (
+                Exception(
+                    "can not call ''{1}'' without schema in '{0}'.\nDetail:\n{2}".format(
+                        __file__, "QuerySet._fetch_all",
+                        error_detail
+                    )))
+
 
         # self._result_cache=None #long test
         if self._result_cache is None:
@@ -1541,9 +1551,18 @@ def insert_query(model, objs, fields, return_id=False, raw=False, using=None, sc
     the InsertQuery class and is how Model.save() is implemented. It is not
     part of the public API.
     """
-    if schema == None:
-        # return
-        raise (Exception("can not call 'insert_query' without schema in '{0}'".format(__file__)))
+    if schema == None:  # add schema
+        import inspect
+        fx = inspect.stack()
+        error_detail = ""
+        for x in fx:
+            error_detail += "\n\t {0}, line {1}".format(fx[1], fx[2])
+        raise (
+            Exception(
+                "can not call ''{1}'' without schema in '{0}'.\nDetail:\n{2}".format(
+                    __file__, "insert_query",
+                    error_detail
+                )))
     query = sql.InsertQuery(model)
     query.insert_values(fields, objs, raw=raw, schema=schema)
     return query.get_compiler(using=using,schema=schema).execute_sql(return_id,schema)

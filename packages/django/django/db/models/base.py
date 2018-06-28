@@ -240,7 +240,7 @@ class ModelBase(type):
             attr_meta.abstract = False
             new_class.Meta = attr_meta
             return new_class
-        new_class._prepare(schema=settings.DB_SCHEMA_FOR_SESSION_CACHE)
+        new_class._prepare(schema=settings.MULTI_TENANCY_DEFAULT_SCHEMA)
         register_models(new_class._meta.app_label, new_class)
 
         # Because of the way imports happen (recursively), we may or may not be
@@ -271,8 +271,13 @@ class ModelBase(type):
         Creates some methods once self._meta has been populated.
         """
         if schema == None:  # add schema
+            import inspect
+            fx = inspect.stack()
+            error_detail = ""
+            for x in fx:
+                error_detail += "\n\t {0}, line {1}".format(fx[1], fx[2])
             raise (
-                Exception("can not call ''{1}'' without schema in '{0}'".format(__file__, "ModelBase._prepare")))
+                Exception("can not call ''{1}'' without schema in '{0}'\n Detail:\n{2}".format(__file__, "ModelBase._prepare",error_detail)))
         opts = cls._meta
         opts._prepare(cls)
 
@@ -328,9 +333,9 @@ class Model(six.with_metaclass(ModelBase)):
     _deferred = False
 
     def __init__(self, *args, **kwargs):
-        if not hasattr(settings,"DB_SCHEMA_FOR_SESSION_CACHE"):
-            raise (Exception("It look like you forgot declare 'DB_SCHEMA_FOR_SESSION_CACHE' in settings.py"))
-        signals.pre_init.send(sender=self.__class__, args=args, kwargs=kwargs,schema=settings.DB_SCHEMA_FOR_SESSION_CACHE)
+        if not hasattr(settings,"MULTI_TENANCY_DEFAULT_SCHEMA"):
+            raise (Exception("It look like you forgot declare 'MULTI_TENANCY_DEFAULT_SCHEMA' in settings.py"))
+        signals.pre_init.send(sender=self.__class__, args=args, kwargs=kwargs,schema=settings.MULTI_TENANCY_DEFAULT_SCHEMA)
 
         # Set up the storage for instance state
         self._state = ModelState()
@@ -424,7 +429,7 @@ class Model(six.with_metaclass(ModelBase)):
                 raise TypeError("'%s' is an invalid keyword argument for this function" % list(kwargs)[0])
         self._original_pk = self._get_pk_val()
         super(Model, self).__init__()
-        signals.post_init.send(sender=self.__class__, instance=self,schema=settings.DB_SCHEMA_FOR_SESSION_CACHE)
+        signals.post_init.send(sender=self.__class__, instance=self,schema=settings.MULTI_TENANCY_DEFAULT_SCHEMA)
 
     def __repr__(self):
         try:
@@ -506,8 +511,13 @@ class Model(six.with_metaclass(ModelBase)):
         non-SQL backends), respectively. Normally, they should not be set.
         """
         if schema == None:  # add schema
+            import inspect
+            fx = inspect.stack()
+            error_detail = ""
+            for x in fx:
+                error_detail += "\n\t {0}, line {1}".format(fx[1], fx[2])
             raise (
-                Exception("can not call ''{1}'' without schema in '{0}'".format(__file__, "base.save")))
+                Exception("can not call ''{1}'' without schema in '{0}'\n Detail:\n {2}".format(__file__, "base.save",error_detail)))
         using = using or router.db_for_write(self.__class__, instance=self)
         if force_insert and (force_update or update_fields):
             raise ValueError("Cannot force both insert and updating in model saving.")
@@ -575,8 +585,13 @@ class Model(six.with_metaclass(ModelBase)):
         is used by fixture loading.
         """
         if schema == None:  # add schema
+            import inspect
+            fx = inspect.stack()
+            error_detail = ""
+            for x in fx:
+                error_detail += "\n\t {0}, line {1}".format(fx[1], fx[2])
             raise (
-                Exception("can not call ''{1}'' without schema in '{0}'".format(__file__, "base.save_base")))
+                Exception("can not call ''{1}'' without schema in '{0}'.\nDetail:\n{2}".format(__file__, "base.save_base",error_detail)))
         using = using or router.db_for_write(self.__class__, instance=self)
         assert not (force_insert and (force_update or update_fields))
         assert update_fields is None or len(update_fields) > 0
@@ -651,9 +666,16 @@ class Model(six.with_metaclass(ModelBase)):
         for a single table.
         """
         if schema == None:  # add schema
-            # return
+            import inspect
+            fx = inspect.stack()
+            error_detail = ""
+            for x in fx:
+                error_detail += "\n\t {0}, line {1}".format(fx[1], fx[2])
             raise (
-                Exception("can not call ''{1}'' without schema in '{0}'".format(__file__, "base._save_table")))
+                Exception(
+                    "can not call ''{1}'' without schema in '{0}'.\nDetail:\n{2}".format(__file__, "base._save_table",
+                                                                                         error_detail)))
+
         meta = cls._meta
         non_pks = [f for f in meta.local_concrete_fields if not f.primary_key]
 
@@ -741,9 +763,17 @@ class Model(six.with_metaclass(ModelBase)):
         the new pk for the model.
         """
         if schema == None:  # add schema
-            # return
+            import inspect
+            fx = inspect.stack()
+            error_detail = ""
+            for x in fx:
+                error_detail += "\n\t {0}, line {1}".format(fx[1], fx[2])
             raise (
-                Exception("can not call ''{1}'' without schema in '{0}'".format(__file__, "ManagerDescriptor._do_insert")))
+                Exception(
+                    "can not call ''{1}'' without schema in '{0}'.\nDetail:\n{2}".format(
+                        __file__, "ManagerDescriptor._do_insert",
+                        error_detail
+                    )))
         return manager._insert(
             [self],
             fields=fields,
@@ -754,9 +784,18 @@ class Model(six.with_metaclass(ModelBase)):
         )
 
     def delete(self, using=None,schema = None):
-        if schema == None:
-            # return
-            raise (Exception("Can not call 'Model.delete' wihthout schema in '{0}'".format(__file__)))
+        if schema == None:  # add schema
+            import inspect
+            fx = inspect.stack()
+            error_detail = ""
+            for x in fx:
+                error_detail += "\n\t {0}, line {1}".format(fx[1], fx[2])
+            raise (
+                Exception(
+                    "can not call ''{1}'' without schema in '{0}'.\nDetail:\n{2}".format(
+                        __file__, "Model.delete",
+                        error_detail
+                    )))
         using = using or router.db_for_write(self.__class__, instance=self)
         assert self._get_pk_val() is not None, "%s object can't be deleted because its %s attribute is set to None." % (self._meta.object_name, self._meta.pk.attname)
 

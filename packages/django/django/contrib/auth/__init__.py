@@ -63,7 +63,7 @@ def authenticate(**credentials):
     user_login_failed.send(
         sender=__name__,
         credentials=_clean_credentials(credentials),
-        schema =settings.DB_SCHEMA_FOR_SESSION_CACHE
+        schema =settings.MULTI_TENANCY_DEFAULT_SCHEMA
     )
 
 
@@ -74,9 +74,19 @@ def login(request, user,schema = None):
     have to reauthenticate on every request. Note that data set during
     the anonymous session is retained when the user logs in.
     """
-    if schema == None:
-        import threading
-        schema = threading.currentThread().tenancy_code
+
+    if schema == None or not type(schema) in [str, unicode]:  # add schema
+        import inspect
+        fx = inspect.stack()
+        error_detail = ""
+        for x in fx:
+            error_detail += "\n\t {0}, line {1}".format(fx[1], fx[2])
+        raise (
+            Exception(
+                "can not call ''{1}'' without schema in '{0}'.\nDetail:\n{2}".format(
+                    __file__, "login",
+                    error_detail
+                )))
 
     if user is None:
         user = request.user

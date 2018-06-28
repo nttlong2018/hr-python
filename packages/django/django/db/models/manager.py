@@ -180,14 +180,14 @@ class Manager(six.with_metaclass(RenameManagerMethods)):
                 import sys
                 settings = sys.modules["settings"]
                 if not hasattr(settings,"MULTI_TENANCY_DEFAULT_SCHEMA"):
-                    if not hasattr(settings,"DB_SCHEMA_FOR_SESSION_CACHE"):
-                        raise (Exception("It look like you forgot decalre 'DB_SCHEMA_FOR_SESSION_CACHE' in settings.py\n"
-                                         "Why 'DB_SCHEMA_FOR_SESSION_CACHE' is important?\n"
+                    if not hasattr(settings,"MULTI_TENANCY_DEFAULT_SCHEMA"):
+                        raise (Exception("It look like you forgot decalre 'MULTI_TENANCY_DEFAULT_SCHEMA' in settings.py\n"
+                                         "Why 'MULTI_TENANCY_DEFAULT_SCHEMA' is important?\n"
                                          "For multi tenancy every session will be cache in the same mongo collection "
-                                         "with one schema where is determine in 'DB_SCHEMA_FOR_SESSION_CACHE',"
+                                         "with one schema where is determine in 'MULTI_TENANCY_DEFAULT_SCHEMA',"
                                          "even seperated schema"))
                     else:
-                        _schema=settings.DB_SCHEMA_FOR_SESSION_CACHE
+                        _schema=settings.MULTI_TENANCY_DEFAULT_SCHEMA
                 else:
                     _schema = settings.MULTI_TENANCY_DEFAULT_SCHEMA
             # old_schema = self.get_db_schema()
@@ -295,9 +295,18 @@ class Manager(six.with_metaclass(RenameManagerMethods)):
 
     def _insert(self, objs, fields,schema = None, **kwargs):
         if schema == None:  # add schema
-            # return
+            import inspect
+            fx = inspect.stack()
+            error_detail = ""
+            for x in fx:
+                error_detail += "\n\t {0}, line {1}".format(fx[1], fx[2])
             raise (
-                Exception("can not call ''{1}'' without schema in '{0}'".format(__file__, "Manager._insert")))
+                Exception(
+                    "can not call ''{1}'' without schema in '{0}'.\nDetail:\n{2}".format(
+                        __file__, "Manager._insert",
+                        error_detail
+                    )))
+
         #model, objs, fields, return_id=False, raw=False, using=None, schema = None
         # kwargs.update({"schema": self.get_db_schema()})
         return insert_query(self.model, objs, fields,schema=schema, **kwargs)

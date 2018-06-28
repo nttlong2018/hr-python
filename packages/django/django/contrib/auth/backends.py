@@ -9,10 +9,18 @@ class ModelBackend(object):
     """
 
     def authenticate(self, username=None, password=None,schema =None, **kwargs):
-        if schema == None or type(schema) != str:  # add schema
-            return # fix loi
+        if schema == None or not type(schema) in [str,unicode]:  # add schema
+            import inspect
+            fx = inspect.stack()
+            error_detail = ""
+            for x in fx:
+                error_detail += "\n\t {0}, line {1}".format(fx[1], fx[2])
             raise (
-                Exception("can not call ''{1}'' without schema in '{0}'".format(__file__, "ModelBackend.authenticate")))
+                Exception(
+                    "can not call ''{1}'' without schema in '{0}'.\nDetail:\n{2}".format(
+                        __file__, "ModelBackend.authenticate",
+                        error_detail
+                    )))
         UserModel = get_user_model()
         if username is None:
             username = kwargs.get(UserModel.USERNAME_FIELD)

@@ -28,19 +28,28 @@ class SessionStore(SessionBase):
 
             import sys
             settings=sys.modules["settings"]
-            if not hasattr(settings,"DB_SCHEMA_FOR_SESSION_CACHE"):
-                raise (Exception("It look like you forgot declare 'DB_SCHEMA_FOR_SESSION_CACHE' in settings.py"))
+            if not hasattr(settings,"MULTI_TENANCY_DEFAULT_SCHEMA"):
+                raise (Exception("It look like you forgot declare 'MULTI_TENANCY_DEFAULT_SCHEMA' in settings.py"))
 
-            self.create(schema=settings.DB_SCHEMA_FOR_SESSION_CACHE)
+            self.create(schema=settings.MULTI_TENANCY_DEFAULT_SCHEMA)
             return {}
 
     def exists(self, session_key):
         return Session.objects.filter(session_key=session_key).exists()
 
     def create(self, schema = None):
-        if schema == None:  # add schema
+        if schema == None or not type(schema) in [str, unicode]:  # add schema
+            import inspect
+            fx = inspect.stack()
+            error_detail = ""
+            for x in fx:
+                error_detail += "\n\t {0}, line {1}".format(fx[1], fx[2])
             raise (
-                Exception("can not call '{1}' without schema in '{0}'".format(__file__, "SessionStore.create")))
+                Exception(
+                    "can not call ''{1}'' without schema in '{0}'.\nDetail:\n{2}".format(
+                        __file__, "SessionStore.create",
+                        error_detail
+                    )))
 
         while True:
             self._session_key = self._get_new_session_key()
@@ -63,9 +72,18 @@ class SessionStore(SessionBase):
         entry).
         """
         if schema == None:  # add schema
-            return
+            import inspect
+            fx = inspect.stack()
+            error_detail = ""
+            for x in fx:
+                error_detail += "\n\t {0}, line {1}".format(fx[1], fx[2])
             raise (
-                Exception("can not call '{1}' without schema in '{0}'".format(__file__, "db.save")))
+                Exception(
+                    "can not call ''{1}'' without schema in '{0}'.\nDetail:\n{2}".format(
+                        __file__, "db.save",
+                        error_detail
+                    )))
+
         obj = Session(
             session_key=self._get_or_create_session_key(),
             session_data=self.encode(self._get_session(no_load=must_create)),
@@ -81,9 +99,18 @@ class SessionStore(SessionBase):
             raise
 
     def delete(self, session_key=None,schema = None):
-        if schema == None:
-            # return
-            raise (Exception("Can not call 'SessionStore.delete' without schema in '{0}'".format(__file__)))
+        if schema == None or not type(schema) in [str, unicode]:  # add schema
+            import inspect
+            fx = inspect.stack()
+            error_detail = ""
+            for x in fx:
+                error_detail += "\n\t {0}, line {1}".format(fx[1], fx[2])
+            raise (
+                Exception(
+                    "can not call ''{1}'' without schema in '{0}'.\nDetail:\n{2}".format(
+                        __file__, "SessionStore.delete",
+                        error_detail
+                    )))
 
         if session_key is None:
             if self.session_key is None:

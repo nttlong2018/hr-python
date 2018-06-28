@@ -945,9 +945,17 @@ class BaseDatabaseOperations(object):
         on this backend.
         """
         if schema == None:  # add schema
-            # return
+            import inspect
+            fx = inspect.stack()
+            error_detail = ""
+            for x in fx:
+                error_detail += "\n\t {0}, line {1}".format(fx[1], fx[2])
             raise (
-                Exception("can not call ''{1}'' without schema in '{0}'".format(__file__, "BaseDatabaseOperations.compiler")))
+                Exception(
+                    "can not call ''{1}'' without schema in '{0}'.\nDetail:\n{2}".format(
+                        __file__, "BaseDatabaseOperations.compiler",
+                        error_detail
+                    )))
         if self._cache is None:
             self._cache = import_module(self.compiler_module)
         return getattr(self._cache, compiler_name)

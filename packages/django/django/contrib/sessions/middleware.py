@@ -36,9 +36,9 @@ class SessionMiddleware(object):
                 # Skip session save for 500 responses, refs #3881.
                 if response.status_code != 500:
 
-                    if not hasattr(settings,"DB_SCHEMA_FOR_SESSION_CACHE"):
-                        raise (Exception("It look like you forgot create variable name 'DB_SCHEMA_FOR_SESSION_CACHE' settings"))
-                    request.session.save(schema = settings.DB_SCHEMA_FOR_SESSION_CACHE )
+                    if not hasattr(settings,"MULTI_TENANCY_DEFAULT_SCHEMA"):
+                        raise (Exception("It look like you forgot create variable name 'MULTI_TENANCY_DEFAULT_SCHEMA' settings"))
+                    request.session.save(schema = settings.MULTI_TENANCY_DEFAULT_SCHEMA )
                     response.set_cookie(settings.SESSION_COOKIE_NAME,
                             request.session.session_key, max_age=max_age,
                             expires=expires, domain=settings.SESSION_COOKIE_DOMAIN,

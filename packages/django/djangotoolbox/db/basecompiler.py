@@ -401,9 +401,18 @@ class NonrelCompiler(SQLCompiler):
         to this compiler. Called by QuerySet methods.
         Distributer nttlong: add schema param
         """
-        if schema == None:
-            # return
-            raise (Exception("can not call 'results_iter' without schema in '{0}'".format(__file__)))
+        if schema == None or not type(schema) in [str, unicode]:  # add schema
+            import inspect
+            fx = inspect.stack()
+            error_detail = ""
+            for x in fx:
+                error_detail += "\n\t {0}, line {1}".format(fx[1], fx[2])
+            raise (
+                Exception(
+                    "can not call ''{1}'' without schema in '{0}'.\nDetail:\n{2}".format(
+                        __file__, "results_iter",
+                        error_detail
+                    )))
 
         if results is None:
             fields = self.get_fields()
@@ -417,9 +426,18 @@ class NonrelCompiler(SQLCompiler):
             yield self._make_result(entity, fields)
 
     def has_results(self, schema = None):
-        if schema == None:
-            # return
-            raise (Exception("Can not call 'has_results' without schema in '{0}'".format(__file__)))
+        if schema == None or not type(schema) in [str, unicode]:  # add schema
+            import inspect
+            fx = inspect.stack()
+            error_detail = ""
+            for x in fx:
+                error_detail += "\n\t {0}, line {1}".format(fx[1], fx[2])
+            raise (
+                Exception(
+                    "can not call ''{1}'' without schema in '{0}'.\nDetail:\n{2}".format(
+                        __file__, "has_results",
+                        error_detail
+                    )))
         return self.get_count(check_exists=True,schema = schema)
 
     def execute_sql(self, result_type=MULTI):
@@ -510,9 +528,19 @@ class NonrelCompiler(SQLCompiler):
 
         :param check_exists: Only check if any object matches
         """
-        if schema == None:
-            # return
-            raise (Exception("Can not call 'get_count' in '{0} ".format(__file__)))
+        if schema == None or not type(schema) in [str, unicode]:  # add schema
+            import inspect
+            fx = inspect.stack()
+            error_detail = ""
+            for x in fx:
+                error_detail += "\n\t {0}, line {1}".format(fx[1], fx[2])
+            raise (
+                Exception(
+                    "can not call ''{1}'' without schema in '{0}'.\nDetail:\n{2}".format(
+                        __file__, "get_count",
+                        error_detail
+                    )))
+
         if check_exists:
             high_mark = 1
         else:
@@ -530,8 +558,19 @@ class NonrelCompiler(SQLCompiler):
         a NonrelQuery to be executed on the database.
         Distributer nttlong: add schema param
         """
-        if schema == None:
-            raise (Exception("Can not 'build_query' without schema in {0}".format(__file__)))
+        if schema == None or not type(schema) in [str, unicode]:  # add schema
+            import inspect
+            fx = inspect.stack()
+            error_detail = ""
+            for x in fx:
+                error_detail += "\n\t {0}, line {1}".format(fx[1], fx[2])
+            raise (
+                Exception(
+                    "can not call ''{1}'' without schema in '{0}'.\nDetail:\n{2}".format(
+                        __file__, "build_query",
+                        error_detail
+                    )))
+
         self.check_query()
         if fields is None:
             fields = self.get_fields()
@@ -636,9 +675,18 @@ class NonrelInsertCompiler(NonrelCompiler):
     """
 
     def execute_sql(self, return_id=False,schema=None):
-        if schema == None:
-            # return
-            raise (Exception("can not call 'NonerelInsertCompiler.execute_sql' without schema in {0}".format(__file__)))
+        if schema == None or not type(schema) in [str, unicode]:  # add schema
+            import inspect
+            fx = inspect.stack()
+            error_detail = ""
+            for x in fx:
+                error_detail += "\n\t {0}, line {1}".format(fx[1], fx[2])
+            raise (
+                Exception(
+                    "can not call ''{1}'' without schema in '{0}'.\nDetail:\n{2}".format(
+                        __file__, "NonerelInsertCompiler.execute_sql",
+                        error_detail
+                    )))
         self.pre_sql_setup()
 
         to_insert = []
@@ -711,9 +759,21 @@ class NonrelUpdateCompiler(NonrelCompiler):
 class NonrelDeleteCompiler(NonrelCompiler):
 
     def execute_sql(self, result_type=MULTI,schema = None ):
-        if schema == None:
-            # return
-            raise (Exception("Can not call 'NonrelDeleteCompiler.execute_sql' without schema in '{0}'".format(__file__)))
+        if schema == None or not type(schema) in [str, unicode]:  # add schema
+            import inspect
+            fx = inspect.stack()
+            error_detail = ""
+            for x in fx:
+                error_detail += "\n\t {0}, line {1}".format(fx[1], fx[2])
+            raise (
+                Exception(
+                    "can not call ''{1}'' without schema in '{0}'.\nDetail:\n{2}".format(
+                        __file__, "build_query",
+                        error_detail
+                    )))
+        # if schema == None:
+        #     # return
+        #     raise (Exception("Can not call 'NonrelDeleteCompiler.execute_sql' without schema in '{0}'".format(__file__)))
         try:
             self.build_query([self.query.get_meta().pk],schema=schema).delete()
         except EmptyResultSet:

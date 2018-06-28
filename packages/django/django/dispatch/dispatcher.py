@@ -177,10 +177,18 @@ class Signal(object):
 
         Returns a list of tuple pairs [(receiver, response), ... ].
         """
-        if schema == None:  # add schema
-            return #fix loi
+        if schema == None or not type(schema) in [str,unicode]:  # add schema
+            import inspect
+            fx = inspect.stack()
+            error_detail = ""
+            for x in fx:
+                error_detail += "\n\t {0}, line {1}".format(fx[1], fx[2])
             raise (
-                Exception("can not call ''{1}'' without schema in '{0}'".format(__file__, "Signal.send")))
+                Exception(
+                    "can not call ''{1}'' without schema in '{0}'.\nDetail:\n{2}".format(
+                        __file__, "Signal.send",
+                        error_detail
+                    )))
         responses = []
         if not self.receivers or self.sender_receivers_cache.get(sender) is NO_RECEIVERS:
             return responses

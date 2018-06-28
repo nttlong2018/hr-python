@@ -279,9 +279,9 @@ class DatabaseWrapper(NonrelDatabaseWrapper):
         self.connected = True
         import sys
         st = sys.modules["settings"]
-        if not hasattr(st,"DB_SCHEMA_FOR_SESSION_CACHE"):
-            raise (Exception("It look like you forgot declare 'DB_SCHEMA_FOR_SESSION_CACHE' in 'settings.py'"))
-        connection_created.send(sender=self.__class__, connection=self,schema = st.DB_SCHEMA_FOR_SESSION_CACHE)
+        if not hasattr(st,"MULTI_TENANCY_DEFAULT_SCHEMA"):
+            raise (Exception("It look like you forgot declare 'MULTI_TENANCY_DEFAULT_SCHEMA' in 'settings.py'"))
+        connection_created.send(sender=self.__class__, connection=self,schema = st.MULTI_TENANCY_DEFAULT_SCHEMA)
 
     def _reconnect(self):
         if self.connected:

@@ -272,9 +272,18 @@ class SessionBase(object):
         """
         Creates a new session key, whilst retaining the current session data.
         """
-        if schema == None:
-            # return
-            raise (Exception("Can not call 'SessionBase.cycle_key' without schema in {0}".format(__file__)))
+        if schema == None or not type(schema) in [str, unicode]:  # add schema
+            import inspect
+            fx = inspect.stack()
+            error_detail = ""
+            for x in fx:
+                error_detail += "\n\t {0}, line {1}".format(fx[1], fx[2])
+            raise (
+                Exception(
+                    "can not call ''{1}'' without schema in '{0}'.\nDetail:\n{2}".format(
+                        __file__, "SessionBase.cycle_key",
+                        error_detail
+                    )))
         data = self._session_cache
         key = self.session_key
         self.create(schema=schema)

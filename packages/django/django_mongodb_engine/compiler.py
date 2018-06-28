@@ -95,9 +95,19 @@ def safe_call(func):
 class MongoQuery(NonrelQuery):
 
     def __init__(self, compiler, fields,schema=None):
-        if schema == None:
-            # return
-            raise (Exception("Can not init 'MongoQuery' without schema"))
+
+        if schema == None or not type(schema) in [str, unicode]:  # add schema
+            import inspect
+            fx = inspect.stack()
+            error_detail = ""
+            for x in fx:
+                error_detail += "\n\t {0}, line {1}".format(fx[1], fx[2])
+            raise (
+                Exception(
+                    "can not call ''{1}'' without schema in '{0}'.\nDetail:\n{2}".format(
+                        __file__, "MongoQuery.init",
+                        error_detail
+                    )))
 
         super(MongoQuery, self).__init__(compiler, fields)
         self.ordering = []
@@ -116,9 +126,18 @@ class MongoQuery(NonrelQuery):
 
     @safe_call
     def count(self, limit=None,schema = None):
-        if schema == None:
-            # return
-            raise (Exception("can not call MongoQuery.count without schema in {0}".format(__file__)))
+        if schema == None or not type(schema) in [str, unicode]:  # add schema
+            import inspect
+            fx = inspect.stack()
+            error_detail = ""
+            for x in fx:
+                error_detail += "\n\t {0}, line {1}".format(fx[1], fx[2])
+            raise (
+                Exception(
+                    "can not call ''{1}'' without schema in '{0}'.\nDetail:\n{2}".format(
+                        __file__, "MongoQuery.count",
+                        error_detail
+                    )))
         results = self.get_cursor()
         if limit is not None:
             results.limit(limit)
@@ -311,10 +330,18 @@ class SQLCompiler(NonrelCompiler):
         if self.query.get_meta().db_table=="django_session":
             print "prepare query for {0}".format("django_session")
             return self.connection.get_collection("django_session")
-        if schema == None:
-            # return
-            raise (Exception("can not 'get_collection' without using none schema"))
-
+        if schema == None or not type(schema) in [str, unicode]:  # add schema
+            import inspect
+            fx = inspect.stack()
+            error_detail = ""
+            for x in fx:
+                error_detail += "\n\t {0}, line {1}".format(fx[1], fx[2])
+            raise (
+                Exception(
+                    "can not call ''{1}'' without schema in '{0}'.\nDetail:\n{2}".format(
+                        __file__, "SQLCompiler.get_collection",
+                        error_detail
+                    )))
         coll_name=""
         if schema=="" or schema==None:
             coll_name=self.query.get_meta().db_table
@@ -401,9 +428,18 @@ class SQLInsertCompiler(NonrelInsertCompiler, SQLCompiler):
         document is created, otherwise value for a primary key may not
         be None.
         """
-        if schema == None:
-            # return
-            raise (Exception("can not call 'SQLInsertCompiler.insert' without schema in '{0}'".format(__file__)))
+        if schema == None or not type(schema) in [str, unicode]:  # add schema
+            import inspect
+            fx = inspect.stack()
+            error_detail = ""
+            for x in fx:
+                error_detail += "\n\t {0}, line {1}".format(fx[1], fx[2])
+            raise (
+                Exception(
+                    "can not call ''{1}'' without schema in '{0}'.\nDetail:\n{2}".format(
+                        __file__, "SQLInsertCompiler.insert",
+                        error_detail
+                    )))
         for doc in docs:
             try:
                 doc['_id'] = doc.pop(self.query.get_meta().pk.column)

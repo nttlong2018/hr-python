@@ -58,8 +58,11 @@ def login(request):
             ))
             return request.render(_login)
         else:
-            request_login(request,user)
-            return redirect(_login["next"])
+            try:
+                request_login(request,user,schema="sys")
+                return redirect(_login["next"])
+            except Exception as ex:
+                raise (ex)
 
 
     return request.render(_login)
