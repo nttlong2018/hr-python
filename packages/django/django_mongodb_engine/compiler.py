@@ -108,11 +108,33 @@ class MongoQuery(NonrelQuery):
                         __file__, "MongoQuery.init",
                         error_detail
                     )))
+        import threading
+        ct=threading.currentThread()
+        if hasattr(ct,"DEFAULT_DB_SCHEMA"):
+            schema=ct.DEFAULT_DB_SCHEMA
+
 
         super(MongoQuery, self).__init__(compiler, fields)
         self.ordering = []
         self.collection = self.compiler.get_collection(schema)
-        self.mongo_query = getattr(compiler.query, 'raw_query', {})
+        if self.collection.collection.name == "django_session":
+            if schema == None:  # add schema
+                import inspect
+                fx = inspect.stack()
+                error_detail = ""
+                for x in fx:
+                    error_detail += "\n\t {0}, line {1}".format(fx[1], fx[2])
+                raise (
+                    Exception("can not query on 'django_session' at '{1}' without schema in '{0}'\n Detail:\n{2}".format(__file__,
+                                                                                                   "MongoQurey.django_session__init__",
+                                                                                                   error_detail)))
+            import threading
+            ct=threading.currentThread()
+            if hasattr(ct,"DEFAULT_DB_SCHEMA"):
+                schema=ct.DEFAULT_DB_SCHEMA
+            self.mongo_query = getattr(compiler.query, 'raw_query', {"schema":schema})
+        else:
+            self.mongo_query = getattr(compiler.query, 'raw_query', {})
 
     def __repr__(self):
         return '<MongoQuery: %r ORDER %r>' % (self.mongo_query, self.ordering)
@@ -327,8 +349,11 @@ class SQLCompiler(NonrelCompiler):
         :param schema:
         :return:
         """
+        if self.query.get_meta().db_table == "auth_user":
+            print "prepare query for {0}".format("auth_user")
         if self.query.get_meta().db_table=="django_session":
             print "prepare query for {0}".format("django_session")
+
             return self.connection.get_collection("django_session")
         if schema == None or not type(schema) in [str, unicode]:  # add schema
             import inspect
@@ -443,6 +468,15 @@ class SQLInsertCompiler(NonrelInsertCompiler, SQLCompiler):
         for doc in docs:
             try:
                 doc['_id'] = doc.pop(self.query.get_meta().pk.column)
+                if self.query.get_meta().model_name == "session":
+
+
+                    import threading
+                    ct=threading.currentThread()
+                    if hasattr(ct,"__current_schema__"):
+                        doc["schema"]=ct.__current_schema__
+                    else:
+                        doc["schema"] = schema
             except KeyError:
                 pass
             if doc.get('_id', NOT_PROVIDED) is None:
@@ -454,6 +488,13 @@ class SQLInsertCompiler(NonrelInsertCompiler, SQLCompiler):
 
         collection = self.get_collection(schema)
         options = self.connection.operation_flags.get('save', {})
+        if collection.collection.name in ["django_session","django_session"]:
+            import threading
+            ct=threading.currentThread()
+            if hasattr(ct,"DEFAULT_DB_SCHEMA"):
+                doc["schema"] = ct.DEFAULT_DB_SCHEMA
+            else:
+                doc["schema"]=schema
 
         if return_id:
 

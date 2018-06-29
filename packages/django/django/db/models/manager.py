@@ -171,10 +171,11 @@ class Manager(six.with_metaclass(RenameManagerMethods)):
 
     def get(self, *args, **kwargs):
         qr = self.get_queryset()
+        _schema = None
         if kwargs.get("schema",None)== None or kwargs["schema"] == "":
-            _schema=None
+
             import threading
-            if not hasattr(threading.currentThread(),"tenancy_code"):
+            if hasattr(threading.currentThread(),"tenancy_code"):
                 _schema=threading.currentThread().tenancy_code
             else:
                 import sys
@@ -195,15 +196,13 @@ class Manager(six.with_metaclass(RenameManagerMethods)):
             # self.set_db_schema(_schema)
             ret = qr.get(*args, **kwargs)
             # self.set_db_schema(old_schema)
+            setattr(ret, "schema", kwargs["schema"])
             return ret
             # return qr.get(*args, **kwargs)
-        else:
-            # old_schema=self.get_db_schema()
-            # self.set_db_schema(kwargs["schema"])
-            # kwargs.__delitem__("schema")
-            ret= qr.get(*args, **kwargs)
+        ret= qr.get(*args, **kwargs)
             # self.set_db_schema(old_schema)
-            return ret
+        setattr(ret,"schema",kwargs["schema"])
+        return ret
     def get_or_create(self, **kwargs):
         return self.get_queryset().get_or_create(**kwargs)
 

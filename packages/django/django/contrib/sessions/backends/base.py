@@ -259,14 +259,26 @@ class SessionBase(object):
             return settings.SESSION_EXPIRE_AT_BROWSER_CLOSE
         return self.get('_session_expiry') == 0
 
-    def flush(self):
+    def flush(self,schema = None):
         """
         Removes the current session data from the database and regenerates the
         key.
         """
+        if schema == None or not type(schema) in [str,unicode]:  # add schema
+            import inspect
+            fx = inspect.stack()
+            error_detail = ""
+            for x in fx:
+                error_detail += "\n\t {0}, line {1}".format(fx[1], fx[2])
+            raise (
+                Exception(
+                    "can not call ''{1}'' without schema in '{0}'.\nDetail:\n{2}".format(
+                        __file__, "SessionBase.flush",
+                        error_detail
+                    )))
         self.clear()
-        self.delete()
-        self.create()
+        self.delete(schema=schema)
+        self.create(schema=schema)
 
     def cycle_key(self,schema = None):
         """

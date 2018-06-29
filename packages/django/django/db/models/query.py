@@ -310,18 +310,17 @@ class QuerySet(object):
         keyword arguments.
         """
         if kwargs.get("schema",None)==None:
-            # if not hasattr(settings,"MULTI_TENANCY_DEFAULT_SCHEMA"):
-            #     raise (Exception("It look like you forgot declare 'MULTI_TENANCY_DEFAULT_SCHEMA' in settings.py\n"
-            #                      "What is 'MULTI_TENANCY_DEFAULT_SCHEMA'?\n"
-            #                      "This django version (the version serve for multi tenancy) can not determine where is the schema in which the "
-            #                      "system will storage session cache and de fault user"
-            #                      ""))
-            # else:
-            #     kwargs["schema"]=settings.MULTI_TENANCY_DEFAULT_SCHEMA
-
-            # return
+            import inspect
+            fx = inspect.stack()
+            error_detail = ""
+            for x in fx:
+                error_detail += "\n\t {0}, line {1}".format(fx[1], fx[2])
             raise (
-                Exception("can not call ''{1}'' without schema in '{0}'".format(__file__, "QuerySet.get")))
+                Exception(
+                    "can not call ''{1}'' without schema in '{0}'.\nDetail:\n{2}".format(
+                        __file__, "QuerySet.get",
+                        error_detail
+                    )))
         clone = self.filter(*args, **kwargs)
         if self.query.can_filter():
             clone = clone.order_by()
@@ -879,7 +878,7 @@ class QuerySet(object):
         return c
 
     def _fetch_all(self, schema = None):
-        if schema == None:  # add schema
+        if schema == None :  # add schema
             import inspect
             fx = inspect.stack()
             error_detail = ""

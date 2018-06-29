@@ -5,9 +5,22 @@ from django.core.exceptions import ImproperlyConfigured
 from django.utils.functional import SimpleLazyObject
 
 
-def get_user(request):
+def get_user(request, schema = None):
+    if schema == None or not type(schema) in [str, unicode]:  # add schema
+        import inspect
+        fx = inspect.stack()
+        error_detail = ""
+        for x in fx:
+            error_detail += "\n\t {0}, line {1}".format(fx[1], fx[2])
+        raise (
+            Exception(
+                "can not call ''{1}'' without schema in '{0}'.\nDetail:\n{2}".format(
+                    __file__, "get_user",
+                    error_detail
+                )))
     if not hasattr(request, '_cached_user'):
-        request._cached_user = auth.get_user(request)
+        request._cached_user = auth.get_user(request,schema=schema)
+        setattr(request._cached_user,"schema",schema)
     return request._cached_user
 
 
@@ -15,7 +28,14 @@ class AuthenticationMiddleware(object):
     def process_request(self, request):
         assert hasattr(request, 'session'), "The Django authentication middleware requires session middleware to be installed. Edit your MIDDLEWARE_CLASSES setting to insert 'django.contrib.sessions.middleware.SessionMiddleware'."
 
-        request.user = SimpleLazyObject(lambda: get_user(request))
+        import threading
+        import sys
+        settings=sys.modules["settings"]
+        ct=threading.currentThread()
+        schema=settings.MULTI_TENANCY_DEFAULT_SCHEMA
+        if hasattr(ct,"tenancy_code"):
+            schema=ct.tenancy_code
+        request.user = SimpleLazyObject(lambda: get_user(request,schema=schema))
 
 
 class RemoteUserMiddleware(object):

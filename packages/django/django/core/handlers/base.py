@@ -71,7 +71,7 @@ class BaseHandler(object):
                 view = transaction.atomic(using=db.alias)(view)
         return view
 
-    def get_response(self, request):
+    def get_response(self, request, schema = None):
         "Returns an HttpResponse object for the given HttpRequest"
 
         # Setup default url resolver for this thread, this code is outside

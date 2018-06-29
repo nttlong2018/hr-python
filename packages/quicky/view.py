@@ -27,10 +27,18 @@ def template(fn,*_path,**kwargs):
     if _path.__len__()==0:
         _path=kwargs
     app=applications.get_app_by_file(fn.func_code.co_filename)
+
     setattr(fn,"__application__",app)
     from . import get_django_settings_module
     is_multi_tenancy = get_django_settings_module().__dict__.get("USE_MULTI_TENANCY", False)
     def exec_request(request, **kwargs):
+        from . import applications as apps
+        _app= apps.get_app_by_file(fn.func_code.co_filename)
+        if _app != None:
+            if hasattr(_app.settings, "DEFAULT_DB_SCHEMA"):
+                import threading
+                ct = threading.currentThread()
+                setattr(ct, "DEFAULT_DB_SCHEMA", _app.settings.DEFAULT_DB_SCHEMA)
         global  settings
         if settings==None:
             from . import get_django_settings_module

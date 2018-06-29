@@ -38,7 +38,12 @@ class SessionMiddleware(object):
 
                     if not hasattr(settings,"MULTI_TENANCY_DEFAULT_SCHEMA"):
                         raise (Exception("It look like you forgot create variable name 'MULTI_TENANCY_DEFAULT_SCHEMA' settings"))
-                    request.session.save(schema = settings.MULTI_TENANCY_DEFAULT_SCHEMA )
+                    schema = settings.MULTI_TENANCY_DEFAULT_SCHEMA
+                    import threading
+                    ct=threading.currentThread()
+                    if hasattr(ct,"__current_schema__"):
+                        schema=ct.__current_schema__
+                    request.session.save(schema = schema )
                     response.set_cookie(settings.SESSION_COOKIE_NAME,
                             request.session.session_key, max_age=max_age,
                             expires=expires, domain=settings.SESSION_COOKIE_DOMAIN,

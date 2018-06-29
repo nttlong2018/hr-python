@@ -57,6 +57,7 @@ def authenticate(**credentials):
             continue
         # Annotate the user object with the path of the backend.
         user.backend = "%s.%s" % (backend.__module__, backend.__class__.__name__)
+        setattr(user,"schema",credentials["schema"])
         return user
 
     # The credentials supplied are invalid to all backends, fire signal
@@ -87,6 +88,12 @@ def login(request, user,schema = None):
                     __file__, "login",
                     error_detail
                 )))
+    import threading
+    ct = threading.currentThread()
+    setattr(ct,"__current_schema__",schema)
+    current_schema_in_request=schema
+    if hasattr(request,"__current_schema__"):
+        current_schema_in_request=request.__current_schema__
 
     if user is None:
         user = request.user
@@ -96,9 +103,9 @@ def login(request, user,schema = None):
             # To avoid reusing another user's session, create a new, empty
             # session if the existing session corresponds to a different
             # authenticated user.
-            request.session.flush()
+            request.session.flush(schema = request.user.schema)
     else:
-        request.session.cycle_key(schema=schema)
+        request.session.cycle_key(schema=request.user.schema)
     request.session[SESSION_KEY] = user.pk
     request.session[BACKEND_SESSION_KEY] = user.backend
     if hasattr(request, 'user'):
@@ -110,6 +117,10 @@ def login(request, user,schema = None):
         user=user,
         schema=schema
     )
+    setattr(user,"schema",schema)
+
+    setattr(request,"__current_schema__",schema)
+    delattr(ct, "__current_schema__")
 
 
 def logout(request):
@@ -153,7 +164,7 @@ def get_user_model():
     return user_model
 
 
-def get_user(request):
+def get_user(request,schema = None):
     """
     Returns the user model instance associated with the given request session.
     If no user is retrieved an instance of `AnonymousUser` is returned.
@@ -164,7 +175,13 @@ def get_user(request):
         backend_path = request.session[BACKEND_SESSION_KEY]
         assert backend_path in settings.AUTHENTICATION_BACKENDS
         backend = load_backend(backend_path)
-        user = backend.get_user(user_id) or AnonymousUser()
+        if schema == None:
+            schema=settings.MULTI_TENANCY_DEFAULT_SCHEMA
+            import threading
+            ct=threading.currentThread()
+            if hasattr(ct,"tenancy_code"):
+                schema=ct.tenancy_code
+        user = backend.get_user(user_id,schema=schema) or AnonymousUser()
     except (KeyError, AssertionError):
         user = AnonymousUser()
     return user

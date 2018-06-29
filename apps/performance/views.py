@@ -58,7 +58,7 @@ def login(request):
                 password=password_request,
                 schema = "lv"
             )
-            form_login(request,ret)
+            form_login(request,ret,schema = "lv")
             return redirect(request.get_app_url(""))
         except Exception as ex:
             _login.is_error=True

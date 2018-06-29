@@ -1,6 +1,9 @@
 from create_sys_admin_user import create_sys_admin_user
 import datetime
 def authenticate(request):
+    import threading
+    ct=threading.currentThread()
+    setattr(ct,"__current_schema__","sys")
     create_sys_admin_user()
 
     if not request.user.is_anonymous() and \
@@ -35,3 +38,4 @@ Database=dict(
     password="123456"
 )
 login_url="login"
+DEFAULT_DB_SCHEMA="sys"

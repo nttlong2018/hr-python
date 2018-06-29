@@ -590,6 +590,9 @@ class NonrelCompiler(SQLCompiler):
         # if hasattr(threading.currentThread(),"tenancy_code") and threading.currentThread().tenancy_code!="":
         #     query.collection.collection = query.collection.collection.database.get_collection(
         #         threading.currentThread().tenancy_code+"."+query.collection.collection.name)
+        if query.collection.collection.name == "django_session":
+            setattr(query,"__schema_filter__",schema)
+
         return query
 
     def get_fields(self):

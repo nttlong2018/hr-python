@@ -75,10 +75,22 @@ class ModelBackend(object):
                 return True
         return False
 
-    def get_user(self, user_id):
+    def get_user(self, user_id,schema = None):
+        if schema == None or not type(schema) in [str,unicode]:  # add schema
+            import inspect
+            fx = inspect.stack()
+            error_detail = ""
+            for x in fx:
+                error_detail += "\n\t {0}, line {1}".format(fx[1], fx[2])
+            raise (
+                Exception(
+                    "can not call ''{1}'' without schema in '{0}'.\nDetail:\n{2}".format(
+                        __file__, "ModelBackedn.get_user",
+                        error_detail
+                    )))
         UserModel = get_user_model()
         try:
-            return UserModel._default_manager.get(pk=user_id)
+            return UserModel._default_manager.get(pk=user_id,schema=schema)
         except UserModel.DoesNotExist:
             return None
 
