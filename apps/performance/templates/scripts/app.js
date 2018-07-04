@@ -1,6 +1,6 @@
 ﻿window.set_component_template_url('${get_static("app/directives/")}')
 angular
-    .module("admin", ["c-ui", 'ZebraApp.components', 'hcs-template'])
+    .module("admin", ["c-ui", 'ZebraApp.components', 'ZebraApp.widgets', 'hcs-template'])
     .factory("systemService", service)
     .controller("admin", controller);
 
@@ -22,38 +22,62 @@ function controller($dialog, $scope, systemService) {
         mask.remove();
     })
     history_navigator($scope.$root);
-    
+
     $scope.view_path = "${get_view_path()}";
     $scope.services = services = ws($scope);
     $scope.$root.system = systemService;
-    $scope.$root.collapseSubMenu = function collapseSubMenu(e, id) {
+    $scope.$root.collapseSubMenu = function collapseSubMenu(e) {
         e.stopPropagation();
         $('#hcs-top-bar-menu ul li ul').slideUp();
-        if (id != '' && ($('#' + id).css('display') != 'block')) {
-            $('#' + id).slideDown(500);
+        if (($(e.currentTarget.parentElement.children[1]).css('display') != 'block')) {
+            $(e.currentTarget.parentElement.children[1]).slideDown(500);
         }
     };
 
-    //Đồng hồ
-    $scope.$root.timer = {
-        clock: Clock(),
-        meridiem: getMeridiem(),
-        date: Calendar()
-    };
-    setInterval(function () {
-        $scope.$root.timer.clock = Clock();
-        if ($scope.$root.timer.clock === "00:00") {
-            $scope.$root.timer.date = Calendar();
-            $scope.$root.timer.meridiem = getMeridiem();
+    $("#btnShowMessage").unbind("click");
+    $("#btnShowMessage").bind("click", function () {
+        $(this).siblings(".hcs-message-list").toggleClass("message-hidden");
+        event.stopPropagation();
+    });
+    $("#btnShowMenu").unbind("click");
+    $("#btnShowMenu").bind("click", function () {
+        $(this).siblings(".hcs-menu-list").toggleClass("menu-hidden");
+        event.stopPropagation();
+    });
+    $(window).bind("click", function (e) {
+        var isMenu = $(e.target).closest(".hcs-menu-list").length > 0;
+        var isMessage = $(e.target).closest(".hcs-message-list").length > 0;
+        if (!isMenu && !isMessage) {
+            $("#btnShowMenu").siblings(".hcs-menu-list").addClass("menu-hidden");
+            $("#btnShowMessage").siblings(".hcs-message-list").addClass("message-hidden");
         }
-        $scope.$root.$applyAsync();
-    }, 10000);
+    });
+
+    $scope.$root.doLogout = function () {
+        window.location = "${get_app_url('logout')}";
+    }
+
+
+    ////Đồng hồ
+    //$scope.$root.timer = {
+    //    clock: Clock(),
+    //    meridiem: getMeridiem(),
+    //    date: Calendar()
+    //};
+    //setInterval(function () {
+    //    $scope.$root.timer.clock = Clock();
+    //    if ($scope.$root.timer.clock === "00:00") {
+    //        $scope.$root.timer.date = Calendar();
+    //        $scope.$root.timer.meridiem = getMeridiem();
+    //    }
+    //    $scope.$root.$applyAsync();
+    //}, 10000);
 
     /**
      * Initialize Data
      */
     function activate() {
-        $scope.$root.currentFunction = '';
+        $scope.$root.currentFunction = {};
         $scope.$root.currentModule = '';
         $scope.$root.logo = 'http://surehcs.lacviet.vn/WS2017/Customers/default/logo.png';
 
@@ -78,6 +102,11 @@ function controller($dialog, $scope, systemService) {
                     }
                 });
 
+                /**
+                 * Function list
+                 */
+                $scope.$root.$function_list = functions;
+
                 var fs = _.filter(res, function (d) {
                     return d["parent_id"] == null;
                 });
@@ -89,33 +118,25 @@ function controller($dialog, $scope, systemService) {
                 $scope.$root.$functions = fs;
                 $scope.$applyAsync();
                 $scope.$root.getPage = function () {
-                    if (angular.isDefined($scope.$root.page)) return "${get_app_url('')}/pages/" + $scope.$root.page
-                    return "${get_app_url('')}/pages/home"
+                    return (angular.isObject($scope.$root.currentFunction))
+                        ? "${get_app_url('')}/pages/" + $scope.$root.currentFunction.url
+                        : "${get_app_url('')}/pages/home";
                 }
                 $scope.$root.$history.change(function (data) {
-                    console.log("$history.change app.js", data);
-                    if (data.hasOwnProperty("")) {
-                        set_function_id(HOMEPAGE_ID);
-                    }
                     if (data.page) {
                         var currentFunction = _.filter(functions, function (d) {
-                            return d["url"] == data.page;
+                            return d["function_id"] == data.page;
                         });
                         if (currentFunction.length > 0) {
-                            $scope.$root.currentFunction = currentFunction[0].custom_name.replace("/", " ");
-                            set_function_id(currentFunction[0].function_id);
+                            //Set current function
+                            $scope.$root.currentFunction = currentFunction[0];
                             $scope.$root.currentModule = _.filter(functions, function (d) {
                                 return d["function_id"] == currentFunction[0].parent_id;
-                            })[0].custom_name.replace("/", " ");
-                        } else {
-                            set_function_id(HOMEPAGE_ID);
+                            })[0];//.custom_name.replace("/", " ");
                         }
                     } else {
                         $scope.$root.currentFunction = $scope.$root.currentModule = null;
-                        set_function_id(HOMEPAGE_ID);
                     }
-                    $scope.$root.page = data.page;
-                    $scope.$root.page_data = data;
                     $scope.$root.$applyAsync();
                 })
             })
@@ -135,19 +156,31 @@ function controller($dialog, $scope, systemService) {
      * Init
      */
     activate();
+
+    //Nhấn nút ESC để thoát form dialog
+    $(document).ready(function () {
+        $(document).keydown(function (event) {
+            if (event.keyCode == 27) {
+                setTimeout(function () {
+                    $('.hcs-modal-dialog:last').modal('hide');
+                }, 100)
+                event.stopPropagation();
+            }
+        })
+    })
 }
 
 function service() {
     var fac = {};
     var currentRow;
 
-    fac.guid = function() {
-        function s4(){
-                return Math.floor((1 + Math.random()) * 0x10000)
-                    .toString(16)
-                    .substring(1);
-            }
-            return s4() + s4() + '-' + s4() + '-' + s4() + '-' + s4() + '-' + s4() + s4() + s4();
+    fac.guid = function () {
+        function s4() {
+            return Math.floor((1 + Math.random()) * 0x10000)
+                .toString(16)
+                .substring(1);
+        }
+        return s4() + s4() + '-' + s4() + '-' + s4() + '-' + s4() + '-' + s4() + s4() + s4();
     };
 
     return fac;
@@ -171,6 +204,6 @@ function Calendar() {
     return toStartCase(moment().locale("${get_language()}").format('dddd, DD MMMM, YYYY'));
 }
 
-function getMeridiem() {
-    return moment().locale("${get_language()}").format("a");
-}
+//function getMeridiem() {
+//    return moment().locale("${get_language()}").format("a");
+//}

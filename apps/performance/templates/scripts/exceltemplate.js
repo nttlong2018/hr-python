@@ -189,24 +189,23 @@
     scope.$root.$history.onChange(scope, function (data) {
         if (scope.mapName.length > 0) {
             if (data.f) {
-                scope.$partialpage = data.f;
+                scope.$partialpage = _.filter(scope.$root.$functions, function (f) {
+                    return f.function_id = data.f
+                })[0].url;
                 var func = _.filter(scope.mapName, function (f) {
                     return f["function_id"] == data.f;
                 });
                 if (func.length > 0) {
-                    set_function_id(func[0].function_id);
                     scope.$partialpage = func[0].url;
+                    scope.currentFunction = func[0];
                 } else {
-                    set_function_id(HOMEPAGE_ID);
                     window.location.href = "#";
                 }
             } else {
-                set_function_id(scope.mapName[0].function_id);
                 scope.$partialpage = scope.mapName[0].url;
             }
             scope.$apply();
         } else {
-            set_function_id(HOMEPAGE_ID);
             window.location.href = "#";
         }
     });

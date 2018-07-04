@@ -28,6 +28,9 @@
         return directive;
 
         function link(scope, element, attrs) {
+            if (attrs.hasOwnProperty("required")) {
+                $(element).wrap("<span zb-required></span>")
+            }
             var btn = element.find('button');
             scope.combobox_info = null;
             scope.removeChoice = removeChoice;
@@ -39,7 +42,11 @@
 
             btn.click(function () {
                 getData(function () {
-                    openDialog(scope.combobox_info.display_name, "directives/combobox/template", function () { }, "myComboboxDialog");
+                    openDialog(scope.combobox_info.display_name, "directives/combobox/template", function () {
+                        setTimeout(function () {
+                            $(window).trigger('resize');
+                        }, 200)
+                    }, "myComboboxDialog");
                 });
             });
 

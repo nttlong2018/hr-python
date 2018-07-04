@@ -1,0 +1,230 @@
+﻿
+    <div class="row">
+        <div class="hcs-profile-background-group-table" style="margin-right:15px;">
+            <div class="pull-left hcs-profile-icon-heading-on-table" style="height: 100%;padding-right: 3px;background: white;margin-left: unset;">
+                <button class="zb-icon-button hcs-profile-group-title" onclick="$('#collapseTableProvince').slideToggle();">
+                    <span>
+                        <i class="la la-angle-down" style="font-size:0.7rem;"></i>
+                    </span>
+                </button>
+            </div>
+            <div class="pull-left hcs-profile-icon-heading-on-table" style="margin-left: unset;">
+                <button class="zb-icon-button hcs-profile-group-title" onclick="$('#collapseTableProvince').slideToggle();">
+                ${get_res('province_caption_toolbar','1. Tỉnh/Thành')}
+                </button>
+            </div>
+            <div class="pull-right hcs-profile-icon-heading-on-table">
+                <button class="zb-icon-button hcs-profile-group-title" ng-click="onReloadProvince()">
+                    <span>
+                        <i class="la la-refresh"></i>
+                    </span>
+                </button>
+            </div>
+            <div class="pull-right hcs-profile-icon-heading-on-table">
+                <button class="zb-icon-button hcs-profile-group-title" ng-click="onDeleteProvince()">
+                    <span>
+                        <i class="la la-trash"></i>
+                    </span>
+                </button>
+            </div>
+            <div class="pull-right hcs-profile-icon-heading-on-table">
+                <button class="zb-icon-button hcs-profile-group-title" ng-click="onEditProvince()">
+                    <span>
+                        <i class="la la-pencil"></i>
+                    </span>
+                </button>
+            </div>
+            <div class="pull-right hcs-profile-icon-heading-on-table">
+                <button class="zb-icon-button hcs-profile-group-title" ng-click="onAddProvince()">
+                    <span>
+                        <i class="la la-plus"></i>
+                    </span>
+                </button>
+            </div>
+            <div class="pull-right hcs-profile-icon-heading-on-table" style="width:25px;margin-left:10px;">
+                <button class="zb-icon-button hcs-profile-group-title">
+                    <span>
+                        <i class="la la-search"></i>
+                    </span>
+                </button>
+            </div>
+            <div class="pull-right">
+                <input-text id="tableProvinceSearchText">
+            </div>
+        </div>
+    </div>
+    <div id="collapseTableProvince" class="row">
+        <div class="col-md-12" style="height: 37vh;">
+            <table-data data-source="tableProvinceSource" fields="tableProvinceFields" type="MultiSelect" 
+            server-side="true" page-length="100" paging="true" 
+            selected-items="selectedProvinces"
+            current-item="currentProvince" search-text="tableProvinceSearchText"
+            refresh-row="refreshDataProvinceRow">
+            </table-data>
+        </div>
+    </div>
+
+<script>
+    (function (scope) {
+    //Cấu hình tên field và caption hiển thị trên UI
+    scope.tableProvinceFields = [
+        { "data": "province_code", "title": "${get_res('code_table_header','Mã')}" },
+        { "data": "province_name", "title": "${get_res('name_table_header','Tên')}" },
+        { "data": "org_province_code", "title": "${get_res('org_code_header','Mã quy định')}" },
+        { "data": "ordinal", "title": "${get_res('ordinal_table_header','Thứ tự')}" }
+    ];
+    //
+    scope.$$tableProvinceConfig = {};
+    //Dữ liệu cho table
+    scope.tableProvinceSource = _loadProvinceDataServerSide;
+    function _loadProvinceDataServerSide(fnReloadData, iPage, iPageLength, orderBy, searchText) {
+        scope.$$tableProvinceConfig = {
+            fnReloadData: fnReloadData,
+            iPage: iPage,
+            iPageLength: iPageLength,
+            orderBy: orderBy,
+            searchText: searchText
+        };
+        //setTimeout(function () {
+        if (fnReloadData) {
+            if (searchText) {
+                _tableProvinceData(iPage, iPageLength, orderBy, searchText, function (data) {
+                    fnReloadData(data);
+                });
+            } else {
+                _tableProvinceData(iPage, iPageLength, orderBy, null, function (data) {
+                    fnReloadData(data);
+                });
+            }
+        }
+        //}, 1000);
+    };
+    //Danh sách các dòng đc chọn (nếu là table MultiSelect)
+    scope.selectedProvinces = [];
+    //Dòng hiện tại đang được focus (nếu table là SingleSelect hoặc MultiSelect)
+    scope.currentProvince = null;
+    scope.tableProvinceSearchText = '';
+    //Refesh table
+    scope.refreshDataProvinceRow = function () { /*Do nothing*/ };
+    //Mode 1: tạo mới, Mode 2: chỉnh sửa, Mode 3: sao chép
+    scope.province_mode = 0;
+    scope.onEditProvince = onEditProvince;
+    scope.onAddProvince = onAddProvince;
+    scope.onDeleteProvince = onDeleteProvince;
+    scope.onReloadProvince = onReloadProvince;
+    scope._tableProvinceData = _tableProvinceData;
+
+    /**
+     * Hàm mở form chỉnh sửa
+     */
+    function onEditProvince() {
+        if (scope.currentProvince) {
+            scope.province_mode = 2; // set mode chỉnh sửa
+            openDialog("${get_res('Detail_Province','Chi tiết Tỉnh/Thành')}", 'category/form/addProvince', function () { }, "addProvince");
+        } else {
+            $msg.message("${get_global_res('Notification','Thông báo')}", "${get_app_res('No_Row_Selected','Không có dòng được chọn')}", function () { });
+        }
+    }
+
+    /**
+     * Hàm mở form tạo moi
+     */
+    function onAddProvince() {
+        scope.province_mode = 1;// set mode tạo mới
+        openDialog("${get_res('Detail_Province','Chi tiết Tỉnh/Thành')}", 'category/form/addProvince', function () { }, "addProvince");
+    }
+    function onDeleteProvince() {
+        if (!scope.selectedProvinces || scope.selectedProvinces.length === 0) {
+            $msg.message("${get_global_res('Notification','Thông báo')}", "${get_global_res('No_Row_Selected','Không có dòng được chọn')}", function () { });
+        } else {
+            $msg.confirm("${get_global_res('Notification','Thông báo')}", "${get_global_res('Do_You_Want_Delete','Bạn có muốn xóa không?')}", function () {
+                services.api("${get_api_key('app_main.api.HCSLS_Province/delete')}")
+                    .data(scope.selectedProvinces)
+                    .done()
+                    .then(function (res) {
+                        if (res.deleted > 0) {
+                            _tableProvinceData(scope.$$tableProvinceConfig.iPage, scope.$$tableProvinceConfig.iPageLength, scope.$$tableProvinceConfig.orderBy, scope.$$tableProvinceConfig.SearchText, scope.$$tableProvinceConfig.fnReloadData);
+                            $msg.alert("${get_global_res('Handle_Success','Thao tác thành công')}", $type_alert.SUCCESS);
+                            scope.currentProvince = null;
+                            scope.selectedProvinces = [];
+                        }
+                    })
+            });
+        }
+        }
+    function onReloadProvince() {
+        var tableConfig = scope.$$tableProvinceConfig;
+        _tableProvinceData(tableConfig.iPage,
+        tableConfig.iPageLength, tableConfig.orderBy,
+        tableConfig.searchText, tableConfig.fnReloadData);
+    }
+
+    /**
+     * Hàm mở dialog
+     * @param {string} title Tittle của dialog
+     * @param {string} path Đường dẫn file template
+     * @param {function} callback Xử lí sau khi gọi dialog
+     * @param {string} id Id của form dialog, default = 'myModal'
+     */
+    function openDialog(title, path, callback, id = 'myModal') {
+
+        //check tồn tại của form dialog theo id
+        if ($('#' + id).length === 0) {
+            scope.headerTitle = title;
+            //Đặt ID cho form dialog
+            dialog(scope, id).url(path).done(function () {
+                callback();
+                //Set resizable cho form dialog theo id
+                $('#' + id).ready(function () {
+                    $('#' + id + ' .modal-dialog .modal-content .modal-header').on('mousedown touchstart', function (e) {
+                        $('#' + id + ' .modal-dialog').draggable();
+                    }).bind('mouseup touchend', function () {
+                        $('#' + id + ' .modal-dialog').draggable('destroy');
+                    });
+                })
+            });
+        }
+    }
+
+    function _tableProvinceData(iPage, iPageLength, orderBy, searchText, callback) {
+        var sort = {};
+        $.each(orderBy, function (i, v) {
+            sort[v.columns] = (v.type === "asc") ? 1 : -1;
+        });
+        sort[orderBy[0].columns] =
+            services.api("${get_api_key('app_main.api.HCSLS_Province/get_list_with_searchtext')}")
+            .data({
+                //parameter at here
+                    "pageIndex": iPage - 1,
+                    "pageSize": iPageLength,
+                    "search": searchText,
+                    "where": {
+                        "nation_code": scope.main_nation_code,
+                        "region_code": scope.main_region_code
+                    },
+                    "sort": sort
+                })
+                .done()
+                .then(function (res) {
+                    var data = {
+                        recordsTotal: res.total_items,
+                        recordsFiltered: res.total_items,
+                        data: res.items
+                    };
+                    callback(data);
+                    scope.currentItem = null;
+                    scope.$apply();
+                })
+    }
+
+    $(document).ready(function () {
+        $('#tableProvinceSearchText').on('keypress', function(e) {
+            var code = e.keyCode || e.which;
+            if(code==13){
+                scope.tableProvinceSearchText = $('#tableProvinceSearchText').val();
+                scope.$applyAsync();
+            }
+        });
+    })
+});
+</script>

@@ -182,6 +182,8 @@ def extent_model(name,from_name,keys=None,*args,**kwargs):
     if keys==None:
         keys=[]
     keys.extend(_model_index_[from_name]["keys"])
+    if _model_caching_params.has_key(from_name):
+        kwargs.update(_model_caching_params[from_name])
     define_model(name,keys,*args,**kwargs)
     from_event=events(from_name)
 

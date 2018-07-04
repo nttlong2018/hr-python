@@ -6,16 +6,16 @@
             </span>
         </a>
         <a href="javascript:void(0)" class="hcs-admin-system-breadcrumb" ng-click="previousPage()">
-            <span>{{$root.currentFunction}}</span>
+            <span>{{$root.currentFunction.custom_name ? $root.currentFunction.custom_name.split("/").join(" ") : $root.currentFunction.default_name}}</span>
         </a>
         <a href="javascript:void(0)" class="hcs-admin-system-breadcrumb-active" ng-show="formPage != 'single'">
-            | {{currentFunction.name}}
+            | {{currentFunction.custom_name ? currentFunction.custom_name : currentFunction.default_name}}
             <div id="dropdownFunction" class="dropdown-content">
                 <div class="filter">
                     <input type="text" placeholder="Tìm kiếm" id="myInput" ng-model="search" class="form-control zb-form-input">
                 </div>
                 <div class="dropdown">
-                    <p ng-repeat="f in listFunction | filter : search" href="javacript:void(0)" ng-click="onClickFunctionLeftMenu(f, $event)">{{f.name}}</p>
+                    <p ng-repeat="f in listFunction | filter : search" href="javacript:void(0)" ng-click="onClickFunctionLeftMenu(f, $event)">{{f.custom_name ? f.default_name : f.custom_name}}</p>
                 </div>
             </div>
         </a>

@@ -50,15 +50,14 @@
             });
         }
 
-        this.redirectPage = (child) => {
+        this.redirectPage = function(child) {
             if (child.url.trim()) {
                 scope.$root.currentModule = _.filter(scope.$root.$functions, function (d) {
                     return d["function_id"] == child.parent_id;
-                })[0].custom_name.replace("/", " ");
-                set_function_id(child.function_id);
-                scope.$root.currentFunction = child.custom_name;
+                })[0];//.custom_name.replace("/", " ");
+                scope.$root.currentFunction = child;
             }
-            location.href = '#page=' + child.url;
+            location.href = '#page=' + child.function_id;
         }
     }
 

@@ -193,7 +193,7 @@
         services.api("${get_api_key('app_main.api.SYS_ValueList/get_list')}")
             .data({
                 //parameter at here
-                "name": "AccessDomain"
+                "name": "LAccessDomain"
             })
             .done()
             .then(function (res) {

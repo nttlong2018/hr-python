@@ -1,0 +1,229 @@
+﻿
+    <div class="row">
+        <div class="hcs-profile-background-group-table" style="margin-right:15px;">
+            <div class="pull-left hcs-profile-icon-heading-on-table" style="height: 100%;padding-right: 3px;background: white;margin-left: unset;">
+                <button class="zb-icon-button hcs-profile-group-title" onclick="$('#collapseTableWard').slideToggle();">
+                    <span>
+                        <i class="la la-angle-down" style="font-size:0.7rem;"></i>
+                    </span>
+                </button>
+            </div>
+            <div class="pull-left hcs-profile-icon-heading-on-table" style="margin-left: unset;">
+                <button class="zb-icon-button hcs-profile-group-title" onclick="$('#collapseTableWard').slideToggle();">
+                ${get_res('ward_caption_toolbar','3. Phường/Xã')}
+                </button>
+            </div>
+            <div class="pull-right hcs-profile-icon-heading-on-table">
+                <button class="zb-icon-button hcs-profile-group-title" ng-click="onReloadWard()">
+                        <i class="la la-refresh"></i>
+                    </span>
+                </button>
+            </div>
+            <div class="pull-right hcs-profile-icon-heading-on-table">
+                <button class="zb-icon-button hcs-profile-group-title" ng-click="onDeleteWard()">
+                    <span>
+                        <i class="la la-trash"></i>
+                    </span>
+                </button>
+            </div>
+            <div class="pull-right hcs-profile-icon-heading-on-table">
+                <button class="zb-icon-button hcs-profile-group-title" ng-click="onEditWard()">
+                    <span>
+                        <i class="la la-pencil"></i>
+                    </span>
+                </button>
+            </div>
+            <div class="pull-right hcs-profile-icon-heading-on-table">
+                <button class="zb-icon-button hcs-profile-group-title" ng-click="onAddWard()">
+                    <span>
+                        <i class="la la-plus"></i>
+                    </span>
+                </button>
+            </div>
+            <div class="pull-right hcs-profile-icon-heading-on-table" style="width:25px;margin-left:10px;">
+                <button class="zb-icon-button hcs-profile-group-title">
+                    <span>
+                        <i class="la la-search"></i>
+                    </span>
+                </button>
+            </div>
+            <div class="pull-right">
+                <input-text id="tableWardSearchText">
+            </div>
+        </div>
+    </div>
+    <div id="collapseTableWard" class="row">
+        <div class="col-md-12" style="height: 37vh;">
+           <table-data data-source="tableWardSource" fields="tableWardFields" type="MultiSelect" 
+            server-side="true" page-length="100" paging="true" 
+            selected-items="selectedWards"
+            current-item="currentWard" search-text="tableWardSearchText"
+            refresh-row="refreshDataWardRow">
+            </table-data>
+        </div>
+    </div>
+
+<script>
+    (function (scope) {
+    //Cấu hình tên field và caption hiển thị trên UI
+    scope.tableWardFields = [
+        { "data": "ward_code", "title": "${get_res('code_table_header','Mã')}" },
+        { "data": "ward_name", "title": "${get_res('name_table_header','Tên')}" },
+        { "data": "org_ward_code", "title": "${get_res('org_code_header','Mã quy định')}" },
+        { "data": "ordinal", "title": "${get_res('ordinal_table_header','Thứ tự')}" }
+    ];
+    //
+    scope.$$tableWardConfig = {};
+    //Dữ liệu cho table
+    scope.tableWardSource = _loadWardDataServerSide;
+    function _loadWardDataServerSide(fnReloadData, iPage, iPageLength, orderBy, searchText) {
+        scope.$$tableWardConfig = {
+            fnReloadData: fnReloadData,
+            iPage: iPage,
+            iPageLength: iPageLength,
+            orderBy: orderBy,
+            searchText: searchText
+        };
+        //setTimeout(function () {
+        if (fnReloadData) {
+            if (searchText) {
+                _tableWardData(iPage, iPageLength, orderBy, searchText, function (data) {
+                    fnReloadData(data);
+                });
+            } else {
+                _tableWardData(iPage, iPageLength, orderBy, null, function (data) {
+                    fnReloadData(data);
+                });
+            }
+        }
+        //}, 1000);
+    };
+    //Danh sách các dòng đc chọn (nếu là table MultiSelect)
+    scope.selectedWards = [];
+    //Dòng hiện tại đang được focus (nếu table là SingleSelect hoặc MultiSelect)
+    scope.currentWard = null;
+    scope.tableWardSearchText = '';
+    //Refesh table
+    scope.refreshDataWardRow = function () { /*Do nothing*/ };
+    //Mode 1: tạo mới, Mode 2: chỉnh sửa, Mode 3: sao chép
+    scope.ward_mode = 0;
+    scope.onEditWard = onEditWard;
+    scope.onAddWard = onAddWard;
+    scope.onDeleteWard = onDeleteWard;
+    scope.onReloadWard = onReloadWard;
+    scope._tableWardData = _tableWardData;
+
+    /**
+     * Hàm mở form chỉnh sửa
+     */
+    function onEditWard() {
+        if (scope.currentWard) {
+            scope.ward_mode = 2; // set mode chỉnh sửa
+            openDialog("${get_res('Detail_Ward','Chi tiết Phường/Xã')}", 'category/form/addWard', function () { });
+        } else {
+            $msg.message("${get_global_res('Notification','Thông báo')}", "${get_app_res('No_Row_Selected','Không có dòng được chọn')}", function () { });
+        }
+    }
+
+    /**
+     * Hàm mở form tạo moi
+     */
+    function onAddWard() {
+        scope.ward_mode = 1;// set mode tạo mới
+        openDialog("${get_res('Detail_Ward','Chi tiết Phường/Xã')}", 'category/form/addWard', function () { });
+    }
+    function onDeleteWard() {
+        if (!scope.selectedWards || scope.selectedWards.length === 0) {
+            $msg.message("${get_global_res('Notification','Thông báo')}", "${get_global_res('No_Row_Selected','Không có dòng được chọn')}", function () { });
+        } else {
+            $msg.confirm("${get_global_res('Notification','Thông báo')}", "${get_global_res('Do_You_Want_Delete','Bạn có muốn xóa không?')}", function () {
+                services.api("${get_api_key('app_main.api.HCSLS_Ward/delete')}")
+                    .data(scope.selectedWards)
+                    .done()
+                    .then(function (res) {
+                        if (res.deleted > 0) {
+                            _tableWardData(scope.$$tableWardConfig.iPage, scope.$$tableWardConfig.iPageLength, scope.$$tableWardConfig.orderBy, scope.$$tableWardConfig.SearchText, scope.$$tableWardConfig.fnReloadData);
+                            $msg.alert("${get_global_res('Handle_Success','Thao tác thành công')}", $type_alert.SUCCESS);
+                            scope.currentWard = null;
+                            scope.selectedWards = [];
+                        }
+                    })
+            });
+        }
+        }
+
+    function onReloadWard() {
+        var tableConfig = scope.$$tableWardConfig;
+        _tableWardData(tableConfig.iPage,
+        tableConfig.iPageLength, tableConfig.orderBy,
+        tableConfig.searchText, tableConfig.fnReloadData);
+    }
+
+    /**
+     * Hàm mở dialog
+     * @param {string} title Tittle của dialog
+     * @param {string} path Đường dẫn file template
+     * @param {function} callback Xử lí sau khi gọi dialog
+     * @param {string} id Id của form dialog, default = 'myModal'
+     */
+    function openDialog(title, path, callback, id = 'myModal') {
+
+        //check tồn tại của form dialog theo id
+        if ($('#' + id).length === 0) {
+            scope.headerTitle = title;
+            //Đặt ID cho form dialog
+            dialog(scope, id).url(path).done(function () {
+                callback();
+                //Set resizable cho form dialog theo id
+                $('#' + id).ready(function () {
+                    $('#' + id + ' .modal-dialog .modal-content .modal-header').on('mousedown touchstart', function (e) {
+                        $('#' + id + ' .modal-dialog').draggable();
+                    }).bind('mouseup touchend', function () {
+                        $('#' + id + ' .modal-dialog').draggable('destroy');
+                    });
+                })
+            });
+        }
+    }
+
+    function _tableWardData(iPage, iPageLength, orderBy, searchText, callback) {
+        var sort = {};
+        $.each(orderBy, function (i, v) {
+            sort[v.columns] = (v.type === "asc") ? 1 : -1;
+        });
+        sort[orderBy[0].columns] =
+            services.api("${get_api_key('app_main.api.HCSLS_Ward/get_list_with_searchtext')}")
+                .data({
+                    //parameter at here
+                    "pageIndex": iPage - 1,
+                    "pageSize": iPageLength,
+                    "search": searchText,
+                    "where": {
+                        "district_code": scope.currentDistrict ? scope.currentDistrict.district_code : " "
+                    },
+                    "sort": sort
+                })
+                .done()
+                .then(function (res) {
+                    var data = {
+                        recordsTotal: res.total_items,
+                        recordsFiltered: res.total_items,
+                        data: res.items
+                    };
+                    callback(data);
+                    scope.currentWard = null;
+                    scope.$apply();
+                })
+    }
+
+    $(document).ready(function () {
+        $('#tableWardSearchText').on('keypress', function(e) {
+            var code = e.keyCode || e.which;
+            if(code==13){
+                scope.tableWardSearchText = $('#tableWardSearchText').val();
+                scope.$applyAsync();
+            }
+        });
+    })
+});
+</script>

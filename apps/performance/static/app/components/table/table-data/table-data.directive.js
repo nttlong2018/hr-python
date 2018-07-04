@@ -23,6 +23,7 @@
                 searchText: "=",
                 refreshRow: "=",
                 responsive: "=",
+                selectedField: "@",
                 languageResource: "="
             },
             //template: '<table class="display zb-data-table responsive nowrap"></table>',
@@ -79,6 +80,17 @@
                         $scope.selectedItems = _selectedItems;
                         //$parse(_config.selectedItems).assign($scope.$parent, _selectedItems);
                         $scope.$applyAsync();
+                    }
+
+                    /**Check các dòng dữ liệu được chọn khi load data*/
+                    function _initSelectedItem(data) {
+                        if ($scope.selectedField && table) {
+                            $.each(data, function (i, v) {
+                                if (v[$scope.selectedField]) {
+                                    table.row(i).select();
+                                }
+                            });
+                        }
                     }
 
                     if ($scope.type === _tableTypes.MultiSelect) {
@@ -409,6 +421,9 @@
                                             v["$$regKey"] = i;
                                         });
                                         callback(ret);
+                                        setTimeout(function () {
+                                            _initSelectedItem(ret.data);
+                                        }, 300);
                                     };
                                     var _sort = [];
                                     if (data.order && data.order.length > 0) {
@@ -436,6 +451,9 @@
                             };
                         } else {
                             dataTableConfigs.data = $scope.dataSource;
+                            setTimeout(function () {
+                                _initSelectedItem($scope.dataSource);
+                            }, 300);
                         }
                     }
 

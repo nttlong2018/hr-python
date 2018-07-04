@@ -4,6 +4,7 @@ def data_access_domain():
     ret.unwind("values")
     ret.join(models.HCSSYS_DataDomain(),"values.value","access_mode","dd")
     ret.project(
+        _id = "dd._id",
         dd_code="dd.dd_code",
         dd_name="dd.dd_name",
         access_mode="dd.access_mode",

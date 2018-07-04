@@ -24,10 +24,11 @@ helpers.define_model(
     "base",
     [],
     dict(
+        _id=helpers.create_field("text"),
         created_on=helpers.create_field("date",True),
         created_by=helpers.create_field("text",True),
-        modified_on=helpers.create_field("date",True),
-        modified_by=helpers.create_field("text",True)
+        modified_on=helpers.create_field("date"),
+        modified_by=helpers.create_field("text")
     )
 )
 

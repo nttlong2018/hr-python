@@ -15,7 +15,7 @@ from api.models import auth_user_info
 
 from django.contrib.auth.models import User
 from django.core.exceptions import ObjectDoesNotExist
-from django.contrib.auth import authenticate,login as form_login
+from django.contrib.auth import authenticate, logout, login as form_login
 import quicky
 application=applications.get_app_by_file(__file__)
 # from django.urls import reverse
@@ -46,20 +46,18 @@ def login(request):
     _login.language=request._get_request().get("language","en")
     if request.GET.has_key("next"):
         _login.url_next=request.GET["next"]
+        if request._get_post().get("site") != None and request._get_post().get("site") != "":
+            _login.url_next= request.GET["next"] + request._get_post().get("site")
     request.session["language"] = _login.language
     if request._get_post().keys().__len__()>0:
         username_request=request._get_post().get("username")
         password_request=request._get_post().get("password")
         try:
-            # user_login = auth_user_info().aggregate().project(username=1, login_account=1)\
-            #     .match("login_account == @account", account = username_request).get_item()['username']
-            ret = authenticate(
-                username=username_request,
-                password=password_request,
-                schema = "lv"
-            )
-            form_login(request,ret,schema = "lv")
-            return redirect(request.get_app_url(""))
+            user_login = auth_user_info().aggregate().project(username=1, login_account=1)\
+                .match("login_account == @account", account = username_request).get_item()['username']
+            ret=authenticate(username=user_login, password=password_request)
+            form_login(request,ret)
+            return redirect(request.get_app_url(request._get_post().get("site")))
         except Exception as ex:
             _login.is_error=True
             _login.error_message=request.get_global_res("Username or Password is incorrect")
@@ -73,10 +71,10 @@ def load_page(request,path):
         return HttpResponse("page was not found")
 
 @quicky.view.template("sign_out.html")
-def sign_out(request):
-    membership.sign_out(request.session.session_key)
+def logout_view(request):
+    logout(request)
     request.session.clear()
-    return redirect("/")
+    return redirect(request.get_app_url(""))
 
 #@quicky.view.template("list.html")
 #def load_list(request,path):

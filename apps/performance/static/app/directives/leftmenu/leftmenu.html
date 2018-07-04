@@ -11,7 +11,7 @@
                class="nav-link align-middle hcs-admin-system-control-menu {{ $index == 0 ? 'active hcs-admin-system-selected' : ''}}"
                id="admin-system-{{f.function_id}}">
             <span>{{$index + 1}}</span>
-            <p class="text-center">{{f.name}}</p>
+            <p class="text-center">{{f.custom_name ? f.custom_name : f.default_name}}</p>
         </a>
         </li>
     </ul>

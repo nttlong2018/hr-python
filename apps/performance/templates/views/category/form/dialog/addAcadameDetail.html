@@ -1,0 +1,114 @@
+﻿<div class="modal-dialog" style="width:30%;">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h4 class="modal-title">
+                <img src="{{$root.logo}}"><span id="title">{{title}}</span>
+                <button type="button" class="close" data-dismiss="modal"><i class="la la-close"></i></button>
+                <button type="button" class="close" ng-click="onResizeDialog()"><span class="modal-resize"><i class="la la-expand"></i></span></button>
+            </h4 > 
+        </div>
+        <div class="modal-body" style="padding:15px;">
+            <div class="row">
+                <div class="col-md-{{col_group}} col-sm-{{col_group}}" style="padding-bottom:20px;">
+                        <div class="col-md-12">
+                            <div class="form-group row hcs-group-form-group">
+                                <!--Số tháng từ-->
+                                <label for="input_Job_Pos_Code" class="col-sm-5 zb-form-label">${get_res('details_seniority_from','Số tháng từ')}</label>
+                                <div class="col-sm-7">
+                                    <input-number id="input_Job_Pos_Code" ng-model="entity.seniority_from">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group row hcs-group-form-group">
+                                <!--Số tháng đến-->
+                                <label for="input_Job_Pos_Name" class="col-sm-5 zb-form-label">${get_res('details_seniority_to','Số tháng đến')}</label>
+                                <div class="col-sm-7">
+                                    <input-number id="input_Job_Pos_Name" ng-model="entity.seniority_to">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group row hcs-group-form-group">
+                                <!--Hệ số-->
+                                <label for="input_Job_Pos_Name2" class="col-sm-5 zb-form-label">${get_res('details_coefficient','Hệ số')}</label>
+                                <div class="col-sm-7">
+                                    <input-number id="input_Job_Pos_Name2" ng-model="entity.coefficient">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group row hcs-group-form-group">
+                                <!--Mức lương-->
+                                <label for="inputEmp_Man_Level" class="col-sm-5 zb-form-label">${get_res('details_salary','Mức lương')}</label>
+                                <div class="col-sm-7">
+                                    <input-text id="inputMan_Level" ng-model="entity.salary">
+                                </div>
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <div class="pull-right"><button class="hcs-form-dialog-icon-button last" data-dismiss="modal"><i class="la la-ban"></i></button></div>
+            <div class="pull-right"><button class="hcs-form-dialog-icon-button" ng-click="saveNClose($event)"><i class="la la-save"></i></button></div>
+        </div>
+    </div>
+</div>
+<script>
+    (function (scope) {
+        scope.title = scope.$parent.headerTitle;
+        scope.saveNClose = saveNClose;
+        scope.__mode = scope.$parent.__detailMode;
+        scope.entity = scope.__mode === 2 ? scope.$parent.currentItem : null;
+
+        function saveNClose() {
+            editData(function (res)  {
+                    if (res.error == null) {
+                        $('#dialogInputAcadameDetail').modal('hide');//Đóng form input
+                        $msg.alert("${get_global_res('Handle_Success','Thao tác thành công')}", $type_alert.SUCCESS);//Xuất thông báo thành cônng
+                        if (scope.__mode == 1 || scope.__mode == 3) {
+                            //Reload table data
+                            reloadData();
+                        } else if (scope.__mode == 2) {
+                            scope.$parent.currentItem.seniority_from = scope.entity.seniority_from;
+                            scope.$parent.currentItem.seniority_to   = scope.entity.seniority_to;
+                            scope.$parent.currentItem.coefficient    = scope.entity.coefficient;
+                            scope.$parent.currentItem.salary = scope.entity.salary;
+                            scope.$parent.$apply();
+                            //Refesh datatable
+                            scope.$parent.refreshDataRow();
+                        }
+                    } else {
+                        $msg.message("${get_global_res('Internal_Server_Error','Có lỗi từ phía máy chủ')}", "${get_global_res('Please_Try_Again','Xin thử vui lòng thử lại')}", function () { });
+                    }
+            });
+        }
+
+        function editData(callback) {
+            var url = getUrl();
+            var parameter = {};
+            services.api(url)
+                .data({
+                    "train_level_code": scope.$parent.entity.train_level_code,
+                    "details":scope.entity
+                })
+                .done()
+                .then(function (res) {
+                    callback(res);
+                })
+        }
+
+        function getUrl() {
+            return scope.__mode == 1 || scope.__mode == 3 ? "${get_api_key('app_main.api.HCSLS_Acadame/insert_details')}" /*Mode 1: Tạo mới*/
+                    : "${get_api_key('app_main.api.HCSLS_Acadame/update_details')}" /*Mode 2: Cập nhật*/
+        }
+
+        function reloadData() {
+            var tableConfig = scope.$parent.$$tableConfig;
+            scope.$parent._tableData(tableConfig.iPage,
+            tableConfig.iPageLength, tableConfig.orderBy,
+            tableConfig.searchText, tableConfig.fnReloadData);
+        }
+    });
+</script>

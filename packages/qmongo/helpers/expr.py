@@ -433,7 +433,7 @@ def get_expr(fx,*params):
     if type(params) is dict:
         params=[params[key] for key in params.keys()]
 
-    if(type(fx) is str):
+    if(type(fx) in [str,unicode]):
         return fx
     ret={}
     if fx.has_key("type") and fx["type"]=="const":
@@ -450,7 +450,7 @@ def get_expr(fx,*params):
             }
 
         if fx["operator"]=="$eq":
-            if type(fx["right"]) is str:
+            if type(fx["right"]) in [str,unicode]:
                 if fx["left"].has_key("type")and fx["left"]["type"]=="field":
                     return {
                         fx["left"]["id"]: {
@@ -466,8 +466,8 @@ def get_expr(fx,*params):
             else:
                 if fx["right"]["type"]=="params":
                     val=params[fx["right"]["value"]]
-                    if type(val) is str:
-                        if type(fx["left"]) is str:
+                    if type(val) in [str,unicode]:
+                        if type(fx["left"]) in [str,unicode]:
                             return {
                                 fx["left"]: {
                                     "$regex": re.compile("^" + val + "$", re.IGNORECASE)
@@ -480,8 +480,8 @@ def get_expr(fx,*params):
                                 }
                             }
                     else:
-                        if fx["operator"]=="$eq" and type(val) is str:
-                            if type(fx["left"]) is str:
+                        if fx["operator"]=="$eq" and type(val) in [str,unicode]:
+                            if type(fx["left"]) in [str,unicode]:
                                 return {
                                     fx["left"]: {
                                         "$regex":re.compile("^"+val+"$",re.IGNORECASE)
@@ -497,7 +497,7 @@ def get_expr(fx,*params):
                                 }
 
                         else:
-                            if type(fx["left"]) is str:
+                            if type(fx["left"]) in [str,unicode]:
                                 return {
                                     fx["left"]:{
                                         fx["operator"]: val
@@ -514,7 +514,7 @@ def get_expr(fx,*params):
 
                 if fx["right"]["type"]=="const":
                     val = fx["right"]["value"]
-                    if type(val) is str:
+                    if type(val) in [str,unicode]:
                         return {
                             fx["left"]["id"]: {
                                 "$regex": re.compile("^" + val + "$", re.IGNORECASE)
@@ -646,7 +646,7 @@ def get_calc_exprt_boolean_expression(fx,*params):
             return {
                 p["operator"]: [
                     {
-                        "$" + fx.left.func.id: "$" + (lambda x: x if type(x) is str else x["id"])(field)
+                        "$" + fx.left.func.id: "$" + (lambda x: x if type(x) in [str,unicode] else x["id"])(field)
                     }, params[p["right"]["value"]]
                 ]
             }

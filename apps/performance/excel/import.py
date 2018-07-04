@@ -7,7 +7,7 @@ import datetime
 import base64
 from io import BytesIO
 import constant as KEY
-
+from performance.lv_core import db
 
 def call(args):
     wb = load_workbook(filename=BytesIO(base64.b64decode(args["data"]["_content"])), data_only=True)
@@ -20,6 +20,8 @@ def call(args):
             #ws_data = wb[map_item['sheet_name']]
             _data = __get_data(map_item, wb[map_item['sheet_name']])
             data.append(_data)
+
+            db.Collection(_data["collection_name"]).insert_or_update(_data["documents"])
 
         return {'config': mapping_configs, 'data': _data}
     else:
@@ -38,7 +40,7 @@ def __get_data(mapping_config, ws_data):
         data_row = {};
         for config in mapping_config["fields"]:
             data_row[config['field_name']] = ws_data[config['column'] + str(idx_row)].value
-        ret_data['data'].append(data_row)
+        ret_data['documents'].append(data_row)
     return ret_data
 
 def __get_mapping(ws_mapping):

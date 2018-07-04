@@ -64,7 +64,7 @@ function dialog($scope, id = 'myModal') {
             fn(subScope,_params);
         }
 
-        var frm = $('<div><div class="modal fade" id="' + id +'" role="dialog">' +
+        var frm = $('<div><div class="modal fade hcs-modal-dialog" id="' + id + '" role="dialog" tabindex="-1">' +
                 '</div></div>'
             );
         var $ele = $("<div>" + content + "</div>");

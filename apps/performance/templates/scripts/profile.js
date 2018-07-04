@@ -29,12 +29,10 @@
 
         this.mapName = [];
 
-        this.mapName = [
-            { 'function_id': 'function5', 'name': 'Thông tin chung', 'url': 'profile/commoninfo' },
-            { 'function_id': 'function6', 'name': 'Phúc lợi', 'url': 'profile/benefit' },
-            { 'function_id': 'function7', 'name': 'Kiến thức', 'url': 'profile/knowledge' },
-            { 'function_id': 'function8', 'name': 'Khen thưởng - kỷ luật', 'url': 'profile/bonus' },
-        ];
+        this.mapName = _.filter(scope.$root.$function_list, function (f) {
+            return f.level_code.includes(scope.$root.currentFunction.function_id)
+                && f.level_code.length == scope.$root.currentFunction.level_code.length + 1
+        });
 
         this.getElementMapNameByIndex = (index) => {
             return mapName[index];
@@ -59,12 +57,15 @@
     scope.$root.$history.onChange(scope, function (data) {
         if (scope.mapName.length > 0) {
             if (data.f) {
-                scope.$partialpage = data.f;
+                scope.$partialpage = _.filter(scope.$root.$functions, function (f) {
+                    return f.function_id = data.f
+                })[0].url;
                 var func = _.filter(scope.mapName, function (f) {
                     return f["function_id"] == data.f;
                 });
                 if (func.length > 0) {
                     scope.$partialpage = func[0].url;
+                    scope.currentFunction = func[0];
                 } else {
                     window.location.href = "#";
                 }
@@ -76,6 +77,4 @@
             window.location.href = "#";
         }
     });
-
-
 });

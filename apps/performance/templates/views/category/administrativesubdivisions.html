@@ -1,0 +1,34 @@
+﻿<div class="pull-right hcs-toolbar">
+    <div class="pull-right">
+        <input-combobox
+                            api-url="${get_api_key('app_main.api.common/get_dropdown_list')}"
+                            list-code="${encryptor.get_key('cbb_region')}"
+                            list-value="[{ '@region_code': '' }]"
+                            current-item="main_region_code"
+                            multi-select="false">
+    </div>
+    <div class="pull-right">
+        <input-combobox api-url="${get_api_key('app_main.api.common/get_dropdown_list')}"
+                            list-code="${encryptor.get_key('cbb_nation')}"
+                            list-value="[{ '@nation_code': '' }]"
+                            current-item="main_nation_code"
+                            multi-select="false">
+    </div>
+</div>
+<!--$parent.mapName[0].function_id: function_id chức năng của tab hiện tại index tăng dần theo thứ tự các tab-->
+<div class="tab-pane" style="padding-right:unset; height: 100%; padding-left:15px; padding-top:15px;">
+    <div class="row">
+        <div class="col-md-6">
+            <%include file = "province.html" />
+            <%include file = "district.html" />
+        </div>
+        <div class="col-md-6">
+            <%include file = "ward.html" />
+            <%include file = "hamlet.html" />
+        </div>
+    </div>
+    <div class="clearfix"></div>
+</div>
+<script>
+    <%include file = "./scripts/administrativesubdivisions.js" />
+</script>

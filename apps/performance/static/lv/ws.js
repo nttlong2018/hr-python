@@ -4,14 +4,7 @@ var _wsOnAfterCall;
 var _ws_export_url_;
 
 var HOMEPAGE_ID = "HOMEPAGE";
-var _funtion_id_ = HOMEPAGE_ID;
 
-function set_function_id(id) {
-    _funtion_id_ = id;
-}
-function get_function_id() {
-    return _funtion_id_;
-}
 function ws_set_export_token_url(url) {
     _ws_export_token_url_ = url;
 }
@@ -38,10 +31,10 @@ function ws_call(api_path, view_path, data, cb, owner) {
         sender = undefined;
         if (_wsOnBeforeCall) {
             owner.sender = _wsOnBeforeCall();
-            console.log(owner)
         }
         var now = new Date();
         var offset_minutes = now.getTimezoneOffset();
+
         $.ajax({
             url: ws_get_url(),
             type: "post",
@@ -53,8 +46,6 @@ function ws_call(api_path, view_path, data, cb, owner) {
                 offset_minutes: offset_minutes
             }),
             success: function (res) {
-                console.log("after")
-                console.log(owner)
                 if (_wsOnAfterCall) {
                     _wsOnAfterCall(owner.sender)
                 }

@@ -1,0 +1,222 @@
+﻿
+    <div class="row">
+        <div class="hcs-profile-background-group-table" style="margin-right:15px;">
+            <div class="pull-left hcs-profile-icon-heading-on-table" style="height: 100%;padding-right: 3px;background: white;margin-left: unset;">
+                <button class="zb-icon-button hcs-profile-group-title" onclick="$('#collapseTableHamlet').slideToggle();">
+                    <span>
+                        <i class="la la-angle-down" style="font-size:0.7rem;"></i>
+                    </span>
+                </button>
+            </div>
+            <div class="pull-left hcs-profile-icon-heading-on-table" style="margin-left: unset;">
+                <button class="zb-icon-button hcs-profile-group-title" onclick="$('#collapseTableHamlet').slideToggle();">
+                ${get_res('hamlet_caption_toolbar','4. Thôn/Xóm')}
+                </button>
+            </div>
+            <div class="pull-right hcs-profile-icon-heading-on-table">
+                <button class="zb-icon-button hcs-profile-group-title" ng-click="onReloadWard()">
+                    <span>
+                        <i class="la la-refresh"></i>
+                    </span>
+                </button>
+            </div>
+            <div class="pull-right hcs-profile-icon-heading-on-table">
+                <button class="zb-icon-button hcs-profile-group-title" ng-click="onDeleteHamlet()">
+                    <span>
+                        <i class="la la-trash"></i>
+                    </span>
+                </button>
+            </div>
+            <div class="pull-right hcs-profile-icon-heading-on-table">
+                <button class="zb-icon-button hcs-profile-group-title" ng-click="onEditHamlet()">
+                    <span>
+                        <i class="la la-pencil"></i>
+                    </span>
+                </button>
+            </div>
+            <div class="pull-right hcs-profile-icon-heading-on-table">
+                <button class="zb-icon-button hcs-profile-group-title" ng-click="onAddHamlet()">
+                    <span>
+                        <i class="la la-plus"></i>
+                    </span>
+                </button>
+            </div>
+            <div class="pull-right hcs-profile-icon-heading-on-table" style="width:25px;margin-left:10px;">
+                <button class="zb-icon-button hcs-profile-group-title">
+                    <span>
+                        <i class="la la-search"></i>
+                    </span>
+                </button>
+            </div>
+            <div class="pull-right">
+                <input-text id="tableHamletSearchText">
+            </div>
+        </div>
+    </div>
+    <div id="collapseTableHamlet" class="row">
+        <div class="col-md-12" style="height: 37vh;">
+            <table-data data-source="tableHamletSource" fields="tableHamletFields" type="MultiSelect" 
+            server-side="true" page-length="100" paging="true" 
+            selected-items="selectedHamlets"
+            current-item="currentHamlet" search-text="tableHamletSearchText"
+            refresh-row="refreshDataHamletRow">
+            </table-data>
+        </div>
+    </div>
+
+<script>
+    (function (scope) {
+    //Cấu hình tên field và caption hiển thị trên UI
+    scope.tableHamletFields = [
+        { "data": "hamlet_code", "title": "${get_res('code_table_header','Mã')}" },
+        { "data": "hamlet_name", "title": "${get_res('name_table_header','Tên')}" },
+        { "data": "org_hamlet_code", "title": "${get_res('org_code_header','Mã quy định')}" },
+        { "data": "ordinal", "title": "${get_res('ordinal_table_header','Thứ tự')}" }
+    ];
+    //
+    scope.$$tableHamletConfig = {};
+    //Dữ liệu cho table
+    scope.tableHamletSource = _loadHamletDataServerSide;
+    function _loadHamletDataServerSide(fnReloadData, iPage, iPageLength, orderBy, searchText) {
+        scope.$$tableHamletConfig = {
+            fnReloadData: fnReloadData,
+            iPage: iPage,
+            iPageLength: iPageLength,
+            orderBy: orderBy,
+            searchText: searchText
+        };
+        //setTimeout(function () {
+        if (fnReloadData) {
+            if (searchText) {
+                _tableHamletData(iPage, iPageLength, orderBy, searchText, function (data) {
+                    fnReloadData(data);
+                });
+            } else {
+                _tableHamletData(iPage, iPageLength, orderBy, null, function (data) {
+                    fnReloadData(data);
+                });
+            }
+        }
+        //}, 1000);
+    };
+    //Danh sách các dòng đc chọn (nếu là table MultiSelect)
+    scope.selectedHamlets = [];
+    //Dòng hiện tại đang được focus (nếu table là SingleSelect hoặc MultiSelect)
+    scope.currentHamlet = null;
+    scope.tableHamletSearchText = '';
+    //Refesh table
+    scope.refreshDataHamletRow = function () { /*Do nothing*/ };
+    //Mode 1: tạo mới, Mode 2: chỉnh sửa, Mode 3: sao chép
+    scope.hamlet_mode = 0;
+    scope.onEditHamlet = onEditHamlet;
+    scope.onAddHamlet = onAddHamlet;
+    scope.onDeleteHamlet = onDeleteHamlet;
+    scope._tableHamletData = _tableHamletData;
+
+    /**
+     * Hàm mở form chỉnh sửa
+     */
+    function onEditHamlet() {
+        if (scope.currentHamlet) {
+            scope.hamlet_mode = 2; // set mode chỉnh sửa
+            openDialog("${get_res('Detail_Hamlet','Chi tiết Thôn/Xóm')}", 'category/form/addHamlet', function () { });
+        } else {
+            $msg.message("${get_global_res('Notification','Thông báo')}", "${get_app_res('No_Row_Selected','Không có dòng được chọn')}", function () { });
+        }
+    }
+
+    /**
+     * Hàm mở form tạo moi
+     */
+    function onAddHamlet() {
+        scope.hamlet_mode = 1;// set mode tạo mới
+        openDialog("${get_res('Detail_Hamlet','Chi tiết Thôn/Xóm')}", 'category/form/addHamlet', function () { });
+    }
+    function onDeleteHamlet() {
+        if (!scope.selectedHamlets || scope.selectedHamlets.length === 0) {
+            $msg.message("${get_global_res('Notification','Thông báo')}", "${get_global_res('No_Row_Selected','Không có dòng được chọn')}", function () { });
+        } else {
+            $msg.confirm("${get_global_res('Notification','Thông báo')}", "${get_global_res('Do_You_Want_Delete','Bạn có muốn xóa không?')}", function () {
+                services.api("${get_api_key('app_main.api.HCSLS_Hamlet/delete')}")
+                    .data(scope.selectedHamlets)
+                    .done()
+                    .then(function (res) {
+                        if (res.deleted > 0) {
+                            _tableHamletData(scope.$$tableHamletConfig.iPage, scope.$$tableHamletConfig.iPageLength, scope.$$tableHamletConfig.orderBy, scope.$$tableHamletConfig.SearchText, scope.$$tableHamletConfig.fnReloadData);
+                            $msg.alert("${get_global_res('Handle_Success','Thao tác thành công')}", $type_alert.SUCCESS);
+                            scope.currentHamlet = null;
+                            scope.selectedHamlets = [];
+                        }
+                    })
+            });
+        }
+    }
+
+    /**
+     * Hàm mở dialog
+     * @param {string} title Tittle của dialog
+     * @param {string} path Đường dẫn file template
+     * @param {function} callback Xử lí sau khi gọi dialog
+     * @param {string} id Id của form dialog, default = 'myModal'
+     */
+    function openDialog(title, path, callback, id = 'myModal') {
+
+        //check tồn tại của form dialog theo id
+        if ($('#' + id).length === 0) {
+            scope.headerTitle = title;
+            //Đặt ID cho form dialog
+            dialog(scope, id).url(path).done(function () {
+                callback();
+                //Set resizable cho form dialog theo id
+                $('#' + id).ready(function () {
+                    $('#' + id + ' .modal-dialog .modal-content .modal-header').on('mousedown touchstart', function (e) {
+                        $('#' + id + ' .modal-dialog').draggable();
+                    }).bind('mouseup touchend', function () {
+                        $('#' + id + ' .modal-dialog').draggable('destroy');
+                    });
+                })
+            });
+        }
+    }
+
+    function _tableHamletData(iPage, iPageLength, orderBy, searchText, callback) {
+        var sort = {};
+        $.each(orderBy, function (i, v) {
+            sort[v.columns] = (v.type === "asc") ? 1 : -1;
+        });
+        sort[orderBy[0].columns] =
+            services.api("${get_api_key('app_main.api.HCSLS_Hamlet/get_list_with_searchtext')}")
+                .data({
+                    //parameter at here
+                    "pageIndex": iPage - 1,
+                    "pageSize": iPageLength,
+                    "search": searchText,
+                    "where": {
+                        "ward_code": scope.currentWard ? scope.currentWard.ward_code : " "
+                    },
+                    "sort": sort
+                })
+                .done()
+                .then(function (res) {
+                    var data = {
+                        recordsTotal: res.total_items,
+                        recordsFiltered: res.total_items,
+                        data: res.items
+                    };
+                    callback(data);
+                    scope.currentItem = null;
+                    scope.$apply();
+                })
+    }
+
+    $(document).ready(function () {
+        $('#tableHamletSearchText').on('keypress', function(e) {
+            var code = e.keyCode || e.which;
+            if(code==13){
+                scope.tableHamletSearchText = $('#tableHamletSearchText').val();
+                scope.$applyAsync();
+            }
+        });
+    })
+});
+</script>

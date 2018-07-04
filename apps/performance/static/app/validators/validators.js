@@ -40,6 +40,8 @@
         }
 
         function isNumber() {
+            if (__val === null || __val === undefined)
+                return false;
             return !isNaN(__val);
         }
 

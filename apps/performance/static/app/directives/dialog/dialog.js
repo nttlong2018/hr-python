@@ -29,8 +29,8 @@ function _Dialog() {
             var me = this;
 
             //UI form dialog
-            me._form = $('<div class="modal fade" id="myConfirmModal" role="dialog">' +
-                '<div class="modal-dialog">' +
+            me._form = $('<div class="modal fade hcs-modal-dialog" id="myConfirmModal" role="dialog">' +
+                '<div class="modal-dialog combobox-dialog">' +
                 '<div class="modal-content">' +
                 '<div class="modal-header">' +
                 '<h4 class="modal-title"><i class="la la-info-circle"></i><span id="title"></span>' +
@@ -108,8 +108,8 @@ function _Dialog() {
             var me = this;
 
             //UI form dialog
-            me._form = $('<div class="modal fade" id="myMessageModal" role="dialog">' +
-                '<div class="modal-dialog">' +
+            me._form = $('<div class="modal fade hcs-modal-dialog" id="myMessageModal" role="dialog">' +
+                '<div class="modal-dialog combobox-dialog">' +
                 '<div class="modal-content">' +
                 '<div class="modal-header">' +
                 '<h4 class="modal-title"><i class="la la-info-circle"></i><span id="title"></span>' +
@@ -219,8 +219,8 @@ function _Dialog() {
             var me = this;
 
             //UI form dialog
-            me._form = $('<div class="modal fade" id="myErrorModal" role="dialog">' +
-                '<div class="modal-dialog">' +
+            me._form = $('<div class="modal fade hcs-modal-dialog" id="myErrorModal" role="dialog">' +
+                '<div class="modal-dialog combobox-dialog">' +
                 '<div class="modal-content">' +
                 '<div class="modal-header">' +
                 '<h4 class="modal-title"><i class="la la-info-circle"></i><span id="title"></span>' +
@@ -280,8 +280,8 @@ function _Dialog() {
                 var me = this;
 
                 //UI form dialog
-                me._form = $('<div class="modal fade" id="myErrorDetailModal" role="dialog">' +
-                    '<div class="modal-dialog" style="width:85%; top:1.5vh;">' +
+                me._form = $('<div class="modal fade hcs-modal-dialog" id="myErrorDetailModal" role="dialog">' +
+                    '<div class="modal-dialog combobox-dialog" style="width:85%; top:1.5vh;">' +
                     '<div class="modal-content">' +
                     '<div class="modal-header">' +
                     '<h4 class="modal-title"><i class="la la-info-circle"></i>' +

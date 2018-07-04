@@ -162,13 +162,13 @@ APPS=[
            name="hrm",
            path="apps/hrm"),
       dict(
-          host="performance",
+          host="default", #"performance",
           name="performance",
           path="apps/performance"
       ),
-      dict(host="default",
-           name="argo",
-           path="apps/app_main")
+      # dict(host="default",
+      #      name="argo",
+      #      path="apps/app_main")
 ]
 aut_config_local_=dict(
     provider="authorization.auth",

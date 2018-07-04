@@ -1,0 +1,16 @@
+﻿<!--$parent.mapName[0].function_id: function_id chức năng của tab hiện tại index tăng dần theo thứ tự các tab-->
+<div class="tab-pane" style="padding-right:unset; height: 100%; padding-left:15px; padding-top:15px;">
+    <div class="row">
+        <div class="col-md-6">
+            <div c-template url="${get_app_url('')}/pages/category/awardlevel"></div>
+            <div c-template url="${get_app_url('')}/pages/category/awardplace"></div>
+        </div>
+        <div class="col-md-6">
+            <div c-template url="${get_app_url('')}/pages/category/award"></div>
+        </div>
+    </div>
+    <div class="clearfix"></div>
+</div>
+<script>
+    <%include file = "./scripts/awardtabpanel.js" />
+</script>

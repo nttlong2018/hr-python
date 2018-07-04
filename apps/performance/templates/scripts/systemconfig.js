@@ -1,21 +1,24 @@
 ﻿(function (scope) {
 
-    scope.mapName = [
-        { 'function_id': 'function1', 'name': 'Cấu hình hệ thống', 'url': 'systemconfig/system' },
-        { 'function_id': 'function2', 'name': 'Cấu hình tài khoản', 'url': 'systemconfig/account' }
-    ];
+    scope.mapName = _.filter(scope.$root.$function_list, function (f) {
+        return f.level_code.includes(scope.$root.currentFunction.function_id)
+            && f.level_code.length == scope.$root.currentFunction.level_code.length + 1
+    });
 
     scope.currentFunction = scope.mapName[0];
 
     scope.$root.$history.onChange(scope, function (data) {
         if (scope.mapName.length > 0) {
             if (data.f) {
-                scope.$partialpage = data.f;
+                scope.$partialpage = _.filter(scope.$root.$functions, function (f) {
+                    return f.function_id = data.f
+                })[0].url;
                 var func = _.filter(scope.mapName, function (f) {
                     return f["function_id"] == data.f;
                 });
                 if (func.length > 0) {
                     scope.$partialpage = func[0].url;
+                    scope.currentFunction = func[0];
                 } else {
                     window.location.href = "#";
                 }

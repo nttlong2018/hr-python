@@ -235,7 +235,7 @@ class ENTITY():
         end = ex.message.find(" dup key:", start)
         key = ex.message[start:end]
         key = key.replace(" ", "")
-        info = self.qr.db.get_collection(self.name).index_information()
+        info = self.qr.db.get_collection(get_current_schema() + "." + self._coll.get_name()).index_information()
         fields = info[key]["key"]
         ret_fields = []
         for item in fields:

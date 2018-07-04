@@ -20,7 +20,8 @@ def SYS_FunctionList():
             type=helpers.create_field("text"),
             width=helpers.create_field("text"),
             icon=helpers.create_field("text"),
-            app=helpers.create_field("text")
+            app=helpers.create_field("text"),
+            level_code=helpers.create_field("list")
         )
         _hasCreated=True
     ret = db_context.collection("SYS_FunctionList")

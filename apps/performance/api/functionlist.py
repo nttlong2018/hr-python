@@ -16,7 +16,8 @@ def get_list(args):
         type                 = 1,
         width                = 1,
         icon                 = 1,
-        app                  = 1
+        app                  = 1,
+        level_code           = 1
         ).match("app == {0}", "PERF")
     
     return items.get_list()

@@ -211,10 +211,10 @@ var lv;
                 dataType: "json",
                 data: JSON.stringify({
                     path: ws_get_export_token_url(),
-                    view: angular.element(".ng-scope").scope().$root.page,
+                    view: angular.element(".ng-scope").scope().$root.currentFunction.function_id,
                     data: {
                         path: me._path,
-                        function: get_function_id(),
+                        function: (angular.element(".ng-scope").scope().$root.currentFunction) ? angular.element(".ng-scope").scope().$root.currentFunction.function_id : HOMEPAGE_ID,
                         params: me._data
                     },
                     offset_minutes: offset_minutes

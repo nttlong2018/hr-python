@@ -1,52 +1,111 @@
-<!--<%inherit file="base.html"/>-->
-<div class="container-fluid small">
-	<div class="row">
-			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-				<div class="pull-right">
-					<a class="btn-small dropdown-toggle" type="button" id="dropdownMenu1"
-							data-toggle="dropdown">
-						${model.language}
-						<span class="caret"></span>
-					</a>
-					<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-						<li role="presentation" class="dropdown-header">
-							<a role="menuitem" tabindex="-1" href="?language=vn">Tiếng Việt</a>
-						</li>
-						<li role="presentation" class="dropdown-header">
-							<a role="menuitem" tabindex="-1" href="?language=en">English</a>
-						</li>
-					</ul>
-				</div>
-			</div>
-		</div>
-    <div class="container"  style="max-width:300px">
-
- <form action="./login?next=${model.url_next}" method="POST" role="form" style="max-width:400px" >
-    <input type="hidden" name="csrfmiddlewaretoken" value="${get_csrftoken()}"/>
-    	<legend>${get_global_res("Login")}</legend>
-    	<div class="form-group small">
-    		<label >${get_global_res("Username")}</label>
-    		<input type="text" class="form-control input-sm" name="username"  placeholder="${get_global_res('Enter username')}" value="${model.username}">
-    	</div>
-       <div class="form-group">
-    		<label >${get_global_res("Password")}</label>
-    		<input type="password" class="form-control input-sm" name="password"  placeholder="${get_global_res('Enter password')}" value="${model.password}">
-    	</div>
-
-    	<button type="submit" class="btn btn-primary btn-sm">${get_global_res("Login")}</button>
-	 	<input type="hidden" value="${model.url_next}" name="url_next">
-    </form>
-		% if model.is_error:
-		<div class="alert alert-danger">
-			<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-			<strong>${get_global_res("Login fail")}</strong> ${model.error_message}
-		</div>
-		% endif
-
+<%inherit file="base.html"/>
+<div id="wrapper" class="login">
+    <div id="main">
+        <div class="main_container_login clearfix">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-8">
+                        <img src="${get_static('css/images/login/slider_01.jpg')}">
+                    </div>
+                    <div class="col-md-4">
+                        <div class="clearfix login_header">
+                          <p><img src="http://surehcs.lacviet.vn/WS2017/Customers/default/logo.png" alt="logo"></p>
+                          <ul class="clearfix language">
+                            <a href="?language=en">
+                              <div class="mail-content"><img src="${get_static('css/images/login/ic_en.jpg')}" alt="img user" class="img-circle ic_flag"></div>
+                            </a>
+                            <a href="?language=vn">
+                                <div class="mail-content"><img src="${get_static('css/images/login/ic_vn.jpg')}" alt="img user" class="img-circle ic_flag"></div>
+                            </a>
+                          </ul>
+                        </div>
+                        <form action="./login?next=${model.url_next}" method="POST" role="form">
+                            <input type="hidden" name="csrfmiddlewaretoken" value="${get_csrftoken()}"/>
+                        <ul class="clearfix login_frm" data-select2-id="9">
+                          <li>
+                            <input type="text" class="iput_02" name="username" autocomplete="off" placeholder="${get_global_res('Enter username')}" value="${model.username}">
+                          </li>
+                          <li>
+                            <input type="password" class="iput_02" name="password" placeholder="${get_global_res('Enter password')}" value="${model.password}">
+                          </li>
+                            <li style="margin: 0 0 5px 0;">
+                            <select class="iput_02" name="site" data-select2-id="1" tabindex="-1" aria-hidden="true">
+                              <option value="" >Performance</option>
+                              <option value="lms">Learning management system</option>
+                            </select>
+                          </li>
+                            <li class="hcs-err-msg-login">
+                            % if model.is_error:
+                                <strong>${get_global_res("Login fail")}</strong> ${model.error_message}
+                            % endif
+                            </li>
+                          <!--<li data-select2-id="17">
+                            <select class="select select2-hidden-accessible" name="state" data-select2-id="4" tabindex="-1" aria-hidden="true">
+                              <option value="" disabled="" selected="" data-select2-id="6">Vai trò</option>
+                              <option value="2" data-select2-id="18">Admin</option>
+                              <option value="2" data-select2-id="19">DEV</option>
+                              <option value="2" data-select2-id="20">Tester</option>
+                            </select><span class="select2 select2-container select2-container--default select2-container--below" dir="ltr" data-select2-id="5" style="width: 61px;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-labelledby="select2-state-kv-container"><span class="select2-selection__rendered" id="select2-state-kv-container" role="textbox" aria-readonly="true" title="Vai trò">Vai trò</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
+                          </li>-->
+                          <li>
+                            <button type="submit" class="btn btn-login">${get_global_res("Login")}</button>
+                              <input type="hidden" value="${model.url_next}" name="url_next">
+                          </li>
+                        </ul>
+                        </form>
+                        <p><a href="" class="link hcs-cannot-login">Không thể đăng nhập?</a></p>
+                      </div>
+                </div>
+            </div>
+            <div class="container">
+        <div class="col-md-12 info_company_name">
+          <p class="title">Công ty Cổ phần Tin học Lạc Việt</p>
+        </div>
+        <div class="box_02 col_3 clearfix info_company row pd_lr_5">
+          <ul class="item clearfix border-0 col-4">
+            <li class="sub_title">Trụ sở chính</li>
+            <li>23 Nguyễn Thị Huỳnh, F.8, Q. Phú Nhuận, TP.HCM</li>
+            <li>lacviet@lacviet.com.vn</li>
+            <li>(+84.8) 3842.3333</li>
+            <li>(+84.8) 3842.2370</li>
+          </ul>
+          <ul class="item clearfix border-0 col-4">
+            <li class="sub_title">Chi nhánh Hà Nội</li>
+            <li>Tòa nhà Sky City, 88 Láng Hạ, P. Láng Hạ, Q. Đống Đa, TP. Hà Nội</li>
+            <li>hanoi@lacviet.com.vn</li>
+            <li>(+84.4) 3512.1846</li>
+            <li>(+84.4) 3512.1848</li>
+          </ul>
+          <ul class="item clearfix border-0 col-4">
+            <li class="sub_title">Chi nhánh Đà Nẵng</li>
+            <li>36 Hàm Nghi, F. Vĩnh Trung, Q. Thanh Khê, TP. Đà Nẵng</li>
+            <li>danang@lacviet.com.vn</li>
+            <li>(+84.511) 365.3848</li>
+            <li>(+84.511) 365.2567</li>
+          </ul>
+        </div>
+        
+      </div>
+        </div>
     </div>
-
-
+    <div id="footer">
+    <div class="container-fluid">
+      <div class="row">
+        <address class="clearfix bg_blue_01">
+        <ul class="footer_add float-left">
+          <li>© Copyright 2018 | Lac Viet Computing Corp.</li>
+        </ul>
+        </address>
+      </div>
+    </div>
+  </div>
+    <div class="social">
+    <ul class="clearfix mb-0">
+      <li class="store"><a href="#"><span class="fa fa-th-large"></span><span>Kho ứng dụng</span></a></li>
+      <li class="facebook"><a href="#"><span class="fa fa-facebook"></span><span>Facebook</span></a></li>
+      <li class="youtube"><a href="#"><span class="fa fa-youtube"></span><span>Youtube</span></a></li>
+      <li class="twitter"><a href="#"><span class="fa fa-twitter"></span><span>Twitter</span></a></li>
+    </ul>
+  </div>
 </div>
-
-
-
+<script src="${get_static('js/plugins/slick.js')}"></script>

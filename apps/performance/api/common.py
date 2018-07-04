@@ -8,6 +8,7 @@ import quicky
 from qmongo import helpers
 import qmongo
 import uuid
+import threading
 logger = logging.getLogger(__name__)
 
 __collectionName = ''
@@ -19,6 +20,12 @@ def generate_guid():
 
 def get_collection(col_name):
     return models.db_context.db.get_collection(quicky.tenancy.get_schema() + "." + col_name)
+
+def get_user_id():
+    user = "application"
+    if hasattr(threading.current_thread(),"user"):
+        user = threading.current_thread().user.username
+    return user
 
 def get_pagination(args):
     try:

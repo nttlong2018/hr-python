@@ -60,6 +60,7 @@
                 });
                 if (func.length > 0) {
                     scope.$partialpage = func[0].url;
+                    scope.currentFunction = func[0];
                 } else {
                     window.location.href = "#";
                 }

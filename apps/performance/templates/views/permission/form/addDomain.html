@@ -15,7 +15,7 @@
                 <button class="zb-icon-button hcs-profile-group-title" onclick="$('#collapseDialogCommonInfoGroup').slideToggle();">
                     <span>
                         <i class="la la-angle-down"></i>
-                    </span>${get_res('Common_Information','Thông tin chung')}
+                    </span>${get_global_res('Common_Information','Thông tin chung')}
                 </button>
             </p>
         </div>
@@ -98,10 +98,10 @@
                             </span>
                         </button>
                     </div>
-                    <div class="pull-left" style="width:calc(94% - 50px);">
+                    <div class="pull-left" style="width:calc(94% - 60px);">
                         <input-text id="inputSearchTree" ng-model="treeSearchText">
                     </div>
-                    <div class="pull-left hcs-profile-icon-heading-on-table" style="width:25px;margin-left:1%;">
+                    <div class="pull-left hcs-profile-icon-heading-on-table" style="width:25px;margin-left:10px;">
                         <button class="zb-icon-button hcs-profile-group-title"
                                 onclick="$('#tree ul li .fancytree-lastsib:first .fancytree-expander').click();">
                             <span>
@@ -356,14 +356,6 @@
             }
             return rs;
         }
-
-        //Nhấn nút ESC để thoát form dialog
-        $(document).keyup(function (event) {
-            if (event.keyCode == 27) {
-                if($('#myModal').length ==1)
-                    $('#myModal').modal('hide');
-            }
-        })
     
         //Get data department
         _departments();
