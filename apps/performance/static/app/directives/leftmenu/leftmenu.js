@@ -28,8 +28,8 @@
         function link($scope, element, attrs) {
             function _selectedMenu(function_id) {
                 /* Inactive present function*/
-                element.find('.hcs-system-admin-menu-contain ul li a.hcs-admin-system-selected').removeClass('hcs-admin-system-selected');
-                element.find('.hcs-system-admin-menu-contain ul li.hcs-admin-system-selected').removeClass('hcs-admin-system-selected');
+                element.find('.hcs-left-sidebar-content ul li a.hcs-admin-system-selected').removeClass('hcs-admin-system-selected');
+                element.find('.hcs-left-sidebar-content ul li.hcs-admin-system-selected').removeClass('hcs-admin-system-selected');
 
                 element.find('#hcs-admin-system-panel-content div.in').removeClass('in');
                 element.find('#hcs-admin-system-panel-content div.active').removeClass('active');

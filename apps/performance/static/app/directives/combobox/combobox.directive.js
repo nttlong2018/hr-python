@@ -64,7 +64,7 @@
                     //Đặt ID cho form dialog
                     dialog(scope, id).url(path).done(function () {
                         callback();
-                        //Set resizable cho form dialog theo id
+                        //Set draggable cho form dialog
                         $('#' + id).ready(function () {
                             $('#' + id + ' .modal-dialog .modal-content .modal-header').on('mousedown touchstart', function (e) {
                                 $('#' + id + ' .modal-dialog').draggable();

@@ -149,9 +149,7 @@
          * Thay đỗi kích thước form Dialog và các control trên form dialog
          */
         function onResizeDialog() {
-            var ele = $('#myModal .modal-dialog');
-            ele.toggleClass('resize-width');
-            ele.removeAttr("style");
+            $dialog.fullScreen();
             scope.col = scope.col == 12 ? 6 : 12;
             scope.col_group = scope.col_group == 6 ? 8 : 6;
         }
@@ -166,7 +164,7 @@
                 beforeCallToServer();
                 editData(function (res) {
                     if (res.error == null) {
-                        $('#myModal').modal('hide');//Đóng form input
+                        $dialog.closeDialog();//Đóng form input
                         $msg.alert("${get_global_res('Handle_Success','Thao tác thành công')}", $type_alert.SUCCESS);//Xuất thông báo thành cônng
                         if (scope.__mode == 1 || scope.__mode == 3) {
                             //Reload table data

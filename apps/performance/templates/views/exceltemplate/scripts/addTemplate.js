@@ -203,14 +203,8 @@
             //Đặt ID cho form dialog
             dialog(scope).url(path).done(function () {
                 callback();
-                //Set resizable cho form dialog theo id
-                //$('#myModal').ready(function () {
-                //    $('#myModal .modal-dialog .modal-content .modal-header').on('mousedown touchstart', function (e) {
-                //        $('#myModal .modal-dialog').draggable();
-                //    }).bind('mouseup touchend', function () {
-                //        $('#myModal .modal-dialog').draggable('destroy');
-                //    });
-                //})
+                //Set draggable cho form dialog
+                $dialog.draggable();
             });
         }
     }

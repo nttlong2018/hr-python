@@ -215,10 +215,7 @@
         scope.saveNNext = saveNNext;
 
         function onResizeDialog() {
-            var ele = $('#myModal .modal-dialog');
-            ele.toggleClass('resize-width');
-            ele.removeAttr("style");
-            //scope.col = scope.col == 4 ? 6 : 4;
+            $dialog.fullScreen();
             scope.col_group = scope.col_group == 6 ? 8 : 6;
             scope.col = scope.col == 12 ? 6 : 12;
         }
@@ -233,7 +230,7 @@
                 beforeCallToServer();
                 editData(scope.entity, function (res) {
                     if (res.error == null) {
-                        $('#myModal').modal('hide');//Đóng form input
+                        $dialog.closeDialog();//Đóng form input
                         $msg.alert("${get_global_res('Handle_Success','Thao tác thành công')}", $type_alert.SUCCESS);//Xuất thông báo thành cônng
                         if (scope.__mode == 1 || scope.__mode == 3) {
                             //Reload table data

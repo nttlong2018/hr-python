@@ -1,9 +1,7 @@
-﻿<div class="col-md-12" id="hcs-admin-system-heading">
+﻿<div class="hcs-sidebar-top" id="hcs-admin-system-heading">
     <div class="pull-left" id="hcs-admin-system-breadcrumb">
-        <a href="javascript:void(0)" ng-click="onClickHideLeftMenufunction()" id="toggleMenuFucntion" ng-show="formPage != 'single'">
-            <span>
-                <i class="la la-angle-left"></i>
-            </span>
+        <a class="hcs-btn-icon" href="javascript:void(0)" ng-click="onClickHideLeftMenufunction()" id="toggleMenuFucntion" ng-show="formPage != 'single'">
+            <span><i class="bowtie-icon bowtie-menu"></i></span>
         </a>
         <a href="javascript:void(0)" class="hcs-admin-system-breadcrumb" ng-click="previousPage()">
             <span>{{$root.currentFunction.custom_name ? $root.currentFunction.custom_name.split("/").join(" ") : $root.currentFunction.default_name}}</span>

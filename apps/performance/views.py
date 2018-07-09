@@ -10,9 +10,9 @@ import quicky
 from . import models
 
 from quicky import applications
-from models import Login
-from api.models import auth_user_info
 
+from api.models import auth_user_info
+from models import Login
 from django.contrib.auth.models import User
 from django.core.exceptions import ObjectDoesNotExist
 from django.contrib.auth import authenticate, logout, login as form_login
@@ -53,10 +53,15 @@ def login(request):
         username_request=request._get_post().get("username")
         password_request=request._get_post().get("password")
         try:
+            from quicky import tenancy
+
             user_login = auth_user_info().aggregate().project(username=1, login_account=1)\
-                .match("login_account == @account", account = username_request).get_item()['username']
-            ret=authenticate(username=user_login, password=password_request)
-            form_login(request,ret)
+                .match("login_account == @account", account = username_request).get_item()
+            if user_login==None:
+                raise (Exception("User was not found"))
+
+            ret=authenticate(username=user_login['username'], password=password_request,schema=tenancy.get_schema())
+            form_login(request,ret,schema=tenancy.get_schema())
             return redirect(request.get_app_url(request._get_post().get("site")))
         except Exception as ex:
             _login.is_error=True

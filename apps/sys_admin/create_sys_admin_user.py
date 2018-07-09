@@ -1,5 +1,6 @@
 from django.contrib.auth.models import User
 from django.core.exceptions import ObjectDoesNotExist
+from quicky import tenancy
 def create_sys_admin_user():
     # type: () -> object
     """
@@ -10,17 +11,17 @@ def create_sys_admin_user():
     try:
         # User.objects.set_db_schema("sys")
         obj_users=User.objects
-        user = obj_users.get(username="root",schema = "sys")
+        user = obj_users.get(username="root",schema=tenancy.get_schema())
         user.is_staff = True
         user.is_admin = True
-        user.save(schema="sys")
+        user.save(schema=tenancy.get_schema())
         # User.objects.set_db_schema(None)
     except ObjectDoesNotExist as ex:
         # User.objects.set_db_schema("sys")
         user = User.objects.create_user(username='root',
                                         email='root@root.com',
                                         password='root',
-                                        schema="sys")
+                                        schema=tenancy.get_schema())
         user.is_staff = True
         user.is_admin = True
         user.save(schema="sys")

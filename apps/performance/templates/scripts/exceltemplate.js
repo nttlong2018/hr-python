@@ -146,27 +146,18 @@
      * Hàm mở dialog
      * @param {string} title Tittle của dialog
      * @param {string} path Đường dẫn file template
-     * @param {function} callback Xử lí sau khi gọi dialog
+     * @param {function} callback Xử lí sau khi gọi dialog\
      * @param {string} id Id của form dialog, default = 'myModal'
      */
     function openDialog(title, path, callback, id = 'myModal') {
-        var fn = {
-            "button": [{ "func_name": "saveNClose", "icon": "la la-save", "name": "${get_global_res('save_and_close','Lưu & đóng')}" }]
-        };
         //check tồn tại của form dialog theo id
-        if ($('#' + id).length === 0) {
+        if ($('#myModal').length === 0) {
             scope.headerTitle = title;
             //Đặt ID cho form dialog
-            dialog(scope, id, fn).url(path).done(function () {
+            dialog(scope, id).url(path).done(function () {
                 callback();
-                //Set resizable cho form dialog theo id
-                $('#' + id).ready(function () {
-                    $('#' + id + ' .modal-dialog .modal-content .modal-header').on('mousedown touchstart', function (e) {
-                        $('#' + id + ' .modal-dialog').draggable();
-                    }).bind('mouseup touchend', function () {
-                        $('#' + id + ' .modal-dialog').draggable('destroy');
-                    });
-                })
+                //Set draggable cho form dialog
+                $dialog.draggable();
             });
         }
     }

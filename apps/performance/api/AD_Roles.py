@@ -3,6 +3,7 @@ from bson import ObjectId
 import models
 import auth_user
 import tmp_transactions
+from Query import Permission
 import common
 import datetime
 import logging
@@ -133,3 +134,40 @@ def get_list_with_searchtext(args):
             )
     except Exception as ex:
         raise(ex)
+
+def get_list_permission_by_role(args):
+    try:
+        if args['data'] != None:
+            if args['data'].has_key('role_code'):
+                ret = []
+                record = {}
+                return Permission.get_list_permission("nnd1")
+            else:
+                return dict(
+                    error = "parameter 'role_code' is not exist"
+                )
+        return dict(
+                error = "request parameter is not exist"
+            )
+    except Exception as ex:
+        raise(ex)
+
+def edit_permission(args):
+    try:
+        if args['data'] != None:
+            if args['data'].has_key('role_code') and args['data'].has_key('permission'):
+                role_code = args['data']['role_code']
+                permission = args['data']['permission']
+                return Permission.edit_permission(role_code, permission)
+            else:
+                return dict(
+                    error = "parameter 'role_code' is not exist"
+                )
+        return dict(
+                error = "request parameter is not exist"
+            )
+    except Exception as ex:
+        raise(ex)
+
+def remove_permission(args):
+    pass

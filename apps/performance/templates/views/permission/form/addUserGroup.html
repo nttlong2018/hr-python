@@ -94,7 +94,7 @@
 </div>
 <div class="row">
     <div class="col-md-12">
-        <div class="row" ng-if="__mode != 1">
+        <div class="row" ng-show="__mode != 1">
             <div class="hcs-profile-background-group-table" style="margin-right:15px;">
                 <div class="pull-left hcs-profile-icon-heading-on-table" style="height: 100%;padding-right: 3px;background: white;margin-left: unset;">
                     <button class="zb-icon-button hcs-profile-group-title" onclick="$('#collapseDialogUserGroupListUser').slideToggle();">
@@ -139,13 +139,13 @@
                 press-enter="onSelectTableRow" selected-items="selectedListUserItems"
                 current-item="ListUserCurrentItem" search-text="tableSearchText"
                 refresh-row="refreshDataListUserRow"
-                ng-if="__mode != 1">
+                ng-show="__mode != 1">
                 </table-data>
             </div>
         </div>
     </div>
         <div class="col-md-12">
-        <div class="row" ng-if="__mode != 1">
+        <div class="row" ng-show="__mode != 1">
             <div class="hcs-profile-background-group-table" style="margin-right:15px;">
                 <div class="pull-left hcs-profile-icon-heading-on-table" style="height: 100%;padding-right: 3px;background: white;margin-left: unset;">
                     <button class="zb-icon-button hcs-profile-group-title" onclick="$('#collapseDialogUserGroupFunction').slideToggle();">
@@ -167,16 +167,9 @@
                     </button>
                 </div>
                 <div class="pull-right hcs-profile-icon-heading-on-table">
-                    <button class="zb-icon-button hcs-profile-group-title">
+                    <button class="zb-icon-button hcs-profile-group-title" ng-click="EditPermission()">
                         <span>
-                            <i class="la la-copy"></i>
-                        </span>
-                    </button>
-                </div>
-                <div class="pull-right hcs-profile-icon-heading-on-table">
-                    <button class="zb-icon-button hcs-profile-group-title">
-                        <span>
-                            <i class="la la-plus"></i>
+                            <i class="la la-pencil"></i>
                         </span>
                     </button>
                 </div>
@@ -184,14 +177,18 @@
         </div>
         <div id="collapseDialogUserGroupFunction" class="row">
             <div class="col-md-12">
-                <!--Table function-->
-                <!--
-                <table-data data-source="tableListFunctionFields" fields="tableListFunctionFields" type="MultiSelect" 
-                paging="true" page-length="100" server-side="true" 
-                selected-items="selectedItems" 
-                refresh-row="refreshDataListFunctionRow">
-                </table-data>
-                 -->
+                <tree-table data-source="dataTableTree" data-fields="tableFields"
+                    display-field="default_name"
+                    display-name="Tên tính năng"
+                    parent-field="parent_id" key-field="function_id" 
+                    multi-select="treeMultiSelect" select-mode="treeSelectMode"
+                    on-select="selectTreeNode"
+                    current-node="treeCurrentNode"
+                    selected-nodes="treeSelectedNodes"
+                    selected-root-nodes="treeSelectedRootNodes"
+                    search-text="treeSearchText"
+                    checked-field="is_selected"
+                    disabled="treeDisabled"/>
             </div>
         </div>
     </div>
@@ -254,46 +251,47 @@
 
 
         //Table danh sách chức năng - START
-        scope.tableListFunctionFields = [
-            { "data": "[[unknown1]]", "title": "${ get_res('table_function_[[unknown1]]_table_header', 'Tên tính năng') }"},
-            { "data": "[[unknown2]]", "title": "${ get_res('table_function_[[unknown2]]_table_header', 'Xem') }"},
-            { "data": "[[unknown3]]", "title": "${ get_res('table_function_[[unknown3]]_table_header', 'Thêm') }"},
-            { "data": "[[unknown4]]", "title": "${ get_res('table_function_[[unknown4]]_table_header', 'Sửa') }"},
-            { "data": "[[unknown5]]", "title": "${ get_res('table_function_[[unknown5]]_table_header', 'Xóa') }"},
-            { "data": "[[unknown6]]", "title": "${ get_res('table_function_[[unknown6]]_table_header', 'Nhập khẩu') }"},
-            { "data": "[[unknown7]]", "title": "${ get_res('table_function_[[unknown7]]_table_header', 'Sao chép') }" },
-            { "data": "[[unknown8]]", "title": "${ get_res('table_function_[[unknown8]]_table_header', 'Đính kèm file') }" },
-            { "data": "[[unknown9]]", "title": "${ get_res('table_function_[[unknown9]]_table_header', 'Tải file') }"},
-            {
-                "data": "created_on",
-                "title": "${ get_res('table_function_created_on_table_title', 'Thời điểm tạo') }",
-                "format": "date: " + scope.$root.systemConfig.date_format
-            }
+
+        scope.dataTableTree = [];
+        scope.tableFields = [
+            //{ "data": "function_name", "title": "Tên tính năng", width: "200px" },
+            { "data": "read", "title": "Xem", width: "50px",format: "checkbox" },
+            { "data": "create", "title": "Thêm", width: "150px",format: "checkbox" },
+            { "data": "write", "title": "Sửa", className: "text-left",format: "checkbox" },
+            { "data": "delete", "title": "Xóa", format: "checkbox", className: 'text-center'},
+            { "data": "import", "title": "N. Khẩu", format: "checkbox"},
+            { "data": "export", "title": "X. Khẩu", width: "150px",format: "checkbox" },
+            { "data": "copy", "title": "Sao chép", className: "text-left",format: "checkbox" },
+            { "data": "attach", "title": "Đính kèm", format: "checkbox", className: 'text-center'},
+            { "data": "download", "title": "Tải file",format: "checkbox" }
         ];
-        scope.tableListFunctionSource = _loadDataListFunctionServerSide;
-        scope.refreshDataListFunctionRow = function () { /*Do nothing*/ };
-        function _loadDataListFunctionServerSide(fnReloadData, iPage, iPageLength, orderBy, searchText) {
-            scope.$$table_ListFunction_Config = {
-                fnReloadData: fnReloadData,
-                iPage: iPage,
-                iPageLength: iPageLength,
-                orderBy: orderBy,
-                searchText: searchText
-            };
-            //setTimeout(function () {
-            if (fnReloadData) {
-                if (searchText) {
-                    _tableData("${get_api_key('app_main.api.auth_user/get_list_with_searchtext')}",iPage, iPageLength, orderBy, searchText, function (data) {
-                        fnReloadData(data);
-                    });
-                } else {
-                    _tableData("${get_api_key('app_main.api.auth_user/get_list_with_searchtext')}",iPage, iPageLength, orderBy, null, function (data) {
-                        fnReloadData(data);
-                    });
-                }
+
+        scope.selectTreeNode = function(node) {
+            
+        }
+        scope.treeCurrentNode = {};
+        scope.treeSelectedNodes = [];
+        scope.treeSelectedRootNodes = [];
+        scope.treeMultiSelect = true;
+        scope.treeSelectMode = 3;
+        scope.treeDisabled = false;
+
+
+
+        function _permissionList() {
+            if (scope.__mode == 2) {
+                services.api("${get_api_key('app_main.api.AD_Roles/get_list_permission_by_role')}")
+                    .data({
+                        "role_code":scope.entity.role_code
+                    })
+                    .done()
+                    .then(function (res) {
+                        scope.dataTableTree = res;
+                        scope.$applyAsync();
+                    })
             }
-            //}, 1000);
-        };
+        }
+
         //Table danh sách chức năng - END
 
 
@@ -362,16 +360,15 @@
         scope.addNewUser = addNewUser;
         scope.deleteUser = deleteUser;
 
+        scope.EditPermission = EditPermission;
+
         //Scope select vùng dữ liệu
         scope.selectedItems = [];
 
         scope.$applyAsync();
 
         function onResizeDialog() {
-            var ele = $('#myModal .modal-dialog');
-            ele.toggleClass('resize-width');
-            ele.removeAttr("style");
-            //scope.col = scope.col == 4 ? 6 : 4;
+            $dialog.fullScreen();
             scope.col_group = scope.col_group == 6 ? 8 : 6;
             scope.col = scope.col == 12 ? 6 : 12;
             setTimeout(function () {
@@ -389,7 +386,7 @@
                 beforeCallToServer();
                 editData(scope.entity, function (res) {
                     if (res.error == null) {
-                        $('#myModal').modal('hide');//Đóng form input
+                        $dialog.closeDialog();//Đóng form input
                         $msg.alert("${get_global_res('Handle_Success','Thao tác thành công')}", $type_alert.SUCCESS);//Xuất thông báo thành cônng
                         if (scope.__mode == 1 || scope.__mode == 3) {
                             //Reload table data
@@ -491,6 +488,10 @@
             }
         }
 
+        function EditPermission() {
+            openDialog("${ get_res('detail_permission', 'Chi thiết tính năng') }", "permission/form/dialog/addUserGroup/addPermission", function () { }, "myComboboxDialog");
+        }
+
         /**
         * Hàm mở dialog
         * @param {string} title Tittle của dialog
@@ -505,14 +506,11 @@
                 //Đặt ID cho form dialog
                 dialog(scope).url(path).done(function () {
                     callback();
-                    //Set resizable cho form dialog theo id
-                    //$('#myModal').ready(function () {
-                    //    $('#myModal .modal-dialog .modal-content .modal-header').on('mousedown touchstart', function (e) {
-                    //        $('#myModal .modal-dialog').draggable();
-                    //    }).bind('mouseup touchend', function () {
-                    //        $('#myModal .modal-dialog').draggable('destroy');
-                    //    });
-                    //})
+                    setTimeout(function () {
+                        $(window).trigger('resize');
+                    }, 200)
+                    //Set draggable cho form dialog
+                    $dialog.draggable();
                 });
             }
         }
@@ -587,8 +585,9 @@
             return scope.__mode == 1 || scope.__mode == 3 ? "${get_api_key('app_main.api.AD_Roles/insert')}" /*Mode 1: Tạo mới*/
                     : "${get_api_key('app_main.api.AD_Roles/update')}" /*Mode 2: Cập nhật*/
         }
-    
-        function __init__() { };
+
+        //Load datatable tree
+        _permissionList();
 
     });
 </script>

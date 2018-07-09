@@ -4,6 +4,26 @@
  * $msg.message('Nội dung title', 'Nội dung content', function(){ //Xử lí khi nhấn đồng ý })
  */
 var $msg = _Dialog();
+var $dialog = {
+    "closeDialog": function () { $('.hcs-modal-dialog:last').modal('hide'); },
+    "draggable": function () {
+        $('.hcs-modal-dialog:last').ready(function () {
+            $('.hcs-modal-dialog:last .modal-dialog .modal-content .modal-header').on('mousedown touchstart', function (e) {
+                $('.hcs-modal-dialog:last .modal-dialog').draggable();
+            }).bind('mouseup touchend', function () {
+                $('.hcs-modal-dialog:last .modal-dialog').draggable('destroy');
+            });
+        })
+    },
+    "fullScreen": function () {
+        var ele = $('.hcs-modal-dialog:last .modal-dialog');
+        ele.toggleClass('resize-width');
+        ele.removeAttr("style");
+        setTimeout(function () {
+            $(window).trigger('resize');
+        }, 200)
+    }
+}
 const $type_alert = Object.freeze({
     "DEFAULT": 0,
     "PRIMARY": 1,

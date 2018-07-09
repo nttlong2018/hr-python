@@ -9,6 +9,7 @@ def display_list_employee_type():
         _id = "el._id",
         emp_type_code="el.emp_type_code",
         emp_type_name="el.emp_type_name",
+        emp_type_name2="el.emp_type_name2",
         true_type="el.true_type",
         rate_main_sal="el.rate_main_sal",
         rate_soft_sal="el.rate_soft_sal",

@@ -19,6 +19,191 @@
 @boostrap_danger_color_hover_focus: #ac2925;
 @boostrap_danger_border_color_hover_focus: #761c19;
 /*Boostrap color*/
+
+/**Dialog*/
+.modal {
+
+    .modal-dialog {
+        top: 1.5vh;
+        width: 70%;
+
+        .form-control {
+            color: unset;
+            background-color: unset;
+            border: unset;
+        }
+
+        .modal-header {
+            background-color: @site_color;
+            padding: 8px;
+            border-radius: unset;
+
+            .modal-resize {
+                float: right;
+                padding-top: 7px;
+                padding-right: 15px;
+
+                i {
+                    color: white;
+                    font-size: 20px;
+                    padding-top: unset !important;
+                }
+            }
+
+            h4 {
+                color: white;
+                font-weight: 400;
+
+                button {
+                    color: white;
+
+                    i {
+                        padding-top: 9px;
+                    }
+                }
+
+                img {
+                    display: unset !important;
+                    height: 30px;
+                }
+
+                #title {
+                    display: inline;
+                    font-size: 1rem;
+                    line-height: 1rem;
+                    border-left: 1px solid #fff;
+                    margin-left: 0.5rem;
+                    padding-left: 0.5rem;
+                }
+            }
+        }
+
+        .modal-body {
+            padding: 15px 15px 15px 30px;
+            height: 75vh;
+            overflow: auto;
+
+            span {
+                color: #0D0D0D;
+                font-weight: 400;
+                padding-bottom: 3px;
+            }
+        }
+
+        .modal-footer {
+            background-color: @footer_dialog;
+            padding: 4px;
+
+            button {
+                background: #E46C0A;
+                border: 1px solid white;
+                color: white;
+                font-size: 16px;
+                padding: 5px 10px;
+                -webkit-appearance: none;
+                margin-left: 10px;
+
+                i {
+                    padding-right: 5px;
+                }
+            }
+
+            .hcs-form-dialog-icon-button {
+                background: 0 0;
+                border: none;
+                font-size: 22px;
+                padding: unset;
+                padding-top: 3px;
+            }
+
+            .last {
+                margin-right: 20px;
+            }
+        }
+    }
+
+    .resize-width {
+        width: 100% !important;
+        top: 0 !important;
+
+        .modal-content .modal-body {
+            height: ~"calc(100vh - 91px)" !important;
+        }
+    }
+}
+
+.modal:before {
+    vertical-align: top !important;
+}
+
+/*Confirm Dialog*/
+
+#myConfirmModal,
+#myMessageModal,
+#myErrorModal {
+
+    .modal-dialog {
+        width: 35%;
+        min-width: 30%;
+        top: 25vh;
+
+        .modal-header {
+            background-color: @site_color;
+            padding: 10px;
+            border-radius: unset;
+
+            h4 {
+                color: white;
+                font-weight: 400;
+                text-align: center;
+
+                button {
+                    color: white;
+                    padding-top: 5px;
+
+                    i {
+                        padding-top: 9px;
+                    }
+                }
+
+                img {
+                    display: unset !important;
+                    height: 30px;
+                }
+
+                #title {
+                    display: inline;
+                    font-size: 1rem;
+                    line-height: 1rem;
+                    margin-left: 0.5rem;
+                    padding-left: 0.5rem;
+                    border-left: unset;
+                }
+            }
+        }
+
+        .modal-body {
+            padding: 15px 15px 15px 15px;
+            min-height: 100px;
+            height: unset;
+            white-space: pre-line;
+
+            span {
+                color: #666;
+                font-weight: 400;
+            }
+        }
+
+        .modal-footer {
+            background-color: @footer_dialog;
+        }
+    }
+}
+
+#myConfirmModal:before {
+    vertical-align: top !important;
+}
+
 @media screen and (max-width: 600px){
     .hcs-modal-dialog .combobox-dialog {
     }

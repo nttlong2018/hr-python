@@ -33,12 +33,12 @@ def template(fn,*_path,**kwargs):
     is_multi_tenancy = get_django_settings_module().__dict__.get("USE_MULTI_TENANCY", False)
     def exec_request(request, **kwargs):
         from . import applications as apps
+
         _app= apps.get_app_by_file(fn.func_code.co_filename)
         if _app != None:
             if hasattr(_app.settings, "DEFAULT_DB_SCHEMA"):
-                import threading
-                ct = threading.currentThread()
-                setattr(ct, "DEFAULT_DB_SCHEMA", _app.settings.DEFAULT_DB_SCHEMA)
+                import tenancy
+                tenancy.set_schema(_app.settings.DEFAULT_DB_SCHEMA)
         global  settings
         if settings==None:
             from . import get_django_settings_module
@@ -58,6 +58,7 @@ def template(fn,*_path,**kwargs):
             is_public = False
             authenticate = None
             request_path=request.path
+            import tenancy
             tenancy_code=tenancy.get_customer_code()
             if not not_inclue_tenancy_code and tenancy_code!=None:
                 request_path=request_path[tenancy_code.__len__()+1:request_path.__len__()]
@@ -74,8 +75,7 @@ def template(fn,*_path,**kwargs):
 
             if hasattr(app.settings, "is_public"):
                 is_public = getattr(app.settings, "is_public")
-            if hasattr(app.settings, "authenticate"):
-                authenticate = getattr(app.settings, "authenticate")
+
             # if not is_public or callable(authenticate):
 
             extens.apply(request, _path, app)

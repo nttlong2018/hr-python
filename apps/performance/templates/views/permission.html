@@ -1,17 +1,27 @@
-﻿<div class="hcs-container">
-    <div class="row" style="margin:unset;">
-        <hcs-breadcumb data="mapName" selected-url="$partialpage" function="currentFunction"></hcs-breadcumb>
-        <div class="col-md-12" id="hcs-admin-system-container">
-            <hcs-left-menu data="mapName" avatar="false"></hcs-left-menu>
-            <div class="hcs-system-admin-content">
-                <div class="tab-content col-md-12" id="hcs-admin-system-panel-content">
-                   <div c-template url="${get_app_url('')}/pages/{{$partialpage}}" style="position: absolute; height: 100%; width: 100%;"></div>
-                </div>
-            </div>
-        </div>
-    </div>
+﻿<div class="hcs-container" style="height: 100%">
+    <page-sidebar on-add="onAdd" 
+                  on-edit="onEdit" 
+                  on-delete="onDelete" 
+                  on-save="onSave" 
+                  on-import="onImport" 
+                  on-export="onExport" 
+                  source="mapName" 
+                  key-field="function_id" 
+                  display-field="default_name" 
+                  icon-field="icon" 
+                  selected-key="selectedFunction"
+                  reload-on-change="true">
+        <site-map>Home > Manage > Function A</site-map>
+        <!--<advanced-search>
+            <input type="text" placeholder="Name" />
+            <input type="text" placeholder="Age" />
+        </advanced-search>-->
+        <content>
+            <div c-template url="${get_app_url('')}/pages/{{$partialpage}}" 
+                 style="position: absolute; top: 0; bottom: 0; left: 0; right: 0;"></div>
+        </content>
+    </page-sidebar>
 </div>
-<div class="clearfix"></div>
 <script>
     <%include file="../scripts/permission.js"/>
 </script>

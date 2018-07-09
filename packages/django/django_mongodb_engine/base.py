@@ -3,7 +3,7 @@ import datetime
 import decimal
 import sys
 import warnings
-from _curses import has_key
+# from _curses import has_key
 
 from django.conf import settings
 from django.core.exceptions import ImproperlyConfigured

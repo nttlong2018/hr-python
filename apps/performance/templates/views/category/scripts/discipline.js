@@ -2,8 +2,8 @@
     //("===============BEGIN TABLE==================")
     //Cấu hình tên field và caption hiển thị trên UI
     scope.tableFields = [
-        { "data": "marital_code", "title": "${get_res('marital_code_table_header','Mã')}" },
-        { "data": "marital_name", "title": "${get_res('marital_name_table_header','Tên')}" },
+        { "data": "disc_code", "title": "${get_res('disc_code_table_header','Mã')}" },
+        { "data": "disc_name", "title": "${get_res('disc_name_table_header','Tên')}" },
         { "data": "note", "title": "${get_res('note_table_header','Ghi chú')}" },
         { "data": "ordinal", "title": "${get_res('ordinal_table_header','Thứ tự')}" },
         { "data": "created_on", "title": "${get_res('created_on_table_header','Ngày tạo')}", "format": "date:" + scope.$root.systemConfig.date_format },
@@ -61,7 +61,7 @@
     function onEdit() {
         if (scope.currentItem) {
             scope.mode = 2; // set mode chỉnh sửa
-            openDialog("${get_res('Detail_Marital','Chi tiết Tình trạng hôn nhân')}", 'category/form/addMarital', function () { });
+            openDialog("${get_res('Detail_Discipline','Chi tiết hình thức kỷ luật')}", 'category/form/addDiscipline', function () { });
         } else {
             $msg.message("${get_global_res('Notification','Thông báo')}", "${get_app_res('No_Row_Selected','Không có dòng được chọn')}", function () { });
         }
@@ -72,14 +72,14 @@
      */
     function onAdd() {
         scope.mode = 1;// set mode tạo mới
-        openDialog("${get_res('Detail_Marital','Chi tiết Tình trạng hôn nhân')}", 'category/form/addMarital', function () { });
+        openDialog("${get_res('Detail_Discipline','Chi tiết hình thức kỷ luật')}", 'category/form/addDiscipline', function () { });
     }
     function onDelete() {
         if (!scope.selectedItems || scope.selectedItems.length === 0) {
             $msg.message("${get_global_res('Notification','Thông báo')}", "${get_global_res('No_Row_Selected','Không có dòng được chọn')}", function () { });
         } else {
             $msg.confirm("${get_global_res('Notification','Thông báo')}", "${get_global_res('Do_You_Want_Delete','Bạn có muốn xóa không?')}", function () {
-                services.api("${get_api_key('app_main.api.HCSLS_Marital/delete')}")
+                services.api("${get_api_key('app_main.api.HCSLS_Discipline/delete')}")
                     .data(scope.selectedItems)
                     .done()
                     .then(function (res) {
@@ -96,7 +96,7 @@
     function onCopy() {
         if (scope.currentItem) {
             scope.mode = 3; // set mode chỉnh sửa
-            openDialog("${get_res('Detail_Marital','Chi tiết Tình trạng hôn nhân')}", 'category/form/addMarital', function () { });
+            openDialog("${get_res('Detail_Discipline','Chi tiết hình thức kỷ luật')}", 'category/form/addDiscipline', function () { });
         } else {
             $msg.message("${get_global_res('Notification','Thông báo')}", "${get_global_res('No_Row_Selected','Không có dòng được chọn')}", function () { });
         }
@@ -108,7 +108,7 @@
     function onExport() {
         lv.ExportFile("/excel_export")
             .data({
-                'collection_name': 'HCSLS_Marital'
+                'collection_name': 'HCSLS_Discipline'
             }).done();
     }
     function onImport() {
@@ -133,14 +133,8 @@
             //Đặt ID cho form dialog
             dialog(scope).url(path).done(function () {
                 callback();
-                //Set resizable cho form dialog theo id
-                $('#' + id).ready(function () {
-                    $('#' + id + ' .modal-dialog .modal-content .modal-header').on('mousedown touchstart', function (e) {
-                        $('#' + id + ' .modal-dialog').draggable();
-                    }).bind('mouseup touchend', function () {
-                        $('#' + id + ' .modal-dialog').draggable('destroy');
-                    });
-                })
+                //Set draggable cho form dialog
+                $dialog.draggable();
             });
         }
     }
@@ -155,7 +149,7 @@
             sort[v.columns] = (v.type === "asc") ? 1 : -1;
         });
         sort[orderBy[0].columns] =
-            services.api("${get_api_key('app_main.api.HCSLS_Marital/get_list_with_searchtext')}")
+            services.api("${get_api_key('app_main.api.HCSLS_Discipline/get_list_with_searchtext')}")
                 .data({
                     //parameter at here
                     "pageIndex": iPage - 1,

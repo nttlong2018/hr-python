@@ -110,8 +110,8 @@ class MongoQuery(NonrelQuery):
                     )))
         import threading
         ct=threading.currentThread()
-        if hasattr(ct,"DEFAULT_DB_SCHEMA"):
-            schema=ct.DEFAULT_DB_SCHEMA
+        if hasattr(ct,"tenancy_code"):
+            schema=ct.tenancy_code
 
 
         super(MongoQuery, self).__init__(compiler, fields)
@@ -350,9 +350,9 @@ class SQLCompiler(NonrelCompiler):
         :return:
         """
         if self.query.get_meta().db_table == "auth_user":
-            print "prepare query for {0}".format("auth_user")
+            print "prepare query for {0} with schema {1}".format("auth_user",schema)
         if self.query.get_meta().db_table=="django_session":
-            print "prepare query for {0}".format("django_session")
+            print "prepare query for {0}  with schema '{1}".format("django_session",schema)
 
             return self.connection.get_collection("django_session")
         if schema == None or not type(schema) in [str, unicode]:  # add schema
@@ -488,13 +488,13 @@ class SQLInsertCompiler(NonrelInsertCompiler, SQLCompiler):
 
         collection = self.get_collection(schema)
         options = self.connection.operation_flags.get('save', {})
-        if collection.collection.name in ["django_session","django_session"]:
+        if collection.collection.name == "django_session":
             import threading
             ct=threading.currentThread()
             if hasattr(ct,"DEFAULT_DB_SCHEMA"):
                 doc["schema"] = ct.DEFAULT_DB_SCHEMA
             else:
-                doc["schema"]=schema
+                doc["schema"]=ct.tenancy_code
 
         if return_id:
 

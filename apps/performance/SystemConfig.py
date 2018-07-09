@@ -2,6 +2,7 @@
 import threading
 from quicky import tenancy
 import logging
+import datetime
 import api.models.HCSSYS_SystemConfig as HCSSYS_SystemConfig
 logger = logging.getLogger(__name__)
 cache={}
@@ -17,7 +18,7 @@ _data=dict(
     num_of_lower= 1,#Number of characte
     is_has_symbols= False,#Special characters
     num_of_symbol= 1,#Number of character
-    created_on= None,
+    created_on= datetime.datetime.now(),
     created_by= "Application",
     modified_on= None,
     modified_by= None,

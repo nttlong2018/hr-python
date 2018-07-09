@@ -265,17 +265,19 @@ class SessionBase(object):
         key.
         """
         if schema == None or not type(schema) in [str,unicode]:  # add schema
-            import inspect
-            fx = inspect.stack()
-            error_detail = ""
-            for x in fx:
-                error_detail += "\n\t {0}, line {1}".format(fx[1], fx[2])
-            raise (
-                Exception(
-                    "can not call ''{1}'' without schema in '{0}'.\nDetail:\n{2}".format(
-                        __file__, "SessionBase.flush",
-                        error_detail
-                    )))
+            import threading
+            schema=threading.current_thread().tenancy_code
+            # import inspect
+            # fx = inspect.stack()
+            # error_detail = ""
+            # for x in fx:
+            #     error_detail += "\n\t {0}, line {1}".format(fx[1], fx[2])
+            # raise (
+            #     Exception(
+            #         "can not call ''{1}'' without schema in '{0}'.\nDetail:\n{2}".format(
+            #             __file__, "SessionBase.flush",
+            #             error_detail
+            #         )))
         self.clear()
         self.delete(schema=schema)
         self.create(schema=schema)

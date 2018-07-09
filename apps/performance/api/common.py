@@ -21,6 +21,15 @@ def generate_guid():
 def get_collection(col_name):
     return models.db_context.db.get_collection(quicky.tenancy.get_schema() + "." + col_name)
 
+def get_db_context():
+    return models.db_context.db
+
+def get_current_schema():
+    return quicky.tenancy.get_schema()
+
+def get_collection_name_with_schema(col_name):
+    return quicky.tenancy.get_schema() + "." + col_name
+
 def get_user_id():
     user = "application"
     if hasattr(threading.current_thread(),"user"):

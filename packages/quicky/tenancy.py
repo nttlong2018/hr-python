@@ -11,6 +11,11 @@ def get_customer_code():
         return threading.currentThread().request_tenancy_code
     else:
         return None
+def set_schema(schema):
+    setattr(threading.currentThread(),"tenancy_code",schema)
+    setattr(threading.current_thread(), "tenancy_code", schema)
+def set_customer_code(code):
+    setattr(threading.currentThread(), "request_tenancy_code",code)
     
 
      

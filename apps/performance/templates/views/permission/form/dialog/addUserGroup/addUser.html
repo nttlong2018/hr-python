@@ -23,6 +23,7 @@
 </div>
 <script>
     (function (scope) {
+        scope.title = scope.$parent.headerTitle;
         scope.tableFields = [
             { "data": "login_account", "title": "${ get_res('login_account_table_title', 'Mã người dùng') }"},
             { "data": "display_name", "title": "${ get_res('display_name_table_title', 'Tên hiển thị') }"},
@@ -76,7 +77,7 @@
         }
 
         function onResizeDialog() {
-            $('#myComboboxDialog .modal-dialog').toggleClass('resize-width');
+            $dialog.fullScreen();
             setTimeout(function () {
                 $(window).trigger('resize');
             }, 100);
@@ -94,8 +95,7 @@
                     .done()
                     .then(function (res) {
                         if (res.error == null) {
-                            $('#myComboboxDialog').remove();
-                            $('.modal-backdrop:last').remove();
+                            $dialog.closeDialog();
                             $msg.alert("${get_global_res('Handle_Success','Thao tác thành công')}", $type_alert.SUCCESS);
                             reloadData();
                         } else {
@@ -105,7 +105,9 @@
             }
         }
 
-        function close() { }
+        function close() {
+            $dialog.closeDialog();
+        }
 
         function reloadData() {
             var tableConfig = scope.$parent.$$table_List_User_Config;

@@ -55,7 +55,16 @@
     scope.onImport = onImport;
     scope._tableData = _tableData;
     scope.mapAccess_mode = [];
-    //scope.getDisplayNameAccessMode = getDisplayNameAccessMode;
+    scope.getDisplayNameAccessMode = getDisplayNameAccessMode;
+
+
+    scope.$parent.$parent.$parent.onEdit = onEdit;
+    scope.$parent.$parent.$parent.onAdd = onAdd;
+    scope.$parent.$parent.$parent.onDelete = onDelete;
+    scope.$parent.$parent.$parent.onCopy = onCopy;
+    scope.$parent.$parent.$parent.onSearch = onSearch;
+    scope.$parent.$parent.$parent.onExport = onExport;
+    scope.$parent.$parent.$parent.onImport = onImport;
 
     /**
      * Hàm mở form chỉnh sửa
@@ -135,14 +144,8 @@
             //Đặt ID cho form dialog
             dialog(scope).url(path).done(function () {
                 callback();
-                //Set resizable cho form dialog theo id
-                $('#' + id).ready(function () {
-                    $('#' + id + ' .modal-dialog .modal-content .modal-header').on('mousedown touchstart', function (e) {
-                        $('#' + id + ' .modal-dialog').draggable();
-                    }).bind('mouseup touchend', function () {
-                        $('#' + id + ' .modal-dialog').draggable('destroy');
-                    });
-                })
+                //Set draggable cho form dialog
+                $dialog.draggable();
             });
         }
     }
@@ -153,16 +156,16 @@
     function pressEnter($row) {
         scope.onEdit();
     }
-    //function getDisplayNameAccessMode(code) {
-    //    var name = '';
-    //    _.each(scope.mapAccess_mode, function (val) {
-    //        if (val.value == code) {
-    //            name = val.caption;
-    //            return;
-    //        }
-    //    })
-    //    return name;
-    //}
+    function getDisplayNameAccessMode(code) {
+        var name = '';
+        _.each(scope.mapAccess_mode, function (val) {
+            if (val.value === code) {
+                name = val.caption;
+                return;
+            }
+        })
+        return name;
+    }
     function _tableData(iPage, iPageLength, orderBy, searchText, callback) {
         var sort = {};
         $.each(orderBy, function (i, v) {

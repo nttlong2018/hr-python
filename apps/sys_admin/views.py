@@ -16,6 +16,7 @@ import authorization
 
 from datetime import date, datetime
 import quicky
+from quicky import tenancy
 application=quicky.applications.get_app_by_file(__file__)
 import forms
 import logging
@@ -49,7 +50,7 @@ def login(request):
         _login["language"] = request._get_post().get("language", "en")
         user=authenticate(username=request._get_post().get("username",""),
                           password=request._get_post().get("password",""),
-                          schema="sys")
+                          schema=tenancy.get_schema())
         if user==None:
             _login.update(dict(
                 error=dict(
@@ -59,7 +60,9 @@ def login(request):
             return request.render(_login)
         else:
             try:
-                request_login(request,user,schema="sys")
+                from django.contrib.auth import logout
+                logout(request,schema=tenancy.get_schema())
+                request_login(request,user,schema=tenancy.get_schema())
                 return redirect(_login["next"])
             except Exception as ex:
                 raise (ex)

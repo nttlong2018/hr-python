@@ -48,11 +48,20 @@
         scope.handleData = new handleData();
         scope.mapName = scope.handleData.mapName;
         scope.currentFunction = scope.mapName[0];
+
+        scope.selectedFunction = (scope.mapName.length > 0) ? scope.mapName[0].function_id : null;
     }
 
     /*                                                                                          */
     /* ===============================  Implementation - END  ==================================*/
     /*                                                                                          */
+
+    
+    scope.$watch("selectedFunction", function (function_id) {
+        console.log(function_id);
+        var $his = scope.$root.$history.data();
+        window.location.href = "#page=" + $his.page + "&f=" + function_id;
+    });
 
     scope.$root.$history.onChange(scope, function (data) {
         if (scope.mapName.length > 0) {

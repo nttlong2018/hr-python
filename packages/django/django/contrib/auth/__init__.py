@@ -105,7 +105,11 @@ def login(request, user,schema = None):
             # authenticated user.
             request.session.flush(schema = request.user.schema)
     else:
-        request.session.cycle_key(schema=request.user.schema)
+        if request.user.is_anonymous():
+            import threading
+            request.session.cycle_key(schema=threading.current_thread().tenancy_code)
+        else:
+            request.session.cycle_key(schema=request.user.schema)
     request.session[SESSION_KEY] = user.pk
     request.session[BACKEND_SESSION_KEY] = user.backend
     if hasattr(request, 'user'):
@@ -123,7 +127,7 @@ def login(request, user,schema = None):
     delattr(ct, "__current_schema__")
 
 
-def logout(request):
+def logout(request,schema=None):
     """
     Removes the authenticated user's ID from the request and flushes their
     session data.
@@ -133,7 +137,7 @@ def logout(request):
     user = getattr(request, 'user', None)
     if hasattr(user, 'is_authenticated') and not user.is_authenticated():
         user = None
-    user_logged_out.send(sender=user.__class__, request=request, user=user)
+    user_logged_out.send(sender=user.__class__, request=request, user=user,schema=schema)
 
     # remember language choice saved to session
     language = request.session.get('django_language')

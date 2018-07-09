@@ -22,28 +22,37 @@
                     <div class="row" id="collapseDialogCommonInfoGroup">
                         <div class="col-md-{{col}}">
                             <div class="form-group row hcs-group-form-group">
-                                <!--Mã tình trạng hôn nhân-->
-                                <label for="inputEmp_Marital_Code" class="col-sm-5 zb-form-label">${get_res('marital_code','Mã Tình trạng hôn nhân')}</label>
+                                <!--Mã hình thức kỷ luật-->
+                                <label for="input_disc_code" class="col-sm-5 zb-form-label">${get_res('disc_code','Mã hình thức kỷ luật')}</label>
                                 <div class="col-sm-7">
-                                    <input-text id="inputEmp_Marital_Code" ng-model="entity.marital_code" ng-disabled="{{ __mode === 2 ? 'true' : 'false' }}" required>
+                                    <input-text id="input_disc_code" ng-model="entity.disc_code" ng-disabled="{{ __mode === 2 ? 'true' : 'false' }}" required>
                                 </div>
                             </div>
                         </div>
                         <div class="col-md-{{col}}">
                             <div class="form-group row hcs-group-form-group">
-                                <!--Tên tình trạng hôn nhân-->
-                                <label for="inputEmp_Marital_Name" class="col-sm-5 zb-form-label">${get_res('marital_name','Tên tình trạng hôn nhân')}</label>
+                                <!--Tên hình thức kỷ luật-->
+                                <label for="input_disc_name" class="col-sm-5 zb-form-label">${get_res('disc_name','Tên hình thức kỷ luật')}</label>
                                 <div class="col-sm-7">
-                                    <input-text id="inputEmp_Marital_Name" ng-model="entity.marital_name" required>
+                                    <input-text id="input_disc_name" ng-model="entity.disc_name" required>
                                 </div>
                             </div>
                         </div>
                         <div class="col-md-{{col}}">
                             <div class="form-group row hcs-group-form-group">
                                 <!--Tên khác-->
-                                <label for="inputEmp_Marital_Name2" class="col-sm-5 zb-form-label">${get_res('marital_name2','Tên khác')}</label>
+                                <label for="input_disc_name2" class="col-sm-5 zb-form-label">${get_res('disc_name2','Tên khác')}</label>
                                 <div class="col-sm-7">
-                                    <input-text id="inputEmp_Marital_Name2" ng-model="entity.marital_name2">
+                                    <input-text id="input_disc_name2" ng-model="entity.disc_name2">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-{{col}}">
+                            <div class="form-group row hcs-group-form-group">
+                                <!--Kéo dài thời hạn lên lương-->
+                                <label for="input_is_due_salary" class="col-sm-5 zb-form-label">${get_res('is_due_salary','Kéo dài thời hạn lên lương')}</label>
+                                <div class="col-sm-7">
+                                    <input-checkbox id="input_is_due_salary" ng-model="entity.is_due_salary">
                                 </div>
                             </div>
                         </div>
@@ -84,7 +93,7 @@
                                 <div class="col-sm-12">
                                      <div data-c-html-box 
                                           ng-model="entity.note"
-                                          style="height:50px"
+                                          style="height:75px"
                                           id="inputNote">
                                      </div>
                                 </div>
@@ -131,9 +140,7 @@
          * Thay đỗi kích thước form Dialog và các control trên form dialog
          */
         function onResizeDialog() {
-            var ele = $('#myModal .modal-dialog');
-            ele.toggleClass('resize-width');
-            ele.removeAttr("style");
+            $dialog.fullScreen();
             scope.col = scope.col == 12 ? 6 : 12;
             scope.col_group = scope.col_group == 6 ? 8 : 6;
         }
@@ -148,7 +155,7 @@
                 beforeCallToServer();
                 editData(function (res) {
                     if (res.error == null) {
-                        $('#myModal').modal('hide');//Đóng form input
+                        $dialog.closeDialog();//Đóng form input
                         $msg.alert("${get_global_res('Handle_Success','Thao tác thành công')}", $type_alert.SUCCESS);//Xuất thông báo thành cônng
                         if (scope.__mode == 1 || scope.__mode == 3) {
                             //Reload table data
@@ -217,8 +224,8 @@
         }
 
         function getUrl() {
-            return scope.__mode == 1 || scope.__mode == 3 ? "${get_api_key('app_main.api.HCSLS_Marital/insert')}" /*Mode 1: Tạo mới*/
-                    : "${get_api_key('app_main.api.HCSLS_Marital/update')}" /*Mode 2: Cập nhật*/
+            return scope.__mode == 1 || scope.__mode == 3 ? "${get_api_key('app_main.api.HCSLS_Discipline/insert')}" /*Mode 1: Tạo mới*/
+                    : "${get_api_key('app_main.api.HCSLS_Discipline/update')}" /*Mode 2: Cập nhật*/
         }
 
         function reloadData() {
@@ -238,15 +245,15 @@
                 "result": false,
                 "errorMsg": ''
             };
-            valid = lv.Validate(scope.entity.marital_code);
+            valid = lv.Validate(scope.entity.disc_code);
             rs.result = valid.isNullOrWhiteSpace();
-            rs.errorMsg = rs.result === true ? "${get_res('marital_code_is_not_null','Mã tình trạng hôn nhân không được để trống')}" + '\n' : "" ;
+            rs.errorMsg = rs.result === true ? "${get_res('disc_code_is_not_null','Mã hình thức kỷ luật không được để trống')}" + '\n' : "" ;
             if(rs.result === true){
                 return rs;
             }
-            valid = lv.Validate(scope.entity.marital_name);
+            valid = lv.Validate(scope.entity.disc_name);
             rs.result = valid.isNullOrWhiteSpace();
-            rs.errorMsg = rs.result === true ? "${get_res('marital_name_is_not_null','Tên tình trạng hôn nhân không được để trống')}" + '\n' : "" ;
+            rs.errorMsg = rs.result === true ? "${get_res('disc_name_is_not_null','Tên hình thức kỷ luật không được để trống')}" + '\n' : "" ;
             if(rs.result === true){
                 return rs;
             }
