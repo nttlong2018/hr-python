@@ -18,6 +18,10 @@ def get_user(request, schema = None):
                     __file__, "get_user",
                     error_detail
                 )))
+    if hasattr(request,"get_app") and \
+            hasattr(request.get_app(),"settings") and \
+            hasattr(request.get_app().settings,"DEFAULT_DB_SCHEMA"):
+        schema=request.get_app().settings.DEFAULT_DB_SCHEMA
     if not hasattr(request, '_cached_user'):
         request._cached_user = auth.get_user(request,schema=schema)
         setattr(request._cached_user,"schema",schema)
@@ -35,6 +39,11 @@ class AuthenticationMiddleware(object):
         schema=settings.MULTI_TENANCY_DEFAULT_SCHEMA
         if hasattr(ct,"tenancy_code"):
             schema=ct.tenancy_code
+        if hasattr(request,"get_app") and \
+                hasattr(request.get_app(),"settings") and \
+                hasattr(request.get_app().settings,"DEFAULT_DB_SCHEMA"):
+            schema = request.get_app().settings.DEFAULT_DB_SCHEMA
+
         request.user = SimpleLazyObject(lambda: get_user(request,schema=schema))
 
 

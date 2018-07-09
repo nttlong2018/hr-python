@@ -105,7 +105,7 @@ def login(request, user,schema = None):
             # authenticated user.
             request.session.flush(schema = request.user.schema)
     else:
-        if request.user.is_anonymous():
+        if request.user.is_anonymous() and not hasattr(request.user,"schema"):
             import threading
             request.session.cycle_key(schema=threading.current_thread().tenancy_code)
         else:
@@ -125,6 +125,7 @@ def login(request, user,schema = None):
 
     setattr(request,"__current_schema__",schema)
     delattr(ct, "__current_schema__")
+    request._cached_user = user
 
 
 def logout(request,schema=None):

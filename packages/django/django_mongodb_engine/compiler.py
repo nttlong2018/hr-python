@@ -112,8 +112,6 @@ class MongoQuery(NonrelQuery):
         ct=threading.currentThread()
         if hasattr(ct,"tenancy_code"):
             schema=ct.tenancy_code
-
-
         super(MongoQuery, self).__init__(compiler, fields)
         self.ordering = []
         self.collection = self.compiler.get_collection(schema)
@@ -187,6 +185,7 @@ class MongoQuery(NonrelQuery):
             return []
 
         fields = get_selected_fields(self.query)
+        print("Exec query on {0} with filter {1}".format(self.collection.collection.name,self.mongo_query.__str__()))
         cursor = self.collection.find(self.mongo_query, fields)
         if self.ordering:
             cursor.sort(self.ordering)
@@ -352,8 +351,8 @@ class SQLCompiler(NonrelCompiler):
         if self.query.get_meta().db_table == "auth_user":
             print "prepare query for {0} with schema {1}".format("auth_user",schema)
         if self.query.get_meta().db_table=="django_session":
+            schema="sys"
             print "prepare query for {0}  with schema '{1}".format("django_session",schema)
-
             return self.connection.get_collection("django_session")
         if schema == None or not type(schema) in [str, unicode]:  # add schema
             import inspect

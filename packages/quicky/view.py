@@ -34,7 +34,9 @@ def template(fn,*_path,**kwargs):
     def exec_request(request, **kwargs):
         from . import applications as apps
 
+
         _app= apps.get_app_by_file(fn.func_code.co_filename)
+        print(request.session.session_key)
         if _app != None:
             if hasattr(_app.settings, "DEFAULT_DB_SCHEMA"):
                 import tenancy
@@ -68,6 +70,10 @@ def template(fn,*_path,**kwargs):
                         app_name="" 
                 from . import applications
                 app=applications.get_app_by_name(app_name)
+                if app != None:
+                    if hasattr(app.settings, "DEFAULT_DB_SCHEMA"):
+                        import tenancy
+                        tenancy.set_schema(app.settings.DEFAULT_DB_SCHEMA)
 
             if not hasattr(app, "settings") or app.settings==None:
                 raise (Exception("'settings.py' was not found in '{0}' at '{1}' or look like you forgot to place 'import settings' in '{1}/__init__.py'".format(app.name, os.getcwd()+os.sep+app.path)))

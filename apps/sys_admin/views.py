@@ -60,8 +60,6 @@ def login(request):
             return request.render(_login)
         else:
             try:
-                from django.contrib.auth import logout
-                logout(request,schema=tenancy.get_schema())
                 request_login(request,user,schema=tenancy.get_schema())
                 return redirect(_login["next"])
             except Exception as ex:
