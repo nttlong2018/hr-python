@@ -197,7 +197,7 @@ class BaseUserManager(models.Manager):
 class UserManager(BaseUserManager):
 
     def _create_user(self, username, email, password,
-                     is_staff, is_superuser, **extra_fields):
+                     is_staff, is_superuser,schema=None, **extra_fields):
         """
         Creates and saves a User with the given username, email and password.
         """
@@ -210,11 +210,11 @@ class UserManager(BaseUserManager):
                           is_superuser=is_superuser, last_login=now,
                           date_joined=now, **extra_fields)
         user.set_password(password)
-        user.save(using=self._db)
+        user.save(using=self._db,schema=schema)
         return user
 
-    def create_user(self, username, email=None, password=None, **extra_fields):
-        return self._create_user(username, email, password, False, False,
+    def create_user(self, username, email=None, password=None,schema=None, **extra_fields):
+        return self._create_user(username, email, password, False, False,schema,
                                  **extra_fields)
 
     def create_superuser(self, username, email, password, **extra_fields):

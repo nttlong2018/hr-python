@@ -1,0 +1,30 @@
+<div title="{{getTitle()}}">
+    <div class="row">
+        <div class="col-xs-4 col-sm-4 col-md-2 col-lg-2">
+        	<label for="">${get_app_res("Code")}</label>
+        </div>
+        <div class="col-xs-8 col-sm-8 col-md-10 col-lg-10">
+            <input type="text" class="form-control" placeholder='${get_app_res("Enter code of customer")}' ng-model="data.code">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-4 col-sm-4 col-md-2 col-lg-2">
+        	<label for="">${get_app_res("Schema")}</label>
+        </div>
+        <div class="col-xs-8 col-sm-8 col-md-10 col-lg-10">
+            <input type="text"  class="form-control" placeholder='${get_app_res("Enter schema for customer database")}' ng-model="data.schema">
+        </div>
+    </div>
+</div>
+
+<script>
+    (function(scope,params){
+    console.log(scope);
+        scope.getTitle=function(){
+            if(!params) return "${get_app_res('Add new customer')}";
+            else  return "${get_app_res('Edit customer')}";
+        }
+
+        scope.$applyAsync();
+    });
+</script>
