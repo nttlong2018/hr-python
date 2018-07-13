@@ -75,18 +75,84 @@ def get_items(args):
         name=1,
         _id=0
     ).get_list()
+    import sys
+    items.insert(0, {
+        "code": "-",
+        "name": "default"
+    })
+    from quicky import applications
+    app=applications.get_app_by_file(__file__)
+    items.append({
+        "code":"system",
+        "name":"system"
+    })
+
+
     return items
 def get_list_of_users_by_customer(args):
     from .. models import auth_user
     from .. models import sys_customers
-    customer_item=sys_customers().find_one("code=={0}",args["data"]["customerCode"])
-    if customer_item == None:
-        return {}
+    schema=None
+    if args["data"]["customerCode"] == "-":
+        import sys
+        schema=sys.modules["settings"].MULTI_TENANCY_DEFAULT_SCHEMA
+    elif args["data"]["customerCode"]== "system":
+        from quicky import applications
+        schema =applications.get_app_by_file(__file__).mdl.settings.DEFAULT_DB_SCHEMA
+    else:
+        customer_item=sys_customers().find_one("code=={0}",args["data"]["customerCode"])
+        schema = customer_item["schema"]
+        if customer_item == None:
+            return {}
 
-    data=auth_user().switch_schema(customer_item["schema"])\
+    data=auth_user()\
+        .switch_schema(schema)\
         .aggregate()\
+        .project(
+        _id=0,
+        username=1,
+        first_name=1,
+        last_name=1,
+        is_active=1,
+        is_superuser=1,
+        is_staff=1,
+        last_login=1,
+        email=1,
+        date_joined=1
+
+    )\
         .get_page(
         page_size=args["data"].get("pageSize", 50),
         page_index=args["data"].get("pageIndex", 0)
     )
     return data
+def sigin_as_user(args):
+    schema = None
+    code=args["data"]["code"]
+    if code == "-":
+        import sys
+        schema = sys.modules["settings"].MULTI_TENANCY_DEFAULT_SCHEMA
+    elif args["data"]["code"]== "system":
+        from quicky import applications
+        schema = applications.get_app_by_file(__file__).mdl.settings.DEFAULT_DB_SCHEMA
+    else:
+        customer_item=sys_customers().find_one("code=={0}",args["data"]["code"])
+        schema = customer_item["schema"]
+
+    try:
+        from django.contrib.auth.models import User
+        obj_users = User.objects
+        user = obj_users.get(username=args["data"]["username"], schema=schema)
+        from django.contrib.auth import authenticate, login,logout
+        setattr(user,"backend",'django.contrib.auth.backends.ModelBackend')
+        logout(args["request"],schema="sys")
+        args["request"].session.clear()
+        args["request"].user=user
+        # login(args["request"], user, schema=schema)
+        return dict(
+            url=args["request"].get_abs_url()
+        )
+    except Exception as ex:
+        return dict(
+            error=dict(msg= args["request"].get_app_res("Login fail"))
+        )

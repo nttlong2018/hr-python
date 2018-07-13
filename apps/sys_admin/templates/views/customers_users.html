@@ -16,9 +16,52 @@
 
 	  </div>
 	  <div class="panel-body">
-			{{data}}
+		  <table class="table table-bordered table-hover">
+		  	<thead>
+		  		<tr>
+		  			<th>${get_app_res("Username")}</th>
+					<th>${get_app_res("Firstname")}</th>
+					<th>${get_app_res("Lastname")}</th>
+					<th>${get_app_res("Active")}</th>
+					<th>${get_app_res("Super user")}</th>
+					<th>${get_app_res("Staff")}</th>
+					<td></td>
+		  		</tr>
+		  	</thead>
+		  	<tbody>
+		  		<tr ng-repeat="p in data.items">
+		  			<td>
+						{{p.username}}
+					</td>
+					<td>
+						{{p.first_name}}
+					</td>
+					<td>
+						{{p.last_name}}
+					</td>
+					<td>
+						<input type="checkbox" value="p.is_active">
+					</td>
+					<td>
+						<input type="checkbox" value="p.is_superuser">
+					</td>
+					<td>
+						<input type="checkbox" value="p.is_staff">
+					</td>
+					<td>
+						<button type="button" class="btn btn-primary" ng-click="doSignIn(p)">
+							${get_app_res("SignIn")}
+						</button>
+					</td>
+		  		</tr>
+		  	</tbody>
+		  </table>
+
 	  </div>
 </div>
+		<div>
+			{{data}}
+		</div>
 	</div>
 </div>
 <script>
@@ -41,6 +84,26 @@
 				.then(function(res){
 					scope.data=res;
 					scope.$applyAsync();
+				});
+		}
+		scope.doSignIn=function(item){
+			scope.$ws.api('${get_api_key("admin.api.customers/sigin_as_user")}')
+			.data({
+				username:item.username,
+				code:scope.selectedCode
+			})
+			.done()
+				.then(function(res){
+				debugger
+					if(res.error){
+						scope.$error(res);
+						return;
+					}
+					else {
+						window.location.href=res.url;
+						return;
+					}
+
 				});
 		}
 	});
