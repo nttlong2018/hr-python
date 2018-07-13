@@ -5,6 +5,7 @@ import logging
 logger=logging.getLogger(__name__)
 _cache_apps={}
 __cache_find_path={}
+_app_by_host_dir_cache={}
 _settings=None
 def load_app(*args,**kwargs):
     # type: (tuple) -> list
@@ -33,7 +34,24 @@ def load_app(*args,**kwargs):
         logger.debug(ex)
         logger.debug("quicky.applications.load_app error {0} in '{1}'".format(ex,args[0]["path"]))
         raise (Exception("quicky.applications.load_app error in '{1}'.\n Detail information is:\n\t\t ""{0}"" ".format(ex,args[0]["path"])))
-
+def get_app_by_host_dir(dir):
+    """
+    get application by host dir
+    :param dir:
+    :return:
+    """
+    global _app_by_host_dir_cache
+    if _app_by_host_dir_cache.has_key(dir):
+        return _app_by_host_dir_cache[dir]
+    else:
+        for key in _cache_apps.keys():
+            if dir == None or dir == "":
+                if _cache_apps[key].host_dir == "":
+                    _app_by_host_dir_cache[dir]= _cache_apps[key]
+            else:
+                if _cache_apps[key].host_dir.lower() == dir.lower():
+                    _app_by_host_dir_cache[dir] = _cache_apps[key]
+    return _app_by_host_dir_cache[dir]
 def get_app_by_file(file_name):
     # type: (str) -> app_info
     """

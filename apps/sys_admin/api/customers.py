@@ -69,3 +69,24 @@ def insert_item(args):
 def get_item(args):
     item = sys_customers().find_one("code=={0}", args["data"]["code"])
     return item
+def get_items(args):
+    items = sys_customers().aggregate().project(
+        code=1,
+        name=1,
+        _id=0
+    ).get_list()
+    return items
+def get_list_of_users_by_customer(args):
+    from .. models import auth_user
+    from .. models import sys_customers
+    customer_item=sys_customers().find_one("code=={0}",args["data"]["customerCode"])
+    if customer_item == None:
+        return {}
+
+    data=auth_user().switch_schema(customer_item["schema"])\
+        .aggregate()\
+        .get_page(
+        page_size=args["data"].get("pageSize", 50),
+        page_index=args["data"].get("pageIndex", 0)
+    )
+    return data

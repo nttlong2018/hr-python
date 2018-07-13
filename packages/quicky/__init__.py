@@ -19,8 +19,21 @@ _cache_multi_tenancy={}
 global lock
 lock=threading.Lock()
 def get_tenancy_code_regex():
+    """
+    get Regex for tenancyCode tenancy code must be star with alphabet and including number, "-","_":
+    :return:
+    """
     return "[A-Za-z0-9](?:[A-Za-z0-9\-\_]{0,61}[A-Za-z0-9])"
     # return "\(w{0,24})"
+def validate_tenancy_code(code):
+    """
+    Validate tenancy code 
+    :param code:
+    :return:
+    """
+    import re
+    return re.compile(get_tenancy_code_regex()).match(code)
+
 
 def get_static_server_path(file,path):
     # type: (str,str) -> str

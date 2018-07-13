@@ -53,6 +53,8 @@ def template(fn,*_path,**kwargs):
         try:
             from django.shortcuts import redirect
             import threading
+            import tenancy
+
             not_inclue_tenancy_code=False
             if hasattr(request,"not_inclue_tenancy_code"):
                 not_inclue_tenancy_code=request.not_inclue_tenancy_code
@@ -71,6 +73,11 @@ def template(fn,*_path,**kwargs):
                 from . import applications
                 app=applications.get_app_by_name(app_name)
                 if app != None:
+                    if hasattr(app.settings, "DEFAULT_DB_SCHEMA"):
+                        import tenancy
+                        tenancy.set_schema(app.settings.DEFAULT_DB_SCHEMA)
+                else:
+                    app = applications.get_app_by_host_dir(app_name)
                     if hasattr(app.settings, "DEFAULT_DB_SCHEMA"):
                         import tenancy
                         tenancy.set_schema(app.settings.DEFAULT_DB_SCHEMA)

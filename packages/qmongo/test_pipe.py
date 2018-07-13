@@ -3,6 +3,7 @@ from  pymongo import MongoClient
 import gridfs
 from helpers import filter
 from helpers import aggregate
+from qview import create_view
 cnn=MongoClient(host="172.16.7.63",port=27017)
 db=cnn.get_database("lv01_lms")
 db.authenticate("sys","123456")
@@ -24,6 +25,7 @@ db.authenticate("sys","123456")
 # })
 fs=gridfs.GridFS(db)
 item=fs.find_one(filter("filename='test'").get_filter())
+
 # ret=fs.put("Hello",filename="test")
  # ObjectId('5af2a9de927e005080821409')
  # fs.find(filter("_id=@id",id=))

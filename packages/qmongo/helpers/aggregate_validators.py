@@ -33,6 +33,8 @@ class validator:
         :param kwargs:
         :return:list of unknown fields is collecion of fields where is not in fields param
         """
+        if expr == 0:
+            return 0
         _expr=expr
         if type(params) is tuple and params.__len__() > 0 :
             if type(params[0]) is dict:

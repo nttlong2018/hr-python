@@ -11,7 +11,7 @@ import pymongo
 import pytz
 from bson.codec_options import CodecOptions
 import helpers
-
+_cach_view={}
 _cache_create_key_for_collection=None
 def get_current_schema():
     # type: () -> str
@@ -935,25 +935,26 @@ class AGGREGATE():
                 kwargs=args[0]
         _next_step_fields=[]
         for key in kwargs.keys():
-            if kwargs[key]==1:
-                if not self.check_fields(key):
-                    raise (Exception("What is '" + key + "'?:\n" +
-                                     " \n Your selected fields now is bellow list: \n" +
-                                     self.descibe_fields("\t\t\t", self.get_selected_fields())))
-                _project.update({
-                    key: 1
-                })
-                _next_step_fields.append(key)
-            else:
-                unknown_fields = self._coll._model.validate_expression(kwargs[key],self.get_selected_fields())
-                if unknown_fields.__len__()>0:
-                    raise (Exception("What is bellow list of fields?:\n"+self.descibe_fields("\t\t",unknown_fields)+
-                                     " \n Your selected fields now is bellow list: \n"+
-                                     self.descibe_fields("\t\t\t",self.get_selected_fields())))
-                _project.update({
-                    key: expr.get_calc_expr(kwargs[key],params)
-                })
-                _next_step_fields.append(key)
+            if key != "_id":
+                if kwargs[key]==1:
+                    if not self.check_fields(key):
+                        raise (Exception("What is '" + key + "'?:\n" +
+                                         " \n Your selected fields now is bellow list: \n" +
+                                         self.descibe_fields("\t\t\t", self.get_selected_fields())))
+                    _project.update({
+                        key: 1
+                    })
+                    _next_step_fields.append(key)
+                else:
+                    unknown_fields = self._coll._model.validate_expression(kwargs[key],self.get_selected_fields())
+                    if unknown_fields.__len__()>0:
+                        raise (Exception("What is bellow list of fields?:\n"+self.descibe_fields("\t\t",unknown_fields)+
+                                         " \n Your selected fields now is bellow list: \n"+
+                                         self.descibe_fields("\t\t\t",self.get_selected_fields())))
+                    _project.update({
+                        key: expr.get_calc_expr(kwargs[key],params)
+                    })
+                    _next_step_fields.append(key)
         self._selected_fields=_next_step_fields
         self._pipe.append({
             "$project":_project
@@ -1308,6 +1309,7 @@ class AGGREGATE():
         return ret
     def copy(self):
         return self.__copy__()
+
 def connect(*args,**kwargs):
     """
     Create db instance <br/>

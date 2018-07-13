@@ -8,6 +8,9 @@ __menu_items__=[
                 {
                     "page":"pages/customers",
                     "caption":"List of customers"
+                },{
+                    "page":"pages/customers_users",
+                    "caption":"List of user"
                 }
             ]
 
