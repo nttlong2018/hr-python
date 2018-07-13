@@ -8,6 +8,9 @@
                         ${get_app_res("Code")}
                     </th>
                     <th>
+                        ${get_app_res("Schema")}
+                    </th>
+                    <th>
                         ${get_app_res("Name")}
                     </th>
                     <th>
@@ -26,13 +29,16 @@
                         {{p.code}}
                     </td>
                     <td>
+                        {{p.schema}}
+                    </td>
+                    <td>
                         {{p.name}}
                     </td>
                     <td>
                         {{p.description}}
                     </td>
                     <td>
-                        <button class="btn btn-primary" ng-click="$root.$dialog($id).params(p).url('pages/roles.edit').done()">
+                        <button class="btn btn-primary" ng-click="$root.$dialog($id).params(p).url('pages/customer.edit').done()">
                             ${get_global_res("Edit")}
                         </button>
                     </td>
@@ -53,7 +59,7 @@
         scope.$root.onSearch(function(txt){
             scope.load_data(txt);
         })
-        scope.load_data=function(txt){
+        scope.loadData=function(txt){
             service.api('${get_api_key("admin.api.customers/get_list")}')
             .data({
                 search_text:txt
@@ -70,7 +76,7 @@
         scope.doDelete=function(item){
          console.log(item);
         }
-        scope.load_data("");
+        scope.loadData("");
 
     });
 </script>

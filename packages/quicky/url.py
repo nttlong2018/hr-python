@@ -8,6 +8,7 @@ from django.conf.urls.static import static
 from django.conf.urls import include, patterns, url
 from app_info import app_config
 import logging
+
 logger=logging.getLogger(__name__)
 _apps_=None
 settings=None
@@ -19,6 +20,7 @@ def build_urls(module_name,*args,**kwargs):
     :param kwargs:
     :return:
     """
+    from . import get_tenancy_code_regex
     host_dir=None
     from . import get_django_settings_module
     global settings
@@ -105,9 +107,10 @@ def build_urls(module_name,*args,**kwargs):
                                 default_urls.append(url_item)
                                 url_regex=url_item.regex.pattern
                                 if host_dir==None:
-                                    url_regex=url_regex.replace("^","^(?i)(?P<tenancy_code>\w{1,50})/")
+
+                                    url_regex=url_regex.replace("^","^(?i)(?P<tenancy_code>"+get_tenancy_code_regex()+")/")
                                 else:
-                                    url_regex = url_regex.replace("^", "^(?i)"+host_dir+"/(?P<tenancy_code>\w{1,50})/")
+                                    url_regex = url_regex.replace("^", "^(?i)"+host_dir+"/(?P<tenancy_code>"+get_tenancy_code_regex()+")/")
                                 if url_item.callback!=None:
                                     map_url=url(
                                         url_regex,
@@ -124,10 +127,10 @@ def build_urls(module_name,*args,**kwargs):
                                 url_regex = url_item.regex.pattern
                                 if host_dir == None:
                                     url_regex = url_regex.replace("^",
-                                                                  "^(?i)(?P<tenancy_code>\w{1,50})/" + ret.host_dir + "/")
+                                                                  "^(?i)(?P<tenancy_code>"+get_tenancy_code_regex()+")/" + ret.host_dir + "/")
                                 else:
                                     url_regex = url_regex.replace("^",
-                                                              "^(?i)"+host_dir+"/(?P<tenancy_code>\w{1,50})/" + ret.host_dir + "/")
+                                                              "^(?i)"+host_dir+"/(?P<tenancy_code>"+get_tenancy_code_regex()+")/" + ret.host_dir + "/")
                                 print url_regex
                                 map_url = url(
                                     url_regex,

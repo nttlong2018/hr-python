@@ -1,4 +1,4 @@
-<div title="{{getTitle()}}">
+<div title="{{getTitle()}}" class="dialog-form">
     <div class="row">
         <div class="col-xs-4 col-sm-4 col-md-2 col-lg-2">
         	<label for="">${get_app_res("Code")}</label>
@@ -9,20 +9,114 @@
     </div>
     <div class="row">
         <div class="col-xs-4 col-sm-4 col-md-2 col-lg-2">
+        	<label for="">${get_app_res("Name")}</label>
+        </div>
+        <div class="col-xs-8 col-sm-8 col-md-10 col-lg-10">
+            <input type="text" class="form-control" placeholder='${get_app_res("Enter name of customer")}' ng-model="data.name">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-4 col-sm-4 col-md-2 col-lg-2">
         	<label for="">${get_app_res("Schema")}</label>
         </div>
         <div class="col-xs-8 col-sm-8 col-md-10 col-lg-10">
             <input type="text"  class="form-control" placeholder='${get_app_res("Enter schema for customer database")}' ng-model="data.schema">
         </div>
     </div>
+    <div class="row">
+        <div class="col-xs-4 col-sm-4 col-md-2 col-lg-2">
+        	<label for="">${get_app_res("Email")}</label>
+        </div>
+        <div class="col-xs-8 col-sm-8 col-md-10 col-lg-10">
+            <input type="text"  class="form-control" placeholder='${get_app_res("Enter email of customer")}' ng-model="data.contact_info.email">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-4 col-sm-4 col-md-2 col-lg-2">
+        	<label for="">${get_app_res("Address")}</label>
+        </div>
+        <div class="col-xs-8 col-sm-8 col-md-10 col-lg-10">
+            <input type="text"  class="form-control" placeholder='${get_app_res("Enter address of customer")}' ng-model="data.contact_info.address">
+        </div>
+    </div>
+    <div class="row" ng-if="isAddNew">
+        <div class="col-xs-4 col-sm-4 col-md-2 col-lg-2">
+        	<label for="">${get_app_res("Admin user")}</label>
+        </div>
+        <div class="col-xs-8 col-sm-8 col-md-10 col-lg-10">
+            <input type="text"  class="form-control" placeholder='${get_app_res("Enter admin username of customer")}' ng-model="data.admin_user">
+        </div>
+    </div>
+    <div class="row" ng-if="isAddNew">
+        <div class="col-xs-4 col-sm-4 col-md-2 col-lg-2">
+        	<label for="">${get_app_res("Password of Admin user")}</label>
+        </div>
+        <div class="col-xs-8 col-sm-8 col-md-10 col-lg-10">
+            <input type="password"  class="form-control" placeholder='${get_app_res("Enter password of Admin user")}' ng-model="data.admin_user_password">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-4 col-sm-4 col-md-2 col-lg-2">
+        	<label for="">${get_app_res("Description")}</label>
+        </div>
+        <div class="col-xs-8 col-sm-8 col-md-10 col-lg-10">
+            <textarea class="form-control" placeholder='${get_app_res("Description")}' ng-model="data.description">
+
+            </textarea>
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <div class="btn-toolbar pull-right" role="toolbar" aria-label="">
+                <div class="btn-group" role="group" aria-label="">
+                    <button type="button" class="btn btn-primary" ng-click="doSave()">${get_app_res("Save")}</button>
+                    <button type="button" class="btn secondary" ng-click="$doClose()">${get_app_res("Close")}</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
 <script>
     (function(scope,params){
-    console.log(scope);
+        scope.data={};
+        scope.isAddNew=!params;
         scope.getTitle=function(){
             if(!params) return "${get_app_res('Add new customer')}";
             else  return "${get_app_res('Edit customer')}";
+        }
+        if(params){
+            service.api('${get_api_key("admin.api.customers/get_item")}')
+            .data({code:params.code})
+            .done()
+            .then(function(res){
+                scope.data=res;
+                scope.$applyAsync();
+            }).catch(function(ex){
+                console.log(ex);
+            })
+        }
+        scope.doSave=function(){
+            var api_key='${get_api_key("admin.api.customers/insert_item")}';
+            if(params){
+                api_key='${get_api_key("admin.api.customers/update_item")}';
+            }
+            service.api(api_key)
+            .data(
+                scope.data
+            ).done().then(function (res) {
+                if(res.error){
+                    scope.$error(res);
+                    return;
+                }
+
+                scope.$parent.loadData();
+                scope.$doClose();
+                scope.$applyAsync();
+            }).catch(function(ex){
+                console.log(ex);
+            })
         }
 
         scope.$applyAsync();

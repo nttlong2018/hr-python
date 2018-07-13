@@ -127,7 +127,7 @@ MULTI_TENANCY_CONFIGURATION_=dict(
     user="root",
     password="123456",
     name="hrm",
-    collection="sys.multi_tenancy"
+    collection="sys.customers"
 )
 MULTI_TENANCY_CONFIGURATION=dict(
     host="172.16.7.63",
@@ -135,7 +135,7 @@ MULTI_TENANCY_CONFIGURATION=dict(
     user="sys",
     password="123456",
     name="lv01_lms",
-    collection="sys.multi_tenancy"
+    collection="sys.customers"
 )
 from quicky import api
 api.connect(

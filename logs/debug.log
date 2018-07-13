@@ -9401,3 +9401,1223 @@ sys.auth_user.save (0.00) {'username': u'root1', 'first_name': u'', 'last_name':
 django_session.find (0.00) {'_id': 'llz84xyrlv8gradhuygsj214m4ute3p5', 'expire_date': {'$gt': datetime.datetime(2018, 7, 12, 8, 23, 47, 225531, tzinfo=<UTC>)}, 'schema': 'sys'}
 sys.auth_user.find (0.00) {'_id': ObjectId('5b321a71927e0070511b73e6')}
 sys.auth_user.save (0.00) {'username': 'root2', 'first_name': u'', 'last_name': u'', 'is_active': True, '_id': ObjectId('5b47102b927e005b3eec6c89'), 'is_superuser': False, 'is_staff': False, 'last_login': datetime.datetime(2018, 7, 12, 8, 24, 11, 6566, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$rG1qt1HLs4JF$esejyPz/mmzdrm/NvNTONUQT3ZCMiGvGJ2Zmg45p7Bw=', 'email': u'root@root2.com', 'date_joined': datetime.datetime(2018, 7, 12, 8, 24, 11, 6566, tzinfo=<UTC>)}
+sys.auth_user.find (0.00) {'username': 'root1'}
+sys.auth_user.save (0.00) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+Not Found: /lv/sys-admin/page-login.html
+django_session.save (0.00) {'schema': u'lv', '_id': u'84xlklowcujabe7brjwscmepr4qe6yjk', 'expire_date': datetime.datetime(2018, 7, 26, 8, 35, 19, 969932, tzinfo=<UTC>), 'session_data': u'YjAwMTViM2E0OTNjMDE0N2NjMTFiZjIxNzYzNmNkYTg5OGRiZGZjMzp7Imxhbmd1YWdlIjoiZW4ifQ=='}
+Not Found: /performance/static/app/components/tree/tree-table/tree-table.directive.js
+Not Found: /performance/static/app/widgets/page-sidebar/page-sidebar.directive.js
+Not Found: /performance/static/js/plugins/slick.js
+Not Found: /performance/static/app/widgets/page-sidebar/page-sidebar.directive.js
+Not Found: /performance/static/app/components/tree/tree-table/tree-table.directive.js
+Not Found: /performance/static/js/plugins/slick.js
+django_session.find (0.00) {'_id': '84xlklowcujabe7brjwscmepr4qe6yjk', 'expire_date': {'$gt': datetime.datetime(2018, 7, 12, 8, 35, 27, 72428, tzinfo=<UTC>)}, 'schema': 'sys'}
+django_session.save (0.00) {'schema': 'sys', '_id': u'h6febmk8i8tw1gzb6p3qfnrlzp30l9dr', 'expire_date': datetime.datetime(2018, 7, 26, 8, 35, 27, 76541, tzinfo=<UTC>), 'session_data': u'MjY1MGI5ZjE5YWFjZTM1OTM5NmFkNjA4ODFhYTVmNzUxZDA3ZTkxMjp7fQ=='}
+django_session.save (0.00) {'schema': 'sys', '_id': u'h6febmk8i8tw1gzb6p3qfnrlzp30l9dr', 'expire_date': datetime.datetime(2018, 7, 26, 8, 35, 27, 78608, tzinfo=<UTC>), 'session_data': u'MjY1MGI5ZjE5YWFjZTM1OTM5NmFkNjA4ODFhYTVmNzUxZDA3ZTkxMjp7fQ=='}
+django_session.find (0.00) {'_id': 'h6febmk8i8tw1gzb6p3qfnrlzp30l9dr', 'expire_date': {'$gt': datetime.datetime(2018, 7, 12, 8, 35, 27, 105433, tzinfo=<UTC>)}, 'schema': 'sys'}
+sys.auth_user.find (0.00) {'username': 'root1'}
+sys.auth_user.save (0.00) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+django_session.save (0.00) {'schema': 'sys', '_id': 'h6febmk8i8tw1gzb6p3qfnrlzp30l9dr', 'expire_date': datetime.datetime(2018, 7, 26, 8, 35, 27, 137550, tzinfo=<UTC>), 'session_data': u'YjAwMTViM2E0OTNjMDE0N2NjMTFiZjIxNzYzNmNkYTg5OGRiZGZjMzp7Imxhbmd1YWdlIjoiZW4ifQ=='}
+Not Found: /favicon.ico
+django_session.find (0.00) {'_id': 'h6febmk8i8tw1gzb6p3qfnrlzp30l9dr', 'expire_date': {'$gt': datetime.datetime(2018, 7, 12, 8, 35, 37, 149804, tzinfo=<UTC>)}, 'schema': 'sys'}
+sys.auth_user.find (0.00) {'username': 'root1'}
+sys.auth_user.save (0.00) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+sys.auth_user.find (0.00) {'username': u'root1'}
+django_session.save (0.00) {'schema': 'sys', '_id': u'xz4cx8of1y3x72puyh0hcyiq43el4pgq', 'expire_date': datetime.datetime(2018, 7, 26, 8, 35, 37, 224026, tzinfo=<UTC>), 'session_data': u'YjAwMTViM2E0OTNjMDE0N2NjMTFiZjIxNzYzNmNkYTg5OGRiZGZjMzp7Imxhbmd1YWdlIjoiZW4ifQ=='}
+django_session.find (0.00) {'_id': 'h6febmk8i8tw1gzb6p3qfnrlzp30l9dr', 'schema': 'sys'}
+django_session.remove (0.00) {'_id': {'$in': [u'h6febmk8i8tw1gzb6p3qfnrlzp30l9dr']}, 'schema': 'sys'}
+sys.auth_user.save (0.00) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 35, 37, 233091, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+django_session.save (0.00) {'schema': 'sys', '_id': u'xz4cx8of1y3x72puyh0hcyiq43el4pgq', 'expire_date': datetime.datetime(2018, 7, 26, 8, 35, 37, 235258, tzinfo=<UTC>), 'session_data': u'MDBmZWNkMGM1YTVlMTE5YWEyNjZjZjhlOTZjODQwOTE5NWRlMDgzZDp7Il9hdXRoX3VzZXJfYmFja2VuZCI6InBlcm1pc3Npb25fYmFja2VuZF9ub25yZWwuYmFja2VuZHMuTm9ucmVsUGVybWlzc2lvbkJhY2tlbmQiLCJfYXV0aF91c2VyX2lkIjoiNWI0NzBmZjg5MjdlMDA1YjNlZWM2Yzg0IiwibGFuZ3VhZ2UiOiJlbiJ9'}
+django_session.find (0.00) {'_id': 'xz4cx8of1y3x72puyh0hcyiq43el4pgq', 'expire_date': {'$gt': datetime.datetime(2018, 7, 12, 8, 35, 37, 248378, tzinfo=<UTC>)}, 'schema': 'sys'}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b470ff8927e005b3eec6c84')}
+sys.auth_user.find (0.00) {'username': 'root1'}
+sys.auth_user.save (0.00) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 35, 37, 233000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+django_session.find (0.00) {'_id': 'xz4cx8of1y3x72puyh0hcyiq43el4pgq', 'expire_date': {'$gt': datetime.datetime(2018, 7, 12, 8, 35, 57, 292619, tzinfo=<UTC>)}, 'schema': 'sys'}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b470ff8927e005b3eec6c84')}
+sys.auth_user.find (0.00) {'username': 'root1'}
+sys.auth_user.save (0.00) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 35, 37, 233000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+Not Found: /lv/sys-admin/Course
+Not Found: /lv/sys-admin/Wiki
+django_session.find (0.01) {'_id': 'xz4cx8of1y3x72puyh0hcyiq43el4pgq', 'expire_date': {'$gt': datetime.datetime(2018, 7, 12, 9, 9, 5, 804613, tzinfo=<UTC>)}, 'schema': 'sys'}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b470ff8927e005b3eec6c84')}
+django_session.find (0.00) {'_id': 'xz4cx8of1y3x72puyh0hcyiq43el4pgq', 'expire_date': {'$gt': datetime.datetime(2018, 7, 12, 9, 10, 7, 804294, tzinfo=<UTC>)}, 'schema': 'sys'}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b470ff8927e005b3eec6c84')}
+sys.auth_user.find (0.00) {'username': 'root1'}
+sys.auth_user.save (0.00) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 35, 37, 233000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+django_session.find (0.00) {'_id': 'xz4cx8of1y3x72puyh0hcyiq43el4pgq', 'expire_date': {'$gt': datetime.datetime(2018, 7, 12, 9, 10, 8, 92060, tzinfo=<UTC>)}, 'schema': 'sys'}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b470ff8927e005b3eec6c84')}
+sys.auth_user.find (0.00) {'username': 'root1'}
+sys.auth_user.save (0.00) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 35, 37, 233000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+django_session.find (0.00) {'_id': 'xz4cx8of1y3x72puyh0hcyiq43el4pgq', 'expire_date': {'$gt': datetime.datetime(2018, 7, 12, 9, 18, 40, 962002, tzinfo=<UTC>)}, 'schema': 'sys'}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b470ff8927e005b3eec6c84')}
+sys.auth_user.find (0.00) {'username': 'root1'}
+sys.auth_user.save (0.00) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 35, 37, 233000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+django_session.find (0.00) {'_id': 'xz4cx8of1y3x72puyh0hcyiq43el4pgq', 'expire_date': {'$gt': datetime.datetime(2018, 7, 12, 9, 18, 47, 832786, tzinfo=<UTC>)}, 'schema': 'sys'}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b470ff8927e005b3eec6c84')}
+sys.auth_user.find (0.00) {'username': 'root1'}
+sys.auth_user.save (0.00) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 35, 37, 233000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+django_session.find (0.00) {'_id': 'xz4cx8of1y3x72puyh0hcyiq43el4pgq', 'expire_date': {'$gt': datetime.datetime(2018, 7, 12, 9, 19, 15, 260956, tzinfo=<UTC>)}, 'schema': 'sys'}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b470ff8927e005b3eec6c84')}
+sys.auth_user.find (0.00) {'username': 'root1'}
+sys.auth_user.save (0.00) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 35, 37, 233000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+django_session.find (0.00) {'_id': 'xz4cx8of1y3x72puyh0hcyiq43el4pgq', 'expire_date': {'$gt': datetime.datetime(2018, 7, 12, 9, 19, 15, 494085, tzinfo=<UTC>)}, 'schema': 'sys'}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b470ff8927e005b3eec6c84')}
+sys.auth_user.find (0.01) {'username': 'root1'}
+sys.auth_user.save (0.00) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 35, 37, 233000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+django_session.find (0.00) {'_id': 'xz4cx8of1y3x72puyh0hcyiq43el4pgq', 'expire_date': {'$gt': datetime.datetime(2018, 7, 12, 9, 19, 39, 578180, tzinfo=<UTC>)}, 'schema': u'lv'}
+django_session.save (0.00) {'schema': u'lv', '_id': u'cut6tmp9u4xl1oawjrtr1yrgc7uafdju', 'expire_date': datetime.datetime(2018, 7, 26, 9, 19, 39, 581760, tzinfo=<UTC>), 'session_data': u'MjY1MGI5ZjE5YWFjZTM1OTM5NmFkNjA4ODFhYTVmNzUxZDA3ZTkxMjp7fQ=='}
+django_session.save (0.00) {'schema': u'lv', '_id': u'cut6tmp9u4xl1oawjrtr1yrgc7uafdju', 'expire_date': datetime.datetime(2018, 7, 26, 9, 19, 39, 583740, tzinfo=<UTC>), 'session_data': u'MjY1MGI5ZjE5YWFjZTM1OTM5NmFkNjA4ODFhYTVmNzUxZDA3ZTkxMjp7fQ=='}
+django_session.find (0.00) {'_id': 'cut6tmp9u4xl1oawjrtr1yrgc7uafdju', 'expire_date': {'$gt': datetime.datetime(2018, 7, 12, 9, 19, 39, 598002, tzinfo=<UTC>)}, 'schema': u'lv'}
+django_session.save (0.00) {'schema': u'lv', '_id': 'cut6tmp9u4xl1oawjrtr1yrgc7uafdju', 'expire_date': datetime.datetime(2018, 7, 26, 9, 19, 39, 680425, tzinfo=<UTC>), 'session_data': u'YjAwMTViM2E0OTNjMDE0N2NjMTFiZjIxNzYzNmNkYTg5OGRiZGZjMzp7Imxhbmd1YWdlIjoiZW4ifQ=='}
+Not Found: /performance/static/app/widgets/page-sidebar/page-sidebar.directive.js
+Not Found: /performance/static/app/components/tree/tree-table/tree-table.directive.js
+Not Found: /performance/static/js/plugins/slick.js
+Not Found: /performance/static/app/widgets/page-sidebar/page-sidebar.directive.js
+Not Found: /performance/static/app/components/tree/tree-table/tree-table.directive.js
+Not Found: /performance/static/js/plugins/slick.js
+django_session.find (0.00) {'_id': 'cut6tmp9u4xl1oawjrtr1yrgc7uafdju', 'expire_date': {'$gt': datetime.datetime(2018, 7, 12, 9, 20, 30, 456734, tzinfo=<UTC>)}, 'schema': 'sys'}
+django_session.save (0.00) {'schema': 'sys', '_id': u'onchsjfsc20w23eze29iz68xpvzwxq51', 'expire_date': datetime.datetime(2018, 7, 26, 9, 20, 30, 460872, tzinfo=<UTC>), 'session_data': u'MjY1MGI5ZjE5YWFjZTM1OTM5NmFkNjA4ODFhYTVmNzUxZDA3ZTkxMjp7fQ=='}
+django_session.save (0.00) {'schema': 'sys', '_id': u'onchsjfsc20w23eze29iz68xpvzwxq51', 'expire_date': datetime.datetime(2018, 7, 26, 9, 20, 30, 462886, tzinfo=<UTC>), 'session_data': u'MjY1MGI5ZjE5YWFjZTM1OTM5NmFkNjA4ODFhYTVmNzUxZDA3ZTkxMjp7fQ=='}
+django_session.find (0.00) {'_id': 'onchsjfsc20w23eze29iz68xpvzwxq51', 'expire_date': {'$gt': datetime.datetime(2018, 7, 12, 9, 20, 30, 476108, tzinfo=<UTC>)}, 'schema': 'sys'}
+sys.auth_user.find (0.00) {'username': 'root1'}
+sys.auth_user.save (0.00) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 35, 37, 233000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+django_session.save (0.00) {'schema': 'sys', '_id': 'onchsjfsc20w23eze29iz68xpvzwxq51', 'expire_date': datetime.datetime(2018, 7, 26, 9, 20, 30, 501451, tzinfo=<UTC>), 'session_data': u'YjAwMTViM2E0OTNjMDE0N2NjMTFiZjIxNzYzNmNkYTg5OGRiZGZjMzp7Imxhbmd1YWdlIjoiZW4ifQ=='}
+sys.auth_user.find (0.00) {'username': 'root1'}
+sys.auth_user.save (0.00) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 35, 37, 233000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+django_session.find (0.00) {'_id': 'onchsjfsc20w23eze29iz68xpvzwxq51', 'expire_date': {'$gt': datetime.datetime(2018, 7, 12, 9, 21, 21, 447087, tzinfo=<UTC>)}, 'schema': 'sys'}
+sys.auth_user.find (0.00) {'username': 'root1'}
+sys.auth_user.save (0.00) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 35, 37, 233000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+django_session.save (0.00) {'schema': 'sys', '_id': 'onchsjfsc20w23eze29iz68xpvzwxq51', 'expire_date': datetime.datetime(2018, 7, 26, 9, 21, 21, 485958, tzinfo=<UTC>), 'session_data': u'YjAwMTViM2E0OTNjMDE0N2NjMTFiZjIxNzYzNmNkYTg5OGRiZGZjMzp7Imxhbmd1YWdlIjoiZW4ifQ=='}
+django_session.find (0.00) {'_id': 'onchsjfsc20w23eze29iz68xpvzwxq51', 'expire_date': {'$gt': datetime.datetime(2018, 7, 12, 9, 30, 54, 940185, tzinfo=<UTC>)}, 'schema': 'sys'}
+django_session.find (0.00) {'_id': 'onchsjfsc20w23eze29iz68xpvzwxq51', 'expire_date': {'$gt': datetime.datetime(2018, 7, 12, 9, 30, 56, 12507, tzinfo=<UTC>)}, 'schema': 'sys'}
+sys.auth_user.find (0.00) {'username': 'root1'}
+sys.auth_user.save (0.00) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 35, 37, 233000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+django_session.save (0.00) {'schema': 'sys', '_id': 'onchsjfsc20w23eze29iz68xpvzwxq51', 'expire_date': datetime.datetime(2018, 7, 26, 9, 30, 56, 54019, tzinfo=<UTC>), 'session_data': u'YjAwMTViM2E0OTNjMDE0N2NjMTFiZjIxNzYzNmNkYTg5OGRiZGZjMzp7Imxhbmd1YWdlIjoiZW4ifQ=='}
+django_session.find (0.00) {'_id': 'onchsjfsc20w23eze29iz68xpvzwxq51', 'expire_date': {'$gt': datetime.datetime(2018, 7, 12, 9, 31, 5, 881726, tzinfo=<UTC>)}, 'schema': 'sys'}
+sys.auth_user.find (0.00) {'username': 'root1'}
+sys.auth_user.save (0.00) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 35, 37, 233000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+sys.auth_user.find (0.00) {'username': u'sys'}
+django_session.save (0.00) {'schema': 'sys', '_id': 'onchsjfsc20w23eze29iz68xpvzwxq51', 'expire_date': datetime.datetime(2018, 7, 26, 9, 31, 5, 956985, tzinfo=<UTC>), 'session_data': u'YjAwMTViM2E0OTNjMDE0N2NjMTFiZjIxNzYzNmNkYTg5OGRiZGZjMzp7Imxhbmd1YWdlIjoiZW4ifQ=='}
+django_session.find (0.00) {'_id': 'onchsjfsc20w23eze29iz68xpvzwxq51', 'expire_date': {'$gt': datetime.datetime(2018, 7, 12, 9, 31, 20, 278403, tzinfo=<UTC>)}, 'schema': 'sys'}
+sys.auth_user.find (0.00) {'username': 'root1'}
+sys.auth_user.save (0.00) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 35, 37, 233000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+sys.auth_user.find (0.00) {'username': u'root'}
+django_session.save (0.00) {'schema': 'sys', '_id': u'tw93wjdevsu6bocin0hb7rovshjwvz8t', 'expire_date': datetime.datetime(2018, 7, 26, 9, 31, 20, 372226, tzinfo=<UTC>), 'session_data': u'YjAwMTViM2E0OTNjMDE0N2NjMTFiZjIxNzYzNmNkYTg5OGRiZGZjMzp7Imxhbmd1YWdlIjoiZW4ifQ=='}
+django_session.find (0.00) {'_id': 'onchsjfsc20w23eze29iz68xpvzwxq51', 'schema': 'sys'}
+django_session.remove (0.00) {'_id': {'$in': [u'onchsjfsc20w23eze29iz68xpvzwxq51']}, 'schema': 'sys'}
+sys.auth_user.save (0.00) {'username': u'root', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b321a71927e0070511b73e6'), 'is_active': True, 'email': u'root@root.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 9, 31, 20, 377332, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$oQVPdDDJaTJc$c2t2sGqa01ZDC0tgJJFC5tqIbRzoXFVlKOtqF7jf61Y=', 'date_joined': datetime.datetime(2018, 6, 26, 10, 50, 20, 136000, tzinfo=<UTC>)}
+django_session.save (0.00) {'schema': 'sys', '_id': u'tw93wjdevsu6bocin0hb7rovshjwvz8t', 'expire_date': datetime.datetime(2018, 7, 26, 9, 31, 20, 380283, tzinfo=<UTC>), 'session_data': u'M2VkNWQzMGE4YTU0YjcxMzQ3MTQyMzYyMjE1NmFkZGE4MDBhZTMyNDp7Il9hdXRoX3VzZXJfYmFja2VuZCI6InBlcm1pc3Npb25fYmFja2VuZF9ub25yZWwuYmFja2VuZHMuTm9ucmVsUGVybWlzc2lvbkJhY2tlbmQiLCJfYXV0aF91c2VyX2lkIjoiNWIzMjFhNzE5MjdlMDA3MDUxMWI3M2U2IiwibGFuZ3VhZ2UiOiJlbiJ9'}
+django_session.find (0.00) {'_id': 'tw93wjdevsu6bocin0hb7rovshjwvz8t', 'expire_date': {'$gt': datetime.datetime(2018, 7, 12, 9, 31, 21, 416636, tzinfo=<UTC>)}, 'schema': 'sys'}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b321a71927e0070511b73e6')}
+sys.auth_user.find (0.00) {'username': 'root1'}
+sys.auth_user.save (0.00) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 35, 37, 233000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+django_session.find (0.00) {'_id': 'tw93wjdevsu6bocin0hb7rovshjwvz8t', 'expire_date': {'$gt': datetime.datetime(2018, 7, 12, 9, 31, 36, 350608, tzinfo=<UTC>)}, 'schema': 'sys'}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b321a71927e0070511b73e6')}
+sys.auth_user.find (0.00) {'username': 'root1'}
+sys.auth_user.save (0.00) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 35, 37, 233000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+Internal Server Error: /lv/sys-admin/api
+Traceback (most recent call last):
+  File "/home/hcsadmin/argo/packages/django/django/core/handlers/base.py", line 122, in get_response
+    raise e
+Exception: Call  'get_list' in 'sys_admin.api.customers' encountered ''dict' object is not callable'
+Not Found: /polyfills/promise-6.1.0.js.map
+Not Found: /sys-admin/static/angular.min.js.map
+django_session.find (0.00) {'_id': 'tw93wjdevsu6bocin0hb7rovshjwvz8t', 'expire_date': {'$gt': datetime.datetime(2018, 7, 12, 9, 37, 49, 257770, tzinfo=<UTC>)}, 'schema': 'sys'}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b321a71927e0070511b73e6')}
+sys.auth_user.find (0.00) {'username': 'root1'}
+sys.auth_user.save (0.00) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 35, 37, 233000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+Internal Server Error: /lv/sys-admin/api
+Traceback (most recent call last):
+  File "/home/hcsadmin/argo/packages/django/django/core/handlers/base.py", line 122, in get_response
+    raise e
+Exception: Call  'save_item' in 'sys_admin.api.customers' encountered ''module' object has no attribute 'save_item''
+django_session.find (0.00) {'_id': 'tw93wjdevsu6bocin0hb7rovshjwvz8t', 'expire_date': {'$gt': datetime.datetime(2018, 7, 12, 9, 40, 18, 26209, tzinfo=<UTC>)}, 'schema': 'sys'}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b321a71927e0070511b73e6')}
+sys.auth_user.find (0.00) {'username': 'root1'}
+sys.auth_user.save (0.00) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 35, 37, 233000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+Internal Server Error: /lv/sys-admin/api
+Traceback (most recent call last):
+  File "/home/hcsadmin/argo/packages/django/django/core/handlers/base.py", line 122, in get_response
+    raise e
+Exception: Call  'save_item' in 'sys_admin.api.customers' encountered ''code''
+django_session.find (0.00) {'_id': 'tw93wjdevsu6bocin0hb7rovshjwvz8t', 'expire_date': {'$gt': datetime.datetime(2018, 7, 12, 9, 40, 49, 466789, tzinfo=<UTC>)}, 'schema': 'sys'}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b321a71927e0070511b73e6')}
+sys.auth_user.find (0.00) {'username': 'root1'}
+sys.auth_user.save (0.00) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 35, 37, 233000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+Not Found: /sys-admin/static/angular.min.js.map
+Not Found: /polyfills/promise-6.1.0.js.map
+django_session.find (0.00) {'_id': 'tw93wjdevsu6bocin0hb7rovshjwvz8t', 'expire_date': {'$gt': datetime.datetime(2018, 7, 12, 9, 40, 50, 498406, tzinfo=<UTC>)}, 'schema': 'sys'}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b321a71927e0070511b73e6')}
+sys.auth_user.find (0.00) {'username': 'root1'}
+sys.auth_user.save (0.00) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 35, 37, 233000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+Internal Server Error: /lv/sys-admin/api
+Traceback (most recent call last):
+  File "/home/hcsadmin/argo/packages/django/django/core/handlers/base.py", line 122, in get_response
+    raise e
+Exception: Call  'get_list' in 'sys_admin.api.customers' encountered ''dict' object is not callable'
+django_session.find (0.00) {'_id': 'tw93wjdevsu6bocin0hb7rovshjwvz8t', 'expire_date': {'$gt': datetime.datetime(2018, 7, 12, 9, 41, 16, 163672, tzinfo=<UTC>)}, 'schema': 'sys'}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b321a71927e0070511b73e6')}
+sys.auth_user.find (0.00) {'username': 'root1'}
+sys.auth_user.save (0.00) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 35, 37, 233000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+Not Found: /sys-admin/static/angular.min.js.map
+Not Found: /polyfills/promise-6.1.0.js.map
+django_session.find (0.00) {'_id': 'tw93wjdevsu6bocin0hb7rovshjwvz8t', 'expire_date': {'$gt': datetime.datetime(2018, 7, 12, 9, 41, 16, 854511, tzinfo=<UTC>)}, 'schema': 'sys'}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b321a71927e0070511b73e6')}
+sys.auth_user.find (0.00) {'username': 'root1'}
+sys.auth_user.save (0.00) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 35, 37, 233000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+Internal Server Error: /lv/sys-admin/api
+Traceback (most recent call last):
+  File "/home/hcsadmin/argo/packages/django/django/core/handlers/base.py", line 122, in get_response
+    raise e
+Exception: Call  'get_list' in 'sys_admin.api.customers' encountered ''dict' object is not callable'
+django_session.find (0.00) {'_id': 'tw93wjdevsu6bocin0hb7rovshjwvz8t', 'expire_date': {'$gt': datetime.datetime(2018, 7, 12, 9, 41, 55, 777431, tzinfo=<UTC>)}, 'schema': 'sys'}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b321a71927e0070511b73e6')}
+sys.auth_user.find (0.00) {'username': 'root1'}
+sys.auth_user.save (0.00) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 35, 37, 233000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+Not Found: /sys-admin/static/angular.min.js.map
+Not Found: /polyfills/promise-6.1.0.js.map
+django_session.find (0.01) {'_id': 'tw93wjdevsu6bocin0hb7rovshjwvz8t', 'expire_date': {'$gt': datetime.datetime(2018, 7, 12, 9, 41, 56, 414164, tzinfo=<UTC>)}, 'schema': 'sys'}
+sys.auth_user.find (0.01) {'_id': ObjectId('5b321a71927e0070511b73e6')}
+sys.auth_user.find (0.00) {'username': 'root1'}
+sys.auth_user.save (0.01) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 35, 37, 233000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+Internal Server Error: /lv/sys-admin/api
+Traceback (most recent call last):
+  File "/home/hcsadmin/argo/packages/django/django/core/handlers/base.py", line 122, in get_response
+    raise e
+Exception: Call  'get_list' in 'sys_admin.api.customers' encountered 'It look like you forgot create model for 'sys_multi_tenancy'
+How to define a model?
+from quicky import helpers
+helpers.define_model(
+	Your model name here,
+	list of key fields here,
+	field name =helpers.create_field(text|bool|numeric|date|list,require or not)
+	or field name =dict(neasted field),..,
+	field name n =helpers.create_field(text|bool|numeric|date|list,require or not))'
+django_session.find (0.00) {'_id': 'tw93wjdevsu6bocin0hb7rovshjwvz8t', 'expire_date': {'$gt': datetime.datetime(2018, 7, 12, 9, 43, 49, 873664, tzinfo=<UTC>)}, 'schema': 'sys'}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b321a71927e0070511b73e6')}
+sys.auth_user.find (0.00) {'username': 'root1'}
+sys.auth_user.save (0.00) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 35, 37, 233000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+Not Found: /sys-admin/static/angular.min.js.map
+Not Found: /polyfills/promise-6.1.0.js.map
+django_session.find (0.01) {'_id': 'tw93wjdevsu6bocin0hb7rovshjwvz8t', 'expire_date': {'$gt': datetime.datetime(2018, 7, 12, 9, 43, 50, 505051, tzinfo=<UTC>)}, 'schema': 'sys'}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b321a71927e0070511b73e6')}
+sys.auth_user.find (0.00) {'username': 'root1'}
+sys.auth_user.save (0.01) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 35, 37, 233000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+django_session.find (0.00) {'_id': 'tw93wjdevsu6bocin0hb7rovshjwvz8t', 'expire_date': {'$gt': datetime.datetime(2018, 7, 12, 9, 44, 5, 396822, tzinfo=<UTC>)}, 'schema': 'sys'}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b321a71927e0070511b73e6')}
+sys.auth_user.find (0.00) {'username': 'root1'}
+sys.auth_user.save (0.00) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 35, 37, 233000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+Internal Server Error: /lv/sys-admin/api
+Traceback (most recent call last):
+  File "/home/hcsadmin/argo/packages/django/django/core/handlers/base.py", line 122, in get_response
+    raise e
+Exception: Call  'save_item' in 'sys_admin.api.customers' encountered ''code''
+django_session.find (0.00) {'_id': 'tw93wjdevsu6bocin0hb7rovshjwvz8t', 'expire_date': {'$gt': datetime.datetime(2018, 7, 12, 9, 44, 26, 112157, tzinfo=<UTC>)}, 'schema': 'sys'}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b321a71927e0070511b73e6')}
+sys.auth_user.find (0.00) {'username': 'root1'}
+sys.auth_user.save (0.00) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 35, 37, 233000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+Internal Server Error: /lv/sys-admin/api
+Traceback (most recent call last):
+  File "/home/hcsadmin/argo/packages/django/django/core/handlers/base.py", line 122, in get_response
+    raise e
+Exception: Call  'save_item' in 'sys_admin.api.customers' encountered ''code''
+django_session.find (0.00) {'_id': 'tw93wjdevsu6bocin0hb7rovshjwvz8t', 'expire_date': {'$gt': datetime.datetime(2018, 7, 12, 9, 45, 12, 214590, tzinfo=<UTC>)}, 'schema': 'sys'}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b321a71927e0070511b73e6')}
+sys.auth_user.find (0.00) {'username': 'root1'}
+sys.auth_user.save (0.00) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 35, 37, 233000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+django_session.find (0.00) {'_id': 'tw93wjdevsu6bocin0hb7rovshjwvz8t', 'expire_date': {'$gt': datetime.datetime(2018, 7, 12, 9, 55, 33, 923170, tzinfo=<UTC>)}, 'schema': 'sys'}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b321a71927e0070511b73e6')}
+sys.auth_user.find (0.00) {'username': 'root1'}
+sys.auth_user.save (0.00) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 35, 37, 233000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+Not Found: /sys-admin/static/angular.min.js.map
+Not Found: /polyfills/promise-6.1.0.js.map
+django_session.find (0.01) {'_id': 'tw93wjdevsu6bocin0hb7rovshjwvz8t', 'expire_date': {'$gt': datetime.datetime(2018, 7, 12, 9, 55, 34, 603847, tzinfo=<UTC>)}, 'schema': 'sys'}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b321a71927e0070511b73e6')}
+sys.auth_user.find (0.00) {'username': 'root1'}
+sys.auth_user.save (0.00) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 35, 37, 233000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+django_session.find (0.00) {'_id': 'tw93wjdevsu6bocin0hb7rovshjwvz8t', 'expire_date': {'$gt': datetime.datetime(2018, 7, 12, 10, 0, 20, 82245, tzinfo=<UTC>)}, 'schema': 'sys'}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b321a71927e0070511b73e6')}
+sys.auth_user.find (0.00) {'username': 'root1'}
+sys.auth_user.save (0.00) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 35, 37, 233000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+Not Found: /sys-admin/static/angular.min.js.map
+Not Found: /polyfills/promise-6.1.0.js.map
+django_session.find (0.01) {'_id': 'tw93wjdevsu6bocin0hb7rovshjwvz8t', 'expire_date': {'$gt': datetime.datetime(2018, 7, 12, 10, 0, 21, 27220, tzinfo=<UTC>)}, 'schema': 'sys'}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b321a71927e0070511b73e6')}
+sys.auth_user.find (0.00) {'username': 'root1'}
+sys.auth_user.save (0.00) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 35, 37, 233000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+django_session.find (0.00) {'_id': 'tw93wjdevsu6bocin0hb7rovshjwvz8t', 'expire_date': {'$gt': datetime.datetime(2018, 7, 12, 10, 0, 39, 436622, tzinfo=<UTC>)}, 'schema': 'sys'}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b321a71927e0070511b73e6')}
+sys.auth_user.find (0.00) {'username': 'root1'}
+sys.auth_user.save (0.00) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 35, 37, 233000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+django_session.find (0.00) {'_id': 'tw93wjdevsu6bocin0hb7rovshjwvz8t', 'expire_date': {'$gt': datetime.datetime(2018, 7, 12, 10, 2, 49, 428675, tzinfo=<UTC>)}, 'schema': 'sys'}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b321a71927e0070511b73e6')}
+sys.auth_user.find (0.00) {'username': 'root1'}
+sys.auth_user.save (0.00) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 35, 37, 233000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+django_session.find (0.00) {'_id': 'tw93wjdevsu6bocin0hb7rovshjwvz8t', 'expire_date': {'$gt': datetime.datetime(2018, 7, 12, 10, 8, 42, 643169, tzinfo=<UTC>)}, 'schema': 'sys'}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b321a71927e0070511b73e6')}
+sys.auth_user.find (0.00) {'username': 'root1'}
+sys.auth_user.save (0.00) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 35, 37, 233000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+django_session.find (0.00) {'_id': 'tw93wjdevsu6bocin0hb7rovshjwvz8t', 'expire_date': {'$gt': datetime.datetime(2018, 7, 12, 10, 9, 19, 972099, tzinfo=<UTC>)}, 'schema': 'sys'}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b321a71927e0070511b73e6')}
+sys.auth_user.find (0.00) {'username': 'root1'}
+sys.auth_user.save (0.00) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 35, 37, 233000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+Not Found: /sys-admin/static/angular.min.js.map
+Not Found: /polyfills/promise-6.1.0.js.map
+django_session.find (0.00) {'_id': 'tw93wjdevsu6bocin0hb7rovshjwvz8t', 'expire_date': {'$gt': datetime.datetime(2018, 7, 12, 10, 9, 21, 58639, tzinfo=<UTC>)}, 'schema': 'sys'}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b321a71927e0070511b73e6')}
+sys.auth_user.find (0.01) {'username': 'root1'}
+sys.auth_user.save (0.00) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 35, 37, 233000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+django_session.find (0.00) {'_id': 'tw93wjdevsu6bocin0hb7rovshjwvz8t', 'expire_date': {'$gt': datetime.datetime(2018, 7, 12, 10, 9, 24, 919329, tzinfo=<UTC>)}, 'schema': 'sys'}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b321a71927e0070511b73e6')}
+sys.auth_user.find (0.00) {'username': 'root1'}
+sys.auth_user.save (0.00) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 35, 37, 233000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+django_session.find (0.00) {'_id': 'tw93wjdevsu6bocin0hb7rovshjwvz8t', 'expire_date': {'$gt': datetime.datetime(2018, 7, 12, 10, 11, 8, 560419, tzinfo=<UTC>)}, 'schema': 'sys'}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b321a71927e0070511b73e6')}
+sys.auth_user.find (0.00) {'username': 'root1'}
+sys.auth_user.save (0.00) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 35, 37, 233000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+Not Found: /sys-admin/static/angular.min.js.map
+Not Found: /polyfills/promise-6.1.0.js.map
+django_session.find (0.00) {'_id': 'tw93wjdevsu6bocin0hb7rovshjwvz8t', 'expire_date': {'$gt': datetime.datetime(2018, 7, 12, 10, 19, 29, 365383, tzinfo=<UTC>)}, 'schema': 'sys'}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b321a71927e0070511b73e6')}
+sys.auth_user.find (0.00) {'username': 'root1'}
+sys.auth_user.save (0.00) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 35, 37, 233000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+Not Found: /sys-admin/static/angular.min.js.map
+Not Found: /polyfills/promise-6.1.0.js.map
+django_session.find (0.00) {'_id': 'tw93wjdevsu6bocin0hb7rovshjwvz8t', 'expire_date': {'$gt': datetime.datetime(2018, 7, 12, 10, 19, 30, 147608, tzinfo=<UTC>)}, 'schema': 'sys'}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b321a71927e0070511b73e6')}
+sys.auth_user.find (0.00) {'username': 'root1'}
+sys.auth_user.save (0.00) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 35, 37, 233000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+django_session.find (0.00) {'_id': 'tw93wjdevsu6bocin0hb7rovshjwvz8t', 'expire_date': {'$gt': datetime.datetime(2018, 7, 12, 10, 19, 34, 279402, tzinfo=<UTC>)}, 'schema': 'sys'}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b321a71927e0070511b73e6')}
+sys.auth_user.find (0.00) {'username': 'root1'}
+sys.auth_user.save (0.00) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 35, 37, 233000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+django_session.find (0.00) {'_id': 'tw93wjdevsu6bocin0hb7rovshjwvz8t', 'expire_date': {'$gt': datetime.datetime(2018, 7, 12, 10, 19, 47, 794345, tzinfo=<UTC>)}, 'schema': 'sys'}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b321a71927e0070511b73e6')}
+sys.auth_user.find (0.00) {'username': 'root1'}
+sys.auth_user.save (0.00) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 35, 37, 233000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+django_session.find (0.00) {'_id': 'tw93wjdevsu6bocin0hb7rovshjwvz8t', 'expire_date': {'$gt': datetime.datetime(2018, 7, 12, 10, 31, 43, 599385, tzinfo=<UTC>)}, 'schema': 'sys'}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b321a71927e0070511b73e6')}
+sys.auth_user.find (0.00) {'username': 'root1'}
+sys.auth_user.save (0.00) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 35, 37, 233000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+Not Found: /sys-admin/static/angular.min.js.map
+Not Found: /polyfills/promise-6.1.0.js.map
+django_session.find (0.00) {'_id': 'tw93wjdevsu6bocin0hb7rovshjwvz8t', 'expire_date': {'$gt': datetime.datetime(2018, 7, 12, 10, 31, 44, 629515, tzinfo=<UTC>)}, 'schema': 'sys'}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b321a71927e0070511b73e6')}
+sys.auth_user.find (0.00) {'username': 'root1'}
+sys.auth_user.save (0.00) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 35, 37, 233000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+django_session.find (0.00) {'_id': 'tw93wjdevsu6bocin0hb7rovshjwvz8t', 'expire_date': {'$gt': datetime.datetime(2018, 7, 12, 10, 31, 52, 649075, tzinfo=<UTC>)}, 'schema': 'sys'}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b321a71927e0070511b73e6')}
+sys.auth_user.find (0.00) {'username': 'root1'}
+sys.auth_user.save (0.00) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 35, 37, 233000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+Internal Server Error: /lv/sys-admin/api
+Traceback (most recent call last):
+  File "/home/hcsadmin/argo/packages/django/django/core/handlers/base.py", line 122, in get_response
+    raise e
+Exception: Call  'save_item' in 'sys_admin.api.customers' encountered 'cannot concatenate 'str' and 'dict' objects'
+django_session.find (0.00) {'_id': 'tw93wjdevsu6bocin0hb7rovshjwvz8t', 'expire_date': {'$gt': datetime.datetime(2018, 7, 12, 10, 32, 31, 888671, tzinfo=<UTC>)}, 'schema': 'sys'}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b321a71927e0070511b73e6')}
+sys.auth_user.find (0.00) {'username': 'root1'}
+sys.auth_user.save (0.00) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 35, 37, 233000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+Internal Server Error: /lv/sys-admin/api
+Traceback (most recent call last):
+  File "/home/hcsadmin/argo/packages/django/django/core/handlers/base.py", line 122, in get_response
+    raise e
+Exception: Call  'save_item' in 'sys_admin.api.customers' encountered 'cannot concatenate 'str' and 'dict' objects'
+django_session.find (0.00) {'_id': 'tw93wjdevsu6bocin0hb7rovshjwvz8t', 'expire_date': {'$gt': datetime.datetime(2018, 7, 12, 10, 34, 22, 915847, tzinfo=<UTC>)}, 'schema': 'sys'}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b321a71927e0070511b73e6')}
+sys.auth_user.find (0.00) {'username': 'root1'}
+sys.auth_user.save (0.00) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 35, 37, 233000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+Internal Server Error: /lv/sys-admin/api
+Traceback (most recent call last):
+  File "/home/hcsadmin/argo/packages/django/django/core/handlers/base.py", line 122, in get_response
+    raise e
+Exception: Call  'save_item' in 'sys_admin.api.customers' encountered ''dict' object has no attribute 'caption''
+django_session.find (0.00) {'_id': 'tw93wjdevsu6bocin0hb7rovshjwvz8t', 'expire_date': {'$gt': datetime.datetime(2018, 7, 12, 10, 34, 41, 689017, tzinfo=<UTC>)}, 'schema': 'sys'}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b321a71927e0070511b73e6')}
+sys.auth_user.find (0.00) {'username': 'root1'}
+sys.auth_user.save (0.00) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 35, 37, 233000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+Internal Server Error: /lv/sys-admin/api
+Traceback (most recent call last):
+  File "/home/hcsadmin/argo/packages/django/django/core/handlers/base.py", line 122, in get_response
+    raise e
+Exception: Call  'save_item' in 'sys_admin.api.customers' encountered ''dict' object has no attribute 'caption''
+django_session.find (0.00) {'_id': 'tw93wjdevsu6bocin0hb7rovshjwvz8t', 'expire_date': {'$gt': datetime.datetime(2018, 7, 12, 10, 35, 9, 656398, tzinfo=<UTC>)}, 'schema': 'sys'}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b321a71927e0070511b73e6')}
+sys.auth_user.find (0.00) {'username': 'root1'}
+sys.auth_user.save (0.00) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 35, 37, 233000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+Not Found: /sys-admin/static/angular.min.js.map
+Not Found: /polyfills/promise-6.1.0.js.map
+django_session.find (0.00) {'_id': 'tw93wjdevsu6bocin0hb7rovshjwvz8t', 'expire_date': {'$gt': datetime.datetime(2018, 7, 12, 10, 35, 10, 337135, tzinfo=<UTC>)}, 'schema': 'sys'}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b321a71927e0070511b73e6')}
+sys.auth_user.find (0.00) {'username': 'root1'}
+sys.auth_user.save (0.00) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 35, 37, 233000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+django_session.find (0.00) {'_id': 'tw93wjdevsu6bocin0hb7rovshjwvz8t', 'expire_date': {'$gt': datetime.datetime(2018, 7, 12, 10, 35, 15, 56315, tzinfo=<UTC>)}, 'schema': 'sys'}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b321a71927e0070511b73e6')}
+sys.auth_user.find (0.00) {'username': 'root1'}
+sys.auth_user.save (0.00) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 35, 37, 233000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+Internal Server Error: /lv/sys-admin/api
+Traceback (most recent call last):
+  File "/home/hcsadmin/argo/packages/django/django/core/handlers/base.py", line 122, in get_response
+    raise e
+Exception: Call  'save_item' in 'sys_admin.api.customers' encountered ''dict' object has no attribute 'caption''
+django_session.find (0.00) {'_id': 'tw93wjdevsu6bocin0hb7rovshjwvz8t', 'expire_date': {'$gt': datetime.datetime(2018, 7, 12, 10, 35, 28, 316206, tzinfo=<UTC>)}, 'schema': 'sys'}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b321a71927e0070511b73e6')}
+sys.auth_user.find (0.00) {'username': 'root1'}
+sys.auth_user.save (0.00) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 35, 37, 233000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+Internal Server Error: /lv/sys-admin/api
+Traceback (most recent call last):
+  File "/home/hcsadmin/argo/packages/django/django/core/handlers/base.py", line 122, in get_response
+    raise e
+Exception: Call  'save_item' in 'sys_admin.api.customers' encountered ''dict' object has no attribute 'caption''
+django_session.find (0.00) {'_id': 'tw93wjdevsu6bocin0hb7rovshjwvz8t', 'expire_date': {'$gt': datetime.datetime(2018, 7, 12, 10, 36, 45, 228036, tzinfo=<UTC>)}, 'schema': 'sys'}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b321a71927e0070511b73e6')}
+sys.auth_user.find (0.00) {'username': 'root1'}
+sys.auth_user.save (0.00) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 35, 37, 233000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+Not Found: /sys-admin/static/angular.min.js.map
+Not Found: /polyfills/promise-6.1.0.js.map
+django_session.find (0.01) {'_id': 'tw93wjdevsu6bocin0hb7rovshjwvz8t', 'expire_date': {'$gt': datetime.datetime(2018, 7, 12, 10, 36, 45, 844101, tzinfo=<UTC>)}, 'schema': 'sys'}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b321a71927e0070511b73e6')}
+sys.auth_user.find (0.00) {'username': 'root1'}
+sys.auth_user.save (0.00) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 35, 37, 233000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+django_session.find (0.00) {'_id': 'tw93wjdevsu6bocin0hb7rovshjwvz8t', 'expire_date': {'$gt': datetime.datetime(2018, 7, 12, 10, 36, 49, 800060, tzinfo=<UTC>)}, 'schema': 'sys'}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b321a71927e0070511b73e6')}
+sys.auth_user.find (0.00) {'username': 'root1'}
+sys.auth_user.save (0.00) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 35, 37, 233000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+Internal Server Error: /lv/sys-admin/api
+Traceback (most recent call last):
+  File "/home/hcsadmin/argo/packages/django/django/core/handlers/base.py", line 122, in get_response
+    raise e
+Exception: Call  'save_item' in 'sys_admin.api.customers' encountered ''WSGIRequest' object has no attribute 'get''
+django_session.find (0.00) {'_id': 'tw93wjdevsu6bocin0hb7rovshjwvz8t', 'expire_date': {'$gt': datetime.datetime(2018, 7, 12, 10, 37, 1, 577399, tzinfo=<UTC>)}, 'schema': 'sys'}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b321a71927e0070511b73e6')}
+sys.auth_user.find (0.00) {'username': 'root1'}
+sys.auth_user.save (0.00) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 35, 37, 233000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+Internal Server Error: /lv/sys-admin/api
+Traceback (most recent call last):
+  File "/home/hcsadmin/argo/packages/django/django/core/handlers/base.py", line 122, in get_response
+    raise e
+Exception: Call  'save_item' in 'sys_admin.api.customers' encountered ''WSGIRequest' object has no attribute 'get''
+django_session.find (0.00) {'_id': 'tw93wjdevsu6bocin0hb7rovshjwvz8t', 'expire_date': {'$gt': datetime.datetime(2018, 7, 12, 10, 37, 56, 522544, tzinfo=<UTC>)}, 'schema': 'sys'}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b321a71927e0070511b73e6')}
+sys.auth_user.find (0.00) {'username': 'root1'}
+sys.auth_user.save (0.00) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 35, 37, 233000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+Not Found: /sys-admin/static/angular.min.js.map
+Not Found: /polyfills/promise-6.1.0.js.map
+django_session.find (0.00) {'_id': 'tw93wjdevsu6bocin0hb7rovshjwvz8t', 'expire_date': {'$gt': datetime.datetime(2018, 7, 12, 10, 37, 57, 72946, tzinfo=<UTC>)}, 'schema': 'sys'}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b321a71927e0070511b73e6')}
+sys.auth_user.find (0.00) {'username': 'root1'}
+sys.auth_user.save (0.00) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 35, 37, 233000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+Internal Server Error: /lv/sys-admin/api
+Traceback (most recent call last):
+  File "/home/hcsadmin/argo/packages/django/django/core/handlers/base.py", line 122, in get_response
+    raise e
+Exception: Call  'get_list' in 'sys_admin.api.customers' encountered 'local variable 'settings' referenced before assignment'
+django_session.find (0.00) {'_id': 'tw93wjdevsu6bocin0hb7rovshjwvz8t', 'expire_date': {'$gt': datetime.datetime(2018, 7, 12, 10, 37, 59, 22038, tzinfo=<UTC>)}, 'schema': 'sys'}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b321a71927e0070511b73e6')}
+sys.auth_user.find (0.00) {'username': 'root1'}
+sys.auth_user.save (0.00) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 35, 37, 233000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+Not Found: /sys-admin/static/angular.min.js.map
+Not Found: /polyfills/promise-6.1.0.js.map
+django_session.find (0.00) {'_id': 'tw93wjdevsu6bocin0hb7rovshjwvz8t', 'expire_date': {'$gt': datetime.datetime(2018, 7, 12, 10, 37, 59, 622670, tzinfo=<UTC>)}, 'schema': 'sys'}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b321a71927e0070511b73e6')}
+sys.auth_user.find (0.00) {'username': 'root1'}
+sys.auth_user.save (0.00) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 35, 37, 233000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+django_session.find (0.00) {'_id': 'tw93wjdevsu6bocin0hb7rovshjwvz8t', 'expire_date': {'$gt': datetime.datetime(2018, 7, 12, 10, 38, 3, 107642, tzinfo=<UTC>)}, 'schema': 'sys'}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b321a71927e0070511b73e6')}
+sys.auth_user.find (0.00) {'username': 'root1'}
+sys.auth_user.save (0.00) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 35, 37, 233000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+Not Found: /sys-admin/static/angular.min.js.map
+Not Found: /polyfills/promise-6.1.0.js.map
+django_session.find (0.00) {'_id': 'tw93wjdevsu6bocin0hb7rovshjwvz8t', 'expire_date': {'$gt': datetime.datetime(2018, 7, 12, 10, 38, 3, 551788, tzinfo=<UTC>)}, 'schema': 'sys'}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b321a71927e0070511b73e6')}
+sys.auth_user.find (0.00) {'username': 'root1'}
+sys.auth_user.save (0.00) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 35, 37, 233000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+Internal Server Error: /lv/sys-admin/api
+Traceback (most recent call last):
+  File "/home/hcsadmin/argo/packages/django/django/core/handlers/base.py", line 122, in get_response
+    raise e
+Exception: Call  'get_list' in 'sys_admin.api.customers' encountered 'local variable 'settings' referenced before assignment'
+django_session.find (0.00) {'_id': 'tw93wjdevsu6bocin0hb7rovshjwvz8t', 'expire_date': {'$gt': datetime.datetime(2018, 7, 12, 10, 38, 5, 774950, tzinfo=<UTC>)}, 'schema': 'sys'}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b321a71927e0070511b73e6')}
+sys.auth_user.find (0.00) {'username': 'root1'}
+sys.auth_user.save (0.00) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 35, 37, 233000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+django_session.find (0.00) {'_id': 'tw93wjdevsu6bocin0hb7rovshjwvz8t', 'expire_date': {'$gt': datetime.datetime(2018, 7, 12, 10, 39, 19, 978582, tzinfo=<UTC>)}, 'schema': 'sys'}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b321a71927e0070511b73e6')}
+sys.auth_user.find (0.00) {'username': 'root1'}
+sys.auth_user.save (0.00) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 35, 37, 233000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+django_session.find (0.00) {'_id': 'tw93wjdevsu6bocin0hb7rovshjwvz8t', 'expire_date': {'$gt': datetime.datetime(2018, 7, 12, 10, 40, 1, 610655, tzinfo=<UTC>)}, 'schema': 'sys'}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b321a71927e0070511b73e6')}
+sys.auth_user.find (0.00) {'username': 'root1'}
+sys.auth_user.save (0.00) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 35, 37, 233000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+Not Found: /sys-admin/static/angular.min.js.map
+Not Found: /polyfills/promise-6.1.0.js.map
+django_session.find (0.00) {'_id': 'tw93wjdevsu6bocin0hb7rovshjwvz8t', 'expire_date': {'$gt': datetime.datetime(2018, 7, 12, 10, 40, 2, 407508, tzinfo=<UTC>)}, 'schema': 'sys'}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b321a71927e0070511b73e6')}
+sys.auth_user.find (0.00) {'username': 'root1'}
+sys.auth_user.save (0.00) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 35, 37, 233000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+Internal Server Error: /lv/sys-admin/api
+Traceback (most recent call last):
+  File "/home/hcsadmin/argo/packages/django/django/core/handlers/base.py", line 122, in get_response
+    raise e
+Exception: Call  'get_list' in 'sys_admin.api.customers' encountered 'local variable 'settings' referenced before assignment'
+django_session.find (0.00) {'_id': 'tw93wjdevsu6bocin0hb7rovshjwvz8t', 'expire_date': {'$gt': datetime.datetime(2018, 7, 12, 10, 40, 5, 638892, tzinfo=<UTC>)}, 'schema': 'sys'}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b321a71927e0070511b73e6')}
+sys.auth_user.find (0.00) {'username': 'root1'}
+sys.auth_user.save (0.00) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 35, 37, 233000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+django_session.find (0.00) {'_id': 'tw93wjdevsu6bocin0hb7rovshjwvz8t', 'expire_date': {'$gt': datetime.datetime(2018, 7, 12, 10, 40, 21, 856484, tzinfo=<UTC>)}, 'schema': 'sys'}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b321a71927e0070511b73e6')}
+sys.auth_user.find (0.00) {'username': 'root1'}
+sys.auth_user.save (0.00) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 35, 37, 233000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+django_session.find (0.00) {'_id': 'tw93wjdevsu6bocin0hb7rovshjwvz8t', 'expire_date': {'$gt': datetime.datetime(2018, 7, 12, 10, 40, 54, 491595, tzinfo=<UTC>)}, 'schema': 'sys'}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b321a71927e0070511b73e6')}
+sys.auth_user.find (0.01) {'username': 'root1'}
+sys.auth_user.save (0.00) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 35, 37, 233000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+Not Found: /sys-admin/static/angular.min.js.map
+Not Found: /polyfills/promise-6.1.0.js.map
+django_session.find (0.00) {'_id': 'tw93wjdevsu6bocin0hb7rovshjwvz8t', 'expire_date': {'$gt': datetime.datetime(2018, 7, 12, 10, 40, 55, 101788, tzinfo=<UTC>)}, 'schema': 'sys'}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b321a71927e0070511b73e6')}
+sys.auth_user.find (0.00) {'username': 'root1'}
+sys.auth_user.save (0.00) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 35, 37, 233000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+Internal Server Error: /lv/sys-admin/api
+Traceback (most recent call last):
+  File "/home/hcsadmin/argo/packages/django/django/core/handlers/base.py", line 122, in get_response
+    raise e
+Exception: Call  'get_list' in 'sys_admin.api.customers' encountered 'local variable 'settings' referenced before assignment'
+django_session.find (0.00) {'_id': 'tw93wjdevsu6bocin0hb7rovshjwvz8t', 'expire_date': {'$gt': datetime.datetime(2018, 7, 12, 10, 40, 57, 863990, tzinfo=<UTC>)}, 'schema': 'sys'}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b321a71927e0070511b73e6')}
+sys.auth_user.find (0.00) {'username': 'root1'}
+sys.auth_user.save (0.00) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 35, 37, 233000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+django_session.find (0.00) {'_id': 'tw93wjdevsu6bocin0hb7rovshjwvz8t', 'expire_date': {'$gt': datetime.datetime(2018, 7, 12, 10, 41, 11, 945163, tzinfo=<UTC>)}, 'schema': 'sys'}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b321a71927e0070511b73e6')}
+sys.auth_user.find (0.00) {'username': 'root1'}
+sys.auth_user.save (0.00) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 35, 37, 233000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+django_session.find (0.00) {'_id': 'tw93wjdevsu6bocin0hb7rovshjwvz8t', 'expire_date': {'$gt': datetime.datetime(2018, 7, 12, 10, 43, 51, 298133, tzinfo=<UTC>)}, 'schema': 'sys'}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b321a71927e0070511b73e6')}
+sys.auth_user.find (0.00) {'username': 'root1'}
+sys.auth_user.save (0.00) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 35, 37, 233000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+django_session.find (0.00) {'_id': 'tw93wjdevsu6bocin0hb7rovshjwvz8t', 'expire_date': {'$gt': datetime.datetime(2018, 7, 12, 10, 43, 51, 599013, tzinfo=<UTC>)}, 'schema': 'sys'}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b321a71927e0070511b73e6')}
+sys.auth_user.find (0.00) {'username': 'root1'}
+sys.auth_user.save (0.00) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 35, 37, 233000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+Internal Server Error: /lv/sys-admin/api
+Traceback (most recent call last):
+  File "/home/hcsadmin/argo/packages/django/django/core/handlers/base.py", line 122, in get_response
+    raise e
+Exception: Call  'get_list' in 'sys_admin.api.customers' encountered 'local variable 'settings' referenced before assignment'
+django_session.find (0.00) {'_id': 'tw93wjdevsu6bocin0hb7rovshjwvz8t', 'expire_date': {'$gt': datetime.datetime(2018, 7, 12, 10, 44, 40, 290827, tzinfo=<UTC>)}, 'schema': 'sys'}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b321a71927e0070511b73e6')}
+sys.auth_user.find (0.00) {'username': 'root1'}
+sys.auth_user.save (0.00) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 35, 37, 233000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+django_session.find (0.00) {'_id': 'tw93wjdevsu6bocin0hb7rovshjwvz8t', 'expire_date': {'$gt': datetime.datetime(2018, 7, 12, 10, 44, 40, 538210, tzinfo=<UTC>)}, 'schema': 'sys'}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b321a71927e0070511b73e6')}
+sys.auth_user.find (0.00) {'username': 'root1'}
+sys.auth_user.save (0.00) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 35, 37, 233000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+Internal Server Error: /lv/sys-admin/api
+Traceback (most recent call last):
+  File "/home/hcsadmin/argo/packages/django/django/core/handlers/base.py", line 122, in get_response
+    raise e
+Exception: Call  'get_list' in 'sys_admin.api.customers' encountered 'local variable 'settings' referenced before assignment'
+django_session.find (0.00) {'_id': 'tw93wjdevsu6bocin0hb7rovshjwvz8t', 'expire_date': {'$gt': datetime.datetime(2018, 7, 12, 10, 44, 47, 754407, tzinfo=<UTC>)}, 'schema': 'sys'}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b321a71927e0070511b73e6')}
+sys.auth_user.find (0.00) {'username': 'root1'}
+sys.auth_user.save (0.00) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 35, 37, 233000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+django_session.find (0.00) {'_id': 'tw93wjdevsu6bocin0hb7rovshjwvz8t', 'expire_date': {'$gt': datetime.datetime(2018, 7, 12, 10, 46, 15, 600038, tzinfo=<UTC>)}, 'schema': 'sys'}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b321a71927e0070511b73e6')}
+sys.auth_user.find (0.00) {'username': 'root1'}
+sys.auth_user.save (0.00) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 35, 37, 233000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+Not Found: /polyfills/promise-6.1.0.js.map
+Not Found: /sys-admin/static/angular.min.js.map
+django_session.find (0.00) {'_id': 'tw93wjdevsu6bocin0hb7rovshjwvz8t', 'expire_date': {'$gt': datetime.datetime(2018, 7, 12, 10, 46, 23, 182720, tzinfo=<UTC>)}, 'schema': 'sys'}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b321a71927e0070511b73e6')}
+sys.auth_user.find (0.00) {'username': 'root1'}
+sys.auth_user.save (0.00) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 35, 37, 233000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+Not Found: /sys-admin/static/angular.min.js.map
+Not Found: /polyfills/promise-6.1.0.js.map
+django_session.find (0.00) {'_id': 'tw93wjdevsu6bocin0hb7rovshjwvz8t', 'expire_date': {'$gt': datetime.datetime(2018, 7, 12, 10, 46, 32, 495712, tzinfo=<UTC>)}, 'schema': 'sys'}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b321a71927e0070511b73e6')}
+sys.auth_user.find (0.00) {'username': 'root1'}
+sys.auth_user.save (0.00) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 35, 37, 233000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+Not Found: /sys-admin/static/angular.min.js.map
+Not Found: /polyfills/promise-6.1.0.js.map
+django_session.find (0.00) {'_id': 'tw93wjdevsu6bocin0hb7rovshjwvz8t', 'expire_date': {'$gt': datetime.datetime(2018, 7, 12, 10, 46, 34, 155893, tzinfo=<UTC>)}, 'schema': 'sys'}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b321a71927e0070511b73e6')}
+sys.auth_user.find (0.00) {'username': 'root1'}
+sys.auth_user.save (0.00) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 35, 37, 233000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+Internal Server Error: /lv/sys-admin/api
+Traceback (most recent call last):
+  File "/home/hcsadmin/argo/packages/django/django/core/handlers/base.py", line 122, in get_response
+    raise e
+Exception: Call  'get_list' in 'sys_admin.api.customers' encountered 'local variable 'settings' referenced before assignment'
+django_session.find (0.00) {'_id': 'tw93wjdevsu6bocin0hb7rovshjwvz8t', 'expire_date': {'$gt': datetime.datetime(2018, 7, 12, 10, 49, 6, 165260, tzinfo=<UTC>)}, 'schema': 'sys'}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b321a71927e0070511b73e6')}
+sys.auth_user.find (0.00) {'username': 'root1'}
+sys.auth_user.save (0.00) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 35, 37, 233000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+django_session.find (0.00) {'_id': 'tw93wjdevsu6bocin0hb7rovshjwvz8t', 'expire_date': {'$gt': datetime.datetime(2018, 7, 12, 10, 49, 6, 435367, tzinfo=<UTC>)}, 'schema': 'sys'}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b321a71927e0070511b73e6')}
+sys.auth_user.find (0.00) {'username': 'root1'}
+sys.auth_user.save (0.00) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 35, 37, 233000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+Internal Server Error: /lv/sys-admin/api
+Traceback (most recent call last):
+  File "/home/hcsadmin/argo/packages/django/django/core/handlers/base.py", line 122, in get_response
+    raise e
+Exception: Call  'get_list' in 'sys_admin.api.customers' encountered 'local variable 'settings' referenced before assignment'
+django_session.find (0.00) {'_id': 'tw93wjdevsu6bocin0hb7rovshjwvz8t', 'expire_date': {'$gt': datetime.datetime(2018, 7, 12, 10, 49, 30, 922296, tzinfo=<UTC>)}, 'schema': 'sys'}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b321a71927e0070511b73e6')}
+sys.auth_user.find (0.00) {'username': 'root1'}
+sys.auth_user.save (0.00) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 35, 37, 233000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+Internal Server Error: /lv/sys-admin/api
+Traceback (most recent call last):
+  File "/home/hcsadmin/argo/packages/django/django/core/handlers/base.py", line 122, in get_response
+    raise e
+Exception: Call  'save_item' in 'sys_admin.api.customers' encountered 'global name 'params' is not defined'
+Not Found: /sys-admin/static/angular.min.js.map
+Not Found: /polyfills/promise-6.1.0.js.map
+django_session.find (0.00) {'_id': 'tw93wjdevsu6bocin0hb7rovshjwvz8t', 'expire_date': {'$gt': datetime.datetime(2018, 7, 12, 10, 49, 38, 799582, tzinfo=<UTC>)}, 'schema': 'sys'}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b321a71927e0070511b73e6')}
+sys.auth_user.find (0.00) {'username': 'root1'}
+sys.auth_user.save (0.00) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 35, 37, 233000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+Internal Server Error: /lv/sys-admin/api
+Traceback (most recent call last):
+  File "/home/hcsadmin/argo/packages/django/django/core/handlers/base.py", line 122, in get_response
+    raise e
+Exception: Call  'save_item' in 'sys_admin.api.customers' encountered 'global name 'params' is not defined'
+django_session.find (0.00) {'_id': 'tw93wjdevsu6bocin0hb7rovshjwvz8t', 'expire_date': {'$gt': datetime.datetime(2018, 7, 12, 10, 50, 7, 147333, tzinfo=<UTC>)}, 'schema': 'sys'}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b321a71927e0070511b73e6')}
+sys.auth_user.find (0.00) {'username': 'root1'}
+sys.auth_user.save (0.00) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 35, 37, 233000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+Internal Server Error: /lv/sys-admin/api
+Traceback (most recent call last):
+  File "/home/hcsadmin/argo/packages/django/django/core/handlers/base.py", line 122, in get_response
+    raise e
+Exception: Call  'save_item' in 'sys_admin.api.customers' encountered 'global name 'params' is not defined'
+django_session.find (0.00) {'_id': 'tw93wjdevsu6bocin0hb7rovshjwvz8t', 'expire_date': {'$gt': datetime.datetime(2018, 7, 12, 11, 1, 45, 486056, tzinfo=<UTC>)}, 'schema': 'sys'}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b321a71927e0070511b73e6')}
+sys.auth_user.find (0.00) {'username': 'root1'}
+sys.auth_user.save (0.00) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 35, 37, 233000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+Not Found: /sys-admin/static/angular.min.js.map
+Not Found: /polyfills/promise-6.1.0.js.map
+django_session.find (0.01) {'_id': 'tw93wjdevsu6bocin0hb7rovshjwvz8t', 'expire_date': {'$gt': datetime.datetime(2018, 7, 12, 11, 1, 46, 572302, tzinfo=<UTC>)}, 'schema': 'sys'}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b321a71927e0070511b73e6')}
+sys.auth_user.find (0.00) {'username': 'root1'}
+sys.auth_user.save (0.00) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 35, 37, 233000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+django_session.find (0.00) {'_id': 'tw93wjdevsu6bocin0hb7rovshjwvz8t', 'expire_date': {'$gt': datetime.datetime(2018, 7, 12, 11, 1, 50, 155232, tzinfo=<UTC>)}, 'schema': 'sys'}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b321a71927e0070511b73e6')}
+sys.auth_user.find (0.00) {'username': 'root1'}
+sys.auth_user.save (0.00) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 35, 37, 233000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+django_session.find (0.00) {'_id': 'tw93wjdevsu6bocin0hb7rovshjwvz8t', 'expire_date': {'$gt': datetime.datetime(2018, 7, 12, 11, 5, 47, 869753, tzinfo=<UTC>)}, 'schema': 'sys'}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b321a71927e0070511b73e6')}
+sys.auth_user.find (0.00) {'username': 'root1'}
+sys.auth_user.save (0.00) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 35, 37, 233000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+django_session.find (0.00) {'_id': 'tw93wjdevsu6bocin0hb7rovshjwvz8t', 'expire_date': {'$gt': datetime.datetime(2018, 7, 12, 11, 7, 22, 835165, tzinfo=<UTC>)}, 'schema': 'sys'}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b321a71927e0070511b73e6')}
+sys.auth_user.find (0.00) {'username': 'root1'}
+sys.auth_user.save (0.00) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 35, 37, 233000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+django_session.find (0.00) {'_id': 'tw93wjdevsu6bocin0hb7rovshjwvz8t', 'expire_date': {'$gt': datetime.datetime(2018, 7, 12, 11, 7, 59, 571350, tzinfo=<UTC>)}, 'schema': 'sys'}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b321a71927e0070511b73e6')}
+sys.auth_user.find (0.00) {'username': 'root1'}
+sys.auth_user.save (0.00) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 35, 37, 233000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+Internal Server Error: /lv/sys-admin/api
+Traceback (most recent call last):
+  File "/home/hcsadmin/argo/packages/django/django/core/handlers/base.py", line 122, in get_response
+    raise e
+Exception: Call  'save_item' in 'sys_admin.api.customers' encountered ''reasom' must be 'missing' or 'require''
+django_session.find (0.00) {'_id': 'tw93wjdevsu6bocin0hb7rovshjwvz8t', 'expire_date': {'$gt': datetime.datetime(2018, 7, 12, 11, 8, 47, 957470, tzinfo=<UTC>)}, 'schema': 'sys'}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b321a71927e0070511b73e6')}
+sys.auth_user.find (0.00) {'username': 'root1'}
+sys.auth_user.save (0.00) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 35, 37, 233000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+Internal Server Error: /lv/sys-admin/api
+Traceback (most recent call last):
+  File "/home/hcsadmin/argo/packages/django/django/core/handlers/base.py", line 122, in get_response
+    raise e
+Exception: Call  'save_item' in 'sys_admin.api.customers' encountered ''reasom' must be 'missing' or 'require''
+django_session.find (0.00) {'_id': 'tw93wjdevsu6bocin0hb7rovshjwvz8t', 'expire_date': {'$gt': datetime.datetime(2018, 7, 12, 11, 9, 33, 893569, tzinfo=<UTC>)}, 'schema': 'sys'}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b321a71927e0070511b73e6')}
+sys.auth_user.find (0.00) {'username': 'root1'}
+sys.auth_user.save (0.00) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 35, 37, 233000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+Internal Server Error: /lv/sys-admin/api
+Traceback (most recent call last):
+  File "/home/hcsadmin/argo/packages/django/django/core/handlers/base.py", line 122, in get_response
+    raise e
+Exception: Call  'save_item' in 'sys_admin.api.customers' encountered ''reasom' must be 'missing' or 'require''
+django_session.find (0.00) {'_id': 'tw93wjdevsu6bocin0hb7rovshjwvz8t', 'expire_date': {'$gt': datetime.datetime(2018, 7, 12, 11, 10, 51, 476349, tzinfo=<UTC>)}, 'schema': 'sys'}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b321a71927e0070511b73e6')}
+sys.auth_user.find (0.00) {'username': 'root1'}
+sys.auth_user.save (0.00) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 35, 37, 233000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+django_session.find (0.00) {'_id': 'tw93wjdevsu6bocin0hb7rovshjwvz8t', 'expire_date': {'$gt': datetime.datetime(2018, 7, 12, 11, 10, 51, 765435, tzinfo=<UTC>)}, 'schema': 'sys'}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b321a71927e0070511b73e6')}
+sys.auth_user.find (0.00) {'username': 'root1'}
+sys.auth_user.save (0.00) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 35, 37, 233000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+Internal Server Error: /lv/sys-admin/api
+Traceback (most recent call last):
+  File "/home/hcsadmin/argo/packages/django/django/core/handlers/base.py", line 122, in get_response
+    raise e
+Exception: Call  'get_list' in 'sys_admin.api.customers' encountered 'local variable 'settings' referenced before assignment'
+django_session.find (0.00) {'_id': 'tw93wjdevsu6bocin0hb7rovshjwvz8t', 'expire_date': {'$gt': datetime.datetime(2018, 7, 12, 11, 10, 52, 971670, tzinfo=<UTC>)}, 'schema': 'sys'}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b321a71927e0070511b73e6')}
+sys.auth_user.find (0.00) {'username': 'root1'}
+sys.auth_user.save (0.00) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 35, 37, 233000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+django_session.find (0.00) {'_id': 'tw93wjdevsu6bocin0hb7rovshjwvz8t', 'expire_date': {'$gt': datetime.datetime(2018, 7, 12, 11, 10, 56, 173380, tzinfo=<UTC>)}, 'schema': 'sys'}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b321a71927e0070511b73e6')}
+sys.auth_user.find (0.00) {'username': 'root1'}
+sys.auth_user.save (0.00) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 35, 37, 233000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+django_session.find (0.01) {'_id': 'tw93wjdevsu6bocin0hb7rovshjwvz8t', 'expire_date': {'$gt': datetime.datetime(2018, 7, 12, 11, 10, 56, 422136, tzinfo=<UTC>)}, 'schema': 'sys'}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b321a71927e0070511b73e6')}
+sys.auth_user.find (0.00) {'username': 'root1'}
+sys.auth_user.save (0.00) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 35, 37, 233000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+django_session.find (0.00) {'_id': 'tw93wjdevsu6bocin0hb7rovshjwvz8t', 'expire_date': {'$gt': datetime.datetime(2018, 7, 12, 11, 11, 24, 161572, tzinfo=<UTC>)}, 'schema': 'sys'}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b321a71927e0070511b73e6')}
+sys.auth_user.find (0.00) {'username': 'root1'}
+sys.auth_user.save (0.00) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 35, 37, 233000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+django_session.find (0.00) {'_id': 'tw93wjdevsu6bocin0hb7rovshjwvz8t', 'expire_date': {'$gt': datetime.datetime(2018, 7, 12, 11, 12, 21, 307929, tzinfo=<UTC>)}, 'schema': 'sys'}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b321a71927e0070511b73e6')}
+sys.auth_user.find (0.00) {'username': 'root1'}
+sys.auth_user.save (0.00) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 35, 37, 233000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+django_session.find (0.00) {'_id': 'tw93wjdevsu6bocin0hb7rovshjwvz8t', 'expire_date': {'$gt': datetime.datetime(2018, 7, 12, 11, 13, 38, 414387, tzinfo=<UTC>)}, 'schema': 'sys'}
+sys.auth_user.find (0.01) {'_id': ObjectId('5b321a71927e0070511b73e6')}
+sys.auth_user.find (0.00) {'username': 'root1'}
+sys.auth_user.save (0.00) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 35, 37, 233000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+django_session.find (0.00) {'_id': 'tw93wjdevsu6bocin0hb7rovshjwvz8t', 'expire_date': {'$gt': datetime.datetime(2018, 7, 12, 11, 14, 2, 808546, tzinfo=<UTC>)}, 'schema': 'sys'}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b321a71927e0070511b73e6')}
+sys.auth_user.find (0.00) {'username': 'root1'}
+sys.auth_user.save (0.01) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 35, 37, 233000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+Internal Server Error: /lv/sys-admin/api
+Traceback (most recent call last):
+  File "/home/hcsadmin/argo/packages/django/django/core/handlers/base.py", line 122, in get_response
+    raise e
+Exception: Call  'get_list' in 'sys_admin.api.customers' encountered 'local variable 'settings' referenced before assignment'
+django_session.find (0.00) {'_id': 'tw93wjdevsu6bocin0hb7rovshjwvz8t', 'expire_date': {'$gt': datetime.datetime(2018, 7, 12, 11, 14, 8, 353648, tzinfo=<UTC>)}, 'schema': 'sys'}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b321a71927e0070511b73e6')}
+sys.auth_user.find (0.00) {'username': 'root1'}
+sys.auth_user.save (0.00) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 35, 37, 233000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+django_session.find (0.00) {'_id': 'tw93wjdevsu6bocin0hb7rovshjwvz8t', 'expire_date': {'$gt': datetime.datetime(2018, 7, 12, 11, 14, 8, 604664, tzinfo=<UTC>)}, 'schema': 'sys'}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b321a71927e0070511b73e6')}
+sys.auth_user.find (0.00) {'username': 'root1'}
+sys.auth_user.save (0.00) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 35, 37, 233000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+Internal Server Error: /lv/sys-admin/api
+Traceback (most recent call last):
+  File "/home/hcsadmin/argo/packages/django/django/core/handlers/base.py", line 122, in get_response
+    raise e
+Exception: Call  'get_list' in 'sys_admin.api.customers' encountered 'local variable 'settings' referenced before assignment'
+django_session.find (0.00) {'_id': 'tw93wjdevsu6bocin0hb7rovshjwvz8t', 'expire_date': {'$gt': datetime.datetime(2018, 7, 12, 11, 15, 41, 299591, tzinfo=<UTC>)}, 'schema': 'sys'}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b321a71927e0070511b73e6')}
+sys.auth_user.find (0.00) {'username': 'root1'}
+sys.auth_user.save (0.00) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 35, 37, 233000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+django_session.find (0.00) {'_id': 'tw93wjdevsu6bocin0hb7rovshjwvz8t', 'expire_date': {'$gt': datetime.datetime(2018, 7, 12, 11, 18, 0, 944476, tzinfo=<UTC>)}, 'schema': 'sys'}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b321a71927e0070511b73e6')}
+sys.auth_user.find (0.00) {'username': 'root1'}
+sys.auth_user.save (0.00) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 35, 37, 233000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+django_session.find (0.00) {'_id': 'tw93wjdevsu6bocin0hb7rovshjwvz8t', 'expire_date': {'$gt': datetime.datetime(2018, 7, 12, 11, 18, 1, 262836, tzinfo=<UTC>)}, 'schema': 'sys'}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b321a71927e0070511b73e6')}
+sys.auth_user.find (0.00) {'username': 'root1'}
+sys.auth_user.save (0.00) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 35, 37, 233000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+django_session.find (0.00) {'_id': 'tw93wjdevsu6bocin0hb7rovshjwvz8t', 'expire_date': {'$gt': datetime.datetime(2018, 7, 12, 11, 18, 29, 355800, tzinfo=<UTC>)}, 'schema': 'sys'}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b321a71927e0070511b73e6')}
+sys.auth_user.find (0.00) {'username': 'root1'}
+sys.auth_user.save (0.00) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 35, 37, 233000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+django_session.find (0.00) {'_id': 'tw93wjdevsu6bocin0hb7rovshjwvz8t', 'expire_date': {'$gt': datetime.datetime(2018, 7, 12, 11, 18, 34, 682552, tzinfo=<UTC>)}, 'schema': 'sys'}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b321a71927e0070511b73e6')}
+sys.auth_user.find (0.00) {'username': 'root1'}
+sys.auth_user.save (0.00) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 35, 37, 233000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+Internal Server Error: /lv/sys-admin/api
+Traceback (most recent call last):
+  File "/home/hcsadmin/argo/packages/django/django/core/handlers/base.py", line 122, in get_response
+    raise e
+Exception: Call  'get_list' in 'sys_admin.api.customers' encountered 'local variable 'settings' referenced before assignment'
+django_session.find (0.00) {'_id': 'tw93wjdevsu6bocin0hb7rovshjwvz8t', 'expire_date': {'$gt': datetime.datetime(2018, 7, 12, 11, 20, 34, 204461, tzinfo=<UTC>)}, 'schema': 'sys'}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b321a71927e0070511b73e6')}
+sys.auth_user.find (0.00) {'username': 'root1'}
+sys.auth_user.save (0.00) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 35, 37, 233000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+django_session.find (0.00) {'_id': 'tw93wjdevsu6bocin0hb7rovshjwvz8t', 'expire_date': {'$gt': datetime.datetime(2018, 7, 12, 11, 20, 34, 515057, tzinfo=<UTC>)}, 'schema': 'sys'}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b321a71927e0070511b73e6')}
+sys.auth_user.find (0.00) {'username': 'root1'}
+sys.auth_user.save (0.00) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 35, 37, 233000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+django_session.find (0.00) {'_id': 'tw93wjdevsu6bocin0hb7rovshjwvz8t', 'expire_date': {'$gt': datetime.datetime(2018, 7, 12, 11, 21, 4, 698567, tzinfo=<UTC>)}, 'schema': 'sys'}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b321a71927e0070511b73e6')}
+sys.auth_user.find (0.00) {'username': 'root1'}
+sys.auth_user.save (0.00) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 35, 37, 233000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+django_session.find (0.01) {'_id': 'tw93wjdevsu6bocin0hb7rovshjwvz8t', 'expire_date': {'$gt': datetime.datetime(2018, 7, 12, 11, 21, 24, 909583, tzinfo=<UTC>)}, 'schema': 'sys'}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b321a71927e0070511b73e6')}
+sys.auth_user.find (0.00) {'username': 'root1'}
+sys.auth_user.save (0.00) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 35, 37, 233000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+Internal Server Error: /lv/sys-admin/api
+Traceback (most recent call last):
+  File "/home/hcsadmin/argo/packages/django/django/core/handlers/base.py", line 122, in get_response
+    raise e
+Exception: Call  'get_list' in 'sys_admin.api.customers' encountered 'local variable 'settings' referenced before assignment'
+django_session.find (0.00) {'_id': 'tw93wjdevsu6bocin0hb7rovshjwvz8t', 'expire_date': {'$gt': datetime.datetime(2018, 7, 12, 11, 22, 24, 201385, tzinfo=<UTC>)}, 'schema': 'sys'}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b321a71927e0070511b73e6')}
+sys.auth_user.find (0.00) {'username': 'root1'}
+sys.auth_user.save (0.00) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 35, 37, 233000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+django_session.find (0.00) {'_id': 'tw93wjdevsu6bocin0hb7rovshjwvz8t', 'expire_date': {'$gt': datetime.datetime(2018, 7, 12, 11, 22, 24, 473857, tzinfo=<UTC>)}, 'schema': 'sys'}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b321a71927e0070511b73e6')}
+sys.auth_user.find (0.00) {'username': 'root1'}
+sys.auth_user.save (0.00) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 35, 37, 233000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+Internal Server Error: /lv/sys-admin/api
+Traceback (most recent call last):
+  File "/home/hcsadmin/argo/packages/django/django/core/handlers/base.py", line 122, in get_response
+    raise e
+Exception: Call  'get_list' in 'sys_admin.api.customers' encountered 'local variable 'settings' referenced before assignment'
+django_session.find (0.00) {'_id': 'tw93wjdevsu6bocin0hb7rovshjwvz8t', 'expire_date': {'$gt': datetime.datetime(2018, 7, 12, 11, 23, 26, 568757, tzinfo=<UTC>)}, 'schema': 'sys'}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b321a71927e0070511b73e6')}
+sys.auth_user.find (0.00) {'username': 'root1'}
+sys.auth_user.save (0.00) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 35, 37, 233000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+django_session.find (0.00) {'_id': 'tw93wjdevsu6bocin0hb7rovshjwvz8t', 'expire_date': {'$gt': datetime.datetime(2018, 7, 12, 11, 23, 26, 824256, tzinfo=<UTC>)}, 'schema': 'sys'}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b321a71927e0070511b73e6')}
+sys.auth_user.find (0.00) {'username': 'root1'}
+sys.auth_user.save (0.00) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 35, 37, 233000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+Internal Server Error: /lv/sys-admin/api
+Traceback (most recent call last):
+  File "/home/hcsadmin/argo/packages/django/django/core/handlers/base.py", line 122, in get_response
+    raise e
+Exception: Call  'get_list' in 'sys_admin.api.customers' encountered 'local variable 'settings' referenced before assignment'
+django_session.find (0.00) {'_id': 'tw93wjdevsu6bocin0hb7rovshjwvz8t', 'expire_date': {'$gt': datetime.datetime(2018, 7, 12, 11, 23, 28, 99698, tzinfo=<UTC>)}, 'schema': 'sys'}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b321a71927e0070511b73e6')}
+sys.auth_user.find (0.00) {'username': 'root1'}
+sys.auth_user.save (0.00) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 35, 37, 233000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+django_session.find (0.00) {'_id': 'tw93wjdevsu6bocin0hb7rovshjwvz8t', 'expire_date': {'$gt': datetime.datetime(2018, 7, 12, 11, 23, 28, 277701, tzinfo=<UTC>)}, 'schema': 'sys'}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b321a71927e0070511b73e6')}
+sys.auth_user.find (0.00) {'username': 'root1'}
+sys.auth_user.save (0.00) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 35, 37, 233000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+Internal Server Error: /lv/sys-admin/api
+Traceback (most recent call last):
+  File "/home/hcsadmin/argo/packages/django/django/core/handlers/base.py", line 122, in get_response
+    raise e
+Exception: Call  'get_list' in 'sys_admin.api.customers' encountered 'local variable 'settings' referenced before assignment'
+django_session.find (0.00) {'_id': 'tw93wjdevsu6bocin0hb7rovshjwvz8t', 'expire_date': {'$gt': datetime.datetime(2018, 7, 12, 11, 23, 52, 596654, tzinfo=<UTC>)}, 'schema': 'sys'}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b321a71927e0070511b73e6')}
+sys.auth_user.find (0.00) {'username': 'root1'}
+sys.auth_user.save (0.00) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 35, 37, 233000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+django_session.find (0.01) {'_id': 'tw93wjdevsu6bocin0hb7rovshjwvz8t', 'expire_date': {'$gt': datetime.datetime(2018, 7, 12, 11, 23, 52, 878504, tzinfo=<UTC>)}, 'schema': 'sys'}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b321a71927e0070511b73e6')}
+sys.auth_user.find (0.00) {'username': 'root1'}
+sys.auth_user.save (0.00) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 35, 37, 233000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+Internal Server Error: /lv/sys-admin/api
+Traceback (most recent call last):
+  File "/home/hcsadmin/argo/packages/django/django/core/handlers/base.py", line 122, in get_response
+    raise e
+Exception: Call  'get_list' in 'sys_admin.api.customers' encountered 'local variable 'settings' referenced before assignment'
+django_session.find (0.00) {'_id': 'tw93wjdevsu6bocin0hb7rovshjwvz8t', 'expire_date': {'$gt': datetime.datetime(2018, 7, 12, 11, 24, 11, 584293, tzinfo=<UTC>)}, 'schema': 'sys'}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b321a71927e0070511b73e6')}
+sys.auth_user.find (0.00) {'username': 'root1'}
+sys.auth_user.save (0.00) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 35, 37, 233000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+django_session.find (0.00) {'_id': 'tw93wjdevsu6bocin0hb7rovshjwvz8t', 'expire_date': {'$gt': datetime.datetime(2018, 7, 12, 11, 24, 11, 831204, tzinfo=<UTC>)}, 'schema': 'sys'}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b321a71927e0070511b73e6')}
+sys.auth_user.find (0.00) {'username': 'root1'}
+sys.auth_user.save (0.00) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 35, 37, 233000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+Internal Server Error: /lv/sys-admin/api
+Traceback (most recent call last):
+  File "/home/hcsadmin/argo/packages/django/django/core/handlers/base.py", line 122, in get_response
+    raise e
+Exception: Call  'get_list' in 'sys_admin.api.customers' encountered 'local variable 'settings' referenced before assignment'
+django_session.find (0.00) {'_id': 'tw93wjdevsu6bocin0hb7rovshjwvz8t', 'expire_date': {'$gt': datetime.datetime(2018, 7, 12, 11, 24, 31, 897154, tzinfo=<UTC>)}, 'schema': 'sys'}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b321a71927e0070511b73e6')}
+sys.auth_user.find (0.00) {'username': 'root1'}
+sys.auth_user.save (0.00) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 35, 37, 233000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+django_session.find (0.00) {'_id': 'tw93wjdevsu6bocin0hb7rovshjwvz8t', 'expire_date': {'$gt': datetime.datetime(2018, 7, 12, 11, 24, 32, 148800, tzinfo=<UTC>)}, 'schema': 'sys'}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b321a71927e0070511b73e6')}
+sys.auth_user.find (0.00) {'username': 'root1'}
+sys.auth_user.save (0.00) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 35, 37, 233000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+Internal Server Error: /lv/sys-admin/api
+Traceback (most recent call last):
+  File "/home/hcsadmin/argo/packages/django/django/core/handlers/base.py", line 122, in get_response
+    raise e
+Exception: Call  'get_list' in 'sys_admin.api.customers' encountered 'local variable 'settings' referenced before assignment'
+django_session.find (0.00) {'_id': 'tw93wjdevsu6bocin0hb7rovshjwvz8t', 'expire_date': {'$gt': datetime.datetime(2018, 7, 12, 11, 25, 38, 802147, tzinfo=<UTC>)}, 'schema': 'sys'}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b321a71927e0070511b73e6')}
+sys.auth_user.find (0.00) {'username': 'root1'}
+sys.auth_user.save (0.00) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 35, 37, 233000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+django_session.find (0.00) {'_id': 'tw93wjdevsu6bocin0hb7rovshjwvz8t', 'expire_date': {'$gt': datetime.datetime(2018, 7, 12, 11, 25, 39, 112764, tzinfo=<UTC>)}, 'schema': 'sys'}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b321a71927e0070511b73e6')}
+sys.auth_user.find (0.00) {'username': 'root1'}
+sys.auth_user.save (0.00) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 35, 37, 233000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+django_session.find (0.00) {'_id': 'tw93wjdevsu6bocin0hb7rovshjwvz8t', 'expire_date': {'$gt': datetime.datetime(2018, 7, 12, 11, 25, 50, 445454, tzinfo=<UTC>)}, 'schema': 'sys'}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b321a71927e0070511b73e6')}
+sys.auth_user.find (0.00) {'username': 'root1'}
+sys.auth_user.save (0.00) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 35, 37, 233000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+django_session.find (0.00) {'_id': 'tw93wjdevsu6bocin0hb7rovshjwvz8t', 'expire_date': {'$gt': datetime.datetime(2018, 7, 12, 11, 25, 50, 663078, tzinfo=<UTC>)}, 'schema': 'sys'}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b321a71927e0070511b73e6')}
+sys.auth_user.find (0.00) {'username': 'root1'}
+sys.auth_user.save (0.00) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 35, 37, 233000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+Not Found: /favicon.ico
+django_session.find (0.00) {'_id': 'tw93wjdevsu6bocin0hb7rovshjwvz8t', 'expire_date': {'$gt': datetime.datetime(2018, 7, 13, 2, 5, 5, 281792, tzinfo=<UTC>)}, 'schema': 'sys'}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b321a71927e0070511b73e6')}
+sys.auth_user.find (0.00) {'username': 'root1'}
+sys.auth_user.save (0.00) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 35, 37, 233000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+django_session.find (0.00) {'_id': 'tw93wjdevsu6bocin0hb7rovshjwvz8t', 'expire_date': {'$gt': datetime.datetime(2018, 7, 13, 2, 5, 7, 941111, tzinfo=<UTC>)}, 'schema': 'sys'}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b321a71927e0070511b73e6')}
+sys.auth_user.find (0.00) {'username': 'root1'}
+sys.auth_user.save (0.00) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 35, 37, 233000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+django_session.find (0.00) {'_id': 'tw93wjdevsu6bocin0hb7rovshjwvz8t', 'expire_date': {'$gt': datetime.datetime(2018, 7, 13, 2, 5, 8, 229414, tzinfo=<UTC>)}, 'schema': 'sys'}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b321a71927e0070511b73e6')}
+sys.auth_user.find (0.00) {'username': 'root1'}
+sys.auth_user.save (0.00) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 35, 37, 233000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+django_session.find (0.00) {'_id': 'tw93wjdevsu6bocin0hb7rovshjwvz8t', 'expire_date': {'$gt': datetime.datetime(2018, 7, 13, 2, 5, 9, 287785, tzinfo=<UTC>)}, 'schema': 'sys'}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b321a71927e0070511b73e6')}
+sys.auth_user.find (0.01) {'username': 'root1'}
+sys.auth_user.save (0.00) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 35, 37, 233000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+django_session.find (0.00) {'_id': 'tw93wjdevsu6bocin0hb7rovshjwvz8t', 'expire_date': {'$gt': datetime.datetime(2018, 7, 13, 2, 5, 9, 547141, tzinfo=<UTC>)}, 'schema': 'sys'}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b321a71927e0070511b73e6')}
+sys.auth_user.find (0.00) {'username': 'root1'}
+sys.auth_user.save (0.00) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 35, 37, 233000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+django_session.find (0.00) {'_id': 'tw93wjdevsu6bocin0hb7rovshjwvz8t', 'expire_date': {'$gt': datetime.datetime(2018, 7, 13, 2, 5, 13, 393454, tzinfo=<UTC>)}, 'schema': 'sys'}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b321a71927e0070511b73e6')}
+sys.auth_user.find (0.00) {'username': 'root1'}
+sys.auth_user.save (0.00) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 35, 37, 233000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+django_session.find (0.00) {'_id': 'tw93wjdevsu6bocin0hb7rovshjwvz8t', 'expire_date': {'$gt': datetime.datetime(2018, 7, 13, 2, 6, 15, 64951, tzinfo=<UTC>)}, 'schema': 'sys'}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b321a71927e0070511b73e6')}
+sys.auth_user.find (0.00) {'username': 'root1'}
+sys.auth_user.save (0.00) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 35, 37, 233000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+django_session.find (0.00) {'_id': 'tw93wjdevsu6bocin0hb7rovshjwvz8t', 'expire_date': {'$gt': datetime.datetime(2018, 7, 13, 2, 7, 7, 137337, tzinfo=<UTC>)}, 'schema': 'sys'}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b321a71927e0070511b73e6')}
+sys.auth_user.find (0.00) {'username': 'root1'}
+sys.auth_user.save (0.00) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 35, 37, 233000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+django_session.find (0.00) {'_id': 'tw93wjdevsu6bocin0hb7rovshjwvz8t', 'expire_date': {'$gt': datetime.datetime(2018, 7, 13, 2, 7, 7, 175062, tzinfo=<UTC>)}, 'schema': 'sys'}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b321a71927e0070511b73e6')}
+sys.auth_user.find (0.00) {'username': 'root1'}
+sys.auth_user.save (0.00) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 35, 37, 233000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+django_session.find (0.00) {'_id': 'tw93wjdevsu6bocin0hb7rovshjwvz8t', 'expire_date': {'$gt': datetime.datetime(2018, 7, 13, 2, 17, 49, 773701, tzinfo=<UTC>)}, 'schema': 'sys'}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b321a71927e0070511b73e6')}
+sys.auth_user.find (0.00) {'username': 'root1'}
+sys.auth_user.save (0.00) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 35, 37, 233000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+django_session.find (0.00) {'_id': 'tw93wjdevsu6bocin0hb7rovshjwvz8t', 'expire_date': {'$gt': datetime.datetime(2018, 7, 13, 2, 17, 50, 54158, tzinfo=<UTC>)}, 'schema': 'sys'}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b321a71927e0070511b73e6')}
+sys.auth_user.find (0.00) {'username': 'root1'}
+sys.auth_user.save (0.00) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 35, 37, 233000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+django_session.find (0.00) {'_id': 'tw93wjdevsu6bocin0hb7rovshjwvz8t', 'expire_date': {'$gt': datetime.datetime(2018, 7, 13, 2, 18, 32, 678585, tzinfo=<UTC>)}, 'schema': u'nttlong'}
+django_session.save (0.00) {'schema': u'nttlong', '_id': u'pbybxsqonh7xzhoao046nijvsaxetv4i', 'expire_date': datetime.datetime(2018, 7, 27, 2, 18, 32, 702112, tzinfo=<UTC>), 'session_data': u'MjY1MGI5ZjE5YWFjZTM1OTM5NmFkNjA4ODFhYTVmNzUxZDA3ZTkxMjp7fQ=='}
+django_session.save (0.00) {'schema': u'nttlong', '_id': u'pbybxsqonh7xzhoao046nijvsaxetv4i', 'expire_date': datetime.datetime(2018, 7, 27, 2, 18, 32, 708932, tzinfo=<UTC>), 'session_data': u'MjY1MGI5ZjE5YWFjZTM1OTM5NmFkNjA4ODFhYTVmNzUxZDA3ZTkxMjp7fQ=='}
+django_session.find (0.00) {'_id': 'pbybxsqonh7xzhoao046nijvsaxetv4i', 'expire_date': {'$gt': datetime.datetime(2018, 7, 13, 2, 18, 32, 721981, tzinfo=<UTC>)}, 'schema': u'nttlong'}
+django_session.save (0.00) {'schema': u'nttlong', '_id': 'pbybxsqonh7xzhoao046nijvsaxetv4i', 'expire_date': datetime.datetime(2018, 7, 27, 2, 18, 32, 812925, tzinfo=<UTC>), 'session_data': u'YjAwMTViM2E0OTNjMDE0N2NjMTFiZjIxNzYzNmNkYTg5OGRiZGZjMzp7Imxhbmd1YWdlIjoiZW4ifQ=='}
+Not Found: /performance/static/app/widgets/page-sidebar/page-sidebar.directive.js
+Not Found: /performance/static/app/components/tree/tree-table/tree-table.directive.js
+Not Found: /performance/static/js/plugins/slick.js
+Not Found: /performance/static/app/components/tree/tree-table/tree-table.directive.js
+Not Found: /performance/static/js/plugins/slick.js
+Not Found: /nttlong/sys
+django_session.find (0.00) {'_id': 'pbybxsqonh7xzhoao046nijvsaxetv4i', 'expire_date': {'$gt': datetime.datetime(2018, 7, 13, 2, 18, 52, 897788, tzinfo=<UTC>)}, 'schema': 'sys'}
+django_session.save (0.00) {'schema': 'sys', '_id': u'a3mh8lb6tpiywotulcas69u5ylk6iryx', 'expire_date': datetime.datetime(2018, 7, 27, 2, 18, 52, 904772, tzinfo=<UTC>), 'session_data': u'MjY1MGI5ZjE5YWFjZTM1OTM5NmFkNjA4ODFhYTVmNzUxZDA3ZTkxMjp7fQ=='}
+django_session.save (0.00) {'schema': 'sys', '_id': u'a3mh8lb6tpiywotulcas69u5ylk6iryx', 'expire_date': datetime.datetime(2018, 7, 27, 2, 18, 52, 907362, tzinfo=<UTC>), 'session_data': u'MjY1MGI5ZjE5YWFjZTM1OTM5NmFkNjA4ODFhYTVmNzUxZDA3ZTkxMjp7fQ=='}
+django_session.find (0.00) {'_id': 'a3mh8lb6tpiywotulcas69u5ylk6iryx', 'expire_date': {'$gt': datetime.datetime(2018, 7, 13, 2, 18, 52, 921123, tzinfo=<UTC>)}, 'schema': 'sys'}
+sys.auth_user.find (0.00) {'username': 'root1'}
+sys.auth_user.save (0.00) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 35, 37, 233000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+django_session.save (0.00) {'schema': 'sys', '_id': 'a3mh8lb6tpiywotulcas69u5ylk6iryx', 'expire_date': datetime.datetime(2018, 7, 27, 2, 18, 52, 954640, tzinfo=<UTC>), 'session_data': u'YjAwMTViM2E0OTNjMDE0N2NjMTFiZjIxNzYzNmNkYTg5OGRiZGZjMzp7Imxhbmd1YWdlIjoiZW4ifQ=='}
+django_session.find (0.00) {'_id': 'a3mh8lb6tpiywotulcas69u5ylk6iryx', 'expire_date': {'$gt': datetime.datetime(2018, 7, 13, 2, 18, 54, 991222, tzinfo=<UTC>)}, 'schema': 'sys'}
+sys.auth_user.find (0.00) {'username': 'root1'}
+sys.auth_user.save (0.00) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 35, 37, 233000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+sys.auth_user.find (0.00) {'username': u'root'}
+django_session.save (0.00) {'schema': 'sys', '_id': u'yfp4lu6nfhsq0trmpvxdua15ach67le1', 'expire_date': datetime.datetime(2018, 7, 27, 2, 18, 55, 47611, tzinfo=<UTC>), 'session_data': u'YjAwMTViM2E0OTNjMDE0N2NjMTFiZjIxNzYzNmNkYTg5OGRiZGZjMzp7Imxhbmd1YWdlIjoiZW4ifQ=='}
+django_session.find (0.00) {'_id': 'a3mh8lb6tpiywotulcas69u5ylk6iryx', 'schema': 'sys'}
+django_session.remove (0.00) {'_id': {'$in': [u'a3mh8lb6tpiywotulcas69u5ylk6iryx']}, 'schema': 'sys'}
+sys.auth_user.save (0.00) {'username': u'root', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b321a71927e0070511b73e6'), 'is_active': True, 'email': u'root@root.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 13, 2, 18, 55, 56281, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$oQVPdDDJaTJc$c2t2sGqa01ZDC0tgJJFC5tqIbRzoXFVlKOtqF7jf61Y=', 'date_joined': datetime.datetime(2018, 6, 26, 10, 50, 20, 136000, tzinfo=<UTC>)}
+django_session.save (0.00) {'schema': 'sys', '_id': u'yfp4lu6nfhsq0trmpvxdua15ach67le1', 'expire_date': datetime.datetime(2018, 7, 27, 2, 18, 55, 58404, tzinfo=<UTC>), 'session_data': u'M2VkNWQzMGE4YTU0YjcxMzQ3MTQyMzYyMjE1NmFkZGE4MDBhZTMyNDp7Il9hdXRoX3VzZXJfYmFja2VuZCI6InBlcm1pc3Npb25fYmFja2VuZF9ub25yZWwuYmFja2VuZHMuTm9ucmVsUGVybWlzc2lvbkJhY2tlbmQiLCJfYXV0aF91c2VyX2lkIjoiNWIzMjFhNzE5MjdlMDA3MDUxMWI3M2U2IiwibGFuZ3VhZ2UiOiJlbiJ9'}
+django_session.find (0.00) {'_id': 'yfp4lu6nfhsq0trmpvxdua15ach67le1', 'expire_date': {'$gt': datetime.datetime(2018, 7, 13, 2, 18, 55, 72712, tzinfo=<UTC>)}, 'schema': 'sys'}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b321a71927e0070511b73e6')}
+sys.auth_user.find (0.00) {'username': 'root1'}
+sys.auth_user.save (0.00) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 35, 37, 233000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+django_session.find (0.00) {'_id': 'yfp4lu6nfhsq0trmpvxdua15ach67le1', 'expire_date': {'$gt': datetime.datetime(2018, 7, 13, 2, 18, 57, 267290, tzinfo=<UTC>)}, 'schema': 'sys'}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b321a71927e0070511b73e6')}
+sys.auth_user.find (0.00) {'username': 'root1'}
+sys.auth_user.save (0.00) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 35, 37, 233000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+django_session.find (0.00) {'_id': 'yfp4lu6nfhsq0trmpvxdua15ach67le1', 'expire_date': {'$gt': datetime.datetime(2018, 7, 13, 2, 20, 19, 341082, tzinfo=<UTC>)}, 'schema': 'sys'}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b321a71927e0070511b73e6')}
+sys.auth_user.find (0.00) {'username': 'root1'}
+sys.auth_user.save (0.00) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 35, 37, 233000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+django_session.find (0.00) {'_id': 'yfp4lu6nfhsq0trmpvxdua15ach67le1', 'expire_date': {'$gt': datetime.datetime(2018, 7, 13, 2, 20, 19, 611986, tzinfo=<UTC>)}, 'schema': 'sys'}
+sys.auth_user.find (0.01) {'_id': ObjectId('5b321a71927e0070511b73e6')}
+sys.auth_user.find (0.00) {'username': 'root1'}
+sys.auth_user.save (0.00) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 35, 37, 233000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+django_session.find (0.00) {'_id': 'yfp4lu6nfhsq0trmpvxdua15ach67le1', 'expire_date': {'$gt': datetime.datetime(2018, 7, 13, 2, 22, 28, 471924, tzinfo=<UTC>)}, 'schema': 'sys'}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b321a71927e0070511b73e6')}
+sys.auth_user.find (0.00) {'username': 'root1'}
+sys.auth_user.save (0.00) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 35, 37, 233000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+Internal Server Error: /nttlong/sys-admin/api
+Traceback (most recent call last):
+  File "/home/hcsadmin/argo/packages/django/django/core/handlers/base.py", line 122, in get_response
+    raise e
+Exception: Call  'get_item' in 'sys_admin.api.customers' encountered ''module' object has no attribute 'get_item''
+Not Found: /sys-admin/static/angular.min.js.map
+Not Found: /polyfills/promise-6.1.0.js.map
+django_session.find (0.00) {'_id': 'yfp4lu6nfhsq0trmpvxdua15ach67le1', 'expire_date': {'$gt': datetime.datetime(2018, 7, 13, 2, 22, 35, 527101, tzinfo=<UTC>)}, 'schema': 'sys'}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b321a71927e0070511b73e6')}
+sys.auth_user.find (0.00) {'username': 'root1'}
+sys.auth_user.save (0.00) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 35, 37, 233000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+Internal Server Error: /nttlong/sys-admin/api
+Traceback (most recent call last):
+  File "/home/hcsadmin/argo/packages/django/django/core/handlers/base.py", line 122, in get_response
+    raise e
+Exception: Call  'get_item' in 'sys_admin.api.customers' encountered ''module' object has no attribute 'get_item''
+django_session.find (0.00) {'_id': 'yfp4lu6nfhsq0trmpvxdua15ach67le1', 'expire_date': {'$gt': datetime.datetime(2018, 7, 13, 2, 23, 53, 23259, tzinfo=<UTC>)}, 'schema': 'sys'}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b321a71927e0070511b73e6')}
+sys.auth_user.find (0.00) {'username': 'root1'}
+sys.auth_user.save (0.00) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 35, 37, 233000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+Not Found: /sys-admin/static/angular.min.js.map
+Not Found: /polyfills/promise-6.1.0.js.map
+django_session.find (0.00) {'_id': 'yfp4lu6nfhsq0trmpvxdua15ach67le1', 'expire_date': {'$gt': datetime.datetime(2018, 7, 13, 2, 23, 54, 186964, tzinfo=<UTC>)}, 'schema': 'sys'}
+sys.auth_user.find (0.01) {'_id': ObjectId('5b321a71927e0070511b73e6')}
+sys.auth_user.find (0.01) {'username': 'root1'}
+sys.auth_user.save (0.00) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 35, 37, 233000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+django_session.find (0.00) {'_id': 'yfp4lu6nfhsq0trmpvxdua15ach67le1', 'expire_date': {'$gt': datetime.datetime(2018, 7, 13, 2, 23, 57, 147874, tzinfo=<UTC>)}, 'schema': 'sys'}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b321a71927e0070511b73e6')}
+sys.auth_user.find (0.00) {'username': 'root1'}
+sys.auth_user.save (0.01) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 35, 37, 233000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+Not Found: /sys-admin/static/angular.min.js.map
+Not Found: /polyfills/promise-6.1.0.js.map
+django_session.find (0.00) {'_id': 'yfp4lu6nfhsq0trmpvxdua15ach67le1', 'expire_date': {'$gt': datetime.datetime(2018, 7, 13, 2, 23, 57, 611739, tzinfo=<UTC>)}, 'schema': 'sys'}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b321a71927e0070511b73e6')}
+sys.auth_user.find (0.00) {'username': 'root1'}
+sys.auth_user.save (0.00) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 35, 37, 233000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+django_session.find (0.00) {'_id': 'yfp4lu6nfhsq0trmpvxdua15ach67le1', 'expire_date': {'$gt': datetime.datetime(2018, 7, 13, 2, 24, 20, 279574, tzinfo=<UTC>)}, 'schema': 'sys'}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b321a71927e0070511b73e6')}
+sys.auth_user.find (0.00) {'username': 'root1'}
+sys.auth_user.save (0.00) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 35, 37, 233000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+Not Found: /sys-admin/static/angular.min.js.map
+Not Found: /polyfills/promise-6.1.0.js.map
+django_session.find (0.00) {'_id': 'yfp4lu6nfhsq0trmpvxdua15ach67le1', 'expire_date': {'$gt': datetime.datetime(2018, 7, 13, 2, 24, 20, 769538, tzinfo=<UTC>)}, 'schema': 'sys'}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b321a71927e0070511b73e6')}
+sys.auth_user.find (0.00) {'username': 'root1'}
+sys.auth_user.save (0.00) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 35, 37, 233000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+django_session.find (0.00) {'_id': 'yfp4lu6nfhsq0trmpvxdua15ach67le1', 'expire_date': {'$gt': datetime.datetime(2018, 7, 13, 2, 24, 23, 80539, tzinfo=<UTC>)}, 'schema': 'sys'}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b321a71927e0070511b73e6')}
+sys.auth_user.find (0.00) {'username': 'root1'}
+sys.auth_user.save (0.00) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 35, 37, 233000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+django_session.find (0.00) {'_id': 'yfp4lu6nfhsq0trmpvxdua15ach67le1', 'expire_date': {'$gt': datetime.datetime(2018, 7, 13, 2, 24, 29, 806579, tzinfo=<UTC>)}, 'schema': 'sys'}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b321a71927e0070511b73e6')}
+sys.auth_user.find (0.00) {'username': 'root1'}
+sys.auth_user.save (0.00) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 35, 37, 233000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+django_session.find (0.00) {'_id': 'yfp4lu6nfhsq0trmpvxdua15ach67le1', 'expire_date': {'$gt': datetime.datetime(2018, 7, 13, 2, 26, 24, 815402, tzinfo=<UTC>)}, 'schema': 'sys'}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b321a71927e0070511b73e6')}
+sys.auth_user.find (0.00) {'username': 'root1'}
+sys.auth_user.save (0.00) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 35, 37, 233000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+django_session.find (0.00) {'_id': 'yfp4lu6nfhsq0trmpvxdua15ach67le1', 'expire_date': {'$gt': datetime.datetime(2018, 7, 13, 2, 26, 25, 62988, tzinfo=<UTC>)}, 'schema': 'sys'}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b321a71927e0070511b73e6')}
+sys.auth_user.find (0.00) {'username': 'root1'}
+sys.auth_user.save (0.00) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 35, 37, 233000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+django_session.find (0.00) {'_id': 'yfp4lu6nfhsq0trmpvxdua15ach67le1', 'expire_date': {'$gt': datetime.datetime(2018, 7, 13, 2, 26, 26, 548709, tzinfo=<UTC>)}, 'schema': 'sys'}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b321a71927e0070511b73e6')}
+sys.auth_user.find (0.00) {'username': 'root1'}
+sys.auth_user.save (0.00) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 35, 37, 233000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+django_session.find (0.00) {'_id': 'yfp4lu6nfhsq0trmpvxdua15ach67le1', 'expire_date': {'$gt': datetime.datetime(2018, 7, 13, 2, 26, 30, 960410, tzinfo=<UTC>)}, 'schema': 'sys'}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b321a71927e0070511b73e6')}
+sys.auth_user.find (0.00) {'username': 'root1'}
+sys.auth_user.save (0.00) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 35, 37, 233000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+Internal Server Error: /nttlong/sys-admin/api
+Traceback (most recent call last):
+  File "/home/hcsadmin/argo/packages/django/django/core/handlers/base.py", line 122, in get_response
+    raise e
+Exception: Call  'insert_item' in 'sys_admin.api.customers' encountered ''module' object has no attribute 'insert_item''
+Not Found: /sys-admin/static/angular.min.js.map
+Not Found: /polyfills/promise-6.1.0.js.map
+django_session.find (0.01) {'_id': 'yfp4lu6nfhsq0trmpvxdua15ach67le1', 'expire_date': {'$gt': datetime.datetime(2018, 7, 13, 2, 26, 34, 568637, tzinfo=<UTC>)}, 'schema': 'sys'}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b321a71927e0070511b73e6')}
+sys.auth_user.find (0.00) {'username': 'root1'}
+sys.auth_user.save (0.00) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 35, 37, 233000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+Internal Server Error: /nttlong/sys-admin/api
+Traceback (most recent call last):
+  File "/home/hcsadmin/argo/packages/django/django/core/handlers/base.py", line 122, in get_response
+    raise e
+Exception: Call  'insert_item' in 'sys_admin.api.customers' encountered ''module' object has no attribute 'insert_item''
+django_session.find (0.00) {'_id': 'yfp4lu6nfhsq0trmpvxdua15ach67le1', 'expire_date': {'$gt': datetime.datetime(2018, 7, 13, 2, 28, 45, 558039, tzinfo=<UTC>)}, 'schema': 'sys'}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b321a71927e0070511b73e6')}
+sys.auth_user.find (0.00) {'username': 'root1'}
+sys.auth_user.save (0.00) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 35, 37, 233000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+Not Found: /sys-admin/static/angular.min.js.map
+Not Found: /polyfills/promise-6.1.0.js.map
+django_session.find (0.00) {'_id': 'yfp4lu6nfhsq0trmpvxdua15ach67le1', 'expire_date': {'$gt': datetime.datetime(2018, 7, 13, 2, 28, 47, 120926, tzinfo=<UTC>)}, 'schema': 'sys'}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b321a71927e0070511b73e6')}
+sys.auth_user.find (0.00) {'username': 'root1'}
+sys.auth_user.save (0.00) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 35, 37, 233000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+django_session.find (0.00) {'_id': 'yfp4lu6nfhsq0trmpvxdua15ach67le1', 'expire_date': {'$gt': datetime.datetime(2018, 7, 13, 2, 28, 51, 635572, tzinfo=<UTC>)}, 'schema': 'sys'}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b321a71927e0070511b73e6')}
+sys.auth_user.find (0.00) {'username': 'root1'}
+sys.auth_user.save (0.00) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 35, 37, 233000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+django_session.find (0.00) {'_id': 'yfp4lu6nfhsq0trmpvxdua15ach67le1', 'expire_date': {'$gt': datetime.datetime(2018, 7, 13, 2, 29, 29, 658347, tzinfo=<UTC>)}, 'schema': 'sys'}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b321a71927e0070511b73e6')}
+sys.auth_user.find (0.00) {'username': 'root1'}
+sys.auth_user.save (0.00) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 35, 37, 233000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+Internal Server Error: /nttlong/sys-admin/api
+Traceback (most recent call last):
+  File "/home/hcsadmin/argo/packages/django/django/core/handlers/base.py", line 122, in get_response
+    raise e
+Exception: Call  'insert_item' in 'sys_admin.api.customers' encountered ''reasom' must be 'missing' or 'require''
+django_session.find (0.00) {'_id': 'yfp4lu6nfhsq0trmpvxdua15ach67le1', 'expire_date': {'$gt': datetime.datetime(2018, 7, 13, 2, 30, 3, 482624, tzinfo=<UTC>)}, 'schema': 'sys'}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b321a71927e0070511b73e6')}
+sys.auth_user.find (0.00) {'username': 'root1'}
+sys.auth_user.save (0.00) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 35, 37, 233000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+Internal Server Error: /nttlong/sys-admin/api
+Traceback (most recent call last):
+  File "/home/hcsadmin/argo/packages/django/django/core/handlers/base.py", line 122, in get_response
+    raise e
+Exception: Call  'insert_item' in 'sys_admin.api.customers' encountered ''reasom' must be 'missing' or 'require''
+django_session.find (0.00) {'_id': 'yfp4lu6nfhsq0trmpvxdua15ach67le1', 'expire_date': {'$gt': datetime.datetime(2018, 7, 13, 2, 31, 32, 551822, tzinfo=<UTC>)}, 'schema': 'sys'}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b321a71927e0070511b73e6')}
+sys.auth_user.find (0.00) {'username': 'root1'}
+sys.auth_user.save (0.00) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 35, 37, 233000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+django_session.find (0.00) {'_id': 'yfp4lu6nfhsq0trmpvxdua15ach67le1', 'expire_date': {'$gt': datetime.datetime(2018, 7, 13, 2, 33, 5, 245677, tzinfo=<UTC>)}, 'schema': 'sys'}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b321a71927e0070511b73e6')}
+sys.auth_user.find (0.00) {'username': 'root1'}
+sys.auth_user.save (0.00) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 35, 37, 233000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+django_session.find (0.00) {'_id': 'yfp4lu6nfhsq0trmpvxdua15ach67le1', 'expire_date': {'$gt': datetime.datetime(2018, 7, 13, 2, 34, 8, 383283, tzinfo=<UTC>)}, 'schema': 'sys'}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b321a71927e0070511b73e6')}
+sys.auth_user.find (0.00) {'username': 'root1'}
+sys.auth_user.save (0.00) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 35, 37, 233000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+django_session.find (0.00) {'_id': 'yfp4lu6nfhsq0trmpvxdua15ach67le1', 'expire_date': {'$gt': datetime.datetime(2018, 7, 13, 2, 34, 12, 646773, tzinfo=<UTC>)}, 'schema': 'sys'}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b321a71927e0070511b73e6')}
+sys.auth_user.find (0.00) {'username': 'root1'}
+sys.auth_user.save (0.00) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 35, 37, 233000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+django_session.find (0.00) {'_id': 'yfp4lu6nfhsq0trmpvxdua15ach67le1', 'expire_date': {'$gt': datetime.datetime(2018, 7, 13, 2, 34, 47, 980618, tzinfo=<UTC>)}, 'schema': 'sys'}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b321a71927e0070511b73e6')}
+sys.auth_user.find (0.00) {'username': 'root1'}
+sys.auth_user.save (0.00) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 35, 37, 233000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+django_session.find (0.00) {'_id': 'yfp4lu6nfhsq0trmpvxdua15ach67le1', 'expire_date': {'$gt': datetime.datetime(2018, 7, 13, 2, 34, 53, 632362, tzinfo=<UTC>)}, 'schema': 'sys'}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b321a71927e0070511b73e6')}
+sys.auth_user.find (0.00) {'username': 'root1'}
+sys.auth_user.save (0.00) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 35, 37, 233000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+django_session.find (0.00) {'_id': 'yfp4lu6nfhsq0trmpvxdua15ach67le1', 'expire_date': {'$gt': datetime.datetime(2018, 7, 13, 2, 43, 30, 685035, tzinfo=<UTC>)}, 'schema': 'sys'}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b321a71927e0070511b73e6')}
+sys.auth_user.find (0.00) {'username': 'root1'}
+sys.auth_user.save (0.00) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 35, 37, 233000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+django_session.find (0.00) {'_id': 'yfp4lu6nfhsq0trmpvxdua15ach67le1', 'expire_date': {'$gt': datetime.datetime(2018, 7, 13, 2, 44, 58, 216841, tzinfo=<UTC>)}, 'schema': 'sys'}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b321a71927e0070511b73e6')}
+sys.auth_user.find (0.00) {'username': 'root1'}
+sys.auth_user.save (0.00) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 35, 37, 233000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+Internal Server Error: /nttlong/sys-admin/api
+Traceback (most recent call last):
+  File "/home/hcsadmin/argo/packages/django/django/core/handlers/base.py", line 122, in get_response
+    raise e
+Exception: Call  'insert_item' in 'sys_admin.api.customers' encountered ''dict' object has no attribute 'data''
+django_session.find (0.00) {'_id': 'yfp4lu6nfhsq0trmpvxdua15ach67le1', 'expire_date': {'$gt': datetime.datetime(2018, 7, 13, 2, 46, 10, 606173, tzinfo=<UTC>)}, 'schema': 'sys'}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b321a71927e0070511b73e6')}
+sys.auth_user.find (0.00) {'username': 'root1'}
+sys.auth_user.save (0.00) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 35, 37, 233000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+nttlong-001.auth_user.save (0.01) {'username': u'nttlong', 'first_name': u'', 'last_name': u'', 'is_active': True, '_id': ObjectId('5b481279927e0025c1594238'), 'is_superuser': False, 'is_staff': False, 'last_login': datetime.datetime(2018, 7, 13, 2, 46, 17, 87812, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$4MhR9yMbM62T$/zKnN3+xhIgi7Fn941+AIrm6rQRe6keX0tQLHMPefLQ=', 'email': u'nttlong@lacviet.com.vn', 'date_joined': datetime.datetime(2018, 7, 13, 2, 46, 17, 87812, tzinfo=<UTC>)}
+nttlong-001.auth_user.save (0.00) {'username': u'nttlong', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b481279927e0025c1594238'), 'is_active': True, 'email': u'nttlong@lacviet.com.vn', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 13, 2, 46, 17, 87812, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$4MhR9yMbM62T$/zKnN3+xhIgi7Fn941+AIrm6rQRe6keX0tQLHMPefLQ=', 'date_joined': datetime.datetime(2018, 7, 13, 2, 46, 17, 87812, tzinfo=<UTC>)}
+django_session.find (0.00) {'_id': 'yfp4lu6nfhsq0trmpvxdua15ach67le1', 'expire_date': {'$gt': datetime.datetime(2018, 7, 13, 2, 51, 59, 534377, tzinfo=<UTC>)}, 'schema': 'sys'}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b321a71927e0070511b73e6')}
+sys.auth_user.find (0.00) {'username': 'root1'}
+sys.auth_user.save (0.00) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 35, 37, 233000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+nttlong-001.auth_user.save (0.01) {'username': u'nttlong', 'first_name': u'', 'last_name': u'', 'is_active': True, '_id': ObjectId('5b4813d6927e00278b39816a'), 'is_superuser': False, 'is_staff': False, 'last_login': datetime.datetime(2018, 7, 13, 2, 52, 6, 701453, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$VJMaewFXcRur$4dbDSKzg2Dr3NT85oYnt1X4DcXaPaqAzmC8G7ogukHI=', 'email': u'nttlong@lacviet.com.vn', 'date_joined': datetime.datetime(2018, 7, 13, 2, 52, 6, 701453, tzinfo=<UTC>)}
+nttlong-001.auth_user.save (0.00) {'username': u'nttlong', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b4813d6927e00278b39816a'), 'is_active': True, 'email': u'nttlong@lacviet.com.vn', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 13, 2, 52, 6, 701453, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$VJMaewFXcRur$4dbDSKzg2Dr3NT85oYnt1X4DcXaPaqAzmC8G7ogukHI=', 'date_joined': datetime.datetime(2018, 7, 13, 2, 52, 6, 701453, tzinfo=<UTC>)}
+django_session.find (0.00) {'_id': 'yfp4lu6nfhsq0trmpvxdua15ach67le1', 'expire_date': {'$gt': datetime.datetime(2018, 7, 13, 2, 52, 48, 965066, tzinfo=<UTC>)}, 'schema': 'sys'}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b321a71927e0070511b73e6')}
+sys.auth_user.find (0.00) {'username': 'root1'}
+sys.auth_user.save (0.00) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 35, 37, 233000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+django_session.find (0.00) {'_id': 'yfp4lu6nfhsq0trmpvxdua15ach67le1', 'expire_date': {'$gt': datetime.datetime(2018, 7, 13, 2, 52, 49, 272384, tzinfo=<UTC>)}, 'schema': 'sys'}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b321a71927e0070511b73e6')}
+sys.auth_user.find (0.00) {'username': 'root1'}
+sys.auth_user.save (0.00) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 35, 37, 233000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+django_session.find (0.00) {'_id': 'yfp4lu6nfhsq0trmpvxdua15ach67le1', 'expire_date': {'$gt': datetime.datetime(2018, 7, 13, 2, 53, 22, 822625, tzinfo=<UTC>)}, 'schema': 'sys'}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b321a71927e0070511b73e6')}
+sys.auth_user.find (0.00) {'username': 'root1'}
+sys.auth_user.save (0.00) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 35, 37, 233000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+nttlong-002.auth_user.save (0.01) {'username': u'nttlong-002', 'first_name': u'', 'last_name': u'', 'is_active': True, '_id': ObjectId('5b481428927e00278b398172'), 'is_superuser': False, 'is_staff': False, 'last_login': datetime.datetime(2018, 7, 13, 2, 53, 28, 746860, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$2lg30Y4n3cg9$V3TB8AtbCn+oi8MOVwmXG91TN8DVFLBWbUfdEYe5wYY=', 'email': u'nttlong-002', 'date_joined': datetime.datetime(2018, 7, 13, 2, 53, 28, 746860, tzinfo=<UTC>)}
+nttlong-002.auth_user.save (0.01) {'username': u'nttlong-002', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b481428927e00278b398172'), 'is_active': True, 'email': u'nttlong-002', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 13, 2, 53, 28, 746860, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$2lg30Y4n3cg9$V3TB8AtbCn+oi8MOVwmXG91TN8DVFLBWbUfdEYe5wYY=', 'date_joined': datetime.datetime(2018, 7, 13, 2, 53, 28, 746860, tzinfo=<UTC>)}
+Internal Server Error: /nttlong/sys-admin/api
+Traceback (most recent call last):
+  File "/home/hcsadmin/argo/packages/django/django/core/handlers/base.py", line 122, in get_response
+    raise e
+Exception: Call  'insert_item' in 'sys_admin.api.customers' encountered ''dict' object has no attribute 'data''
+django_session.find (0.00) {'_id': 'yfp4lu6nfhsq0trmpvxdua15ach67le1', 'expire_date': {'$gt': datetime.datetime(2018, 7, 13, 2, 53, 58, 278567, tzinfo=<UTC>)}, 'schema': 'sys'}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b321a71927e0070511b73e6')}
+sys.auth_user.find (0.00) {'username': 'root1'}
+sys.auth_user.save (0.00) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 35, 37, 233000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+django_session.find (0.00) {'_id': 'yfp4lu6nfhsq0trmpvxdua15ach67le1', 'expire_date': {'$gt': datetime.datetime(2018, 7, 13, 2, 53, 58, 622466, tzinfo=<UTC>)}, 'schema': 'sys'}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b321a71927e0070511b73e6')}
+sys.auth_user.find (0.00) {'username': 'root1'}
+sys.auth_user.save (0.00) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 35, 37, 233000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+Not Found: /nttlong-002/sys-admin/
+Not Found: /nttlong-002
+django_session.find (0.00) {'_id': 'yfp4lu6nfhsq0trmpvxdua15ach67le1', 'expire_date': {'$gt': datetime.datetime(2018, 7, 13, 2, 54, 16, 441560, tzinfo=<UTC>)}, 'schema': 'sys'}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b321a71927e0070511b73e6')}
+sys.auth_user.find (0.00) {'username': 'root1'}
+sys.auth_user.save (0.00) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 35, 37, 233000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+django_session.find (0.00) {'_id': 'yfp4lu6nfhsq0trmpvxdua15ach67le1', 'expire_date': {'$gt': datetime.datetime(2018, 7, 13, 2, 54, 19, 62665, tzinfo=<UTC>)}, 'schema': 'sys'}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b321a71927e0070511b73e6')}
+sys.auth_user.find (0.00) {'username': 'root1'}
+sys.auth_user.save (0.00) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 35, 37, 233000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+django_session.find (0.00) {'_id': 'yfp4lu6nfhsq0trmpvxdua15ach67le1', 'expire_date': {'$gt': datetime.datetime(2018, 7, 13, 2, 54, 19, 250942, tzinfo=<UTC>)}, 'schema': 'sys'}
+sys.auth_user.find (0.00) {'_id': ObjectId('5b321a71927e0070511b73e6')}
+sys.auth_user.find (0.00) {'username': 'root1'}
+sys.auth_user.save (0.00) {'username': u'root1', 'first_name': u'', 'last_name': u'', '_id': ObjectId('5b470ff8927e005b3eec6c84'), 'is_active': True, 'email': u'root@root1.com', 'is_superuser': False, 'is_staff': True, 'last_login': datetime.datetime(2018, 7, 12, 8, 35, 37, 233000, tzinfo=<UTC>), 'password': u'pbkdf2_sha256$12000$NBI5FqhOrlDg$XFiPjOBX5HQfitO8M1KEgVYw8ZVMh8mQtnD9RO9TBI8=', 'date_joined': datetime.datetime(2018, 7, 12, 8, 23, 20, 707000, tzinfo=<UTC>)}
+Not Found: /nttlong-002
+Internal Server Error: /nttlong-002
+Traceback (most recent call last):
+  File "/home/hcsadmin/argo/packages/django/django/core/handlers/base.py", line 88, in get_response
+    response = middleware_method(request)
+  File "/home/hcsadmin/argo/packages/django/django/middleware/common.py", line 71, in process_request
+    if (not urlresolvers.is_valid_path(request.path_info, urlconf) and
+  File "/home/hcsadmin/argo/packages/django/django/core/urlresolvers.py", line 600, in is_valid_path
+    resolve(path, urlconf)
+  File "/home/hcsadmin/argo/packages/django/django/core/urlresolvers.py", line 480, in resolve
+    return get_resolver(urlconf).resolve(path)
+  File "/home/hcsadmin/argo/packages/django/django/core/urlresolvers.py", line 339, in resolve
+    sub_match = pattern.resolve(new_path)
+  File "/home/hcsadmin/argo/packages/django/django/core/urlresolvers.py", line 210, in resolve
+    match = self.regex.search(path)
+  File "/home/hcsadmin/argo/packages/django/django/core/urlresolvers.py", line 178, in regex
+    (regex, six.text_type(e)))
+ImproperlyConfigured: "^(?i)(?P<tenancy_code>/?sys-admin/$" is not a valid regular expression: unbalanced parenthesis
+Internal Server Error: /nttlong-002
+Traceback (most recent call last):
+  File "/home/hcsadmin/argo/packages/django/django/core/handlers/base.py", line 88, in get_response
+    response = middleware_method(request)
+  File "/home/hcsadmin/argo/packages/django/django/middleware/common.py", line 71, in process_request
+    if (not urlresolvers.is_valid_path(request.path_info, urlconf) and
+  File "/home/hcsadmin/argo/packages/django/django/core/urlresolvers.py", line 600, in is_valid_path
+    resolve(path, urlconf)
+  File "/home/hcsadmin/argo/packages/django/django/core/urlresolvers.py", line 480, in resolve
+    return get_resolver(urlconf).resolve(path)
+  File "/home/hcsadmin/argo/packages/django/django/core/urlresolvers.py", line 339, in resolve
+    sub_match = pattern.resolve(new_path)
+  File "/home/hcsadmin/argo/packages/django/django/core/urlresolvers.py", line 210, in resolve
+    match = self.regex.search(path)
+  File "/home/hcsadmin/argo/packages/django/django/core/urlresolvers.py", line 178, in regex
+    (regex, six.text_type(e)))
+ImproperlyConfigured: "^(?i)(?P<tenancy_code>\(\w|\d|-))/sys-admin/$" is not a valid regular expression: unbalanced parenthesis
+Not Found: /nttlong-002
+Not Found: /lv/
+Not Found: /lv/
+Not Found: /lv/
+django_session.find (0.00) {'_id': 'yfp4lu6nfhsq0trmpvxdua15ach67le1', 'expire_date': {'$gt': datetime.datetime(2018, 7, 13, 3, 23, 56, 825720, tzinfo=<UTC>)}, 'schema': 'lv'}
+django_session.save (0.00) {'schema': 'lv', '_id': u'harb5ctl5m9vrqirx95u0fenaqce11ha', 'expire_date': datetime.datetime(2018, 7, 27, 3, 23, 56, 842679, tzinfo=<UTC>), 'session_data': u'MjY1MGI5ZjE5YWFjZTM1OTM5NmFkNjA4ODFhYTVmNzUxZDA3ZTkxMjp7fQ=='}
+django_session.save (0.00) {'schema': 'lv', '_id': u'harb5ctl5m9vrqirx95u0fenaqce11ha', 'expire_date': datetime.datetime(2018, 7, 27, 3, 23, 56, 847072, tzinfo=<UTC>), 'session_data': u'MjY1MGI5ZjE5YWFjZTM1OTM5NmFkNjA4ODFhYTVmNzUxZDA3ZTkxMjp7fQ=='}
+Not Found: /lv/login
+django_session.find (0.00) {'_id': 'harb5ctl5m9vrqirx95u0fenaqce11ha', 'expire_date': {'$gt': datetime.datetime(2018, 7, 13, 3, 23, 57, 86061, tzinfo=<UTC>)}, 'schema': 'lv'}
+django_session.find (0.00) {'_id': 'harb5ctl5m9vrqirx95u0fenaqce11ha', 'expire_date': {'$gt': datetime.datetime(2018, 7, 13, 3, 24, 23, 592148, tzinfo=<UTC>)}, 'schema': u'lv'}
+django_session.save (0.00) {'schema': u'lv', '_id': 'harb5ctl5m9vrqirx95u0fenaqce11ha', 'expire_date': datetime.datetime(2018, 7, 27, 3, 24, 23, 701064, tzinfo=<UTC>), 'session_data': u'YjAwMTViM2E0OTNjMDE0N2NjMTFiZjIxNzYzNmNkYTg5OGRiZGZjMzp7Imxhbmd1YWdlIjoiZW4ifQ=='}
+Not Found: /performance/static/app/widgets/page-sidebar/page-sidebar.directive.js
+Not Found: /performance/static/app/components/tree/tree-table/tree-table.directive.js
+Not Found: /performance/static/js/plugins/slick.js
+Not Found: /performance/static/app/widgets/page-sidebar/page-sidebar.directive.js
+Not Found: /performance/static/app/components/tree/tree-table/tree-table.directive.js
+Not Found: /performance/static/js/plugins/slick.js
+Internal Server Error: /lv/
+Traceback (most recent call last):
+  File "/home/hcsadmin/argo/packages/django/django/core/handlers/base.py", line 99, in get_response
+    resolver_match = resolver.resolve(request.path_info)
+  File "/home/hcsadmin/argo/packages/django/django/core/urlresolvers.py", line 339, in resolve
+    sub_match = pattern.resolve(new_path)
+  File "/home/hcsadmin/argo/packages/django/django/core/urlresolvers.py", line 210, in resolve
+    match = self.regex.search(path)
+  File "/home/hcsadmin/argo/packages/django/django/core/urlresolvers.py", line 178, in regex
+    (regex, six.text_type(e)))
+ImproperlyConfigured: "^(?i)(?P<tenancy_code>\(w{0,24}))/sys-admin/$" is not a valid regular expression: unbalanced parenthesis
+django_session.find (0.00) {'_id': 'harb5ctl5m9vrqirx95u0fenaqce11ha', 'expire_date': {'$gt': datetime.datetime(2018, 7, 13, 3, 27, 16, 612375, tzinfo=<UTC>)}, 'schema': u'lv'}
+django_session.find (0.00) {'_id': 'harb5ctl5m9vrqirx95u0fenaqce11ha', 'expire_date': {'$gt': datetime.datetime(2018, 7, 13, 3, 27, 16, 685647, tzinfo=<UTC>)}, 'schema': u'lv'}
+django_session.save (0.00) {'schema': u'lv', '_id': 'harb5ctl5m9vrqirx95u0fenaqce11ha', 'expire_date': datetime.datetime(2018, 7, 27, 3, 27, 16, 762869, tzinfo=<UTC>), 'session_data': u'YjAwMTViM2E0OTNjMDE0N2NjMTFiZjIxNzYzNmNkYTg5OGRiZGZjMzp7Imxhbmd1YWdlIjoiZW4ifQ=='}
+Not Found: /performance/static/app/components/tree/tree-table/tree-table.directive.js
+Not Found: /performance/static/app/widgets/page-sidebar/page-sidebar.directive.js
+Not Found: /performance/static/js/plugins/slick.js
+Not Found: /performance/static/app/widgets/page-sidebar/page-sidebar.directive.js
+Not Found: /performance/static/app/components/tree/tree-table/tree-table.directive.js
+Not Found: /performance/static/js/plugins/slick.js
+django_session.find (0.00) {'_id': 'harb5ctl5m9vrqirx95u0fenaqce11ha', 'expire_date': {'$gt': datetime.datetime(2018, 7, 13, 3, 27, 29, 474032, tzinfo=<UTC>)}, 'schema': u'nttlong-001'}
+django_session.save (0.00) {'schema': u'nttlong-001', '_id': u'phfligl7x2xtvwb63j0rs880gk8veda7', 'expire_date': datetime.datetime(2018, 7, 27, 3, 27, 29, 479040, tzinfo=<UTC>), 'session_data': u'MjY1MGI5ZjE5YWFjZTM1OTM5NmFkNjA4ODFhYTVmNzUxZDA3ZTkxMjp7fQ=='}
+django_session.save (0.00) {'schema': u'nttlong-001', '_id': u'phfligl7x2xtvwb63j0rs880gk8veda7', 'expire_date': datetime.datetime(2018, 7, 27, 3, 27, 29, 481474, tzinfo=<UTC>), 'session_data': u'MjY1MGI5ZjE5YWFjZTM1OTM5NmFkNjA4ODFhYTVmNzUxZDA3ZTkxMjp7fQ=='}
+django_session.find (0.00) {'_id': 'phfligl7x2xtvwb63j0rs880gk8veda7', 'expire_date': {'$gt': datetime.datetime(2018, 7, 13, 3, 27, 29, 505068, tzinfo=<UTC>)}, 'schema': u'nttlong-001'}
+django_session.save (0.00) {'schema': u'nttlong-001', '_id': 'phfligl7x2xtvwb63j0rs880gk8veda7', 'expire_date': datetime.datetime(2018, 7, 27, 3, 27, 29, 568452, tzinfo=<UTC>), 'session_data': u'YjAwMTViM2E0OTNjMDE0N2NjMTFiZjIxNzYzNmNkYTg5OGRiZGZjMzp7Imxhbmd1YWdlIjoiZW4ifQ=='}
+Not Found: /performance/static/app/components/tree/tree-table/tree-table.directive.js
+Not Found: /performance/static/app/widgets/page-sidebar/page-sidebar.directive.js
+Not Found: /performance/static/js/plugins/slick.js
+Not Found: /performance/static/app/widgets/page-sidebar/page-sidebar.directive.js
+Not Found: /performance/static/app/components/tree/tree-table/tree-table.directive.js
+Not Found: /performance/static/js/plugins/slick.js

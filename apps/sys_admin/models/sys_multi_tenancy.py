@@ -9,10 +9,13 @@ def sys_multi_tenancy():
     Just have 2 fields, no more...
     :return:
     """
+    import sys
+    settings = sys.modules["settings"]
     global _hasCreated
     if not _hasCreated:
+
         helpers.define_model(
-            "sys_multi_tenancy",
+            settings.MULTI_TENANCY_CONFIGURATION["collection"],
             [
                 ["code"],
                 ["schema"]
@@ -21,6 +24,6 @@ def sys_multi_tenancy():
             schema= helpers.create_field("text",True),
         )
         _hasCreated=True
-    ret = applications.get_settings().database.collection("sys_multi_tenancy")
+    ret = applications.get_settings().database.collection(settings.MULTI_TENANCY_CONFIGURATION["collection"])
     ret.turn_never_use_schema_on()
     return ret

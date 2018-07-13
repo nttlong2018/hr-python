@@ -18,6 +18,10 @@ _db_multi_tenancy=None
 _cache_multi_tenancy={}
 global lock
 lock=threading.Lock()
+def get_tenancy_code_regex():
+    return "[A-Za-z0-9](?:[A-Za-z0-9\-\_]{0,61}[A-Za-z0-9])"
+    # return "\(w{0,24})"
+
 def get_static_server_path(file,path):
     # type: (str,str) -> str
     """

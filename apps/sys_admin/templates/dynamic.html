@@ -4,8 +4,18 @@
     (function(scope,params){
         scope.$params=params;
         scope.view_path="${get_view_path()}"
-        scope.$ws=ws(scope)
-
+        scope.$ws=ws(scope);
+        scope.$error=function(res){
+            bootoast.toast({
+                        message: res.error.msg,
+                        type: 'error',
+                        position: 'top',
+                        icon: null,
+                        timeout: 3000,
+                        animationDuration: 300,
+                        dismissible: true
+                    });
+        }
     })
 </script>
 <%include file='views/${model["path"]+".html"}' />

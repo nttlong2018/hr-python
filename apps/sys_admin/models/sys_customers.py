@@ -9,7 +9,7 @@ def sys_customers():
     global _hasCreated
     if not _hasCreated:
         helpers.define_model(
-            "sys_customers",
+            "customers",
             [["code"]],
             
             code=helpers.create_field("text", True) , # link to  sys_multi_tenancy
@@ -21,7 +21,7 @@ def sys_customers():
             admin_user=helpers.create_field("text", True),# link to auth_user
         )
         _hasCreated=True
-    ret = applications.get_settings().database.collection("sys_customers")
-    ret.turn_never_use_schema_on()
+    ret = applications.get_settings().database.collection("customers")
+    # ret.turn_never_use_schema_on()
 
     return ret
