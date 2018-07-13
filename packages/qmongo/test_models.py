@@ -41,6 +41,7 @@ db=database.connect(
 # ret=db.collection("departments").insert(
 #     Code="A01"
 # )
+from qview import create_mongodb_view
 ret=db.collection("departments")
 ret.switch_schema("long_test")
 x=ret.aggregate()
