@@ -151,12 +151,14 @@ api.connect(
 
 STATIC_URL = '/static/'
 APPS=[
-      # dict(host="admin",
-      #      name="admin",
-      #      path="apps/admin"),
+      dict(host="admin",
+           name="admin",
+           path="apps/admin",
+           schema="lms"),
       dict(host="sys-admin",
            name="sys-admin",
-           path="apps/sys_admin"),
+           path="apps/sys_admin",
+           schema="sys"),
 
       dict(host="hrm",
            name="hrm",
@@ -166,9 +168,9 @@ APPS=[
           name="performance",
           path="apps/performance"
       ),
-      # dict(host="default",
-      #      name="argo",
-      #      path="apps/app_main")
+      dict(host="app-main",
+           name="argo",
+           path="apps/app_main")
 ]
 aut_config_local_=dict(
     provider="authorization.auth",

@@ -61,8 +61,55 @@ def build_urls(module_name,*args,**kwargs):
             default_urls=[]
             #build static urls
             # static url is the same for every schema
-            for app in args[0]:
+
+            # def set_ord_app(x,list):
+            #     if x.get('schema',None) != None:
+            #         return  -1
+            #     elif x.get('host','default') =="default" or x.get('host','default') == "":
+            #         x["ord"] = 0
+            #     else:
+            #         x["ord"] =list.index(x)+2
+            #     return x
+
+
+            app_dicts={}
+            for x in args[0]:
+                app_dicts.update({
+                    x["host"]:x
+                })
+            list_of_apps_with_persistent_schema=[x for x in args[0] if x.has_key("schema")]
+            list_of_apps_with_public = [x for x in args[0] if x.get("host",None)== "" or x.get("host",None) == "default" or x.get("host",None) == None]
+            # list_of_remain_apps=[x for x in args[0] if list_of_apps_with_persistent_schema.count(x) ==0 and list_of_apps_with_public.count(x) == 0]
+
+            list_of_key_of_apps_with_persistent_schema=[x.get("host") for x in list_of_apps_with_persistent_schema]
+            list_of_key_of_apps_with_public = [x.get("host") for x in list_of_apps_with_public]
+            list_of_key_remain_apps = [x.get("host") for x in args[0] if list_of_key_of_apps_with_persistent_schema.count(x.get("host")) ==0 and list_of_key_of_apps_with_public.count(x.get("host")) == 0]
+
+            list_of_key_of_apps_with_public.sort()
+            list_of_key_of_apps_with_persistent_schema.sort()
+            list_of_key_remain_apps.sort()
+
+
+
+            list_of_apps=[]
+
+            for x in list_of_key_of_apps_with_persistent_schema:
+                list_of_apps.append(app_dicts[x])
+            for x in list_of_key_of_apps_with_public:
+                list_of_apps.append(app_dicts[x])
+            for x in list_of_key_remain_apps:
+                list_of_apps.append(app_dicts[x])
+
+
+
+
+
+
+            for app in list_of_apps:
                 ret = applications.load_app(app)
+                if app.has_key("schema"):
+                    setattr(ret.settings,"DEFAULT_DB_SCHEMA",app.get("schema"))
+
                 url_items=importlib.import_module(ret.mdl.__name__ + ".urls").urlpatterns
 
                 static_urls=[x for x in url_items if x.default_args.has_key("document_root") ]
