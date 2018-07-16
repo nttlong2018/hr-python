@@ -62,10 +62,16 @@ def apply(request,template_file,app):
         if not is_multi_tenancy:
             return app.host_dir
         else:
-            if app.host_dir == "":
-                return tenancy.get_customer_code()
+            if not app.is_persistent_schema():
+                if app.host_dir == "":
+                    return tenancy.get_customer_code()
+                else:
+                    return tenancy.get_customer_code()+"/"+app.host_dir
             else:
-                return tenancy.get_customer_code()+"/"+app.host_dir
+                if app.host_dir == "":
+                    return ""
+                else:
+                    return app.host_dir
     def get_view_path():
         code=tenancy.get_schema()
         not_inclue_tenancy_code=False

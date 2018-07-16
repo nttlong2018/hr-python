@@ -162,7 +162,7 @@ APPS=[
            name="hrm",
            path="apps/hrm"),
       dict(
-          host="default", #"performance",
+          host="", #"performance",
           name="performance",
           path="apps/performance"
       ),

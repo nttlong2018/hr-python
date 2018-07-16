@@ -25,6 +25,8 @@ class app_config():
     authenticate=None
     on_begin_request=None
     on_end_request = None
+    _is_persistent_schema=None
+    _persistent_schema = None
 
     def __init__(self,config):
         # type: (dict) -> app_config
@@ -96,6 +98,20 @@ class app_config():
         :return:
         """
         return self.client_static
+    def is_persistent_schema(self):
+        if self._is_persistent_schema == None:
+            self._is_persistent_schema=hasattr(self.mdl.settings, "DEFAULT_DB_SCHEMA")
+        return self._is_persistent_schema
+    def get_persistent_schema(self):
+        if self._persistent_schema == None:
+            self._persistent_schema=""
+            if self.is_persistent_schema():
+                self._persistent_schema=self.mdl.settings.DEFAULT_DB_SCHEMA
+
+        return self._persistent_schema
+
+
+
     def get_server_static(self):
         """
         get full server static path
@@ -109,12 +125,18 @@ class app_config():
         :return:
         """
         import threading
+
         if hasattr(threading.currentThread(), "tenancy_code"):
             if hasattr(self.mdl.settings, "login_url"):
-                if self.host_dir == "":
-                    return "/" + threading.currentThread().request_tenancy_code + "/" + self.mdl.settings.login_url
+                if not self.is_persistent_schema():
+                    if self.host_dir == "":
+                        return "/" + threading.currentThread().request_tenancy_code + "/" + self.mdl.settings.login_url
+                    else:
+                        return "/" + threading.currentThread().request_tenancy_code + "/" + self.host_dir + "/" + self.mdl.settings.login_url
                 else:
-                    return "/" + threading.currentThread().request_tenancy_code + "/" + self.host_dir + "/" + self.mdl.settings.login_url
+                    setattr(threading.currentThread(),"request_tenancy_code",self.get_persistent_schema())
+                    return "/" + self.host_dir + "/" + self.mdl.settings.login_url
+
         else:
             if hasattr(self.mdl.settings, "login_url"):
                 if self.host_dir == "":

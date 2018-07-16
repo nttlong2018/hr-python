@@ -24,10 +24,10 @@ _cache_id={}
 _cache_id_revert={}
 _coll=None
 
-# @require_http_methods(["POST","GET"])
+@require_http_methods(["POST","GET"])
 @csrf_exempt
 @view_template.template("call_api.html")
-def call(request):
+def call(request,*args,**kwargs):
     """
     Call request handler
     :param request:

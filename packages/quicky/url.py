@@ -59,9 +59,12 @@ def build_urls(module_name,*args,**kwargs):
             lst_urls=[]
             default_app=None
             default_urls=[]
+            #build static urls
+            # static url is the same for every schema
             for app in args[0]:
                 ret = applications.load_app(app)
                 url_items=importlib.import_module(ret.mdl.__name__ + ".urls").urlpatterns
+
                 static_urls=[x for x in url_items if x.default_args.has_key("document_root") ]
                 if ret.host_dir == "":
                     root_doc = static_urls[0].default_args["document_root"]
@@ -97,8 +100,10 @@ def build_urls(module_name,*args,**kwargs):
                         )
 
                     )
+            #build url
             for app in args[0]:
                 ret = applications.load_app(app)
+                is_use_default_schema = hasattr(ret.settings, "DEFAULT_DB_SCHEMA")
                 url_items=importlib.import_module(ret.mdl.__name__ + ".urls").urlpatterns
                 for url_item in url_items:
                     if hasattr(url_item,"default_args"):
@@ -123,7 +128,8 @@ def build_urls(module_name,*args,**kwargs):
                                         url_item._callback_str
                                     )
                                     _apps_.urlpatterns.append(map_url)
-                            else:
+
+                            elif not is_use_default_schema:
                                 url_regex = url_item.regex.pattern
                                 if host_dir == None:
                                     url_regex = url_regex.replace("^",
@@ -131,7 +137,21 @@ def build_urls(module_name,*args,**kwargs):
                                 else:
                                     url_regex = url_regex.replace("^",
                                                               "^(?i)"+host_dir+"/(?P<tenancy_code>"+get_tenancy_code_regex()+")/" + ret.host_dir + "/")
-                                print url_regex
+
+                                map_url = url(
+                                    url_regex,
+                                    url_item.callback
+                                )
+                                _apps_.urlpatterns.append(map_url)
+                            else:
+                                url_regex = url_item.regex.pattern
+                                if host_dir == None:
+                                    url_regex = url_regex.replace("^",
+                                                                  "^" + ret.host_dir + "/")
+                                else:
+                                    url_regex = url_regex.replace("^",
+                                                                  "^/" + ret.host_dir + "/")
+
                                 map_url = url(
                                     url_regex,
                                     url_item.callback

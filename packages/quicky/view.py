@@ -66,6 +66,9 @@ def template(fn,*_path,**kwargs):
             tenancy_code=tenancy.get_customer_code()
             if not not_inclue_tenancy_code and tenancy_code!=None:
                 request_path=request_path[tenancy_code.__len__()+1:request_path.__len__()]
+            if app == None:
+                x=1
+
             if app==None and request_path[request_path.__len__() - 4:request_path.__len__()]=="/api":
                 app_name=request_path.split('/')[request_path.split('/').__len__()-2]
                 if app_name==tenancy_code:
@@ -77,10 +80,27 @@ def template(fn,*_path,**kwargs):
                         import tenancy
                         tenancy.set_schema(app.settings.DEFAULT_DB_SCHEMA)
                 else:
-                    app = applications.get_app_by_host_dir(app_name)
-                    if hasattr(app.settings, "DEFAULT_DB_SCHEMA"):
-                        import tenancy
-                        tenancy.set_schema(app.settings.DEFAULT_DB_SCHEMA)
+                    if sys.modules["settings"].MULTI_TENANCY_DEFAULT_SCHEMA == app_name:
+                        app = applications.get_app_by_host_dir("")
+                        if app != None:
+                            import threading
+                            setattr(threading.currentThread(),"tenancy_code",app_name)
+                            setattr(threading.currentThread(),"request_tenancy_code",app_name)
+                            setattr(request,"tenancy_code",app_name)
+                    else:
+                        app = applications.get_app_by_host_dir(app_name)
+                        if app != None:
+                            tenancy_code=request_path.split('/')[1];
+                            import threading
+                            setattr(threading.currentThread(),"tenancy_code",tenancy_code)
+                            setattr(threading.currentThread(),"request_tenancy_code",tenancy_code)
+                            setattr(request,"tenancy_code",tenancy_code)
+                            if hasattr(app.settings, "DEFAULT_DB_SCHEMA"):
+                                import tenancy
+                                tenancy.set_schema(app.settings.DEFAULT_DB_SCHEMA)
+                                setattr(request, "tenancy_code", app.settings.DEFAULT_DB_SCHEMA)
+
+
 
             if not hasattr(app, "settings") or app.settings==None:
                 raise (Exception("'settings.py' was not found in '{0}' at '{1}' or look like you forgot to place 'import settings' in '{1}/__init__.py'".format(app.name, os.getcwd()+os.sep+app.path)))
@@ -144,8 +164,15 @@ def template(fn,*_path,**kwargs):
 
         return exec_request(request,**kwargs)
     if is_multi_tenancy:
-        return exec_request_for_multi
+        if app == None:
+            return exec_request
+        elif hasattr(app.settings, "DEFAULT_DB_SCHEMA"):
+            return exec_request
+        else:
+            return exec_request_for_multi
     else:
+
+
         return exec_request
 
 
