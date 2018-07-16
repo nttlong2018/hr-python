@@ -128,14 +128,22 @@ class app_config():
 
         if hasattr(threading.currentThread(), "tenancy_code"):
             if hasattr(self.mdl.settings, "login_url"):
+                if self.mdl.settings.login_url[0:1] == '/':
+                    self.mdl.settings.login_url = self.mdl.settings.login_url[
+                                                  1:self.mdl.settings.login_url.__len__()]
                 if not self.is_persistent_schema():
+
                     if self.host_dir == "":
                         return "/" + threading.currentThread().request_tenancy_code + "/" + self.mdl.settings.login_url
                     else:
                         return "/" + threading.currentThread().request_tenancy_code + "/" + self.host_dir + "/" + self.mdl.settings.login_url
                 else:
-                    setattr(threading.currentThread(),"request_tenancy_code",self.get_persistent_schema())
-                    return "/" + self.host_dir + "/" + self.mdl.settings.login_url
+                    if self.host_dir == "":
+                        setattr(threading.currentThread(), "request_tenancy_code", self.get_persistent_schema())
+                        return  "/" + self.mdl.settings.login_url
+                    else:
+                        setattr(threading.currentThread(),"request_tenancy_code",self.get_persistent_schema())
+                        return "/" + self.host_dir + "/" + self.mdl.settings.login_url
 
         else:
             if hasattr(self.mdl.settings, "login_url"):

@@ -109,6 +109,17 @@ def build_urls(module_name,*args,**kwargs):
                 ret = applications.load_app(app)
                 if app.has_key("schema"):
                     setattr(ret.settings,"DEFAULT_DB_SCHEMA",app.get("schema"))
+                if app.has_key("login"):
+                    setattr(ret.settings, "login_url", app.get("login"))
+                if app.has_key("authenticate"):
+                    try:
+                        _authenticate= importlib.import_module(app.get("authenticate"))
+                        if not callable(_authenticate):
+                            raise (Exception("'{0}' is callable. Please, check application with name '{1}' in settings.py".format(app.get("authenticate"),app.get("name"))))
+                        setattr(ret.settings, "authenticate", app.get("login"))
+                    except Exception as ex:
+                        msg ="Can not import '{0}'. Please, check application with name '{1}' in settings.py ".format(app.get("authenticate"),app.get("name"))
+                        raise (Exception(msg))
 
                 url_items=importlib.import_module(ret.mdl.__name__ + ".urls").urlpatterns
 
@@ -156,6 +167,7 @@ def build_urls(module_name,*args,**kwargs):
                     if hasattr(url_item,"default_args"):
                         if not url_item.default_args.has_key("document_root"):
                             if ret.host_dir == "":
+
                                 default_urls.append(url_item)
                                 url_regex=url_item.regex.pattern
                                 if host_dir==None:

@@ -35,6 +35,7 @@ def template(fn,*_path,**kwargs):
         from . import applications as apps
 
 
+
         _app= apps.get_app_by_file(fn.func_code.co_filename)
         print(request.session.session_key)
         if _app != None:
@@ -167,7 +168,10 @@ def template(fn,*_path,**kwargs):
         if app == None:
             return exec_request
         elif hasattr(app.settings, "DEFAULT_DB_SCHEMA"):
-            return exec_request
+            if app.host_dir == "":
+                return  exec_request_for_multi
+            else:
+                return exec_request
         else:
             return exec_request_for_multi
     else:
