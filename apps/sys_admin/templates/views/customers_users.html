@@ -49,8 +49,8 @@
 						<input type="checkbox" value="p.is_staff">
 					</td>
 					<td>
-						<button type="button" class="btn btn-primary" ng-click="doSignIn(p)">
-							${get_app_res("SignIn")}
+						<button type="button" class="btn btn-primary" ng-click="$root.$dialog($id).url(url_user_form).params(p).done()">
+							${get_app_res("Edit")}
 						</button>
 					</td>
 		  		</tr>
@@ -60,13 +60,13 @@
 	  </div>
 </div>
 		<div>
-			{{data}}
+
 		</div>
 	</div>
 </div>
 <script>
 	(function(scope){
-	console.log(scope.$ws);
+		scope.url_user_form='${get_app_url("pages/customers_user")}'
 		scope.getListOfCustomers=function(){
 				scope.$ws.api('${get_api_key("admin.api.customers/get_items")}').done()
 				.then(function(res){
@@ -105,6 +105,9 @@
 					}
 
 				});
+		}
+		scope.doEdit=function(item){
+
 		}
 	});
 </script>

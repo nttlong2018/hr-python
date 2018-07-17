@@ -124,6 +124,10 @@ function dialog($scope) {
                         callback(sScope);
                     }
                     sScope.$element.appendTo("body");
+                    sScope.$element.find(".modal-dialog").hide();
+                    var _width=$(sScope.$element.find(".modal-body").children()[0]).width();
+
+                    debugger;
                     function watch() {
                         if (!$.contains($("body")[0], sScope.$element[0])) {
                             sScope.$destroy();
@@ -133,9 +137,19 @@ function dialog($scope) {
                         }
                     }
                     watch();
-                    sScope.$element.modal()
-                        .on("hidden.bs.modal", function () {
+                    var md=sScope.$element.modal()
+
+                        md.on("hidden.bs.modal", function () {
                             sScope.$element.remove();
+
+                        });
+                        md.on("shown.bs.modal",function(e){
+                         if(_width<=0){
+                            _width=$(window).width()-60;
+                         }
+                            $(e.currentTarget).find(".modal-dialog").show();
+                            $(e.currentTarget).find(".modal-dialog").css("max-width",_width+30);
+                            $($(e.currentTarget).find(".modal-body").children()[0]).css("width","");
 
                         });
 
@@ -157,9 +171,17 @@ function dialog($scope) {
                     if(_onAfterLoadContent){
                         _onAfterLoadContent($sender)
                     }
-                    console.log(res)
+
                 }
             })
+        }
+        me.with=function(value){
+            me._width=value;
+            return me;
+        }
+        me.height=function(value){
+            me.height=value;
+            return me;
         }
     }
     return new ret($scope);

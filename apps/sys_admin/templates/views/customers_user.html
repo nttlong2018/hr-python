@@ -1,0 +1,91 @@
+<div title="{{getTitle()}}" class="dialog-form" style="width:600px">
+    <div class="row">
+        <div class="col-xs-4 col-sm-4 col-md-3 col-lg-2">
+        	<label for="">${get_app_res("Username")}</label>
+        </div>
+        <div class="col-xs-8 col-sm-8 col-md-9 col-lg-10">
+            <input type="text" class="form-control" placeholder='${get_app_res("Enter Username")}' ng-model="data.username">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-4 col-sm-4 col-md-3 col-lg-2">
+        	<label for="">${get_app_res("Password")}</label>
+        </div>
+        <div class="col-xs-8 col-sm-8 col-md-9 col-lg-10">
+            <input type="text" class="form-control" placeholder='${get_app_res("Enter Password")}' ng-model="data.password">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-4 col-sm-4 col-md-3 col-lg-2">
+        	<label for="">${get_app_res("Firstname")}</label>
+        </div>
+        <div class="col-xs-8 col-sm-8 col-md-9 col-lg-10">
+            <input type="text"  class="form-control" placeholder='${get_app_res("Enter Firstname")}' ng-model="data.firstname">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-4 col-sm-4 col-md-3 col-lg-2">
+        	<label for="">${get_app_res("Lastname")}</label>
+        </div>
+        <div class="col-xs-8 col-sm-8 col-md-9 col-lg-10">
+            <input type="text"  class="form-control" placeholder='${get_app_res("Enter lastname")}' ng-model="data.lastname">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-4 col-sm-4 col-md-3 col-lg-2">
+        	<label for="">${get_app_res("Email")}</label>
+        </div>
+        <div class="col-xs-8 col-sm-8 col-md-9 col-lg-10">
+            <input type="email"  class="form-control" placeholder='${get_app_res("Enter email")}' ng-model="data.email">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-4 col-sm-4 col-md-3 col-lg-2">
+        	<label for="">${get_app_res("Is active")}</label>
+        </div>
+        <div class="col-xs-8 col-sm-8 col-md-9 col-lg-10">
+            <input type="checkbox"  ng-model="data.is_active">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-4 col-sm-4 col-md-3 col-lg-2">
+        	<label for="">${get_app_res("Is supper user")}</label>
+        </div>
+        <div class="col-xs-8 col-sm-8 col-md-9 col-lg-10">
+            <input type="checkbox"  class="form-control" ng-model="data.is_superuser">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-4 col-sm-4 col-md-3 col-lg-2">
+        	<label for="">${get_app_res("Is staff")}</label>
+        </div>
+        <div class="col-xs-8 col-sm-8 col-md-9 col-lg-10">
+            <input type="checkbox"  class="form-control" ng-model="data.is_staff">
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <div class="btn-toolbar pull-right" role="toolbar" aria-label="">
+                <div class="btn-group" role="group" aria-label="">
+                    <button type="button" class="btn btn-primary" ng-click="doSave()">${get_app_res("Save")}</button>
+                    <button type="button" class="btn secondary" ng-click="$doClose()">${get_app_res("Close")}</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    (function(scope,params){
+        scope.data={};
+        scope.isAddNew=!params;
+        scope.getTitle=function(){
+            if(!params) return "${get_app_res('Add new user')}";
+            else  return "${get_app_res('Edit user')}";
+        }
+
+
+        scope.$applyAsync();
+    });
+</script>

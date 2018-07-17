@@ -105,6 +105,7 @@ def template(fn,*_path,**kwargs):
 
             if not hasattr(app, "settings") or app.settings==None:
                 raise (Exception("'settings.py' was not found in '{0}' at '{1}' or look like you forgot to place 'import settings' in '{1}/__init__.py'".format(app.name, os.getcwd()+os.sep+app.path)))
+
             login_url = app.get_login_url()
 
             if hasattr(app.settings, "is_public"):

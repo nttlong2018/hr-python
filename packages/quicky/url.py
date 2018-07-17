@@ -159,7 +159,7 @@ def build_urls(module_name,*args,**kwargs):
 
                     )
             #build url
-            for app in args[0]:
+            for app in list_of_apps:
                 ret = applications.load_app(app)
                 is_use_default_schema = hasattr(ret.settings, "DEFAULT_DB_SCHEMA")
                 url_items=importlib.import_module(ret.mdl.__name__ + ".urls").urlpatterns
