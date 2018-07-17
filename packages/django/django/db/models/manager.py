@@ -199,6 +199,7 @@ class Manager(six.with_metaclass(RenameManagerMethods)):
             setattr(ret, "schema", kwargs["schema"])
             return ret
             # return qr.get(*args, **kwargs)
+        qr.set_db_schema(kwargs["schema"])
         ret= qr.get(*args, **kwargs)
             # self.set_db_schema(old_schema)
         setattr(ret,"schema",kwargs["schema"])

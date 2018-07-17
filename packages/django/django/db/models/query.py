@@ -172,6 +172,7 @@ class QuerySet(object):
         database.
         """
 
+        self.set_db_schema(schema)
         fill_cache = False
         if connections[self.db].features.supports_select_related:
             fill_cache = self.query.select_related
@@ -224,6 +225,8 @@ class QuerySet(object):
         db = self.db
         model = self.model
         compiler = self.query.get_compiler(using=db, schema=schema)
+        setattr(compiler,"schema",schema)
+
         if fill_cache:
             klass_info = get_klass_info(model, max_depth=max_depth,
                                         requested=requested, only_load=only_load)

@@ -49,7 +49,7 @@
 						<input type="checkbox" value="p.is_staff">
 					</td>
 					<td>
-						<button type="button" class="btn btn-primary" ng-click="$root.$dialog($id).url(url_user_form).params(p).done()">
+						<button type="button" class="btn btn-primary" ng-click="$root.$dialog($id).url(url_user_form).params({username:p.username,customer:selectedCode}).done()">
 							${get_app_res("Edit")}
 						</button>
 					</td>

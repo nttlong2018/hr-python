@@ -156,3 +156,27 @@ def sigin_as_user(args):
         return dict(
             error=dict(msg= args["request"].get_app_res("Login fail"))
         )
+def get_user_of_customer(args):
+    data=args["data"]
+    schema = None
+    if data["customer"] == "-":
+        import sys
+        settings= sys.modules["settings"]
+        schema =settings.MULTI_TENANCY_DEFAULT_SCHEMA
+    else:
+        cust_item = sys_customers().find_one("code=={0}", data["customer"])
+        schema = cust_item["schema"]
+
+    from ..models import auth_user
+
+    ret_user=auth_user().switch_schema(schema).find_one("username=={0}",data["username"])
+    # return ret_user
+
+    from django.contrib.auth.models import User
+
+    try:
+        user=User.objects.get(username=data["username"], schema=schema)
+        return  user
+    except Exception as ex:
+        return {}
+

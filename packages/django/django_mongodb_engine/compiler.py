@@ -185,6 +185,10 @@ class MongoQuery(NonrelQuery):
             return []
 
         fields = get_selected_fields(self.query)
+        if self.collection.collection.name != "django_session" and hasattr(self,"__schema_filter__"):
+            collection_name=self.collection.collection.name.split('.')[1]
+
+            self.collection=self.collection.collection.database.get_collection(self.__schema_filter__+"."+collection_name)
         print("Exec query on {0} with filter {1}".format(self.collection.collection.name,self.mongo_query.__str__()))
         cursor = self.collection.find(self.mongo_query, fields)
         if self.ordering:
