@@ -47,7 +47,8 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
 )
 AUTHENTICATION_BACKENDS = [
-    'permission_backend_nonrel.backends.NonrelPermissionBackend'
+    'permission_backend_nonrel.backends.NonrelPermissionBackend',
+    'quicky.backends.HashModelBackend'
 ]
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -136,6 +137,15 @@ MULTI_TENANCY_CONFIGURATION=dict(
     password="123456",
     name="lv01_lms",
     collection="sys.customers"
+)
+from quicky import backends
+backends.set_config(
+    host="172.16.7.63",
+    port=27017,
+    user="sys",
+    password="123456",
+    name="lv01_lms",
+    collection="sys.auth_token"
 )
 from quicky import api
 api.connect(

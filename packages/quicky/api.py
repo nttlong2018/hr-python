@@ -109,7 +109,12 @@ def call(request,*args,**kwargs):
 
             except Exception as ex:
                 raise Exception("Call  '{0}' in '{1}' encountered '{2}'".format(method_path, module_path, ex))
-        ret_data = JSON.to_json(ret)
+        from django.http.response import HttpResponseRedirect
+        if type(ret)== HttpResponseRedirect:
+
+            return ret
+        else:
+            ret_data = JSON.to_json(ret)
 
         return HttpResponse(ret_data)
     except Exception as ex:

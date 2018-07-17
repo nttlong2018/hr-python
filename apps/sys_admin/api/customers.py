@@ -138,24 +138,13 @@ def sigin_as_user(args):
     else:
         customer_item=sys_customers().find_one("code=={0}",args["data"]["code"])
         schema = customer_item["schema"]
+    from quicky import backends
+    ret=backends.create_login_token(args["data"]["username"],schema)
+    return dict(
+        url=args["request"].get_abs_url()+"/"+schema+"?token="+ret
+    )
 
-    try:
-        from django.contrib.auth.models import User
-        obj_users = User.objects
-        user = obj_users.get(username=args["data"]["username"], schema=schema)
-        from django.contrib.auth import authenticate, login,logout
-        setattr(user,"backend",'django.contrib.auth.backends.ModelBackend')
-        logout(args["request"],schema="sys")
-        args["request"].session.clear()
-        args["request"].user=user
-        # login(args["request"], user, schema=schema)
-        return dict(
-            url=args["request"].get_abs_url()
-        )
-    except Exception as ex:
-        return dict(
-            error=dict(msg= args["request"].get_app_res("Login fail"))
-        )
+
 def get_user_of_customer(args):
     data=args["data"]
     schema = None

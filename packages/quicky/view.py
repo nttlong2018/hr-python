@@ -123,29 +123,36 @@ def template(fn,*_path,**kwargs):
                     else:
                         login_url = "/" + _path["login_url"]
 
-            if login_url != None:
-                cmp_url = login_url
-                if host_dir != None:
-                    cmp_url = "/"+host_dir +  login_url
-                if request.user.is_anonymous():
-                    if request.path_info.lower() == cmp_url.lower():
-                        return fn(request, **kwargs)
-                    else:
+            # if login_url != None:
+            #     cmp_url = login_url
+            #     if host_dir != None:
+            #         cmp_url = "/"+host_dir +  login_url
+            #     if request.user.is_anonymous():
+            #         if request.path_info.lower() == cmp_url.lower():
+            #             return fn(request, **kwargs)
+            #         else:
+            #             url = request.get_abs_url() + login_url
+            #             url += "?next=" + request.get_abs_url() + request.path
+            #             return redirect(url)
+            if hasattr(app.settings, "authenticate"):
+                from django.http.response import HttpResponseRedirect
+                ret_auth=app.settings.authenticate(request)
+                if ret_auth != True:
+
+                    if ret_auth == False:
+                        if login_url==None:
+                            raise (Exception("it look like you forgot set 'login_url' in {0}/settings.py".format(app.path)))
+                        cmp_url=login_url
+                        if host_dir!=None:
+                            cmp_url = "/" + host_dir + login_url
+                        if request.path_info.lower() == cmp_url.lower():
+                            return fn(request, **kwargs)
                         url = request.get_abs_url() + login_url
                         url += "?next=" + request.get_abs_url() + request.path
                         return redirect(url)
-            if hasattr(app.settings, "authenticate"):
-                if not app.settings.authenticate(request):
-                    if login_url==None:
-                        raise (Exception("it look like you forgot set 'login_url' in {0}/settings.py".format(app.path)))
-                    cmp_url=login_url
-                    if host_dir!=None:
-                        cmp_url = "/" + host_dir + login_url
-                    if request.path_info.lower() == cmp_url.lower():
-                        return fn(request, **kwargs)
-                    url = request.get_abs_url() + login_url
-                    url += "?next=" + request.get_abs_url() + request.path
-                    return redirect(url)
+                elif type(ret_auth) is HttpResponseRedirect:
+                    return ret_auth
+
             return fn(request, **kwargs)
         except Exception as ex:
             logger.debug(ex)

@@ -1,8 +1,14 @@
 
 import datetime
 def authenticate(request):
+    if request._get_request().has_key("token"):
+        token=request._get_request()["token"]
+
+        from quicky import backends
+        return backends.sigin_by_login_token(request, token, "/")
     import SystemConfig
-    item=SystemConfig.get()
+    item = SystemConfig.get()
+
     if not request.user.is_anonymous() and request.user.is_active:
         return True
     else:
