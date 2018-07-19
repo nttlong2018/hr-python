@@ -32,7 +32,7 @@ def insert(args):
         ret = {}
         if args['data'] != None:
             data =  set_dict_insert_data(args)
-            ret  =  models.HCSLS_QuitJob().insert(data)
+            ret  =  models.HCSLS_Profession().insert(data)
             lock.release()
             return ret
 
@@ -50,7 +50,7 @@ def update(args):
         ret = {}
         if args['data'] != None:
             data =  set_dict_update_data(args)
-            ret  =  models.HCSLS_QuitJob().update(
+            ret  =  models.HCSLS_Profession().update(
                 data, 
                 "_id == {0}", 
                 ObjectId(args['data']['_id']))
@@ -74,7 +74,7 @@ def delete(args):
         lock.acquire()
         ret = {}
         if args['data'] != None:
-            ret  =  models.HCSLS_QuitJob().delete("_id in {0}",[ObjectId(x["_id"])for x in args['data']])
+            ret  =  models.HCSLS_Profession().delete("_id in {0}",[ObjectId(x["_id"])for x in args['data']])
             lock.release()
             return ret
 

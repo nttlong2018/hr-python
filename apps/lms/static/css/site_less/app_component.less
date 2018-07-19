@@ -1,0 +1,695 @@
+@border_color: #cbcbcb;
+@border_color_hover: #009de1;
+@caption_color: #666;
+@value_color: #0D0D0D;
+@height:25px;
+/*Boostrap color*/
+@boostrap_primary_color: #337ab7;
+@boostrap_primary_border_color: #2e6da4;
+@boostrap_primary_color_hover_focus: #204d74;
+@boostrap_primary_border_color_hover_focus: #122b40;
+@boostrap_warning_color: #f0ad4e;
+@boostrap_warning_border_color: #eea236;
+@boostrap_warning_color_hover_focus: #ec971f;
+@boostrap_warning_border_color_hover_focus: #d58512;
+@boostrap_danger_color: #d9534f;
+@boostrap_danger_border_color: #d43f3a;
+@boostrap_danger_color_hover_focus: #ac2925;
+@boostrap_danger_border_color_hover_focus: #761c19;
+/*Boostrap color*/
+html {
+    font-size: 16px !important;
+}
+
+.zb-icon-button {
+    background: 0 0;
+    border: none;
+    color: #000;
+    text-decoration: inherit;
+    text-rendering: optimizeLegibility;
+    text-transform: none;
+    padding: unset;
+}
+
+.zb-icon-button span i{
+    font-size:16px;
+}
+
+.zb-icon-button:focus,
+.zb-icon-button:hover {
+    outline: none;
+}
+
+.zb-form-input {
+    color: @value_color !important;
+    border: 0;
+    border-radius: 0;
+    border-bottom: 1px solid @border_color!important;
+    background: transparent;
+    font-size: 0.875rem;
+    padding-bottom: 0;
+}
+
+.zb-form-input:before {
+    content: '*';
+}
+
+.zb-form-input:focus {
+    border-bottom: 1px solid @border_color_hover !important;
+    background: transparent;
+}
+
+.zb-form-label {
+    font-size: 0.875rem !important;
+    margin: unset !important;
+    text-align: left;
+    padding-right: 6px;
+    min-height: 25px;
+    vertical-align: middle;
+    padding-top: 5px;
+}
+
+.zb-form-label:after {
+    content: ':';
+}
+
+.zb-form-select,
+.zb-form-select * {
+    background: transparent;
+}
+
+.zb-form-select span.form-control {
+    color: #333;
+    border: 0;
+    border-radius: 0;
+    font-size: 0.875rem;
+    padding-bottom: 0;
+}
+
+.zb-form-select div.ui-select-match {
+    border-bottom: 1px solid @border_color;
+}
+
+.zb-form-select span.form-control:hover {
+    background: transparent;
+}
+
+
+.btn-group.bootstrap-select.form-control.open {
+    background: transparent;
+}
+
+.btn-group.bootstrap-select.form-control.open input[type=search] {
+    color: #333;
+    border: 0;
+    border-radius: 0;
+    border-bottom: 1px solid @border_color_hover;
+    background: transparent;
+    padding-bottom: 0;
+    width: 100%!important;
+}
+
+.btn-group.bootstrap-select.form-control.open ul.ui-select-choices {
+    border-radius: 0px;
+    border-top: 0;
+}
+
+.zb-form-select {
+    .ui-select-choices.ui-select-choices-content {
+        background: #fff;
+        z-index: 100 !important;
+    }
+
+    .btn-default-focus {
+        outline: none !important;
+        -webkit-box-shadow: none !important;
+        box-shadow: none !important;
+        box-sizing: unset;
+        border-bottom: 1px solid @border_color_hover !important;
+        color: red;
+    }
+
+    .caret {
+        width: 14px !important;
+        height: 14px !important;
+        margin-left: 2px;
+        border: none !important;
+        font-family: Ionicons;
+        speak: none;
+        font-style: normal;
+        font-weight: 400;
+        font-variant: normal;
+        text-transform: none;
+        text-rendering: auto;
+        line-height: 1;
+        -webkit-font-smoothing: antialiased;
+    }
+
+    .caret:after {
+        content: "\f123";
+    }
+
+    .ui-select-match,
+    .ui-select-match > span {
+        height: @height;
+        background: transparent !important;
+        padding-top: 0 !important;
+    }
+
+    .ui-select-match > span {
+        padding: 0;
+    }
+
+    .ui-select-match > span > span {
+        position: absolute;
+        bottom: 0px;
+        left: 2px;
+        right: 12px;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        padding-right: 2rem;
+    }
+
+    .ui-select-match > span > span.ui-select-placeholder {
+        color: #999;
+    }
+}
+
+.zb-form-date-picker {
+    margin: unset !important;
+
+    > input,
+    > span > button.btn-default {
+        color: #333;
+        border: 0;
+        border-radius: 0;
+        border-bottom: 1px solid @border_color !important;
+        background: transparent;
+        font-size: 0.875rem;
+        padding-bottom: 0;
+        padding-right: 9px;
+    }
+
+    .zb-form-date-picker-focus {
+        background: transparent;
+        border-bottom: 1px solid @border_color_hover !important;
+    }
+
+    > span > button.btn-default {
+        padding-top: 4px;
+        border-bottom: 1px solid @border_color !important;
+    }
+
+    > span > button.btn-default:active {
+        border: none !important;
+    }
+
+    > span > button.btn-default:hover,
+    > span > button.btn-default:focus {
+        background: transparent;
+        border-bottom: 1px solid @border_color_hover !important;
+        height: @height !important;
+        padding: 4px 9px 0px 12px !important;
+        margin: 0 !important;
+        transform: scale(1) !important;
+    }
+
+    .uib-datepicker {
+        table {
+            button {
+                border-radius: 0;
+            }
+
+            button.active {
+                border-color: @border_color_hover;
+                /*>span {
+                    color: #ffffff;
+                }*/
+            }
+
+            button:hover {
+                transform: scale(1);
+                border-color: @border_color_hover;
+            }
+        }
+    }
+
+    ul.uib-datepicker-popup {
+        border-radius: 0;
+        padding: 10px;
+    }
+
+    li.uib-button-bar button {
+        border-radius: 0;
+    }
+}
+
+.zb-form-checkbox {
+    .custom-checkbox {
+        color: @caption_color;
+        height: 25px;
+        padding-top: 5px;
+
+        span:hover:before {
+            cursor: pointer;
+            font-family: fontAwesome;
+            font-weight: 300;
+            font-size: 12px;
+            color: @caption_color;
+            content: "\a0";
+            background-color: transparent;
+            border: 1px solid @border_color_hover;
+            border-radius: 0;
+            display: inline-block;
+            text-align: center;
+            height: 16px;
+            line-height: 14px;
+            min-width: 16px;
+            margin-right: 6px;
+            position: relative;
+            top: 0;
+            margin-left: -22px;
+            float: left;
+        }
+
+        > input:checked + span:before,
+        label.custom-radio > input:checked + span:before {
+            content: "\f00c";
+            font-weight: 300;
+        }
+    }
+}
+
+.form-group {
+    margin-bottom: unset;
+}
+
+.form-control {
+    height: 25px;
+    padding: 6px 2px;
+}
+
+.ui-select-bootstrap {
+    .ui-select-choices-row > span,
+    .ui-select-choices-row.active > span {
+        padding: 3px 5px;
+    }
+
+    .ui-select-choices-row {
+        .ui-select-choices-row-inner {
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            padding-right: 2rem;
+        }
+    }
+}
+
+.checkbox
+, .radio{
+    margin:unset;
+}
+
+.hcs-selected-row {
+    background-color: @border_color;
+}
+
+.btn:hover {
+    -webkit-transform: unset!important;
+    transform: unset!important;
+}
+
+[zb-required]::before {
+    content: "(*)";
+    color: #f00;
+    top: 3px;
+    font-weight: bold;
+    position: absolute;
+    left: -2px;
+    font-size: 10px;
+}
+
+.zb-form-date-picker[zb-required]::before {
+    left: -4px;
+}
+
+
+/**Dialog*/
+.modal {
+
+    .modal-dialog {
+        top: 1.5vh;
+        width: 70%;
+
+        .form-control {
+            color: unset;
+            background-color: unset;
+            border: unset;
+        }
+
+        .modal-header {
+            background-color: #48503C;
+            padding: 10px;
+            border-radius: unset;
+
+            .modal-resize {
+                float: right;
+                padding-top: 7px;
+                padding-right: 15px;
+
+                i {
+                    color: white;
+                    font-size: 20px;
+                    padding-top: unset !important;
+                }
+            }
+
+            h4 {
+                color: white;
+                font-weight: 400;
+
+                button {
+                    color: white;
+
+                    i {
+                        padding-top: 9px;
+                    }
+                }
+
+                img {
+                    display: unset !important;
+                    height: 30px;
+                }
+
+                #title {
+                    display: inline;
+                    font-size: 1rem;
+                    line-height: 1rem;
+                    border-left: 1px solid #fff;
+                    margin-left: 0.5rem;
+                    padding-left: 0.5rem;
+                }
+            }
+        }
+
+        .modal-body {
+            padding: 15px 15px 15px 30px;
+            height: 75vh;
+            overflow: auto;
+
+            span {
+                color: #0D0D0D;
+                font-weight: 400;
+                padding-bottom: 3px;
+            }
+        }
+
+        .modal-footer {
+            background-color: #3E464A;
+            padding: 10px;
+
+            button {
+                background: 0 0;
+                border: 1px solid white;
+                color: white;
+                font-size: 16px;
+                padding: 5px 10px;
+                -webkit-appearance: none;
+                margin-left: 10px;
+
+                i {
+                    padding-right: 5px;
+                }
+            }
+        }
+    }
+
+    .resize-width {
+        width: 100% !important;
+        top: 0 !important;
+
+        .modal-content .modal-body {
+            height: 86vh;
+        }
+    }
+}
+
+.modal:before{
+    vertical-align:top!important;
+}
+
+/*Confirm Dialog*/
+
+#myConfirmModal,
+#myMessageModal {
+
+    .modal-dialog {
+        width: 35%;
+        min-width: 30%;
+        top: 25vh;
+
+        .modal-header {
+            background-color: #48503C;
+            padding: 10px;
+            border-radius: unset;
+
+            h4 {
+                color: white;
+                font-weight: 400;
+                text-align: center;
+
+                button {
+                    color: white;
+                    padding-top: 5px;
+
+                    i {
+                        padding-top: 9px;
+                    }
+                }
+
+                img {
+                    display: unset !important;
+                    height: 30px;
+                }
+
+                #title {
+                    display: inline;
+                    font-size: 1rem;
+                    line-height: 1rem;
+                    margin-left: 0.5rem;
+                    padding-left: 0.5rem;
+                    border-left: unset;
+                }
+            }
+        }
+
+        .modal-body {
+            padding: 15px 15px 15px 15px;
+            min-height: 100px;
+            height: unset;
+            white-space: pre-line;
+
+            span {
+                color: #666;
+                font-weight: 400;
+            }
+        }
+
+        .modal-footer {
+            background-color: #3E464A;
+        }
+    }
+}
+#myConfirmModal:before {
+    vertical-align: top !important;
+}
+
+.modal #myComboboxDialog {
+    .modal-dialog {
+        width: 35% !important;
+        top: 10% !important;
+    
+        .modal-body {
+            height: 60vh !important;
+        }
+    }
+}
+/*Toast*/
+#hcs-toast-alert {
+    visibility: hidden;
+    min-width: 250px;
+    margin-left: -125px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 2px;
+    padding: 16px;
+    position: fixed;
+    z-index: 1051;
+    left: 50%;
+    bottom: 30px;
+    font-size: 17px;
+}
+
+#hcs-toast-alert.show {
+    visibility: visible;
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+@-webkit-keyframes fadein {
+    from {
+        bottom: 0;
+        opacity: 0;
+    }
+
+    to {
+        bottom: 30px;
+        opacity: 1;
+    }
+}
+
+@keyframes fadein {
+    from {
+        bottom: 0;
+        opacity: 0;
+    }
+
+    to {
+        bottom: 30px;
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes fadeout {
+    from {
+        bottom: 30px;
+        opacity: 1;
+    }
+
+    to {
+        bottom: 0;
+        opacity: 0;
+    }
+}
+
+@keyframes fadeout {
+    from {
+        bottom: 30px;
+        opacity: 1;
+    }
+
+    to {
+        bottom: 0;
+        opacity: 0;
+    }
+}
+
+/*Editor*/
+.note-editor {
+    position: relative;
+    box-shadow: unset;
+    border-radius: unset;
+    border:unset !important;
+    margin-bottom:unset;
+
+    .note-frame {
+
+        .panel {
+            box-shadow: unset !important;
+            border-radius: unset !important;
+            margin-bottom: unset;
+        }
+    }
+
+    .panel {
+        box-shadow: unset !important;
+        border-radius: unset !important;
+        margin-bottom: unset;
+    }
+}
+
+.note-editor.note-frame .note-editing-area .note-editable {
+    padding: 2px 2px 0px 2px !important;
+    color:#0d0d0d !important;
+}
+
+.panel-footer, .panel-heading {
+    border-bottom: unset;
+    background-color: unset;
+}
+
+.panel-heading {
+    background-color: unset !important;
+    height: 24px !important;
+    padding: 0 0 0 0 !important;
+}
+
+.note-editing-area {
+    border: 1px solid #d9d9d9 !important;
+}
+
+.note-editor.note-frame .note-statusbar {
+    background-color: unset;
+}
+
+.note-editor .note-frame .panel {
+    border-radius: unset !important;
+}
+
+.note-toolbar button{
+    border-radius:unset!important;
+}
+
+.note-btn-group.btn-group.note-style .btn-sm {
+    padding: 3px 7px !important;
+    border: 1px solid #FFFFFF;
+    font-size: 10px !important;
+}
+
+.note-btn-group.btn-group.note-fontsize .btn-sm {
+    padding: 3px 7px !important;
+    font-size: 10px !important;
+    border: 1px solid #FFFFFF;
+}
+
+.note-btn-group.btn-group.note-para .btn-sm {
+    padding: 3px 7px !important;
+    font-size: 10px !important;
+    border: 1px solid #FFFFFF;
+}
+
+.note-btn-group.btn-group.note-style .btn-sm.active,
+.note-btn-group.btn-group.note-fontsize .btn-sm.active,
+.note-btn-group.btn-group.note-para .btn-sm.active {
+    border: 1px solid #d6d6d6 !important;
+    box-shadow: none !important;
+}
+
+.note-btn-group.btn-group.note-style .btn-sm:active,
+.note-btn-group.btn-group.note-fontsize .btn-sm:active,
+.note-btn-group.btn-group.note-para .btn-sm:active {
+    border: 1px solid #d6d6d6 !important;
+    box-shadow: none !important;
+}
+
+.note-popover .popover-content > .btn-group, .panel-heading.note-toolbar > .btn-group {
+    margin-top: 2px;
+    margin-right: 5px;
+    margin-left: 0;
+}
+
+.zb-form-input[ng-disabled=true] {
+    opacity: 0.6 !important;
+}
+
+.form-control[ng-disabled=disabled] {
+    opacity: 0.6 !important;
+    color: #0d0d0d !important;
+}
+
+.btn[ng-disabled=disabled] {
+    opacity: 0.6 !important;
+    color: #0d0d0d !important;
+}

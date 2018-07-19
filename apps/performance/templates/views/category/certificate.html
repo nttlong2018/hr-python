@@ -1,13 +1,14 @@
-﻿<hcs-tool-bar on-edit="onEdit()"
+﻿<!--<hcs-tool-bar on-edit="onEdit()"
               on-add="onAdd()"
               on-delete="onDelete()"
               on-copy="onCopy()"
               on-export="onExport()"
               on-import="onImport()"
               search-common="SearchText"
-              on-search="onSearch()"></hcs-tool-bar>
+              on-search="onSearch()"></hcs-tool-bar>-->
 <!--$parent.mapName[0].function_id: function_id chức năng của tab hiện tại index tăng dần theo thứ tự các tab-->
 <div class="tab-pane" style="padding-right:unset; height: 100%; ">
+    <collapse-box class="zb-datatable" title="${get_res('list_certificate','Danh sách chứng chỉ')}">
     <table-data data-source="tableSource" fields="tableFields" type="MultiSelect" 
                 paging="true" page-length="100" server-side="true" 
                 press-enter="onSelectTableRow" selected-items="selectedItems" 
@@ -15,6 +16,7 @@
                 refresh-row="refreshDataRow"
                 selected-field="">
     </table-data>
+    </collapse-box>
     <div class="clearfix"></div>
 </div>
 <script>

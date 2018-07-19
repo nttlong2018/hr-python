@@ -1,0 +1,195 @@
+﻿<div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+            <div class="left-content pull-left">
+                <!--<img src="{{$root.logo}}">-->
+                <span class="modal-title">{{title}}</span>
+            </div>
+            <div class="right-content pull-right">
+                <button type="button" class="close" data-dismiss="modal"><i class="la la-close"></i></button>
+                <button type="button" class="close" ng-click="onResizeDialog()"><span class="modal-resize"><i class="la la-expand"></i></span></button>
+            </div>
+        </div>
+        <div class="modal-body" style="overflow:unset;">
+            <div class="col-md-12">
+                <div class="col-md-4" style="overflow:auto; height:82vh; border:1px solid #d0d0d0;">
+                    <tree-data data-source="treeFunctionListsDataSource" display-field="default_name"
+                                parent-field="parent_id" key-field="function_id" 
+                                multi-select="treeMultiSelect" select-mode="treeMode" 
+                                on-select="selectTreeNode"
+                                current-node="treeCurrentNode"
+                                selected-nodes="treeSelectedNodes"
+                                selected-root-nodes="treeSelectedRootNodes"
+                                search-text="treeSearchText"
+                                check-all="treeCheckAll"
+                                checked-field="is_selected"
+                                disabled="false"/>
+                </div>
+                <div class="col-md-8">
+                    <div class="form-group row hcs-group-form-group">
+                        <label class="col-sm-5 zb-form-label">${get_res('permission_read','Đọc')}</label>
+                        <div class="col-sm-7">
+                            <input-checkbox ng-model="treeCurrentNode.read">
+                        </div>
+                    </div>
+                    <div class="form-group row hcs-group-form-group">
+                        <label class="col-sm-5 zb-form-label">${get_res('permission_create','Thêm')}</label>
+                        <div class="col-sm-7">
+                            <input-checkbox ng-model="treeCurrentNode.create">
+                        </div>
+                    </div>
+                    <div class="form-group row hcs-group-form-group">
+                        <label class="col-sm-5 zb-form-label">${get_res('permission_write','Sửa')}</label>
+                        <div class="col-sm-7">
+                            <input-checkbox ng-model="treeCurrentNode.write">
+                        </div>
+                    </div>
+                    <div class="form-group row hcs-group-form-group">
+                        <label class="col-sm-5 zb-form-label">${get_res('permission_delete','Xóa')}</label>
+                        <div class="col-sm-7">
+                            <input-checkbox ng-model="treeCurrentNode.delete">
+                        </div>
+                    </div>
+                    <div class="form-group row hcs-group-form-group">
+                        <label class="col-sm-5 zb-form-label">${get_res('permission_export','Xuất khẩu')}</label>
+                        <div class="col-sm-7">
+                            <input-checkbox ng-model="treeCurrentNode.export">
+                        </div>
+                    </div>
+                    <div class="form-group row hcs-group-form-group">
+                        <label class="col-sm-5 zb-form-label">${get_res('permission_import','Nhập khẩu')}</label>
+                        <div class="col-sm-7">
+                            <input-checkbox ng-model="treeCurrentNode.import">
+                        </div>
+                    </div>
+                    <div class="form-group row hcs-group-form-group">
+                        <label class="col-sm-5 zb-form-label">${get_res('permission_copy','Sao chép')}</label>
+                        <div class="col-sm-7">
+                            <input-checkbox ng-model="treeCurrentNode.copy">
+                        </div>
+                    </div>
+                    <div class="form-group row hcs-group-form-group">
+                        <label class="col-sm-5 zb-form-label">${get_res('permission_attach','Đính kèm file')}</label>
+                        <div class="col-sm-7">
+                            <input-checkbox ng-model="treeCurrentNode.attach">
+                        </div>
+                    </div>
+                    <div class="form-group row hcs-group-form-group">
+                        <label class="col-sm-5 zb-form-label">${get_res('permission_download','Tải file')}</label>
+                        <div class="col-sm-7">
+                            <input-checkbox ng-model="treeCurrentNode.download">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <div class="right-content pull-right">
+                <button ng-click="save($event)"><i class="la la-check"></i></button>
+                <button ng-click="close($event)"><i class="la la-close"></i></button>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    (function (scope) {
+        var __lstPermission = [];
+        scope.onResizeDialog = onResizeDialog;
+        scope.role_code = scope.$parent.entity.role_code;
+        scope.close = close;
+        scope.save = save;
+        scope.title = scope.$parent.headerTitle;
+        scope.treeCurrentNode = {};
+        scope.treeSelectedNodes = [];
+        scope.treeSelectedRootNodes = [];
+        scope.treeCheckAll = false;
+        scope.treeSearchText = '';
+        scope.treeDisable = false;
+        scope.treeMultiSelect = true;
+        scope.treeMode = 2; // Value in (1, 3) combobox toàn quyền set 1 ngược lại set 3
+        var _treeFunctionListsDataSource = null;
+        //var _treeDefault = null;
+        scope.treeFunctionListsDataSource = null;
+        scope.$applyAsync();
+
+        _functionList();
+        function _functionList() {
+            services.api("${get_api_key('app_main.api.AD_Roles/get_list_edit_permission')}")
+                .data({
+                    "role_code": scope.role_code
+                })
+                .done()
+                .then(function (res) {
+                    _treeFunctionListsDataSource = res;
+                    scope.treeFunctionListsDataSource = _treeFunctionListsDataSource;
+                    selectedNodes();
+                    scope.$applyAsync();
+                })
+        }
+
+        function selectedNodes() {
+            $.each(scope.$parent.dataTableTree, function (i, v) {
+                var _f = _.filter(scope.treeFunctionListsDataSource, function (f) {
+                    return f.function_id == v.function_id;
+                });
+
+                if (_f.length > 0) {
+                    _f[0]["is_selected"] = true;
+                }
+            });
+            scope.$apply();
+        }
+
+        function unSelectedNodes() {
+
+        }
+
+        function save() {
+            $msg.confirm("${get_global_res('Notification','Thông báo')}", "${get_global_res('Do_You_Want_To_Execute','Bạn có thực thi không?')}", function () {
+                services.api("${get_api_key('app_main.api.AD_Roles/edit_permission')}")
+                    .data({
+                        "role_code":scope.role_code,
+                        "permission":scope.treeSelectedNodes
+                    })
+                    .done()
+                    .then(function (res) {
+                        if (res.error == null) {
+                            $msg.alert("${get_global_res('Handle_Success','Thao tác thành công')}", $type_alert.INFO);
+                            scope.$parent._permissionList();
+                            $dialog.closeDialog();
+                            scope.$applyAsync();
+                        } else {
+                            $msg.message("${get_global_res('Internal_Server_Error','Có lỗi từ phía máy chủ')}", "${get_global_res('Please_Try_Again','Xin thử vui lòng thử lại')}", function () { });
+                        }
+                    })
+            });
+        }
+
+        function close() {
+            $dialog.closeDialog();
+        }
+
+        function onResizeDialog() {
+            $dialog.fullScreen();
+            setTimeout(function () {
+                $(window).trigger('resize');
+            }, 100);
+        }
+
+        scope.$watch('treeCurrentNode', function (val) {
+            var _f = _.filter(scope.treeSelectedNodes, function (f) {
+                return f.function_id == val.function_id;
+            })[0];
+            _f.read = val.read;
+            _f.create = val.create;
+            _f.write = val.write;
+            _f.delete = val.delete;
+            _f.export = val.export;
+            _f.import = val.import;
+            _f.copy = val.copy;
+            _f.attach = val.attach;
+            _f.download = val.download;
+        }, true);
+
+});
+</script>

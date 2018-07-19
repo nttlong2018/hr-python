@@ -1,381 +1,482 @@
-﻿<hcs-tool-bar on-edit="onEdit()"
-              on-add="onAdd()"
-              on-delete="onDelete()"
-              on-copy="onCopy()"
-              on-export="onExport()"
-              on-import="onImport()"
-              search-common="SearchText"
-              on-search="onSearch()"></hcs-tool-bar>
-<div class="tab-pane">
-    <div class="row">
-        <div class="col-md-8">
-            <div class="row">
-                <p class="hcs-group-collapse-heading">
-                    <button class="zb-icon-button hcs-profile-group-title" onclick="$('#collapseCurriculumVitae').slideToggle();">
-                        <span>
-                                                <i class="la la-angle-down"></i>
-                                            </span> Lý lịch cá nhân
-                    </button>
-                </p>
-            </div>
-            <div class="row" id="collapseCurriculumVitae">
-                <div class="col-md-6">
-                    <div class="form-group row hcs-group-form-group">
-                        <!--Mã nhân viên-->
-                        <label for="inputEmployeeId" class="col-sm-4 zb-form-label">Mã nhân viên</label>
-                        <div class="col-sm-8">
-                            <input-text id="inputEmployeeId" required ng-model="data.curriculum_vitae.code">
-                        </div>
-                    </div>
-                    <div class="form-group row hcs-group-form-group">
-                        <!--Họ-->
-                        <label for="inputLastName" class="col-sm-4 zb-form-label">Họ</label>
-                        <div class="col-sm-8">
-                            <input-text id="inputLastName" ng-model="data.curriculum_vitae.last_name" required>
-                        </div>
-                    </div>
-                    <div class="form-group row hcs-group-form-group">
-                        <!--Tên-->
-                        <label for="inputFirstName" class="col-sm-4 zb-form-label">Tên</label>
-                        <div class="col-sm-8">
-                            <input-text id="inputFirstName" ng-model="data.curriculum_vitae.first_name" required>
-                        </div>
-                    </div>
-                    <div class="form-group row hcs-group-form-group">
-                        <!--Giới tính-->
-                        <label for="inputGender" class="col-sm-4 zb-form-label">Giới tính</label>
-                        <div class="col-sm-8">
-                            <input-select data-list="dataSourceCombobox.gender" ng-model="data.curriculum_vitae.gender" placeholder="Chọn giới tính" data-value="value" data-caption="caption" />
-                        </div>
+﻿<div class="tab-pane" style="padding-right:unset; height: 100%; overflow-y:hidden; overflow:auto; background-color:#fff;">
+    <div class="col-md-12">
+        <collapse-box class="zb-form-common"
+                       title="Lý lịch cá nhân">
+             <div class="col-md-4">
+                 <div class="form-group zb-form-group">
+                     <!--Mã nhân viên-->
+                     <label class="col-sm-4 zb-form-label">${get_res('employee_code','Mã nhân viên')}</label>
+                     <div class="col-sm-8">
+                         <input-text required ng-model="entity.employee_code" ng-disabled="__mode === 2 ? true : false">
+                     </div>
+                 </div>
+                 <div class="form-group zb-form-group">
+                     <!--Họ-->
+                     <label for="inputLastName" class="col-sm-4 zb-form-label">${get_res('last_name','Họ')}</label>
+                     <div class="col-sm-8">
+                         <input-text ng-model="entity.last_name" required>
+                     </div>
+                 </div>
+                 <div class="form-group zb-form-group">
+                     <!--Tên-->
+                     <label class="col-sm-4 zb-form-label">${get_res('first_name','Tên')}</label>
+                     <div class="col-sm-8">
+                         <input-text ng-model="entity.first_name" required>
+                     </div>
+                 </div>
+                 <div class="form-group zb-form-group">
+                     <!--Bí danh-->
+                     <label class="col-sm-4 zb-form-label">${get_res('extra_name','Bí danh')}</label>
+                     <div class="col-sm-8">
+                         <input-text ng-model="entity.extra_name">
+                     </div>
+                 </div>
+                 <div class="form-group zb-form-group">
+                     <!--Giới tính-->
+                     <label for="inputGender" class="col-sm-4 zb-form-label">${get_res('gender','Giới tính')}</label>
+                     <div class="col-sm-8">
+                         <input-select ng-model="entity.gender" data-list="$parent.$parent.$parent.cbbGender" data-value="value" data-caption="caption" />
+                     </div>
+                 </div>
+                 <!--Ngày sinh-->
+                 <div class="form-group zb-form-group">
+                     <label class="col-sm-4 zb-form-label">${get_res('birthday','Ngày sinh')}</label>
+                     <div class="col-sm-8">
+                         <date-picker ng-model="entity.birthday" data-format="{{$root.systemConfig.date_format}}" />
+                     </div>
+                 </div>
+                 <div class="form-group zb-form-group">
+                     <!--Nơi sinh-->
+                     <label class="col-sm-4 zb-form-label">${get_res('b_province_code','Nơi sinh')}</label>
+                     <div class="col-sm-8">
+                         <!--<input-select data-list="" ng-model="entity.b_province_code"/>-->
+                         <input-combobox id="inputEmployeeId" required
+                            list-code="${encryptor.get_key('cbb_province')}"
+                            list-value="[{ '@lock': true }]"
+                            current-item="entity.b_province_code">
+                     </div>
+                 </div>
+             </div>
+             <div class="col-md-4">
+                 <div class="form-group zb-form-group">
+                     <!--Quốc gia-->
+                     <label class="col-sm-4 zb-form-label">${get_res('nation_code','Quốc gia')}</label>
+                     <div class="col-sm-8">
+                         <!--<input-select data-list="" ng-model="entity.nation_code" data-value="value" data-caption="caption" />-->
+                         <input-combobox id="inputEmployeeId"
+                            list-code="${encryptor.get_key('cbb_nation')}"
+                            list-value="[{ '@lock': true }]"
+                            current-item="entity.nation_code">
+                     </div>
+                 </div>
+                 <div class="form-group zb-form-group">
+                     <!--Dân tộc-->
+                     <label class="col-sm-4 zb-form-label">${get_res('ethnic_code','Dân tộc')}</label>
+                     <div class="col-sm-8">
+                         <!--<input-select data-list="" ng-model="entity.ethnic_code" data-value="value" data-caption="caption" />-->
+                         <input-combobox id="inputEmployeeId"
+                            list-code="${encryptor.get_key('cbb_ethnic')}"
+                            list-value="[{ '@lock': true }]"
+                            current-item="entity.ethnic_code">
+                     </div>
+                 </div>
+                 <div class="form-group zb-form-group">
+                     <!--Tôn giáo-->
+                     <label class="col-sm-4 zb-form-label">${get_res('religion_code','Tôn giáo')}</label>
+                     <div class="col-sm-8">
+                         <!--<input-select data-list="" ng-model="entity.religion_code" data-value="value" data-caption="caption" />-->
+                         <input-combobox id="inputEmployeeId"
+                            list-code="${encryptor.get_key('cbb_religion')}"
+                            list-value="[{ '@lock': true }]"
+                            current-item="entity.religion_code">
+                     </div>
+                 </div>
+                 <!--Trình độ văn hóa-->
+                 <div class="form-group zb-form-group">
+                     <label class="col-sm-4 zb-form-label">${get_res('culture_id','Trình độ văn hóa')}</label>
+                     <div class="col-sm-8">
+                         <input-select data-list="$parent.$parent.$parent.cbbCulture" ng-model="entity.culture_id" data-value="value" data-caption="caption" />
+                     </div>
+                 </div>
+                 <!--Hình thức đào tạo-->
+                 <div class="form-group zb-form-group">
+                     <label class="col-sm-4 zb-form-label">${get_res('is_retrain','Hình thức đào tạo')}</label>
+                     <div class="col-sm-8">
+                         <input-select data-list="$parent.$parent.$parent.cbbRetrain" ng-model="entity.is_retrain" data-value="value" data-caption="caption" />
+                     </div>
+                 </div>
+                 <!--Trình độ học vấn-->
+                 <div class="form-group zb-form-group">
+                     <label class="col-sm-4 zb-form-label">Trình độ học vấn</label>
+                     <div class="col-sm-8">
+                         <!--<input-select data-list="$parent.$parent.$parent.cbbCulture" ng-model="entity.train_level_code" data-value="value" data-caption="caption" />-->
+                         <input-combobox id="inputEmployeeId"
+                            list-code="${encryptor.get_key('cbb_acadame')}"
+                            list-value="[{ '@lock': true }]"
+                            current-item="entity.train_level_code">
+                     </div>
+                 </div>
+                 <!--Tình trạng hôn nhân-->
+                 <div class="form-group zb-form-group">
+                     <label class="col-sm-4 zb-form-label">Tình trạng hôn nhân</label>
+                     <div class="col-sm-8">
+                         <!--<input-select data-list="" ng-model="entity.marital_code" data-value="value" data-caption="caption" />-->
+                         <input-combobox id="inputEmployeeId"
+                            list-code="${encryptor.get_key('cbb_marital')}"
+                            list-value="[{ '@lock': true }]"
+                            current-item="entity.marital_code">
+                     </div>
+                 </div>
+             </div>
+             <div class="col-md-4">
+                 <!--Số CMND-->
+                 <div class="form-group zb-form-group">
+                     <label class="col-sm-4 zb-form-label">Số CMND</label>
+                     <div class="col-sm-8">
+                         <input-text ng-model="entity.id_card_no">
+                     </div>
+                 </div>
+                 <!--Ngày cấp-->
+                 <div class="form-group zb-form-group">
+                     <label class="col-sm-4 zb-form-label">Ngày cấp</label>
+                     <div class="col-sm-8">
+                         <!--<input type="date" class="form-control hcs-input-textbox" id="inputBeginningDate"/>-->
+                         <date-picker ng-model="entity.issued_date" data-format="{{$root.systemConfig.date_format}}" />
+                     </div>
+                 </div>
+                 <!--Nơi cấp-->
+                 <div class="form-group zb-form-group">
+                     <label class="col-sm-4 zb-form-label">Nơi cấp</label>
+                     <div class="col-sm-8">
+                         <!--<input-select data-list="" ng-model="entity.issued_place_code" data-value="value" data-caption="caption" />-->
+                         <input-combobox id="inputEmployeeId" required
+                            list-code="${encryptor.get_key('cbb_province')}"
+                            list-value="[{ '@lock': true }]"
+                            current-item="entity.issued_place_code">
+                     </div>
+                 </div>
+                 <!--Điện thoại di động-->
+                 <div class="form-group zb-form-group">
+                     <label class="col-sm-4 zb-form-label">Điện thoại di động</label>
+                     <div class="col-sm-8">
+                         <input-text ng-model="entity.mobile">
+                     </div>
+                 </div>
+                 <!--Điện thoại khác-->
+                 <div class="form-group zb-form-group">
+                     <label class="col-sm-4 zb-form-label">Điện thoại khác</label>
+                     <div class="col-sm-8">
+                         <input-text ng-model="entity.p_phone">
+                     </div>
+                 </div>
+                 <!--Email-->
+                 <div class="form-group zb-form-group">
+                     <label class="col-sm-4 zb-form-label">Email</label>
+                     <div class="col-sm-8">
+                         <input-text id="email" ng-model="entity.email">
+                     </div>
+                 </div>
+                 <!--Email cá nhân-->
+                 <div class="form-group zb-form-group">
+                     <label class="col-sm-4 zb-form-label">Email cá nhân</label>
+                     <div class="col-sm-8">
+                         <input-text id="personal_email" ng-model="entity.personal_email">
+                     </div>
+                 </div>
+             </div>
+         </collapse-box>
+    </div>
+    <div class="col-md-12">
+        <collapse-box class="zb-form-common"
+                       title="Thông tin công việc">
+             <div class="col-md-4">
+                 <!--Số lưu hồ sơ-->
+                 <div class="form-group zb-form-group">
+                     <label class="col-sm-4 zb-form-label">Số lưu hồ sơ</label>
+                     <div class="col-sm-8">
+                         <input-text ng-model="entity.document_no">
+                     </div>
+                 </div>
+                 <!--Ngày vào làm-->
+                 <div class="form-group zb-form-group">
+                     <label class="col-sm-4 zb-form-label">Ngày vào làm</label>
+                     <div class="col-sm-8">
+                         <date-picker ng-model="entity.join_date" data-format="{{$root.systemConfig.date_format}}" required/>
+                     </div>
+                 </div>
+                 <!--Thành NV chính thức-->
+                 <div class="form-group zb-form-group">
+                     <label class="col-sm-4 zb-form-label">Thành NV chính thức</label>
+                     <div class="col-sm-8">
+                         <date-picker ng-model="entity.official_date" data-format="{{$root.systemConfig.date_format}}" />
+                     </div>
+                 </div>
+                 <!--Ngày vào nghành-->
+                 <div class="form-group zb-form-group">
+                     <label class="col-sm-4 zb-form-label">Ngày vào ngành</label>
+                     <div class="col-sm-8">
+                         <date-picker ng-model="entity.career_date" data-format="{{$root.systemConfig.date_format}}" />
+                     </div>
+                 </div>
+                 <!--Ngày vào biên chế-->
+                 <div class="form-group zb-form-group">
+                     <label class="col-sm-4 zb-form-label">Ngày vào biên chế</label>
+                     <div class="col-sm-8">
+                         <date-picker ng-model="entity.personnel_date" data-format="{{$root.systemConfig.date_format}}" />
+                     </div>
+                 </div>
+                 <!--Loại nhân viên-->
+                 <div class="form-group zb-form-group">
+                     <label class="col-sm-4 zb-form-label">Loại nhân viên</label>
+                     <div class="col-sm-8">
+                         <!--<input-select data-list="" ng-model="entity.emp_type_code" data-value="value" data-caption="caption" />-->
+                         <input-combobox id="inputEmployeeId"
+                            list-code="${encryptor.get_key('cbb_employee_type')}"
+                            list-value="[{ '@lock': true }]"
+                            current-item="entity.emp_type_code">
+                     </div>
+                 </div>
+                 <!--Loại lao động-->
+                 <div class="form-group zb-form-group">
+                     <label class="col-sm-4 zb-form-label">Loại lao động</label>
+                     <div class="col-sm-8">
+                         <input-select data-list="$parent.$parent.$parent.cbbWorkingType" ng-model="entity.labour_type" data-value="value" data-caption="caption" />
+                     </div>
+                 </div>
+             </div>
+             <div class="col-md-4">
+                 <!--Bộ phận làm việc-->
+                 <div class="form-group zb-form-group">
+                     <label class="col-sm-4 zb-form-label">Bộ phận làm việc</label>
+                     <div class="col-sm-8">
+                         <!--<input-select data-list="" ng-model="entity.department_code" data-value="value" data-caption="caption" required/>-->
+                         <input-combobox id="inputEmployeeId"
+                            list-code="${encryptor.get_key('cbb_departments')}"
+                            list-value="[{'lock':true}]"
+                            current-item="entity.department_code"
+                            required>
+                     </div>
+                 </div>
+                 <!--Chức vụ-->
+                 <div class="form-group zb-form-group">
+                     <label class="col-sm-4 zb-form-label">Chức vụ</label>
+                     <div class="col-sm-8">
+                         <!--<input-select data-list="" ng-model="entity.job_pos_code" data-value="value" data-caption="caption" />-->
+                         <input-combobox id="inputEmployeeId"
+                            list-code="${encryptor.get_key('cbb_position')}"
+                            list-value="[{ '@lock': true }]"
+                            current-item="entity.job_pos_hold_code">
+                     </div>
+                 </div>
+                 <!--Ngày bổ nhiệm CV-->
+                 <div class="form-group zb-form-group">
+                     <label class="col-sm-4 zb-form-label">Ngày bổ nhiệm CV</label>
+                     <div class="col-sm-8">
+                         <!--<input type="date" class="form-control hcs-input-textbox" id="inputBeginningDate"/>-->
+                         <date-picker ng-model="entity.job_w_date" data-format="{{$root.systemConfig.date_format}}" />
+                     </div>
+                 </div>
+                 <!--Chức danh-->
+                 <div class="form-group zb-form-group">
+                     <label class="col-sm-4 zb-form-label">Chức danh</label>
+                     <div class="col-sm-8">
+                         <input-select data-list="" ng-model="entity.job_w_code" data-value="value" data-caption="caption" required/>
+                     </div>
+                 </div>
+                 <!--Ngày đảm nhiệm CD-->
+                 <div class="form-group zb-form-group">
+                     <label class="col-sm-4 zb-form-label">Ngày đảm nhiệm CD</label>
+                     <div class="col-sm-8">
+                         <!--<input type="date" class="form-control hcs-input-textbox" id="inputBeginningDate"/>-->
+                         <date-picker ng-model="entity.job_w_date" data-format="{{$root.systemConfig.date_format}}" />
+                     </div>
+                 </div>
+                 <!--Chuyên môn-->
+                 <div class="form-group zb-form-group">
+                     <label class="col-sm-4 zb-form-label">Chuyên môn</label>
+                     <div class="col-sm-8">
+                         <!--<input-select data-list="" ng-model="entity.profession_code" data-value="value" data-caption="caption" />-->
+                         <input-combobox id="inputEmployeeId"
+                            list-code="${encryptor.get_key('cbb_profession')}"
+                            list-value="[{'lock': true }]"
+                            current-item="entity.profession_code">
+                     </div>
+                 </div>
+                 <!--Trình độ q.lý nhà nước-->
+                 <div class="form-group zb-form-group">
+                     <label class="col-sm-4 zb-form-label">Trình độ q.lý nhà nước</label>
+                     <div class="col-sm-8">
+                         <input-select data-list="$parent.$parent.$parent.cbbLevelManagement" ng-model="entity.level_management" data-value="value" data-caption="caption" />
+                     </div>
+                 </div>
+             </div>
+             <div class="col-md-4">
+                 <!--Là cán bộ chủ chốt-->
+                 <div class="form-group zb-form-group">
+                     <label class="col-sm-4 zb-form-label">Là cán bộ chủ chốt</label>
+                     <div class="col-sm-8">
+                         <input-checkbox ng-model="entity.is_cbcc">
+                     </div>
+                 </div>
+                 <!--Chuyên gia Tuyển dụng-->
+                 <div class="form-group zb-form-group">
+                     <label class="col-sm-4 zb-form-label">Chuyên gia Tuyển dụng</label>
+                     <div class="col-sm-8">
+                         <input-checkbox ng-model="entity.is_expert_recruit">
+                     </div>
+                 </div>
+                 <!--Chuyên gia Đào tạo-->
+                 <div class="form-group zb-form-group">
+                     <label class="col-sm-4 zb-form-label">Chuyên gia Đào tạo</label>
+                     <div class="col-sm-8">
+                         <input-checkbox ng-model="entity.is_expert_train">
+                     </div>
+                 </div>
+                 <!--Quản lý trực tiếp-->
+                 <div class="form-group zb-form-group">
+                     <label class="col-sm-4 zb-form-label">Quản lý trực tiếp</label>
+                     <div class="col-sm-8">
+                         <input-combobox id="inputEmployeeId"
+                            list-code="${encryptor.get_key('cbb_employees')}"
+                            list-value="[{'@is_cbcc':true}]"
+                            current-item="entity.manager_code">
+                         <!--<input-select data-list="" ng-model="entity.manager_code" data-value="value" data-caption="caption" />-->
+                     </div>
+                 </div>
+                 <!--Quản lý gián tiếp-->
+                 <div class="form-group zb-form-group">
+                     <label class="col-sm-4 zb-form-label">Quản lý gián tiếp</label>
+                     <div class="col-sm-8">
+                         <!--<input-select data-list="" ng-model="entity.manager_sub_code" data-value="value" data-caption="caption" />-->
+                         <input-combobox id="inputEmployeeId"
+                            list-code="${encryptor.get_key('cbb_employees')}"
+                            list-value="[{'@is_cbcc':true}]"
+                            current-item="entity.manager_sub_code">
+                     </div>
+                 </div>
+                 <!--Tài khoản WEB-->
+                 <div class="form-group zb-form-group">
+                     <label class="col-sm-4 zb-form-label">Tài khoản WEB</label>
+                     <div class="col-sm-8">
+                         <!--<input-select data-list="" ng-model="entity.user_id" data-value="value" data-caption="caption" />-->
+                         <input-combobox id="inputEmployeeId"
+                            list-code="${encryptor.get_key('cbb_auth_user_info_no_filter')}"
+                            list-value="[{ '@role_code': '' }]"
+                            current-item="entity.user_id">
+                     </div>
+                 </div>
+             </div>
+         </collapse-box>
+    </div>
+    <div class="col-md-4">
+         <collapse-box class="zb-form-common"
+                       title="Thông tin kiêm nhiệm">
+             <div class="col-md-12">
+                 <!--Chức vụ kiêm nhiệm-->
+                 <div class="form-group zb-form-group">
+                     <label class="col-sm-4 zb-form-label">Chức vụ kiêm nhiệm</label>
+                     <div class="col-sm-8">
+                         <!--<input-select data-list="" ng-model="entity.job_pos_hold_code" data-value="value" data-caption="caption" />-->
+                         <input-combobox id="inputEmployeeId"
+                            list-code="${encryptor.get_key('cbb_position')}"
+                            list-value="[{ '@lock': true }]"
+                            current-item="entity.job_pos_hold_code">
+                     </div>
+                 </div>
+                 <!--Chức danh kiêm nhiệm-->
+                 <div class="form-group zb-form-group">
+                     <label class="col-sm-4 zb-form-label">Chức danh kiêm nhiệm</label>
+                     <div class="col-sm-8">
+                         <input-select data-list="" ng-model="entity.job_w_hold_code" data-value="value" data-caption="caption" />
+                     </div>
+                 </div>
+                 <!--Bộ phận kiêm nhiệm-->
+                 <div class="form-group zb-form-group">
+                     <label class="col-sm-4 zb-form-label">Bộ phận kiêm nhiệm</label>
+                     <div class="col-sm-8">
+                         <!--<input-select data-list="" ng-model="entity.department_code_hold" data-value="value" data-caption="caption" />-->
+                         <input-combobox id="inputEmployeeId"
+                            list-code="${encryptor.get_key('cbb_departments')}"
+                            list-value="[{ '@lock': true }]"
+                            current-item="entity.department_code_hold">
+                     </div>
+                 </div>
+                 <!--Kiêm nhiệm từ-->
+                 <div class="form-group zb-form-group">
+                     <label class="col-sm-4 zb-form-label">Kiêm nhiệm từ</label>
+                     <div class="col-sm-8">
+                         <date-picker ng-model="entity.job_pos_hold_from_date" data-format="{{$root.systemConfig.date_format}}" />
+                     </div>
+                 </div>
+                 <!--Kiêm nhiệm đến-->
+                 <div class="form-group zb-form-group">
+                     <label class="col-sm-4 zb-form-label">Kiêm nhiệm đến</label>
+                     <div class="col-sm-8">
+                         <date-picker id="job_pos_hold_to_date" ng-model="entity.job_pos_hold_to_date" data-format="{{$root.systemConfig.date_format}}" />
+                     </div>
+                 </div>
+             </div>
+         </collapse-box>
+     </div>
+    <div class="col-md-4">
+         <collapse-box class="zb-form-common"
+                       title="Thông tin thôi việc">
+             <!--Ngày thôi việc-->
+             <div class="form-group zb-form-group">
+                 <label class="col-sm-4 zb-form-label">Ngày thôi việc</label>
+                 <div class="col-sm-8">
+                     <date-picker ng-model="entity.end_date" data-format="{{$root.systemConfig.date_format}}" />
+                 </div>
+             </div>
+             <!--Số quyết định-->
+             <div class="form-group zb-form-group">
+                 <label class="col-sm-4 zb-form-label">Số quyết định</label>
+                 <div class="col-sm-8">
+                     <input-text ng-model="entity.retire_ref_no">
+                 </div>
+             </div>
+             <!--Ngày ký-->
+             <div class="form-group zb-form-group">
+                 <label class="col-sm-4 zb-form-label">Ngày ký</label>
+                 <div class="col-sm-8">
+                     <date-picker ng-model="entity.signed_date" data-format="{{$root.systemConfig.date_format}}" />
+                 </div>
+             </div>
+             <!--Người ký-->
+             <div class="form-group zb-form-group">
+                 <label class="col-sm-4 zb-form-label">Người ký</label>
+                 <div class="col-sm-8">
+                     <!--<input-select data-list="" ng-model="entity.signed_person" data-value="value" data-caption="caption" />-->
+                     <input-combobox id="inputEmployeeId"
+                            list-code="${encryptor.get_key('cbb_employees')}"
+                            list-value="[{'@is_cbcc':true}]"
+                            current-item="entity.entity.signed_person">
+                 </div>
+             </div>
+             <!--Đã thôi việc-->
+             <div class="form-group zb-form-group">
+                 <label class="col-sm-4 zb-form-label">Đã thôi việc</label>
+                 <div class="col-sm-8">
+                     <input-checkbox ng-model="entity.active">
+                 </div>
+             </div>
+         </collapse-box>
+     </div>
+    <div class="col-md-4">
+            <collapse-box class="zb-form-common"
+                          title="Thông tin ghi chú">
+                <div class="form-group zb-form-group">
+                    <!--Mô tả chi tiết-->
+                    <div class="col-sm-12">
+                         <div data-c-html-box 
+                              ng-model="Item.description"
+                              style="height:100px"
+                              id="inputDescription">
+                         </div>
                     </div>
                 </div>
-                <div class="col-md-6">
-                    <div class="form-group row hcs-group-form-group">
-                        <!--Quốc gia-->
-                        <label for="inputNational" class="col-sm-4 zb-form-label">Quốc gia</label>
-                        <div class="col-sm-8">
-                            <input-select data-list="dataSourceCombobox.nation" ng-model="data.curriculum_vitae.nation" placeholder="Tìm kiếm quốc gia" data-value="value" data-caption="caption" />
-                        </div>
-                    </div>
-                    <div class="form-group row hcs-group-form-group">
-                        <!--Dân tộc-->
-                        <label for="inputNational" class="col-sm-4 zb-form-label">Dân tộc</label>
-                        <div class="col-sm-8">
-                            <input-select data-list="dataSourceCombobox.folk" ng-model="data.curriculum_vitae.folk" placeholder="Tìm kiếm dân tộc" data-value="value" data-caption="caption" />
-                        </div>
-                    </div>
-                    <div class="form-group row hcs-group-form-group">
-                        <!--Tôn giáo-->
-                        <label for="inputNational" class="col-sm-4 zb-form-label">Tôn giáo</label>
-                        <div class="col-sm-8">
-                            <input-select data-list="dataSourceCombobox.religion" ng-model="data.curriculum_vitae.religion" placeholder="Tìm kiếm tôn giáo" data-value="value" data-caption="caption" />
-                        </div>
-                    </div>
-                </div>
-            </div>
+            </collapse-box>
         </div>
-        <div class="col-md-4">
-            <div class="row">
-                <p class="hcs-group-collapse-heading">
-                    <button class="zb-icon-button hcs-profile-group-title" onclick="$('#collapseOther').slideToggle();">
-                        <span>
-                                                <i class="la la-angle-down"></i>
-                                            </span> Khác
-                    </button>
-                </p>
-            </div>
-            <div id="collapseOther">
-                <form>
-                    <!--Trình độ học vấn-->
-                    <div class="form-group row hcs-group-form-group">
-                        <label for="inputCulture" class="col-sm-4 zb-form-label">Trình độ học vấn</label>
-                        <div class="col-sm-8">
-                            <input-select data-list="dataSourceCombobox.culture" ng-model="data.other.culture" placeholder="Tìm kiếm trình độ học vấn" data-value="value" data-caption="caption" />
-                        </div>
-                    </div>
-                    <!--Hình thức đào tạo-->
-                    <div class="form-group row hcs-group-form-group">
-                        <label for="inputExercitatione" class="col-sm-4 zb-form-label">Hình thức đào tạo</label>
-                        <div class="col-sm-8">
-                            <input-select data-list="dataSourceCombobox.exercitatione" ng-model="data.other.exercitatione" placeholder="Tìm kiếm hình thức đào tạo" data-value="value" data-caption="caption" />
-                        </div>
-                    </div>
-                    <!--Trình độ văn hóa-->
-                    <div class="form-group row hcs-group-form-group">
-                        <label for="inputEducationem" class="col-sm-4 zb-form-label">Trình độ văn hóa</label>
-                        <div class="col-sm-8">
-                            <input-select data-list="dataSourceCombobox.educationem" ng-model="data.other.educationem" placeholder="Tìm kiếm trình độ văn hóa" data-value="value" data-caption="caption" />
-                        </div>
-                    </div>
-                    <!--Tình trạng hôn nhân-->
-                    <div class="form-group row hcs-group-form-group">
-                        <label for="inputMarried" class="col-sm-4 zb-form-label">Tình trạng hôn nhân</label>
-                        <div class="col-sm-8">
-                            <input-select data-list="dataSourceCombobox.married" ng-model="data.other.married" placeholder="Tìm kiếm tình trạng hôn nhân" data-value="value" data-caption="caption" />
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-    <div class="row" style="padding-top:30px;">
-        <div class="col-md-4">
-            <div class="row">
-                <p class="hcs-group-collapse-heading">
-                    <button class="zb-icon-button hcs-profile-group-title" onclick="$('#collapseIdentity').slideToggle();">
-                        <span>
-                                                <i class="la la-angle-down"></i>
-                                            </span> Chứng minh nhân dân
-                    </button>
-                </p>
-            </div>
-            <div id="collapseIdentity">
-                <form>
-                    <!--Số CMND-->
-                    <div class="form-group row hcs-group-form-group">
-                        <label for="inputIdentityNumber" class="col-sm-4 zb-form-label">Số</label>
-                        <div class="col-sm-8">
-                            <input-text id="inputIdentityNumber" ng-model="data.identity.identity_number">
-                        </div>
-                    </div>
-                    <!--Ngày cấp-->
-                    <div class="form-group row hcs-group-form-group">
-                        <label for="inputBeginningDate" class="col-sm-4 zb-form-label">Ngày cấp</label>
-                        <div class="col-sm-8">
-                            <!--<input type="date" class="form-control hcs-input-textbox" id="inputBeginningDate"/>-->
-                            <date-picker ng-model="data.identity.beginning_date" data-format="{{$root.systemConfig.date_format}}" />
-                        </div>
-                    </div>
-                    <!--Nơi cấp-->
-                    <div class="form-group row hcs-group-form-group">
-                        <label for="inputRegion" class="col-sm-4 zb-form-label">Nơi cấp</label>
-                        <div class="col-sm-8">
-                            <input-select data-list="dataSourceCombobox.city" ng-model="data.identity.city" placeholder="Tìm kiếm nơi cấp" data-value="value" data-caption="caption" />
-                        </div>
-                    </div>
-                    <!--Dấu vết đặc biệt-->
-                    <div class="form-group row hcs-group-form-group">
-                        <label for="inputVestigeSpecial" class="col-sm-4 zb-form-label">Dấu vết đặc biệt</label>
-                        <div class="col-sm-8">
-                            <input-text id="inputVestigeSpecial" ng-model="data.identity.vestige_special" />
-                        </div>
-                    </div>
-                    <!--Mã số thuế-->
-                    <div class="form-group row hcs-group-form-group">
-                        <label for="inputTaxNumber" class="col-sm-4 zb-form-label">Mã số thuế</label>
-                        <div class="col-sm-8">
-                            <input-text id="inputTaxNumber" ng-model="data.identity.tax_number" />
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="row">
-                <p class="hcs-group-collapse-heading">
-                    <button class="zb-icon-button hcs-profile-group-title" onclick="$('#collapsePaperBirth').slideToggle();">
-                        <span>
-                                                <i class="la la-angle-down"></i>
-                                            </span> Giấy khai sinh
-                    </button>
-                </p>
-            </div>
-            <div id="collapsePaperBirth">
-                <form>
-                    <!--Ngày sinh-->
-                    <div class="form-group row hcs-group-form-group">
-                        <label for="inputIdentityNumber" class="col-sm-4 zb-form-label">Ngày sinh</label>
-                        <div class="col-sm-8">
-                            <date-picker ng-model="data.birth_page.birth_date" data-format="{{$root.systemConfig.date_format}}" />
-                            <!--<input type="date" class="form-control hcs-input-textbox" id="inputBirthday">-->
-                        </div>
-                    </div>
-                    <!--Ngày đăng ký-->
-                    <div class="form-group row hcs-group-form-group">
-                        <label for="inputRegisteredDate" class="col-sm-4 zb-form-label">Ngày cấp</label>
-                        <div class="col-sm-8">
-                            <date-picker ng-model="data.birth_page.birth_date1" data-format="{{$root.systemConfig.date_format}}" />
-                            <!--<input type="date" class="form-control hcs-input-textbox" id="inputRegisteredDate"/>-->
-                        </div>
-                    </div>
-                    <!--Nơi đăng ký-->
-                    <div class="form-group row hcs-group-form-group">
-                        <label for="inputRegisteredPlace" class="col-sm-4 zb-form-label">Nơi đăng ký</label>
-                        <div class="col-sm-8">
-                            <input-select data-list="dataSourceCombobox.city" ng-model="data.birth_page.city" placeholder="Tìm kiếm nơi đăng ký" data-value="value" data-caption="caption" />
-                        </div>
-                    </div>
-                    <!--Quận huyện-->
-                    <div class="form-group row hcs-group-form-group">
-                        <label for="inputCounty" class="col-sm-4 zb-form-label">Quận/huyện</label>
-                        <div class="col-sm-8">
-                            <input-select data-list="dataSourceCombobox.district" ng-model="data.birth_page.district" placeholder="Tìm kiếm quận huyện" data-value="value" data-caption="caption" />
-                        </div>
-                    </div>
-                    <!--Xã phường-->
-                    <div class="form-group row hcs-group-form-group">
-                        <label for="inputDistrict" class="col-sm-4 zb-form-label">Xã/phường</label>
-                        <div class="col-sm-8">
-                            <input-select data-list="dataSourceCombobox.ward" ng-model="data.birth_page.ward" placeholder="Tìm kiếm xã phường" data-value="value" data-caption="caption" />
-                        </div>
-                    </div>
-                    <!--Thôn xóm-->
-                    <div class="form-group row hcs-group-form-group">
-                        <label for="inputVillage" class="col-sm-4 zb-form-label">Thôn/xóm</label>
-                        <div class="col-sm-8">
-                            <input-select data-list="dataSourceCombobox.area" ng-model="data.birth_page.area" placeholder="Tìm kiếm thôn xóm" data-value="value" data-caption="caption" />
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="row">
-                <p class="hcs-group-collapse-heading">
-                    <button class="zb-icon-button hcs-profile-group-title" onclick="$('#collapseContactInfo').slideToggle();">
-                        <span>
-                                                <i class="la la-angle-down"></i>
-                                            </span> Thông tin liên hệ
-                    </button>
-                </p>
-            </div>
-            <div id="collapseContactInfo">
-                <form>
-                    <!--Địa chỉ tạm chú-->
-                    <div class="form-group row hcs-group-form-group">
-                        <label for="inputIdentityNumber" class="col-sm-4 zb-form-label">Địa chỉ tạm trú</label>
-                        <div class="col-sm-8">
-                            <input-text id="inputIdentityNumber" ng-model="data.contract.temp_address">
-                        </div>
-                    </div>
-                    <!--Địa chỉ thường chú-->
-                    <div class="form-group row hcs-group-form-group">
-                        <label for="inputRegion" class="col-sm-4 zb-form-label">Địa chỉ thường trú</label>
-                        <div class="col-sm-8">
-                            <input-text id="inputIdentityNumber" ng-model="data.contract.address">
-                        </div>
-                    </div>
-                    <!--Tỉnh thành-->
-                    <div class="form-group row hcs-group-form-group">
-                        <label for="inputBeginningDate" class="col-sm-4 zb-form-label">Tỉnh/thành</label>
-                        <div class="col-sm-8">
-                            <input-select data-list="dataSourceCombobox.city" ng-model="data.contract.city" placeholder="Tìm kiếm tỉnh thành" data-value="value" data-caption="caption" />
-                        </div>
-                    </div>
-                    <!--Quận huyện-->
-                    <div class="form-group row hcs-group-form-group">
-                        <label for="inputBeginningDate" class="col-sm-4 zb-form-label">Quận/huyện</label>
-                        <div class="col-sm-8">
-                            <input-select data-list="dataSourceCombobox.district" ng-model="data.contract.district" placeholder="Tìm kiếm quận huyện" data-value="value" data-caption="caption" />
-                        </div>
-                    </div>
-                    <!--Xã phường-->
-                    <div class="form-group row hcs-group-form-group">
-                        <label for="inputTaxNumber" class="col-sm-4 zb-form-label">Xã/phường</label>
-                        <div class="col-sm-8">
-                            <input-select data-list="dataSourceCombobox.ward" ng-model="data.contract.ward" placeholder="Tìm kiếm xã phường" data-value="value" data-caption="caption" />
-                        </div>
-                    </div>
-                    <!--Thôn xóm-->
-                    <div class="form-group row hcs-group-form-group">
-                        <label for="inputTaxNumber" class="col-sm-4 zb-form-label">Thôn/xóm</label>
-                        <div class="col-sm-8">
-                            <input-select data-list="dataSourceCombobox.area" ng-model="data.contract.area" placeholder="Tìm kiếm thôn xóm" data-value="value" data-caption="caption" />
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-    <div class="row" style="padding-top:30px;">
-        <div class="col-md-12">
-            <div class="row" style="padding-right:15px;">
-                <div class="hcs-profile-background-group-table">
-                    <div class="pull-left hcs-profile-icon-heading-on-table" style="height: 100%;padding-right: 3px;background: white;margin-left: unset;">
-                        <button class="zb-icon-button hcs-profile-group-title" onclick="$('#collapseTableInfo').slideToggle();">
-                            <span>
-                                                    <i class="la la-angle-down" style="font-size:0.7rem;"></i>
-                                                </span>
-                        </button>
-                    </div>
-                    <div class="pull-left hcs-profile-icon-heading-on-table" style="margin-left: unset;">
-                        <button class="zb-icon-button hcs-profile-group-title" onclick="$('#collapseTableInfo').slideToggle();">
-                            Thông tin thân nhân
-                        </button>
-                    </div>
-                    <div class="pull-right hcs-profile-icon-heading-on-table">
-                        <button class="zb-icon-button hcs-profile-group-title">
-                            <span>
-                                                    <i class="la la-close"></i>
-                                                </span>
-                        </button>
-                    </div>
-                    <div class="pull-right hcs-profile-icon-heading-on-table">
-                        <button class="zb-icon-button hcs-profile-group-title">
-                            <span>
-                                                    <i class="la la-copy"></i>
-                                                </span>
-                        </button>
-                    </div>
-                    <div class="pull-right hcs-profile-icon-heading-on-table">
-                        <button class="zb-icon-button hcs-profile-group-title" ng-click="onEditTableInfo()">
-                            <span>
-                                                    <i class="la la-plus"></i>
-                                                </span>
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-12">
-            <div id="collapseTableInfo">
-                <table class="table table-hover">
-                    <thead>
-                        <tr>
-                            <th></th>
-                            <th>Tên thân nhân</th>
-                            <th>Quan hệ</th>
-                            <th>Giới tính</th>
-                            <th>Ngày sinh</th>
-                            <th>Giảm trừ phụ thuộc</th>
-                            <th>Là chủ hộ</th>
-                            <th>Thời điểm tạo</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr ng-repeat="data in data.list_relative">
-                            <td>
-                                <div class="checkbox">
-                                    <label class="custom-checkbox">
-                                        <input type="checkbox"> <span></span>
-                                    </label>
-                                </div>
-                            </td>
-                            <td>{{data.name}}</td>
-                            <td>{{data.relation}}</td>
-                            <td>{{data.gender}}</td>
-                            <td>{{data.birthday}}</td>
-                            <td>
-                                <div class="checkbox">
-                                    <label class="custom-checkbox">
-                                        <input type="checkbox" checked="{{data.dependent}}"> <span></span>
-                                    </label>
-                                </div>
-                            </td>
-                            <td>
-                                <div class="checkbox">
-                                    <label class="custom-checkbox">
-                                        <input type="checkbox" checked="{{data.host}}"> <span></span>
-                                    </label>
-                                </div>
-                            </td>
-                            <td>{{data.createddate}}</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </div>
 </div>
 <script>
 <%include file = "scripts/commoninfo.js" />

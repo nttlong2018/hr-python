@@ -10,6 +10,7 @@
         { "data": "is_key", "title": "${ get_res('is_key_table_header', 'Khóa chính') }" },
         { "data": "allow_null", "title": "${ get_res('allow_null_table_header', 'Không được để trống') }" },
     ];
+    scope.title = scope.$parent.headerTitle;
     scope.tableListUserSource = _loadDataListUserServerSide;
     scope.refreshDataListUserRow = function () { /*Do nothing*/ };
     scope.selectedListUserItems = [];
@@ -138,7 +139,7 @@
                         //Refesh datatable
                         scope.$parent.refreshDataRow();
                     }
-                    $msg.alert("${get_global_res('Handle_Success','Thao tác thành công')}", $type_alert.SUCCESS);
+                    $msg.alert("${get_global_res('Handle_Success','Thao tác thành công')}", $type_alert.INFO);
                     scope.entity = null;
                     scope.__mode = 1;
                 } else {
@@ -160,6 +161,7 @@
     };
 
     function addDetail() {
+        debugger
         openDialog("${ get_res('reference_information', 'Thông tin tra cứu') }", "exceltemplate/form/addDetail", function () { }, "addDetailTemplate");
     }
 
@@ -178,7 +180,7 @@
                             _tableData("${get_api_key('app_main.api.auth_user/get_list_with_searchtext')}", scope.$$table_List_User_Config.iPage,
                                 scope.$$table_List_User_Config.iPageLength, scope.$$table_List_User_Config.orderBy,
                                 scope.$$table_List_User_Config.SearchText, scope.$$table_List_User_Config.fnReloadData);
-                            $msg.alert("${get_global_res('Handle_Success','Thao tác thành công')}", $type_alert.SUCCESS);
+                            $msg.alert("${get_global_res('Handle_Success','Thao tác thành công')}", $type_alert.INFO);
                             scope.selectedListUserItems = null;
                             scope.ListUserCurrentItem = [];
                         } else {

@@ -1,0 +1,101 @@
+﻿<div class="hcs-home-page-top-bar navbar-fixed-top">
+    <div class="hcs-home-page-top-bar-container">
+        <div class="hcs-home-page-top-bar-left">
+            <!--Toggle button-->
+            <div class="dropdown" style="float:left;margin-top:3px;">
+                <button class="btn btn-secondary" type="button" id="hcs-home-menu-button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <span class="la la-navicon"></span>
+                </button>
+                <div class="dropdown-menu" aria-labelledby="hcs-home-menu-button" id="hcs-top-bar-menu" style="left:-10px;">
+                    <span class="hcs-home-menu-title-1">Hệ thống</span>
+                    <br />
+                    <span class="hcs-home-menu-title-2">Đánh giá năng suất</span>
+                    <br />
+                    <div id="style-3">
+                    <ul>
+                        <li class="dropdown-submenu hcs-menu-item"
+                                                        ng-repeat="function in $functions"
+                            ng-if="!function.parent_id">
+                            <p ng-click="$root.collapseSubMenu($event, 'toggledropdown' + function.function_id)">
+                                <span class="hcs-home-menu-ordinal">{{$index + 1}}</span>{{function.custom_name.replace('/', ' ')}}
+                            </p>
+                            <ul id="toggledropdown{{function.function_id}}">
+                                <li class="hcs-menu-sub-item" ng-repeat="child in function.child_items" ng-if="$index == 0" style="margin-top:5px;">
+                                    <a href="{{'#page=' + child.url}}">{{child.custom_name.replace('/', '')}}</a>
+                                </li>
+                                <li class="hcs-menu-sub-item" ng-repeat="child in function.child_items" ng-if="$index != 0">
+                                    <a href="{{'#page=' + child.url}}">{{child.custom_name.replace('/', '')}}</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                        </div>
+                </div>
+            </div>
+            <a href="#" class="hcs-navbar-brand">
+                         <img src="{{$root.logo}}">
+            </a>
+            <!--Toggle button-->
+
+        </div>
+        <div class="pull-left" id="hcs-top-bar-current-module">
+            {{$root.currentModule}}
+        </div>
+        <!--RIGHT - START-->
+        <div class="pull-right" role="navigation">
+            <button class="btn btn-primary hcs-home-button-user" type="button" data-toggle="dropdown">
+                <span class="glyphicon glyphicon-user"></span>
+                <span class="ng-binding">Bùi Hữu Tiến</span>
+                <span class="glyphicon glyphicon-menu-down"></span>
+            </button>
+            <ul class="dropdown-menu hcs-home-button-user-menu">
+                <li class="divider"></li>
+                <li>
+                    <div class="lv-button-logout" ng-click="$root.doLogout()" role="button" tabindex="0">
+                        <i class="ace-icon fa fa-power-off"></i> Logout
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="pull-right" role="navigation">
+            <img style="cursor: pointer; margin: 8px 8px 0px 8px;width:30px;height:30px;-webkit-appearance:unset;" class="img-fluid" src="https://www.surehcs.vn:443/DGP_UI//Content/images/language/vn.png" class="dropdown-toggle" type="button" data-toggle="dropdown">
+            <ul class="dropdown-menu hcs-home-button-language-menu">
+                <li class="text-center">
+                    <a>
+                        Tiếng Việt
+                    </a>
+                </li>
+                <li class="text-center">
+                    <a href="javascript:void(0)">
+                        English
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="pull-right" role="navigation" id="hcs-top-bar-notification">
+            <button class="btn btn-primary hcs-home-button-user" type="button">
+                <i class="ace-icon fa fa-bell-o hcs-home-header-notice-icon"><span class="hcs-badge-icon bg-info">7</span></i>
+            </button>
+        </div>
+        <div class="pull-right" role="navigation">
+            <button class="btn btn-primary hcs-home-button-user" type="button">
+                <i class="ace-icon fa fa-search hcs-home-header-notice-icon"></i>
+            </button>
+        </div>
+        <div class="pull-right" role="navigation">
+            <div class="hcs-home-header-clock">
+                <span class="hcs-home-header-clock-ampm ng-binding">CH</span>
+                <span class="hcs-home-header-clock-time ng-binding">03:56</span>
+                <br>
+                <span class="hcs-home-header-clock-date ng-binding">Thứ Sáu, 27 Tháng 4, 2018</span>
+            </div>
+        </div>
+        <!--RIGHT - END -->
+    </div>
+</div>
+<script>
+    $('#hcs-top-bar-menu ul li ul').css('display', 'none');
+    $('.dropdown-menu').click(function (event) {
+        event.stopPropagation();
+    });
+</script>

@@ -15,6 +15,7 @@ def generate_user_id():
 
 
 def insert(args):
+    from quicky import tenancy
     if args['data'] != None:
         ret = {}
         try:
@@ -42,10 +43,21 @@ def insert(args):
                 if ret.has_key('error') and ret['error'] != None:
                     raise(Exception(ret['error']['code']))
 
-                user = User.objects.create_user(args['data']['username'], '', args['data']['password'])
-                user.save()
-                lock.release()
-                return ret
+                try:
+                    user = User.objects.create_user(
+                        username=args['data']['username'],
+                        password=args['data']['password'],
+                        schema=tenancy.get_schema()
+                    )
+                    user.save(schema=tenancy.get_schema())
+                    lock.release()
+                    return ret
+                except Exception as ex:
+                    models.auth_user_info().delete("username == {0}", args['data']['username'])
+                    lock.release()
+                    return dict(
+                        error = "Internal Server Error"
+                    )
             lock.release()
             return dict(
                 error = "existing login account"
@@ -59,6 +71,7 @@ def insert(args):
         )
 
 def update(args):
+    from quicky import tenancy
     if args['data'] != None:
         try:
             lock.acquire()
@@ -87,7 +100,7 @@ def update(args):
                 if args['data']['change_password'] != None and args['data']['change_password'] == True:
                     u = User.objects.get(username=args['data']['username'])
                     u.set_password(args['data']['password'])
-                    u.save()
+                    u.save(schema=tenancy.get_schema())
 
                 lock.release()
                 return ret
@@ -145,7 +158,9 @@ def get_list_with_searchtext(args):
                     )
 
             if(searchText != None):
-                items.match("contains(login_account, @name)",name=searchText)
+                items.match("contains(login_account, @name) or contains(display_name, @name) " + \
+                    "or contains(role_code, @name) or contains(manlevel_from, @name) " + \
+                    "or contains(manlevel_to, @name) or contains(created_on, @name)",name=searchText)
 
             if(where != None and where != {}):
                 try:

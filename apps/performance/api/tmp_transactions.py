@@ -4,6 +4,7 @@ import models
 import logging
 import threading
 import common
+import quicky
 from qmongo import helpers
 logger = logging.getLogger(__name__)
 global lock

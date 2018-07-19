@@ -1,4 +1,5 @@
 ﻿window.set_component_template_url('${get_static("app/directives/")}')
+window.set_api_combobox("${get_api_key('app_main.api.common/get_dropdown_list')}")
 angular
     .module("admin", ["c-ui", 'ZebraApp.components', 'ZebraApp.widgets', 'hcs-template'])
     .factory("systemService", service)

@@ -1,66 +1,52 @@
 ﻿
-    <div class="row">
-        <div class="hcs-profile-background-group-table" style="margin-right:15px;">
-            <div class="pull-left hcs-profile-icon-heading-on-table" style="height: 100%;padding-right: 3px;background: white;margin-left: unset;">
-                <button class="zb-icon-button hcs-profile-group-title" onclick="$('#collapseTableProvince').slideToggle();">
-                    <span>
-                        <i class="la la-angle-down" style="font-size:0.7rem;"></i>
-                    </span>
-                </button>
-            </div>
-            <div class="pull-left hcs-profile-icon-heading-on-table" style="margin-left: unset;">
-                <button class="zb-icon-button hcs-profile-group-title" onclick="$('#collapseTableProvince').slideToggle();">
-                ${get_res('province_caption_toolbar','1. Tỉnh/Thành')}
-                </button>
-            </div>
-            <div class="pull-right hcs-profile-icon-heading-on-table">
-                <button class="zb-icon-button hcs-profile-group-title" ng-click="onReloadProvince()">
-                    <span>
-                        <i class="la la-refresh"></i>
-                    </span>
-                </button>
-            </div>
-            <div class="pull-right hcs-profile-icon-heading-on-table">
-                <button class="zb-icon-button hcs-profile-group-title" ng-click="onDeleteProvince()">
-                    <span>
-                        <i class="la la-trash"></i>
-                    </span>
-                </button>
-            </div>
-            <div class="pull-right hcs-profile-icon-heading-on-table">
-                <button class="zb-icon-button hcs-profile-group-title" ng-click="onEditProvince()">
-                    <span>
-                        <i class="la la-pencil"></i>
-                    </span>
-                </button>
-            </div>
-            <div class="pull-right hcs-profile-icon-heading-on-table">
-                <button class="zb-icon-button hcs-profile-group-title" ng-click="onAddProvince()">
-                    <span>
-                        <i class="la la-plus"></i>
-                    </span>
-                </button>
-            </div>
-            <div class="pull-right hcs-profile-icon-heading-on-table" style="width:25px;margin-left:10px;">
-                <button class="zb-icon-button hcs-profile-group-title">
-                    <span>
-                        <i class="la la-search"></i>
-                    </span>
-                </button>
-            </div>
-            <div class="pull-right">
-                <input-text id="tableProvinceSearchText">
-            </div>
-        </div>
-    </div>
     <div id="collapseTableProvince" class="row">
-        <div class="col-md-12" style="height: 37vh;">
-            <table-data data-source="tableProvinceSource" fields="tableProvinceFields" type="MultiSelect" 
-            server-side="true" page-length="100" paging="true" 
-            selected-items="selectedProvinces"
-            current-item="currentProvince" search-text="tableProvinceSearchText"
-            refresh-row="refreshDataProvinceRow">
-            </table-data>
+        <div class="col-md-12" style="height: 40vh;">
+            <collapse-box class="zb-datatable" title="${get_res('province_caption_toolbar','1. Tỉnh/Thành')}">
+                <!--<div class="pull-right hcs-profile-icon-heading-on-table">
+                    <button class="zb-icon-button hcs-profile-group-title" ng-click="onReloadProvince()">
+                        <span>
+                            <i class="la la-refresh"></i>
+                        </span>
+                    </button>
+                </div>
+                <div class="pull-right hcs-profile-icon-heading-on-table">
+                    <button class="zb-icon-button hcs-profile-group-title" ng-click="onDeleteProvince()">
+                        <span>
+                            <i class="la la-trash"></i>
+                        </span>
+                    </button>
+                </div>
+                <div class="pull-right hcs-profile-icon-heading-on-table">
+                    <button class="zb-icon-button hcs-profile-group-title" ng-click="onEditProvince()">
+                        <span>
+                            <i class="la la-pencil"></i>
+                        </span>
+                    </button>
+                </div>
+                <div class="pull-right hcs-profile-icon-heading-on-table">
+                    <button class="zb-icon-button hcs-profile-group-title" ng-click="onAddProvince()">
+                        <span>
+                            <i class="la la-plus"></i>
+                        </span>
+                    </button>
+                </div>
+                <div class="pull-right hcs-profile-icon-heading-on-table" style="width:25px;margin-left:10px;">
+                    <button class="zb-icon-button hcs-profile-group-title">
+                        <span>
+                            <i class="la la-search"></i>
+                        </span>
+                    </button>
+                </div>
+                <div class="pull-right">
+                    <input-text id="tableProvinceSearchText">
+                </div>-->
+                <table-data data-source="tableProvinceSource" fields="tableProvinceFields" type="MultiSelect" 
+                server-side="true" page-length="100" paging="true" 
+                selected-items="selectedProvinces"
+                current-item="currentProvince" search-text="tableProvinceSearchText"
+                refresh-row="refreshDataProvinceRow">
+                </table-data>
+            </collapse-box>
         </div>
     </div>
 
@@ -144,7 +130,7 @@
                     .then(function (res) {
                         if (res.deleted > 0) {
                             _tableProvinceData(scope.$$tableProvinceConfig.iPage, scope.$$tableProvinceConfig.iPageLength, scope.$$tableProvinceConfig.orderBy, scope.$$tableProvinceConfig.SearchText, scope.$$tableProvinceConfig.fnReloadData);
-                            $msg.alert("${get_global_res('Handle_Success','Thao tác thành công')}", $type_alert.SUCCESS);
+                            $msg.alert("${get_global_res('Handle_Success','Thao tác thành công')}", $type_alert.INFO);
                             scope.currentProvince = null;
                             scope.selectedProvinces = [];
                         }
@@ -193,8 +179,8 @@
                     "pageSize": iPageLength,
                     "search": searchText,
                     "where": {
-                        "nation_code": scope.main_nation_code,
-                        "region_code": scope.main_region_code
+                        "nation_code": scope.$parent.$parent.$parent.advancedSearch.main_nation_code,
+                        "region_code": scope.$parent.$parent.$parent.advancedSearch.main_region_code
                     },
                     "sort": sort
                 })

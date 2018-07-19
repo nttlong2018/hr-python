@@ -1,0 +1,41 @@
+<form class="form-horizontal ng-pristine ng-valid ng-scope">
+    <div class="form-group">
+        <label class="col-sm-2 zb-form-label">Textbox</label>
+        <div class="col-sm-10">
+            <input-text placeholder="Textbox" id="textbox1" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-sm-2 control-label zb-form-label">Numberbox</label>
+        <div class="col-sm-10">
+            <input-number placeholder="Numberbox" id="numberbox1" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-sm-2 control-label zb-form-label">Combobox</label>
+        <div class="col-sm-10">
+            <input-select data-list="comboboxItems" ng-model="cbbValue" placeholder="Combobox" data-value="value" data-caption="label"/>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-sm-2 control-label zb-form-label">Date Picker</label>
+        <div class="col-sm-10">
+            <date-picker ng-model="testDate" data-format="yyyy-MM-dd"/>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+            <input-checkbox ng-model="testCheckbox" data-caption="Remember me"/>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+            <input-checkbox ng-model="testCheckbox" ng-change="$checkbox()" disabled="true" data-caption="Remember me"/>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+            <button type="submit" class="btn btn-warning">Sign in</button>
+        </div>
+    </div>
+</form>

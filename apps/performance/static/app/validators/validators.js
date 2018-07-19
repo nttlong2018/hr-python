@@ -19,6 +19,8 @@
 
         _Validator.prototype.isContainWhiteSpace = isContainWhiteSpace;
 
+        _Validator.prototype.isDate = isDate;
+
         _Validator.prototype.isLoginAccount = function () {
             return (isNullOrWhiteSpace() == true || isContainWhiteSpace() == true) ? true : false;
         }
@@ -61,6 +63,17 @@
         function isContainWhiteSpace() {
             var re = new RegExp("/\s/");
             return re.test(__val);
+        }
+
+        function isDate() {
+            if (__val) {
+                var current = __val;
+                var date = new Date(current);
+                return date instanceof Date && !isNaN(date.valueOf());
+            }
+            return false;
+            //return __val instanceof Date && !isNaN(__val.valueOf());
+            //return true;
         }
 
         return _Validator;

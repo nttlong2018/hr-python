@@ -1,0 +1,50 @@
+<div class="zb-page-sidebar">
+    <div class="zb-left">
+        <ul class="zb-left-ul">
+            <li ng-repeat="item in listItem" class="zb-left-li" ng-class="item[keyField]==selectedKey?'li-selected':''"		 ng-click="$onSelectItem(item[keyField])">
+                <div>
+                    <p class="left-icon text-center"><i class="{{item[iconField]}}"></i></p>
+                    <p class="left-title text-center">{{item[displayField]}}</p>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="zb-right">
+        <div class="zb-top">
+            <div class="zb-left-content">
+                <button ng-click="toggleCollapseMenu()" class="zb-btn zb-btn-blue zb-btn-collapse">
+                    <i class="bowtie-icon bowtie-menu"></i>
+                </button>
+                <div ng-transclude="siteMap" class="zb-sitemap"></div>
+            </div>
+            <div class="zb-right-content">
+                <button class="zb-btn">
+                    <i class="bowtie-icon bowtie-search"></i>
+                </button>
+                <button ng-click="showAdvancedSearch()" class="zb-btn" ng-if="isAdvancedSearch">
+                    <i class="bowtie-icon bowtie-search-filter"></i>
+                </button>
+                <button class="zb-btn zb-btn-o-green" ng-if="fnAdd" ng-click="fnAdd()">
+                    <i class="bowtie-icon bowtie-math-plus"></i>
+                </button>
+                <button class="zb-btn zb-btn-o-blue" ng-if="fnEdit" ng-click="fnEdit()">
+                    <i class="bowtie-icon bowtie-edit-outline"></i>
+                </button>
+                <button class="zb-btn zb-btn-o-red" ng-if="fnDelete" ng-click="fnDelete()">
+                    <i class="bowtie-icon bowtie-edit-remove"></i>
+                </button>
+                <button class="zb-btn" ng-if="fnSave" ng-click="fnSave()">
+                    <i class="bowtie-icon bowtie-save"></i>
+                </button>
+                <button class="zb-btn" ng-if="fnImport" ng-click="fnImport()">
+                    <i class="bowtie-icon bowtie-transfer-upload"></i>
+                </button>
+                <button class="zb-btn" ng-if="fnExport" ng-click="fnExport()">
+                    <i class="bowtie-icon bowtie-transfer-download"></i>
+                </button>
+            </div>
+        </div>
+        <div ng-transclude="advancedSearch" class="zb-advanced-search"></div>
+        <div class="zb-content" ng-transclude="content"></div>
+    </div>
+</div>

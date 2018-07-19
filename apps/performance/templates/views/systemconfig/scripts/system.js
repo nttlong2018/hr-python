@@ -4,6 +4,7 @@
     scope.cbbDecPlaceSeparator = null;
     scope.cbbDefaultLanguage = null;
     scope.onSave = onSave;
+    scope.$parent.$parent.$parent.onSave = scope.onSave;
 
     /**
      * Event Nhấn save
@@ -15,7 +16,7 @@
                     //Set lại HCSSYS_SystemConfig sau khi chỉnh sửa
                     var config = JSON.parse(JSON.stringify(scope.entity));
                     scope.$root.systemConfig = config;
-                    $msg.alert("${get_global_res('Handle_Success','Thao tác thành công')}", $type_alert.SUCCESS);
+                    $msg.alert("${get_global_res('Handle_Success','Thao tác thành công')}", $type_alert.INFO);
                 } else {
                     $msg.message("${get_global_res('Internal_Server_Error','Có lỗi từ phía máy chủ')}", "${get_global_res('Please_Try_Again','Xin thử vui lòng thử lại')}", function () { });
                 }

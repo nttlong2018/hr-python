@@ -1,145 +1,105 @@
 ﻿<div class="modal-dialog">
     <div class="modal-content">
         <div class="modal-header">
-            <h4 class="modal-title">
-                <img src="{{$root.logo}}"><span id="title">{{title}}</span>
+            <div class="left-content pull-left">
+                <!--<img src="{{$root.logo}}">-->
+                <span class="modal-title">{{title}}</span>
+            </div>
+            <div class="right-content pull-right">
                 <button type="button" class="close" data-dismiss="modal"><i class="la la-close"></i></button>
                 <button type="button" class="close" ng-click="onResizeDialog()"><span class="modal-resize"><i class="la la-expand"></i></span></button>
-            </h4 > 
+            </div>
         </div>
         <div class="modal-body">
-            <div class="row">
-    <div class="col-md-{{col_group}} col-sm-{{col_group}}" style="padding-bottom:20px;">
-        <div class="row">
-            <p class="hcs-group-collapse-heading">
-                <button class="zb-icon-button hcs-profile-group-title" onclick="$('#collapseDialogCommonInfoGroup').slideToggle();">
-                    <span>
-                        <i class="la la-angle-down"></i>
-                    </span>${get_global_res('Common_Information','Thông tin chung')}
-                </button>
-            </p>
-        </div>
-        <div class="row" id="collapseDialogCommonInfoGroup">
-            <div class="col-md-{{col}}">
-                <div class="form-group row hcs-group-form-group">
-                    <!--Mã vùng dữ liệu-->
-                    <label for="inputCodeDomain" class="col-sm-5 zb-form-label">${get_res('dd_code','Mã vùng dữ liệu truy cập')}</label>
-                    <div class="col-sm-7">
-                        <input-text id="inputCodeDomain" ng-model="Item.dd_code" ng-disabled="{{ __mode === 2 ? 'true' : 'false' }}" required>
-                    </div>
+            <div class="col-md-{{col_group}} col-sm-{{col_group}}">
+                    <collapse-box class="zb-form-common" title="${get_global_res('Common_Information','Thông tin chung')}">
+                        <div class="col-md-{{col}}">
+                            <div class="form-group zb-form-group">
+                                <!--Mã vùng dữ liệu-->
+                                <label for="inputCodeDomain" class="col-sm-5 zb-form-label">${get_res('dd_code','Mã vùng dữ liệu')}</label>
+                                <div class="col-sm-7">
+                                    <input-text id="inputCodeDomain" ng-model="Item.dd_code" ng-disabled="{{ __mode === 2 ? 'true' : 'false' }}" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-{{col}}">
+                            <div class="form-group zb-form-group">
+                                <!--Tên vùng dữ liệu-->
+                                <label for="inputDomainName" class="col-sm-5 zb-form-label">${get_res('dd_name','Tên vùng dữ liệu')}</label>
+                                <div class="col-sm-7">
+                                    <input-text id="inputDomainName" ng-model="Item.dd_name" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-{{col}}">
+                            <div class="form-group zb-form-group">
+                                <!--Phạm vi truy cập-->
+                                <label for="inputAccessLimit" class="col-sm-5 zb-form-label">${get_res('access_mode','Chế độ truy cập')}</label>
+                                <div class="col-sm-7" ng-disabled="true">
+                                    <input-select data-list="cbbAccessMode" ng-model="Item.access_mode"
+                                                  placeholder="Tìm kiếm" 
+                                                  data-value="value" 
+                                                  data-caption="caption"
+                                                  required/>
+                                </div>
+                            </div>
+                        </div>
+                    </collapse-box>
                 </div>
-            </div>
-            <div class="col-md-{{col}}">
-                <div class="form-group row hcs-group-form-group">
-                    <!--Tên vùng dữ liệu-->
-                    <label for="inputDomainName" class="col-sm-5 zb-form-label">${get_res('dd_name','Tên vùng dữ liệu truy cập')}</label>
-                    <div class="col-sm-7">
-                        <input-text id="inputDomainName" ng-model="Item.dd_name" required>
+            <div class="col-md-{{ 12 - col_group}} col-sm-{{ 12 - col_group}}">
+                <collapse-box class="zb-form-common" title="${get_global_res('Note','Ghi chú')}">
+                    <div class="row">
+                        <div class="col-sm-12">
+                        <input-textarea rows="5" ng-model="Item.description"></input-textarea>
+                        <!--<div data-c-html-box 
+                            ng-model="Item.description"
+                            style="height:49px"
+                            id="inputDescription">
+                        </div>-->
                     </div>
+                    </div>
+                </collapse-box>
                 </div>
-            </div>
-            <div class="col-md-{{col}}">
-                <div class="form-group row hcs-group-form-group">
-                    <!--Phạm vi truy cập-->
-                    <label for="inputAccessLimit" class="col-sm-5 zb-form-label">${get_res('access_mode','Chế độ truy cập dữ liệu')}</label>
-                    <div class="col-sm-7" ng-disabled="true">
-                        <input-select data-list="cbbAccessMode" ng-model="Item.access_mode"
-                                      placeholder="Tìm kiếm" 
-                                      data-value="value" 
-                                      data-caption="caption"
-                                      required/>
+            <div class="col-md-12 col-sm-12">
+                <collapse-box class="zb-form-common" title="${get_res('Select_Domain','Chọn vùng dữ liệu')}">
+                    <div class="col-md-12 no-padding">
+                        <div>
+                            <button class="zb-btn" ng-click="$treeCollapseAll()">
+                                <i class="bowtie-icon bowtie-chevron-up-all"></i>
+                            </button>
+                            <button class="zb-btn" ng-click="$treeExpandAll()">
+                                <i class="bowtie-icon bowtie-chevron-down-all"></i>
+                            </button>
+                            <input-text-icon icon="bowtie-icon bowtie-search" icon-align="right" 
+                                             style="width:calc(100% - 68px);float: right" 
+                                             placeholder="" ng-model="treeSearchText">
+                            </input-text-icon>
+                        </div>
+                        <!--Chọn vùng dữ liệu-->
+                        <div class="col-md-12 no-padding">
+                            <tree-data data-source="treeDepartmentsDataSource" display-field="department_name"
+	                                    parent-field="parent_code" key-field="department_code" 
+	                                    multi-select="treeMultiSelect" select-mode="treeMode" 
+                                        on-select="selectTreeNode"
+	                                    current-node="treeCurrentNode"
+	                                    selected-nodes="treeSelectedNodes"
+	                                    selected-root-nodes="treeSelectedRootNodes"
+	                                    search-text="treeSearchText"
+	                                    check-all="treeCheckAll"
+                                        checked-field="is_selected"
+                                        disabled="treeDisable"
+                                        expand-all="$treeExpandAll"
+                                        collapse-all="$treeCollapseAll"/>
+                        </div>
                     </div>
+                </collapse-box>
                 </div>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-{{ 12 - col_group}} col-sm-{{ 12 - col_group}}" style="padding-bottom:20px;">
-        <div class="row">
-            <p class="hcs-group-collapse-heading">
-                <button class="zb-icon-button hcs-profile-group-title" onclick="$('#collapseDialogNoteGroup').slideToggle();">
-                    <span>
-                        <i class="la la-angle-down"></i>
-                    </span>${get_global_res('Note','Ghi chú')}
-                </button>
-            </p>
-        </div>
-        <div class="row" id="collapseDialogNoteGroup">
-            <div class="col-md-12">
-                <div class="form-group row hcs-group-form-group">
-                    <!--Mô tả chi tiết-->
-                    <div class="col-sm-12">
-                         <div data-c-html-box 
-                              ng-model="Item.description"
-                              style="height:49px"
-                              id="inputDescription">
-                         </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-12 col-sm-12">
-        <div class="row" style="padding-bottom:10px;">
-            <p class="hcs-group-collapse-heading">
-                <button class="zb-icon-button hcs-profile-group-title" onclick="$('#collapseDialogTreeDomain').slideToggle();">
-                    <span>
-                        <i class="la la-angle-down"></i>
-                    </span>${get_res('Select_Domain','Chọn vùng dữ liệu')}
-                </button>
-            </p>
-        </div>
-        <div class="row" id="collapseDialogTreeDomain">
-            <div class="col-md-12">
-                <div class="hcs-profile-background-group-table">
-                    <div class="pull-left hcs-profile-icon-heading-on-table" style="width:3%;margin-left:16px;">
-                        <button class="zb-icon-button hcs-profile-group-title">
-                            <span>
-                                <i class="la la-search"></i>
-                            </span>
-                        </button>
-                    </div>
-                    <div class="pull-left" style="width:calc(94% - 60px);">
-                        <input-text id="inputSearchTree" ng-model="treeSearchText">
-                    </div>
-                    <div class="pull-left hcs-profile-icon-heading-on-table" style="width:25px;margin-left:10px;">
-                        <button class="zb-icon-button hcs-profile-group-title"
-                                onclick="$('#tree ul li .fancytree-lastsib:first .fancytree-expander').click();">
-                            <span>
-                                <i class="la la-angle-double-down"></i>
-                            </span>
-                        </button>
-                    </div>
-                    <div class="pull-left hcs-profile-icon-heading-on-table" style="width:25px;margin-left:unset;">
-                        <button class="zb-icon-button hcs-profile-group-title"
-                                onclick="$('#tree ul li .fancytree-lastsib:first .fancytree-expander').click();">
-                            <span>
-                                <i class="la la-angle-double-up"></i>
-                            </span>
-                        </button>
-                    </div>
-                </div>
-                <!--Chọn vùng dữ liệu-->
-                <div class="col-md-12" style="padding-right:unset;">
-                    <tree-data data-source="treeDepartmentsDataSource" display-field="department_name"
-	                            parent-field="parent_code" key-field="department_code" 
-	                            multi-select="treeMultiSelect" select-mode="treeMode" 
-                             on-select="selectTreeNode"
-	                            current-node="treeCurrentNode"
-	                            selected-nodes="treeSelectedNodes"
-	                            selected-root-nodes="treeSelectedRootNodes"
-	                            search-text="treeSearchText"
-	                            check-all="treeCheckAll"
-                             checked-field="is_selected"
-                             disabled="treeDisable"/>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
         </div>
         <div class="modal-footer">
-            <div class="pull-right"><button ng-click="saveNClose($event)"><i class="la la-save"></i>${get_global_res('save_and_close','Lưu & đóng')}</button></div>
-            <div class="pull-right"><button ng-click="saveNNext($event)"><i class="la la-save"></i>${get_global_res('save_and_next','Lưu & tiếp')}</button></div>
+            <div class="right-content pull-right">
+                <button ng-click="saveNNext($event)"><i class="la la-save"></i>${get_global_res('save_and_next','Lưu & tiếp')}</button>
+                <button ng-click="saveNClose($event)"><i class="la la-save"></i>${get_global_res('save_and_close','Lưu & đóng')}</button>
+            </div>
         </div>
     </div>
 </div>
@@ -206,7 +166,7 @@
                 editData(function (res) {
                     if (res.error == null) {
                         $dialog.closeDialog();//Đóng form input
-                        $msg.alert("${get_global_res('Handle_Success','Thao tác thành công')}", $type_alert.SUCCESS);//Xuất thông báo thành cônng
+                        $msg.alert("${get_global_res('Handle_Success','Thao tác thành công')}", $type_alert.INFO);//Xuất thông báo thành cônng
                         if (scope.__mode == 1 || scope.__mode == 3) {
                             //Reload table data
                             reloadData();
@@ -245,7 +205,7 @@
                             scope.$parent.$apply();
                             scope.$parent.refreshDataRow();
                         }
-                        $msg.alert("${get_global_res('Handle_Success','Thao tác thành công')}", $type_alert.SUCCESS);
+                        $msg.alert("${get_global_res('Handle_Success','Thao tác thành công')}", $type_alert.INFO);
                         scope.Item = null;
                         scope.__mode = 1;
                         //Bỏ chọn các nút đã chọn trên cây

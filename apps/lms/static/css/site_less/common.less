@@ -1,0 +1,486 @@
+html{
+    font-size: 16px!important;
+}
+html,
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-color: white !important;
+    overflow:hidden;
+}
+
+.app-content {
+    overflow: auto;
+    overflow-x: hidden;
+    padding-bottom: 20px;
+    height:100%;
+}
+
+.hcs-home-portal-footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    height: 20px;
+    width: 100%;
+    background-color: #48503c;
+    color: white;
+}
+
+@media screen and (min-width:401px) {
+    .hcs-home-portal-footer li {
+        float: left;
+        border-right: 1px solid white;
+        margin-left: 0.5rem;
+        padding-right: 0.5rem;
+        line-height: 1rem;
+        margin-top: 0.2rem;
+        list-style-type:none;
+    }
+}
+
+@media screen and (max-width:400px) {
+
+    .hcs-home-portal-footer ul{
+        padding-left:5px;
+    }
+
+    .hcs-home-portal-footer li {
+        float: left;
+        border-right: 1px solid white;
+        margin-left: 0.5rem;
+        padding-right: 0.5rem;
+        line-height: 1rem;
+        font-size: 0.65rem;
+        margin-top: 0.2rem;
+        list-style-type: none;
+    }
+}
+
+    .hcs-home-portal-footer #endlist {
+        border: none;
+    }
+
+.hcs-home-page-top-bar {
+    background-color: #48503c;
+    height: 48px;
+    -webkit-animation-duration: 10ms;
+    -webkit-animation-delay: 0s;
+    -webkit-animation-name: nodeInserted;
+    margin: 0;
+    padding-left: 0;
+    padding-right: 0;
+    border-width: 0;
+    border-radius: 0;
+    box-shadow: none;
+    min-height: 48px;
+    border-color: #e7e7e7;
+    position: fixed;
+    border: 1px solid transparent;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+    @media only screen and (min-width: 992px) {
+        .hcs-home-page-top-bar-container {
+            -webkit-animation-duration: 10ms;
+            -webkit-animation-delay: 0s;
+            -webkit-animation-name: nodeInserted;
+        }
+    }
+
+    .hcs-home-button-user {
+        height: 100%;
+        background-color: transparent !important;
+        border-color: transparent !important;
+        margin-top: 7px;
+    }
+
+    .hcs-home-button-user-menu {
+        left: auto;
+        position: fixed;
+        right: 0;
+        top: 48px !important;
+        width: 215px;
+        border-color: #5b6250 !important;
+        background-color: #5b6250 !important;
+        opacity: .85;
+        padding: 15px;
+        border-radius: unset !important;
+        margin-top: unset;
+    }
+
+    .hcs-home-button-user-menu a {
+        color: #fff !important;
+        font-size: 15px !important;
+    }
+
+    .hcs-home-button-language-menu {
+        left: auto;
+        position: fixed;
+        right: 120px !important;
+        top: 48px !important;
+        width: 150px;
+        border-color: #5b6250 !important;
+        background-color: #5b6250 !important;
+        opacity: .85;
+        padding: 20px 20px 20px 20px;
+        border-radius: unset !important;
+        margin-top: unset;
+    }
+
+    .hcs-home-button-language-menu a {
+        color: #fff !important;
+        font-size: 15px !important;
+        font-family: sans-serif;
+    }
+
+    .hcs-home-button-language-menu a:hover {
+        background: transparent !important;
+    }
+
+    .hcs-home-button-language-menu a.selected {
+        color: #27ba86 !important;
+    }
+
+    .hcs-home-header-notice-icon {
+        color: #fff;
+        font-size: 18px;
+    }
+
+    @media(max-width:991px) {
+        .hcs-home-header-left {
+            padding-left: 10px;
+        }
+    }
+
+    @media(max-width:768px) {
+        .hcs-home-header-clock {
+            display: none !important;
+        }
+
+        #hcs-top-bar-notification {
+            display: normal !important
+        }
+
+        .hcs-home-portal-nav-notification {
+            display: none !important;
+        }
+    }
+
+    @media(min-width:769px) {
+        #hcs-top-bar-notification {
+            display: none !important
+        }
+
+        .hcs-home-portal-nav-notification {
+            display: normal !important;
+        }
+
+        .hcs-home-header-clock {
+            margin-top: 5px;
+            display: normal;
+        }
+
+        .hcs-home-header-clock > span {
+            color: #fff;
+            float: right;
+        }
+
+        .hcs-home-header-clock > span.hcs-home-header-clock-time {
+            font-size: 20px;
+            font-family: sans-serif;
+            line-height: 20px;
+        }
+
+        .hcs-home-header-clock > span.hcs-home-header-clock-ampm {
+            margin-left: 2px;
+            font-size: 11px;
+            opacity: .8;
+            font-family: sans-serif;
+        }
+
+        .hcs-home-header-clock > span.hcs-home-header-clock-date {
+            font-size: 11px;
+            margin-right: 17px;
+            opacity: .8;
+            font-family: sans-serif;
+        }
+    }
+
+    .lv-button-logout {
+        cursor: pointer;
+        font-size: 15px;
+        color: #fff;
+        padding-left: 11px;
+        padding-right: 11px;
+        padding-bottom: 4px;
+        margin-bottom: 1px;
+        margin-top: 1px;
+    }
+
+    .hcs-home-button-language-menu a:hover {
+        background: transparent !important;
+    }
+
+    .hcs-home-button-language-menu a.selected {
+        color: #27ba86 !important;
+    }
+
+    #hcs-top-bar-menu {
+        background-color: #5b6250 !important;
+        opacity: 0.85;
+        border-radius: unset;
+        -webkit-border-radius: unset;
+        -moz-border-radius: unset;
+        width: 420px;
+        left: -5px !important;
+        position: fixed !important;
+        top: 47px !important;
+        bottom: 30px !important;
+        transform: none !important;
+        height: 100%;
+        margin-top: unset;
+    }
+
+    #hcs-home-menu-button {
+        background-color: transparent;
+        border: none;
+        margin-top:3px;
+    }
+
+    #hcs-home-menu-button span {
+        color: white;
+    }
+
+    #hcs-home-menu-button:hover {
+        background-color: #1b6aaa;
+    }
+
+    .hcs-home-menu-title-1 {
+        width: 100%;
+        font-size: 15px;
+        font-weight: 600;
+        float: left;
+        margin-left: 40px;
+        color: #fff;
+        margin-top: 2rem;
+        margin: 1rem 0rem 0.7rem 2.5rem;
+    }
+
+    .hcs-home-menu-title-2 {
+        width: 100%;
+        font-size: 24px;
+        font-weight: 400;
+        float: left;
+        margin-left: 40px;
+        color: #fff;
+        margin-bottom: 2rem;
+    }
+
+    .hcs-menu-item,
+    .hcs-menu-sub-item a {
+        color: white;
+    }
+
+    .hcs-menu-sub-item a:hover {
+        text-decoration: none;
+        color: #fbbe04;
+        background-color: unset !important;
+    }
+
+    .hcs-home-menu-ordinal {
+        margin-right: 5px;
+        font-size: 1.7em !important;
+        color: #ffc000 !important;
+    }
+
+    .hcs-menu-item p {
+        padding-left: 10px;
+        padding-bottom: 5px;
+        margin-right: 20px;
+        border-bottom: 1px solid white;
+        cursor: pointer;
+        margin-bottom: unset;
+    }
+
+    .hcs-menu-item,
+    .hcs-menu-sub-item {
+        list-style-type: none;
+        padding-bottom:0.5rem;
+    }
+
+    .hcs-home-page-top-bar .hcs-navbar-brand {
+        height: 48px;
+    }
+
+    .hcs-home-page-top-bar .hcs-navbar-brand img {
+        width: 80px !important;
+        margin-top: 7px !important;
+        float: left !important;
+    }
+
+    .hcs-body {
+        max-width: 100%;
+        margin: 0 auto;
+        position: relative;
+    }
+
+    ::-webkit-scrollbar-track {
+        -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+        border-radius: 10px;
+        background-color: #F5F5F5;
+    }
+
+    ::-webkit-scrollbar {
+        width: 3px !important;
+        height:7px !important;
+        background-color: #F5F5F5;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+        background-color: #d0d0d0;
+    }
+
+    *:not(i):not(.la):not(.fa):not(.glyphicon) {
+        font-family: Segoe UI !important;
+    }
+
+    .hcs-badge-label-blue {
+        vertical-align: middle;
+        position: absolute;
+        height: 1rem;
+        width: 1rem;
+        top: 5px;
+        text-align: center;
+        font-size: 0.8rem;
+        border-radius: 50%;
+        color: white;
+    }
+
+    .hcs-hyperlink:hover {
+        text-decoration: none;
+    }
+
+    .hcs-tile-img {
+        border-radius: 5px;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+    }
+
+    .hcs-badge-icon {
+        vertical-align: middle;
+        top: 0;
+        position: absolute;
+        min-height: 1.2rem;
+        min-width: 1.2rem;
+        text-align: center;
+        font-size: 0.8rem;
+        border-radius: 50%;
+        color: white;
+        padding-top: 2.5px;
+    }
+
+    .hcs-pagi-navigation {
+    }
+
+    .hcs-pagi-navigation ul li a {
+        color: #36a3f7;
+    }
+
+    .hcs-pagi-navigation ul li a:hover {
+        color: #36a3f7;
+    }
+
+    /**Test*/
+
+    .dropdown {
+        position: relative;
+        display: inline-block;
+    }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #fff;
+        min-width: 230px;
+        overflow: auto;
+        border: 1px solid #ddd;
+        z-index: 1;
+    }
+
+    .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+    }
+
+    .dropdown a:hover {
+        background-color: #ddd
+    }
+
+    .show {
+        display: block;
+    }
+
+    .tab-pane {
+        padding-right: 15px;
+    }
+
+.table > tbody > tr > td {
+    padding:unset;
+    line-height:25px;
+}
+
+.table > tbody > tr > td label{
+    margin:unset;
+}
+
+.table > thead > tr > th {
+    padding: unset;
+    line-height: 25px;
+    font-size: .875rem;
+    font-weight: 700;
+    color: #000;
+}
+
+.table > thead > tr > th label {
+    margin: unset;
+}
+
+@media screen and (min-width:601px){
+    #hcs-top-bar-current-module {
+        margin-left: 10px;
+        margin-top: 14px;
+        color: white;
+        border-left: 1px solid white;
+        line-height: 15px;
+        font-size: 17px;
+        padding-left: 8px;
+    }
+}
+
+@media screen and (max-width:600px){
+    #hcs-top-bar-current-module {
+        display: none;
+    }
+}
+
+#hcs-toolbar {
+    position: fixed;
+    right: 0;
+    top: 66px;
+    z-index: 999;
+
+    div {
+        margin-left: 10px;
+    }
+
+    i {
+        color: black;
+    }
+}

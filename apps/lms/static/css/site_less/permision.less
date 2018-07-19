@@ -1,0 +1,425 @@
+#hcs-admin-system-heading a span i {
+    color: black;
+}
+
+#hcs-admin-system-heading div {
+    margin-right: 0.5rem;
+}
+
+.hcs-admin-system-control-menu {
+    padding: unset !important;
+    border-bottom: .3px solid #b7b5b5;
+    color: black;
+    width:100%;
+    width:75px;
+    height:75px;
+}
+
+.hcs-admin-system-control-menu:hover{
+    color:black;
+}
+
+.hcs-admin-system-heading a:hover {
+    color: black;
+}
+
+@media (min-width:768px) {
+    .hcs-admin-system-control-menu {
+        color: black;
+    }
+
+    .hcs-admin-system-control-menu p {
+        /*margin-bottom: 40%;*/
+    }
+}
+
+@media (max-width:550px) {
+    .hcs-admin-system-control-menu {
+        color: black;
+    }
+
+    .hcs-admin-system-control-menu p {
+        margin-bottom: 9rem !important;
+    }
+}
+
+.hcs-admin-system-control-menu p {
+    font-size: .7rem;
+    line-height: .7rem;
+    font-weight: 600;
+    color: #808080;
+}
+
+.hcs-admin-system-control-menu span {
+    text-align: center;
+    display: block;
+    font-size: 1.4rem;
+    font-weight: 600;
+    padding-bottom: 0.5rem;
+    padding-top: 0.5rem;
+}
+
+.hcs-admin-system-selected span {
+    color: red;
+}
+
+.hcs-admin-system-selected p{
+    color:black;
+}
+
+.hcs-admin-system-breadcrumb-active:hover {
+    color: #009DE1;
+}
+
+.hcs-admin-system-breadcrumb-collapse {
+    margin-left: 0.8% !important;
+}
+
+#hcs-admin-system-breadcrumb a:hover {
+    text-decoration: none;
+}
+
+#hcs-system-admin-control-menu a:hover {
+    color: black;
+    box-shadow: 0 2px 6px 0 rgba(0,0,0,0.2),0 1.5px 4px 0 rgba(0,0,0,0.19) !important;
+}
+
+#myInput {
+    border-box: box-sizing;
+    font-size: 16px;
+    margin: 5px;
+    width: 97%;
+}
+
+#dropdownFunction {
+    top: 48px;
+    left: 0;
+    margin-left: 8%;
+    padding-top: unset;
+    height: 400px;
+    width: 400px;
+    line-height: initial;
+    border-width: 1px 1px 20px;
+    border-style: solid;
+    border-color: rgb(221, 221, 221) rgb(221, 221, 221) #48503c;
+    border-image: initial;
+    background-color: white;
+    z-index: 20;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 30px 0px, rgba(0, 0, 0, 0.19) 0px 0px 40px 5px;
+    padding-top: unset !important;
+    overflow: hidden;
+}
+
+#dropdownFunction .filter {
+    padding-top: unset !important;
+    margin-right: unset !important;
+}
+
+#dropdownFunction .dropdown p{
+    margin: 0px 7px 0px 0px;
+    padding: 8px;
+}
+
+#dropdownFunction .dropdown p:hover {
+    background-color: #428bca;
+    color: white;
+}
+
+@media (min-width:768px) {
+    #dropdownFunction .dropdown {
+        overflow: auto;
+        height: 345px;
+        margin-right: unset;
+        padding-top: unset;
+        width: 100%;
+        margin-left:5px;
+    }
+
+    #dropdownFunction .dropdown a {
+        margin-top: unset !important;
+        padding: 4px;
+        display: block;
+    }
+
+    #dropdownFunction .dropdown p {
+        color: #000;
+    }
+}
+
+@media (max-width:550px) {
+    #dropdownFunction .dropdown {
+        overflow: auto;
+        height: 200px;
+        margin-right: unset;
+        padding-top: unset;
+        width: 100%;
+        margin-left:5px;
+    }
+
+    #dropdownFunction .dropdown a {
+        margin-top: unset !important;
+        padding: 4px;
+        display: block;
+    }
+
+    #dropdownFunction .dropdown p {
+        color: #000;
+    }
+}
+
+#hcs-admin-system-panel-content > div{
+    padding: 0 15px !important;
+}
+
+.hcs-system-admin-content-expand {
+    width:100% !important;
+}
+
+#hcs-admin-system-txtSearch {
+    margin: 0 0 0 auto;
+    width: 0;
+    max-width: 140px;
+    -webkit-transition: width .4s ease-in-out;
+    height: 1.3rem;
+    padding: 0 0 0 4px;
+    background-color: transparent;
+    border: none !important;
+}
+
+#hcs-admin-system-txtSearch:focus {
+    border-bottom: 1px solid #36a3f7 !important;
+    background-color: transparent;
+    width: 100%;
+}
+
+#hcs-admin-system-heading a:focus {
+    color: #009de1;
+}
+
+@media screen and (min-width:601px) {
+    #hcs-admin-system-container {
+        padding: unset;
+        padding-left: 5px;
+        overflow: hidden;
+        padding-top: 48px;
+    }
+
+    .hcs-system-admin-content {
+        float: left;
+        width: ~"calc(100% - 75px)";
+    }
+
+    #hcs-admin-system-heading {
+        background-color: #F2F2F2;
+        height: 48px;
+        padding: 1rem 0rem;
+        position:fixed;
+        z-index:900;
+        width:100%;
+    }
+
+    #hcs-system-admin-menu {
+        padding: unset !important;
+        width: 75px;
+        float: left;
+    }
+
+    #hcs-system-admin-menu ul {
+        padding: unset;
+    }
+
+    #hcs-system-admin-menu > div {
+    }
+
+    #hcs-system-admin-menu hcs-system-admin-menu-contain ul li {
+        list-style-type: none;
+    }
+
+    .hcs-system-admin-menu-contain ul li {
+        height: 75px;
+        width: 75px;
+        display: inline-block;
+        border-bottom: 1px solid #D9D9D9;
+    }
+
+    .hcs-system-admin-menu-contain ul li a {
+        display: inline-block;
+    }
+
+    .hcs-system-admin-menu-contain {
+        width: 75px;
+        overflow: auto;
+        height: ~"calc(100vh - 100px)";
+    }
+
+    .hcs-admin-system-selected {
+        border-bottom: 1.5px solid red;
+        box-shadow: 0 2px 6px 0 rgba(0,0,0,0.2),0 1.5px 4px 0 rgba(0,0,0,0.19) !important;
+    }
+
+    .hcs-admin-system-breadcrumb span {
+        font-size: 1rem;
+        line-height: 1rem;
+        color: #009DE1
+    }
+
+    .hcs-admin-system-breadcrumb-active {
+        font-size: 1rem;
+        line-height: 1rem;
+        color: #009DE1;
+        display: inline;
+        cursor: pointer;
+    }
+
+    #hcs-admin-system-heading a {
+        font-size: 1rem;
+        line-height: 1rem;
+    }
+
+    #hcs-admin-system-breadcrumb {
+        margin-left: 4%;
+    }
+
+    #hcs-admin-system-panel-content {
+        min-height: calc(~'100vh - 96px');//600px;
+        padding: 0px 0px 0px 15px;
+        overflow: hidden;
+        padding-left: unset;
+        margin-bottom: 20px;
+    }
+}
+
+@media screen and (max-width:600px) {
+    #hcs-admin-system-container {
+        padding: unset;
+        padding-left: 5px;
+        overflow: hidden;
+        padding-top: 75px;
+    }
+    .hcs-system-admin-content {
+        float: left;
+        width: 100%;
+    }
+
+    #hcs-admin-system-heading {
+        background-color: #F2F2F2;
+        padding: 1rem 0rem;
+        position: fixed;
+        z-index: 900;
+        width:100% !important;
+    }
+
+    #hcs-system-admin-menu {
+        padding: unset !important;
+    }
+
+    #hcs-system-admin-menu ul {
+        padding: unset;
+        height:75px;
+        display:flex;
+        margin-bottom:unset;
+    }
+
+    #hcs-system-admin-menu > div {
+        width: 100%;
+        height:75px;
+        overflow-y:hidden;
+    }
+
+    #hcs-system-admin-menu ul li {
+        list-style-type: none;
+        width: 75px;
+        height: 75px;
+        display: inline-block;
+    }
+
+    .hcs-system-admin-menu-contain ul li {
+        height: 75px;
+        width: 75px;
+        display: inline-block;
+        border-right: 1px solid #D9D9D9;
+    }
+
+    .hcs-system-admin-menu-contain ul li a {
+        display: inline-block;
+    }
+
+    .hcs-system-admin-menu-contain {
+        width: 80%;
+        overflow: auto;
+    }
+
+    .hcs-admin-system-selected {
+        border-top: 1px solid red;
+        box-shadow: 0 2px 6px 0 rgba(0,0,0,0.2),0 1.5px 4px 0 rgba(0,0,0,0.19) !important;
+    }
+
+    .hcs-admin-system-breadcrumb span {
+        font-size: 1rem;
+        line-height: 1rem;
+        color: #009DE1
+    }
+
+    .hcs-admin-system-breadcrumb-active {
+        font-size: 1rem;
+        line-height: 1rem;
+        color: #009DE1;
+        display: inline;
+        cursor: pointer;
+    }
+
+    #hcs-admin-system-heading a {
+        font-size: 1rem;
+        line-height: 1rem;
+    }
+
+    #hcs-admin-system-panel-content {
+        min-height: 600px;
+        padding: 0px 15px 0px 15px !important;
+        overflow: hidden;
+        padding-left: unset;
+        margin-bottom: 20px;
+    }
+}
+
+@media screen and (max-width: 600px){
+    #hcs-admin-system-breadcrumb {
+        padding-top: 1rem !important;
+        margin-left: unset;
+    }
+}
+
+#style-3::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    border-radius: 1px;
+    background-color: #f5f5f5;
+}
+
+#style-3::-webkit-scrollbar {
+    height: 2px;
+    width:0px !important;
+    background-color: #f5f5f5;
+}
+
+#style-3::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+    background-color: #f5f5f5;
+}
+
+#style-3 {
+    scrollbar-base-color: #C0C0C0;
+    scrollbar-base-color: #C0C0C0;
+    scrollbar-3dlight-color: #C0C0C0;
+    scrollbar-highlight-color: #C0C0C0;
+    scrollbar-track-color: #EBEBEB;
+    scrollbar-arrow-color: black;
+    scrollbar-shadow-color: #C0C0C0;
+}
+
+
+#style-3 {
+}
+
+#style-3 {
+}

@@ -53,6 +53,13 @@
     scope.onSearch = onSearch;
     scope.onExport = onExport;
     scope.onImport = onImport;
+    scope.$parent.$parent.$parent.onEdit = onEdit;
+    scope.$parent.$parent.$parent.onAdd = onAdd;
+    scope.$parent.$parent.$parent.onDelete = onDelete;
+    scope.$parent.$parent.$parent.onCopy = onCopy;
+    scope.$parent.$parent.$parent.onSearch = onSearch;
+    scope.$parent.$parent.$parent.onExport = onExport;
+    scope.$parent.$parent.$parent.onImport = onImport;
     scope._tableData = _tableData;
     scope.cbbGroupCerType = [];
 
@@ -86,7 +93,7 @@
                     .then(function (res) {
                         if (res.deleted > 0) {
                             _tableData(scope.$$tableConfig.iPage, scope.$$tableConfig.iPageLength, scope.$$tableConfig.orderBy, scope.$$tableConfig.SearchText, scope.$$tableConfig.fnReloadData);
-                            $msg.alert("${get_global_res('Handle_Success','Thao tác thành công')}", $type_alert.SUCCESS);
+                            $msg.alert("${get_global_res('Handle_Success','Thao tác thành công')}", $type_alert.INFO);
                             scope.currentItem = null;
                             scope.selectedItems = [];
                         }
@@ -103,7 +110,7 @@
         }
     }
     function onSearch(val) {
-        scope.tableSearchText = scope.SearchText;
+        scope.tableSearchText = val;
         scope.$apply();
     }
     function onExport() {

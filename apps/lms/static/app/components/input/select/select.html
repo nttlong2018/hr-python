@@ -1,0 +1,10 @@
+<div ng-controller="SelectpickerPanelCtrl as selectpickerVm" class="zb-form-select" >
+    <ui-select ng-model="selectedItem.selected" class="btn-group bootstrap-select form-control" ng-disabled="false" append-to-body="false" search-enabled="true" title="{{$select.selected.__fieldCaption}}">
+        <ui-select-match placeholder="{{placeholder}}">
+            {{$select.selected.__fieldCaption}}
+        </ui-select-match>
+        <ui-select-choices repeat="searchItem in selectWithSearchItems | filter: $select.search">
+            <span ng-bind-html="searchItem.__fieldCaption" title="{{searchItem.__fieldCaption}}"></span>
+        </ui-select-choices>
+    </ui-select>
+</div>

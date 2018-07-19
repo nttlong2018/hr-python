@@ -1,0 +1,685 @@
+@border_color: #cbcbcb;
+@border_color_hover: #cbcbcb;
+
+
+@h_control: 30px;
+@h_control_1: 29px;
+
+
+/*#3945d8;*/
+
+@cl_label: #999;
+
+@caption_color: #666;
+@value_color: #333;
+@font_size: 0.875rem;
+@font_size_label: 0.875rem;
+
+
+/*FORM INPUT*/
+
+.zb-form-input {
+    color: @value_color;
+    border: none;
+    border-radius: 0;
+    border-bottom: 1px solid @border_color;
+    background: transparent;
+    font-size: @font_size;
+    padding-bottom: 0;
+    box-shadow: none;
+    height: @h_control;
+    padding: 0 5px 0 1px;
+    vertical-align: bottom;
+}
+
+.zb-form-input:focus {
+    border-bottom: 1px solid @border_color_hover;
+    background: transparent;
+    box-shadow: none;
+}
+
+.zb-form-input.size-lg {
+    color: @value_color;
+    border-radius: 4px;
+    border: 1px solid @border_color;
+    background: transparent;
+    font-size: @font_size;
+    padding-bottom: 0;
+    box-shadow: none;
+    height: @h_control;
+    padding: 0 10px;
+}
+
+.zb-form-input.size-lg:focus {
+    border: 1px solid @border_color_hover;
+    background: transparent;
+    box-shadow: none;
+}
+
+
+
+
+/*FORM LABEL*/
+
+.zb-form-label {
+    font-size: @font_size_label !important;
+    margin-top: 0px !important;
+    margin-bottom: 0px !important;
+    line-height: @h_control !important;
+    text-align: left !important;
+    padding: 0 0px 0px 5px;
+    font-weight: normal;
+    height: @h_control;
+    color: @cl_label;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.zb-form-label:after {
+    content: ':';
+}
+
+
+
+/*FORM SELECT*/
+
+.zb-form-select {
+    background: transparent;
+
+    .btn-group.bootstrap-select.form-control.open {
+        background: transparent;
+    }
+
+    .ui-select-choices.ui-select-choices-content {
+        background: #fff;
+    }
+
+    span.form-control {
+        color: #333;
+        border: 0;
+        border-radius: 0;
+        font-size: @font_size;
+        padding-bottom: 0;
+    }
+
+    .ui-select-match {
+        height: @h_control;
+        max-height: @h_control;
+        background: transparent !important;
+        padding-top: 0 !important;
+        box-shadow: none;
+        border-bottom: 1px solid @border_color;
+
+        > span {
+            padding: 0;
+            height: @h_control;
+            background: transparent !important;
+            padding-top: 0 !important;
+            box-shadow: none;
+
+            > span {
+                position: absolute;
+                bottom: 0;
+                left: 1px;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                overflow: hidden;
+                padding-bottom: 5px
+            }
+        }
+    }
+
+    .ui-select-match.btn-default-focus {
+        height: @h_control_1;
+        max-height: @h_control_1;
+        outline: none !important;
+        -webkit-box-shadow: none !important;
+        box-shadow: none !important;
+        box-sizing: unset;
+        height: @h_control;
+        border-bottom: 1px solid @border_color;
+        color: red;
+    }
+
+    span.form-control:hover {
+        background: transparent;
+    }
+
+    .btn-group.bootstrap-select {
+        border-radius: 0;
+        background: transparent;
+        box-shadow: none;
+        height: @h_control;
+    }
+
+    .btn-group.bootstrap-select.form-control.open input[type=search] {
+        color: #333;
+        border: 0;
+        border-radius: 0;
+        border-bottom: 1px solid @border_color_hover;
+        background: transparent;
+        padding: 3px 5px 0 1px;
+        font-size: @font_size;
+        box-shadow: none;
+        height: @h_control;
+        vertical-align: bottom;
+    }
+
+    .btn-group.bootstrap-select.form-control.open ul.ui-select-choices {
+        border-radius: 0;
+        border-top: 0;
+        box-shadow: 0 0 5px #999;
+        font-size: 0.875rem !important;
+
+        .ui-select-choices-row-inner {
+            padding: 3px 3px;
+        }
+    }
+
+    .caret {
+        width: 14px !important;
+        height: 14px !important;
+        margin-left: 2px;
+        right: 5px !important;
+        border: none !important;
+        font-family: Ionicons;
+        speak: none;
+        font-style: normal;
+        font-weight: 400;
+        font-variant: normal;
+        text-transform: none;
+        text-rendering: auto;
+        line-height: 1;
+        -webkit-font-smoothing: antialiased;
+    }
+
+    .caret:after {
+        content: "\f123";
+    }
+
+    .ui-select-search {
+    }
+
+    .ui-select-search:focus {
+        box-shadow: none;
+        outline: none;
+    }
+}
+
+.size-lg .zb-form-select {
+    background: transparent;
+
+    .btn-group.bootstrap-select.form-control.open {
+        background: transparent;
+    }
+
+    .ui-select-choices.ui-select-choices-content {
+        background: #fff;
+    }
+
+    span.form-control {
+        color: #333;
+        border: 0;
+        border-radius: 0;
+        font-size: @font_size;
+        padding-bottom: 0;
+    }
+
+    .ui-select-match {
+        height: @h_control;
+        max-height: @h_control;
+        background: transparent !important;
+        padding-top: 0 !important;
+        box-shadow: none;
+        border: 1px solid @border_color;
+        border-radius: 4px;
+        padding-left: 10px;
+
+        > span {
+            padding: 0;
+            height: @h_control;
+            background: transparent !important;
+            padding-top: 0 !important;
+            box-shadow: none;
+            line-height: @h_control;
+
+            > span {
+                position: absolute;
+                bottom: 0;
+                left: 1px;
+            }
+        }
+    }
+
+    .ui-select-match.btn-default-focus {
+        height: @h_control_1;
+        max-height: @h_control_1;
+        outline: none !important;
+        -webkit-box-shadow: none !important;
+        box-shadow: none !important;
+        box-sizing: unset;
+        height: @h_control;
+        border-bottom: 1px solid @border_color;
+        color: red;
+    }
+
+    span.form-control:hover {
+        background: transparent;
+    }
+
+    .btn-group.bootstrap-select {
+        border-radius: 0;
+        background: transparent;
+        box-shadow: none;
+        height: @h_control;
+    }
+
+    .btn-group.bootstrap-select.form-control.open input[type=search] {
+        color: #333;
+        border: 0;
+        border-radius: 0;
+        border: 1px solid @border_color_hover;
+        background: transparent;
+        padding: 0 0 0 10px;
+        font-size: @font_size;
+        box-shadow: none;
+        border-radius: 4px;
+        height: @h_control;
+        vertical-align: bottom;
+        max-height: @h_control;
+    }
+
+    .btn-group.bootstrap-select.form-control.open ul.ui-select-choices {
+        border-radius: 0;
+        border-top: 0;
+        box-shadow: 0 0 5px #999;
+        font-size: 0.875rem !important;
+
+        .ui-select-choices-row-inner {
+            padding: 3px 3px;
+        }
+    }
+
+    .caret {
+        width: 14px !important;
+        height: 14px !important;
+        margin-left: 2px;
+        right: 5px !important;
+        border: none !important;
+        font-family: Ionicons;
+        speak: none;
+        font-style: normal;
+        font-weight: 400;
+        font-variant: normal;
+        text-transform: none;
+        text-rendering: auto;
+        line-height: 5px;
+        -webkit-font-smoothing: antialiased;
+    }
+
+    .caret:after {
+        content: "\f123";
+    }
+
+    .ui-select-search {
+    }
+
+    .ui-select-search:focus {
+        box-shadow: none;
+        outline: none;
+    }
+}
+
+
+
+/*FORM DATEPICKER*/
+
+.zb-form-date-picker {
+    > input,
+    > span > button.btn-default {
+        color: #333;
+        border: 0;
+        border-radius: 0;
+        border-bottom: 1px solid @border_color;
+        background: transparent;
+        font-size: @font_size;
+        padding-bottom: 0;
+        height: @h_control;
+        box-shadow: none;
+        padding: 3px 5px 0 1px;
+    }
+
+    .zb-form-date-picker-focus {
+        background: transparent;
+        border-bottom: 1px solid @border_color_hover !important;
+    }
+
+    > span > button.btn-default {
+        padding-top: 5px;
+    }
+
+    > span > button.btn-default:active {
+        border: none !important;
+    }
+
+    > span > button.btn-default:hover,
+    > span > button.btn-default:focus {
+        background: transparent;
+        border-bottom: 1px solid @border_color_hover !important;
+        height: @h_control !important;
+        padding-top: 5px !important;
+        margin: 0 !important;
+        outline: none;
+    }
+
+    .uib-datepicker {
+        table {
+            button {
+                border-radius: 0;
+            }
+
+            button.active {
+                border-color: @border_color_hover;
+                /*>span {
+                    color: #fff;
+                }*/
+            }
+
+            button:hover {
+                transform: scale(1);
+                border-color: @border_color_hover;
+            }
+        }
+    }
+
+    ul.uib-datepicker-popup {
+        border-radius: 0;
+        padding: 10px;
+    }
+
+    li.uib-button-bar button {
+        border-radius: 0;
+    }
+}
+
+.zb-form-date-picker.size-lg {
+    border: 1px solid @border_color;
+    border-radius: 4px;
+
+    > input {
+        color: #333;
+        border: 0;
+        background: transparent;
+        font-size: @font_size;
+        height: @h_control;
+        box-shadow: none;
+        padding: 0 0 0 10px;
+        line-height: 30px;
+    }
+
+    > span > button.btn-default {
+        color: #333;
+        border: 0;
+        background: transparent;
+        font-size: @font_size;
+        height: @h_control;
+        box-shadow: none;
+        padding: 4px 6px 0 0 !important;
+    }
+
+    .zb-form-date-picker-focus {
+        background: transparent;
+        border-bottom: 1px solid @border_color_hover !important;
+    }
+
+    > span > button.btn-default {
+        padding-top: 13px;
+    }
+
+    > span > button.btn-default:active {
+        border: none !important;
+    }
+
+    > span > button.btn-default:hover,
+    > span > button.btn-default:focus {
+        background: transparent;
+        border-bottom: 1px solid @border_color_hover !important;
+        height: @h_control !important;
+        padding-top: 13px !important;
+        margin: 0 !important;
+        outline: none;
+    }
+
+    .uib-datepicker {
+        table {
+            button {
+                border-radius: 0;
+            }
+
+            button.active {
+                border-color: @border_color_hover;
+                /*>span {
+                    color: #fff;
+                }*/
+            }
+
+            button:hover {
+                transform: scale(1);
+                border-color: @border_color_hover;
+            }
+        }
+    }
+
+    ul.uib-datepicker-popup {
+        border-radius: 0;
+        padding: 10px;
+    }
+
+    li.uib-button-bar button {
+        border-radius: 0;
+    }
+}
+
+
+
+/*FORM CHECKBOX*/
+
+.zb-form-checkbox {
+    margin-bottom: 0;
+    margin-top: 2px;
+
+    .custom-checkbox {
+        color: @caption_color;
+        font-size: @font_size;
+        padding-top: 7px;
+
+        span:before {
+            /*:hover:before*/
+            cursor: pointer;
+            font-family: fontAwesome;
+            font-weight: 300;
+            font-size: 12px;
+            color: @caption_color;
+            content: "\a0";
+            background-color: transparent;
+            border: 1px solid @border_color_hover;
+            border-radius: 0;
+            display: inline-block;
+            text-align: center;
+            height: 16px;
+            line-height: 14px;
+            min-width: 16px;
+            margin-right: 6px;
+            position: relative;
+            top: 0;
+            margin-left: -22px;
+            float: left;
+        }
+
+        > input {
+            visibility: hidden;
+        }
+
+        > input:checked + span:before,
+        label.custom-radio > input:checked + span:before {
+            font-family: fontAwesome;
+            content: "\f00c";
+            font-weight: 300;
+        }
+    }
+}
+
+.zb-form-checkbox.size-lg {
+    margin-bottom: 0;
+    margin-top: 0;
+    height: 30px;
+    padding: 0;
+
+    .custom-checkbox {
+        color: @caption_color;
+        font-size: @font_size;
+        padding-top: 4px;
+        line-height: 20px;
+
+        span:before {
+            cursor: pointer;
+            font-family: fontAwesome;
+            font-weight: 300;
+            font-size: 16px;
+            color: @caption_color;
+            content: "\a0";
+            background-color: transparent;
+            border: 1px solid @border_color_hover;
+            border-radius: 0;
+            display: inline-block;
+            text-align: center;
+            height: 22px;
+            width: 22px;
+            line-height: 18px;
+            min-width: 22px;
+            margin-right: 6px;
+            position: relative;
+            top: 0;
+            margin-left: -22px;
+            float: left;
+        }
+
+        > input {
+            visibility: hidden;
+        }
+
+        > input:checked + span:before,
+        label.custom-radio > input:checked + span:before {
+            font-family: fontAwesome;
+            content: "\f00c";
+            font-weight: 300;
+        }
+    }
+}
+
+
+
+/*FORM TEXT AREA*/
+
+textarea.zb-form-textarea {
+    min-width: 100%;
+    max-width: 100%;
+    border-radius: 4px;
+    border: 1px solid @border_color;
+    background: transparent;
+    font-size: @font_size;
+    padding: 5px;
+}
+
+textarea.zb-form-textarea.size-lg {
+    min-width: 100%;
+    max-width: 100%;
+    border-radius: 4px;
+    border: 1px solid @border_color;
+    background: transparent;
+    font-size: @font_size;
+    padding: 10px;
+}
+
+textarea.zb-form-textarea:focus {
+    border: 1px solid @border_color_hover;
+    background: transparent;
+    box-shadow: none;
+}
+
+textarea.zb-form-textarea[disabled] {
+    opacity: 0.6 !important;
+    background-color: #f5f5f5 !important;
+}
+
+/*FORM TEXT ICON*/
+
+.zb-form-text-icon {
+    div.input-group-btn {
+        button {
+            height: @h_control;
+            padding: 0 8px;
+            border-radius: 4px;
+            line-height: @h_control;
+            border: 1px solid #999;
+            color: #999;
+            font-size: 15px;
+            transition: all ease 0.5s;
+            outline: none;
+            background: #fff;
+            box-shadow: none
+        }
+
+        button:hover {
+            background: #999;
+            color: #fff;
+        }
+    }
+
+    input {
+        height: @h_control;
+        border-top-right-radius: 4px;
+        border-bottom-right-radius: 4px;
+        font-size: @font_size;
+        border: 1px solid #999;
+        box-shadow: none;
+    }
+
+    input:focus {
+        outline: none;
+        box-shadow: none;
+        border: 1px solid #999;
+    }
+}
+
+
+
+/*FORM CONTAINER*/
+
+.zb-form-checkbox.disabled {
+    opacity: 0.6;
+}
+
+[zb-required]::before {
+    content: "(*)";
+    color: red;
+    top: 7px;
+    position: absolute;
+    left: 0;
+    font-size: 10px;
+}
+
+input[disabled] {
+    opacity: 0.6 !important;
+    background-color: transparent !important;
+}
+
+.zb-form-date-picker[zb-required]::before {
+    left: -15px !important;
+}
+
+.zb-form-group {
+    margin-bottom: 0;
+    display: flex;
+}

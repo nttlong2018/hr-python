@@ -1,0 +1,15 @@
+﻿<div class="tab-pane" style="padding-right:unset; height: 100%; ">
+    <collapse-box class="zb-datatable" title="${get_res('list_marital','Danh sách tình trạng hôn nhân')}">
+    <table-data data-source="tableSource" fields="tableFields" type="MultiSelect" 
+                paging="true" page-length="100" server-side="true" 
+                press-enter="onSelectTableRow" selected-items="selectedItems" 
+                current-item="currentItem" search-text="tableSearchText"
+                refresh-row="refreshDataRow"
+                selected-field="">
+    </table-data>
+    </collapse-box>
+    <div class="clearfix"></div>
+</div>
+<script>
+    <%include file="scripts/department.js"/>
+</script>

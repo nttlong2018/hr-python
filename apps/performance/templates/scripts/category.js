@@ -5,6 +5,12 @@
     scope.filterFunctionModel = ''
     scope.currentFunction = '';
     scope.mapName = [];
+
+    scope.advancedSearch = {
+        main_region_code: null,
+        main_nation_code: null
+    }
+
     /*                                                         */
     /* ==================== Property Scope - END ==============*/
     /*                                                         */
@@ -67,18 +73,23 @@
     /* ===============================  Implementation - END  ==================================*/
     /*                                                                                          */
 
+    scope.$watch("selectedFunction", function (function_id) {
+        if (function_id) {
+            var $his = scope.$root.$history.data();
+            window.location.href = "#page=" + $his.page + "&f=" + function_id;
+        }
+    });
+
     scope.$root.$history.onChange(scope, function (data) {
         if (scope.mapName.length > 0) {
             if (data.f) {
-                scope.$partialpage = _.filter(scope.$root.$functions, function (f) {
-                    return f.function_id = data.f
-                })[0].url;
                 var func = _.filter(scope.mapName, function (f) {
                     return f["function_id"] == data.f;
                 });
                 if (func.length > 0) {
                     scope.$partialpage = func[0].url;
                     scope.currentFunction = func[0];
+                    scope.selectedFunction = func[0].function_id;
                 } else {
                     window.location.href = "#";
                 }

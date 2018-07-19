@@ -298,6 +298,7 @@
                     // ("Chỉ hiện thanh phân trang nếu số record lớn hơn số giới hạn của 1 trang hoặc có sử dụng phân trang từ server")
                     var _paging = (($scope.serverSide || ($scope.dataSource && $scope.dataSource.length > $scope.pageLength)) && $scope.paging) ? true : false;
                     var dataTableConfigs = {
+                        //"dom": '<"top"ip>rt<"bottom"fl><"clear">',
                         columns: $scope.fields,
                         columnDefs: _columnDefs,
                         searching: true,

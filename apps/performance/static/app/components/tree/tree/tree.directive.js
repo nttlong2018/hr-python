@@ -1,4 +1,4 @@
-(function() {
+(function () {
     'use strict';
 
     angular.module('ZebraApp.components.trees')
@@ -25,7 +25,9 @@
                 selectedRootNodes: "=",
                 searchText: "=",
                 checkAll: "=",
-                disabled: "="
+                disabled: "=",
+                expandAll: "@",
+                collapseAll: "@"
             },
             /*
                 @: lấy giá trị trên attrs,
@@ -33,7 +35,7 @@
                 &:function hoặc data trên parent scope (oneway binding)
             */
             templateUrl: "app/components/tree/tree/tree.html",
-            link: function($scope, elem, attr) {
+            link: function ($scope, elem, attr) {
                 compileTree($scope, elem, attr, $parse, $getDataTree);
             }
         };
@@ -50,8 +52,8 @@
             var _dataSource = [];
             var _selectedRootNodes = [];
 
-            if(!$scope.multiSelect) $scope.multiSelect = false;
-            if(!$scope.selectMode) $scope.selectMode = 1;
+            if (!$scope.multiSelect) $scope.multiSelect = false;
+            if (!$scope.selectMode) $scope.selectMode = 1;
 
             function _setCurrentNode(nodeData) {
                 _curentNode = nodeData;
@@ -72,12 +74,12 @@
 
             function _setSelectedOnInit($tree) {
                 // Get a list of all selected nodes, and convert to a key array:
-                var selDatas = $.map($tree.getSelectedNodes(), function(node) {
+                var selDatas = $.map($tree.getSelectedNodes(), function (node) {
                     return node.data;
                 });
                 _selectedNodes = selDatas;
                 // Get a list of all selected TOP nodes
-                var selRootDatas = $.map($tree.getSelectedNodes(true), function(node) {
+                var selRootDatas = $.map($tree.getSelectedNodes(true), function (node) {
                     return node.data;
                 });
                 _selectedRootNodes = selRootDatas;
@@ -116,7 +118,7 @@
                         mode: "hide" // "dimm" : Grayout unmatched nodes (pass "hide" to remove unmatched node instead)
                     },
                     //select a node
-                    activate: function(event, data) {
+                    activate: function (event, data) {
                         _setCurrentNode(data.node.data);
                     },
                     // lazyLoad: function(event, data) {
@@ -124,7 +126,7 @@
                     //     //data.result = { url: "ajax-sub2.json" }
                     //     data.result = [ {"title": "New child 1"}, {"title": "New child 2"} ];
                     // },
-                    select: function(event, data) {
+                    select: function (event, data) {
                         _setSelectedOnInit(data.tree);
                     }
                     // }).on("keydown", function(e){
@@ -135,28 +137,47 @@
                 });
                 var _tree = elem.find("#tree").fancytree("getTree");
 
-                setTimeout(function() {
+                setTimeout(function () {
                     _tree.reload(_dataSourceTree);
                     _setSelectedOnInit(_tree);
                 }, 100);
 
-                
+                if ($scope.expandAll) {
+                    $scope.$parent[$scope.expandAll] = expandAll;
+                    function expandAll(callback) {
+                        $(elem).find("#tree").fancytree("getTree").visit(function (node) {
+                            node.setExpanded();
+                        });
+                        if (callback) callback();
+                    }
+                }
+
+                if ($scope.collapseAll) {
+                    $scope.$parent[$scope.collapseAll] = collapseAll;
+                    function collapseAll(callback) {
+                        $(elem).find("#tree").fancytree("getTree").visit(function (node) {
+                            node.setExpanded(false);
+                        });
+                        if (callback) callback();
+                    }
+                }
+                $scope.$parent.$applyAsync();
 
                 //console.log("_DATASOURCETREE", _dataSourceTree, _tree);
                 var existsWatchSelectAll = false;
                 if ($scope.$$watchers && Array.isArray($scope.$$watchers)) {
-                    existsWatchSelectAll = _.filter($scope.$$watchers, function(f) {
+                    existsWatchSelectAll = _.filter($scope.$$watchers, function (f) {
                         return f.exp == "checkAll"
                     }).length > 0;
                 }
                 if (!existsWatchSelectAll) {
-                    $scope.$watch("checkAll", function(val, old) {
+                    $scope.$watch("checkAll", function (val, old) {
                         if (val == true) {
-                            elem.find("#tree").fancytree("getTree").visit(function(node) {
+                            elem.find("#tree").fancytree("getTree").visit(function (node) {
                                 node.setSelected(true);
                             });
                         } else {
-                            elem.find("#tree").fancytree("getTree").visit(function(node) {
+                            elem.find("#tree").fancytree("getTree").visit(function (node) {
                                 node.setSelected(false);
                             });
                         }
@@ -173,12 +194,12 @@
                 $scope.searchText = "";
                 var existsWatchSearchText = false;
                 if ($scope.$$watchers && Array.isArray($scope.$$watchers)) {
-                    existsWatchSearchText = _.filter($scope.$$watchers, function(f) {
+                    existsWatchSearchText = _.filter($scope.$$watchers, function (f) {
                         return f.exp == "searchText"
                     }).length > 0;
                 }
                 if (!existsWatchSearchText) {
-                    $scope.$watch("searchText", function(val, oVal) {
+                    $scope.$watch("searchText", function (val, oVal) {
                         var n,
                             //tree = $.ui.fancytree.getTree(),
                             filterFunc = _tree.filterNodes, //$("#branchMode").is(":checked") ? tree.filterBranches : tree.filterNodes,
@@ -209,17 +230,17 @@
                 //Nếu thay đổi chạy lại cây
                 let _watchInits = ["multiSelect", "selectMode", "disabled"];
                 let _isFirstTime = true;
-                $.each(_watchInits, function(i, v){
+                $.each(_watchInits, function (i, v) {
                     var existsWatchInit = false;
                     if ($scope.$$watchers && Array.isArray($scope.$$watchers)) {
-                        existsWatchInit = _.filter($scope.$$watchers, function(f) {
+                        existsWatchInit = _.filter($scope.$$watchers, function (f) {
                             return f.exp == v
                         }).length > 0;
                     }
                     if (!existsWatchInit) {
-                        $scope.$watch(v, function(val, old) {
+                        $scope.$watch(v, function (val, old) {
                             //alert(v + "-" + _isFirstTime);
-                            if(!_isFirstTime){
+                            if (!_isFirstTime) {
                                 _initLayout();
                             }
                         }, true);
@@ -229,7 +250,7 @@
             }
         }
 
-        $scope.$watch("source", function(val, old) {
+        $scope.$watch("source", function (val, old) {
             _initLayout();
         }, true);
     }

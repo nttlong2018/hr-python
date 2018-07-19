@@ -86,8 +86,8 @@
     scope.treeCheckAll = false;
     scope.treeSearchText = '';
     scope.treeDisable = false;
-    scope.treeMultiSelect = true;
-    scope.treeMode = 3; // Value in (1, 3) combobox toàn quyền set 1 ngược lại set 3
+    scope.treeMultiSelect = false;
+    scope.treeMode = 1; // Value in (1, 3) combobox toàn quyền set 1 ngược lại set 3
     var _treeDepartmentsDataSource = null;
     //var _treeDefault = null;
     scope.treeDepartmentsDataSource = null;

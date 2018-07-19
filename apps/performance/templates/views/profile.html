@@ -1,12 +1,149 @@
-﻿<div class="hcs-container">
-    <div class="row" style="margin:unset;">
-        <hcs-breadcumb data="mapName" selected-url="$partialpage" function="currentFunction"></hcs-breadcumb>
-        <div class="col-md-12" id="hcs-admin-system-container">
-            <hcs-left-menu data="mapName" avatar="false"></hcs-left-menu>
-            <div class="hcs-system-admin-content">
-                <div class="tab-content col-md-12" id="hcs-admin-system-panel-content">
-                   <div c-template url="${get_app_url('')}/pages/{{$partialpage}}" style="position: absolute; height: 100%; width: 100%;"></div>
+﻿<style>
+    .hcs-navigation-panel-button {
+        list-style-type:none;
+        display:inline-flex;
+    }
+
+    .hcs-navigation-panel-button li {
+        float:left;
+    }
+
+    .zb-content {
+        background-color:transparent !important;
+    }
+</style>
+<div class="hcs-container">
+    <div class="row hcs-profile-detail" style="margin:unset; height:100%;" ng-show="showDetail">
+            <page-sidebar on-add="onAdd" 
+                  on-edit="onEdit" 
+                  on-delete="onDelete" 
+                  on-save="onSave" 
+                  on-print="onPrint"
+                  on-attach="onAttach"
+                  on-import="onImport" 
+                  on-export="onExport" 
+                  on-refresh="onRefresh" 
+                  source="mapName" 
+                  key-field="function_id" 
+                  display-field="default_name" 
+                  icon-field="icon" 
+                  selected-key="selectedFunction"
+                  reload-on-change="true">
+                <extend-toolbar>
+                    <button class="zb-btn" ng-click="firstRow()">
+                            <i class="bowtie-icon bowtie-fast-backward"></i>
+                        </button>
+                    <button class="zb-btn" ng-click="previousRow()">
+                            <i class="bowtie-icon bowtie-previous-frame"></i>
+                        </button>
+                    <button class="zb-btn" ng-click="nextRow()">
+                            <i class="bowtie-icon bowtie-next-frame"></i>
+                        </button>
+                    <button class="zb-btn" ng-click="lastRow()">
+                            <i class="bowtie-icon bowtie-fast-forward"></i>
+                        </button>
+                </extend-toolbar>
+        <site-map>
+                <a href="#">Trang chủ</a>
+                <span><i class="bowtie-icon bowtie-chevron-right"></i></span>
+                <a ng-click="backPage()">Hồ sơ nhân viên</a>
+                <a ng-if="mode == 2"> > {{currentItem.full_name + ' | ' + currentItem.employee_code + ' | ' + currentItem.department_name + ' | ' + currentItem.job_w_code}}</a>
+        </site-map>
+        <!--<advanced-search>
+            <input type="text" placeholder="Name" />
+            <input type="text" placeholder="Age" />
+        </advanced-search>-->
+        <content>
+            <div c-template url="${get_app_url('')}/pages/{{$partialpage}}" 
+                 style="position: absolute; top: 0; bottom: 0; left: 0; right: 0;"></div>
+        </content>
+    </page-sidebar>
+    </div>
+    <div class="row hcs-profile-list">
+        <div class="hcs-left-side-department-content">
+            <div class="hcs-left-side-department-tree-tool-bar">
+                <div class="pull-left" style="padding-left:10px;">
+                    <input-text-icon ng-model="treeSearchText" style="width:255px;"></input-text-icon>
                 </div>
+                <div class="pull-left" style="padding-left:10px;">
+                    <button class="zb-btn" ng-click="$treeCollapseAll()">
+                        <i class="bowtie-icon bowtie-chevron-up-all"></i>
+                    </button>
+                </div>
+                <div class="pull-left" style="padding-left:5px;">
+                    <button class="zb-btn"  ng-click="$treeExpandAll()">
+                        <i class="bowtie-icon bowtie-chevron-down-all"></i>
+                    </button>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="hcs-left-side-department-tree">
+                <tree-data data-source="treeDepartmentsDataSource" 
+                           display-field="department_name"
+                           parent-field="parent_code" 
+                           key-field="department_code" 
+                           multi-select="treeMultiSelect" 
+                           select-mode="treeMode" 
+                           on-select="selectTreeNode"
+                           current-node="treeCurrentNode"
+                           selected-nodes="treeSelectedNodes"
+                           selected-root-nodes="treeSelectedRootNodes"
+                           search-text="treeSearchText"
+                           check-all="treeCheckAll"
+                           checked-field="is_selected"
+                           disabled="true"
+                           expand-all="$treeExpandAll"
+                           collapse-all="$treeCollapseAll"/>
+            </div>
+        </div>
+        <div class="hcs-right-side-department-content">
+            <div class="hcs-right-side-department-list-tool-bar">
+                <div class="zb-left-content pull-left" style="width:600px;">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <input-select data-list="cbbEmployeeActive" class="size-lg"
+                                          data-value="value" 
+                                          data-caption="caption"
+                                          value="3">
+                            </input-select>
+                        </div>
+                        <div class="col-md-6">
+                            <input-text-icon id="tableSearchText" on-click="objSearch.onSearch" ng-model="objSearch.$$$modelSearch"></input-text-icon>
+                        </div>
+                    </div>
+                </div>
+                <div class="zb-right-content pull-right">
+                    <button class="zb-btn zb-btn-o-green ng-scope" ng-click="addEmployee()">
+                        <i class="bowtie-icon bowtie-math-plus"></i>
+                    </button>
+                    <button class="zb-btn ng-scope">
+                        <i class="bowtie-icon bowtie-transfer-upload"></i>
+                    </button>
+                    <button class="zb-btn ng-scope">
+                        <i class="bowtie-icon bowtie-transfer-download"></i>
+                    </button>
+                    <button class="zb-btn ng-scope">
+                        <i class="bowtie-icon bowtie-print"></i>
+                    </button>
+                    <button class="zb-btn ng-scope" ng-click="refresh()">
+                        <i class="bowtie-icon bowtie-navigate-refresh"></i>
+                    </button>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="hcs-right-side-department-list" style="height:93%;">
+                <table-data data-source="tableSource" 
+                            fields="tableFields" 
+                            type="MultiSelect" 
+                            paging="true" 
+                            page-length="100" 
+                            server-side="true" 
+                            press-enter="onSelectTableRow" 
+                            selected-items="selectedItems" 
+                            current-item="currentItem" 
+                            search-text="tableSearchText"
+                            refresh-row="refreshDataRow">
+                </table-data>
             </div>
         </div>
     </div>

@@ -18,9 +18,6 @@
             scope: {
                 listCode: "@",
                 listValue: "=",
-                apiUrl: "@",
-                multiSelect: "=",
-                selectedItems: "=",
                 currentItem: "="
             },
             templateUrl: templateService.getTemplatePath('combobox')
@@ -32,22 +29,21 @@
                 $(element).wrap("<span zb-required></span>")
             }
             var btn = element.find('button');
+            scope.api_url = templateService.getApiCombobox();
             scope.combobox_info = null;
-            scope.removeChoice = removeChoice;
             scope.removeItem = removeItem;
-            scope.items = [];//Multi select
             scope.item = null;//Single select
 
             getData(function () { assignDataInit(); });
 
             btn.click(function () {
-                getData(function () {
+                //getData(function () {
                     openDialog(scope.combobox_info.display_name, "directives/combobox/template", function () {
                         setTimeout(function () {
                             $(window).trigger('resize');
                         }, 200)
                     }, "myComboboxDialog");
-                });
+                //});
             });
 
             /**
@@ -92,16 +88,19 @@
                  *  "filter_field" : [], //Cột được where khi search
                  *  "error": "" //Lỗi trả về
                 }*/
-                services.api(scope.apiUrl)
+                services.api(scope.api_url)
                     .data({
                         //parameter at here
                         "key": scope.listCode,
-                        "value": scope.listValue
+                        "value": scope.listValue,
+                        "code": scope.currentItem
                     })
                     .done()
                     .then(function (res) {
                         scope.combobox_info = res;
                         scope.combobox_info.data;
+                        if(scope.currentItem)
+                            assignDataInit();
                         scope.$applyAsync();
 
                         if (!scope.combobox_info.error)
@@ -123,41 +122,11 @@
                 }
             }
 
-            function getCaptionFromValue(value) {
-                var caption = "";
-                _.each(scope.selectedItems, function (val) {
-                    if (val[scope.combobox_info["value_field"]] == val)
-                        caption = val[scope.combobox_info["caption_field"]];
-                })
-                return caption;
-            }
-
-            function removeChoice(value) {
-                scope.items = _.without(scope.items, _.findWhere(scope.items, {
-                    "value":value
-                }));
-                scope.selectedItems = removeValue(scope.selectedItems, value);
-            }
-
-            function removeValue (array, id) {
-                return _.reject(array, function (item) {
-                    return item === id; // or some complex logic
-                });
-            };
-
             function removeItem() {
                 scope.currentItem = null;
                 scope.item = null;
                 scope.$applyAsync();
             }
-
-            scope.$watch('items', function (val) {
-                scope.selectedItems = [];
-                _.each(val, function (ele) {
-                    scope.selectedItems.push(ele['value']);
-                })
-                scope.$applyAsync();
-            });
 
             scope.$watch('item', function (val) {
                 if (val) {
@@ -165,6 +134,12 @@
                     scope.$applyAsync();
                 }
             });
+
+            scope.$watch('currentItem', function (newVal, oldVal) {
+                if (newVal != oldVal) {
+                    assignDataInit();
+                }
+            })
 
         }
 

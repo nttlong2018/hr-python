@@ -83,14 +83,20 @@
                     <span><i class="bowtie-icon bowtie-locale-language"></i></span>
                 </button>
                 <ul class="dropdown-menu hcs-home-button-language-menu">
-                    <li class="text-center">
+                    <li>
+                        <span class="language-title">Ngôn ngữ</span>
+                    </li>
+                    <li>
                         <a class="active">
-                            Tiếng Việt
+                            <img class="language-icon" src="${get_static('css/images/login/ic_vn.jpg')}" />
+                            <span>Tiếng Việt</span>
                         </a>
                     </li>
-                    <li class="text-center">
+                    <li class="divider"></li>
+                    <li>
                         <a href="javascript:void(0)">
-                            English
+                            <img class="language-icon" src="${get_static('css/images/login/ic_en.jpg')}" />
+                            <span>English</span>
                         </a>
                     </li>
                 </ul>
@@ -103,13 +109,27 @@
                     <!--<span class="glyphicon glyphicon-user"></span>-->
                     <span class="img-user"><i class="bowtie-icon bowtie-user"></i></span>
                     <span class="hcs-header-username">Bùi Hữu Tiến</span>
-                    <span><i class="bowtie-icon bowtie-chevron-down"></i></span>
+                    <span class="hcs-header-chevron"><i class="bowtie-icon bowtie-chevron-down"></i></span>
                 </button>
                 <ul class="dropdown-menu hcs-home-button-user-menu">
+                    <li>
+                        <div class="lv-button-logout" ng-click="" role="button" tabindex="0">
+                            <i class="bowtie-icon bowtie-user"></i>
+                            <span>Hồ sơ</span>
+                        </div>
+                    </li>
+                    <li class="divider"></li>
+                    <li>
+                        <div class="lv-button-logout" ng-click="" role="button" tabindex="0">
+                            <i class="bowtie-icon bowtie-status-info-outline"></i>
+                            <span>Trợ giúp</span>
+                        </div>
+                    </li>
                     <li class="divider"></li>
                     <li>
                         <div class="lv-button-logout" ng-click="$root.doLogout()" role="button" tabindex="0">
-                            <i class="ace-icon fa fa-power-off"></i> Logout
+                            <i class="bowtie-icon bowtie-status-failure-outline"></i>
+                            <span>Thoát</span>
                         </div>
                     </li>
                 </ul>

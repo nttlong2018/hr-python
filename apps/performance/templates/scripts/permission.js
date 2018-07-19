@@ -48,8 +48,6 @@
         scope.handleData = new handleData();
         scope.mapName = scope.handleData.mapName;
         scope.currentFunction = scope.mapName[0];
-
-        scope.selectedFunction = (scope.mapName.length > 0) ? scope.mapName[0].function_id : null;
     }
 
     /*                                                                                          */
@@ -58,25 +56,23 @@
 
     
     scope.$watch("selectedFunction", function (function_id) {
-        console.log(function_id);
-        var $his = scope.$root.$history.data();
-        window.location.href = "#page=" + $his.page + "&f=" + function_id;
+        if (function_id) {
+            console.log(function_id);
+            var $his = scope.$root.$history.data();
+            window.location.href = "#page=" + $his.page + "&f=" + function_id;
+        }
     });
 
     scope.$root.$history.onChange(scope, function (data) {
         if (scope.mapName.length > 0) {
             if (data.f) {
-                //scope.$partialpage = data.f;
-                scope.$partialpage = _.filter(scope.$root.$functions, function (f) {
-                    return f.function_id = data.f
-                })[0].url;
-
                 var func = _.filter(scope.mapName, function (f) {
                     return f["function_id"] == data.f;
                 });
                 if (func.length > 0) {
                     scope.$partialpage = func[0].url;
                     scope.currentFunction = func[0];
+                    scope.selectedFunction = func[0].function_id;
                 } else {
                     window.location.href = "#";
                 }

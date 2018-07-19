@@ -63,3 +63,35 @@
     font-size:10px;
     color:#27519D;
 }
+.hcs-profile-list {
+    margin: unset;
+    height: 100%;
+
+    .hcs-left-side-department-content {
+        width: 350px;
+        height: 100%;
+        float: left;
+        border: 1px solid #d9d9d9;
+
+        .hcs-left-side-department-tree-tool-bar {
+            padding: 4px 0px;
+        }
+
+        .hcs-left-side-department-tree {
+            width: 350px;
+            height: 600px;
+            overflow: auto;
+        }
+    }
+
+    .hcs-right-side-department-content {
+        width: calc(~'100% - 350px');
+        height: 100%;
+        float: left;
+        border: 1px solid #d9d9d9;
+
+        .hcs-right-side-department-list-tool-bar {
+            padding: 4px 5px;
+        }
+    }
+}

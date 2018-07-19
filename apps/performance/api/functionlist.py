@@ -18,7 +18,7 @@ def get_list(args):
         icon                 = 1,
         app                  = 1,
         level_code           = 1
-        ).match("app == {0}", "PERF")
+        ).match("app == {0}", "PERF").sort({"sorting":1})
     
     return items.get_list()
 

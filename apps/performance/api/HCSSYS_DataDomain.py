@@ -35,7 +35,9 @@ def get_list_with_searchtext(args):
     #        )
 
     if(searchText != None):
-        ret.match("contains(dd_name, @name)",name=searchText)
+        ret.match("contains(dd_code, @name) or contains(dd_name, @name)" + \
+        "or contains(display_access_mode, @name) or contains(description, @name) " + \
+        "or contains(created_on, @name)",name=searchText)
 
     if(sort != None):
         ret.sort(sort)

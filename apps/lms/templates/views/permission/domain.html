@@ -1,0 +1,21 @@
+﻿<hcs-tool-bar on-edit="onEdit()"
+              on-add="onAdd()"
+              on-delete="onDelete()"
+              on-copy="onCopy()"
+              on-export="onExport()"
+              on-import="onImport()"
+              search-common="SearchText"
+              on-search="onSearch()"></hcs-tool-bar>
+<!--$parent.mapName[0].function_id: function_id chức năng của tab hiện tại index tăng dần theo thứ tự các tab-->
+<div id="" class="tab-pane fade in active" style="padding-right:unset; height: 100%; ">
+    <table-data data-source="tableSource" fields="tableFields" type="MultiSelect" 
+                paging="true" page-length="100" server-side="true" 
+                press-enter="onSelectTableRow" selected-items="selectedItems" 
+                current-item="currentItem" search-text="tableSearchText"
+                refresh-row="refreshDataRow">
+    </table-data>
+    <div class="clearfix"></div>
+</div>
+<script>
+    <%include file="scripts/domain.js"/>
+</script>

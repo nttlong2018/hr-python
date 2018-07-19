@@ -1,0 +1,16 @@
+﻿<%inherit file="base.html"/>
+<%include file="header.html"/>
+<main class="app-content" style="margin-left:0 !important;overflow-y:auto;margin-top:48px;">
+    <div c-template url="${get_app_url('')}/pages/{{$root.page}}" ng-if="$root.page">
+
+    </div>
+     <div c-template url="${get_app_url('')}/pages/home" ng-if="!$root.page">
+
+    </div>
+    <!--<div  ng-if="!$root.page" style="margin: 60px 60px;">
+        <%include file="views/home.html"/>
+     </div>-->
+</main>
+<script>
+    <%include file="/scripts/app.js"/>
+</script>

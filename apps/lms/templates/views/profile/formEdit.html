@@ -1,0 +1,284 @@
+﻿<div class="row">
+    <div class="col-md-8">
+        <div class="row">
+            <p class="hcs-group-collapse-heading">
+                <button class="zb-icon-button hcs-profile-group-title" onclick="$('#collapseCurriculumVitae').slideToggle();">
+                    <span>
+                        <i class="la la-angle-down"></i>
+                    </span> Lý lịch cá nhân
+                </button>
+            </p>
+        </div>
+        <div class="row" id="collapseCurriculumVitae">
+            <div class="col-md-6">
+                <div class="form-group row hcs-group-form-group">
+                    <!--Mã nhân viên-->
+                    <label for="inputEmployeeId" class="col-sm-4 zb-form-label">Mã nhân viên<span style="color:red">*</span></label>
+                    <div class="col-sm-8">
+                        <input-text id="inputEmployeeId" required="Mã nhân viên" ng-model="data.curriculum_vitae.code">
+                    </div>
+                </div>
+                <div class="form-group row hcs-group-form-group">
+                    <!--Họ-->
+                    <label for="inputLastName" class="col-sm-4 zb-form-label">Họ<span style="color:red">*</span></label>
+                    <div class="col-sm-8">
+                        <input-text id="inputLastName" ng-model="data.curriculum_vitae.last_name">
+                    </div>
+                </div>
+                <div class="form-group row hcs-group-form-group">
+                    <!--Tên-->
+                    <label for="inputFirstName" class="col-sm-4 zb-form-label">Tên<span style="color:red">*</span></label>
+                    <div class="col-sm-8">
+                        <input-text id="inputFirstName" ng-model="data.curriculum_vitae.first_name">
+                    </div>
+                </div>
+                <div class="form-group row hcs-group-form-group">
+                    <!--Giới tính-->
+                    <label for="inputGender" class="col-sm-4 zb-form-label">Giới tính</label>
+                    <div class="col-sm-8">
+                        <input-select data-list="dataSourceCombobox.gender" ng-model="data.curriculum_vitae.gender" data-value="value" data-caption="caption" />
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group row hcs-group-form-group">
+                    <!--Quốc gia-->
+                    <label for="inputNational" class="col-sm-4 zb-form-label">Quốc gia</label>
+                    <div class="col-sm-8">
+                        <input-select data-list="dataSourceCombobox.nation" ng-model="data.curriculum_vitae.nation" data-value="value" data-caption="caption" />
+                    </div>
+                </div>
+                <div class="form-group row hcs-group-form-group">
+                    <!--Dân tộc-->
+                    <label for="inputNational" class="col-sm-4 zb-form-label">Dân tộc</label>
+                    <div class="col-sm-8">
+                        <input-select data-list="dataSourceCombobox.folk" ng-model="data.curriculum_vitae.folk" data-value="value" data-caption="caption" />
+                    </div>
+                </div>
+                <div class="form-group row hcs-group-form-group">
+                    <!--Tôn giáo-->
+                    <label for="inputNational" class="col-sm-4 zb-form-label">Tôn giáo</label>
+                    <div class="col-sm-8">
+                        <input-select data-list="dataSourceCombobox.religion" ng-model="data.curriculum_vitae.religion" data-value="value" data-caption="caption" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="row">
+            <p class="hcs-group-collapse-heading">
+                <a class="hcs-profile-group-title" onclick="$('#collapseOther').slideToggle();" href="javascript:void(0)">
+                                            <span>
+                                                <i class="la la-angle-down"></i>
+                                            </span>
+                                            Khác
+                                        </a>
+            </p>
+        </div>
+        <div id="collapseOther">
+            <form>
+                <!--Trình độ học vấn-->
+                <div class="form-group row hcs-group-form-group">
+                    <label for="inputCulture" class="col-sm-4 zb-form-label">Trình độ học vấn</label>
+                    <div class="col-sm-8">
+                        <input-select data-list="dataSourceCombobox.culture" ng-model="data.other.culture" data-value="value" data-caption="caption" />
+                    </div>
+                </div>
+                <!--Hình thức đào tạo-->
+                <div class="form-group row hcs-group-form-group">
+                    <label for="inputExercitatione" class="col-sm-4 zb-form-label">Hình thức đào tạo</label>
+                    <div class="col-sm-8">
+                        <input-select data-list="dataSourceCombobox.exercitatione" ng-model="data.other.exercitatione" data-value="value" data-caption="caption" />
+                    </div>
+                </div>
+                <!--Trình độ văn hóa-->
+                <div class="form-group row hcs-group-form-group">
+                    <label for="inputEducationem" class="col-sm-4 zb-form-label">Trình độ văn hóa</label>
+                    <div class="col-sm-8">
+                        <input-select data-list="dataSourceCombobox.educationem" ng-model="data.other.educationem" data-value="value" data-caption="caption" />
+                    </div>
+                </div>
+                <!--Tình trạng hôn nhân-->
+                <div class="form-group row hcs-group-form-group">
+                    <label for="inputMarried" class="col-sm-4 zb-form-label">Tình trạng hôn nhân</label>
+                    <div class="col-sm-8">
+                        <input-select data-list="dataSourceCombobox.married" ng-model="data.other.married" data-value="value" data-caption="caption" />
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="row" style="padding-top:30px;">
+    <div class="col-md-4">
+        <div class="row">
+            <p class="hcs-group-collapse-heading">
+                <a class="hcs-profile-group-title" onclick="$('#collapseIdentity').slideToggle();" href="javascript:void(0)">
+                                            <span>
+                                                <i class="la la-angle-down"></i>
+                                            </span>
+                                            Chứng minh nhân dân
+                                        </a>
+            </p>
+        </div>
+        <div id="collapseIdentity">
+            <form>
+                <!--Số CMND-->
+                <div class="form-group row hcs-group-form-group">
+                    <label for="inputIdentityNumber" class="col-sm-4 zb-form-label">Số</label>
+                    <div class="col-sm-8">
+                        <input-text id="inputIdentityNumber" ng-model="data.identity.identity_number">
+                    </div>
+                </div>
+                <!--Ngày cấp-->
+                <div class="form-group row hcs-group-form-group">
+                    <label for="inputBeginningDate" class="col-sm-4 zb-form-label">Ngày cấp</label>
+                    <div class="col-sm-8">
+                        <!--<input type="date" class="form-control hcs-input-textbox" id="inputBeginningDate"/>-->
+                        <date-picker ng-model="data.identity.beginning_date" data-format="yyyy-MM-dd" />
+                    </div>
+                </div>
+                <!--Nơi cấp-->
+                <div class="form-group row hcs-group-form-group">
+                    <label for="inputRegion" class="col-sm-4 zb-form-label">Nơi cấp</label>
+                    <div class="col-sm-8">
+                        <input-select data-list="dataSourceCombobox.city" ng-model="data.identity.city" data-value="value" data-caption="caption" />
+                    </div>
+                </div>
+                <!--Dấu vết đặc biệt-->
+                <div class="form-group row hcs-group-form-group">
+                    <label for="inputVestigeSpecial" class="col-sm-4 zb-form-label">Dấu vết đặc biệt</label>
+                    <div class="col-sm-8">
+                        <input-text id="inputVestigeSpecial" ng-model="data.identity.vestige_special" />
+                    </div>
+                </div>
+                <!--Mã số thuế-->
+                <div class="form-group row hcs-group-form-group">
+                    <label for="inputTaxNumber" class="col-sm-4 zb-form-label">Mã số thuế</label>
+                    <div class="col-sm-8">
+                        <input-text id="inputTaxNumber" ng-model="data.identity.tax_number" />
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="row">
+            <p class="hcs-group-collapse-heading">
+                <a class="hcs-profile-group-title" onclick="$('#collapsePaperBirth').slideToggle();" href="javascript:void(0)">
+                                            <span>
+                                                <i class="la la-angle-down"></i>
+                                            </span>
+                                            Giấy khai sinh
+                                        </a>
+            </p>
+        </div>
+        <div id="collapsePaperBirth">
+            <form>
+                <!--Ngày sinh-->
+                <div class="form-group row hcs-group-form-group">
+                    <label for="inputIdentityNumber" class="col-sm-4 zb-form-label">Ngày sinh</label>
+                    <div class="col-sm-8">
+                        <date-picker ng-model="data.birth_page.birth_date" data-format="yyyy-MM-dd" />
+                        <!--<input type="date" class="form-control hcs-input-textbox" id="inputBirthday">-->
+                    </div>
+                </div>
+                <!--Ngày đăng ký-->
+                <div class="form-group row hcs-group-form-group">
+                    <label for="inputRegisteredDate" class="col-sm-4 zb-form-label">Ngày cấp</label>
+                    <div class="col-sm-8">
+                        <date-picker ng-model="data.birth_page.birth_date1" data-format="yyyy-MM-dd" />
+                        <!--<input type="date" class="form-control hcs-input-textbox" id="inputRegisteredDate"/>-->
+                    </div>
+                </div>
+                <!--Nơi đăng ký-->
+                <div class="form-group row hcs-group-form-group">
+                    <label for="inputRegisteredPlace" class="col-sm-4 zb-form-label">Nơi đăng ký</label>
+                    <div class="col-sm-8">
+                        <input-select data-list="dataSourceCombobox.city" ng-model="data.birth_page.city" data-value="value" data-caption="caption" />
+                    </div>
+                </div>
+                <!--Quận huyện-->
+                <div class="form-group row hcs-group-form-group">
+                    <label for="inputCounty" class="col-sm-4 zb-form-label">Quận/huyện</label>
+                    <div class="col-sm-8">
+                        <input-select data-list="dataSourceCombobox.district" ng-model="data.birth_page.district" data-value="value" data-caption="caption" />
+                    </div>
+                </div>
+                <!--Xã phường-->
+                <div class="form-group row hcs-group-form-group">
+                    <label for="inputDistrict" class="col-sm-4 zb-form-label">Xã/phường</label>
+                    <div class="col-sm-8">
+                        <input-select data-list="dataSourceCombobox.ward" ng-model="data.birth_page.ward" data-value="value" data-caption="caption" />
+                    </div>
+                </div>
+                <!--Thôn xóm-->
+                <div class="form-group row hcs-group-form-group">
+                    <label for="inputVillage" class="col-sm-4 zb-form-label">Thôn/xóm</label>
+                    <div class="col-sm-8">
+                        <input-select data-list="dataSourceCombobox.area" ng-model="data.birth_page.area" data-value="value" data-caption="caption" />
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="row">
+            <p class="hcs-group-collapse-heading">
+                <a class="hcs-profile-group-title" onclick="$('#collapseContactInfo').slideToggle();" href="javascript:void(0)">
+                                            <span>
+                                                <i class="la la-angle-down"></i>
+                                            </span>
+                                            Thông tin liên hệ
+                                        </a>
+            </p>
+        </div>
+        <div id="collapseContactInfo">
+            <form>
+                <!--Địa chỉ tạm chú-->
+                <div class="form-group row hcs-group-form-group">
+                    <label for="inputIdentityNumber" class="col-sm-4 zb-form-label">Địa chỉ tạm trú</label>
+                    <div class="col-sm-8">
+                        <input-text id="inputIdentityNumber" ng-model="data.contract.temp_address">
+                    </div>
+                </div>
+                <!--Địa chỉ thường chú-->
+                <div class="form-group row hcs-group-form-group">
+                    <label for="inputRegion" class="col-sm-4 zb-form-label">Địa chỉ thường trú</label>
+                    <div class="col-sm-8">
+                        <input-text id="inputIdentityNumber" ng-model="data.contract.address">
+                    </div>
+                </div>
+                <!--Tỉnh thành-->
+                <div class="form-group row hcs-group-form-group">
+                    <label for="inputBeginningDate" class="col-sm-4 zb-form-label">Tỉnh/thành</label>
+                    <div class="col-sm-8">
+                        <input-select data-list="dataSourceCombobox.city" ng-model="data.contract.city" data-value="value" data-caption="caption" />
+                    </div>
+                </div>
+                <!--Quận huyện-->
+                <div class="form-group row hcs-group-form-group">
+                    <label for="inputBeginningDate" class="col-sm-4 zb-form-label">Quận/huyện</label>
+                    <div class="col-sm-8">
+                        <input-select data-list="dataSourceCombobox.district" ng-model="data.contract.district" data-value="value" data-caption="caption" />
+                    </div>
+                </div>
+                <!--Xã phường-->
+                <div class="form-group row hcs-group-form-group">
+                    <label for="inputTaxNumber" class="col-sm-4 zb-form-label">Xã/phường</label>
+                    <div class="col-sm-8">
+                        <input-select data-list="dataSourceCombobox.ward" ng-model="data.contract.ward" data-value="value" data-caption="caption" />
+                    </div>
+                </div>
+                <!--Thôn xóm-->
+                <div class="form-group row hcs-group-form-group">
+                    <label for="inputTaxNumber" class="col-sm-4 zb-form-label">Thôn/xóm</label>
+                    <div class="col-sm-8">
+                        <input-select data-list="dataSourceCombobox.area" ng-model="data.contract.area" data-value="value" data-caption="caption" />
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,66 +1,52 @@
 ﻿
-    <div class="row">
-        <div class="hcs-profile-background-group-table" style="margin-right:15px;">
-            <div class="pull-left hcs-profile-icon-heading-on-table" style="height: 100%;padding-right: 3px;background: white;margin-left: unset;">
-                <button class="zb-icon-button hcs-profile-group-title" onclick="$('#collapseTableHamlet').slideToggle();">
-                    <span>
-                        <i class="la la-angle-down" style="font-size:0.7rem;"></i>
-                    </span>
-                </button>
-            </div>
-            <div class="pull-left hcs-profile-icon-heading-on-table" style="margin-left: unset;">
-                <button class="zb-icon-button hcs-profile-group-title" onclick="$('#collapseTableHamlet').slideToggle();">
-                ${get_res('hamlet_caption_toolbar','4. Thôn/Xóm')}
-                </button>
-            </div>
-            <div class="pull-right hcs-profile-icon-heading-on-table">
-                <button class="zb-icon-button hcs-profile-group-title" ng-click="onReloadWard()">
-                    <span>
-                        <i class="la la-refresh"></i>
-                    </span>
-                </button>
-            </div>
-            <div class="pull-right hcs-profile-icon-heading-on-table">
-                <button class="zb-icon-button hcs-profile-group-title" ng-click="onDeleteHamlet()">
-                    <span>
-                        <i class="la la-trash"></i>
-                    </span>
-                </button>
-            </div>
-            <div class="pull-right hcs-profile-icon-heading-on-table">
-                <button class="zb-icon-button hcs-profile-group-title" ng-click="onEditHamlet()">
-                    <span>
-                        <i class="la la-pencil"></i>
-                    </span>
-                </button>
-            </div>
-            <div class="pull-right hcs-profile-icon-heading-on-table">
-                <button class="zb-icon-button hcs-profile-group-title" ng-click="onAddHamlet()">
-                    <span>
-                        <i class="la la-plus"></i>
-                    </span>
-                </button>
-            </div>
-            <div class="pull-right hcs-profile-icon-heading-on-table" style="width:25px;margin-left:10px;">
-                <button class="zb-icon-button hcs-profile-group-title">
-                    <span>
-                        <i class="la la-search"></i>
-                    </span>
-                </button>
-            </div>
-            <div class="pull-right">
-                <input-text id="tableHamletSearchText">
-            </div>
-        </div>
-    </div>
     <div id="collapseTableHamlet" class="row">
-        <div class="col-md-12" style="height: 37vh;">
-            <table-data data-source="tableHamletSource" fields="tableHamletFields" type="MultiSelect" 
-            server-side="true" page-length="100" paging="true" 
-            selected-items="selectedHamlets"
-            current-item="currentHamlet" search-text="tableHamletSearchText"
-            refresh-row="refreshDataHamletRow">
-            </table-data>
+        <div class="col-md-12" style="height: 37vh; padding-left: 0;">
+            <collapse-box class="zb-datatable" title="${get_res('hamlet_caption_toolbar','4. Thôn/Xóm')}">
+                <div class="pull-right hcs-profile-icon-heading-on-table">
+                    <button class="zb-icon-button hcs-profile-group-title" ng-click="onReloadWard()">
+                        <span>
+                            <i class="la la-refresh"></i>
+                        </span>
+                    </button>
+                </div>
+                <div class="pull-right hcs-profile-icon-heading-on-table">
+                    <button class="zb-icon-button hcs-profile-group-title" ng-click="onDeleteHamlet()">
+                        <span>
+                            <i class="la la-trash"></i>
+                        </span>
+                    </button>
+                </div>
+                <div class="pull-right hcs-profile-icon-heading-on-table">
+                    <button class="zb-icon-button hcs-profile-group-title" ng-click="onEditHamlet()">
+                        <span>
+                            <i class="la la-pencil"></i>
+                        </span>
+                    </button>
+                </div>
+                <div class="pull-right hcs-profile-icon-heading-on-table">
+                    <button class="zb-icon-button hcs-profile-group-title" ng-click="onAddHamlet()">
+                        <span>
+                            <i class="la la-plus"></i>
+                        </span>
+                    </button>
+                </div>
+                <div class="pull-right hcs-profile-icon-heading-on-table" style="width:25px;margin-left:10px;">
+                    <button class="zb-icon-button hcs-profile-group-title">
+                        <span>
+                            <i class="la la-search"></i>
+                        </span>
+                    </button>
+                </div>
+                <div class="pull-right">
+                    <input-text id="tableHamletSearchText">
+                </div>
+                <table-data data-source="tableHamletSource" fields="tableHamletFields" type="MultiSelect" 
+                server-side="true" page-length="100" paging="true" 
+                selected-items="selectedHamlets"
+                current-item="currentHamlet" search-text="tableHamletSearchText"
+                refresh-row="refreshDataHamletRow">
+                </table-data>
+            </collapse-box>
         </div>
     </div>
 
@@ -143,7 +129,7 @@
                     .then(function (res) {
                         if (res.deleted > 0) {
                             _tableHamletData(scope.$$tableHamletConfig.iPage, scope.$$tableHamletConfig.iPageLength, scope.$$tableHamletConfig.orderBy, scope.$$tableHamletConfig.SearchText, scope.$$tableHamletConfig.fnReloadData);
-                            $msg.alert("${get_global_res('Handle_Success','Thao tác thành công')}", $type_alert.SUCCESS);
+                            $msg.alert("${get_global_res('Handle_Success','Thao tác thành công')}", $type_alert.INFO);
                             scope.currentHamlet = null;
                             scope.selectedHamlets = [];
                         }

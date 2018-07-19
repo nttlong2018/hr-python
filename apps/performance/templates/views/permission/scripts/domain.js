@@ -57,7 +57,6 @@
     scope.mapAccess_mode = [];
     scope.getDisplayNameAccessMode = getDisplayNameAccessMode;
 
-
     scope.$parent.$parent.$parent.onEdit = onEdit;
     scope.$parent.$parent.$parent.onAdd = onAdd;
     scope.$parent.$parent.$parent.onDelete = onDelete;
@@ -65,7 +64,6 @@
     scope.$parent.$parent.$parent.onSearch = onSearch;
     scope.$parent.$parent.$parent.onExport = onExport;
     scope.$parent.$parent.$parent.onImport = onImport;
-
     /**
      * Hàm mở form chỉnh sửa
      */
@@ -96,7 +94,7 @@
                     .then(function (res) {
                         if (res.deleted > 0) {
                             _tableData(scope.$$tableConfig.iPage, scope.$$tableConfig.iPageLength, scope.$$tableConfig.orderBy, scope.$$tableConfig.SearchText, scope.$$tableConfig.fnReloadData);
-                            $msg.alert("${get_global_res('Handle_Success','Thao tác thành công')}", $type_alert.SUCCESS);
+                            $msg.alert("${get_global_res('Handle_Success','Thao tác thành công')}", $type_alert.INFO);
                             scope.currentItem = null;
                             scope.selectedItems = [];
                         }
@@ -113,7 +111,7 @@
         }
     }
     function onSearch(val) {
-        scope.tableSearchText = scope.SearchText;
+        scope.tableSearchText = val;//scope.SearchText;
         scope.$apply();
     }
     function onExport() {
@@ -203,7 +201,6 @@
                 delete res.language;
                 delete res.list_name;
                 scope.mapAccess_mode = res.values;
-                console.log(res);
                 scope.$applyAsync();
             })
     }

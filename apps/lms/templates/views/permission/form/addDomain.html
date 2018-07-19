@@ -1,0 +1,364 @@
+﻿<div class="row">
+    <div class="col-md-{{col_group}} col-sm-{{col_group}}" style="padding-bottom:20px;">
+        <div class="row">
+            <p class="hcs-group-collapse-heading">
+                <button class="zb-icon-button hcs-profile-group-title" onclick="$('#collapseDialogCommonInfoGroup').slideToggle();">
+                    <span>
+                        <i class="la la-angle-down"></i>
+                    </span>Thông tin chung
+                </button>
+            </p>
+        </div>
+        <div class="row" id="collapseDialogCommonInfoGroup">
+            <div class="col-md-{{col}}">
+                <div class="form-group row hcs-group-form-group">
+                    <!--Mã vùng dữ liệu-->
+                    <label for="inputCodeDomain" class="col-sm-5 zb-form-label">Mã vùng dữ liệu truy cập</label>
+                    <div class="col-sm-7">
+                        <input-text id="inputCodeDomain" ng-model="Item.dd_code" ng-disabled="{{ __mode === 2 ? 'true' : 'false' }}" required>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-{{col}}">
+                <div class="form-group row hcs-group-form-group">
+                    <!--Tên vùng dữ liệu-->
+                    <label for="inputDomainName" class="col-sm-5 zb-form-label">Tên vùng dữ liệu truy cập</label>
+                    <div class="col-sm-7">
+                        <input-text id="inputDomainName" ng-model="Item.dd_name" required>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-{{col}}">
+                <div class="form-group row hcs-group-form-group">
+                    <!--Phạm vi truy cập-->
+                    <label for="inputAccessLimit" class="col-sm-5 zb-form-label">Chế độ truy cập dữ liệu</label>
+                    <div class="col-sm-7" ng-disabled="true">
+                        <input-select data-list="cbbAccessMode" ng-model="Item.access_mode"
+                                      placeholder="Tìm kiếm" 
+                                      data-value="value" 
+                                      data-caption="caption"
+                                      required/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-{{ 12 - col_group}} col-sm-{{ 12 - col_group}}" style="padding-bottom:20px;">
+        <div class="row">
+            <p class="hcs-group-collapse-heading">
+                <button class="zb-icon-button hcs-profile-group-title" onclick="$('#collapseDialogNoteGroup').slideToggle();">
+                    <span>
+                        <i class="la la-angle-down"></i>
+                    </span>Ghi chú
+                </button>
+            </p>
+        </div>
+        <div class="row" id="collapseDialogNoteGroup">
+            <div class="col-md-12">
+                <div class="form-group row hcs-group-form-group">
+                    <!--Mô tả chi tiết-->
+                    <div class="col-sm-12">
+                         <div data-c-html-box 
+                              ng-model="Item.description"
+                              style="height:49px"
+                              id="inputDescription">
+                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-12 col-sm-12">
+        <div class="row">
+            <p class="hcs-group-collapse-heading">
+                <button class="zb-icon-button hcs-profile-group-title" onclick="$('#collapseDialogTreeDoamain').slideToggle();">
+                    <span>
+                        <i class="la la-angle-down"></i>
+                    </span>Chọn vùng dữ liệu
+                </button>
+            </p>
+        </div>
+        <div class="row" id="collapseDialogTreeDoamain">
+            <div class="col-md-12">
+                <div class="hcs-profile-background-group-table">
+                    <div class="pull-left hcs-profile-icon-heading-on-table" style="width:3%;margin-left:16px;">
+                        <button class="zb-icon-button hcs-profile-group-title" onclick="$('#collapseTableInfo').slideToggle();">
+                            <span>
+                                <i class="la la-search"></i>
+                            </span>
+                        </button>
+                    </div>
+                    <div class="pull-left" style="width:88%;">
+                        <input-text id="inputSearchTree" ng-model="treeSearchText">
+                    </div>
+                    <div class="pull-left hcs-profile-icon-heading-on-table" style="width:3%;margin-left:1%;">
+                        <button class="zb-icon-button hcs-profile-group-title"
+                                onclick="$('#tree ul li .fancytree-lastsib:first .fancytree-expander').click();">
+                            <span>
+                                <i class="la la-angle-double-down"></i>
+                            </span>
+                        </button>
+                    </div>
+                    <div class="pull-left hcs-profile-icon-heading-on-table" style="width:3%;margin-left:unset;">
+                        <button class="zb-icon-button hcs-profile-group-title"
+                                onclick="$('#tree ul li .fancytree-lastsib:first .fancytree-expander').click();">
+                            <span>
+                                <i class="la la-angle-double-up"></i>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+                <!--Chọn vùng dữ liệu-->
+                <div class="col-md-12" style="padding-right:unset;">
+                    <tree-data data-source="treeDepartmentsDataSource" display-field="department_name"
+	                            parent-field="parent_code" key-field="department_code" 
+	                            multi-select="true" select-mode="3" 
+                             on-select="selectTreeNode"
+	                            current-node="treeCurrentNode"
+	                            selected-nodes="Item.detail"
+	                            selected-root-nodes="treeSelectedRootNodes"
+	                            search-text="treeSearchText"
+	                            check-all="treeCheckAll"
+                             checked-field="is_selected"
+                             style="height:335px; overflow:auto;"
+                             ng-disabled="{{ Item.access_mode === 1 ? 'true' : 'false' }}"/>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    (function (scope) {
+        var __object = {
+            "_id": null,
+            "dd_code": "",
+            "dd_name": "",
+            "access_mode": 2, //Default value
+            "description": "",
+            "created_on": new Date(),
+            "created_by": "",
+            "modified_on": null,
+            "modified_by": null,
+            "detail": []
+        };
+        scope.__mode = scope.$parent.mode;
+        scope.result = false;
+        scope.onResizeDialog = onResizeDialog;
+        scope.col = 12;
+        scope.col_group = 6;
+        scope.title = scope.$parent.headerTitle;
+        //Mode 1: tạo mới, Mode 2: chỉnh sửa, Mode 3: sao chép
+        __object = scope.__mode == 2 || scope.__mode == 3 ? scope.$parent.currentItem : __object;
+        scope.Item = JSON.parse(JSON.stringify(__object));
+
+        //Combobox Datasource
+        scope.cbbAccessMode = scope.$parent.mapAccess_mode;
+
+        scope.saveNClose = saveNClose;
+        scope.saveNNext = saveNNext;
+
+        //Tree
+        scope.treeCurrentNode = {};
+        scope.treeSelectedRootNodes = [];
+        scope.treeCheckAll = false;
+        scope.treeSearchText = '';
+        var _treeDepartmentsDataSource = null;
+        var _treeDefault = null;
+
+
+        /**
+         * Thay đỗi kích thước form Dialog và các control trên form dialog
+         */
+        function onResizeDialog() {
+            var ele = $('#myModal .modal-dialog');
+            ele.toggleClass('resize-width');
+            ele.removeAttr("style");
+            scope.col = scope.col == 12 ? 6 : 12;
+            scope.col_group = scope.col_group == 6 ? 8 : 6;
+        }
+
+        function saveNClose() {
+            if (scope.Item != null) {
+                var rsCheck = checkError();//Kết quả check input
+                if (!rsCheck.result) {
+                    $msg.message('Nhập liệu sai', rsCheck.errorMsg, function () { });
+                    return;
+                }
+                beforeCallToServer();
+                editData(function (res) {
+                    if (res.error == null) {
+                        $('#myModal').modal('hide');//Đóng form input
+                        $msg.alert('Thao tác thành công', $type_alert.SUCCESS);//Xuất thông báo thành cônng
+                        if (scope.__mode == 1 || scope.__mode == 3) {
+                            //Reload table data
+                            reloadData();
+                        } else if (scope.__mode == 2) {
+                            //Nếu sửa item combo thì cập nhật lại tên vùng truy cập cho dòng dữ liệu
+                            scope.Item.display_access_mode = scope.$parent.getDisplayNameAccessMode(scope.Item.access_mode);
+                            scope.$parent.currentItem = scope.Item;
+                            scope.$parent.$apply();
+                            //Refesh datatable
+                            scope.$parent.refreshDataRow();
+                        }
+                    } else {
+                        $msg.message('Có lỗi từ phía máy chủ', "Xin thử vui lòng thử lại", function () { });
+                    }
+                });
+            }
+        }
+
+        function saveNNext() {
+            if (scope.Item != null) {
+                var rsCheck = checkError();//Kết quả check input
+                if (!rsCheck.result) {
+                    //Nhập sai: break khỏi hàm
+                    $msg.message('Nhập liệu sai', rsCheck.errorMsg, function () { });
+                    return;
+                }
+                beforeCallToServer();
+                editData(function (res) {
+                    if (res.error == null) {
+                        if (scope.__mode == 1 || scope.__mode == 3)
+                            reloadData();
+                        else {
+                            var item = JSON.parse(JSON.stringify(scope.Item));
+                            scope.Item.display_access_mode = scope.$parent.getDisplayNameAccessMode(scope.Item.access_mode);
+                            scope.$parent.currentItem = item;
+                            scope.$parent.$apply();
+                            scope.$parent.refreshDataRow();
+                        }
+                        $msg.alert('Thao tác thành công', $type_alert.SUCCESS);
+                        scope.Item = null;
+                        scope.__mode = 1;
+                        //Bỏ chọn các nút đã chọn trên cây
+                        unSelectedNode();
+                    } else {
+                        $msg.message('Thông báo', 'Có lỗi từ phía máy chủ ', function () { });
+                    }
+                })
+            }
+        }
+
+        function editData(callback) {
+            var url = getUrl();
+            var currentItem = JSON.parse(JSON.stringify(scope.Item));
+            if (scope.__mode == 3) {
+                //Loại bỏ các propery của angular ra khỏi object
+                delete currentItem.$$regKey;
+                delete currentItem._id;
+                delete currentItem.$$selectKey;
+            }
+            services.api(url)
+                .data(currentItem)
+                .done()
+                .then(function (res) {
+                    callback(res);
+                })
+        }
+
+        function beforeCallToServer() {
+            if (scope.__mode == 1)
+                delete scope.Item._id;
+            //Check null, nếu null set default
+            if (!scope.Item.hasOwnProperty('access_mode'))
+                scope.Item.access_mode = 2;
+            else {
+                switch (scope.Item.access_mode) {
+                    //Toàn quyền
+                    case 1: scope.Item.detail = []; break;
+                    //Từ vùng được chọn đến các tập con
+                    case 2: if (!scope.Item.detail & scope.Item.detail.length > 0)
+                                scope.Item.detail = scope.treeSelectedRootNodes; break;
+                    //Chỉ trên các vùng được chọn
+                    case 3: /* Insert những node được check trên cây */; break;
+                }
+            }
+            if (!scope.Item.hasOwnProperty('detail'))
+                scope.Item.detail = null;
+        }
+
+        function getUrl() {
+            return scope.__mode == 1 || scope.__mode == 3 ? "${get_api_key('app_main.api.HCSSYS_DataDomain/insert')}" /*Mode 1: Tạo mới*/
+                    : "${get_api_key('app_main.api.HCSSYS_DataDomain/update')}" /*Mode 2: Cập nhật*/
+        }
+
+        function setSelectedNodeWhenEdit() {
+            if (scope.__mode == 2 || scope.__mode == 3) {
+                if (scope.Item.detail && scope.Item.detail.length > 0) {
+                    $.each(scope.Item.detail, function (i, v) {
+                        var _f = _.filter(_treeDepartmentsDataSource, function (f) {
+                            return f.department_code == v.department_code;
+                        });
+
+                        if (_f.length > 0) {
+                            _f[0]["is_selected"] = true;
+                        }
+                    });
+                }
+            }
+            scope.treeDepartmentsDataSource = _treeDepartmentsDataSource;
+            scope.$apply();
+        }
+
+        function unSelectedNode() {
+            scope.treeDepartmentsDataSource = null;
+            scope.$apply();
+            scope.treeDepartmentsDataSource = _treeDefault;
+        }
+
+        function reloadData() {
+            var tableConfig = scope.$parent.$$tableConfig;
+            scope.$parent._tableData(tableConfig.iPage,
+            tableConfig.iPageLength, tableConfig.orderBy,
+            tableConfig.searchText, tableConfig.fnReloadData);
+        }
+
+        /**
+         * Function check input
+         */
+        function checkError() {
+            var errMsg;
+            var rs = {
+                "result": true,
+                "errorMsg": ''
+            };
+            if (!scope.Item.dd_code) {
+                rs.result = false;
+                rs.errorMsg += 'Mã vùng dữ liệu không được để trống\n';
+            }
+            if (!scope.Item.dd_name) {
+                rs.result = false;
+                rs.errorMsg += 'Tên vùng dữ liệu không được để trống\n';
+            }
+            return rs;
+        }
+
+        //Nhấn nút ESC để thoát form dialog
+        $(document).keyup(function (event) {
+            if (event.keyCode == 27) {
+                if($('#myModal').length ==1)
+                    $('#myModal').modal('hide');
+            }
+        })
+    
+        //Get data department
+        _departments();
+        function _departments() {
+            services.api("${get_api_key('app_main.api.HCSSYS_Departments/get_list')}")
+                .data()
+                .done()
+                .then(function (res) {
+                    _treeDepartmentsDataSource = res;
+                    //Tạo biến local dùng để lưu cây trạng thái chưa được chọn
+                    _treeDefault = JSON.parse(JSON.stringify(res));
+                    setSelectedNodeWhenEdit();
+                })
+        }
+
+        scope.$watch("Item.access_mode", function (val, old) {
+            //1. toàn quyền bỏ check và readonly cây
+            if (val === 1)
+                scope.treeDepartmentsDataSource = _treeDefault;
+        });
+    });
+</script>

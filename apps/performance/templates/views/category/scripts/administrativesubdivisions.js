@@ -1,8 +1,6 @@
 (function (scope) {
-    scope.main_nation_code = null;
-    scope.main_region_code = null;
-    scope.$watch("main_nation_code", function (val, old) {
-        if (val) {
+    scope.$parent.$parent.$parent.$watch("advancedSearch", function (val, old) {
+        if (val && val.main_nation_code) {
             var tableConfig = scope.$$tableProvinceConfig;
             scope._tableProvinceData(tableConfig.iPage,
                 tableConfig.iPageLength, tableConfig.orderBy,
@@ -10,8 +8,8 @@
         }
     }, true)
 
-    scope.$watch("main_region_code", function (val, old) {
-        if (val) {
+    scope.$parent.$parent.$parent.$watch("advancedSearch", function (val, old) {
+        if (val && val.main_region_code) {
             var tableConfig = scope.$$tableProvinceConfig;
             scope._tableProvinceData(tableConfig.iPage,
                 tableConfig.iPageLength, tableConfig.orderBy,

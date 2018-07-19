@@ -1,0 +1,19 @@
+﻿<div id="hcs-system-admin-menu">
+    <div id="style-3" class="hcs-system-admin-menu-contain">
+    <ul>
+        <li style="height:100px;margin-top:25px;" ng-if="displayAvatar == true">
+                            <img src="{{imageSrc}}"
+                                 style="width:75px; height:100px;"/>
+        </li>
+        <li ng-repeat="f in listFunction">
+            <a href="javascript:void(0)" data-toggle="tab" 
+               ng-click="onClickFunctionLeftMenu(f, $event)" 
+               class="nav-link align-middle hcs-admin-system-control-menu {{ $index == 0 ? 'active hcs-admin-system-selected' : ''}}"
+               id="admin-system-{{f.function_id}}">
+            <span>{{$index + 1}}</span>
+            <p class="text-center">{{f.name}}</p>
+        </a>
+        </li>
+    </ul>
+    </div>
+</div>

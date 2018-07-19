@@ -1,0 +1,26 @@
+<div id="scrolling_table" class="zb-tree-table">
+    <table id="treetable">
+        <thead>
+            <tr>
+                <th style="background-color:white" class="fixed freeze" ng-if="multiSelect">
+                    <label class="custom-checkbox">
+                        <input type="checkbox" class="zb-tree-table-checkall"/>
+                        <span></span>
+                    </label>
+                </th>
+                <th style="background-color:white" class="zb-tree-table-th fixed freeze">{{displayName}}</th>
+                <th ng-repeat="f in fields" style="background-color:white;min-width:{{f.width ?  f.width : 'auto'}}" 
+                        class="fixed freeze_vertical {{f.width ?  '' : 'zb-tree-table-nowrap'}}">
+                    {{f.title}}
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="fixed freeze_horizontal zb-tree-table-checkbox" ng-if="multiSelect"></td>
+                <td class="fixed freeze_horizontal zb-tree-table-nowrap"></td>
+                <td ng-repeat="f in fields"></td>
+            </tr>
+        </tbody>
+    </table>
+</div>

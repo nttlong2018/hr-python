@@ -122,7 +122,9 @@ def get_list_with_searchtext(args):
                         )
 
                 if(searchText != None):
-                    items.match("contains(role_name, @name)",name=searchText)
+                    items.match("contains(role_name, @name) or contains(role_code, @name) " + \
+                        "or contains(dd_code, @name) or contains(description, @name) " + \
+                       "or contains(created_on, @name)",name=searchText)
 
                 if(sort != None):
                     items.sort(sort)
@@ -139,9 +141,22 @@ def get_list_permission_by_role(args):
     try:
         if args['data'] != None:
             if args['data'].has_key('role_code'):
-                ret = []
-                record = {}
-                return Permission.get_list_permission("nnd1")
+                return Permission.get_list_permission_by_role(args['data']['role_code'])
+            else:
+                return dict(
+                    error = "parameter 'role_code' is not exist"
+                )
+        return dict(
+                error = "request parameter is not exist"
+            )
+    except Exception as ex:
+        raise(ex)
+
+def get_list_edit_permission(args):
+    try:
+        if args['data'] != None:
+            if args['data'].has_key('role_code'):
+                return Permission.get_list_edit_permission(args['data']['role_code'])
             else:
                 return dict(
                     error = "parameter 'role_code' is not exist"
@@ -158,7 +173,34 @@ def edit_permission(args):
             if args['data'].has_key('role_code') and args['data'].has_key('permission'):
                 role_code = args['data']['role_code']
                 permission = args['data']['permission']
-                return Permission.edit_permission(role_code, permission)
+                list_per = []
+                for x in permission:
+                    list_per.append({
+                        "function_id":x['function_id'],
+                        "read":x['read'],
+                        "create":x['create'],
+                        "write":x['write'],
+                        "delete":x['delete'],
+                        "export":x['export'],
+                        "import":x['import'],
+                        "copy":x['copy'],
+                        "attach":x['attach'],
+                        "download":x['download'],
+                        "created_by":common.get_user_id(),
+                        "created_on":datetime.datetime.now(),
+                        "modified_by":common.get_user_id(),
+                        "modified_on":datetime.datetime.now()
+                        })
+                ret = Permission.edit_permission(role_code, list_per)
+                if ret['updatedExisting'] == True:
+                    ret.update(
+                        error = None
+                        )
+                else:
+                    ret.update(
+                        error = "Error Internal Server"
+                        )
+                return ret
             else:
                 return dict(
                     error = "parameter 'role_code' is not exist"
@@ -170,4 +212,27 @@ def edit_permission(args):
         raise(ex)
 
 def remove_permission(args):
-    pass
+    try:
+        if args['data'] != None:
+            if args['data'].has_key('role_code') and args['data'].has_key('permission'):
+                role_code = args['data']['role_code']
+                permission = args['data']['permission']
+                ret = Permission.remove_permission(role_code, [x["function_id"]for x in permission] )
+                if ret['updatedExisting'] == True:
+                    ret.update(
+                        error = None
+                        )
+                else:
+                    ret.update(
+                        error = "Error Internal Server"
+                        )
+                return ret
+            else:
+                return dict(
+                    error = "parameter 'role_code' is not exist"
+                )
+        return dict(
+                error = "request parameter is not exist"
+            )
+    except Exception as ex:
+        raise(ex)

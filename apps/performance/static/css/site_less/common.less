@@ -1,21 +1,70 @@
 @site_color: #48503C;
 
+@font-face {
+    font-family: 'Segoe UI';
+    src: url('../../font/segoeui/SegoeUI-Italic.eot');
+    src: url('../../font/segoeui/SegoeUI-Italic.eot?#iefix') format('embedded-opentype'), url('../../font/segoeui/SegoeUI-Italic.woff2') format('woff2'), url('../../font/segoeui/SegoeUI-Italic.woff') format('woff'), url('../../font/segoeui/SegoeUI-Italic.ttf') format('truetype'), url('../../font/segoeui/SegoeUI-Italic.svg#SegoeUI-Italic') format('svg');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Segoe UI';
+    src: url('../../font/segoeui/SegoeUI.eot');
+    src: url('../../font/segoeui/SegoeUI.eot?#iefix') format('embedded-opentype'), url('../../font/segoeui/SegoeUI.woff2') format('woff2'), url('../../font/segoeui/SegoeUI.woff') format('woff'), url('../../font/segoeui/SegoeUI.ttf') format('truetype'), url('../../font/segoeui/SegoeUI.svg#SegoeUI') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Segoe UI';
+    src: url('../../font/segoeui/SegoeUI-Light.eot');
+    src: url('../../font/segoeui/SegoeUI-Light.eot?#iefix') format('embedded-opentype'), url('../../font/segoeui/SegoeUI-Light.woff2') format('woff2'), url('../../font/segoeui/SegoeUI-Light.woff') format('woff'), url('../../font/segoeui/SegoeUI-Light.ttf') format('truetype'), url('../../font/segoeui/SegoeUI-Light.svg#SegoeUI-Light') format('svg');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Segoe UI';
+    src: url('../../font/segoeui/SegoeUI-Bold.eot');
+    src: url('../../font/segoeui/SegoeUI-Bold.eot?#iefix') format('embedded-opentype'), url('../../font/segoeui/SegoeUI-Bold.woff2') format('woff2'), url('../../font/segoeui/SegoeUI-Bold.woff') format('woff'), url('../../font/segoeui/SegoeUI-Bold.ttf') format('truetype'), url('../../font/segoeui/SegoeUI-Bold.svg#SegoeUI-Bold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+}
+
+
 ::-webkit-scrollbar-track {
     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-    border-radius: 10px;
+    border-radius: 0;
     background-color: #F5F5F5;
 }
 
 ::-webkit-scrollbar {
-    width: 3px !important;
+    width: 7px !important;
     height: 7px !important;
     background-color: #F5F5F5;
 }
 
 ::-webkit-scrollbar-thumb {
-    border-radius: 10px;
+    border-radius: 0;
     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
     background-color: #d0d0d0;
+}
+
+.no-padding{
+    padding: 0!important;
+}
+.no-padding-top {
+    padding-top: 0 !important;
+}
+.no-padding-left {
+    padding-left: 0 !important;
+}
+.no-padding-bottom {
+    padding-bottom: 0 !important;
+}
+.no-padding-right {
+    padding-right: 0 !important;
 }
 
 /**:not(i):not(.la):not(.fa):not(.glyphicon) {
@@ -46,4 +95,9 @@
 
 .dropdown a:hover {
     background-color: #ddd
+}
+
+.hcs-container {
+    background-color: #F9F9F9;
+    height: 100%;
 }

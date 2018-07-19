@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 @quicky.view.template("index.html")
 def index(request):
-
+    
     if request.user.is_anonymous():
         return redirect(request.get_app_url("login"))
     else:
@@ -42,26 +42,6 @@ def login(request):
     #    user.is_active=True
     #    user.is_supperuser=True
     #    user.save()
-    from django.contrib.auth.models import User
-    from django.contrib.auth import get_user_model
-    from django.contrib.auth import authenticate, login as ling, logout
-
-    # try:
-    #     # UserModel = get_user_model()
-    #     # user = UserModel._default_manager.get_by_natural_key("sys",schema="lv")
-    #
-    #
-    #     user = User.objects.get(username="sys", schema="lv")
-    #     # from django.contrib.auth import authenticate, login, logout
-    #     setattr(user, "backend", 'quicky.backends.HashModelBackend')
-    #     request.user = user
-    #     ling(request, user, schema="lv")
-    #     return redirect(request.get_app_url(""))
-    #
-    #     # return user
-    # except Exception as ex:
-    #     return {}
-
     _login=models.Login()
     _login.language=request._get_request().get("language","en")
     if request.GET.has_key("next"):
@@ -97,8 +77,7 @@ def load_page(request,path):
 
 @quicky.view.template("sign_out.html")
 def logout_view(request):
-    from quicky import tenancy
-    logout(request,schema=tenancy.get_schema())
+    logout(request, request.user.schema)
     request.session.clear()
     return redirect(request.get_app_url(""))
 

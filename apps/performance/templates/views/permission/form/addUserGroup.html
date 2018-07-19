@@ -1,224 +1,158 @@
 ﻿<div class="modal-dialog">
     <div class="modal-content">
         <div class="modal-header">
-            <h4 class="modal-title">
-                <img src="{{$root.logo}}"><span id="title">{{title}}</span>
+            <div class="left-content pull-left">
+                <span class="modal-title">{{title}}</span>
+            </div>
+            <div class="right-content pull-right">
                 <button type="button" class="close" data-dismiss="modal"><i class="la la-close"></i></button>
                 <button type="button" class="close" ng-click="onResizeDialog()"><span class="modal-resize"><i class="la la-expand"></i></span></button>
-            </h4 > 
+            </div>
         </div>
         <div class="modal-body">
-            <div class="row" style="padding-bottom:20px;" title="${get_res('Add_New_UserGroup','Thêm mới nhóm người người dùng')}">
-    <div class="col-md-{{col_group}} col-sm-{{col_group}}">
-        <div class="row">
-            <p class="hcs-group-collapse-heading">
-                <button class="zb-icon-button hcs-profile-group-title" onclick="$('#collapseDialogUserGroupCommonInfo').slideToggle();">
-                    <span>
-                        <i class="la la-angle-down"></i>
-                    </span>${get_res('Common_Info','Thông tin chung')}
-                </button>
-            </p>
-        </div>
-        <div class="row" id="collapseDialogUserGroupCommonInfo">
-            <div class="col-md-{{col}}">
-                <div class="form-group row hcs-group-form-group">
-                    <!--Mã nhóm người dùng-->
-                    <label for="inputUserName" class="col-sm-5 zb-form-label">${get_res('role_code','Mã nhóm người dùng')}</label>
-                    <div class="col-sm-7">
-                        <input-text id="inputUserName" ng-model="entity.role_code" ng-disabled="{{ __mode === 2 ? 'true' : 'false' }}" required>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-{{col}}">
-                <div class="form-group row hcs-group-form-group">
-                    <!--Tên nhóm người dùng-->
-                    <label for="inputDisplayName" class="col-sm-5 zb-form-label">${get_res('role_name','Tên nhóm người dùng')}</label>
-                    <div class="col-sm-7">
-                        <input-text id="inputDisplayName" ng-model="entity.role_name" required>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-{{col}}">
-                <div class="form-group row hcs-group-form-group">
-                    <!--Vùng dữ liệu truy cập-->
-                    <label for="inputGroupUser" class="col-sm-5 zb-form-label">${get_res('dd_code','Vùng dữ liệu truy cập')}</label>
-                    <div class="col-sm-7">
-                        <input-combobox id="inputEmployeeId" required
-                            api-url="${get_api_key('app_main.api.common/get_dropdown_list')}"
-                            list-code="${encryptor.get_key('cbb_AD_Roles')}"
-                            list-value="[{ '@dd_code': '' }]"
-                            current-item="entity.dd_code"
-                            multi-select="false">
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-{{col}}">
-                <div class="form-group row hcs-group-form-group">
-                    <!--Ngưng sử dụng-->
-                    <div class="col-md-12">
-                        <div class="form-group row hcs-group-form-group">
-                            <div class="col-md-12">
-                                <input-checkbox ng-model="entity.stop" data-caption="${get_res('stop','Ngưng sử dụng')}"/>
+            <div class="col-md-{{col_group}} col-sm-{{col_group}}">
+                <collapse-box class="zb-form-common" title="${get_global_res('Common_Information','Thông tin chung')}">
+                    <div class="col-md-{{col}}">
+                        <div class="form-group zb-form-group">
+                            <!--Mã nhóm người dùng-->
+                            <label for="inputUserName" class="col-sm-5 zb-form-label">${get_res('role_code','Mã nhóm người dùng')}</label>
+                            <div class="col-sm-7">
+                                <input-text id="inputUserName" ng-model="entity.role_code" ng-disabled="{{ __mode === 2 ? 'true' : 'false' }}" required>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-{{ 12 - col_group }} col-sm-{{ 12 - col_group }}">
-        <div class="row">
-            <p class="hcs-group-collapse-heading">
-                <button class="zb-icon-button hcs-profile-group-title" onclick="$('#collapseDialogUserGroupNote').slideToggle();">
-                    <span>
-                        <i class="la la-angle-down"></i>
-                    </span>${get_global_res('Note','Ghi chú')}
-                </button>
-            </p>
-        </div>
-        <div class="row" id="collapseDialogUserGroupNote">
-            <div class="col-md-12">
-                <div class="form-group row hcs-group-form-group">
-                    <!--Ghi chú-->
-                    <div class="col-sm-12">
-                        <div data-c-html-box 
-                              ng-model="entity.description"
-                              style="height:49px"
-                              id="inputDescription">
-                         </div>
+                    <div class="col-md-{{col}}">
+                        <div class="form-group zb-form-group">
+                            <!--Tên nhóm người dùng-->
+                            <label for="inputDisplayName" class="col-sm-5 zb-form-label">${get_res('role_name','Tên nhóm người dùng')}</label>
+                            <div class="col-sm-7">
+                                <input-text id="inputDisplayName" ng-model="entity.role_name" required>
+                            </div>
+                        </div>
                     </div>
-                </div>
+                    <div class="col-md-{{col}}">
+                        <div class="form-group zb-form-group">
+                            <!--Vùng dữ liệu truy cập-->
+                            <label for="inputGroupUser" class="col-sm-5 zb-form-label">${get_res('dd_code','Vùng dữ liệu truy cập')}</label>
+                            <div class="col-sm-7">
+                                <input-combobox id="inputEmployeeId" required
+                                    api-url="${get_api_key('app_main.api.common/get_dropdown_list')}"
+                                    list-code="${encryptor.get_key('cbb_ad_roles')}"
+                                    list-value="[{ '@dd_code': '' }]"
+                                    current-item="entity.dd_code"
+                                    multi-select="false">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-{{col}}">
+                        <div class="form-group zb-form-group">
+                            <!--Ngưng sử dụng-->
+                            <label for="inputGroupUser" class="col-sm-5 zb-form-label">${get_res('stop','Ngưng sử dụng')}</label>
+                            <div class="col-md-7">
+                                <input-checkbox ng-model="entity.stop"/>
+                            </div>
+                        </div>
+                    </div>
+                </collapse-box>
             </div>
-        </div>
-    </div>
-</div>
-<div class="row">
-    <div class="col-md-12">
-        <div class="row" ng-show="__mode != 1">
-            <div class="hcs-profile-background-group-table" style="margin-right:15px;">
-                <div class="pull-left hcs-profile-icon-heading-on-table" style="height: 100%;padding-right: 3px;background: white;margin-left: unset;">
-                    <button class="zb-icon-button hcs-profile-group-title" onclick="$('#collapseDialogUserGroupListUser').slideToggle();">
-                        <span>
-                            <i class="la la-angle-down" style="font-size:0.7rem;"></i>
-                        </span>
-                    </button>
-                </div>
-                <div class="pull-left hcs-profile-icon-heading-on-table" style="margin-left: unset;">
-                    <button class="zb-icon-button hcs-profile-group-title" onclick="$('#collapseDialogUserGroupListUser').slideToggle();">
-                    ${get_res('list_user','Danh sách người dùng')}
-                    </button>
-                </div>
-                <div class="pull-right hcs-profile-icon-heading-on-table">
-                    <button class="zb-icon-button hcs-profile-group-title" ng-click="deleteUser()">
-                        <span>
-                            <i class="la la-close"></i>
-                        </span>
-                    </button>
-                </div>
-                <div class="pull-right hcs-profile-icon-heading-on-table">
-                    <button class="zb-icon-button hcs-profile-group-title">
-                        <span>
-                            <i class="la la-copy"></i>
-                        </span>
-                    </button>
-                </div>
-                <div class="pull-right hcs-profile-icon-heading-on-table">
-                    <button class="zb-icon-button hcs-profile-group-title" ng-click="addNewUser()">
-                        <span>
-                            <i class="la la-plus"></i>
-                        </span>
-                    </button>
-                </div>
+            <div class="col-md-{{ 12 - col_group }} col-sm-{{ 12 - col_group }}">
+                <collapse-box class="zb-form-common" title="${get_global_res('Note','Ghi chú')}">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <!--Ghi chú-->
+                            <input-textarea rows="6" ng-model="entity.description"></input-textarea>
+                        </div>
+                    </div>
+                </collapse-box>
             </div>
-        </div>
-        <div id="collapseDialogUserGroupListUser" class="row">
-            <div class="col-md-12" style="height: 300px;">
-                <!--Table user-->
-                <table-data data-source="tableListUserSource" fields="tableListUserFields" type="MultiSelect" 
-                paging="true" page-length="100" server-side="true" 
-                press-enter="onSelectTableRow" selected-items="selectedListUserItems"
-                current-item="ListUserCurrentItem" search-text="tableSearchText"
-                refresh-row="refreshDataListUserRow"
-                ng-show="__mode != 1">
-                </table-data>
-            </div>
-        </div>
-    </div>
-        <div class="col-md-12">
-        <div class="row" ng-show="__mode != 1">
-            <div class="hcs-profile-background-group-table" style="margin-right:15px;">
-                <div class="pull-left hcs-profile-icon-heading-on-table" style="height: 100%;padding-right: 3px;background: white;margin-left: unset;">
-                    <button class="zb-icon-button hcs-profile-group-title" onclick="$('#collapseDialogUserGroupFunction').slideToggle();">
-                        <span>
-                            <i class="la la-angle-down" style="font-size:0.7rem;"></i>
-                        </span>
-                    </button>
-                </div>
-                <div class="pull-left hcs-profile-icon-heading-on-table" style="margin-left: unset;">
-                    <button class="zb-icon-button hcs-profile-group-title" onclick="$('#collapseDialogUserGroupFunction').slideToggle();">
-                    ${get_res('function_list','Danh sách tính năng')}
-                    </button>
-                </div>
-                <div class="pull-right hcs-profile-icon-heading-on-table">
-                    <button class="zb-icon-button hcs-profile-group-title">
-                        <span>
-                            <i class="la la-close"></i>
-                        </span>
-                    </button>
-                </div>
-                <div class="pull-right hcs-profile-icon-heading-on-table">
-                    <button class="zb-icon-button hcs-profile-group-title" ng-click="EditPermission()">
-                        <span>
-                            <i class="la la-pencil"></i>
-                        </span>
-                    </button>
-                </div>
-            </div>
-        </div>
-        <div id="collapseDialogUserGroupFunction" class="row">
             <div class="col-md-12">
-                <tree-table data-source="dataTableTree" data-fields="tableFields"
-                    display-field="default_name"
-                    display-name="Tên tính năng"
-                    parent-field="parent_id" key-field="function_id" 
-                    multi-select="treeMultiSelect" select-mode="treeSelectMode"
-                    on-select="selectTreeNode"
-                    current-node="treeCurrentNode"
-                    selected-nodes="treeSelectedNodes"
-                    selected-root-nodes="treeSelectedRootNodes"
-                    search-text="treeSearchText"
-                    checked-field="is_selected"
-                    disabled="treeDisabled"/>
+                <nav-tabs min-height="52vh" max-height="52vh" style="overflow:unset;" ng-show="__mode != 1">
+                    <tab-content name="tab1" style="height: 48vh;" title="${get_res('list_user','Danh sách người dùng')}">
+                        <div class="col-md-12" style="height: 44vh;padding:0px 6px;">
+                            <div class="zb-right-content pull-right">
+                                <button class="zb-btn zb-btn-o-green" ng-click="addNewUser()">
+                                    <span>
+                                        <i class="bowtie-icon bowtie-math-plus"></i>
+                                    </span>
+                                </button>
+                                <button class="zb-btn zb-btn-o-red" ng-click="deleteUser()">
+                                    <span>
+                                        <i class="bowtie-icon bowtie-edit-remove"></i>
+                                    </span>
+                                </button>
+                            </div>
+                            <!--Table user-->
+                            <table-data data-source="dataTable.tableListUserSource" fields="dataTable.tableListUserFields" type="MultiSelect" 
+                            paging="true" page-length="100" server-side="true" 
+                            press-enter="dataTable.onSelectTableRow" selected-items="dataTable.selectedListUserItems"
+                            current-item="dataTable.ListUserCurrentItem" search-text="dataTable.tableSearchText"
+                            refresh-row="dataTable.refreshDataListUserRow"
+                            ng-if="__mode != 1">
+                            </table-data>
+                        </div>
+                    </tab-content>
+                    <tab-content name="tab2" title="${get_res('function_list','Danh sách tính năng')}">
+                        <div class="pull-right hcs-profile-icon-heading-on-table">
+                            <button class="zb-icon-button hcs-profile-group-title" ng-click="deletePermission()">
+                                <span>
+                                    <i class="la la-close"></i>
+                                </span>
+                            </button>
+                        </div>
+                        <div class="pull-right hcs-profile-icon-heading-on-table">
+                            <button class="zb-icon-button hcs-profile-group-title" ng-click="EditPermission()">
+                                <span>
+                                    <i class="la la-pencil"></i>
+                                </span>
+                            </button>
+                        </div>
+                        <div class="col-md-12 no-padding">
+                            <tree-table data-source="dataTableTree" data-fields="tableFields"
+                                display-field="default_name"
+                                display-name="Tên tính năng"
+                                parent-field="parent_id" key-field="function_id" 
+                                multi-select="treeMultiSelect" select-mode="treeSelectMode"
+                                on-select="selectTreeNode"
+                                current-node="treeCurrentNode"
+                                selected-nodes="treeSelectedNodes"
+                                selected-root-nodes="treeSelectedRootNodes"
+                                search-text="treeSearchText"
+                                checked-field="is_selected"
+                                disabled="treeDisabled"/>
+                        </div>
+                    </tab-content>
+                </nav-tabs>
             </div>
-        </div>
-    </div>
-</div>
         </div>
         <div class="modal-footer">
-            <div class="pull-right"><button ng-click="saveNClose($event)"><i class="la la-save"></i>${get_global_res('save_and_close','Lưu & đóng')}</button></div>
-            <div class="pull-right"><button ng-click="saveNNext($event)"><i class="la la-save"></i>${get_global_res('save_and_next','Lưu & tiếp')}</button></div>
+            <div class="right-content pull-right">
+                <button ng-click="saveNClose($event)"><i class="la la-save"></i>${get_global_res('save_and_close','Lưu & đóng')}</button>
+                <button ng-click="saveNNext($event)"><i class="la la-save"></i>${get_global_res('save_and_next','Lưu & tiếp')}</button>
+            </div>
         </div>
     </div>
 </div>
 <script>
     (function (scope) {
         //Table danh sách người dùng - START
-        scope.tableListUserFields = [
-            { "data": "login_account", "title": "${ get_res('table_user_login_account_table_header', 'Mã người dùng') }"},
-            { "data": "display_name", "title": "${ get_res('table_user_display_name_table_header', 'Tên hiển thị') }"},
-            { "data": "manlevel_from", "title": "${ get_res('table_user_manlevel_from_table_header', 'Mức quản lí từ') }"},
-            { "data": "manlevel_to", "title": "${ get_res('table_user_manlevel_to_table_header', 'Mức quản lí đến') }"},
-            {
-                "data": "created_on",
-                "title": "${ get_res('table_user_created_on_table_title', 'Thời điểm tạo') }",
-                "format": "date: " + scope.$root.systemConfig.date_format
-            }
-        ];
-        scope.tableListUserSource = _loadDataListUserServerSide;
-        scope.refreshDataListUserRow = function () { /*Do nothing*/ };
-        scope.selectedListUserItems = [];
-        scope.ListUserCurrentItem = null;
-        scope.onSelectTableRow = pressEnter;
+        scope.dataTable = {
+            tableListUserFields : [
+                { "data": "login_account", "title": "${ get_res('table_user_login_account_table_header', 'Mã người dùng') }" },
+                { "data": "display_name", "title": "${ get_res('table_user_display_name_table_header', 'Tên hiển thị') }" },
+                { "data": "manlevel_from", "title": "${ get_res('table_user_manlevel_from_table_header', 'Mức quản lí từ') }" },
+                { "data": "manlevel_to", "title": "${ get_res('table_user_manlevel_to_table_header', 'Mức quản lí đến') }" },
+                {
+                    "data": "created_on",
+                    "title": "${ get_res('table_user_created_on_table_title', 'Thời điểm tạo') }",
+                    "format": "date: " + scope.$root.systemConfig.date_format
+                }
+            ],
+            tableListUserSource : _loadDataListUserServerSide,
+            refreshDataListUserRow : function () { /*Do nothing*/ },
+            selectedListUserItems : [],
+            ListUserCurrentItem : null,
+            onSelectTableRow : pressEnter,
+        };
         function _loadDataListUserServerSide(fnReloadData, iPage, iPageLength, orderBy, searchText) {
             scope.$$table_List_User_Config = {
                 fnReloadData: fnReloadData,
@@ -255,15 +189,15 @@
         scope.dataTableTree = [];
         scope.tableFields = [
             //{ "data": "function_name", "title": "Tên tính năng", width: "200px" },
-            { "data": "read", "title": "Xem", width: "50px",format: "checkbox" },
-            { "data": "create", "title": "Thêm", width: "150px",format: "checkbox" },
-            { "data": "write", "title": "Sửa", className: "text-left",format: "checkbox" },
-            { "data": "delete", "title": "Xóa", format: "checkbox", className: 'text-center'},
-            { "data": "import", "title": "N. Khẩu", format: "checkbox"},
-            { "data": "export", "title": "X. Khẩu", width: "150px",format: "checkbox" },
-            { "data": "copy", "title": "Sao chép", className: "text-left",format: "checkbox" },
-            { "data": "attach", "title": "Đính kèm", format: "checkbox", className: 'text-center'},
-            { "data": "download", "title": "Tải file",format: "checkbox" }
+            { "data": "read", "title": "Xem", width: "100px", className: "text-center",format: "checkbox" },
+            { "data": "create", "title": "Thêm", width: "100px", className: "text-center",format: "checkbox" },
+            { "data": "write", "title": "Sửa", width: "100px", className: "text-center",format: "checkbox" },
+            { "data": "delete", "title": "Xóa", format: "checkbox", width: "100px", className: "text-center"},
+            { "data": "import", "title": "N. Khẩu", format: "checkbox", width: "100px", className: "text-center"},
+            { "data": "export", "title": "X. Khẩu", width: "100px", className: "text-center",format: "checkbox" },
+            { "data": "copy", "title": "Sao chép",width: "100px", className: "text-center",format: "checkbox" },
+            { "data": "attach", "title": "Đính kèm", format: "checkbox", width: "100px", className: "text-center"},
+            { "data": "download", "title": "Tải file",format: "checkbox", width: "100px", className: "text-center" }
         ];
 
         scope.selectTreeNode = function(node) {
@@ -273,11 +207,11 @@
         scope.treeSelectedNodes = [];
         scope.treeSelectedRootNodes = [];
         scope.treeMultiSelect = true;
-        scope.treeSelectMode = 3;
+        scope.treeSelectMode = 2;
         scope.treeDisabled = false;
 
 
-
+        scope._permissionList = _permissionList;
         function _permissionList() {
             if (scope.__mode == 2) {
                 services.api("${get_api_key('app_main.api.AD_Roles/get_list_permission_by_role')}")
@@ -361,6 +295,7 @@
         scope.deleteUser = deleteUser;
 
         scope.EditPermission = EditPermission;
+        scope.deletePermission = deletePermission;
 
         //Scope select vùng dữ liệu
         scope.selectedItems = [];
@@ -387,7 +322,7 @@
                 editData(scope.entity, function (res) {
                     if (res.error == null) {
                         $dialog.closeDialog();//Đóng form input
-                        $msg.alert("${get_global_res('Handle_Success','Thao tác thành công')}", $type_alert.SUCCESS);//Xuất thông báo thành cônng
+                        $msg.alert("${get_global_res('Handle_Success','Thao tác thành công')}", $type_alert.INFO);//Xuất thông báo thành cônng
                         if (scope.__mode == 1 || scope.__mode == 3) {
                             //Reload table data
                             reloadData();
@@ -437,7 +372,7 @@
                             //Refesh datatable
                             scope.$parent.refreshDataRow();
                         }
-                        $msg.alert("${get_global_res('Handle_Success','Thao tác thành công')}", $type_alert.SUCCESS);
+                        $msg.alert("${get_global_res('Handle_Success','Thao tác thành công')}", $type_alert.INFO);
                         scope.entity = null;
                         scope.__mode = 1;
                     } else {
@@ -463,13 +398,13 @@
         }
 
         function deleteUser() {
-            if (!scope.selectedListUserItems || scope.selectedListUserItems.length === 0) {
+            if (!scope.dataTable.selectedListUserItems || scope.dataTable.selectedListUserItems.length === 0) {
             $msg.message("${get_global_res('Notification','Thông báo')}", "${get_global_res('No_Row_Selected','Không có dòng được chọn')}", function () { });
             } else {
                 $msg.confirm("${get_global_res('Notification','Thông báo')}", "${get_global_res('Do_You_Want_Delete','Bạn có muốn xóa không?')}", function () {
                     services.api("${get_api_key('app_main.api.auth_user/remove_role_code_by_user')}")
                         .data({
-                            "users":scope.selectedListUserItems
+                            "users":scope.dataTable.selectedListUserItems
                         })
                         .done()
                         .then(function (res) {
@@ -477,9 +412,9 @@
                                 _tableData("${get_api_key('app_main.api.auth_user/get_list_with_searchtext')}", scope.$$table_List_User_Config.iPage,
                                     scope.$$table_List_User_Config.iPageLength, scope.$$table_List_User_Config.orderBy,
                                     scope.$$table_List_User_Config.SearchText, scope.$$table_List_User_Config.fnReloadData);
-                                $msg.alert("${get_global_res('Handle_Success','Thao tác thành công')}", $type_alert.SUCCESS);
-                                scope.selectedListUserItems = null;
-                                scope.ListUserCurrentItem = [];
+                                $msg.alert("${get_global_res('Handle_Success','Thao tác thành công')}", $type_alert.INFO);
+                                scope.dataTable.selectedListUserItems = null;
+                                scope.dataTable.ListUserCurrentItem = [];
                             } else {
                                 $msg.message("${get_global_res('Internal_Server_Error','Có lỗi từ phía máy chủ')}", "${get_global_res('Please_Try_Again','Xin thử vui lòng thử lại')}", function () { });
                             }
@@ -489,7 +424,35 @@
         }
 
         function EditPermission() {
-            openDialog("${ get_res('detail_permission', 'Chi thiết tính năng') }", "permission/form/dialog/addUserGroup/addPermission", function () { }, "myComboboxDialog");
+            openDialog("${ get_res('detail_permission', 'Chi tiết tính năng') }", "permission/form/dialog/addUserGroup/addPermission", function () { }, "myComboboxDialog");
+        }
+
+        function deletePermission() {
+            if (!scope.treeSelectedNodes || scope.treeSelectedNodes.length === 0) {
+            $msg.message("${get_global_res('Notification','Thông báo')}", "${get_global_res('No_Row_Selected','Không có dòng được chọn')}", function () { });
+            } else {
+                $msg.confirm("${get_global_res('Notification','Thông báo')}", "${get_global_res('Do_You_Want_Delete','Bạn có muốn xóa không?')}", function () {
+                    services.api("${get_api_key('app_main.api.AD_Roles/remove_permission')}")
+                        .data({
+                            "role_code":scope.entity.role_code,
+                            "permission":scope.treeSelectedNodes
+                        })
+                        .done()
+                        .then(function (res) {
+                            if (res.error == null) {
+                                $msg.alert("${get_global_res('Handle_Success','Thao tác thành công')}", $type_alert.INFO);
+                                scope.treeCurrentNode = {};
+                                scope.treeSelectedNodes = [];
+                                scope.treeSelectedRootNodes = [];
+                                //Load datatable tree
+                                _permissionList();
+                                scope.$apply();
+                            } else {
+                                $msg.message("${get_global_res('Internal_Server_Error','Có lỗi từ phía máy chủ')}", "${get_global_res('Please_Try_Again','Xin thử vui lòng thử lại')}", function () { });
+                            }
+                        })
+                });
+            }
         }
 
         /**
@@ -589,5 +552,12 @@
         //Load datatable tree
         _permissionList();
 
+        scope.$watch('treeCurrentNode', function(newVal, old) {
+            console.log('treeCurrentNode', newVal);
+        })
+        
+        scope.$watch('treeSelectedNodes', function(newVal, old) {
+            console.log('treeSelectedNodes', newVal);
+        })
     });
 </script>

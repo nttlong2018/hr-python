@@ -4,14 +4,19 @@
                   on-delete="onDelete" 
                   on-save="onSave" 
                   on-import="onImport" 
-                  on-export="onExport" 
+                  on-export="onExport"
+                  on-search-press="onSearch"
                   source="mapName" 
                   key-field="function_id" 
                   display-field="default_name" 
                   icon-field="icon" 
                   selected-key="selectedFunction"
                   reload-on-change="true">
-        <site-map>Home > Manage > Function A</site-map>
+        <site-map>
+            <a><span>{{$root.currentFunction.default_name}}</span></a>
+            <span><i class="bowtie-icon bowtie-chevron-right"></i></span>
+            <span>{{currentFunction.default_name}}</span></site-map>
+        <!--on-search-change="onSearch"-->
         <!--<advanced-search>
             <input type="text" placeholder="Name" />
             <input type="text" placeholder="Age" />

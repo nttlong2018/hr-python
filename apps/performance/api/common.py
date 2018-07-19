@@ -157,6 +157,8 @@ def get_dropdown_list(args):
                             dict_where.update(x)
 
                         ret.match(where['operator'], dict_where)
+                        if args['data'].has_key('code') and args['data'].get('code', None) != None and args['data']['code'] != "":
+                            ret.match(combobox_info['value_field'] + " == {0}", args['data']['code'])
                     else:
                         ret.match(where['operator'])
 

@@ -1,0 +1,26 @@
+﻿<div class="col-md-12" id="hcs-admin-system-heading">
+    <div class="pull-left" id="hcs-admin-system-breadcrumb">
+        <a href="javascript:void(0)" ng-click="onClickHideLeftMenufunction()" id="toggleMenuFucntion">
+            <span>
+                <i class="la la-angle-left"></i>
+            </span>
+        </a>
+        <a href="" class="hcs-admin-system-breadcrumb">
+            <span>{{$root.currentFunction}} |</span>
+        </a>
+        <a href="javascript:void(0)" class="hcs-admin-system-breadcrumb-active">
+            {{currentFunction.name}}
+            <div id="dropdownFunction" class="dropdown-content">
+                <div class="filter">
+                    <input type="text" placeholder="Tìm kiếm" id="myInput" ng-model="search" class="form-control zb-form-input">
+                </div>
+                <div class="dropdown">
+                    <p ng-repeat="f in listFunction | filter : search" href="javacript:void(0)" ng-click="onClickFunctionLeftMenu(f, $event)">{{f.name}}</p>
+                </div>
+            </div>
+        </a>
+        <a href="javascript:void(0)" class="hcs-admin-system-function-active" ng-click="onClickBreadCumbDropdownMenu()">
+            <span style="margin-left:3px;" ><i class="hcs-admin-system-function-active la la-angle-down"></i></span>
+        </a>
+    </div>
+</div>

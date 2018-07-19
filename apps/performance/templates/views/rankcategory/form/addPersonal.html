@@ -1,0 +1,277 @@
+﻿<div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+            <div class="left-content pull-left">
+                <!--<img src="{{$root.logo}}">-->
+                <span class="modal-title">{{title}}</span>
+            </div>
+            <div class="right-content pull-right">
+                <button type="button" class="close" data-dismiss="modal"><i class="la la-close"></i></button>
+                <button type="button" class="close" ng-click="onResizeDialog()"><span class="modal-resize"><i class="la la-expand"></i></span></button>
+            </div>
+        </div>
+        <div class="modal-body">
+            <div class="col-md-{{col_group}} col-sm-{{col_group}}" style="padding-bottom:20px;">
+                <collapse-box class="zb-form-common" title="${get_global_res('Common_Information','Thông tin chung')}">
+                    <div class="col-md-{{col}}">
+                        <div class="form-group zb-form-group">
+                            <!--Mã xếp loại-->
+                            <label class="col-sm-5 zb-form-label">${get_res('rank_code','Mã xếp loại')}</label>
+                            <div class="col-sm-7">
+                                <input-text ng-model="entity.rank_code">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-{{col}}">
+                        <div class="form-group zb-form-group">
+                            <!--Tên xếp loại-->
+                            <label class="col-sm-5 zb-form-label">${get_res('rank_name','Tên xếp loại')}</label>
+                            <div class="col-sm-7">
+                                <input-text ng-model="entity.rank_name" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-{{col}}">
+                        <div class="form-group zb-form-group">
+                            <!--Tổng điểm từ-->
+                            <label class="col-sm-5 zb-form-label">${get_res('total_from','Tổng điểm từ')}</label>
+                            <div class="col-sm-7">
+                                <input-number ng-model="entity.total_from">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-{{col}}">
+                        <div class="form-group zb-form-group">
+                            <!--Tổng điểm đến-->
+                            <label class="col-sm-5 zb-form-label">${get_res('total_to','Tổng điểm đến')}</label>
+                            <div class="col-sm-7">
+                                <input-number ng-model="entity.total_to">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-{{col}}">
+                        <div class="form-group zb-form-group">
+                            <!--Thứ tự-->
+                            <label class="col-sm-5 zb-form-label">${get_res('ordinal','Thứ tự')}</label>
+                            <div class="col-sm-7">
+                                <input-number ng-model="entity.ordinal">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-{{col}}">
+                        <div class="form-group zb-form-group">
+                            <!--Thiết lập riêng-->
+                            <label class="col-sm-5 zb-form-label">${get_res('is_change_object','Thiết lập riêng')}</label>
+                            <div class="col-sm-7">
+                                <input-checkbox ng-model="entity.is_change_object">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-{{col}}">
+                        <div class="form-group zb-form-group">
+                            <!--Ngưng sử dụng-->
+                            <label class="col-sm-5 zb-form-label">${get_res('lock','Ngưng sử dụng')}</label>
+                            <div class="col-sm-7">
+                                <input-checkbox ng-model="entity.lock">
+                            </div>
+                        </div>
+                    </div>
+                </collapse-box>
+            </div>
+            <div class="col-md-{{ 12 - col_group}} col-sm-{{ 12 - col_group}}" style="padding-bottom:20px;">
+                <collapse-box class="zb-form-common" title="${get_global_res('general_assessment','Đánh giá chung')}">
+                    <div class="row">
+                        <!--Đánh giá chung-->
+                        <div class="col-sm-12">
+                            <input-textarea rows="7" ng-model="entity.rank_content"></input-textarea>
+                        </div>
+                    </div>
+                    <div class="col-md-12" style="padding-top: 16px;">
+                        <div class="form-group zb-form-group">
+                            <label for="DisplayInfo" class="col-sm-3 zb-form-label">${get_global_res('create_and_modify','Tạo | Sửa')}</label>
+                            <div class="col-sm-9">
+                                <input-text 
+                                            value="{{ entity.created_on | date: $root.systemConfig.date_format}} {{entity.created_by}} | {{ entity.modified_on | date: $root.systemConfig.date_format}} {{entity.modified_by}}" ng-disabled="true">
+                            </div>
+                        </div>
+                    </div>
+                </collapse-box>
+            </div>
+            <div class="col-md-12">
+                <collapse-box class="zb-form-common" title="${get_global_res('general_assessment','Đánh giá chung')}">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <table-data data-source="$$table.tableSource" fields="$$table.tableFields" type="MultiSelect" 
+                                        paging="true" page-length="100" server-side="true" 
+                                        press-enter="$$table.onSelectTableRow" selected-items="$$table.selectedItems" 
+                                        current-item="$$table.currentItem" search-text="$$table.tableSearchText"
+                                        refresh-row="$$table.refreshDataRow"
+                                        selected-field="">
+                            </table-data>
+                        </div>
+                    </div>
+                </collapse-box>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <div class="right-content pull-right">
+                <button ng-click="saveNAdd($event)"><i class="la la-save"></i>${get_global_res('save_and_add','Lưu & thêm')}</button>
+                <button ng-click="saveNClose($event)"><i class="la la-save"></i>${get_global_res('save_and_close','Lưu & đóng')}</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    (function (scope) {
+        scope.$$table = {
+            "tableFields" : [
+                { "data": "object_code", "title": "${get_res('rank_code_table_header','Đối tượng')}" },
+                { "data": "object_name", "title": "${get_res('rank_name_table_header','Tên chi tiết')}" },
+                { "data": "total_from", "title": "${get_res('rank_content_table_header','Tổng điểm từ')}" },
+                { "data": "total_to", "title": "${get_res('total_from_table_header','Tổng điểm đến')}" }
+            ]
+        }
+        scope.__mode = scope.$parent.mode;
+        scope.onResizeDialog = onResizeDialog;
+        scope.col = 12;
+        scope.col_group = 6;
+        scope.title = scope.$parent.headerTitle;
+        var __entity = JSON.parse(JSON.stringify(scope.$parent.currentItem));
+        //Mode 1: tạo mới, Mode 2: chỉnh sửa, Mode 3: sao chép
+        scope.entity = scope.__mode == 2 ? __entity : null;
+
+        //Combobox Datasource
+        scope.cbbContinents = scope.$parent.cbbContinents;
+
+        //Nút lưu và thêm
+        scope.saveNAdd = saveNAdd;
+
+        //Nút lưu
+        scope.saveNClose = saveNClose;
+
+        /**
+         * Thay đỗi kích thước form Dialog và các control trên form dialog
+         */
+        function onResizeDialog() {
+            $dialog.fullScreen();
+            scope.col = scope.col == 12 ? 6 : 12;
+            scope.col_group = scope.col_group == 6 ? 8 : 6;
+        }
+
+        function saveNClose() {
+            if (scope.entity != null) {
+                var rsCheck = checkError();//Kết quả check input
+                if (rsCheck.result) {
+                    $msg.message("${get_global_res('Input_Error','Nhập liệu sai')}", rsCheck.errorMsg, function () { });
+                    return;
+                }
+                beforeCallToServer();
+                editData(function (res) {
+                    if (res.error == null) {
+                        $dialog.closeDialog();//Đóng form input
+                        $msg.alert("${get_global_res('Handle_Success','Thao tác thành công')}", $type_alert.INFO);//Xuất thông báo thành cônng
+                        if (scope.__mode == 1 || scope.__mode == 3) {
+                            //Reload table data
+                            reloadData();
+                        } else if (scope.__mode == 2) {
+                            scope.$parent.currentItem = scope.entity;
+                            scope.$parent.currentItem.modified_on = res.item.modified_on;
+                            scope.$parent.currentItem.modified_by = res.item.modified_by;
+                            scope.$parent.$apply();
+                            //Refesh datatable
+                            scope.$parent.refreshDataRow();
+                        }
+                    } else {
+                        $msg.message("${get_global_res('Internal_Server_Error','Có lỗi từ phía máy chủ')}", "${get_global_res('Please_Try_Again','Xin thử vui lòng thử lại')}", function () { });
+                    }
+                });
+            }
+        }
+
+        function saveNAdd() {
+            if (scope.entity != null) {
+                var rsCheck = checkError();//Kết quả check input
+                if (rsCheck.result) {
+                    //Nhập sai: break khỏi hàm
+                    $msg.message("${get_global_res('Input_Error','Nhập liệu sai')}", rsCheck.errorMsg, function () { });
+                    return;
+                }
+                beforeCallToServer();
+                editData(function (res) {
+                    if (res.error == null) {
+                        if (scope.__mode == 1 || scope.__mode == 3)
+                            reloadData();
+                        else {
+                            scope.$parent.currentItem = scope.entity;
+                            scope.$parent.currentItem.modified_on = res.item.modified_on;
+                            scope.$parent.currentItem.modified_by = res.item.modified_by;
+                            scope.$parent.$apply();
+                            //Refesh datatable
+                            scope.$parent.refreshDataRow();
+                        }
+                        $msg.alert("${get_global_res('Handle_Success','Thao tác thành công')}", $type_alert.INFO);
+                        scope.entity = null;
+                        scope.__mode = 1;
+                    } else {
+                        $msg.message("${get_global_res('Notification','Thông báo')}", "${get_global_res('Internal_Server_Error','Có lỗi từ phía máy chủ')}", function () { });
+                    }
+                })
+            }
+        }
+
+        function editData(callback) {
+            var url = getUrl();
+            if (scope.__mode == 3) {
+
+            }
+            services.api(url)
+                .data(scope.entity)
+                .done()
+                .then(function (res) {
+                    callback(res);
+                })
+        }
+
+        function beforeCallToServer() {
+
+        }
+
+        function getUrl() {
+            return scope.__mode == 1 || scope.__mode == 3 ? "${get_api_key('app_main.api.HCSLS_Nation/insert')}" /*Mode 1: Tạo mới*/
+                    : "${get_api_key('app_main.api.HCSLS_Nation/update')}" /*Mode 2: Cập nhật*/
+        }
+
+        function reloadData() {
+            var tableConfig = scope.$parent.$$tableConfig;
+            scope.$parent._tableData(tableConfig.iPage,
+            tableConfig.iPageLength, tableConfig.orderBy,
+            tableConfig.searchText, tableConfig.fnReloadData);
+        }
+
+        /**
+         * Function check input
+         */
+        function checkError() {
+            var errMsg;
+            var valid = null;
+            var rs = {
+                "result": false,
+                "errorMsg": ''
+            };
+            valid = lv.Validate(scope.entity.nation_code);
+            rs.result = valid.isNullOrWhiteSpace();
+            rs.errorMsg = rs.result === true ? "${get_res('nation_code_is_not_null','Mã quốc gia không được để trống')}" + '\n' : "" ;
+            if(rs.result === true){
+                return rs;
+            }
+            valid = lv.Validate(scope.entity.nation_name);
+            rs.result = valid.isNullOrWhiteSpace();
+            rs.errorMsg = rs.result === true ? "${get_res('nation_name_is_not_null','Tên quốc gia không được để trống')}" + '\n' : "" ;
+            if(rs.result === true){
+                return rs;
+            }
+            return rs;
+        }
+
+    });
+</script>

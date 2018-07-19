@@ -1,0 +1,100 @@
+@color_select: #14a4ea;
+
+.zb-tree {
+    ul.fancytree-container {
+        background-color: transparent;
+        border: none;
+        outline: none !important;
+    }
+
+    span.fancytree-checkbox {
+        cursor: pointer;
+        font-family: fontAwesome;
+        font-weight: 300;
+        font-size: 12px;
+        color: #666;
+        content: "\a0";
+        background-color: transparent;
+        border: 1px solid #d6d6d6;
+        border-radius: 0;
+        background-image: none;
+        vertical-align: super;
+        padding: 0;
+        /*display: inline-block;
+	    text-align: center;
+	    height: 16px;
+	    line-height: 14px;
+	    min-width: 16px;
+	    margin-right: 6px;
+	    position: relative;
+	    top: 0;
+	    margin-left: -22px;
+	    float: left;*/
+    }
+
+    span.fancytree-node {
+        height: 24px;
+    }
+
+    .fancytree-partsel span.fancytree-checkbox::before {
+        cursor: pointer;
+        font-family: fontAwesome;
+        font-weight: 300;
+        font-size: 11px;
+        color: @color_select;
+        content: "\f0c8";
+        background-color: transparent;
+        border: none;
+        border-radius: 0;
+        background-image: none;
+        vertical-align: super;
+        padding-left: 2px;
+    }
+
+    .fancytree-partsel span.fancytree-checkbox:hover {
+        background: #e0e0e0;
+    }
+
+    .fancytree-selected {
+        span.fancytree-checkbox {
+            border: none;
+            vertical-align: super;
+            background-position: unset;
+        }
+
+        span.fancytree-title {
+            color: @color_select;
+            font-style: normal;
+        }
+    }
+
+    .fancytree-selected span.fancytree-checkbox::before {
+        cursor: pointer;
+        font-family: fontAwesome;
+        font-weight: 300;
+        font-size: 14px;
+        color: #666;
+        content: "\f00c";
+        background-color: transparent;
+        border: 1px solid #d6d6d6;
+        border-radius: 0;
+        background-image: none;
+        vertical-align: super;
+        /*display: inline-block;
+	    text-align: center;
+	    height: 16px;
+	    line-height: 14px;
+	    min-width: 16px;
+	    margin-right: 6px;
+	    position: relative;
+	    top: 0;
+	    margin-left: -22px;
+	    float: left;*/
+    }
+
+    .fancytree-active span.fancytree-title {
+        background-color: unset !important;
+        color: #14a4ea !important;
+        border: 1px solid #d0d0d0;
+    }
+}

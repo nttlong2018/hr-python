@@ -1,13 +1,16 @@
 ﻿<div class="modal-dialog">
     <div class="modal-content">
         <div class="modal-header">
-            <h4 class="modal-title">
-                <img src="{{$root.logo}}"><span id="title">{{title}}</span>
+            <div class="left-content pull-left">
+                <!--<img src="{{$root.logo}}">-->
+                <span class="modal-title">{{title}}</span>
+            </div>
+            <div class="right-content pull-right">
                 <button type="button" class="close" data-dismiss="modal"><i class="la la-close"></i></button>
                 <button type="button" class="close" ng-click="onResizeDialog()"><span class="modal-resize"><i class="la la-expand"></i></span></button>
-            </h4 > 
+            </div>
         </div>
-        <div class="modal-body">
+        <div class="modal-body" style="overflow:unset;">
             <table-data data-source="tableSource" fields="tableFields" type="MultiSelect" 
                     paging="true" page-length="table_info.page_size" server-side="true" 
                     press-enter="onSelectTableRow" selected-items="selectedItems" 
@@ -16,8 +19,10 @@
             </table-data>
         </div>
         <div class="modal-footer">
-            <div class="pull-right"><button ng-click="close($event)"><i class="la la-close"></i></button></div>
-            <div class="pull-right"><button ng-click="save($event)"><i class="la la-check"></i></button></div>
+            <div class="right-content pull-right">
+                <button ng-click="save($event)"><i class="la la-check"></i></button>
+                <button ng-click="close($event)"><i class="la la-close"></i></button>
+            </div>
         </div>
     </div>
 </div>
@@ -96,7 +101,7 @@
                     .then(function (res) {
                         if (res.error == null) {
                             $dialog.closeDialog();
-                            $msg.alert("${get_global_res('Handle_Success','Thao tác thành công')}", $type_alert.SUCCESS);
+                            $msg.alert("${get_global_res('Handle_Success','Thao tác thành công')}", $type_alert.INFO);
                             reloadData();
                         } else {
                             $msg.message("${get_global_res('Notification','Thông báo')}", "${get_global_res('Internal_Server_Error','Có lỗi từ phía máy chủ')}", function () { });

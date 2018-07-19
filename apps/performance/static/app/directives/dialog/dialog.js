@@ -53,14 +53,22 @@ function _Dialog() {
                 '<div class="modal-dialog combobox-dialog">' +
                 '<div class="modal-content">' +
                 '<div class="modal-header">' +
-                '<h4 class="modal-title"><i class="la la-info-circle"></i><span id="title"></span>' +
-                '<button type="button" class="close" data-dismiss="modal">&times;</button>' +
+                '<div class="left-content pull-left">' +
+                '<span class="modal-title" id="title"></span>' +
+                '</div>' +
+                '<div class="right-content pull-right">' +
+                '<button type="button" class="close" data-dismiss="modal"><i class="la la-close"></i></button>' +
+                '</div>' +
                 '</div>' +
                 '<div class="modal-body">' +
                 '</div>' +
                 '<div class="modal-footer">' +
+                '<div class="right-content pull-right">' +
                 '<button type="button">Đồng ý</button>' +
                 '<button type="button">Từ chối</button>' +
+                '</div>' +
+                '</div>' +
+                '</div>' +
                 '</div>' +
                 '</div>'
             );
@@ -132,13 +140,21 @@ function _Dialog() {
                 '<div class="modal-dialog combobox-dialog">' +
                 '<div class="modal-content">' +
                 '<div class="modal-header">' +
-                '<h4 class="modal-title"><i class="la la-info-circle"></i><span id="title"></span>' +
-                '<button type="button" class="close" data-dismiss="modal">&times;</button>' +
+                '<div class="left-content pull-left">' +
+                '<span class="modal-title" id="title"></span>' +
+                '</div>' +
+                '<div class="right-content pull-right">' +
+                '<button type="button" class="close" data-dismiss="modal"><i class="la la-close"></i></button>' +
+                '</div>' +
                 '</div>' +
                 '<div class="modal-body">' +
                 '</div>' +
                 '<div class="modal-footer">' +
+                '<div class="right-content pull-right">' +
                 '<button type="button">Đồng ý</button>' +
+                '</div>' +
+                '</div>' +
+                '</div>' +
                 '</div>' +
                 '</div>'
             );
@@ -215,7 +231,6 @@ function _Dialog() {
                 default:
                     vm._color = "background-color:#fff; color:#212529; border-color: 1px solid Black";
             }
-
             vm._alert = $(('<div id="hcs-toast-alert" style="#####;"></div>').replace('#####', vm._color));
             //Render form toast if not exsit
             if ($('#hcs-toast-alert').length == 0)
@@ -243,13 +258,21 @@ function _Dialog() {
                 '<div class="modal-dialog combobox-dialog">' +
                 '<div class="modal-content">' +
                 '<div class="modal-header">' +
-                '<h4 class="modal-title"><i class="la la-info-circle"></i><span id="title"></span>' +
-                '<button type="button" class="close" data-dismiss="modal">&times;</button>' +
+                '<div class="left-content pull-left">' +
+                '<span class="modal-title" id="title"></span>' +
+                '</div>' +
+                '<div class="right-content pull-right">' +
+                '<button type="button" class="close" data-dismiss="modal"><i class="la la-close"></i></button>' +
+                '</div>' +
                 '</div>' +
                 '<div class="modal-body">' +
                 '</div>' +
                 '<div class="modal-footer">' +
-                '<button type="button"><i class="la la-info-circle" style="padding-right:unset;"></i></button>' +
+                '<div class="right-content pull-right">' +
+                '<button type="button"><i class="la la-info-circle"></i></button>' +
+                '</div>' +
+                '</div>' +
+                '</div>' +
                 '</div>' +
                 '</div>'
             );
@@ -304,8 +327,12 @@ function _Dialog() {
                     '<div class="modal-dialog combobox-dialog" style="width:85%; top:1.5vh;">' +
                     '<div class="modal-content">' +
                     '<div class="modal-header">' +
-                    '<h4 class="modal-title"><i class="la la-info-circle"></i>' +
-                    '<button type="button" class="close" data-dismiss="modal">&times;</button>' +
+                    '<div class="left-content pull-left">' +
+                    '<span class="modal-title"><i class="la la-info-circle"></i></span>' +
+                    '</div>' +
+                    '<div class="right-content pull-right">' +
+                    '<button type="button" class="close" data-dismiss="modal"><i class="la la-close"></i></button>' +
+                    '</div>' +
                     '</div>' +
                     '<div class="modal-body" style="padding: 15px;height: 85vh;overflow: auto;">' +
                     '</div>' +

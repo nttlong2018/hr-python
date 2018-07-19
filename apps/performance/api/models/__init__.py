@@ -42,4 +42,7 @@ from HCSLS_District import HCSLS_District
 from HCSLS_Ward import HCSLS_Ward
 from HCSLS_Hamlet import HCSLS_Hamlet
 from HCSLS_Discipline import HCSLS_Discipline
+from HCSEM_Employees import HCSEM_Employees
+from HCSLS_JobWorkingGroup import HCSLS_JobWorkingGroup
+from TMLS_Rank import TMLS_Rank
 from tmp_transactions import tmp_transactions

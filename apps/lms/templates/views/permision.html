@@ -1,0 +1,17 @@
+﻿<div class="hcs-container">
+    <div class="row" style="margin:unset;">
+        <hcs-breadcumb data="mapName" selected-url="$partialpage" function="currentFunction"></hcs-breadcumb>
+        <div class="col-md-12" id="hcs-admin-system-container">
+            <hcs-left-menu data="mapName" avatar="false"></hcs-left-menu>
+            <div class="hcs-system-admin-content">
+                <div class="tab-content col-md-12" id="hcs-admin-system-panel-content">
+                   <div c-template url="${get_app_url('')}/pages/{{$partialpage}}" style="position: absolute; height: 100%; width: 100%;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="clearfix"></div>
+<script>
+    <%include file="../scripts/permision.js"/>
+</script>

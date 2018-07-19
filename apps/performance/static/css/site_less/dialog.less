@@ -1,10 +1,7 @@
-@site_color: #2d9bce;
+
 @footer_dialog: #2d9bce;
-@border_color: #cbcbcb;
-@border_color_hover: #009de1;
-@caption_color: #666;
-@value_color: #0D0D0D;
-@height:25px;
+
+
 /*Boostrap color*/
 @boostrap_primary_color: #337ab7;
 @boostrap_primary_border_color: #2e6da4;
@@ -22,21 +19,28 @@
 
 /**Dialog*/
 .modal {
+    /*position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 0!important;*/
+    overflow: hidden !important;
+    padding: unset !important;
 
     .modal-dialog {
-        top: 1.5vh;
         width: 70%;
 
-        .form-control {
-            color: unset;
-            background-color: unset;
-            border: unset;
+        button{
+            outline: none;
         }
 
         .modal-header {
-            background-color: @site_color;
-            padding: 8px;
+            background-color: @bg_blue;
+            padding: 0;
+            height: @h_top;
             border-radius: unset;
+            border-bottom: none !important;
 
             .modal-resize {
                 float: right;
@@ -50,9 +54,11 @@
                 }
             }
 
-            h4 {
+            .left-content, .right-content {
                 color: white;
                 font-weight: 400;
+                height: 100%;
+                padding: 0 10px;
 
                 button {
                     color: white;
@@ -67,44 +73,58 @@
                     height: 30px;
                 }
 
-                #title {
+                .modal-title {
                     display: inline;
                     font-size: 1rem;
-                    line-height: 1rem;
-                    border-left: 1px solid #fff;
-                    margin-left: 0.5rem;
-                    padding-left: 0.5rem;
+                    line-height: 36px;
+                    font-weight: bold;
+                    margin-left: 5px;
+                }
+            }
+
+            .right-content {
+                background: @bg_dark_blue;
+
+                button {
+                    opacity: 1;
                 }
             }
         }
 
         .modal-body {
-            padding: 15px 15px 15px 30px;
-            height: 75vh;
+            padding: 0;
+            height: calc(~'100vh - 142px');
             overflow: auto;
 
             span {
                 color: #0D0D0D;
                 font-weight: 400;
-                padding-bottom: 3px;
             }
         }
 
         .modal-footer {
-            background-color: @footer_dialog;
-            padding: 4px;
+            background-color: @bg_blue;
+            height: 36px;
+            padding: 0;
+            border-top: none !important;
 
-            button {
-                background: #E46C0A;
-                border: 1px solid white;
-                color: white;
-                font-size: 16px;
-                padding: 5px 10px;
-                -webkit-appearance: none;
-                margin-left: 10px;
+            .right-content {
+                height: 100%;
+                background: @bg_dark_blue;
 
-                i {
-                    padding-right: 5px;
+                button {
+                    background: transparent;
+                    border: none;
+                    color: white;
+                    font-size: 14px;
+                    padding: 5px 10px;
+                    -webkit-appearance: none;
+                    margin-left: 10px;
+
+                    i {
+                        padding-right: 5px;
+                        font-size: 20px;
+                    }
                 }
             }
 
@@ -125,9 +145,10 @@
     .resize-width {
         width: 100% !important;
         top: 0 !important;
+        margin: unset;
 
         .modal-content .modal-body {
-            height: ~"calc(100vh - 91px)" !important;
+            height: ~"calc(100vh - 75px)" !important;
         }
     }
 }
@@ -147,40 +168,6 @@
         min-width: 30%;
         top: 25vh;
 
-        .modal-header {
-            background-color: @site_color;
-            padding: 10px;
-            border-radius: unset;
-
-            h4 {
-                color: white;
-                font-weight: 400;
-                text-align: center;
-
-                button {
-                    color: white;
-                    padding-top: 5px;
-
-                    i {
-                        padding-top: 9px;
-                    }
-                }
-
-                img {
-                    display: unset !important;
-                    height: 30px;
-                }
-
-                #title {
-                    display: inline;
-                    font-size: 1rem;
-                    line-height: 1rem;
-                    margin-left: 0.5rem;
-                    padding-left: 0.5rem;
-                    border-left: unset;
-                }
-            }
-        }
 
         .modal-body {
             padding: 15px 15px 15px 15px;
@@ -214,3 +201,76 @@
         width: 35%;
     }
 }
+
+#hcs-toast-alert {
+    visibility: hidden; /* Hidden by default. Visible on click */
+    min-width: 250px; /* Set a default minimum width */
+    margin-left: -125px; /* Divide value of min-width by 2 */
+    background-color: #333; /* Black background color */
+    color: #fff; /* White text color */
+    text-align: center; /* Centered text */
+    border-radius: 2px; /* Rounded borders */
+    padding: 16px; /* Padding */
+    position: fixed; /* Sit on top of the screen */
+    z-index: 1; /* Add a z-index if needed */
+    left: 50%; /* Center the snackbar */
+    bottom: 30px; /* 30px from the bottom */
+}
+
+#hcs-toast-alert.show {
+    visibility: visible; /* Show the snackbar */
+    /* Add animation: Take 0.5 seconds to fade in and out the snackbar. 
+However, delay the fade out process for 2.5 seconds */
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 3s;
+    animation: fadein 0.5s, fadeout 0.5s 3s;
+}
+
+/* Animations to fade the snackbar in and out */
+@-webkit-keyframes fadein {
+    from {
+        bottom: 0;
+        opacity: 0;
+    }
+
+    to {
+        bottom: 30px;
+        opacity: 1;
+    }
+}
+
+@keyframes fadein {
+    from {
+        bottom: 0;
+        opacity: 0;
+    }
+
+    to {
+        bottom: 30px;
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes fadeout {
+    from {
+        bottom: 30px;
+        opacity: 1;
+    }
+
+    to {
+        bottom: 0;
+        opacity: 0;
+    }
+}
+
+@keyframes fadeout {
+    from {
+        bottom: 30px;
+        opacity: 1;
+    }
+
+    to {
+        bottom: 0;
+        opacity: 0;
+    }
+}
+

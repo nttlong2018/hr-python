@@ -1,0 +1,96 @@
+﻿<div class="hcs-body">
+    <div class="hcs-body-portal-content" style="">
+    <div class="row hcs-body-item" ng-repeat="function in $functions" ng-if="!function.parent_id"
+          id="group-{{function.function_id}}">
+        <div class="col-md-12">
+            <div class="hcs-home-heading">
+                <a href="javascript:void(0)" ng-click="handleEvent.onCollapse(function.function_id, $event)">
+                    <span>
+                        <i class="la la-angle-down" id="icon-{{function.function_id}}"></i>
+                    </span>
+                    <span class="hcs-home-heading-title">{{function.display_name}}</span>
+                    <span class="hcs-home-heading-title-bold">{{function.display_name_bold}}</span>
+                </a>
+                <br />
+                <span class="hcs-home-heading description">
+                    {{function.description}}
+                </span>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="hcs-home-body">
+                <div class="hcs-home-body-tile" id="hcs-body-{{function.function_id}}">
+                    <div ng-repeat="child in function.child_items" class="{{ child.width == 1 && child.height == 1 ? 
+                                        'hcs-home-body-tile-sm' : 
+                                   child.width == 2 && child.height == 1 ?
+                                        'hcs-home-body-tile-lg' :
+                                   child.width == 2 && child.height == 2 ?
+                                        'hcs-home-body-tile-ex' :
+                                   child.width == 1 && child.height == 2 ?
+                                        'hcs-home-body-tile-vw' :
+                                   child.type == 'I' ?
+                                        'hcs-home-body-tile-lg' :
+                                        ''}}" 
+                         style="background-image:{{child.type == 'I' ? 'url(' + child.image +')' : 'unset' }};"
+                         ng-click="handleEvent.redirectPage(child)">
+                        <div class="col-md-12" id="title" ng-if="child.type != 'I'">
+                            {{child.custom_name}}
+                        </div>
+                        <div class="col-md-12" id="subtitle" ng-if="child.type != 'I'">
+                            {{child.description}}
+                        </div>
+                        <div class="hcs-home-body-tile-footer" ng-if="child.type != 'I'">
+                            <span>
+                                <i class="{{child.icon}}"></i>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+    </div>
+    <div class="hcs-home-portal-nav-notification" id="style-2">
+        <div class="hcs-home-portal-nav-notification-item" style="background-image:unset" ng-repeat="notify in mockNotify" id="{{notify.id}}">
+            <div style="width:100%; height:20px;">
+                <div style="width:100%;float:right">
+                    <a href="#" ng-click="handleEvent.onCloseNotify($event)"
+                       on
+                       style="color: white;padding-right: 6px;font-size: 20px;float:right;" 
+                       data-dismiss="hcs-home-portal-nav-notification-item" 
+                       aria-label="close">&times;</a>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <div style="width:100%; height:48px;">
+                <div style="width:15%;float:left;">
+                    <span><i class="la la-bell" style="font-size: 3.5vw;
+    color: white;"></i></span>
+                </div>
+                <div style="width:85%;float:left">
+                    <span style="    color: white;
+    padding-right: 7px !important;
+    padding-left: 5px;
+    text-align: left;
+    float: left;">
+                        Bạn có một cuộc họp vào lúc 10:00 AM tại TP.HCM
+                    </span>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <div style="width:100%; height:20px;">
+                 <p style="    color: white;
+               margin-bottom: unset;
+               padding-left: 5px;
+               padding-top: 2px;
+               font-size:12px;">Cách đây 20 phút</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="clearfix"></div>
+<script>
+    <%include file="../scripts/home.js"/>
+</script>
+<%include file="../footer.html"/>

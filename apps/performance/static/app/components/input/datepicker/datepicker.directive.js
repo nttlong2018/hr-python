@@ -9,39 +9,38 @@
         return {
             restrict: 'E',
             replace: true,
-            scope: true,
+            scope: {
+                dt: "=ngModel",
+                format: "@"
+            },
             //transclude: true,
             //template: '<input type="text" class="form-control zb-form-input"/>',
             templateUrl: "app/components/input/datepicker/datepicker.html",
             link: function ($scope, elem, attr) {
-                var ngModel = attr["ngModel"];
-                var format = attr["format"];
-
                 if (attr["required"]) {
                     $(elem).attr("zb-required", '');
                 }
 
-                //console.log($scope)
                 $scope.opened = false;
-                $scope.format = (format) ? format : 'dd-MM-yyyy';
+                $scope.format = ($scope.format) ? $scope.format : 'dd-MM-yyyy';
                 $scope.options = {
                     showWeeks: false
-                };
-                var $dt = null;
-                if (ngModel && $scope.$eval(ngModel)) {
-                    $dt = new Date($scope.$eval(ngModel));
-                }
-                $scope.dt = $dt;
-                $scope.setDate = function (year, month, day) {
-                    $scope.dt = new Date(year, month, day);
                 };
 
                 $loadLayout($scope, elem, attr);
 
                 $scope.$watch("dt", function (val, old) {
                     $scope.opened = false;
+                    // if (val) {
+                    //     $scope.dt = new Date($scope.dt);
+                    // } else {    
+                    //     $scope.dt = new Date();
+                    // }
+                    if (!angular.isDate(val)) {
+                        $scope.dt = ($scope.dt) ? new Date($scope.dt) : new Date();
+                    }
+
                     $scope.$applyAsync();
-                    $parse(ngModel).assign($scope.$parent, val);
                 });
             }
         };

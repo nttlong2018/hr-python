@@ -10,9 +10,8 @@
             var url = scope.__mode === 1 ? "${get_api_key('app_main.api.HCSSYS_Departments/insert')}" 
             : "${get_api_key('app_main.api.HCSSYS_Departments/update')}" ;
             callApi(url, scope.entity, function (res) {
-                debugger
                 if (res.error == null) {
-                    $msg.alert("${get_global_res('Handle_Success','Thao tác thành công')}", $type_alert.SUCCESS);
+                    $msg.alert("${get_global_res('Handle_Success','Thao tác thành công')}", $type_alert.INFO);
                 } else if (res.error.hasOwnProperty('code') && res.error.code == "duplicate") {
                     $msg.message("${get_global_res('Internal_Server_Error','Có lỗi từ phía máy chủ')}", "${ get_res('department_code', 'Mã phòng ban') }" + "${get_global_res('exists','đã tồn tại')}", function () { });
                 } else if (res.error.hasOwnProperty('code') && res.error.code == "missing") {

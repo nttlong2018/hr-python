@@ -1,5 +1,5 @@
 ﻿
-    <div class="row">
+    <!--<div class="row">
         <div class="hcs-profile-background-group-table" style="margin-right:15px;">
             <div class="pull-left hcs-profile-icon-heading-on-table" style="height: 100%;padding-right: 3px;background: white;margin-left: unset;">
                 <button class="zb-icon-button hcs-profile-group-title" onclick="$('#collapseTableAwardPlace').slideToggle();">
@@ -52,18 +52,21 @@
                 <input-text id="tableAwardPlaceSearchText">
             </div>
         </div>
+    </div>-->
+    <div id="collapseTableAwardPlace">
+        <collapse-box class="zb-datatable" title="${get_res('award_place_caption_toolbar','Tổ chức khen thưởng')}">
+            <div class="row">
+                <div class="col-md-12" style="height: 37vh;">
+                    <table-data data-source="tableSource" fields="tableFields" type="MultiSelect" 
+                    server-side="true" page-length="100" paging="true" 
+                    selected-items="selectedItems"
+                    current-item="currentItem" search-text="tableSearchText"
+                    refresh-row="refreshDataRow">
+                    </table-data>
+                </div>
+            </div>
+        </collapse-box>
     </div>
-    <div id="collapseTableAwardPlace" class="row">
-        <div class="col-md-12" style="height: 37vh;">
-            <table-data data-source="tableSource" fields="tableFields" type="MultiSelect" 
-            server-side="true" page-length="100" paging="true" 
-            selected-items="selectedItems"
-            current-item="currentItem" search-text="tableSearchText"
-            refresh-row="refreshDataRow">
-            </table-data>
-        </div>
-    </div>
-
 <script>
     <%include file = "./scripts/awardplace.js" />
 </script>

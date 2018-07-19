@@ -1,0 +1,110 @@
+﻿
+    <!--<div class="row">
+        <div class="hcs-profile-background-group-table" style="margin-right:15px;">
+            <div class="pull-left hcs-profile-icon-heading-on-table" style="height: 100%;padding-right: 3px;background: white;margin-left: unset;">
+                <button class="zb-icon-button hcs-profile-group-title" onclick="$('#collapseTableAward').slideToggle();">
+                    <span>
+                        <i class="la la-angle-down" style="font-size:0.7rem;"></i>
+                    </span>
+                </button>
+            </div>
+            <div class="pull-left hcs-profile-icon-heading-on-table" style="margin-left: unset;">
+                <button class="zb-icon-button hcs-profile-group-title" onclick="$('#collapseTableAward').slideToggle();">
+                ${get_res('award_caption_toolbar','Hình thức khen thưởng')}
+                </button>
+            </div>
+            <div class="pull-right hcs-profile-icon-heading-on-table">
+                <button class="zb-icon-button hcs-profile-group-title" ng-click="onReload()">
+                    <span>
+                        <i class="la la-refresh"></i>
+                    </span>
+                </button>
+            </div>
+            <div class="pull-right hcs-profile-icon-heading-on-table">
+                <button class="zb-icon-button hcs-profile-group-title" ng-click="onDelete()">
+                    <span>
+                        <i class="la la-trash"></i>
+                    </span>
+                </button>
+            </div>
+            <div class="pull-right hcs-profile-icon-heading-on-table">
+                <button class="zb-icon-button hcs-profile-group-title" ng-click="onEdit()">
+                    <span>
+                        <i class="la la-pencil"></i>
+                    </span>
+                </button>
+            </div>
+            <div class="pull-right hcs-profile-icon-heading-on-table">
+                <button class="zb-icon-button hcs-profile-group-title" ng-click="onAdd()">
+                    <span>
+                        <i class="la la-plus"></i>
+                    </span>
+                </button>
+            </div>
+            <div class="pull-right hcs-profile-icon-heading-on-table" style="width:25px;margin-left:10px;">
+                <button class="zb-icon-button hcs-profile-group-title" ng-click="onReload()">
+                    <span>
+                        <i class="la la-search"></i>
+                    </span>
+                </button>
+            </div>
+            <div class="pull-right">
+                <input-text id="tableAwardSearchText">
+            </div>
+        </div>
+    </div>-->
+    <div id="collapseTableAward">
+        <collapse-box class="zb-datatable"  title="${get_res('jobworking','Chức danh công việc')}">
+            <div class="pull-right hcs-profile-icon-heading-on-table">
+                <button class="zb-icon-button hcs-profile-group-title" ng-click="onReload()">
+                    <span>
+                        <i class="la la-refresh"></i>
+                    </span>
+                </button>
+            </div>
+            <div class="pull-right hcs-profile-icon-heading-on-table">
+                <button class="zb-icon-button hcs-profile-group-title" ng-click="onDelete()">
+                    <span>
+                        <i class="la la-trash"></i>
+                    </span>
+                </button>
+            </div>
+            <div class="pull-right hcs-profile-icon-heading-on-table">
+                <button class="zb-icon-button hcs-profile-group-title" ng-click="onEdit()">
+                    <span>
+                        <i class="la la-pencil"></i>
+                    </span>
+                </button>
+            </div>
+            <div class="pull-right hcs-profile-icon-heading-on-table">
+                <button class="zb-icon-button hcs-profile-group-title" ng-click="onAdd()">
+                    <span>
+                        <i class="la la-plus"></i>
+                    </span>
+                </button>
+            </div>
+            <div class="pull-right hcs-profile-icon-heading-on-table" style="width:25px;margin-left:10px;">
+                <button class="zb-icon-button hcs-profile-group-title" ng-click="onReload()">
+                    <span>
+                        <i class="la la-search"></i>
+                    </span>
+                </button>
+            </div>
+            <div class="pull-right">
+                <input-text id="tableAwardSearchText">
+            </div>
+            <div class="row">
+                <div class="col-md-12" style="height: 77.5vh;">
+                    <table-data data-source="tableSource" fields="tableFields" type="MultiSelect" 
+                    server-side="true" page-length="100" paging="true" 
+                    selected-items="selectedItems"
+                    current-item="currentItem" search-text="tableSearchText"
+                    refresh-row="refreshDataRow">
+                    </table-data>
+                </div>
+        </div>
+    </div>
+
+<script>
+    <%include file = "./scripts/jobworking.js" />
+</script>

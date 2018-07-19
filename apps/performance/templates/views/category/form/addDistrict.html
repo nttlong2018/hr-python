@@ -1,143 +1,121 @@
 ﻿<div class="modal-dialog">
     <div class="modal-content">
         <div class="modal-header">
-            <h4 class="modal-title">
-                <img src="{{$root.logo}}"><span id="title">${get_res('Detail_District','Chi tiết Quận/Huyện')}</span>
+            <div class="left-content pull-left">
+                <!--<img src="{{$root.logo}}">-->
+                <span class="modal-title">{{title}}</span>
+            </div>
+            <div class="right-content pull-right">
                 <button type="button" class="close" data-dismiss="modal"><i class="la la-close"></i></button>
                 <button type="button" class="close" ng-click="onResizeDialog()"><span class="modal-resize"><i class="la la-expand"></i></span></button>
-            </h4 > 
+            </div>
         </div>
         <div class="modal-body">
-            <div class="row">
-                <div class="col-md-{{col_group}} col-sm-{{col_group}}" style="padding-bottom:20px;">
+            <div class="col-md-{{col_group}} col-sm-{{col_group}}">
+                <collapse-box class="zb-form-common" title="${get_global_res('Common_Information','Thông tin chung')}">
+                    <div class="col-md-{{col}}">
+                        <div class="form-group zb-form-group">
+                            <!--Mã Quận/Huyện-->
+                            <label for="input_district_code" class="col-sm-5 zb-form-label">${get_res('district_code','Mã Quận/Huyện')}</label>
+                            <div class="col-sm-7">
+                                <input-text id="input_district_code" ng-model="entity.district_code" ng-disabled="{{ __district_mode === 2 ? 'true' : 'false' }}" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-{{col}}">
+                        <div class="form-group zb-form-group">
+                            <!--Tên Quận/Huyện-->
+                            <label for="input_district_name" class="col-sm-5 zb-form-label">${get_res('district_name','Tên Quận/Huyện')}</label>
+                            <div class="col-sm-7">
+                                <input-text id="input_district_name" ng-model="entity.district_name" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-{{col}}">
+                        <div class="form-group zb-form-group">
+                            <!--Tên khác-->
+                            <label for="input_district_name2" class="col-sm-5 zb-form-label">${get_res('district_name2','Tên khác')}</label>
+                            <div class="col-sm-7">
+                                <input-text id="input_district_name2" ng-model="entity.district_name2">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-{{col}}">
+                        <div class="form-group zb-form-group">
+                            <!--Mã quy định-->
+                            <label for="input_org_district_code" class="col-sm-5 zb-form-label">${get_res('org_district_code','Mã quy định')}</label>
+                            <div class="col-sm-7">
+                                <input-text id="input_org_district_code" ng-model="entity.org_district_code">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-{{col}}">
+                        <div class="form-group zb-form-group">
+                            <!--Thuộc Tỉnh/Thành-->
+                            <label for="input_nation_code" class="col-sm-5 zb-form-label">${get_res('province_type_code','Thuộc Tỉnh/Thành')}</label>
+                            <div class="col-sm-7">
+                                <!--<input-select data-list="cbbContinents" ng-model="entity.type_code"
+                                                placeholder="Tìm kiếm" 
+                                                data-value="value" 
+                                                data-caption="caption"/>-->
+                                <input-combobox api-url="${get_api_key('app_main.api.common/get_dropdown_list')}"
+                                            list-code="${encryptor.get_key('cbb_province')}"
+                                            list-value="[{ '@province_code': '' }]"
+                                            current-item="entity.province_code"
+                                            multi-select="false" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-{{col}}">
+                        <div class="form-group zb-form-group">
+                            <!--Thứ tự-->
+                            <label for="inputOrdinal" class="col-sm-5 zb-form-label">${get_res('ordinal','Thứ tự')}</label>
+                            <div class="col-sm-7">
+                                <input-number id="inputOrdinal" ng-model="entity.ordinal">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-{{col}}">
+                        <div class="form-group zb-form-group">
+                            <!--Ngưng sử dụng-->
+                            <label for="inputLock" class="col-sm-5 zb-form-label">${get_res('lock','Ngưng sử dụng')}</label>
+                            <div class="col-sm-7">
+                                <input-checkbox id="inputLock" ng-model="entity.lock">
+                            </div>
+                        </div>
+                    </div>
+                </collapse-box>
+            </div>
+            <div class="col-md-{{ 12 - col_group}} col-sm-{{ 12 - col_group}}">
+                <collapse-box class="zb-form-common" title="${get_global_res('Note','Ghi chú')}">
                     <div class="row">
-                        <p class="hcs-group-collapse-heading">
-                            <button class="zb-icon-button hcs-profile-group-title" onclick="$('#collapseDialogCommonInfoGroup').slideToggle();">
-                                <span>
-                                    <i class="la la-angle-down"></i>
-                                </span>${get_global_res('Common_Information','Thông tin chung')}
-                            </button>
-                        </p>
+                        <!--Ghi chú-->
+                        <div class="col-sm-12">
+                            <input-textarea rows="10" ng-model="entity.note"></input-textarea>
+                        </div>
                     </div>
-                    <div class="row" id="collapseDialogCommonInfoGroup">
-                        <div class="col-md-{{col}}">
-                            <div class="form-group row hcs-group-form-group">
-                                <!--Mã Quận/Huyện-->
-                                <label for="input_district_code" class="col-sm-5 zb-form-label">${get_res('district_code','Mã Quận/Huyện')}</label>
-                                <div class="col-sm-7">
-                                    <input-text id="input_district_code" ng-model="entity.district_code" ng-disabled="{{ __district_mode === 2 ? 'true' : 'false' }}" required>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-{{col}}">
-                            <div class="form-group row hcs-group-form-group">
-                                <!--Tên Quận/Huyện-->
-                                <label for="input_district_name" class="col-sm-5 zb-form-label">${get_res('district_name','Tên Quận/Huyện')}</label>
-                                <div class="col-sm-7">
-                                    <input-text id="input_district_name" ng-model="entity.district_name" required>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-{{col}}">
-                            <div class="form-group row hcs-group-form-group">
-                                <!--Tên khác-->
-                                <label for="input_district_name2" class="col-sm-5 zb-form-label">${get_res('district_name2','Tên khác')}</label>
-                                <div class="col-sm-7">
-                                    <input-text id="input_district_name2" ng-model="entity.district_name2">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-{{col}}">
-                            <div class="form-group row hcs-group-form-group">
-                                <!--Mã quy định-->
-                                <label for="input_org_district_code" class="col-sm-5 zb-form-label">${get_res('org_district_code','Mã quy định')}</label>
-                                <div class="col-sm-7">
-                                    <input-text id="input_org_district_code" ng-model="entity.org_district_code">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-{{col}}">
-                            <div class="form-group row hcs-group-form-group">
-                                <!--Thuộc Tỉnh/Thành-->
-                                <label for="input_nation_code" class="col-sm-5 zb-form-label">${get_res('province_type_code','Thuộc Tỉnh/Thành')}</label>
-                                <div class="col-sm-7">
-                                    <!--<input-select data-list="cbbContinents" ng-model="entity.type_code"
-                                                  placeholder="Tìm kiếm" 
-                                                  data-value="value" 
-                                                  data-caption="caption"/>-->
-                                    <input-combobox api-url="${get_api_key('app_main.api.common/get_dropdown_list')}"
-                                                list-code="${encryptor.get_key('cbb_province')}"
-                                                list-value="[{ '@province_code': '' }]"
-                                                current-item="entity.province_code"
-                                                multi-select="false" required>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-{{col}}">
-                            <div class="form-group row hcs-group-form-group">
-                                <!--Thứ tự-->
-                                <label for="inputOrdinal" class="col-sm-5 zb-form-label">${get_res('ordinal','Thứ tự')}</label>
-                                <div class="col-sm-7">
-                                    <input-number id="inputOrdinal" ng-model="entity.ordinal">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-{{col}}">
-                            <div class="form-group row hcs-group-form-group">
-                                <!--Ngưng sử dụng-->
-                                <label for="inputLock" class="col-sm-5 zb-form-label">${get_res('lock','Ngưng sử dụng')}</label>
-                                <div class="col-sm-7">
-                                    <input-checkbox id="inputLock" ng-model="entity.lock">
-                                </div>
+                    <div class="col-md-12" style="padding-top: 16px;">
+                        <div class="form-group zb-form-group">
+                            <label for="DisplayInfo" class="col-sm-3 zb-form-label">${get_global_res('create_and_modify','Tạo | Sửa')}</label>
+                            <div class="col-sm-9">
+                                <input-text value="{{ entity.created_on | date: $root.systemConfig.date_format}} {{entity.created_by}} | {{ entity.modified_on | date: $root.systemConfig.date_format}} {{entity.modified_by}}" ng-disabled="true">
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-md-{{ 12 - col_group}} col-sm-{{ 12 - col_group}}" style="padding-bottom:20px;">
-                    <div class="row">
-                        <p class="hcs-group-collapse-heading">
-                            <button class="zb-icon-button hcs-profile-group-title" onclick="$('#collapseDialogNoteGroup').slideToggle();">
-                                <span>
-                                    <i class="la la-angle-down"></i>
-                                </span>${get_global_res('Note','Ghi chú')}
-                            </button>
-                        </p>
-                    </div>
-                    <div class="row" id="collapseDialogNoteGroup">
-                        <div class="col-md-12">
-                            <div class="form-group row hcs-group-form-group">
-                                <!--Ghi chú-->
-                                <div class="col-sm-12">
-                                     <div data-c-html-box 
-                                          ng-model="entity.note"
-                                          style="height:100px"
-                                          id="inputNote">
-                                     </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-12" style="padding-top: 16px;">
-                            <div class="form-group row hcs-group-form-group">
-                                <label for="DisplayInfo" class="col-sm-3 zb-form-label">${get_global_res('create_and_modify','Tạo | Sửa')}</label>
-                                <div class="col-sm-9">
-                                    <input-text 
-                                                value="{{ entity.created_on | date: $root.systemConfig.date_format}} {{entity.created_by}} | {{ entity.modified_on | date: $root.systemConfig.date_format}} {{entity.modified_by}}" ng-disabled="true">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                </collapse-box>
             </div>
         </div>
         <div class="modal-footer">
-            <div class="pull-right"><button class="hcs-form-dialog-icon-button last" data-dismiss="modal"><i class="la la-ban"></i></button></div>
-            <div class="pull-right"><button class="hcs-form-dialog-icon-button" ng-click="saveNClose($event)"><i class="la la-save"></i></button></div>
-            <div class="pull-right"><button ng-click="saveNAdd($event)"><i class="la la-save"></i>${get_global_res('save_and_add','Lưu & thêm')}</button></div>
+            <div class="right-content pull-right">
+                <button ng-click="saveNAdd($event)"><i class="la la-save"></i>${get_global_res('save_and_add','Lưu & thêm')}</button>
+                <button ng-click="saveNClose($event)"><i class="la la-save"></i>${get_global_res('save_and_close','Lưu & đóng')}</button>
+            </div>
         </div>
     </div>
 </div>
 <script>
     (function (scope) {
+        scope.title = scope.$parent.headerTitle;
         scope.__district_mode = scope.$parent.district_mode;
         scope.onResizeDialog = onResizeDialog;
         scope.col = 12;
@@ -167,7 +145,7 @@
                 editData(function (res) {
                     if (res.error == null) {
                         $dialog.closeDialog();//Đóng form input
-                        $msg.alert("${get_global_res('Handle_Success','Thao tác thành công')}", $type_alert.SUCCESS);//Xuất thông báo thành cônng
+                        $msg.alert("${get_global_res('Handle_Success','Thao tác thành công')}", $type_alert.INFO);//Xuất thông báo thành cônng
                         if (scope.__district_mode == 1 || scope.__district_mode == 3) {
                             //Reload table data
                             reloadData();
@@ -183,6 +161,8 @@
                         $msg.message("${get_global_res('Internal_Server_Error','Có lỗi từ phía máy chủ')}", "${get_global_res('Please_Try_Again','Xin thử vui lòng thử lại')}", function () { });
                     }
                 });
+            } else {
+                $msg.message("${get_global_res('Input_Error','Nhập liệu sai')}", "${get_global_res('input_data_not empty','Dữ liệu đầu vào không được để trống')}", function () { });
             }
         }
 
@@ -207,13 +187,15 @@
                             //Refesh datatable
                             scope.$parent.refreshDataDistrictRow();
                         }
-                        $msg.alert("${get_global_res('Handle_Success','Thao tác thành công')}", $type_alert.SUCCESS);
+                        $msg.alert("${get_global_res('Handle_Success','Thao tác thành công')}", $type_alert.INFO);
                         scope.entity = null;
                         scope.__district_mode = 1;
                     } else {
                         $msg.message("${get_global_res('Internal_Server_Error','Có lỗi từ phía máy chủ')}", "${get_global_res('Please_Try_Again','Xin thử vui lòng thử lại')}", function () { });
                     }
                 });
+            } else {
+                $msg.message("${get_global_res('Input_Error','Nhập liệu sai')}", "${get_global_res('input_data_not empty','Dữ liệu đầu vào không được để trống')}", function () { });
             }
         }
 

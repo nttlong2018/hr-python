@@ -164,23 +164,25 @@ APPS=[
       dict(host="admin",
            name="admin",
            path="apps/admin",
-           schema="lms"),
+           # schema="lms"
+           ),
       dict(host="sys-admin",
            name="sys-admin",
            path="apps/sys_admin",
            schema="sys"),
+        dict(host="lms",
+           name="lms",
+           path="apps/lms"),
 
       dict(
-          host="default", #"performance",
+          host="", #"performance",
           name="performance",
           path="apps/performance",
           schema_delete="lacviet"
       ),
       dict(host="hrm",
            name="hrm",
-           path="apps/hrm",
-           schema="lacviet",
-           login="/login"
+           path="apps/hrm"
            ),
 
       # dict(host="app-main",

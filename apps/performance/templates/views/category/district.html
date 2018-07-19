@@ -1,66 +1,52 @@
 ﻿
-    <div class="row">
-        <div class="hcs-profile-background-group-table" style="margin-right:15px;">
-            <div class="pull-left hcs-profile-icon-heading-on-table" style="height: 100%;padding-right: 3px;background: white;margin-left: unset;">
-                <button class="zb-icon-button hcs-profile-group-title" onclick="$('#collapseTableDistrict').slideToggle();">
-                    <span>
-                        <i class="la la-angle-down" style="font-size:0.7rem;"></i>
-                    </span>
-                </button>
-            </div>
-            <div class="pull-left hcs-profile-icon-heading-on-table" style="margin-left: unset;">
-                <button class="zb-icon-button hcs-profile-group-title" onclick="$('#collapseTableDistrict').slideToggle();">
-                ${get_res('district_caption_toolbar','2. Quận/Huyện')}
-                </button>
-            </div>
-            <div class="pull-right hcs-profile-icon-heading-on-table">
-                <button class="zb-icon-button hcs-profile-group-title" ng-click="onReloadDistrict()">
-                    <span>
-                        <i class="la la-refresh"></i>
-                    </span>
-                </button>
-            </div>
-            <div class="pull-right hcs-profile-icon-heading-on-table">
-                <button class="zb-icon-button hcs-profile-group-title" ng-click="onDeleteDistrict()">
-                    <span>
-                        <i class="la la-trash"></i>
-                    </span>
-                </button>
-            </div>
-            <div class="pull-right hcs-profile-icon-heading-on-table">
-                <button class="zb-icon-button hcs-profile-group-title" ng-click="onEditDistrict()">
-                    <span>
-                        <i class="la la-pencil"></i>
-                    </span>
-                </button>
-            </div>
-            <div class="pull-right hcs-profile-icon-heading-on-table">
-                <button class="zb-icon-button hcs-profile-group-title" ng-click="onAddDistrict()">
-                    <span>
-                        <i class="la la-plus"></i>
-                    </span>
-                </button>
-            </div>
-            <div class="pull-right hcs-profile-icon-heading-on-table" style="width:25px;margin-left:10px;">
-                <button class="zb-icon-button hcs-profile-group-title">
-                    <span>
-                        <i class="la la-search"></i>
-                    </span>
-                </button>
-            </div>
-            <div class="pull-right">
-                <input-text id="tableDistrictSearchText">
-            </div>
-        </div>
-    </div>
     <div id="collapseTableDistrict" class="row">
         <div class="col-md-12" style="height: 37vh;">
-            <table-data data-source="tableDistrictSource" fields="tableDistrictFields" type="MultiSelect" 
-            server-side="true" page-length="100" paging="true" 
-            selected-items="selectedDistricts"
-            current-item="currentDistrict" search-text="tableDistrictSearchText"
-            refresh-row="refreshDataDistrictRow">
-            </table-data>
+            <collapse-box class="zb-datatable" title="${get_res('district_caption_toolbar','2. Quận/Huyện')}">
+                <div class="pull-right hcs-profile-icon-heading-on-table">
+                    <button class="zb-icon-button hcs-profile-group-title" ng-click="onReloadDistrict()">
+                        <span>
+                            <i class="la la-refresh"></i>
+                        </span>
+                    </button>
+                </div>
+                <div class="pull-right hcs-profile-icon-heading-on-table">
+                    <button class="zb-icon-button hcs-profile-group-title" ng-click="onDeleteDistrict()">
+                        <span>
+                            <i class="la la-trash"></i>
+                        </span>
+                    </button>
+                </div>
+                <div class="pull-right hcs-profile-icon-heading-on-table">
+                    <button class="zb-icon-button hcs-profile-group-title" ng-click="onEditDistrict()">
+                        <span>
+                            <i class="la la-pencil"></i>
+                        </span>
+                    </button>
+                </div>
+                <div class="pull-right hcs-profile-icon-heading-on-table">
+                    <button class="zb-icon-button hcs-profile-group-title" ng-click="onAddDistrict()">
+                        <span>
+                            <i class="la la-plus"></i>
+                        </span>
+                    </button>
+                </div>
+                <div class="pull-right hcs-profile-icon-heading-on-table" style="width:25px;margin-left:10px;">
+                    <button class="zb-icon-button hcs-profile-group-title">
+                        <span>
+                            <i class="la la-search"></i>
+                        </span>
+                    </button>
+                </div>
+                <div class="pull-right">
+                    <input-text id="tableDistrictSearchText">
+                </div>
+                <table-data data-source="tableDistrictSource" fields="tableDistrictFields" type="MultiSelect" 
+                server-side="true" page-length="100" paging="true" 
+                selected-items="selectedDistricts"
+                current-item="currentDistrict" search-text="tableDistrictSearchText"
+                refresh-row="refreshDataDistrictRow">
+                </table-data>
+            </collapse-box>
         </div>
     </div>
 
@@ -144,7 +130,7 @@
                         .then(function (res) {
                             if (res.deleted > 0) {
                                 _tableDistrictData(scope.$$tableDistrictConfig.iPage, scope.$$tableDistrictConfig.iPageLength, scope.$$tableDistrictConfig.orderBy, scope.$$tableDistrictConfig.SearchText, scope.$$tableDistrictConfig.fnReloadData);
-                                $msg.alert("${get_global_res('Handle_Success','Thao tác thành công')}", $type_alert.SUCCESS);
+                                $msg.alert("${get_global_res('Handle_Success','Thao tác thành công')}", $type_alert.INFO);
                                 scope.currentDistrict = null;
                                 scope.selectedDistricts = [];
                             }
