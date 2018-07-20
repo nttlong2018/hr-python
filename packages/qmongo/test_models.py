@@ -3,7 +3,6 @@
 import helpers
 import database
 from helpers import get_model
-from qview import create_mongodb_view
 helpers.define_model(
     "base",
     [["Code"]],
@@ -12,7 +11,7 @@ helpers.define_model(
         F=helpers.create_field("X",False)
     )
 )
-
+helpers.filter()
 def on_before_insert(data):
 
     data["ParentCode"]=None
@@ -41,14 +40,10 @@ db=database.connect(
 # ret=db.collection("departments").insert(
 #     Code="A01"
 # )
-from qview import create_mongodb_view
 ret=db.collection("departments")
-ret.switch_schema("long_test")
 x=ret.aggregate()
-v=create_mongodb_view(x,"test_cai_coi")
-items=v.get_list()
-print items
-# ret=ret.update({
-#     "Code":"C1"
-# },"paths=={0}","a01")
-# print(ret)
+
+ret=ret.update({
+    "Code":"C1"
+},"paths=={0}","a01")
+print(ret)

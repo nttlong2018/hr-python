@@ -14,18 +14,26 @@ __menu_items__=[
                 }
             ]
 
-         },{
-        "caption":"content",
-        "items":[
-            {
-                "page":"Course",
-                "caption":"Course ware"
-            },{
-                "page":"Wiki",
-                "caption":"wiki"
-            }
-        ]
-    }
+        },{
+            "caption":"System",
+            "items":[
+                {
+                    "page":"pages/email_settings",
+                    "caption":"Email settings"
+                }
+            ]
+        },{
+            "caption":"content",
+            "items":[
+                {
+                    "page":"Course",
+                    "caption":"Course ware"
+                },{
+                    "page":"Wiki",
+                    "caption":"wiki"
+                }
+            ]
+        }
 
 ]
 

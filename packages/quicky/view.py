@@ -34,6 +34,7 @@ def template(fn,*_path,**kwargs):
     def exec_request(request, **kwargs):
         from . import applications as apps
         import threading
+
         setattr(threading.current_thread(), "user", request.user)
         setattr(threading.currentThread(), "user", request.user)
 
@@ -82,15 +83,15 @@ def template(fn,*_path,**kwargs):
                 if app != None:
                     if hasattr(app.settings, "DEFAULT_DB_SCHEMA"):
                         import tenancy
-
                         tenancy.set_schema(app.settings.DEFAULT_DB_SCHEMA)
-                    from . import get_tenancy_schema
-                    _tenancy_code=request_path.split('/')[1]
-                    _schema=get_tenancy_schema(request_path.split('/')[1])
-                    import threading
-                    setattr(threading.currentThread(), "tenancy_code", _tenancy_code)
-                    setattr(threading.currentThread(), "request_tenancy_code", _schema)
-                    setattr(request, "tenancy_code", _schema)
+                    else:
+                        from . import get_tenancy_schema
+                        _tenancy_code=request_path.split('/')[1]
+                        _schema=get_tenancy_schema(request_path.split('/')[1])
+                        import threading
+                        setattr(threading.currentThread(), "tenancy_code", _tenancy_code)
+                        setattr(threading.currentThread(), "request_tenancy_code", _schema)
+                        setattr(request, "tenancy_code", _schema)
 
 
                 else:

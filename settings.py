@@ -15,10 +15,13 @@ import os
 import sys
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
 sys.path.append(BASE_DIR+"/packages")
+sys.path.append(os.getcwd()+"/packages/mongo")
 sys.path.append(BASE_DIR+"/packages/django")
 
 sys.path.append(os.getcwd()+"/packages")
+
 sys.path.append(os.getcwd()+"/packages/django")
 from django.conf.urls import url, include
 

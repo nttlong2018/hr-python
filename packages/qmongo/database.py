@@ -11,7 +11,7 @@ import pymongo
 import pytz
 from bson.codec_options import CodecOptions
 import helpers
-_cach_view={}
+
 _cache_create_key_for_collection=None
 def get_current_schema():
     # type: () -> str
@@ -1309,7 +1309,6 @@ class AGGREGATE():
         return ret
     def copy(self):
         return self.__copy__()
-
 def connect(*args,**kwargs):
     """
     Create db instance <br/>
