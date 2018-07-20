@@ -6,26 +6,50 @@ import sys
 
 
 sys.path.append("/home/hcsadmin/argo/packages/mongo")
-import pymongo
-from pymongo.read_concern import ReadConcern
+import transaction
+import helpers
+import database
+db=database.connect(host="localhost",port=27017,name="test",user="root",password="123456")
+helpers.define_model(
+    "test",
+    [["Code"]],
+    Code=helpers.create_field("text",True))
+coll=db.collection("test")
+coll.turn_never_use_schema_on()
+session=transaction.create_session(coll)
+transaction.start_transaction(session)
+coll.set_session(session)
+a=coll.aggregate()
+coll.delete(
+    "Code=={0}","test"
+)
+list=a.get_list()
+transaction.abort_transaction(session)
 
-from pymongo.write_concern import WriteConcern
-client = pymongo.MongoClient("localhost", 27017)
+# trlist=coll.get_list()ansaction.commit_transaction(session)
+transaction.end_session(session)
 
-session=client.start_session()
-
-# db=session._client.get_database("test")
-coll2=client.test.get_collection("test.test004")
-coll=client.test.get_collection("test.test003")
-session.start_transaction(
-    read_concern=ReadConcern("snapshot"),
-    write_concern=WriteConcern(w="majority"))
-
-coll2.insert_one({"A":"a01"},session=session)
-# coll.insert_one({"code":1},session=session)
-# session.abort_transaction()
-session.commit_transaction()
-session.end_session()
+# import pymongo
+# from pymongo.read_concern import ReadConcern
+#
+# from pymongo.write_concern import WriteConcern
+#
+# client = pymongo.MongoClient("localhost", 27017)
+#
+# session=client.start_session()
+#
+# # db=session._client.get_database("test")
+# coll2=client.test.get_collection("test.test004")
+# coll=client.test.get_collection("test.test003")
+# session.start_transaction(
+#     read_concern=ReadConcern("snapshot"),
+#     write_concern=WriteConcern(w="majority"))
+#
+# coll2.insert_one({"A":"a01"},session=session)
+# # coll.insert_one({"code":1},session=session)
+# # session.abort_transaction()
+# session.commit_transaction()
+# session.end_session()
 # db=client.get_database("test")
 # orders = db.orders
 # inventory = db.inventory

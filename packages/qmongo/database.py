@@ -11,7 +11,7 @@ import pymongo
 import pytz
 from bson.codec_options import CodecOptions
 import helpers
-
+from pymongo.client_session import ClientSession
 _cache_create_key_for_collection=None
 def get_current_schema():
     # type: () -> str
@@ -246,12 +246,14 @@ class ENTITY():
                 code="duplicate"
             )
         )
-    def commit(self):
+    def commit(self,session = None):
         """
         Commit actio. Example; insert_many then commit, update or delete require filter before
         :return:
         """
         _id=None
+        if session != None and not isinstance(session,ClientSession):
+            raise (Exception("Session must be 'pymongo.client_session.ClientSession'"))
         if self._data.has_key("$set"):
             _id=self._data["$set"].get("_id",None)
             for key in self._data["$set"].keys():
@@ -289,7 +291,7 @@ class ENTITY():
                             code="invalid_data"
                         )
                     )
-                ret = _coll.insert_one(self._data)
+                ret = _coll.insert_one(self._data,False,session)
                 ret_data = self._data.copy()
                 ret_data.update({
                     "_id": ret.inserted_id
@@ -383,7 +385,7 @@ class ENTITY():
                         })
                 try:
 
-                    ret = _coll.update_many(self._expr,updater)
+                    ret = _coll.update_many(self._expr,updater,False,None,False,None,session)
                     self._expr = None
                     self._action = None
                     self._data = {}
@@ -402,7 +404,7 @@ class ENTITY():
                     raise ex
 
             if self._action=="delete":
-                ret = _coll.delete_many(self._expr)
+                ret = _coll.delete_many(self._expr,None,session)
                 self._expr = None
                 self._action = None
                 self._data = {}
@@ -525,6 +527,7 @@ class COLL():
 
         self._model=get_model(name)
         self.schema=get_current_schema()
+        self.session = None
        
 
         self.qr=qr
@@ -534,7 +537,18 @@ class COLL():
         :return:
         """
         self._never_use_schema=True
+    def set_session(self,_session):
+        """
+        Join this collection to session
+        :param _session:
+        :return:
+        """
+        # type: (ClientSession) -> COLL
 
+        if not isinstance(_session,ClientSession):
+            raise (Exception("Session must be 'pymongo.client_session.ClientSession'"))
+        self.session=_session
+        return self
     def switch_schema(self,schema_name):
         # type: (str) -> COLL
         """
@@ -715,7 +729,7 @@ class COLL():
         return self._entity
     def aggregate(self):
         """create aggregate before create pipeline"""
-        return AGGREGATE(self,self.qr,self.name)
+        return AGGREGATE(self,self.qr,self.name,self.session)
     def insert(self,*args,**kwargs):
         # type: (dict) -> dict
         # type: (tuple) -> dict
@@ -727,7 +741,7 @@ class COLL():
         """
 
         ac=self.entity().insert_one(*args,**kwargs)
-        ret=ac.commit()
+        ret=ac.commit(self.session)
         return ret
     def update(self,data,filter,*args,**kwargs):
         # type: (dict,str,int) -> dict
@@ -755,7 +769,7 @@ class COLL():
             kwargs=args[0]
         ac=self.entity().filter(filter,kwargs)
         ac.update_many(data)
-        ret=ac.commit()
+        ret=ac.commit(self.session)
         return ret
     def create_unique_index(self,*args,**kwargs):
         """
@@ -809,7 +823,7 @@ class COLL():
                              self.descibe_fields("\t\t\t", self._model.get_fields())))
         ac=self.entity().filter(filter,*args,**kwargs)
         ac.delete()
-        ret=ac.commit()
+        ret=ac.commit(self.session)
         return ret
     def get_filter_keys(self,keys):
         ret=""
@@ -842,7 +856,7 @@ class AGGREGATE():
 
     """
 
-    def __init__(self,coll, qr, name):
+    def __init__(self,coll, qr, name,session = None):
         # type: (COLL,QR,str) -> AGGREGATE
         """
         Create instance of AGGREGATE
@@ -850,6 +864,9 @@ class AGGREGATE():
         :param qr: instance of QR, this param will be use when get data from mongodb
         :param name: collecion name without schema
         """
+        if session != None and not isinstance(session,ClientSession):
+            raise (Exception("session must be 'pymongo.client_session.ClientSession'"))
+        self.session=session
         self._coll=coll
         self._selected_fields = None
         self.qr = qr
@@ -1264,7 +1281,7 @@ class AGGREGATE():
         #     return list(self.qr.db.get_collection(self.name).aggregate(self._pipe))
         # coll=self.qr.db.get_collection(self.name).with_options(codec_options=self.qr._codec_options)
         coll = self._coll.get_collection()
-        coll_ret=coll.aggregate(self._pipe)
+        coll_ret=coll.aggregate(self._pipe,self.session)
 
         ret=[]
         for doc in coll_ret:
@@ -1371,9 +1388,13 @@ def connect(*args,**kwargs):
                     tz_aware=False
                 )
 
+            version=db.eval("return db.version()")
+
             _db[key]={
                 "database":db,
-                "codec_options":codec_options
+                "codec_options":codec_options,
+                "version":version,
+                "versions":version.split('.')
             }
         return QR(_db[key])
     except OperationFailure as ex:
